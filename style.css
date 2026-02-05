@@ -76,6 +76,56 @@ body {
   color: var(--blue-accent);
 }
 
+/* Søk */
+.search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(79, 195, 247, 0.4);
+  border-radius: 6px;
+  background: var(--blue-dark);
+  color: var(--white);
+  font-family: inherit;
+  font-size: 0.9rem;
+  min-width: 160px;
+  transition: border-color 0.2s;
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--blue-accent);
+}
+
+.search-count {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.topic.search-no-match {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.topic.search-no-match * {
+  user-select: none;
+}
+
+mark.search-highlight {
+  background: var(--blue-accent);
+  color: var(--blue-deep);
+  padding: 0.1em 0.2em;
+  border-radius: 2px;
+}
+
 /* Hero */
 .hero {
   max-width: 960px;
