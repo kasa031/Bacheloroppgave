@@ -64,14 +64,16 @@ ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en 
 | Grunnlag | Status | Svar |
 |----------|--------|------|
 | Vital interests Q1: Are you processing the personal data to save or protect someone's life? | fylt | **No** |
+| Public task Q1: Are you processing the data to carry out your official tasks or functions, or other specific tasks in the public interest? | fylt | **No** |
 | Contract | ikke fylt | Worksheet: Q1 Yes, Q2 Yes, Q3 No (kan ikke levere uten konto/betaling). Forventet utfall: contract |
 | Legal obligation | ikke fylt | |
-| Public task | ikke fylt | |
 | Legitimate interests | ikke fylt | |
 | Consent | ikke fylt | |
 | ICO-konklusjon | ikke fylt | forventet: contract |
 
-**Hvorfor No på vital interests:** Strømmetjeneste, ikke liv og død. Netflix lister ikke vital interests. ICO-rapporten for Skatteetaten avviste også vital interests; for Netflix er det enda tydeligere.
+**Hvorfor No på vital interests:** Strømmetjeneste, ikke liv og død. Netflix lister ikke vital interests.
+
+**Hvorfor No på public task:** Netflix er et privat selskap, ikke offentlig myndighet. Art. 6(1)(e) gjelder offisielle oppgaver med hjemmel i lov. EEA/UK-tillegget lister ikke public task. Skatteetaten fikk Yes her; Netflix skal ha No.
 
 **ICO-steg nå:** velg No, Continue. Når contract kommer: Yes / Yes / No etter worksheet.
 
