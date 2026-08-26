@@ -66,8 +66,8 @@ parts.append(slide(header("The report", "Two questions") + """
 
 parts.append(slide(header("Part 1", "How we measured") + bullets([
     "English Webbkoll. One load per visit. No add-ons. Do Not Track off.",
-    "Table 2 (20 Aug 2026) is the ranking. Table 3 is a later check. We do not average them.",
-    "KeyCDN: server country from the site IP; country list from third-party IPs. Norway dropped.",
+    "Table 2 (20 Aug 2026) is the ranking. Table 3 is a later check, not averaged.",
+    "KeyCDN country is a geolocation guess from the IP, not a legal transfer register.",
     "Requests are not cookies. 17 of 18 sites had zero external cookies. ikea.no had 2.",
 ]), 3))
 
@@ -140,10 +140,10 @@ parts.append(slide(header("Part 1  ·  one example", "klassekampen.no: 46 in Tab
 """, 7))
 
 parts.append(slide(header("Part 2", "ICO: one purpose at a time") + bullets([
-    "Official ICO Word reports dated 26 August 2026.",
-    "Name one purpose, then compare the notice with the ICO marks.",
-    "Yes: notice and ICO line up. Partial: the notice aims at consent; ICO marks INCONCLUSIVE.",
-    "Mix tax, cookies, checkout or marketing in one run, and the tool mixes the answers.",
+    "Official ICO Word reports dated 26 August 2026. The labels are guidance, not a court finding.",
+    "One purpose per run. Compare what the notice claims with what ICO marks.",
+    "Yes: notice and ICO line up for that purpose. Partial: the notice aims at consent; ICO marks INCONCLUSIVE.",
+    "Tax, cookies, checkout and marketing are different purposes.",
 ]), 8))
 
 table_rows = [
@@ -185,7 +185,7 @@ parts.append(slide(header("Part 2", "skatteetaten.no: two purposes") + bullets([
 parts.append(slide(header("Part 2", "netflix.no: paid streaming") + bullets([
     "Purpose: account and payment data needed to provide the paid service.",
     "Notice (EEA/UK): contractual necessity.",
-    "ICO: contract APPROPRIATE. Consent is likely invalid.",
+    "ICO: contract APPROPRIATE. Consent marked likely invalid for this purpose.",
     "Ads and marketing in the same notice were left out.",
 ]), 12))
 
@@ -197,7 +197,7 @@ parts.append(slide(header("Part 2", "fotball.no: match history") + bullets([
 ]), 13))
 
 parts.append(slide(header("Part 2", "document.no: Google Signals") + """
-<div class="banner-red">ICO: no basis APPROPRIATE. Consent INCONCLUSIVE. Match: Partial.</div>
+<div class="banner-cream">ICO: no basis APPROPRIATE. Consent INCONCLUSIVE. Match: Partial.</div>
 """ + bullets([
     "Purpose: advertising analytics from site activity.",
     "The notice does not name Article 6. It looks like consent.",
@@ -282,9 +282,9 @@ table { width: 12.5in; margin: 0.18in 0.4in 0; border-collapse: collapse; font-s
 th { background: var(--navy); color: #fff; text-align: left; padding: 8px; }
 td { border: 1px solid #D0D5DD; padding: 9px 8px; }
 tr:nth-child(even) td { background: #F4F6F8; }
-td.yes { color: var(--ok); font-weight: 700; }
+td.yes { color: var(--navy); font-weight: 700; }
 td.part { color: var(--warn); font-weight: 700; background: var(--cream) !important; }
-.banner-red { margin: 0.22in 0.5in 0.1in; background: var(--cream); color: var(--red); font-size: 22px; font-weight: 700; padding: 0.18in 0.22in; }
+.banner-cream { margin: 0.22in 0.5in 0.1in; background: var(--cream); color: var(--navy); font-size: 22px; font-weight: 700; padding: 0.18in 0.22in; }
 .title-inner { padding: 0.9in 0.7in 0; }
 .title-inner h1 { font-size: 26px; line-height: 1.2; margin: 0.12in 0 0.18in; }
 .title-inner .assign { font-size: 22px; font-weight: 700; color: var(--cream); margin: 0.08in 0 0; }
