@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Third-Party Data Sharing and Tracking on Norwegian Websites</title>
+  <title>Analysis of 3rd-party Data Sharing and Data Tracking and of GDPR Compliance of Norwegian Web Sites</title>
   <style>
     :root {
       --navy: #1B365D;
@@ -47,7 +47,7 @@
     .tbl-num, .fig-num { font-weight: 700; margin: 1.2em 0 0; text-align: left; line-height: 1.4; }
     .tbl-title, .fig-title { font-style: italic; margin: 0 0 0.6em; text-align: left; line-height: 1.4; }
     .tbl-note, .fig-note { font-size: 11pt; color: var(--muted); margin: 0.4em 0 1.2em; text-align: left; line-height: 1.45; }
-    table { border-collapse: collapse; width: 100%; font-size: 10pt; margin: 0 0 0.4em; line-height: 1.3; }
+    table { border-collapse: collapse; width: 100%; font-size: 9pt; margin: 0 0 0.4em; line-height: 1.3; }
     th, td { border: 1px solid var(--line); padding: 5px 7px; vertical-align: top; }
     th { background: var(--navy); color: #fff; font-weight: 600; text-align: left; }
     tr:nth-child(even) td { background: #F4F6F8; }
@@ -80,7 +80,7 @@
 </head>
 <body>
 <div class="title-block">
-  <h1>Third-Party Data Sharing and Tracking on Norwegian Websites</h1>
+  <h1>Analysis of 3rd-party Data Sharing and Data Tracking and of GDPR Compliance of Norwegian Web Sites</h1>
   <p>Humna Akhtar, Mithun Chandra Debnath, Karina Sætersdal Nilssen, and Sumit Prasad Sah</p>
   <p>Department of Computer Science, Oslo Metropolitan University</p>
   <p>ACIT4280 Privacy by Design</p>
@@ -89,11 +89,42 @@
 </div>
 
 <h2>Introduction</h2>
-<p>This report has two parts. Part 1 uses Webbkoll to measure cookies, third-party requests and server location on 18 Norwegian-facing websites in shopping, government, news and media, and sport. Part 2 uses the ICO lawful basis tool on five of those sites: skatteetaten.no, netflix.no, fotball.no, document.no and babyshop.no.</p>
+<p>Group Assignment 1A has two parts. Part 1 maps third-party data sharing, cross-border contact and tracking on the 18 course-listed web services with Webbkoll. Part 2 (Group 1-A) uses the ICO lawful basis tool on five services chosen from that list. The 18 sites are Table 1. The five ICO sites are Table 1a. The Webbkoll numbers are Tables 2 and 3. Sector graphics are Figures 2 to 4.</p>
 <p>The General Data Protection Regulation (GDPR) sets the rules for personal data in the EEA (General Data Protection Regulation, 2016). Processing is lawful only if at least one Article 6 basis applies. The bases used here are legal obligation, public task, contract, consent and legitimate interests. Cookies are also covered by ePrivacy rules (Cookie Directive, 2009; ePrivacy Directive, 2002). A third-party request is a call from the page to another host. That is not the same as a third-party cookie.</p>
 
+<p class="tbl-num">Table 1</p>
+<p class="tbl-title">Course Web Site List Analysed with Webbkoll</p>
+<table>
+  <thead>
+    <tr><th>Sector (as on Canvas)</th><th>Services</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Shopping</td><td>xxl.no, cdon.no, ikea.no, babyshop.no</td></tr>
+    <tr><td>Government</td><td>skatteetaten.no, barnevernet.no, altinn.no, lanekassen.no</td></tr>
+    <tr><td>News &amp; media &amp; entertainment</td><td>aftenposten.no, nrk.no, netflix.no, document.no, klassekampen.no, spotify.no, worldofwarcraft.com</td></tr>
+    <tr><td>Spare time / sports</td><td>dnt.no, fotball.no, skiforeningen.no</td></tr>
+  </tbody>
+</table>
+<p class="tbl-note">Note. All 18 names follow the Group Assignment 1A list. Webbkoll was run on each name as given, including redirects (for example ikea.no to ikea.com). document.no is on the course list with a content warning; it is included because it is on that list, not as a source of facts.</p>
+
+<p class="tbl-num">Table 1a</p>
+<p class="tbl-title">Five Services Chosen from Table 1 for the ICO Lawful Basis Tool</p>
+<table>
+  <thead>
+    <tr><th>Service</th><th>Sector</th><th>Why this site</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>babyshop.no</td><td>Shopping</td><td>Retail checkout; high request count on the repeat scan</td></tr>
+    <tr><td>skatteetaten.no</td><td>Government</td><td>Public authority; tax and cookies as two purposes</td></tr>
+    <tr><td>netflix.no</td><td>News &amp; media &amp; entertainment</td><td>Paid subscription (contract)</td></tr>
+    <tr><td>document.no</td><td>News &amp; media &amp; entertainment</td><td>Widest country list; advertising analytics</td></tr>
+    <tr><td>fotball.no</td><td>Spare time / sports</td><td>Highest third-party request count in Table 2</td></tr>
+  </tbody>
+</table>
+<p class="tbl-note">Note. One site from shopping, one from government, two from news, media and entertainment, and one from spare time / sports. ICO results are Table 5.</p>
+
 <h2>Method</h2>
-<p>Webbkoll is a public scanner (5th of July Foundation, n.d.-c). It reports HTTPS, cookies, third-party requests and the server IP. It does not read a privacy notice, click a banner, or decide Article 6. The English interface was used. Figure 1 shows the check page. Each result is one live Chromium visit with no add-ons, no Do Not Track and no consent click (5th of July Foundation, n.d.-a, n.d.-b). The scan time is recorded with the result.</p>
+<p>Webbkoll is a public scanner (5th of July Foundation, n.d.-c). It reports HTTPS, cookies, third-party requests and the server IP. It does not read a privacy notice, click a banner, or decide Article 6. The English interface was used on every service in Table 1. Figure 1 shows the check page. Each result is one live Chromium visit with no add-ons, no Do Not Track and no consent click (5th of July Foundation, n.d.-a, n.d.-b). The scan time is recorded with the result.</p>
 <p>Server location is the Country field in KeyCDN IP Location Finder (KeyCDN, n.d.). Where no country was returned, the cell is marked not available. Norway is excluded from the country count. Internal cookies are set by the site. External cookies are set by other parties. Third-party requests count other hosts contacted when the page loads. A site can contact many hosts without setting a third-party cookie. Table 2 is the first measurement. Table 3 is a repeat measurement. The two series are not averaged.</p>
 
 <figure>
@@ -104,16 +135,16 @@
 </figure>
 
 <h2>Findings</h2>
-<p>Table 2 records the first measurement on 20 August 2026. Table 3 records a repeat measurement the same day, with KeyCDN countries for third-party hosts on 21 August 2026. A later visit can differ because Webbkoll stores a result for 24 hours.</p>
-<p>Seventeen of 18 sites set zero third-party cookies. The exception is ikea.no (two cookies) after redirect to ikea.com. Third-party requests in Table 2 range from 1 (lanekassen.no) to 113 (fotball.no). Figure 2 ranks those counts. Figure 3 shows each site's share of the total. Figure 4 groups the same counts by sector. News and media contact the most hosts. Government sites contact the fewest. Sport is high because of fotball.no. Shopping lies between those extremes. babyshop.no rises to 101 requests on the repeat measurement. Webbkoll cannot prove that a request contains personal data. It can only show that a host in that country was contacted (General Data Protection Regulation, 2016, art. 44-47).</p>
+<p>Table 2 records the first measurement on 20 August 2026 for all 18 services in Table 1. Table 3 records a repeat measurement the same day, with KeyCDN countries for third-party hosts on 21 August 2026. A later visit can differ because Webbkoll stores a result for 24 hours.</p>
+<p>Seventeen of 18 sites set zero third-party cookies. The exception is ikea.no (two cookies) after redirect to ikea.com. Third-party requests in Table 2 range from 1 (lanekassen.no) to 113 (fotball.no). Figure 2 ranks those counts. Figure 3 shows each site's share of the total. Figure 4 is the graphical overview per sector. News, media and entertainment contact the most hosts. Government sites contact the fewest. Spare time / sports is high because of fotball.no. Shopping lies between those extremes. babyshop.no rises to 101 requests on the repeat measurement. Webbkoll cannot prove that a request contains personal data. It can only show that a host in that country was contacted (General Data Protection Regulation, 2016, art. 44-47).</p>
 
 <p class="tbl-num">Table 2</p>
-<p class="tbl-title">First Webbkoll Measurement of 18 Norwegian-Facing Services (20 August 2026)</p>
+<p class="tbl-title">Webbkoll Results for the 18 Services in Table 1 (First Measurement, 20 August 2026)</p>
 <table>
   <thead>
     <tr>
-      <th>Name of service</th><th>Sector</th><th>Server</th>
-      <th>Int.</th><th>Ext.</th><th>Req.</th><th>n countries</th><th>List of countries</th>
+      <th>Name of service</th><th>Sector</th><th>Location of server</th>
+      <th>Internal cookies</th><th>External cookies</th><th>3rd-party requests</th><th>Countries excl. Norway</th><th>List of countries</th>
     </tr>
   </thead>
   <tbody>
@@ -125,27 +156,27 @@
     <tr><td>barnevernet.no</td><td>Government</td><td>NO</td><td>2</td><td>0</td><td>25</td><td>4</td><td>SE, DE, CA, NO, GB</td></tr>
     <tr><td>altinn.no</td><td>Government</td><td>CA</td><td>0</td><td>0</td><td>5</td><td>1</td><td>US</td></tr>
     <tr><td>lanekassen.no</td><td>Government</td><td>NL</td><td>0</td><td>0</td><td>1</td><td>1</td><td>DE</td></tr>
-    <tr><td>aftenposten.no</td><td>News / media</td><td>SE</td><td>5</td><td>0</td><td>48</td><td>5</td><td>SE, CA, US, DE, IE</td></tr>
-    <tr><td>nrk.no</td><td>News / media</td><td>SE</td><td>10</td><td>0</td><td>7</td><td>1</td><td>SE</td></tr>
-    <tr><td>netflix.no</td><td>News / media</td><td>GB</td><td>6</td><td>0</td><td>22</td><td>2</td><td>GB, CA</td></tr>
-    <tr><td>document.no</td><td>News / media</td><td>DE</td><td>4</td><td>0</td><td>51</td><td>6</td><td>US, CA, SE, FR, DE, FI</td></tr>
-    <tr><td>klassekampen.no</td><td>News / media</td><td>US</td><td>4</td><td>0</td><td>46</td><td>2</td><td>SE, US</td></tr>
-    <tr><td>spotify.no</td><td>News / media</td><td>US</td><td>3</td><td>0</td><td>10</td><td>2</td><td>SE, US</td></tr>
-    <tr><td>worldofwarcraft.com</td><td>News / media</td><td>IE</td><td>4</td><td>0</td><td>90</td><td>4</td><td>FR, SE, CA, US</td></tr>
-    <tr><td>dnt.no</td><td>Sport</td><td>GB</td><td>6</td><td>0</td><td>16</td><td>4</td><td>SE, CA, NL, FI</td></tr>
-    <tr><td>fotball.no</td><td>Sport</td><td>NL</td><td>8</td><td>0</td><td>113</td><td>5</td><td>SE, DK, CA, US, NL</td></tr>
-    <tr><td>skiforeningen.no</td><td>Sport</td><td>SE</td><td>1</td><td>0</td><td>14</td><td>3</td><td>NL, US, SE</td></tr>
+    <tr><td>aftenposten.no</td><td>News, media &amp; entertainment</td><td>SE</td><td>5</td><td>0</td><td>48</td><td>5</td><td>SE, CA, US, DE, IE</td></tr>
+    <tr><td>nrk.no</td><td>News, media &amp; entertainment</td><td>SE</td><td>10</td><td>0</td><td>7</td><td>1</td><td>SE</td></tr>
+    <tr><td>netflix.no</td><td>News, media &amp; entertainment</td><td>GB</td><td>6</td><td>0</td><td>22</td><td>2</td><td>GB, CA</td></tr>
+    <tr><td>document.no</td><td>News, media &amp; entertainment</td><td>DE</td><td>4</td><td>0</td><td>51</td><td>6</td><td>US, CA, SE, FR, DE, FI</td></tr>
+    <tr><td>klassekampen.no</td><td>News, media &amp; entertainment</td><td>US</td><td>4</td><td>0</td><td>46</td><td>2</td><td>SE, US</td></tr>
+    <tr><td>spotify.no</td><td>News, media &amp; entertainment</td><td>US</td><td>3</td><td>0</td><td>10</td><td>2</td><td>SE, US</td></tr>
+    <tr><td>worldofwarcraft.com</td><td>News, media &amp; entertainment</td><td>IE</td><td>4</td><td>0</td><td>90</td><td>4</td><td>FR, SE, CA, US</td></tr>
+    <tr><td>dnt.no</td><td>Spare time / sports</td><td>GB</td><td>6</td><td>0</td><td>16</td><td>4</td><td>SE, CA, NL, FI</td></tr>
+    <tr><td>fotball.no</td><td>Spare time / sports</td><td>NL</td><td>8</td><td>0</td><td>113</td><td>5</td><td>SE, DK, CA, US, NL</td></tr>
+    <tr><td>skiforeningen.no</td><td>Spare time / sports</td><td>SE</td><td>1</td><td>0</td><td>14</td><td>3</td><td>NL, US, SE</td></tr>
   </tbody>
 </table>
-<p class="tbl-note">Note. Int. = internal cookies; Ext. = external cookies; Req. = third-party requests; n countries = unique KeyCDN countries excluding Norway. Lists may still show NO when it appeared on the first worksheet; the count column excludes it. Service names follow the course list even when Webbkoll followed a redirect.</p>
+<p class="tbl-note">Note. Columns follow the assignment table: name of service, location of server, internal cookies, external cookies, third-party requests, number of countries excluding Norway, and country list. Sector is added so Figure 4 can be read against Table 1. Lists may still show NO when it appeared on the first worksheet; the count column excludes it. Service names follow Table 1 even when Webbkoll followed a redirect.</p>
 
 <p class="tbl-num">Table 3</p>
 <p class="tbl-title">Repeat Webbkoll Measurement (20 August 2026) and KeyCDN Third-Party Countries (21 August 2026)</p>
 <table>
   <thead>
     <tr>
-      <th>Name of service</th><th>Sector</th><th>Server</th>
-      <th>Int.</th><th>Ext.</th><th>Req.</th><th>n countries</th><th>List of countries</th>
+      <th>Name of service</th><th>Sector</th><th>Location of server</th>
+      <th>Internal cookies</th><th>External cookies</th><th>3rd-party requests</th><th>Countries excl. Norway</th><th>List of countries</th>
     </tr>
   </thead>
   <tbody>
@@ -157,16 +188,16 @@
     <tr><td>barnevernet.no</td><td>Government</td><td>NO</td><td>2</td><td>0</td><td>25</td><td>4</td><td>DE, IE, SE, US</td></tr>
     <tr><td>altinn.no</td><td>Government</td><td>n/a</td><td>0</td><td>0</td><td>5</td><td>1</td><td>US</td></tr>
     <tr><td>lanekassen.no</td><td>Government</td><td>NL</td><td>0</td><td>0</td><td>1</td><td>1</td><td>DE</td></tr>
-    <tr><td>aftenposten.no</td><td>News / media</td><td>US</td><td>5</td><td>0</td><td>49</td><td>4</td><td>DE, IE, SE, US</td></tr>
-    <tr><td>nrk.no</td><td>News / media</td><td>SE</td><td>11</td><td>0</td><td>7</td><td>1</td><td>SE</td></tr>
-    <tr><td>netflix.no</td><td>News / media</td><td>US</td><td>6</td><td>0</td><td>22</td><td>1</td><td>US</td></tr>
-    <tr><td>document.no</td><td>News / media</td><td>DE</td><td>4</td><td>0</td><td>51</td><td>5</td><td>FI, FR, IE, SE, US</td></tr>
-    <tr><td>klassekampen.no</td><td>News / media</td><td>US</td><td>4</td><td>0</td><td>56</td><td>3</td><td>IE, SE, US</td></tr>
-    <tr><td>spotify.no</td><td>News / media</td><td>US</td><td>3</td><td>0</td><td>10</td><td>2</td><td>SE, US</td></tr>
-    <tr><td>worldofwarcraft.com</td><td>News / media</td><td>IE</td><td>4</td><td>0</td><td>92</td><td>3</td><td>IE, SE, US</td></tr>
-    <tr><td>dnt.no</td><td>Sport</td><td>n/a</td><td>6</td><td>0</td><td>16</td><td>5</td><td>FI, IE, NL, SE, US</td></tr>
-    <tr><td>fotball.no</td><td>Sport</td><td>NL</td><td>9</td><td>0</td><td>114</td><td>5</td><td>DK, IE, NL, SE, US</td></tr>
-    <tr><td>skiforeningen.no</td><td>Sport</td><td>US</td><td>1</td><td>0</td><td>14</td><td>3</td><td>IE, NL, US</td></tr>
+    <tr><td>aftenposten.no</td><td>News, media &amp; entertainment</td><td>US</td><td>5</td><td>0</td><td>49</td><td>4</td><td>DE, IE, SE, US</td></tr>
+    <tr><td>nrk.no</td><td>News, media &amp; entertainment</td><td>SE</td><td>11</td><td>0</td><td>7</td><td>1</td><td>SE</td></tr>
+    <tr><td>netflix.no</td><td>News, media &amp; entertainment</td><td>US</td><td>6</td><td>0</td><td>22</td><td>1</td><td>US</td></tr>
+    <tr><td>document.no</td><td>News, media &amp; entertainment</td><td>DE</td><td>4</td><td>0</td><td>51</td><td>5</td><td>FI, FR, IE, SE, US</td></tr>
+    <tr><td>klassekampen.no</td><td>News, media &amp; entertainment</td><td>US</td><td>4</td><td>0</td><td>56</td><td>3</td><td>IE, SE, US</td></tr>
+    <tr><td>spotify.no</td><td>News, media &amp; entertainment</td><td>US</td><td>3</td><td>0</td><td>10</td><td>2</td><td>SE, US</td></tr>
+    <tr><td>worldofwarcraft.com</td><td>News, media &amp; entertainment</td><td>IE</td><td>4</td><td>0</td><td>92</td><td>3</td><td>IE, SE, US</td></tr>
+    <tr><td>dnt.no</td><td>Spare time / sports</td><td>n/a</td><td>6</td><td>0</td><td>16</td><td>5</td><td>FI, IE, NL, SE, US</td></tr>
+    <tr><td>fotball.no</td><td>Spare time / sports</td><td>NL</td><td>9</td><td>0</td><td>114</td><td>5</td><td>DK, IE, NL, SE, US</td></tr>
+    <tr><td>skiforeningen.no</td><td>Spare time / sports</td><td>US</td><td>1</td><td>0</td><td>14</td><td>3</td><td>IE, NL, US</td></tr>
   </tbody>
 </table>
 <p class="tbl-note">Note. Table 2 is unchanged. babyshop.no is 101 versus 45; klassekampen.no is 56 versus 46. n/a means KeyCDN did not return a country (dnt.no, babyshop.no, altinn.no). Redirects were measured at the landing host.</p>
@@ -192,8 +223,8 @@
   <p class="fig-note">Note. Compiled by the authors from Webbkoll results. Sector totals follow Table 2. News and media carry the most requests; government carries the fewest.</p>
 </figure>
 
-<h3>Highest and lowest third-party contact</h3>
-<p>The 18 sites are ranked on third-party requests in Table 2 (Figure 2). The rank is contact on load, not the external-cookie count. Table 4 lists the highest five and the lowest five. fotball.no contacts 113 hosts and still sets zero third-party cookies. A low cookie count can therefore coexist with a high request count. document.no has the widest first country list (six states, excluding Norway). lanekassen.no and altinn.no are the most restrained government fronts. The repeat measurement would place babyshop.no at 101 requests (Table 3). Rankings in this paper remain those of the first measurement.</p>
+<h3>Sites of interest</h3>
+<p>The assignment asks for interesting findings such as the worst data sharer, the most globalised service, and the most privacy-friendly e-government site. Rank is third-party requests in Table 2 (Figure 2), not the external-cookie count. The worst data sharer on that measure is fotball.no (113 requests, still zero third-party cookies). The most globalised first scan is document.no (six countries excluding Norway). The most restrained e-government fronts are lanekassen.no (1 request) and altinn.no (5). Table 4 lists the highest five and the lowest five. A low cookie count can coexist with a high request count. The repeat measurement would place babyshop.no at 101 requests (Table 3). Rankings in this paper remain those of the first measurement.</p>
 
 <p class="tbl-num">Table 4</p>
 <p class="tbl-title">Highest Five and Lowest Five by Third-Party Request Volume (Table 2)</p>
@@ -204,14 +235,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr><td>Highest 1</td><td>fotball.no</td><td>Sport</td><td>113</td><td>5</td></tr>
-    <tr><td>Highest 2</td><td>worldofwarcraft.com</td><td>News / media</td><td>90</td><td>4</td></tr>
-    <tr><td>Highest 3</td><td>document.no</td><td>News / media</td><td>51</td><td>6</td></tr>
-    <tr><td>Highest 4</td><td>aftenposten.no</td><td>News / media</td><td>48</td><td>5</td></tr>
-    <tr><td>Highest 5</td><td>klassekampen.no</td><td>News / media</td><td>46</td><td>2</td></tr>
-    <tr><td>Lowest 5</td><td>skiforeningen.no</td><td>Sport</td><td>14</td><td>3</td></tr>
-    <tr><td>Lowest 4</td><td>spotify.no</td><td>News / media</td><td>10</td><td>2</td></tr>
-    <tr><td>Lowest 3</td><td>nrk.no</td><td>News / media</td><td>7</td><td>1</td></tr>
+    <tr><td>Highest 1</td><td>fotball.no</td><td>Spare time / sports</td><td>113</td><td>5</td></tr>
+    <tr><td>Highest 2</td><td>worldofwarcraft.com</td><td>News, media &amp; entertainment</td><td>90</td><td>4</td></tr>
+    <tr><td>Highest 3</td><td>document.no</td><td>News, media &amp; entertainment</td><td>51</td><td>6</td></tr>
+    <tr><td>Highest 4</td><td>aftenposten.no</td><td>News, media &amp; entertainment</td><td>48</td><td>5</td></tr>
+    <tr><td>Highest 5</td><td>klassekampen.no</td><td>News, media &amp; entertainment</td><td>46</td><td>2</td></tr>
+    <tr><td>Lowest 5</td><td>skiforeningen.no</td><td>Spare time / sports</td><td>14</td><td>3</td></tr>
+    <tr><td>Lowest 4</td><td>spotify.no</td><td>News, media &amp; entertainment</td><td>10</td><td>2</td></tr>
+    <tr><td>Lowest 3</td><td>nrk.no</td><td>News, media &amp; entertainment</td><td>7</td><td>1</td></tr>
     <tr><td>Lowest 2</td><td>altinn.no</td><td>Government</td><td>5</td><td>1</td></tr>
     <tr><td>Lowest 1</td><td>lanekassen.no</td><td>Government</td><td>1</td><td>1</td></tr>
   </tbody>
@@ -235,8 +266,8 @@
   <p class="fig-note">Note. From <em>IP Location Finder</em> [Screenshot], by KeyCDN, n.d. (https://tools.keycdn.com/geo). Look up of 2600:1901:0:25b9::. Country: United States (US). Provider: Google LLC. The same tool on each unique third-party IP fills the country list.</p>
 </figure>
 
-<h2>Lawful basis for five services</h2>
-<p>A service does not have one lawful basis for everything it does. The controller must name a purpose, then name a basis for that purpose (Information Commissioner's Office, n.d.). The ICO lawful basis tool was applied to five notices (Information Commissioner's Office, 2026): skatteetaten.no, netflix.no, fotball.no, document.no and babyshop.no. Each run states one concrete activity. Official ICO reports are dated 26 August 2026. Table 5 is the summary.</p>
+<h2>Group 1-A: lawful basis for the five chosen services</h2>
+<p>From the 18 Webbkoll sites we chose five for the ICO tool (Table 1a): babyshop.no, skatteetaten.no, netflix.no, document.no and fotball.no. A service does not have one lawful basis for everything it does. The controller must name a purpose, then name a basis for that purpose (Information Commissioner's Office, n.d.). Each run states one concrete activity. Official ICO reports are dated 26 August 2026 (Information Commissioner's Office, 2026). Table 5 is the summary.</p>
 
 <h3>Article 6 is not a cookie click</h3>
 <p>Does a Yes/No banner decide whether the Tax Administration may process income data? No. Article 6 answers why personal data may be processed (General Data Protection Regulation, 2016, art. 6). Cookie rules answer whether information may be stored on a device (ePrivacy Directive, 2002). Mix the two in one ICO run, and the tool returns the wrong basis. For tax and the National Population Register, the notice says processing is required by law and is generally not optional (Norwegian Tax Administration, n.d.-a). The ICO report marks legal obligation and public task APPROPRIATE. Consent is NOT APPROPRIATE and likely invalid: the controller cannot offer a genuine free and ongoing choice for a statutory duty. Optional statistics cookies (Skyra, Matomo, Google Analytics, Siteimprove) are a different purpose. They use a Yes/No banner. A dedicated ICO run marks consent INCONCLUSIVE: the banner offers a choice, but the request does not fully name controller, purpose and types. No basis is APPROPRIATE for that cookie purpose.</p>
@@ -273,7 +304,7 @@
 <p class="tbl-note">Note. One processing purpose per ICO row. Official ICO reports dated 26 August 2026 (Information Commissioner's Office, 2026). Marketing, cookies and membership administration stay separate purposes where the notice uses other bases.</p>
 
 <h2>Conclusion</h2>
-<p>The scan and the law answer different questions. On third-party requests the highest five are fotball.no, worldofwarcraft.com, document.no, aftenposten.no and klassekampen.no. The lowest five are lanekassen.no, altinn.no, nrk.no, spotify.no and skiforeningen.no. ikea.no is the only third-party-cookie row. Four of five core purposes match the notice (Table 5). Two consent tests fail: optional cookies on skatteetaten.no (controller, purpose and types not fully named) and Google Signals on document.no (the request is not clear, prominent and separate). A legal duty to assess tax is not a cookie click. One purpose requires one basis.</p>
+<p>The 18 course-listed sites are in Table 1. Webbkoll numbers for all of them are in Tables 2 and 3. Figure 4 is the sector overview. The worst data sharer on request volume is fotball.no. The widest country list is document.no. The most restrained e-government sites are lanekassen.no and altinn.no. The five ICO services (Table 1a) are babyshop.no, skatteetaten.no, netflix.no, document.no and fotball.no. Four of five core purposes match the notice (Table 5). Two consent tests fail: optional cookies on skatteetaten.no and Google Signals on document.no. A legal duty to assess tax is not a cookie click. One purpose requires one basis.</p>
 
 <h2>References</h2>
 <ul class="refs">
