@@ -141,7 +141,6 @@ parts.append(slide(header("Part 2", "ICO: one purpose at a time") + f"""
   <thead><tr><th>Service</th><th>Purpose</th><th>ICO</th><th>Match</th></tr></thead>
   <tbody>{tr}</tbody>
 </table>
-<p class="caption ico-cap">ICO labels are guidance, not a court finding.</p>
 """, 6))
 
 parts.append(slide(header("Part 2  ·  Table 5", "Four match, two consent tests Partial") + """

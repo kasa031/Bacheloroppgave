@@ -315,9 +315,6 @@ def main():
             add_rect(s, x, y, w, row_h, bg)
             add_tb(s, x + Inches(0.08), y + Inches(0.14), w - Inches(0.12), Inches(0.38), cell, size=12, bold=bolds[j], color=colors[j])
             x += w
-    add_tb(s, Inches(0.4), Inches(6.78), Inches(12.5), Inches(0.38),
-           "ICO labels are guidance, not a court finding.",
-           size=13, color=MUTED)
     footer(s, 6, total)
     notes(s, "Each row is one purpose from Table 1a. Partial means consent INCONCLUSIVE.")
 
