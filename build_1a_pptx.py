@@ -415,7 +415,7 @@ def main():
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, DARK)
     add_tb(s, Inches(0.7), Inches(2.4), Inches(12), Inches(1.2),
-           "Questions", size=48, color=WHITE, bold=True, align=PP_ALIGN.CENTER)
+           "¿Questions?", size=48, color=WHITE, bold=True, align=PP_ALIGN.CENTER)
     add_tb(s, Inches(0.7), Inches(3.8), Inches(12), Inches(1.4),
            "ACIT4280 Privacy by Design  ·  Group Assignment 1A",
            size=20, color=TEAL, align=PP_ALIGN.CENTER)

@@ -200,7 +200,7 @@ parts.append(slide(header("Close", "What the report shows") + """
 
 parts.append(slide("""
   <div class="q">
-    <h1>Questions</h1>
+    <h1>¿Questions?</h1>
     <p>ACIT4280 Privacy by Design  ·  Group Assignment 1A</p>
   </div>
 """, 14, dark=True))
