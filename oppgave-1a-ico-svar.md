@@ -132,7 +132,7 @@ Vi tester **ett** formål: visning av navn og klubb på fotball.no.
 
 **Hvorfor No på public task Q1:** NFF er en medlemsorganisasjon, ikke forvaltningsorgan. Art. 6(1)(e) krever offisiell myndighet eller en konkret samfunnsoppgave med hjemmel i lov. «Kamphistorikk av allmenn interesse» er argument for LI-balancing, ikke public task. Ikke velg To some extent.
 
-**Hvorfor No på recognised legitimate interest Q1:** Listen er vern av sårbare, nødssituasjon, kriminalitet, nasjonal sikkerhet, eller utlevering til noen som ber om data til sin offentlige oppgave. Publisering av navn og klubb for kamphistorikk er ingen av disse.
+**Hvorfor No på recognised legitimate interest Q1:** Listen er vern av sårbare, nødsituasjon, kriminalitet, nasjonal sikkerhet, eller utlevering til noen som ber om data til sin offentlige oppgave. Publisering av navn og klubb for kamphistorikk er ingen av disse.
 
 **ICO-steg nå:** velg No, Continue.
 
