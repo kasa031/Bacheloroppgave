@@ -10,6 +10,7 @@ Arbeidsnotat til innleveringen (ikke studieapp, ikke GitHub Pages).
 - `Fotball_Lawful basis assessment report.docx` (offisiell ICO-rapport, fotball.no kamphistorikk)
 - `ICO_5sites_worksheet.html`
 - `ACIT4280_1A_report.html` (gruppens rapport, Tabell 5)
+- Full personvernerklæring for document.no limt inn 26.08.2026 (ingen Art. 6-merking)
 
 ICO-verktøy: https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis/lawful-basis-interactive-guidance-tool/
 
@@ -186,9 +187,17 @@ Nødvendige cookies uten samtykke (ekomlov). Øvrige krever tillatelse; samtykke
 
 **Formål vi tester:** Google Signals / reklameanalyse (demografi, interesser, aktivitet på tvers av enheter). Medlemskonto, kommentarer, kjøp og nødvendige cookies er egne formål.
 
-**Personvernerklæring (lest 26.08.2026, https://www.document.no/personvernerklaering/):** Document Media AS. Ingen navngitt Art. 6 for Google Signals. Teksten sier at annonsefunksjoner i Google Analytics (Google Signals) gir samlet statistikk om demografi, interesser og kryssenhet-bruk. Data samles bare hvis du er logget inn på Google og har tillatt personlig tilpasning av annonser. Tredjeparter: Google, første- og tredjepartscookies / identifikatorer. Opt-out: Google Ads Settings, mobil, NAI, Google Analytics-tillegg. Behandlingsansvarlig: Document Media AS, kontakt@document.no.
+**Personvernerklæring:** Full tekst limt inn i chatten 26.08.2026. Samme som https://www.document.no/personvernerklaering/. Document Media AS, kontakt@document.no. Org.nr. 893 068 392.
 
-Ikke bland inn: kommentarer (IP, Gravatar), innlogging, kjøpshistorikk, eller innebygd innhold fra andre nettsteder.
+Art. 6 er **ikke navngitt** noe sted. Rettighetene nevner samtykke og avtale bare under dataportabilitet, uten å si hvilket grunnlag som gjelder for Signals. Utlevering til myndigheter «dersom vi er lovpålagt» er et annet formål.
+
+Avsnittet «Google Analytics og annonsefunksjoner (Google Signals)»:
+- Annonsefunksjoner i GA gir statistikk om demografi, interesser og kryssenhet-bruk.
+- De kaller det «samlet og anonymisert», men bruker likevel Google, første- og tredjepartscookies og andre identifikatorer.
+- Innsamling bare hvis du er logget inn på Google og har tillatt personlig tilpasning av annonser.
+- Opt-out: Google Ads Settings, mobil, NAI, Google Analytics-tillegg.
+
+Ikke bland inn: kommentarer (IP, Gravatar), innlogging/«Husk meg», kjøpshistorikk, kundeforhold i 36 måneder, eller innebygd innhold fra andre nettsteder.
 
 **ICO-gjennomgang (Google Signals):**
 
