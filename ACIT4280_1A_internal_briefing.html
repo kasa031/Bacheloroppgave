@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Findings briefing: Karina Sætersdal Nilssen, ACIT4280 Group Assignment 1A</title>
+  <style>
+    :root { --navy:#1B365D; --ink:#1A1A1A; --muted:#4A5568; --line:#D0D5DD; --cream:#FFF1D1; --paper:#FFFEFB; --ok:#1B6B3A; --warn:#9A5B00; }
+    * { box-sizing: border-box; }
+    body { font-family: Calibri, "Segoe UI", sans-serif; max-width: 820px; margin: 28px auto 64px; padding: 0 24px; color: var(--ink); line-height: 1.45; background: var(--paper); }
+    h1 { font-size: 1.4rem; color: var(--navy); margin: 0 0 0.25em; }
+    h2 { font-size: 1.12rem; color: var(--navy); border-bottom: 3px solid var(--cream); padding-bottom: 6px; margin-top: 1.4em; }
+    h3 { font-size: 1.02rem; margin: 1em 0 0.3em; }
+    p, li { font-size: 14.5px; }
+    .meta { color: var(--muted); margin: 0 0 1em; }
+    table { border-collapse: collapse; width: 100%; font-size: 12.5px; margin: 0.5em 0 1em; }
+    th, td { border: 1px solid var(--line); padding: 6px 7px; vertical-align: top; }
+    th { background: var(--navy); color: #fff; text-align: left; }
+    tr:nth-child(even) td { background: #F4F6F8; }
+    .yes { color: var(--ok); font-weight: 700; }
+    .part { color: var(--warn); font-weight: 700; }
+    ul.tight li { margin: 0.22em 0; }
+    .note { color: var(--muted); font-size: 13px; }
+    @page { size: A4; margin: 16mm; }
+    @media print { body { margin: 0; max-width: none; } }
+  </style>
+</head>
+<body>
+<h1>Webbkoll and ICO findings</h1>
+<p class="meta">Karina Sætersdal Nilssen &middot; ACIT4280 Privacy by Design &middot; due 3 September 2026</p>
+
+<p>This briefing records the measurements and lawful-basis results I produced for the group assignment. Part A is Webbkoll. Part B is the ICO tool. The two parts answer different questions and are not mixed.</p>
+
+<h2>A. Webbkoll findings</h2>
+<p>Tool: English Webbkoll. One live Chromium visit, no add-ons, Do Not Track off, cookie banner not clicked. Server country is the KeyCDN Country field. Norway is excluded from the country count. Table 2 is the first measurement on 20 August 2026. Table 3 is the repeat measurement.</p>
+<p>Webbkoll reports HTTPS, cookies, third-party requests and the server IP. It does not read a privacy notice and it does not decide Article 6.</p>
+
+<h3>A1. Sites I measured: skatteetaten.no and netflix.no</h3>
+<table>
+  <thead>
+    <tr><th>Service</th><th>Measurement</th><th>Server</th><th>Int.</th><th>Ext.</th><th>Req.</th><th>n countries</th><th>Country list</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>skatteetaten.no</td><td>First (20 Aug 2026)</td><td>CA</td><td>5</td><td>0</td><td>14</td><td>5</td><td>IE, SE, FR, GB, NO, CA</td></tr>
+    <tr><td>skatteetaten.no</td><td>Repeat (20 Aug 2026)</td><td>US</td><td>5</td><td>0</td><td>14</td><td>4</td><td>FR, IE, SE, US</td></tr>
+    <tr><td>netflix.no</td><td>First (20 Aug 2026)</td><td>GB</td><td>6</td><td>0</td><td>22</td><td>2</td><td>GB, CA</td></tr>
+    <tr><td>netflix.no</td><td>Repeat (20 Aug 2026)</td><td>US</td><td>6</td><td>0</td><td>22</td><td>1</td><td>US</td></tr>
+  </tbody>
+</table>
+<p class="note">Int. = internal cookies. Ext. = external cookies. Req. = third-party requests. n countries excludes Norway.</p>
+
+<ul class="tight">
+  <li>skatteetaten.no: 14 third-party requests, 5 first-party cookies, 0 third-party cookies. Request volume is stable between the two measurements. The server country field changes from CA to US.</li>
+  <li>netflix.no: 22 third-party requests, 6 first-party cookies, 0 third-party cookies. Request volume is stable. The server country field changes from GB to US. The repeat country list shrinks to US only.</li>
+  <li>Neither site set a third-party cookie on load. Contact with other hosts is visible in the request count, not in the external-cookie count.</li>
+</ul>
+
+<h3>A2. Group Table 2 (first measurement of all 18 sites)</h3>
+<p>These are the first-clock values used in the joint report. Rankings in the paper follow this table, not the repeat clock.</p>
+<table>
+  <thead>
+    <tr><th>Service</th><th>Sector</th><th>Server</th><th>Int.</th><th>Ext.</th><th>Req.</th><th>n countries</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>xxl.no</td><td>Shopping</td><td>US</td><td>3</td><td>0</td><td>26</td><td>4</td></tr>
+    <tr><td>cdon.no</td><td>Shopping</td><td>CA</td><td>4</td><td>0</td><td>33</td><td>3</td></tr>
+    <tr><td>ikea.no</td><td>Shopping</td><td>CA</td><td>8</td><td>2</td><td>15</td><td>2</td></tr>
+    <tr><td>babyshop.no</td><td>Shopping</td><td>CA</td><td>1</td><td>0</td><td>45</td><td>2</td></tr>
+    <tr><td>skatteetaten.no</td><td>Government</td><td>CA</td><td>5</td><td>0</td><td>14</td><td>5</td></tr>
+    <tr><td>barnevernet.no</td><td>Government</td><td>NO</td><td>2</td><td>0</td><td>25</td><td>4</td></tr>
+    <tr><td>altinn.no</td><td>Government</td><td>CA</td><td>0</td><td>0</td><td>5</td><td>1</td></tr>
+    <tr><td>lanekassen.no</td><td>Government</td><td>NL</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+    <tr><td>aftenposten.no</td><td>News / media</td><td>SE</td><td>5</td><td>0</td><td>48</td><td>5</td></tr>
+    <tr><td>nrk.no</td><td>News / media</td><td>SE</td><td>10</td><td>0</td><td>7</td><td>1</td></tr>
+    <tr><td>netflix.no</td><td>News / media</td><td>GB</td><td>6</td><td>0</td><td>22</td><td>2</td></tr>
+    <tr><td>document.no</td><td>News / media</td><td>DE</td><td>4</td><td>0</td><td>51</td><td>6</td></tr>
+    <tr><td>klassekampen.no</td><td>News / media</td><td>US</td><td>4</td><td>0</td><td>46</td><td>2</td></tr>
+    <tr><td>spotify.no</td><td>News / media</td><td>US</td><td>3</td><td>0</td><td>10</td><td>2</td></tr>
+    <tr><td>worldofwarcraft.com</td><td>News / media</td><td>IE</td><td>4</td><td>0</td><td>90</td><td>4</td></tr>
+    <tr><td>dnt.no</td><td>Sport</td><td>GB</td><td>6</td><td>0</td><td>16</td><td>4</td></tr>
+    <tr><td>fotball.no</td><td>Sport</td><td>NL</td><td>8</td><td>0</td><td>113</td><td>5</td></tr>
+    <tr><td>skiforeningen.no</td><td>Sport</td><td>SE</td><td>1</td><td>0</td><td>14</td><td>3</td></tr>
+  </tbody>
+</table>
+
+<h3>A3. Pattern from the Webbkoll set</h3>
+<ul class="tight">
+  <li>Highest request counts: fotball.no 113, worldofwarcraft.com 90, document.no 51, aftenposten.no 48, klassekampen.no 46.</li>
+  <li>Lowest request counts: lanekassen.no 1, altinn.no 5, nrk.no 7, spotify.no 10, skiforeningen.no 14.</li>
+  <li>ikea.no is the only site with third-party cookies (2), after redirect to ikea.com.</li>
+  <li>fotball.no has the highest request count and still 0 third-party cookies. Request volume is not cookie volume.</li>
+  <li>document.no has the widest first country list (6, excluding Norway).</li>
+  <li>By sector, news and media contact the most hosts. Government contacts the fewest. Shopping sits between those extremes.</li>
+  <li>On the repeat clock, babyshop.no rises from 45 to 101 requests and klassekampen.no from 46 to 56. Rankings still follow the first measurement.</li>
+</ul>
+
+<h2>B. ICO findings</h2>
+<p>Tool: ICO Lawful basis interactive guidance (updated 14 April 2026). Official Word reports dated 26 August 2026. One concrete purpose per run. Recognised legitimate interest fitted none of these purposes.</p>
+<p>Article 6 answers why personal data may be processed. Cookie rules answer whether information may be stored on a device. Mixing the two in one ICO run returns the wrong basis.</p>
+
+<h3>B1. skatteetaten.no: tax and the National Population Register</h3>
+<ul class="tight">
+  <li><strong>Purpose:</strong> identity, income and tax data for tax administration and the National Population Register.</li>
+  <li><strong>Not included:</strong> Skyra, Matomo, Google Analytics, Siteimprove.</li>
+  <li><strong>Notice:</strong> processing is required by law. Opt-out is generally not possible. Controller: the Director General of Taxation.</li>
+  <li><strong>ICO result:</strong> legal obligation APPROPRIATE; public task APPROPRIATE; consent NOT APPROPRIATE / likely invalid; other bases NOT APPROPRIATE.</li>
+  <li><strong>Match:</strong> <span class="yes">Yes</span></li>
+  <li><strong>Report:</strong> Skatteetaten_Lawful basis assessment report.docx</li>
+</ul>
+
+<h3>B2. skatteetaten.no: optional statistics cookies</h3>
+<ul class="tight">
+  <li><strong>Purpose:</strong> optional statistics cookies after the Ja/Nei choice.</li>
+  <li><strong>Not included:</strong> tax and registry processing.</li>
+  <li><strong>Notice / banner:</strong> necessary cookies stay on. Optional cookies can be refused. Nei was selected on 24 August 2026 on skatteetaten.no/person/.</li>
+  <li><strong>ICO result:</strong> consent INCONCLUSIVE. The banner does not fully name controller, purpose and types. No basis APPROPRIATE.</li>
+  <li><strong>Match:</strong> <span class="part">Partial</span>. The notice aims at consent. The ICO report says the request is too thin.</li>
+  <li><strong>Report:</strong> Skatteetaten_cookies_Lawful basis assessment report.docx</li>
+</ul>
+<p>A Ja/Nei banner does not decide whether the Tax Administration may process income data. Tax and cookies are two purposes and two ICO reports.</p>
+
+<h3>B3. netflix.no: paid streaming</h3>
+<ul class="tight">
+  <li><strong>Purpose:</strong> account and payment data to provide the paid subscription.</li>
+  <li><strong>Not included:</strong> recommendations, advertising, marketing.</li>
+  <li><strong>Notice (EEA/UK):</strong> contractual necessity to provide the service to members. Last updated 10 April 2026.</li>
+  <li><strong>ICO result:</strong> contract APPROPRIATE; consent NOT APPROPRIATE / likely invalid (no genuine ongoing choice); other bases NOT APPROPRIATE.</li>
+  <li><strong>Match:</strong> <span class="yes">Yes</span></li>
+  <li><strong>Report:</strong> Netflix_Lawful basis assessment report.docx</li>
+</ul>
+
+<h3>B4. Remaining ICO runs in the joint table</h3>
+<p>These three runs complete Table 5. They were not my ICO files, but they sit next to the rows above in the group report.</p>
+<table>
+  <thead>
+    <tr><th>Service</th><th>Purpose</th><th>ICO result</th><th>Match</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>fotball.no</td><td>Publishing player name and club (13+) as match history</td><td>Legitimate interests APPROPRIATE</td><td class="yes">Yes</td></tr>
+    <tr><td>document.no</td><td>Google Signals / advertising analytics</td><td>Consent INCONCLUSIVE; no basis APPROPRIATE</td><td class="part">Partial</td></tr>
+    <tr><td>babyshop.no</td><td>Checkout and delivery data</td><td>Contract APPROPRIATE</td><td class="yes">Yes</td></tr>
+  </tbody>
+</table>
+
+<h3>B5. ICO summary</h3>
+<ul class="tight">
+  <li>Four of five core purposes match the notice: law for tax, contract for Netflix and Babyshop checkout, legitimate interests for NFF match history.</li>
+  <li>Two consent tests fail: optional cookies on skatteetaten.no, and Google Signals on document.no.</li>
+  <li>Cookie consent is not the lawful basis for tax, a paid subscription, match history or checkout.</li>
+</ul>
+
+<p class="note">Sources: Webbkoll (5th of July Foundation); KeyCDN IP Location Finder; ICO lawful basis tool; Tax Administration privacy policy; Netflix Privacy Statement.</p>
+</body>
+</html>
