@@ -37,7 +37,7 @@ parts.append(slide(f"""
     </ul>
     <p class="names">Humna Akhtar  ·  Mithun Chandra Debnath  ·  Karina Sætersdal Nilssen</p>
   </div>
-  <div class="title-band">Oslo Metropolitan University<br>3 September 2026</div>
+  <div class="title-band">Oslo Metropolitan University<br>3 September 2026<img class="title-logo" src="{FIG}/oslomet_logo.svg" alt="OsloMet logo"></div>
 """, 1, dark=True))
 
 
@@ -301,6 +301,7 @@ td.part { color: var(--orange); font-weight: 700; background: var(--teal) !impor
 .title-questions li:last-child { margin-bottom: 0; }
 .title-inner .names { font-size: 16px; margin: 0; }
 .title-band { position: absolute; left: 0; right: 0; bottom: 0; height: 1.65in; background: var(--orange); color: var(--dark); padding: 0.28in 0.7in; font-size: 16px; }
+.title-logo { position: absolute; right: 0.55in; bottom: 0.42in; width: 3.1in; height: auto; }
 .q { text-align: center; padding-top: 2.4in; }
 .q h1 { font-size: 48px; margin: 0 0 0.3in; }
 .q p { font-size: 20px; color: var(--teal); }

@@ -9,6 +9,7 @@ from pptx.util import Inches, Pt
 from pathlib import Path
 
 FIG = Path("/workspace/figures")
+LOGO = FIG / "oslomet_logo.png"
 
 DARK = RGBColor(0x22, 0x42, 0x48)
 MID = RGBColor(0x32, 0x5E, 0x6A)
@@ -152,9 +153,18 @@ def main():
     add_tb(s, Inches(0.7), Inches(5.05), Inches(12), Inches(0.55),
            "Humna Akhtar  ·  Mithun Chandra Debnath  ·  Karina Sætersdal Nilssen",
            size=16, color=WHITE)
-    add_tb(s, Inches(0.7), Inches(6.1), Inches(12), Inches(1.0),
+    add_tb(s, Inches(0.7), Inches(6.1), Inches(8.4), Inches(1.0),
            "Oslo Metropolitan University\n3 September 2026",
            size=16, color=DARK)
+    logo_w = Inches(3.1)
+    logo_h = Inches(0.55)
+    s.shapes.add_picture(
+        str(LOGO),
+        W - Inches(0.55) - logo_w,
+        Inches(5.85) + (Inches(1.65) - logo_h) / 2,
+        logo_w,
+        logo_h,
+    )
     notes(s, "Part 1 measures contact. Part 2 tests one purpose at a time.")
 
     s = prs.slides.add_slide(blank)
