@@ -225,7 +225,8 @@ Det endrer **ikke** Contract Q1 for denne ICO-kjøringen. En egen kjøring på k
 | Consent Q2: Are you in a position of power over the individual, which means they might feel they have to say yes? | fylt | **No** |
 | Consent Q3: Have you made consent to processing a precondition of your service? | fylt | **No** |
 | Consent Q4: Do you ask individuals to take a positive action to opt in? | fylt | **Yes** |
-| ICO-konklusjon | ikke fylt | forventet: consent |
+| Consent Q5: Is your consent request clear, prominent, and separate from general terms and conditions? | fylt | **To some extent** |
+| ICO-konklusjon | ikke fylt | forventet: consent (kan bli INCONCLUSIVE pga. Q5) |
 
 **Hvorfor No på contract Q1:** Vi tester reklameanalyse, ikke Document Pluss. Det er ingen avtale om Google Signals. Signals styres av Google-innlogging og annonsetilpasning, ikke av abonnementet. ICO: svar No når formålet ikke er å utføre kontrakten. Worksheet startet med No her.
 
@@ -245,7 +246,9 @@ Det endrer **ikke** Contract Q1 for denne ICO-kjøringen. En egen kjøring på k
 
 **Hvorfor Yes på consent Q4:** Erklæringen krever at du har *tillatt* personlig tilpasning av annonser. Det er en handling (Google-innstilling), ikke stillhet eller «ved å bruke siden». Document har ikke beskrevet et eget ja-banner for Signals; det tar vi i spørsmål om klart, fremtredende samtykke. Ikke No: det ville kuttet consent-sporet. Ikke To some extent.
 
-**ICO-steg nå:** velg Yes, trykk Continue. Senere spørsmål om klart/atskilt samtykke kan bli To some extent (valget skjer hos Google, ikke i et Document-banner).
+**Hvorfor To some extent på consent Q5:** Valget skjer hos Google (Ads Settings / annonsetilpasning), ikke i et klart, fremtredende Document-banner. Signals er beskrevet i personvernerklæringen, ikke som en atskilt ja-forespørsel. Pluss-vilkårene sier at du ved bruk godtar vilkår og personvernerklæring; det er ikke gyldig, atskilt samtykke. Yes ville overdrevet et banner vi ikke har dokumentert. No ville kuttet consent helt. Samme type hull som Skatteetatens cookie-Q6.
+
+**ICO-steg nå:** velg To some extent, trykk Continue. ICO kan merke consent INCONCLUSIVE. Det er et funn til Tabell 5: Art. 6 er ikke merket, og forespørselen ligger hos Google.
 
 ---
 
