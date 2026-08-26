@@ -42,6 +42,7 @@
       font-weight: 700;
     }
     h3 { font-size: 12pt; color: var(--ink); margin-top: 1.2em; font-style: italic; font-weight: 700; }
+    h4 { font-size: 12pt; color: var(--ink); margin-top: 1em; font-weight: 700; font-style: normal; }
     p { margin: 0 0 0.8em; text-align: justify; }
     sup { font-size: 0.72em; }
     .tbl-num, .fig-num { font-weight: 700; margin: 1.2em 0 0; text-align: left; line-height: 1.4; }
@@ -89,8 +90,14 @@
 </div>
 
 <h2>Introduction</h2>
-<p>Group Assignment 1A has two parts. Part 1 maps third-party data sharing, cross-border contact and tracking on the 18 course-listed web services with Webbkoll. Part 2 (Group 1-A) uses the ICO lawful basis tool on five services chosen from that list. The 18 sites are Table 1. The five ICO sites are Table 1a. The Webbkoll numbers are Tables 2 and 3. Sector graphics are Figures 2 to 4.</p>
-<p>The General Data Protection Regulation (GDPR) sets the rules for personal data in the EEA (General Data Protection Regulation, 2016). Processing is lawful only if at least one Article 6 basis applies. The bases used here are legal obligation, public task, contract, consent and legitimate interests. Cookies are also covered by ePrivacy rules (Cookie Directive, 2009; ePrivacy Directive, 2002). A third-party request is a call from the page to another host. That is not the same as a third-party cookie.</p>
+<h3>What this report is about</h3>
+<p>This report answers two questions about Norwegian-facing web sites. First: when a person opens the front page, how much of that page talks to other companies, and in which countries do those other machines appear to sit? Second: when a site uses personal data, has it named a lawful reason under the GDPR, and does that reason hold when we test it with an official guidance tool? The two questions are not the same. A newspaper can load many advertising scripts and still have a legal reason to keep a subscriber account. A tax office can have a strong legal reason to hold income data and still fail a consent test for optional statistics cookies. Part 1 measures contact. Part 2 tests lawfulness for one purpose at a time.</p>
+<p>The course list has 18 sites (Table 1). We scanned all 18 with Webbkoll. From those 18 we chose five sites (Table 1a) and tested one concrete activity on each with the ICO lawful basis tool. The numbers are in Tables 2 and 3. The pictures by sector are Figures 2 to 4. The ICO comparison is Table 5.</p>
+
+<h3>What the main words mean</h3>
+<p><em>Personal data</em> is information that can identify a person, such as a name, an email address, or an online identifier (General Data Protection Regulation, 2016). The GDPR is the main EU/EEA law for that information. Norway is in the EEA, so the GDPR applies here. <em>Processing</em> means collecting, storing, showing or sending that information. It is lawful only if at least one Article 6 basis fits the purpose (General Data Protection Regulation, 2016, art. 6). The bases used here are legal obligation (the law requires it), public task (a public body doing its job), contract (needed to deliver what the person asked for), consent (a free, informed Yes), and legitimate interests (a real organisational need that does not override the person).</p>
+<p>A <em>cookie</em> is a small file stored on the device. An <em>internal</em> (first-party) cookie is set by the site the person opened. An <em>external</em> (third-party) cookie is set by someone else, for example an advertiser. Separate EU rules also cover storing or reading information on a device (Cookie Directive, 2009; ePrivacy Directive, 2002). That is why a Yes/No banner can be required for analytics cookies even when tax data rest on law, not on consent.</p>
+<p>A <em>third-party request</em> is a network call from the open page to another host, such as fonts, ads, or a video player. That is not the same as a third-party cookie. A page can call many other hosts and still set zero third-party cookies.</p>
 
 <p class="tbl-num">Table 1</p>
 <p class="tbl-title">Course Web Site List Analysed with Webbkoll</p>
@@ -105,7 +112,7 @@
     <tr><td>Spare time / sports</td><td>dnt.no, fotball.no, skiforeningen.no</td></tr>
   </tbody>
 </table>
-<p class="tbl-note">Note. All 18 names follow the Group Assignment 1A list. Webbkoll was run on each name as given, including redirects (for example ikea.no to ikea.com). document.no is on the course list with a content warning; it is included because it is on that list, not as a source of facts.</p>
+<p class="tbl-note">Note. These are the 18 names on the course list. We typed each name into Webbkoll as written. Some names redirect (ikea.no opens as ikea.com). We still report the course name. document.no is on the list with a content warning; we include it because it is on the list, not as a source of facts.</p>
 
 <p class="tbl-num">Table 1a</p>
 <p class="tbl-title">Five Services Chosen from Table 1 for the ICO Lawful Basis Tool</p>
@@ -121,11 +128,22 @@
     <tr><td>fotball.no</td><td>Spare time / sports</td><td>Highest third-party request count in Table 2</td></tr>
   </tbody>
 </table>
-<p class="tbl-note">Note. One site from shopping, one from government, two from news, media and entertainment, and one from spare time / sports. ICO results are Table 5.</p>
+<p class="tbl-note">Note. We took one shopping site, one government site, two news/media/entertainment sites, and one spare time / sports site. The ICO answers are Table 5. "Why this site" is the reason we picked it for Part 2, not a Webbkoll score.</p>
 
-<h2>Method</h2>
-<p>Webbkoll is a public scanner (5th of July Foundation, n.d.-c). It reports HTTPS, cookies, third-party requests and the server IP. It does not read a privacy notice, click a banner, or decide Article 6. The English interface was used on every service in Table 1. Figure 1 shows the check page. Each result is one live Chromium visit with no add-ons, no Do Not Track and no consent click (5th of July Foundation, n.d.-a, n.d.-b). The scan time is recorded with the result.</p>
-<p>Server location is the Country field in KeyCDN IP Location Finder for the site's own IP (KeyCDN, n.d.). Where no country was returned, the cell is marked not available. Internal cookies are set by the site. External cookies are set by other parties. Third-party requests count other hosts contacted when the page loads. A site can contact many hosts without setting a third-party cookie. The country list is KeyCDN on those third-party IPs, with Norway dropped from the count. That list is a map of where contacted hosts appeared to sit. It is not proof that personal data were exported under GDPR Chapter V (General Data Protection Regulation, 2016, art. 44-47). Table 2 is the first measurement and the ranking base. Table 3 is a repeat measurement. The two series are not averaged.</p>
+<h2>Part 1: How much does each site contact others?</h2>
+<h3>What Webbkoll is</h3>
+<p>Webbkoll is a free public scanner (5th of July Foundation, n.d.-c). A person types a web address. The tool then opens that page in a clean Chromium browser and writes a report: HTTPS, cookies, third-party requests, and the server IP (5th of July Foundation, n.d.-a, n.d.-b). Figure 1 shows the start page.</p>
+<p>Webbkoll does not read the privacy notice. It does not click Yes or No on a cookie banner. It does not decide whether Article 6 is met. It only shows what that one page load contacted.</p>
+
+<h3>How we ran the scans</h3>
+<p>We used the English Webbkoll interface on every service in Table 1. Each result is one live visit with no add-ons, no Do Not Track, and no consent click. We copied the scan clock from the result page. We did this twice on 20 August 2026 so we could see whether a later visit looked different. Webbkoll can keep a result for about 24 hours, so two clocks on the same day can still differ. Table 2 is the first visit. We use Table 2 for all rankings. Table 3 is the later visit. We do not average the two tables.</p>
+
+<h3>What KeyCDN is, and what a country cell means</h3>
+<p>KeyCDN IP Location Finder is a look-up tool that takes an IP address and returns a country and a provider (KeyCDN, n.d.). We used it in two ways. For "location of server" we looked up the site's own IP. For "list of countries" we looked up the IPs of the other hosts that Webbkoll listed. We then counted unique countries after dropping Norway, because the assignment asks for countries excluding Norway. If KeyCDN returned no country, we wrote n/a.</p>
+<p>A country on that list means: this is where the contacted host appeared to sit at look-up time. It is a map of machines, not a legal file of personal-data exports. GDPR Chapter V sets extra rules when personal data are sent outside the EEA (General Data Protection Regulation, 2016, art. 44-47). Our KeyCDN list does not prove that such a transfer happened, and it does not prove that it did not happen.</p>
+
+<h3>What each Webbkoll column means</h3>
+<p>Read Table 2 from left to right as one homepage load. Internal cookies: files set by the site itself. External cookies: files set by other parties. Third-party requests: how many times the page called another host. Countries excl. Norway: how many different countries those other hosts mapped to, after dropping Norway. The country list can still print NO if Norway appeared in the raw look-up; the count column already excludes it.</p>
 
 <figure>
   <p class="fig-num">Figure 1</p>
@@ -134,9 +152,12 @@
   <p class="fig-note">Note. From <em>Webbkoll</em> [Screenshot], by 5th of July Foundation, n.d.-c (https://webbkoll.dataskydd.net/en). klassekampen.no is fifth-highest on third-party requests in Table 2 and is therefore used as the method example.</p>
 </figure>
 
-<h2>Findings</h2>
-<p>Table 2 records the first measurement on 20 August 2026 for all 18 services in Table 1. Read the columns as in the Method section: KeyCDN of the site IP, first-party cookies, third-party cookies, other hosts contacted, and unique countries after dropping Norway. Use Table 2 with Figures 2 to 4. Table 3 is the same 18 sites on a later visit the same day, plus KeyCDN countries for third-party hosts on 21 August 2026. Webbkoll can store a result for 24 hours, so a later clock can differ. Do not average Table 2 and Table 3.</p>
-<p>Figure 2 ranks the 18 Table 2 request counts. Figure 3 shows each site's share of that total. Figure 4 is the per-sector overview the assignment asks for: news, media and entertainment contact the most hosts; government contacts the fewest; spare time / sports is high because of fotball.no; shopping sits between those extremes. Seventeen of 18 sites set zero third-party cookies. The exception is ikea.no (two cookies) after redirect to ikea.com. Request counts in Table 2 range from 1 (lanekassen.no) to 113 (fotball.no). babyshop.no rises to 101 requests on the repeat measurement in Table 3. A high request count is not a cookie count, and it is not a finding that personal data left Norway (General Data Protection Regulation, 2016, art. 44-47).</p>
+<h3>What Table 2 and Table 3 show</h3>
+<p>Table 2 is the first scan of all 18 sites on 20 August 2026. Use it with Figures 2 to 4. Table 3 is the same 18 sites later that day, with third-party countries looked up on 21 August 2026. Treat Table 3 as a check: a later visit can change. Do not treat it as a second ranking, and do not average it with Table 2.</p>
+
+<h3>What the pictures show</h3>
+<p>Figure 2 is a bar for each site. Longer bar means more third-party requests on the first scan. Figure 3 is the same numbers as slices of a pie, so a reader can see who takes a large share of the total. Figure 4 adds the bars by course sector. News, media and entertainment contact the most hosts in total. Government contacts the fewest. Spare time / sports looks high because fotball.no is very high. Shopping sits between those extremes.</p>
+<p>Seventeen of the 18 sites set zero third-party cookies on that first load. The exception is ikea.no (two external cookies) after the redirect to ikea.com. Request counts in Table 2 run from 1 (lanekassen.no) to 113 (fotball.no). On the later visit, babyshop.no jumps to 101 requests (Table 3). That jump is why we keep rankings on Table 2. A high request count is still not a cookie count, and it is still not a finding that personal data left Norway (General Data Protection Regulation, 2016, art. 44-47).</p>
 
 <p class="tbl-num">Table 2</p>
 <p class="tbl-title">Webbkoll Results for the 18 Services in Table 1 (First Measurement, 20 August 2026)</p>
@@ -168,7 +189,7 @@
     <tr><td>skiforeningen.no</td><td>Spare time / sports</td><td>SE</td><td>1</td><td>0</td><td>14</td><td>3</td><td>NL, US, SE</td></tr>
   </tbody>
 </table>
-<p class="tbl-note">Note. Columns follow the assignment table: name of service, location of server, internal cookies, external cookies, third-party requests, number of countries excluding Norway, and country list. Sector is added so Figure 4 can be read against Table 1. Lists may still show NO when it appeared on the first worksheet; the count column excludes it. Service names follow Table 1 even when Webbkoll followed a redirect.</p>
+<p class="tbl-note">Note. These are the assignment columns, plus sector so Figure 4 can be read against Table 1. "Location of server" is KeyCDN of the site's own IP. "3rd-party requests" is other hosts contacted on that load. The country list may still show NO; the count column already excludes Norway. We keep the course name even when Webbkoll followed a redirect.</p>
 
 <p class="tbl-num">Table 3</p>
 <p class="tbl-title">Repeat Webbkoll Measurement (20 August 2026) and KeyCDN Third-Party Countries (21 August 2026)</p>
@@ -200,7 +221,7 @@
     <tr><td>skiforeningen.no</td><td>Spare time / sports</td><td>US</td><td>1</td><td>0</td><td>14</td><td>3</td><td>IE, NL, US</td></tr>
   </tbody>
 </table>
-<p class="tbl-note">Note. Table 2 is the ranking base and is not overwritten. babyshop.no is 101 versus 45; klassekampen.no is 56 versus 46. n/a means KeyCDN did not return a country for the server IP (dnt.no, babyshop.no, altinn.no). Redirects were measured at the landing host. Read Table 3 as a check that a later visit can differ, not as a second ranking.</p>
+<p class="tbl-note">Note. This is a later visit, not a new ranking. babyshop.no is 101 here and 45 in Table 2. klassekampen.no is 56 here and 46 in Table 2. n/a means KeyCDN gave no country for the server IP (dnt.no, babyshop.no, altinn.no). Redirects were measured at the landing host.</p>
 
 <figure>
   <p class="fig-num">Figure 2</p>
@@ -223,8 +244,9 @@
   <p class="fig-note">Note. Compiled by the authors from Webbkoll results. Sector totals follow Table 2. News and media carry the most requests; government carries the fewest.</p>
 </figure>
 
-<h3>Sites of interest</h3>
-<p>The assignment asks for interesting findings such as the worst data sharer, the most globalised service, and the most privacy-friendly e-government site. Rank is third-party requests in Table 2 (Figure 2), not the external-cookie count. The worst data sharer on that measure is fotball.no (113 requests, still zero third-party cookies). The most globalised first scan is document.no (six countries excluding Norway). The most restrained e-government fronts are lanekassen.no (1 request) and altinn.no (5). Table 4 lists the highest five and the lowest five. A low cookie count can coexist with a high request count. The repeat measurement would place babyshop.no at 101 requests (Table 3). Rankings in this paper remain those of the first measurement.</p>
+<h3>Highest contact, most countries, and restrained e-government</h3>
+<p>The assignment asks which sites are interesting: who shares the most, who looks most global, and which e-government site looks most restrained. We rank on third-party requests in Table 2 (Figure 2), not on the cookie column, because almost every site had zero external cookies.</p>
+<p>On that measure, fotball.no is the highest (113 requests) and still has zero third-party cookies. document.no has the widest first country list (six countries excluding Norway). lanekassen.no (1 request) and altinn.no (5) are the most restrained government fronts. Table 4 lists the highest five and the lowest five. A site can be "quiet" on cookies and still "loud" on requests. If we had ranked Table 3, babyshop.no would sit near the top at 101. We do not do that. Rankings stay on the first scan.</p>
 
 <p class="tbl-num">Table 4</p>
 <p class="tbl-title">Highest Five and Lowest Five by Third-Party Request Volume (Table 2)</p>
@@ -247,10 +269,11 @@
     <tr><td>Lowest 1</td><td>lanekassen.no</td><td>Government</td><td>1</td><td>1</td></tr>
   </tbody>
 </table>
-<p class="tbl-note">Note. Ranked on Table 2 requests. Highest 1 is the worst sharer on that measure; Lowest 1 is the most restrained. skatteetaten.no also has 14 requests; skiforeningen.no is listed because it has fewer countries (3 vs 5). document.no has the widest first country list (6). ikea.no remains the only third-party-cookie site (2 cookies).</p>
+<p class="tbl-note">Note. Ranked on Table 2 requests. Highest 1 means most third-party requests. Lowest 1 means fewest. skatteetaten.no also has 14 requests; skiforeningen.no is listed because it maps to fewer countries (3 vs 5). document.no has the widest first country list (6). ikea.no is still the only site with third-party cookies (2).</p>
 
-<h2>Worked example: klassekampen.no</h2>
-<p>Figures 1, 5 and 6 show one full pass so the table rules can be checked. klassekampen.no is Highest 5 in Table 4 because the first measurement recorded 46 requests (Table 2). The screenshots are the later visit the same day: four first-party cookies, zero third-party cookies, and 56 requests to 13 hosts (Table 3), including Google advertising, Meta and Cookiebot. Missing HSTS, CSP and related headers concern integrity and confidentiality (General Data Protection Regulation, 2016, art. 5(1)(f), 25, 32). They do not decide the lawful basis. Privacy by design is both: how the page behaves, and why the controller may process the data. KeyCDN of the server IP is United States, Google (Figure 6).</p>
+<h3>One full example: klassekampen.no</h3>
+<p>Figures 1, 5 and 6 show one site from start page to IP look-up, so a reader can see how a Table 2 row is built. klassekampen.no is fifth-highest in Table 4 because the first scan recorded 46 requests. The screenshots are the later visit the same day. On that later visit Webbkoll counted four first-party cookies, zero third-party cookies, and 56 requests to 13 hosts (Table 3). Those hosts included Google advertising, Meta, and Cookiebot.</p>
+<p>Webbkoll also flags missing security headers such as HSTS and CSP. Those flags concern integrity and confidentiality (General Data Protection Regulation, 2016, art. 5(1)(f), 25, 32). They do not tell us the Article 6 basis. Privacy by design is both layers: how the page behaves, and why the controller may process the data. The KeyCDN look-up of the server IP is United States, Google (Figure 6). That is a location of a machine, not a Chapter V transfer record.</p>
 
 <figure>
   <p class="fig-num">Figure 5</p>
@@ -266,16 +289,17 @@
   <p class="fig-note">Note. From <em>IP Location Finder</em> [Screenshot], by KeyCDN, n.d. (https://tools.keycdn.com/geo). Look up of 2600:1901:0:25b9::. Country: United States (US). Provider: Google LLC. The same tool on each unique third-party IP fills the country list.</p>
 </figure>
 
-<h2>Group 1-A: lawful basis for the five chosen services</h2>
-<p>From the 18 Webbkoll sites we chose five for the ICO tool (Table 1a): babyshop.no, skatteetaten.no, netflix.no, document.no and fotball.no. A service does not have one lawful basis for everything it does. The controller must name a purpose, then a basis for that purpose (Information Commissioner's Office, n.d.). Each run states one concrete activity. Official ICO reports are dated 26 August 2026 (Information Commissioner's Office, 2026). Table 5 is the summary.</p>
+<h2>Part 2: Does the site have a lawful reason for this use of data?</h2>
+<h3>What the ICO tool is</h3>
+<p>The Information Commissioner's Office (ICO) is the UK data protection authority. It publishes a step-by-step tool that asks about one processing activity and then marks which Article 6 bases look APPROPRIATE (Information Commissioner's Office, 2026). We used the official Word report from that tool (dated 26 August 2026), not a screenshot of the questions. A controller must name a purpose first, then a basis for that purpose (Information Commissioner's Office, n.d.). A web site does not have one basis for everything it does. Tax data, optional cookies and a shop checkout are different purposes. Mix them in one run, and the tool mixes the answers. Each row in Table 5 is one purpose on one site from Table 1a. The tool is UK guidance used because the assignment asks for it. It does not replace a full audit.</p>
 
-<h3>Article 6 is not a cookie click</h3>
-<p>Does a Yes/No banner decide whether the Tax Administration may process income data? No. Article 6 answers why personal data may be processed (General Data Protection Regulation, 2016, art. 6). Cookie rules answer whether information may be stored on a device (ePrivacy Directive, 2002). Mix the two in one ICO run, and the tool returns the wrong basis. For tax and the National Population Register, the notice says processing is required by law and is generally not optional (Norwegian Tax Administration, n.d.-a). The ICO report marks legal obligation and public task APPROPRIATE. Consent is NOT APPROPRIATE and likely invalid: the controller cannot offer a genuine free and ongoing choice for a statutory duty. Optional statistics cookies (Skyra, Matomo, Google Analytics, Siteimprove) are a different purpose. They use a Yes/No banner. A dedicated ICO run marks consent INCONCLUSIVE: the banner offers a choice, but the request does not fully name controller, purpose and types. No basis is APPROPRIATE for that cookie purpose.</p>
-<p>The other four runs keep one purpose. Netflix needs account and payment data to provide the paid service (Netflix, 2026). Contractual necessity means the processing is needed to perform the agreement, not merely useful. ICO marks contract APPROPRIATE and consent as likely invalid: there is no real, ongoing choice if the service cannot be delivered without the data. Norges Fotballforbund publishes name and club of active players aged 13+ as match history, with opt-out through the club (Norges Fotballforbund, n.d.). ICO marks legitimate interests APPROPRIATE. Membership in FIKS may rest on contract. Cookiebot may rest on ePrivacy consent (ePrivacy Directive, 2002). Those are other purposes. Babyshop's sales terms are a purchase contract (Babyshop Sthlm Holding AB, n.d.). ICO marks contract APPROPRIATE for checkout. The notice does not label Article 6(1)(b). Marketing and cookies stay separate.</p>
-<p>document.no is the case that fails the consent test. Google Signals is described as advertising analytics. Article 6 is not named (Document Media AS, n.d.). Collection is said to run only with a Google login and ad personalization. That looks like consent. The ICO report marks no basis APPROPRIATE. Consent is INCONCLUSIVE because a valid request must be clear, prominent and separate from other terms. The choice sits in Google settings. Document Pluss terms also bundle acceptance of the privacy notice. Contract and legitimate interests are not appropriate for this advertising purpose. A notice may aim at consent and still fail the request.</p>
+<h3>Why a cookie banner is not Article 6</h3>
+<p>Article 6 answers: why may we use this personal data? Cookie and ePrivacy rules answer a different question: may we store or read information on this device (ePrivacy Directive, 2002)? A Yes/No banner can be the right test for optional analytics cookies. It is the wrong test for a tax file that the law requires the Tax Administration to keep. If we put tax and cookies in one ICO run, the tool will pick the wrong basis.</p>
 
-<h3>Optional cookies after No</h3>
-<p>Webbkoll does not click banners (5th of July Foundation, n.d.-b). skatteetaten.no therefore shows five internal cookies and zero external cookies in Table 2 even though the notice offers optional statistics cookies. The ICO cookie row in Table 5 tests that notice, not the Webbkoll count. A clean-browser No on skatteetaten.no/person/ (24 August 2026) tests whether optional tracking is blocked after rejection; it is not the lawful basis for tax administration. Figure 7 shows the hub that separates the privacy notice from cookie settings, the same split as Table 5.</p>
+<h3>skatteetaten.no: tax data versus optional cookies</h3>
+<p>The Tax Administration notice says that processing of identity, income and tax data is required by law and is generally not optional (Norwegian Tax Administration, n.d.-a). The ICO report marks legal obligation and public task APPROPRIATE. Consent is NOT APPROPRIATE and likely invalid, because a person cannot give a genuine, free, ongoing No to a statutory duty.</p>
+<p>Optional statistics cookies (Skyra, Matomo, Google Analytics, Siteimprove) are a different purpose. They use a Yes/No banner. A second ICO run marks consent INCONCLUSIVE: there is a choice, but the request does not fully name controller, purpose and types. No basis is APPROPRIATE for that cookie purpose. Table 5 therefore has two rows for the same site.</p>
+<p>Webbkoll never clicks the banner (5th of July Foundation, n.d.-b). That is why Table 2 shows five internal cookies and zero external cookies for skatteetaten.no even though the notice still offers optional statistics cookies. The ICO cookie row tests the notice, not the Webbkoll count. On 24 August 2026 we opened skatteetaten.no/person/ in a clean browser and selected No. That only tests whether optional tracking is blocked after rejection. It is not the lawful basis for tax administration. Figure 7 shows the hub that already splits "privacy notice" and "cookies", which is the same split as Table 5.</p>
 
 <figure>
   <p class="fig-num">Figure 7</p>
@@ -284,6 +308,20 @@
   <p class="fig-note">Note. From the Tax Administration security and privacy hub [Screenshot], by Norwegian Tax Administration, n.d.-b (https://www.skatteetaten.no/en/about-the-norwegian-tax-administration/security-and-privacy/). Personvernerklæring and Informasjonskapsler are listed as separate destinations. The two ICO rows for skatteetaten.no follow that split.</p>
 </figure>
 
+<h3>netflix.no: paid streaming</h3>
+<p>The purpose is account and payment data needed to provide the paid subscription (Netflix, 2026). Contractual necessity means the processing is needed to perform the agreement, not merely useful for the company. ICO marks contract APPROPRIATE. Consent is likely invalid: there is no real, ongoing choice if the film cannot be delivered without the account. Ads, recommendations and marketing in the same notice are other purposes and were kept out of this run.</p>
+
+<h3>fotball.no: name and club on the match list</h3>
+<p>Norges Fotballforbund publishes name and club of active players aged 13+ as match history, with opt-out through the club (Norges Fotballforbund, n.d.). ICO marks legitimate interests APPROPRIATE after a necessity and balancing check. NFF is a sports federation, not a public authority, so public task is not the fit. Membership in the FIKS system may rest on contract. Cookiebot may rest on ePrivacy consent. Those are other purposes. A "samtykke" tick in club software is not automatically valid GDPR consent if the person has no real choice.</p>
+
+<h3>document.no: Google Signals</h3>
+<p>This is the case that fails the consent test. Google Signals is described as advertising analytics. Article 6 is not named (Document Media AS, n.d.). Collection is said to run only with a Google login and ad personalization. That looks like consent. ICO marks no basis APPROPRIATE. Consent is INCONCLUSIVE because a valid request must be clear, prominent, and separate from other terms. The real choice sits in Google settings, and Document Pluss terms also bundle acceptance of the notice. Contract and legitimate interests are not a fit for this advertising purpose. Table 5 marks the row Partial.</p>
+
+<h3>babyshop.no: checkout</h3>
+<p>The purpose is name, address, contact, order and payment data needed to deliver goods. The sales terms are a purchase contract (Babyshop Sthlm Holding AB, n.d.). ICO marks contract APPROPRIATE. The notice does not label Article 6(1)(b), but the activity is still checkout. Marketing and cookies stay separate. A bundled "I agree to cookies" inside the terms is not valid Article 6 consent.</p>
+
+<h3>How to read Table 5</h3>
+<p>Table 5 puts the five ICO runs next to what the privacy notice says. Each row is one purpose. Yes means the notice and the ICO mark line up for that purpose. Partial means the notice aims at consent, but the official report marks consent INCONCLUSIVE and no basis APPROPRIATE.</p>
 <p class="tbl-num">Table 5</p>
 <p class="tbl-title">ICO Lawful Basis Summary for Five Selected Services</p>
 <table>
@@ -301,10 +339,12 @@
     <tr><td>babyshop.no</td><td>Customer, delivery and payment data to complete a purchase</td><td>Not labeled as Article 6(1)(b); purchase data processed to fulfil orders</td><td>Contract APPROPRIATE; other bases NOT APPROPRIATE</td><td>Yes for checkout</td></tr>
   </tbody>
 </table>
-<p class="tbl-note">Note. Read Table 5 against Table 1a. Each row is one purpose. Match Yes means the notice and the ICO mark line up for that purpose. Partial means the notice aims at consent, but the official ICO report marks consent INCONCLUSIVE and no basis APPROPRIATE. Official ICO reports dated 26 August 2026 (Information Commissioner's Office, 2026). Marketing, cookies and membership administration stay separate purposes where the notice uses other bases.</p>
+<p class="tbl-note">Note. Official ICO reports dated 26 August 2026 (Information Commissioner's Office, 2026). Marketing, extra cookies and membership stay off this table unless they were the purpose of that run.</p>
 
 <h2>Conclusion</h2>
-<p>The 18 course-listed sites are in Table 1. Webbkoll numbers for all of them are in Tables 2 and 3. Figure 4 is the sector overview. The worst data sharer on request volume is fotball.no. The widest country list is document.no. The most restrained e-government sites are lanekassen.no and altinn.no. The five ICO services (Table 1a) are babyshop.no, skatteetaten.no, netflix.no, document.no and fotball.no. Four of five core purposes match the notice (Table 5). Two consent tests fail: optional cookies on skatteetaten.no and Google Signals on document.no. A legal duty to assess tax is not a cookie click. One purpose requires one basis. The 18-site scan is a snapshot. KeyCDN countries are not a Chapter V transfer record (General Data Protection Regulation, 2016, art. 44-47). Next work: the same 18 URLs in a later week, and one extra purpose per ICO site.</p>
+<p>Part 1 asked how much each of the 18 course sites contacts other hosts. Webbkoll shows that contact. fotball.no has the most third-party requests (113) and still sets no third-party cookies. document.no maps to the most countries. lanekassen.no and altinn.no are the quietest government fronts. News and media contact the most hosts as a sector. Government contacts the fewest.</p>
+<p>Part 2 asked whether five chosen sites have a named, workable Article 6 basis for one purpose each. Four core purposes match the notice (tax, Netflix streaming, football match lists, babyshop checkout). Two consent tests fail: optional cookies on skatteetaten.no and Google Signals on document.no. A legal duty to assess tax is not a cookie click. One purpose needs one basis.</p>
+<p>This is one week's snapshot, not a year of traffic. KeyCDN countries show where machines appeared to sit. They are not a GDPR Chapter V transfer record (General Data Protection Regulation, 2016, art. 44-47). A later week on the same 18 URLs, and one extra purpose per ICO site, would test whether the picture holds.</p>
 
 <h2>References</h2>
 <ul class="refs">
