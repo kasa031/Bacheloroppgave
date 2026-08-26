@@ -61,7 +61,19 @@
     .tbl-num, .fig-num { font-weight: 700; margin: 1.2em 0 0; text-align: left; line-height: 1.4; }
     .tbl-title, .fig-title { font-style: italic; margin: 0 0 0.6em; text-align: left; line-height: 1.4; }
     .tbl-note, .fig-note { font-size: 11pt; color: var(--muted); margin: 0.4em 0 1.2em; text-align: left; line-height: 1.45; }
-    table { border-collapse: collapse; width: 100%; font-size: 9pt; margin: 0 0 0.4em; line-height: 1.3; }
+    table { border-collapse: collapse; width: 100%; font-size: 9pt; margin: 0 0 0.4em; line-height: 1.3; break-inside: avoid; page-break-inside: avoid; }
+    thead { display: table-header-group; }
+    tbody { display: table-row-group; }
+    tr { break-inside: avoid; page-break-inside: avoid; }
+    table.table-compact { font-size: 7.5pt; line-height: 1.15; }
+    table.table-compact th, table.table-compact td { padding: 2px 4px; }
+    .table-block {
+      break-inside: avoid;
+      page-break-inside: avoid;
+      margin: 0 0 1.4em;
+      padding-top: 0.2em;
+    }
+    .table-block .tbl-num { margin-top: 0.8em; }
     th, td { border: 1px solid var(--line); padding: 5px 7px; vertical-align: top; }
     th { background: var(--table-head); color: #fff; font-weight: 600; text-align: left; }
     tr:nth-child(even) td { background: var(--table-stripe); }
@@ -85,10 +97,11 @@
     }
     @media print {
       body { margin: 0; max-width: none; padding: 0; }
-      img { max-width: 100%; page-break-inside: avoid; }
-      table { page-break-inside: auto; font-size: 9pt; }
-      tr { page-break-inside: avoid; }
-      h2, h3 { page-break-after: avoid; }
+      img { max-width: 100%; page-break-inside: avoid; break-inside: avoid; }
+      .table-block, table, figure { break-inside: avoid; page-break-inside: avoid; }
+      tr { break-inside: avoid; page-break-inside: avoid; }
+      h2, h3 { page-break-after: avoid; break-after: avoid; }
+      .tbl-num, .tbl-title { break-after: avoid; page-break-after: avoid; }
     }
   </style>
 </head>
@@ -111,6 +124,7 @@
 <p>A <em>cookie</em> is a small file on the device. Internal (first-party) cookies come from the site opened. External (third-party) cookies come from someone else, such as an advertiser.</p>
 <p>A <em>third-party request</em> is a call from the page to another host (fonts, ads, video).<sup><a href="#fn5" id="fnref5">5</a></sup> It is not a third-party cookie. A page can call many hosts and set zero such cookies. We rank the 18 sites on requests (Table 2).</p>
 
+<div class="table-block">
 <p class="tbl-num">Table 1</p>
 <p class="tbl-title">Course Web Site List Analysed with Webbkoll</p>
 <table>
@@ -125,7 +139,9 @@
   </tbody>
 </table>
 <p class="tbl-note">Note. Course list as typed. Redirects kept under the course name (ikea.no to ikea.com). document.no is included because it is on the list, not as a source of facts.</p>
+</div>
 
+<div class="table-block">
 <p class="tbl-num">Table 1a</p>
 <p class="tbl-title">Five Services Chosen from Table 1 for the ICO Lawful Basis Tool</p>
 <table>
@@ -141,6 +157,7 @@
   </tbody>
 </table>
 <p class="tbl-note">Note. One site per sector except two from news/media. ICO answers: Table 5.</p>
+</div>
 
 <h2>Part 1: Measuring third-party contact on page load</h2>
 <h3>Webbkoll: tool and scope</h3>
@@ -168,9 +185,10 @@
 <h3>Figures 2 to 4: request counts and sector totals</h3>
 <p>Figure 2 ranks request counts. Figure 3 is the same counts as a pie. Figure 4 groups them by sector: news/media highest, government lowest, sport high because of fotball.no, shopping in between. Seventeen sites set zero external cookies. ikea.no set two after redirect to ikea.com. Table 2 requests run from 1 (lanekassen.no) to 113 (fotball.no). babyshop.no is 101 on Table 3; rankings stay on Table 2. A high request count is not a cookie count.</p>
 
+<div class="table-block">
 <p class="tbl-num">Table 2</p>
 <p class="tbl-title">Webbkoll Results for the 18 Services in Table 1 (First Measurement, 20 August 2026)</p>
-<table>
+<table class="table-compact">
   <thead>
     <tr>
       <th>Name of service</th><th>Sector</th><th>Location of server</th>
@@ -199,10 +217,12 @@
   </tbody>
 </table>
 <p class="tbl-note">Note. These are the assignment columns, plus sector so Figure 4 can be read against Table 1. "Location of server" is KeyCDN of the site's own IP. "3rd-party requests" is other hosts contacted on that load. The country list may still show NO; the count column already excludes Norway. We keep the course name even when Webbkoll followed a redirect.</p>
+</div>
 
+<div class="table-block">
 <p class="tbl-num">Table 3</p>
 <p class="tbl-title">Repeat Webbkoll Measurement (20 August 2026) and KeyCDN Third-Party Countries (21 August 2026)</p>
-<table>
+<table class="table-compact">
   <thead>
     <tr>
       <th>Name of service</th><th>Sector</th><th>Location of server</th>
@@ -231,6 +251,7 @@
   </tbody>
 </table>
 <p class="tbl-note">Note. This is a later visit, not a new ranking. babyshop.no is 101 here and 45 in Table 2. klassekampen.no is 56 here and 46 in Table 2. n/a means KeyCDN gave no country for the server IP (dnt.no, babyshop.no, altinn.no). Redirects were measured at the landing host.</p>
+</div>
 
 <figure>
   <p class="fig-num">Figure 2</p>
@@ -256,6 +277,7 @@
 <h3>Rankings: highest contact, widest country spread, and restrained e-government</h3>
 <p>The assignment asks who shares most, who looks most global, and which e-government site is most restrained. Rank is Table 2 requests (Figure 2), not cookies, because 17 of 18 sites had zero external cookies. fotball.no is highest (113 requests, zero third-party cookies). document.no has the widest first country list (six excluding Norway). lanekassen.no (1) and altinn.no (5) are the quietest government fronts. Table 4 lists the top and bottom five. Table 3 would put babyshop.no at 101; we do not re-rank.</p>
 
+<div class="table-block">
 <p class="tbl-num">Table 4</p>
 <p class="tbl-title">Highest Five and Lowest Five by Third-Party Request Volume (Table 2)</p>
 <table>
@@ -278,6 +300,7 @@
   </tbody>
 </table>
 <p class="tbl-note">Note. Ranked on Table 2 requests. Highest 1 means most third-party requests. Lowest 1 means fewest. skatteetaten.no also has 14 requests; skiforeningen.no is listed because it maps to fewer countries (3 vs 5). document.no has the widest first country list (6). ikea.no is still the only site with third-party cookies (2).</p>
+</div>
 
 <h3>Case example: klassekampen.no</h3>
 <p>Figures 1, 5 and 6 show how a row is built. klassekampen.no is fifth in Table 4 (46 requests on Table 2). The screenshots are the later visit: four first-party cookies, zero third-party cookies, 56 requests to 13 hosts including Google ads, Meta and Cookiebot (Table 3).<sup><a href="#fn12" id="fnref12">12</a></sup> The server IP maps to United States, Google (Figure 6).</p>
@@ -325,6 +348,7 @@
 
 <h3>Table 5: match criteria and partial results</h3>
 <p>Each row is one purpose. Yes: notice and ICO mark line up. Partial: the notice aims at consent; ICO marks consent INCONCLUSIVE and no basis APPROPRIATE.</p>
+<div class="table-block">
 <p class="tbl-num">Table 5</p>
 <p class="tbl-title">ICO Lawful Basis Summary for Five Selected Services</p>
 <table>
@@ -343,6 +367,7 @@
   </tbody>
 </table>
 <p class="tbl-note">Note. Official ICO reports dated 26 August 2026 (Information Commissioner's Office, 2026). Marketing, extra cookies and membership stay off this table unless they were the purpose of that run.</p>
+</div>
 
 <h2>Conclusion</h2>
 <p>Part 1: fotball.no has the most third-party requests (113) and zero third-party cookies. document.no maps to the most countries. lanekassen.no and altinn.no are the quietest e-government fronts. News/media is the highest sector; government the lowest. A request count is not a cookie count.</p>
