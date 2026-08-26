@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the ACIT4280 1A group presentation (16:9, 15 slides)."""
+"""Build the ACIT4280 1A group presentation (16:9, 16 slides)."""
 
 from pptx import Presentation
 from pptx.dml.color import RGBColor
@@ -77,7 +77,7 @@ def p_run(tf, text, size=18, bold=False, color=INK, space_before=0, space_after=
     return p
 
 
-def footer(slide, n, total=15):
+def footer(slide, n, total=16):
     add_rect(slide, 0, Inches(7.28), W, Inches(0.22), NAVY)
     add_tb(slide, Inches(0.4), Inches(7.28), Inches(10), Inches(0.22),
            "ACIT4280 Group Assignment 1A  |  3 Sep 2026",
@@ -117,7 +117,7 @@ def main():
     prs.slide_width = W
     prs.slide_height = H
     blank = prs.slide_layouts[6]
-    total = 15
+    total = 16
 
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, NAVY)
@@ -188,6 +188,36 @@ def main():
 
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, PAPER)
+    header_bar(s, "Part 1", "What we looked at and key findings")
+    add_rect(s, Inches(0.5), Inches(1.55), Inches(5.9), Inches(5.0), CREAM)
+    add_tb(s, Inches(0.75), Inches(1.75), Inches(5.4), Inches(0.4),
+           "What we looked at", size=22, bold=True, color=NAVY)
+    tf = textbox(s, Inches(0.75), Inches(2.3), Inches(5.4), Inches(4.0))
+    for line in [
+        "Cookies (small files on the device)",
+        "Third-party requests (calls to other companies, such as ads and fonts)",
+        "Countries (KeyCDN geolocation guess from the IP, not a legal transfer register)",
+    ]:
+        p_run(tf, "•  " + line, size=17, space_after=10)
+    p_run(tf, "Many requests does not mean many cookies.", size=18, bold=True, color=NAVY, space_before=8)
+    add_rect(s, Inches(6.9), Inches(1.55), Inches(5.9), Inches(5.0), NAVY)
+    add_tb(s, Inches(7.15), Inches(1.75), Inches(5.4), Inches(0.4),
+           "Key findings", size=22, bold=True, color=CREAM)
+    tf = textbox(s, Inches(7.15), Inches(2.3), Inches(5.4), Inches(4.0))
+    for line in [
+        "fotball.no: 113 requests, zero third-party cookies.",
+        "17 of 18 sites: zero third-party cookies. ikea.no had 2.",
+        "lanekassen.no (1) and altinn.no (5): quietest e-government pages.",
+        "document.no: widest country list (6 excluding Norway).",
+        "News/media contacted the most. Government the fewest.",
+        "babyshop.no: 101 on Table 3; ranking stays on Table 2 (45).",
+    ]:
+        p_run(tf, "•  " + line, size=16, color=WHITE, space_after=8)
+    footer(s, 4, total)
+    notes(s, "Webbkoll counts contact on one load. Cookies and requests are separate measures.")
+
+    s = prs.slides.add_slide(blank)
+    add_rect(s, 0, 0, W, H, PAPER)
     header_bar(s, "Part 1  ·  Table 4", "Highest and lowest third-party requests")
     high = [
         ("1  fotball.no", "Sport  ·  113 requests  ·  5 countries"),
@@ -217,7 +247,7 @@ def main():
     add_tb(s, Inches(0.5), Inches(6.85), Inches(12.3), Inches(0.38),
            "Ranked on Table 2 requests. lanekassen.no and altinn.no have the fewest government requests. babyshop.no is 101 on Table 3; rankings stay on Table 2.",
            size=13, color=MUTED)
-    footer(s, 4, total)
+    footer(s, 5, total)
     notes(s, "fotball.no has 113 requests and zero third-party cookies. document.no has the widest country list (6).")
 
     s = prs.slides.add_slide(blank)
@@ -229,7 +259,7 @@ def main():
     add_tb(s, Inches(0.4), Inches(6.85), Inches(12.5), Inches(0.38),
            "Table 2. News/media is the highest sector. Government is the lowest. Sport is high because of fotball.no.",
            size=13, color=MUTED)
-    footer(s, 5, total)
+    footer(s, 6, total)
     notes(s, "fotball.no 113. lanekassen.no 1. The pie is request share, not cookies.")
 
     s = prs.slides.add_slide(blank)
@@ -240,11 +270,11 @@ def main():
     add_tb(s, Inches(0.4), Inches(6.7), Inches(12.5), Inches(0.5),
            "Table 2: 46 requests, 0 third-party cookies. Screenshot = Table 3 (56 requests to 13 hosts). Server: United States, Google.",
            size=13, color=MUTED)
-    footer(s, 6, total)
+    footer(s, 7, total)
     notes(s, "The ranking stays on Table 2. The screenshot is the later visit.")
 
     bullet_slide(
-        prs, 7, "Part 2", "ICO: one purpose at a time",
+        prs, 8, "Part 2", "ICO: one purpose at a time",
         [
             "Official ICO Word reports dated 26 August 2026. The labels are guidance, not a court finding.",
             "One purpose per run. Compare what the notice claims with what ICO marks.",
@@ -289,11 +319,11 @@ def main():
     add_tb(s, Inches(0.4), Inches(6.72), Inches(12.5), Inches(0.5),
            "ICO labels are guidance. Partial: the notice aims at consent; ICO does not mark consent APPROPRIATE.",
            size=16, color=MUTED)
-    footer(s, 8, total)
+    footer(s, 9, total)
     notes(s, "Partial means the notice aims at consent, but ICO marks consent INCONCLUSIVE and no basis APPROPRIATE.")
 
     bullet_slide(
-        prs, 9, "Part 2", "skatteetaten.no: two purposes",
+        prs, 10, "Part 2", "skatteetaten.no: two purposes",
         [
             "Tax and registry data: the law requires it. Opt-out is generally not possible.",
             "ICO: legal obligation and public task APPROPRIATE. Consent NOT APPROPRIATE. Match: Yes.",
@@ -305,7 +335,7 @@ def main():
     )
 
     bullet_slide(
-        prs, 10, "Part 2", "netflix.no: paid streaming",
+        prs, 11, "Part 2", "netflix.no: paid streaming",
         [
             "Purpose: account and payment data needed to provide the paid service.",
             "Notice (EEA/UK): contractual necessity.",
@@ -317,7 +347,7 @@ def main():
     )
 
     bullet_slide(
-        prs, 11, "Part 2", "fotball.no: match history",
+        prs, 12, "Part 2", "fotball.no: match history",
         [
             "Purpose: name and club of active players aged 13+, with club opt-out.",
             "ICO: legitimate interests APPROPRIATE.",
@@ -343,11 +373,11 @@ def main():
         "The choice sits in Google settings. Pluss terms also bundle the notice.",
     ]:
         p_run(tf, "•  " + line, size=20, space_after=12)
-    footer(s, 12, total)
+    footer(s, 13, total)
     notes(s, "Contract and legitimate interests do not fit this advertising purpose.")
 
     bullet_slide(
-        prs, 13, "Part 2", "babyshop.no: checkout",
+        prs, 14, "Part 2", "babyshop.no: checkout",
         [
             "Purpose: name, address, contact, order and payment to deliver goods.",
             "The sales terms are a purchase contract.",
@@ -359,7 +389,7 @@ def main():
     )
 
     bullet_slide(
-        prs, 14, "Close", "What the report shows",
+        prs, 15, "Close", "What the report shows",
         [
             "fotball.no has the most requests (113) and zero third-party cookies.",
             "document.no maps to the most countries. lanekassen.no and altinn.no have the fewest government requests.",

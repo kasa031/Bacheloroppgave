@@ -9,8 +9,8 @@ FIG = "figures"
 def slide(inner: str, n: int, dark: bool = False) -> str:
     cls = "slide dark" if dark else "slide"
     foot = "" if dark and n == 1 else f"""
-    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>{n} / 15</span></div>"""
-    if dark and n in (1, 15):
+    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>{n} / 16</span></div>"""
+    if dark and n in (1, 16):
         foot = ""
     return f'<section class="{cls}">{inner}{foot}</section>\n'
 
@@ -71,6 +71,31 @@ parts.append(slide(header("Part 1", "How we measured") + bullets([
     "Requests are not cookies. 17 of 18 sites had zero external cookies. ikea.no had 2.",
 ]), 3))
 
+parts.append(slide(header("Part 1", "What we looked at and key findings") + """
+<div class="split">
+  <div class="pane cream">
+    <h2>What we looked at</h2>
+    <ul>
+      <li>Cookies (small files on the device)</li>
+      <li>Third-party requests (calls to other companies, such as ads and fonts)</li>
+      <li>Countries (KeyCDN geolocation guess from the IP, not a legal transfer register)</li>
+    </ul>
+    <p class="lead-finding">Many requests does not mean many cookies.</p>
+  </div>
+  <div class="pane navy">
+    <h2>Key findings</h2>
+    <ul>
+      <li>fotball.no: 113 requests, zero third-party cookies.</li>
+      <li>17 of 18 sites: zero third-party cookies. ikea.no had 2.</li>
+      <li>lanekassen.no (1) and altinn.no (5): quietest e-government pages.</li>
+      <li>document.no: widest country list (6 excluding Norway).</li>
+      <li>News/media contacted the most. Government the fewest.</li>
+      <li>babyshop.no: 101 on Table 3; ranking stays on Table 2 (45).</li>
+    </ul>
+  </div>
+</div>
+""", 4))
+
 high = [
     ("1  fotball.no", "Sport  ·  113 requests  ·  5 countries"),
     ("2  worldofwarcraft.com", "News/media  ·  90  ·  4"),
@@ -93,7 +118,7 @@ parts.append(slide(header("Part 1  ·  Table 4", "Highest and lowest third-party
   <div><h3>Lowest five</h3>{lo_html}</div>
 </div>
 <p class="caption">Ranked on Table 2. lanekassen.no and altinn.no are the quietest e-government fronts. babyshop.no is 101 on Table 3; we do not re-rank.</p>
-""", 4))
+""", 5))
 
 parts.append(slide(header("Part 1  ·  Figures 2 to 4", "Third-party requests by site and sector") + f"""
 <div class="figs">
@@ -104,7 +129,7 @@ parts.append(slide(header("Part 1  ·  Figures 2 to 4", "Third-party requests by
   </div>
 </div>
 <p class="caption">Table 2. News/media is the highest sector. Government is the lowest. Sport is high because of fotball.no.</p>
-""", 5))
+""", 6))
 
 parts.append(slide(header("Part 1  ·  one example", "klassekampen.no: 46 in Table 2, 56 on the screenshot") + f"""
 <div class="klass">
@@ -112,14 +137,14 @@ parts.append(slide(header("Part 1  ·  one example", "klassekampen.no: 46 in Tab
   <img class="keycdn" src="{FIG}/fig4_keycdn_lookup_klassekampen.png" alt="KeyCDN lookup for klassekampen server IP">
 </div>
 <p class="caption">Table 2: 46 requests, 0 third-party cookies. Screenshot = Table 3 (56 requests to 13 hosts). Server: United States, Google.</p>
-""", 6))
+""", 7))
 
 parts.append(slide(header("Part 2", "ICO: one purpose at a time") + bullets([
     "Official ICO Word reports dated 26 August 2026.",
     "Name one purpose, then compare the notice with the ICO marks.",
     "Yes: notice and ICO line up. Partial: the notice aims at consent; ICO marks INCONCLUSIVE.",
     "Mix tax, cookies, checkout or marketing in one run, and the tool mixes the answers.",
-]), 7))
+]), 8))
 
 table_rows = [
     ("skatteetaten.no", "Tax / folkeregister", "Legal obligation + public task", "Yes", "yes"),
@@ -138,29 +163,29 @@ parts.append(slide(header("Part 2  ·  Table 5", "ICO result versus the notice")
   <thead><tr><th>Service</th><th>Purpose</th><th>ICO</th><th>Match</th></tr></thead>
   <tbody>{tr}</tbody>
 </table>
-<p class="caption">Four core purposes match. Two consent tests fail.</p>
-""", 8))
+<p class="caption">ICO labels are guidance. Partial: the notice aims at consent; ICO does not mark consent APPROPRIATE.</p>
+""", 9))
 
 parts.append(slide(header("Part 2", "skatteetaten.no: two purposes") + bullets([
     "Tax and registry data: the law requires it. Opt-out is generally not possible.",
     "ICO: legal obligation and public task APPROPRIATE. Consent NOT APPROPRIATE. Match: Yes.",
     "Optional statistics cookies: the notice claims consent.",
     "ICO: consent INCONCLUSIVE; no basis APPROPRIATE. Match: Partial.",
-]), 9))
+]), 10))
 
 parts.append(slide(header("Part 2", "netflix.no: paid streaming") + bullets([
     "Purpose: account and payment data needed to provide the paid service.",
     "Notice (EEA/UK): contractual necessity.",
     "ICO: contract APPROPRIATE. Consent is likely invalid.",
     "Ads and marketing in the same notice were left out.",
-]), 10))
+]), 11))
 
 parts.append(slide(header("Part 2", "fotball.no: match history") + bullets([
     "Purpose: name and club of active players aged 13+, with club opt-out.",
     "ICO: legitimate interests APPROPRIATE.",
     "NFF is not a public authority, so public task does not fit.",
     "FIKS membership is a different purpose and was not this run.",
-]), 11))
+]), 12))
 
 parts.append(slide(header("Part 2", "document.no: Google Signals") + """
 <div class="banner-red">ICO: no basis APPROPRIATE. Consent INCONCLUSIVE. Match: Partial.</div>
@@ -169,29 +194,29 @@ parts.append(slide(header("Part 2", "document.no: Google Signals") + """
     "The notice does not name Article 6. It looks like consent.",
     "ICO: the request is not clear, prominent and separate from terms.",
     "The choice sits in Google settings. Pluss terms also bundle the notice.",
-]), 12))
+]), 13))
 
 parts.append(slide(header("Part 2", "babyshop.no: checkout") + bullets([
     "Purpose: name, address, contact, order and payment to deliver goods.",
     "The sales terms are a purchase contract.",
     "ICO: contract APPROPRIATE. Match: Yes for checkout.",
     "The notice does not label Article 6(1)(b). Marketing is a separate purpose.",
-]), 13))
+]), 14))
 
 parts.append(slide(header("Close", "What the report shows") + bullets([
     "fotball.no: most requests (113) and zero third-party cookies.",
     "document.no: most countries. lanekassen.no and altinn.no: quietest e-government.",
     "News/media is the highest sector. Government is the lowest.",
     "Four core ICO purposes match. Two consent tests fail.",
-    "One purpose needs one basis.",
-]), 14))
+    "One purpose needs one basis. Contact and lawfulness are different questions.",
+]), 15))
 
 parts.append(slide("""
   <div class="q">
     <h1>Questions</h1>
     <p>ACIT4280 Privacy by Design  ·  Group Assignment 1A</p>
   </div>
-""", 15, dark=True))
+""", 16, dark=True))
 
 css = """
 :root { --navy:#1B365D; --ink:#1A1A1A; --cream:#FFF1D1; --paper:#FFFEFB; --ok:#1B6B3A; --warn:#9A5B00; --red:#8B1E1E; }
@@ -221,6 +246,7 @@ ul.bul li::before { content: "•"; position: absolute; left: 0; color: var(--na
 .pane.navy h2 { color: var(--cream); }
 .pane ul { margin: 0; padding-left: 1.1em; }
 .pane li { font-size: 16px; margin: 0 0 8px; }
+.lead-finding { margin: 0.18in 0 0; font-size: 18px; font-weight: 700; color: var(--navy); line-height: 1.3; }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0.35in; margin: 0.2in 0.5in 0; }
 .two-col h3 { margin: 0 0 0.1in; color: var(--navy); font-size: 18px; }
 .rank { padding: 0.06in 0.14in; margin-bottom: 0.06in; min-height: 0.78in; }
