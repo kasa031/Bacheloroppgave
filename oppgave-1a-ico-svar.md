@@ -58,7 +58,7 @@ ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en 
 
 **Formål:** konto- og betalingsdata for betalt strømmeabonnement. Annonser, anbefalinger og markedsføring er egne formål.
 
-**Personvernerklæring:** Privacy Statement, sist oppdatert 10. april 2026. EEA/UK-tillegget oppgir contractual necessity, legitimate interests, legal obligation og consent. For *to provide our service* til medlemmer bruker Netflix contractual necessity.
+**Personvernerklæring:** Full Privacy Statement fra første gjennomgang (Section A-F, Games-tillegg, EEA/UK Legal bases, Last Updated 10 April 2026). Ikke limt inn: egen cookie-typeliste («click here») og undersiden om internasjonale overføringer. EEA/UK oppgir contractual necessity, legitimate interests, legal obligation og consent. For *to provide our service* til medlemmer bruker Netflix contractual necessity.
 
 **Offisiell ICO-rapport:** `Netflix_Lawful basis assessment report.docx`
 
