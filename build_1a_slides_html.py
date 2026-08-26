@@ -43,11 +43,11 @@ parts.append(slide(header("Structure", "The report has two parts") + """
   <div class="pane cream">
     <h2>Part 1  ·  Webbkoll</h2>
     <ul>
-      <li>18 course-listed sites (Table 1)</li>
-      <li>Shopping, government, news/media/entertainment, spare time/sports</li>
-      <li>Columns: server country, internal/external cookies, 3rd-party requests, countries excl. Norway</li>
-      <li>Figures 2-4: all 18 sites, share, sector totals</li>
-      <li>Rank on Table 2 requests, not cookies</li>
+      <li>18 sites (Table 1)</li>
+      <li>Shopping, government, news/media, sport</li>
+      <li>Server country, cookies, 3rd-party requests, countries excl. Norway</li>
+      <li>Figures 2-4: counts, share, sectors</li>
+      <li>Rank Table 2 requests, not cookies</li>
     </ul>
   </div>
   <div class="pane navy">

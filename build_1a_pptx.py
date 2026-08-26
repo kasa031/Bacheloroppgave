@@ -154,11 +154,11 @@ def main():
     add_tb(s, Inches(0.75), Inches(1.75), Inches(5.4), Inches(0.4), "Part 1  ·  Webbkoll", size=22, bold=True, color=NAVY)
     tf = textbox(s, Inches(0.75), Inches(2.3), Inches(5.4), Inches(4.0))
     for line in [
-        "18 course-listed sites (Table 1)",
-        "Shopping, government, news/media/entertainment, spare time/sports",
-        "Columns: server country, internal/external cookies, 3rd-party requests, countries excl. Norway",
-        "Figures 2-4: all 18 sites, share, sector totals",
-        "Rank on Table 2 requests, not cookies",
+        "18 sites (Table 1)",
+        "Shopping, government, news/media, sport",
+        "Server country, cookies, 3rd-party requests, countries excl. Norway",
+        "Figures 2-4: counts, share, sectors",
+        "Rank Table 2 requests, not cookies",
     ]:
         p_run(tf, "•  " + line, size=16, space_after=8)
     add_rect(s, Inches(6.9), Inches(1.55), Inches(5.9), Inches(5.0), NAVY)
