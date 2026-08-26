@@ -32,8 +32,8 @@ parts.append(slide(f"""
     <p class="assign">Group Assignment 1A</p>
     <h1>Analysis of 3rd-party Data Sharing<br>and Data Tracking and of GDPR<br>Compliance of Norwegian Web Sites</h1>
     <div class="title-questions">
-      <p>When a person opens a Norwegian-facing front page, how many other companies does that page contact, and in which countries do those machines appear to sit?</p>
-      <p>When a site uses personal data, has it named a GDPR Article 6 basis, and does that basis hold in the ICO tool?</p>
+      <p>When a front page loads, how many other companies does it contact, and in which countries do those machines appear to sit?</p>
+      <p>When a site uses personal data, has it named a GDPR Article 6 basis, and does the ICO tool agree?</p>
     </div>
     <p class="names">Humna Akhtar  ·  Mithun Chandra Debnath  ·  Karina Sætersdal Nilssen</p>
   </div>
@@ -214,7 +214,7 @@ parts.append(slide(header("Part 2", "babyshop.no: checkout") + bullets([
 
 parts.append(slide(header("Close", "What the report shows") + """
 <div class="summary-box">
-  <p>We measured how much 18 Norwegian sites contact others when they load, and we checked whether five of them have a valid GDPR basis for one specific purpose.</p>
+  <p>We measured how much 18 sites contact others on load, and we checked whether five of them have a valid GDPR basis for one specific purpose.</p>
   <p>Many sites reach out to many others without setting cookies.</p>
   <p>Four of five ICO purposes match the notice.</p>
   <p>In two places where the site claims consent, the ICO is not satisfied with how consent is formulated.</p>

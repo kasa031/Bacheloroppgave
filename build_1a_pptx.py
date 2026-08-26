@@ -133,12 +133,12 @@ def main():
            size=26, color=WHITE, bold=True)
     tf_q = textbox(s, Inches(0.7), Inches(3.62), Inches(12), Inches(1.35))
     p_run(tf_q,
-          "When a person opens a Norwegian-facing front page, how many other companies does that page contact, "
+          "When a front page loads, how many other companies does it contact, "
           "and in which countries do those machines appear to sit?",
           size=15, color=CREAM, space_after=8)
     p_run(tf_q,
           "When a site uses personal data, has it named a GDPR Article 6 basis, "
-          "and does that basis hold in the ICO tool?",
+          "and does the ICO tool agree?",
           size=15, color=CREAM, space_after=0)
     add_tb(s, Inches(0.7), Inches(5.05), Inches(12), Inches(0.55),
            "Humna Akhtar  ·  Mithun Chandra Debnath  ·  Karina Sætersdal Nilssen",
@@ -412,7 +412,7 @@ def main():
     add_rect(s, Inches(0.5), Inches(1.55), Inches(12.3), Inches(4.85), CREAM)
     tf = textbox(s, Inches(0.75), Inches(1.85), Inches(11.8), Inches(4.35))
     summary = [
-        "We measured how much 18 Norwegian sites contact others when they load, and we checked whether five of them have a valid GDPR basis for one specific purpose.",
+        "We measured how much 18 sites contact others on load, and we checked whether five of them have a valid GDPR basis for one specific purpose.",
         "Many sites reach out to many others without setting cookies.",
         "Four of five ICO purposes match the notice.",
         "In two places where the site claims consent, the ICO is not satisfied with how consent is formulated.",
