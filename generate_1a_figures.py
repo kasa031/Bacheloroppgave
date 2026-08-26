@@ -267,6 +267,112 @@ def fig_cookie_banner():
     print("wrote", path)
 
 
+def fig_cookie_three_questions():
+    """Explain cookie file vs third-party request vs Accept banner."""
+    fig, axes = plt.subplots(1, 3, figsize=(11.2, 5.15), dpi=170)
+    fig.patch.set_facecolor(PAPER)
+    fig.suptitle(
+        "Three different questions (only the first two are the Webbkoll ranking)",
+        fontsize=13, color=NAVY, fontweight="bold", y=0.98,
+    )
+
+    panels = [
+        {
+            "kicker": "A.  The cookie file  ·  Part 1",
+            "title": "A small file on the device",
+            "body": [
+                "Internal cookie: set by the site",
+                "you opened (for example xxl.no).",
+                "",
+                "External cookie: set by someone",
+                "else (for example an advertiser).",
+                "",
+                "Webbkoll counts these files after",
+                "one page load. It does not click",
+                "Accept or Reject.",
+                "",
+                "17 of 18 sites had 0 external",
+                "cookies. ikea.no had 2.",
+            ],
+            "foot": "This is the cookie column in Table 2.",
+            "face": CREAM,
+        },
+        {
+            "kicker": "B.  The third-party call  ·  Part 1",
+            "title": "The page talks to other hosts",
+            "body": [
+                "A request is a network call to",
+                "another machine (ads, fonts, video).",
+                "",
+                "That call can happen even when",
+                "NO third-party cookie is set.",
+                "",
+                "fotball.no: 113 requests and still",
+                "0 external cookies.",
+                "",
+                "This is what we rank as 'worst",
+                "sharer', not the Accept button.",
+            ],
+            "foot": "This is the request column in Table 2.",
+            "face": "#E8EEF4",
+        },
+        {
+            "kicker": "C.  The Accept banner  ·  not the ranking",
+            "title": "Yes / No on a pop-up",
+            "body": [
+                "A banner asks: may we store or",
+                "read info on this device?",
+                "",
+                "That is an ePrivacy question.",
+                "It is not GDPR Article 6.",
+                "",
+                "We did not click Accept for the",
+                "18-site table.",
+                "",
+                "One extra ICO run (skatteetaten",
+                "optional stats cookies) tests the",
+                "notice, not Table 2.",
+            ],
+            "foot": "Not how Table 2 / Table 4 are ranked.",
+            "face": "#F4F6F8",
+        },
+    ]
+
+    for ax, p in zip(axes, panels):
+        ax.set_xlim(0, 10)
+        ax.set_ylim(0, 10)
+        ax.axis("off")
+        ax.set_facecolor(PAPER)
+        ax.add_patch(FancyBboxPatch(
+            (0.15, 0.35), 9.7, 9.3,
+            boxstyle="round,pad=0.04,rounding_size=0.15",
+            facecolor=p["face"], edgecolor=NAVY, linewidth=1.5,
+        ))
+        ax.add_patch(FancyBboxPatch(
+            (0.15, 8.35), 9.7, 1.3,
+            boxstyle="round,pad=0.02,rounding_size=0.12",
+            facecolor=NAVY, edgecolor=NAVY, linewidth=0,
+        ))
+        ax.text(5, 9.0, p["kicker"], ha="center", va="center",
+                fontsize=8.2, color=CREAM, fontweight="bold")
+        ax.text(0.55, 7.85, p["title"], ha="left", va="top",
+                fontsize=11, color=NAVY, fontweight="bold")
+        ax.text(0.55, 6.95, "\n".join(p["body"]), ha="left", va="top",
+                fontsize=8.3, color=INK, linespacing=1.35)
+        ax.text(5, 0.7, p["foot"], ha="center", va="center",
+                fontsize=7.4, color=MUTED, style="italic")
+
+    fig.text(
+        0.5, 0.015,
+        "Article 6 is a fourth question: why may we use this personal data (tax file, paid account, checkout)? That is Part 2. It is not the Accept click.",
+        ha="center", va="bottom", fontsize=8.2, color=INK,
+    )
+    path = OUT / "fig_cookie_three_questions.png"
+    fig.savefig(path, bbox_inches="tight", facecolor=PAPER, pad_inches=0.18)
+    plt.close()
+    print("wrote", path)
+
+
 if __name__ == "__main__":
     fig_requests_all18()
     fig_requests_sector()
@@ -274,3 +380,4 @@ if __name__ == "__main__":
     fig_webbkoll_results()
     fig_keycdn()
     fig_cookie_banner()
+    fig_cookie_three_questions()
