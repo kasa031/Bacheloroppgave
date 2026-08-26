@@ -82,7 +82,7 @@ parts.append(slide(header("Part 1", "What we looked at and key findings") + """
     </ul>
     <p class="lead-finding">Many requests does not mean many cookies.</p>
   </div>
-  <div class="pane navy">
+  <div class="pane dark">
     <h2>Key findings</h2>
     <ul>
       <li>fotball.no: 113 requests, zero third-party cookies.</li>
@@ -169,7 +169,7 @@ parts.append(slide(header("Part 2  ·  Table 5", "ICO result versus the notice")
 parts.append(slide(header("Part 2  ·  Table 5", "Four match, two consent tests Partial") + """
 <div class="summary-box ico-summary">
   <p class="lead">Four core purposes match the notice: tax, paid streaming, match history, checkout.</p>
-  <p class="lead">Two consent tests are Partial: Skatteetaten optional cookies and document.no Google Signals.</p>
+  <p class="lead accent">Two consent tests are Partial: Skatteetaten optional cookies and document.no Google Signals.</p>
   <p>In both cases the notice claims consent, but the ICO marks consent INCONCLUSIVE.</p>
   <p>Skatteetaten does not spell out clearly enough who processes the optional cookies and how to refuse them. document.no points users to Google ad settings; the ICO says that is not a clear, separate consent request, and Pluss terms bundle the notice.</p>
 </div>
@@ -197,7 +197,7 @@ parts.append(slide(header("Part 2", "fotball.no: match history") + bullets([
 ]), 13))
 
 parts.append(slide(header("Part 2", "document.no: Google Signals") + """
-<div class="banner-cream">ICO: no basis APPROPRIATE. Consent INCONCLUSIVE. Match: Partial.</div>
+<div class="banner-accent">ICO: no basis APPROPRIATE. Consent INCONCLUSIVE. Match: Partial.</div>
 """ + bullets([
     "Purpose: advertising analytics from site activity.",
     "The notice does not name Article 6. It looks like consent.",
@@ -213,11 +213,11 @@ parts.append(slide(header("Part 2", "babyshop.no: checkout") + bullets([
 ]), 15))
 
 parts.append(slide(header("Close", "What the report shows") + """
-<div class="summary-box">
+<div class="summary-box close-summary">
   <p>We measured how much 18 sites contact others on load, and we checked whether five of them have a valid GDPR basis for one specific purpose.</p>
   <p>Many sites reach out to many others without setting cookies.</p>
   <p>Four of five ICO purposes match the notice.</p>
-  <p>In two places where the site claims consent, the ICO is not satisfied with how consent is formulated.</p>
+  <p class="accent">In two places where the site claims consent, the ICO is not satisfied with how consent is formulated.</p>
 </div>
 """, 16))
 
@@ -229,45 +229,52 @@ parts.append(slide("""
 """, 17, dark=True))
 
 css = """
-:root { --navy:#1B365D; --ink:#1A1A1A; --cream:#FFF1D1; --paper:#FFFEFB; --ok:#1B6B3A; --warn:#9A5B00; --red:#8B1E1E; }
+:root { --dark:#224248; --mid:#325E6A; --teal:#44A1A4; --orange:#FF9A00; --ink:#1A1A1A; --paper:#FFFEFB; --light:#E8F4F4; }
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; background: #333; font-family: Calibri, "Segoe UI", sans-serif; }
-.toolbar { position: sticky; top: 0; z-index: 2; background: #111; color: #fff; padding: 8px 16px; font-size: 14px; }
-.toolbar b { color: #FFF1D1; }
+.toolbar { position: sticky; top: 0; z-index: 2; background: var(--dark); color: #fff; padding: 8px 16px; font-size: 14px; }
+.toolbar b { color: var(--orange); }
 .slide {
   width: 13.333in; height: 7.5in; background: var(--paper); color: var(--ink);
   page-break-after: always; break-after: page; position: relative; overflow: hidden;
   margin: 12px auto; box-shadow: 0 8px 24px rgba(0,0,0,.35);
 }
-.slide.dark { background: var(--navy); color: #fff; }
-header { background: var(--navy); color: #fff; height: 1.15in; padding: 0.12in 0.5in 0 0.5in; border-bottom: 0.08in solid var(--cream); }
+.slide.dark { background: var(--dark); color: #fff; }
+header { background: var(--dark); color: #fff; height: 1.15in; padding: 0.12in 0.5in 0 0.5in; border-bottom: 0.08in solid var(--orange); }
 header h1 { margin: 0; font-size: 28px; line-height: 1.15; }
-.kicker { font-size: 12px; font-weight: 700; color: var(--cream); letter-spacing: .02em; }
+.kicker { font-size: 12px; font-weight: 700; color: var(--teal); letter-spacing: .02em; }
 header .kicker { display: inline-block; }
-.foot { position: absolute; left: 0; right: 0; bottom: 0; height: 0.22in; background: var(--navy); color: #fff; font-size: 10px; display: flex; justify-content: space-between; align-items: center; padding: 0 0.4in; }
+.foot { position: absolute; left: 0; right: 0; bottom: 0; height: 0.22in; background: var(--dark); color: #fff; font-size: 10px; display: flex; justify-content: space-between; align-items: center; padding: 0 0.4in; }
 ul.bul { margin: 0.28in 0.55in 0; padding: 0; list-style: none; }
 ul.bul li { font-size: 20px; margin: 0 0 10px; padding-left: 0.28in; position: relative; line-height: 1.25; }
-ul.bul li::before { content: "•"; position: absolute; left: 0; color: var(--navy); }
+ul.bul li::before { content: "•"; position: absolute; left: 0; color: var(--dark); }
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 0.35in; margin: 0.32in 0.5in 0; }
 .pane { min-height: 5in; padding: 0.22in 0.28in; }
-.pane.cream { background: var(--cream); }
-.pane.navy { background: var(--navy); color: #fff; }
-.pane h2 { margin: 0 0 0.2in; font-size: 22px; color: var(--navy); }
-.pane.navy h2 { color: var(--cream); }
+.pane.cream { background: var(--teal); }
+.pane.navy { background: var(--mid); color: #fff; }
+.pane.dark { background: var(--dark); color: #fff; }
+.pane h2 { margin: 0 0 0.2in; font-size: 22px; color: var(--dark); }
+.pane.navy h2 { color: var(--orange); }
+.pane.dark h2 { color: var(--teal); }
 .pane ul { margin: 0; padding-left: 1.1em; }
 .pane li { font-size: 16px; margin: 0 0 8px; }
-.lead-finding { margin: 0.18in 0 0; font-size: 18px; font-weight: 700; color: var(--navy); line-height: 1.3; }
-.summary-box { margin: 0.32in 0.5in 0; background: var(--cream); padding: 0.35in 0.4in; min-height: 4.85in; }
-.summary-box p { font-size: 22px; line-height: 1.35; color: var(--navy); margin: 0 0 0.22in; }
+.lead-finding { margin: 0.18in 0 0; font-size: 18px; font-weight: 700; color: var(--orange); line-height: 1.3; }
+.summary-box { margin: 0.32in 0.5in 0; background: var(--teal); padding: 0.35in 0.4in; min-height: 4.85in; }
+.summary-box p { font-size: 22px; line-height: 1.35; color: var(--dark); margin: 0 0 0.22in; }
 .summary-box p:last-child { margin-bottom: 0; }
 .summary-box p.lead { font-weight: 700; font-size: 20px; }
-.summary-box.ico-summary p:not(.lead) { font-size: 18px; }
+.summary-box p.lead.accent { color: var(--orange); }
+.summary-box p.accent { color: var(--orange); }
+.summary-box.ico-summary p:not(.lead) { font-size: 18px; color: var(--dark); }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0.35in; margin: 0.2in 0.5in 0; }
-.two-col h3 { margin: 0 0 0.1in; color: var(--navy); font-size: 18px; }
+.two-col h3 { margin: 0 0 0.1in; font-size: 18px; }
+.two-col > div:first-child h3 { color: var(--dark); }
+.two-col > div:last-child h3 { color: var(--mid); }
 .rank { padding: 0.06in 0.14in; margin-bottom: 0.06in; min-height: 0.78in; }
-.rank.cream { background: var(--cream); }
-.rank.grey { background: #F4F6F8; }
-.rank strong { display: block; font-size: 16px; color: var(--navy); }
+.rank.cream { background: var(--teal); }
+.rank.grey { background: var(--mid); color: #fff; }
+.rank strong { display: block; font-size: 16px; color: var(--dark); }
+.rank.grey strong, .rank.grey span { color: #fff; }
 .rank span { font-size: 14px; }
 .caption { position: absolute; left: 0.4in; right: 0.4in; bottom: 0.32in; margin: 0; font-size: 13px; color: #4A5568; line-height: 1.3; }
 .figs { display: grid; grid-template-columns: 6.5in 6in; gap: 0.15in; margin: 0.12in 0.3in 0; }
@@ -279,24 +286,24 @@ ul.bul li::before { content: "•"; position: absolute; left: 0; color: var(--na
 .klass img { max-height: 2.3in; width: auto; max-width: 12.5in; }
 .klass img.keycdn { max-height: 2.7in; }
 table { width: 12.5in; margin: 0.18in 0.4in 0; border-collapse: collapse; font-size: 13px; }
-th { background: var(--navy); color: #fff; text-align: left; padding: 8px; }
+th { background: var(--dark); color: #fff; text-align: left; padding: 8px; }
 td { border: 1px solid #D0D5DD; padding: 9px 8px; }
-tr:nth-child(even) td { background: #F4F6F8; }
-td.yes { color: var(--navy); font-weight: 700; }
-td.part { color: var(--warn); font-weight: 700; background: var(--cream) !important; }
-.banner-cream { margin: 0.22in 0.5in 0.1in; background: var(--cream); color: var(--navy); font-size: 22px; font-weight: 700; padding: 0.18in 0.22in; }
+tr:nth-child(even) td { background: var(--light); }
+td.yes { color: var(--dark); font-weight: 700; }
+td.part { color: var(--orange); font-weight: 700; background: var(--teal) !important; }
+.banner-accent { margin: 0.22in 0.5in 0.1in; background: var(--orange); color: var(--dark); font-size: 22px; font-weight: 700; padding: 0.18in 0.22in; }
 .title-inner { padding: 0.9in 0.7in 0; }
 .title-inner h1 { font-size: 26px; line-height: 1.2; margin: 0.12in 0 0.18in; }
-.title-inner .assign { font-size: 22px; font-weight: 700; color: var(--cream); margin: 0.08in 0 0; }
+.title-inner .assign { font-size: 22px; font-weight: 700; color: var(--teal); margin: 0.08in 0 0; }
 .title-questions { margin: 0 0 0.22in; max-width: 11.8in; padding: 0; list-style: none; }
-.title-questions li { font-size: 15px; line-height: 1.35; color: var(--cream); margin: 0 0 0.16in; padding-left: 0.28in; position: relative; }
-.title-questions li::before { content: "•"; position: absolute; left: 0; color: var(--cream); }
+.title-questions li { font-size: 15px; line-height: 1.35; color: #fff; margin: 0 0 0.16in; padding-left: 0.28in; position: relative; }
+.title-questions li::before { content: "•"; position: absolute; left: 0; color: #fff; }
 .title-questions li:last-child { margin-bottom: 0; }
 .title-inner .names { font-size: 16px; margin: 0; }
-.title-band { position: absolute; left: 0; right: 0; bottom: 0; height: 1.65in; background: var(--cream); color: var(--navy); padding: 0.28in 0.7in; font-size: 16px; }
+.title-band { position: absolute; left: 0; right: 0; bottom: 0; height: 1.65in; background: var(--orange); color: var(--dark); padding: 0.28in 0.7in; font-size: 16px; }
 .q { text-align: center; padding-top: 2.4in; }
 .q h1 { font-size: 48px; margin: 0 0 0.3in; }
-.q p { font-size: 20px; color: var(--cream); }
+.q p { font-size: 20px; color: var(--teal); }
 @page { size: 13.333in 7.5in; margin: 0; }
 @media print {
   html, body { background: #fff; }

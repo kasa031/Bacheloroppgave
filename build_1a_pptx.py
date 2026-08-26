@@ -10,15 +10,15 @@ from pathlib import Path
 
 FIG = Path("/workspace/figures")
 
-NAVY = RGBColor(0x1B, 0x36, 0x5D)
+DARK = RGBColor(0x22, 0x42, 0x48)
+MID = RGBColor(0x32, 0x5E, 0x6A)
+TEAL = RGBColor(0x44, 0xA1, 0xA4)
+ORANGE = RGBColor(0xFF, 0x9A, 0x00)
 INK = RGBColor(0x1A, 0x1A, 0x1A)
 MUTED = RGBColor(0x4A, 0x55, 0x68)
 WHITE = RGBColor(0xFF, 0xFF, 0xFF)
-CREAM = RGBColor(0xFF, 0xF1, 0xD1)
-GREEN = RGBColor(0x1B, 0x6B, 0x3A)
-AMBER = RGBColor(0x9A, 0x5B, 0x00)
-RED = RGBColor(0x8B, 0x1E, 0x1E)
 PAPER = RGBColor(0xFF, 0xFE, 0xFB)
+LIGHT = RGBColor(0xE8, 0xF4, 0xF4)
 
 W = Inches(13.333)
 H = Inches(7.5)
@@ -78,7 +78,7 @@ def p_run(tf, text, size=18, bold=False, color=INK, space_before=0, space_after=
 
 
 def footer(slide, n, total=17):
-    add_rect(slide, 0, Inches(7.28), W, Inches(0.22), NAVY)
+    add_rect(slide, 0, Inches(7.28), W, Inches(0.22), DARK)
     add_tb(slide, Inches(0.4), Inches(7.28), Inches(10), Inches(0.22),
            "ACIT4280 Group Assignment 1A  |  3 Sep 2026",
            size=10, color=WHITE)
@@ -91,10 +91,10 @@ def notes(slide, text):
 
 
 def header_bar(slide, kicker, title):
-    add_rect(slide, 0, 0, W, Inches(1.15), NAVY)
-    add_rect(slide, 0, Inches(1.15), W, Inches(0.08), CREAM)
+    add_rect(slide, 0, 0, W, Inches(1.15), DARK)
+    add_rect(slide, 0, Inches(1.15), W, Inches(0.08), ORANGE)
     add_tb(slide, Inches(0.5), Inches(0.12), Inches(12.3), Inches(0.32),
-           kicker, size=12, color=CREAM, bold=True)
+           kicker, size=12, color=TEAL, bold=True)
     add_tb(slide, Inches(0.5), Inches(0.42), Inches(12.3), Inches(0.62),
            title, size=28, color=WHITE, bold=True)
 
@@ -120,14 +120,14 @@ def main():
     total = 17
 
     s = prs.slides.add_slide(blank)
-    add_rect(s, 0, 0, W, H, NAVY)
-    add_rect(s, 0, Inches(5.85), W, Inches(1.65), CREAM)
+    add_rect(s, 0, 0, W, H, DARK)
+    add_rect(s, 0, Inches(5.85), W, Inches(1.65), ORANGE)
     add_tb(s, Inches(0.7), Inches(0.85), Inches(12), Inches(0.35),
            "ACIT4280 Privacy by Design",
-           size=16, color=CREAM, bold=True)
+           size=16, color=TEAL, bold=True)
     add_tb(s, Inches(0.7), Inches(1.22), Inches(12), Inches(0.38),
            "Group Assignment 1A",
-           size=22, color=CREAM, bold=True)
+           size=22, color=TEAL, bold=True)
     add_tb(s, Inches(0.7), Inches(1.7), Inches(12), Inches(1.85),
            "Analysis of 3rd-party Data Sharing\nand Data Tracking and of GDPR\nCompliance of Norwegian Web Sites",
            size=26, color=WHITE, bold=True)
@@ -135,24 +135,24 @@ def main():
     p_run(tf_q,
           "•  When a front page loads, how many other companies does it contact, "
           "and in which countries do those machines appear to sit?",
-          size=15, color=CREAM, space_after=14)
+          size=15, color=WHITE, space_after=14)
     p_run(tf_q,
           "•  When a site uses personal data, has it named a GDPR Article 6 basis, "
           "and does the ICO tool agree?",
-          size=15, color=CREAM, space_after=0)
+          size=15, color=WHITE, space_after=0)
     add_tb(s, Inches(0.7), Inches(5.05), Inches(12), Inches(0.55),
            "Humna Akhtar  ·  Mithun Chandra Debnath  ·  Karina Sætersdal Nilssen",
            size=16, color=WHITE)
     add_tb(s, Inches(0.7), Inches(6.1), Inches(12), Inches(1.0),
            "Oslo Metropolitan University\n3 September 2026",
-           size=16, color=NAVY)
+           size=16, color=DARK)
     notes(s, "Part 1 measures contact. Part 2 tests one purpose at a time.")
 
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, PAPER)
     header_bar(s, "The report", "Two questions")
-    add_rect(s, Inches(0.5), Inches(1.55), Inches(5.9), Inches(5.0), CREAM)
-    add_tb(s, Inches(0.75), Inches(1.75), Inches(5.4), Inches(0.4), "Part 1  ·  Webbkoll", size=22, bold=True, color=NAVY)
+    add_rect(s, Inches(0.5), Inches(1.55), Inches(5.9), Inches(5.0), TEAL)
+    add_tb(s, Inches(0.75), Inches(1.75), Inches(5.4), Inches(0.4), "Part 1  ·  Webbkoll", size=22, bold=True, color=DARK)
     tf = textbox(s, Inches(0.75), Inches(2.3), Inches(5.4), Inches(4.0))
     for line in [
         "18 sites in four sectors (Table 1)",
@@ -161,8 +161,8 @@ def main():
         "Figures 2 to 4: counts, share, sectors",
     ]:
         p_run(tf, "•  " + line, size=18, space_after=10)
-    add_rect(s, Inches(6.9), Inches(1.55), Inches(5.9), Inches(5.0), NAVY)
-    add_tb(s, Inches(7.15), Inches(1.75), Inches(5.4), Inches(0.4), "Part 2  ·  ICO", size=22, bold=True, color=CREAM)
+    add_rect(s, Inches(6.9), Inches(1.55), Inches(5.9), Inches(5.0), MID)
+    add_tb(s, Inches(7.15), Inches(1.75), Inches(5.4), Inches(0.4), "Part 2  ·  ICO", size=22, bold=True, color=ORANGE)
     tf = textbox(s, Inches(7.15), Inches(2.3), Inches(5.4), Inches(4.0))
     for line in [
         "Five sites from Table 1a",
@@ -189,9 +189,9 @@ def main():
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, PAPER)
     header_bar(s, "Part 1", "What we looked at and key findings")
-    add_rect(s, Inches(0.5), Inches(1.55), Inches(5.9), Inches(5.0), CREAM)
+    add_rect(s, Inches(0.5), Inches(1.55), Inches(5.9), Inches(5.0), TEAL)
     add_tb(s, Inches(0.75), Inches(1.75), Inches(5.4), Inches(0.4),
-           "What we looked at", size=22, bold=True, color=NAVY)
+           "What we looked at", size=22, bold=True, color=DARK)
     tf = textbox(s, Inches(0.75), Inches(2.3), Inches(5.4), Inches(4.0))
     for line in [
         "Cookies (small files on the device)",
@@ -199,10 +199,10 @@ def main():
         "Countries (KeyCDN geolocation guess from the IP, not a legal transfer register)",
     ]:
         p_run(tf, "•  " + line, size=17, space_after=10)
-    p_run(tf, "Many requests does not mean many cookies.", size=18, bold=True, color=NAVY, space_before=8)
-    add_rect(s, Inches(6.9), Inches(1.55), Inches(5.9), Inches(5.0), NAVY)
+    p_run(tf, "Many requests does not mean many cookies.", size=18, bold=True, color=ORANGE, space_before=8)
+    add_rect(s, Inches(6.9), Inches(1.55), Inches(5.9), Inches(5.0), DARK)
     add_tb(s, Inches(7.15), Inches(1.75), Inches(5.4), Inches(0.4),
-           "Key findings", size=22, bold=True, color=CREAM)
+           "Key findings", size=22, bold=True, color=TEAL)
     tf = textbox(s, Inches(7.15), Inches(2.3), Inches(5.4), Inches(4.0))
     for line in [
         "fotball.no: 113 requests, zero third-party cookies.",
@@ -233,16 +233,16 @@ def main():
         ("4  spotify.no", "News/media  ·  10"),
         ("5  skiforeningen.no", "Sport  ·  14"),
     ]
-    add_tb(s, Inches(0.5), Inches(1.4), Inches(6), Inches(0.4), "Highest five", size=18, bold=True, color=NAVY)
-    add_tb(s, Inches(7.0), Inches(1.4), Inches(6), Inches(0.4), "Lowest five", size=18, bold=True, color=NAVY)
+    add_tb(s, Inches(0.5), Inches(1.4), Inches(6), Inches(0.4), "Highest five", size=18, bold=True, color=DARK)
+    add_tb(s, Inches(7.0), Inches(1.4), Inches(6), Inches(0.4), "Lowest five", size=18, bold=True, color=MID)
     y = Inches(1.78)
     for (a, b), (c, d) in zip(high, low):
-        add_rect(s, Inches(0.5), y, Inches(5.9), Inches(0.82), CREAM)
-        add_tb(s, Inches(0.7), y + Inches(0.06), Inches(5.5), Inches(0.32), a, size=16, bold=True, color=NAVY)
+        add_rect(s, Inches(0.5), y, Inches(5.9), Inches(0.82), TEAL)
+        add_tb(s, Inches(0.7), y + Inches(0.06), Inches(5.5), Inches(0.32), a, size=16, bold=True, color=DARK)
         add_tb(s, Inches(0.7), y + Inches(0.38), Inches(5.5), Inches(0.32), b, size=14, color=INK)
-        add_rect(s, Inches(7.0), y, Inches(5.8), Inches(0.82), RGBColor(0xF4, 0xF6, 0xF8))
-        add_tb(s, Inches(7.2), y + Inches(0.06), Inches(5.4), Inches(0.32), c, size=16, bold=True, color=NAVY)
-        add_tb(s, Inches(7.2), y + Inches(0.38), Inches(5.4), Inches(0.32), d, size=14, color=INK)
+        add_rect(s, Inches(7.0), y, Inches(5.8), Inches(0.82), MID)
+        add_tb(s, Inches(7.2), y + Inches(0.06), Inches(5.4), Inches(0.32), c, size=16, bold=True, color=WHITE)
+        add_tb(s, Inches(7.2), y + Inches(0.38), Inches(5.4), Inches(0.32), d, size=14, color=WHITE)
         y += Inches(0.9)
     add_tb(s, Inches(0.5), Inches(6.85), Inches(12.3), Inches(0.38),
            "Ranked on Table 2 requests. lanekassen.no and altinn.no have the fewest government requests. babyshop.no is 101 on Table 3; rankings stay on Table 2.",
@@ -303,14 +303,14 @@ def main():
     row_h = Inches(0.68)
     x = left
     for w, htxt in zip(widths, data[0]):
-        add_rect(s, x, top, w, row_h, NAVY)
+        add_rect(s, x, top, w, row_h, DARK)
         add_tb(s, x + Inches(0.08), top + Inches(0.18), w - Inches(0.1), Inches(0.4), htxt, size=13, bold=True, color=WHITE)
         x += w
     for i, row in enumerate(data[1:]):
         y = top + row_h * (i + 1)
-        bg = CREAM if row[3] == "Partial" else (RGBColor(0xF4, 0xF6, 0xF8) if i % 2 else WHITE)
+        bg = TEAL if row[3] == "Partial" else (LIGHT if i % 2 else WHITE)
         x = left
-        colors = [INK, INK, INK, NAVY if row[3] == "Yes" else AMBER]
+        colors = [INK, INK, INK, DARK if row[3] == "Yes" else ORANGE]
         bolds = [True, False, False, True]
         for j, (w, cell) in enumerate(zip(widths, row)):
             add_rect(s, x, y, w, row_h, bg)
@@ -325,7 +325,7 @@ def main():
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, PAPER)
     header_bar(s, "Part 2  ·  Table 5", "Four match, two consent tests Partial")
-    add_rect(s, Inches(0.5), Inches(1.55), Inches(12.3), Inches(4.85), CREAM)
+    add_rect(s, Inches(0.5), Inches(1.55), Inches(12.3), Inches(4.85), TEAL)
     tf = textbox(s, Inches(0.75), Inches(1.85), Inches(11.8), Inches(4.35))
     for i, line in enumerate([
         "Four core purposes match the notice: tax, paid streaming, match history, checkout.",
@@ -335,7 +335,7 @@ def main():
         "document.no points users to Google ad settings; the ICO says that is not a clear, separate consent request, "
         "and Pluss terms bundle the notice.",
     ]):
-        p_run(tf, line, size=20 if i < 2 else 18, bold=(i < 2), color=NAVY,
+        p_run(tf, line, size=20 if i < 2 else 18, bold=(i < 2), color=DARK if i != 1 else ORANGE,
               space_after=14 if i < 3 else 0)
     footer(s, 10, total)
     notes(s, "Partial is not a court finding. It means the consent wording did not pass the ICO checklist.")
@@ -379,10 +379,10 @@ def main():
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, PAPER)
     header_bar(s, "Part 2", "document.no: Google Signals")
-    add_rect(s, Inches(0.5), Inches(1.5), Inches(12.3), Inches(1.15), CREAM)
+    add_rect(s, Inches(0.5), Inches(1.5), Inches(12.3), Inches(1.15), ORANGE)
     add_tb(s, Inches(0.7), Inches(1.7), Inches(12), Inches(0.8),
            "ICO: no basis APPROPRIATE. Consent INCONCLUSIVE. Match: Partial.",
-           size=22, bold=True, color=NAVY)
+           size=22, bold=True, color=DARK)
     tf = textbox(s, Inches(0.55), Inches(2.9), Inches(12.2), Inches(3.8))
     for line in [
         "Purpose: advertising analytics from site activity.",
@@ -409,7 +409,7 @@ def main():
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, PAPER)
     header_bar(s, "Close", "What the report shows")
-    add_rect(s, Inches(0.5), Inches(1.55), Inches(12.3), Inches(4.85), CREAM)
+    add_rect(s, Inches(0.5), Inches(1.55), Inches(12.3), Inches(4.85), TEAL)
     tf = textbox(s, Inches(0.75), Inches(1.85), Inches(11.8), Inches(4.35))
     summary = [
         "We measured how much 18 sites contact others on load, and we checked whether five of them have a valid GDPR basis for one specific purpose.",
@@ -418,17 +418,17 @@ def main():
         "In two places where the site claims consent, the ICO is not satisfied with how consent is formulated.",
     ]
     for i, line in enumerate(summary):
-        p_run(tf, line, size=22, color=NAVY, space_after=16 if i < len(summary) - 1 else 0)
+        p_run(tf, line, size=22, color=DARK if i != 3 else ORANGE, space_after=16 if i < len(summary) - 1 else 0)
     footer(s, 16, total)
     notes(s, "Part 1 is contact. Part 2 is one purpose and one basis at a time.")
 
     s = prs.slides.add_slide(blank)
-    add_rect(s, 0, 0, W, H, NAVY)
+    add_rect(s, 0, 0, W, H, DARK)
     add_tb(s, Inches(0.7), Inches(2.4), Inches(12), Inches(1.2),
            "Questions", size=48, color=WHITE, bold=True, align=PP_ALIGN.CENTER)
     add_tb(s, Inches(0.7), Inches(3.8), Inches(12), Inches(1.4),
            "ACIT4280 Privacy by Design  ·  Group Assignment 1A",
-           size=20, color=CREAM, align=PP_ALIGN.CENTER)
+           size=20, color=TEAL, align=PP_ALIGN.CENTER)
     notes(s, "")
 
     out = "/workspace/ACIT4280_1A_presentation.pptx"
