@@ -55,7 +55,7 @@
     td:last-child { text-align: left; font-size: 9.5pt; }
     td:first-child { text-align: left; font-variant-numeric: tabular-nums; }
     figure { margin: 0 0 1.2em; }
-    img { max-width: 100%; border: 1px solid var(--line); }
+    img { max-width: 100%; height: auto; border: 1px solid var(--line); display: block; }
     ul { margin: 0 0 1em; }
     ul.refs { list-style: none; padding-left: 0; }
     ul.refs li { padding-left: 1.27cm; text-indent: -1.27cm; margin-bottom: 0.8em; font-size: 12pt; text-align: left; line-height: 2; }
@@ -92,12 +92,12 @@
   <p class="fig-num">Figure 1</p>
   <p class="fig-title">Webbkoll Start Page for klassekampen.no</p>
   <img src="figures/fig1_webbkoll_check_klassekampen.png" alt="Webbkoll start page with klassekampen.no in the check field">
-  <p class="fig-note">Note. Reconstruction of the English check interface. klassekampen.no is fifth-highest on third-party requests in Table 2 and is therefore used as the method example (5th of July Foundation, n.d.-c).</p>
+  <p class="fig-note">Note. English interface. klassekampen.no is fifth-highest on third-party requests in Table 2 and is therefore used as the method example (5th of July Foundation, n.d.-c).</p>
 </figure>
 
 <h2>Findings</h2>
 <p>The 18 services were divided equally among the group members. Table 2 records the first measurement on 20 August 2026 and is not overwritten. Table 3 records a repeat measurement the same day, with host-by-host KeyCDN countries on 21 August 2026. A later visit can differ because Webbkoll stores a result for 24 hours. Variation between rows is therefore reported, not treated as an error in the first series.</p>
-<p>Seventeen of 18 sites set zero third-party cookies. The exception is ikea.no (two cookies) after redirect to ikea.com. Third-party requests in Table 2 range from 1 (lanekassen.no) to 113 (fotball.no). Figure 2 ranks those counts. Figure 3 groups them by sector. News and media contact the most hosts. Government sites contact the fewest. Sport is high because of fotball.no. Shopping lies between those extremes. babyshop.no rises to 101 requests on the repeat measurement. Webbkoll cannot prove that a request contains personal data. It can only show that a host in that country was contacted (European Union, 2016, Arts. 44-47).</p>
+<p>Seventeen of 18 sites set zero third-party cookies. The exception is ikea.no (two cookies) after redirect to ikea.com. Third-party requests in Table 2 range from 1 (lanekassen.no) to 113 (fotball.no). Figure 2 ranks those counts. Figure 3 shows each site's share of the total. Figure 4 groups the same counts by sector. News and media contact the most hosts. Government sites contact the fewest. Sport is high because of fotball.no. Shopping lies between those extremes. babyshop.no rises to 101 requests on the repeat measurement. Webbkoll cannot prove that a request contains personal data. It can only show that a host in that country was contacted (European Union, 2016, Arts. 44-47).</p>
 
 <p class="tbl-num">Table 2</p>
 <p class="tbl-title">First Webbkoll Measurement of 18 Norwegian-Facing Services (20 August 2026)</p>
@@ -129,10 +129,10 @@
     <tr><td>skiforeningen.no</td><td>Sport</td><td>SE</td><td>1</td><td>0</td><td>14</td><td>3</td><td>NL, US, SE</td></tr>
   </tbody>
 </table>
-<p class="tbl-note">Note. Int. = internal cookies; Ext. = external cookies; Req. = third-party requests; n countries = unique KeyCDN countries excluding Norway. Lists may still show NO when it appeared on the first worksheet; the count column excludes it. Names follow the brief even when Webbkoll followed a redirect.</p>
+<p class="tbl-note">Note. Int. = internal cookies; Ext. = external cookies; Req. = third-party requests; n countries = unique KeyCDN countries excluding Norway. Lists may still show NO when it appeared on the first worksheet; the count column excludes it. Service names follow the course list even when Webbkoll followed a redirect.</p>
 
 <p class="tbl-num">Table 3</p>
-<p class="tbl-title">Later Webbkoll Clock (20 August 2026) and KeyCDN Third-Party Countries (21 August 2026)</p>
+<p class="tbl-title">Repeat Webbkoll Measurement (20 August 2026) and KeyCDN Third-Party Countries (21 August 2026)</p>
 <table>
   <thead>
     <tr>
@@ -172,6 +172,13 @@
 
 <figure>
   <p class="fig-num">Figure 3</p>
+  <p class="fig-title">Share of Third-Party Requests (Table 2)</p>
+  <img src="figures/fig5_share_requests_pie.png" alt="Pie chart of each site share of third-party requests">
+  <p class="fig-note">Note. fotball.no and worldofwarcraft.com together account for about one third of all recorded requests.</p>
+</figure>
+
+<figure>
+  <p class="fig-num">Figure 4</p>
   <p class="fig-title">Third-Party Requests by Sector (Table 2)</p>
   <img src="figures/fig6_requests_per_sector.png" alt="Bar chart of third-party requests grouped by sector">
   <p class="fig-note">Note. Sector totals follow Table 2. News and media carry the most requests; government carries the fewest.</p>
@@ -201,23 +208,23 @@
     <tr><td>Lowest 1</td><td>lanekassen.no</td><td>Government</td><td>1</td><td>1</td></tr>
   </tbody>
 </table>
-<p class="tbl-note">Note. Ranked on Table 2 requests. skatteetaten.no also has 14 requests; skiforeningen.no is listed because it has fewer countries (3 vs 5). document.no has the widest first-fill country list (6). ikea.no remains the only third-party-cookie site (2 cookies).</p>
+<p class="tbl-note">Note. Ranked on Table 2 requests. skatteetaten.no also has 14 requests; skiforeningen.no is listed because it has fewer countries (3 vs 5). document.no has the widest first country list (6). ikea.no remains the only third-party-cookie site (2 cookies).</p>
 
 <h2>Worked example: klassekampen.no</h2>
-<p>Figures 1, 4 and 5 show one full pass so the table rules can be checked. klassekampen.no is also Highest 5 in Table 4. Scan time: 12:36:46 UTC, 20 August 2026. Four first-party cookies and zero third-party cookies still came with 56 requests to 13 hosts, including Google advertising, Meta and Cookiebot. Missing HSTS, CSP and related headers concern integrity and confidentiality (Arts. 5(1)(f), 25 and 32). They do not decide the lawful basis. Privacy by design is both: how the page behaves, and why the controller may process the data. KeyCDN of the server IP is United States, Google (Figure 5).</p>
-
-<figure>
-  <p class="fig-num">Figure 4</p>
-  <p class="fig-title">Webbkoll Summary for klassekampen.no</p>
-  <img src="figures/fig2_webbkoll_results_klassekampen.png" alt="Webbkoll summary results for klassekampen.no">
-  <p class="fig-note">Note. Values reconstructed from the recorded Webbkoll result of 20 August 2026, 12:36:46 UTC. Cookies: 4 first-party, 0 third-party. Third-party requests: 56 to 13 hosts (5th of July Foundation, n.d.-c).</p>
-</figure>
+<p>Figures 1, 5 and 6 show one full pass so the table rules can be checked. klassekampen.no is also Highest 5 in Table 4. Scan time: 12:36:46 UTC, 20 August 2026. Four first-party cookies and zero third-party cookies still came with 56 requests to 13 hosts, including Google advertising, Meta and Cookiebot. Missing HSTS, CSP and related headers concern integrity and confidentiality (Arts. 5(1)(f), 25 and 32). They do not decide the lawful basis. Privacy by design is both: how the page behaves, and why the controller may process the data. KeyCDN of the server IP is United States, Google (Figure 6).</p>
 
 <figure>
   <p class="fig-num">Figure 5</p>
+  <p class="fig-title">Webbkoll Summary for klassekampen.no</p>
+  <img src="figures/fig2_webbkoll_results_klassekampen.png" alt="Webbkoll summary results for klassekampen.no">
+  <p class="fig-note">Note. Scan time 20 August 2026, 12:36:46 Etc/UTC. HTTPS by default: yes. CSP not implemented. Cookies: 4 first-party, 0 third-party. Third-party requests: 56 to 13 hosts (5th of July Foundation, n.d.-c).</p>
+</figure>
+
+<figure>
+  <p class="fig-num">Figure 6</p>
   <p class="fig-title">KeyCDN Look Up of the klassekampen.no Server IP</p>
   <img src="figures/fig4_keycdn_lookup_klassekampen.png" alt="KeyCDN geo lookup of klassekampen.no server IP">
-  <p class="fig-note">Note. Reconstruction of the KeyCDN result used for the method example. Country: United States (US), Google. The same tool on each unique third-party IP fills the country list (KeyCDN, n.d.).</p>
+  <p class="fig-note">Note. Look up of 2600:1901:0:25b9::. Country: United States (US). Provider: Google LLC. The same tool on each unique third-party IP fills the country list (KeyCDN, n.d.).</p>
 </figure>
 
 <h2>Lawful basis for five services</h2>
@@ -229,14 +236,7 @@
 <p>document.no is the case that fails the consent test. Google Signals is described as advertising analytics. Article 6 is not named (Document Media AS, n.d.). Collection is said to run only with a Google login and ad personalization. That looks like consent. The ICO report marks no basis APPROPRIATE. Consent is INCONCLUSIVE because a valid request must be clear, prominent and separate from other terms. The choice sits in Google settings. Document Pluss terms also bundle acceptance of the privacy notice. Contract and legitimate interests are not appropriate for this advertising purpose. A notice may aim at consent and still fail the request.</p>
 
 <h3>Optional cookies after Nei</h3>
-<p>Webbkoll does not click banners (5th of July Foundation, n.d.-b). skatteetaten.no/person/ was opened in a clean browser and Nei was selected on 24 August 2026 (Figure 6). That tests whether optional tracking is blocked after rejection. It is not the lawful basis for tax administration. Figure 7 shows the Tax Administration hub that separates the privacy notice from cookie settings, which is the same split used in Table 5.</p>
-
-<figure>
-  <p class="fig-num">Figure 6</p>
-  <p class="fig-title">Optional Cookie Banner on skatteetaten.no (Nei Selected)</p>
-  <img src="figures/fig7_skatteetaten_cookie_banner.png" alt="Skatteetaten cookie banner with Ja and Nei buttons on skatteetaten.no/person/">
-  <p class="fig-note">Note. Reconstruction of the equally visible Ja and Nei choice. Nei was selected on 24 August 2026 to test optional tracking after rejection.</p>
-</figure>
+<p>Webbkoll does not click banners (5th of July Foundation, n.d.-b). skatteetaten.no/person/ was opened in a clean browser and Nei was selected on 24 August 2026. That tests whether optional tracking is blocked after rejection. It is not the lawful basis for tax administration. Figure 7 shows the Tax Administration hub that separates the privacy notice from cookie settings, which is the same split used in Table 5.</p>
 
 <figure>
   <p class="fig-num">Figure 7</p>

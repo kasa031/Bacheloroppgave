@@ -260,17 +260,10 @@ def main():
     # 7 findings + charts
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, PAPER)
-    header_bar(s, "Part 1  ·  Figures 2 and 3", "Third-party requests by site and sector", speaker="Mithun")
-    s.shapes.add_picture(str(FIG / "fig3_requests_all18.png"), Inches(0.35), Inches(1.4), Inches(6.4), Inches(5.5))
-    s.shapes.add_picture(str(FIG / "fig6_requests_per_sector.png"), Inches(6.85), Inches(1.55), Inches(6.1), Inches(3.2))
-    tf = textbox(s, Inches(6.9), Inches(4.9), Inches(6.0), Inches(2.0))
-    for line in [
-        "News and media contact the most hosts.",
-        "Government contacts the fewest.",
-        "fotball.no raises the sport total.",
-        "ikea.no is the only third-party-cookie site.",
-    ]:
-        p_run(tf, "•  " + line, size=15, space_after=6)
+    header_bar(s, "Part 1  ·  Figures 2 to 4", "Third-party requests by site and sector", speaker="Mithun")
+    s.shapes.add_picture(str(FIG / "fig3_requests_all18.png"), Inches(0.3), Inches(1.38), Inches(6.5), Inches(5.55))
+    s.shapes.add_picture(str(FIG / "fig5_share_requests_pie.png"), Inches(6.95), Inches(1.38), Inches(6.0), Inches(2.7))
+    s.shapes.add_picture(str(FIG / "fig6_requests_per_sector.png"), Inches(6.95), Inches(4.15), Inches(6.0), Inches(2.75))
     footer(s, 7, total)
     notes(s, "SPEAKER: Mithun. Point to fotball.no at 113 and lanekassen.no at 1. Request volume is not cookie volume.")
 
@@ -278,10 +271,8 @@ def main():
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, PAPER)
     header_bar(s, "Part 1  ·  method example", "klassekampen.no: requests without third-party cookies", speaker="Mithun")
-    s.shapes.add_picture(str(FIG / "fig2_webbkoll_results_klassekampen.png"), Inches(0.4), Inches(1.4), Inches(6.4), Inches(4.0))
-    s.shapes.add_picture(str(FIG / "fig4_keycdn_lookup_klassekampen.png"), Inches(6.9), Inches(1.4), Inches(6.0), Inches(3.2))
-    tf = textbox(s, Inches(0.5), Inches(5.5), Inches(12.3), Inches(1.5))
-    p_run(tf, "Scan 20 August 2026, 12:36:46 UTC. 4 first-party cookies, 0 third-party cookies, 56 requests to 13 hosts (Google advertising, Meta, Cookiebot). Missing HSTS and CSP concern Arts. 5(1)(f), 25 and 32, not Article 6.", size=16, space_after=4)
+    s.shapes.add_picture(str(FIG / "fig2_webbkoll_results_klassekampen.png"), Inches(0.4), Inches(1.35), Inches(12.5), Inches(2.55))
+    s.shapes.add_picture(str(FIG / "fig4_keycdn_lookup_klassekampen.png"), Inches(2.4), Inches(4.0), Inches(8.5), Inches(3.05))
     footer(s, 8, total)
     notes(s, "SPEAKER: Mithun. This shows that request volume is not cookie volume. Hand over to Karina for ICO.")
 

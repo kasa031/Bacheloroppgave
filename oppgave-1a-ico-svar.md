@@ -158,7 +158,7 @@ ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en 
 
 **Match:** Delvis. Banneret er det rette sporet (consent, ikke lovplikt). Offisiell rapport `Skatteetaten_cookies_Lawful basis assessment report.docx`: consent INCONCLUSIVE («you need to do more to make sure you have valid consent»; controller, purpose and type). Ingen basis APPROPRIATE. Contract, legal obligation, public task, vital interests, recognised LI og LI er NOT APPROPRIATE. Det bekrefter at skatt ikke ble blandet inn.
 
-**Webbkoll/Nei-test:** Webbkoll klikker ikke banner. Egen test 24.08.2026: Nei på skatteetaten.no/person/. Figur: `figures/fig7_skatteetaten_cookie_banner.png`.
+**Webbkoll/Nei-test:** Webbkoll klikker ikke banner. Egen test 24.08.2026: Nei på skatteetaten.no/person/. Hub-skjermbilde: `figures/fig_skatteetaten_sikkerhet_hub.png`.
 
 ---
 
