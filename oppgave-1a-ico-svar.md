@@ -1,98 +1,119 @@
-# ACIT4280 gruppeoppgave 1A - rettslig grunnlag (Art. 6)
+# ACIT4280 gruppeoppgave 1A - ICO lawful basis
 
-Utkast til innlevering. Dette er ikke studieapp-innhold og ikke en del av GitHub Pages-nettsiden.
+Arbeidsnotat til innleveringen (ikke studieapp, ikke GitHub Pages).
 
-**Verktøy:** ICO Lawful basis interactive guidance tool  
-https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis/lawful-basis-interactive-guidance-tool/
+**De fem tjenestene:** skatteetaten.no, netflix.no, fotball.no, document.no, babyshop.no.
 
-**Metode:** For hver av de fem valgte tjenestene leser vi personvernerklæringen (særlig EEA/UK-tillegg der det finnes) og svarer i ICO-verktøyet ut fra hva tjenesten faktisk gjør og hva den selv oppgir som behandlingsgrunnlag. Svarene her er det vi tar med i rapporten og presentasjonen.
+**Kilder gjenfunnet fra OneDrive 1A_Webbkoll:**
+- `Lawful basis assessment report.docx` (offisiell ICO-rapport, Skatteetaten skatt/folkeregister)
+- `ICO_5sites_worksheet.html`
+- `ACIT4280_1A_report.html` (gruppens rapport, Tabell 5)
 
-**Rapportkrav (Canvas):** 1000-1500 ord pluss diagrammer, pluss 20 minutters gruppepresentasjon. Webbkoll/tredjepartssporing er egen del og fylles ut separat.
-
-**Merk:** Skatteetaten ble gjennomgått i en tidligere Cursor-chat. Den chatten og eventuelle lokale filer derfra er ikke med i dette miljøet, og ingenting om ICO-svarene ligger i GitHub-repoene (Bacheloroppgave / msc_cyber-syllabus). Svarene må limes inn eller kjøres på nytt.
-
----
-
-## 1. Skatteetaten (skatteetaten.no)
-
-**Status:** Gjennomgått tidligere, men ICO-svarene er ikke gjenfunnet her.
-
-Når svarene er tilbake: lim inn ICO-utfallet (særlig legal obligation og public task, som er typiske for en offentlig etat), pluss det personvernerklæringen selv oppgir.
-
-| Grunnlag | Status | Svar / ICO-utfall |
-|----------|--------|-------------------|
-| Vital interests | mangler forrige chat | |
-| Contract | mangler forrige chat | |
-| Legal obligation | mangler forrige chat | |
-| Public task | mangler forrige chat | |
-| Legitimate interests | mangler forrige chat | |
-| Consent | mangler forrige chat | |
-| ICO-konklusjon | mangler forrige chat | |
+ICO-verktøy: https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis/lawful-basis-interactive-guidance-tool/
 
 ---
 
-## 2. Netflix (netflix.com / netflix.no)
+## 1. Skatteetaten (skatteetaten.no) - FERDIG, trenger ikke ny ICO-kjøring for kjerneformålet
 
-**Kilde:** Netflix Privacy Statement, sist oppdatert 10. april 2026.  
-Kontaktpunkt: privacy@netflix.com (DPO/Privacy Office).
+**Personvernerklæring:** https://www.skatteetaten.no/om-skatteetaten/sikkerhet/personvern/
 
-### Hva Netflix selv oppgir (Supplemental Privacy Disclosures for EEA/UK)
+### Formål 1: skatt og folkeregister (den offisielle ICO-rapporten)
 
-Netflix viser til fire behandlingsgrunnlag under GDPR:
+**Behandling:** identitet, adresse, inntekt og skattedata for skattefastsetting og folkeregisteret.
 
-1. **Contractual necessity** (Art. 6(1)(b)) - levere tjenesten til medlemmer, drive virksomheten, partnerintegrasjoner, håndheve vilkår, og reklame på reklamefinansiert abonnement.
-2. **Legitimate interests** (Art. 6(1)(f)) - blant annet profilbrukere, forskning og forbedring, markedsføring der loven tillater det, ikke-atferdsbasert reklame, sikkerhet og svindelforebygging, og noen vilkårsvurderinger.
-3. **Compliance with a legal obligation** (Art. 6(1)(c)) - når Netflix er rettslig forpliktet.
-4. **Consent** (Art. 6(1)(a)) - atferdsbasert reklame, enkelte markedsføringsmeldinger, og noen tilfeller av sikkerhet/lovhåndhevelse der medlemmet ber om det.
+**Grunnlag i kunngjøringen:** rettslig plikt / påkrevd i lov (skatte- og folkeregisterregler). Kjerneoppgavene er ikke valgfrie.
 
-Netflix oppgir **ikke** vital interests (Art. 6(1)(d)) og **ikke** public task / official authority (Art. 6(1)(e)).
+**Offisiell ICO-rapport (Lawful basis assessment report.docx):**
 
-### ICO-gjennomgang
+| Grunnlag | ICO-utfall |
+|----------|------------|
+| Legal obligation | APPROPRIATE |
+| Public task | APPROPRIATE |
+| Consent | INCONCLUSIVE (ikke gyldig samtykke for kjernebehandling) |
+| Contract | NOT APPROPRIATE |
+| Vital interests | NOT APPROPRIATE |
+| Recognised legitimate interest | NOT APPROPRIATE |
+| Legitimate interests | NOT APPROPRIATE |
 
-#### Vital interests - Q1
+**Match:** Ja. Kunngjøringens lovgrunnlag stemmer med ICO.
 
-**ICO-spørsmål:** Are you processing the personal data to save or protect someone's life?  
-**Svar vi bruker i innleveringen: No**
+ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en navngitt plikt, og (for public task) hvilken offentlig oppgave/myndighet som har hjemmel i lov. Spesielle kategorier krever eget Art. 9-vilkår i tillegg.
 
-Vital interests er et snevert grunnlag. ICO beskriver det som liv og død, typisk nødsituasjoner der personen ikke kan samtykke. Netflix behandler personopplysninger for å levere strømmetjeneste, betaling, anbefalinger, reklame, sikkerhet og lovkrav. Det er ikke behandling som er nødvendig for å redde noens liv.
+### Formål 2: valgfrie statistikk-informasjonskapsler (egen ICO-kjøring)
 
-Personvernerklæringen nevner "protect against harm to the rights, property or safety of Netflix, its users or the public". Det er ikke det samme som GDPR vital interests. Sikkerhet og svindel hos Netflix er knyttet til legitimate interests, consent eller rettslig plikt, ikke til Art. 6(1)(d).
+**Behandling:** valgfrie webstatistikk-cookies etter Ja/Nei-banner.
 
-**Foreløpig funn for denne seksjonen:** Vital interests er ikke et treffende behandlingsgrunnlag for Netflix, og ICO-verktøyet skal fortsette til neste grunnlag.
+**Grunnlag i kunngjøringen:** samtykke.
 
-#### Øvrige ICO-seksjoner
+**ICO-resultat (worksheet):** Consent.
 
-Fylles ut etter hvert som vi går videre i skjemaet:
+**Match:** Ja. Banneret er valgfritt. I hovedrapporten ble consent INCONCLUSIVE fordi kjernebehandling ble blandet inn. For cookies alene: Q6 To some extent (behandler/formål ikke fullt ut i banneret). Q2 om maktposisjon: valgt No; offentlig myndighet kan argumentere Yes.
 
-| Grunnlag | Status | Svar / ICO-utfall |
-|----------|--------|-------------------|
-| Contract | ikke fylt | |
+**Webbkoll/Nei-test:** Webbkoll klikker ikke banner. Egen test 24.08.2026: Nei på skatteetaten.no/person/. Figur: `figures/fig7_skatteetaten_cookie_banner.png`.
+
+---
+
+## 2. Netflix (netflix.no) - I GANG
+
+**Formål vi tester (worksheet):** konto- og betalingsdata for betalt strømmeabonnement. Annonser, anbefalinger og markedsføring er egne formål.
+
+**Personvernerklæring 10. april 2026 (EEA/UK) oppgir faktisk Art. 6-grunnlag:** contractual necessity, legitimate interests, legal obligation, consent. Worksheet/rapport-utkastet sa tidligere at Art. 6 ikke var merket; det bør oppdateres i Tabell 5.
+
+### ICO-gjennomgang (betalt abonnement)
+
+| Grunnlag | Status | Svar |
+|----------|--------|------|
+| Vital interests Q1: Are you processing the personal data to save or protect someone's life? | fylt | **No** |
+| Contract | ikke fylt | Worksheet: Q1 Yes, Q2 Yes, Q3 No (kan ikke levere uten konto/betaling). Forventet utfall: contract |
 | Legal obligation | ikke fylt | |
 | Public task | ikke fylt | |
 | Legitimate interests | ikke fylt | |
 | Consent | ikke fylt | |
-| ICO-konklusjon | ikke fylt | |
+| ICO-konklusjon | ikke fylt | forventet: contract |
+
+**Hvorfor No på vital interests:** Strømmetjeneste, ikke liv og død. Netflix lister ikke vital interests. ICO-rapporten for Skatteetaten avviste også vital interests; for Netflix er det enda tydeligere.
+
+**ICO-steg nå:** velg No, Continue. Når contract kommer: Yes / Yes / No etter worksheet.
 
 ---
 
-## 3. Tjeneste 3
+## 3. fotball.no - venter på ICO-kjøring
 
-Navn og ICO-gjennomgang settes inn når vi starter på neste nettsted.
+**Formål:** publisere navn og klubb for aktive spillere 13+ (kampstatistikk).
 
----
+**Kunngjøring:** allmenn interesse / opt-out via klubb; FIKS viser kontrakt for medlemskap; stamdata har publiseringssamtykke. Ikke tydelig Art. 6 på fotball.no-siden for selve publiseringen.
 
-## 4. Tjeneste 4
-
-Navn og ICO-gjennomgang settes inn når vi starter på neste nettsted.
+**Forventet ICO:** legitimate interests med balancing test. Worksheet: Contract Q1 No, consent No, legal obligation No, vital interests No, public task No, LI Yes.
 
 ---
 
-## 5. Tjeneste 5
+## 4. document.no - venter på ICO-kjøring
 
-Navn og ICO-gjennomgang settes inn når vi starter på neste nettsted.
+**Formål:** Google Signals / reklameanalyse fra nettstedsaktivitet.
+
+**Kunngjøring:** ikke navngitt Art. 6; kjører bare hvis innlogget Google med annonsepersonalisering; opt-out-lenker.
+
+**Forventet ICO:** consent. Worksheet: Contract Q1 No, deretter consent-spørsmål etter at lesing av artikler ikke krever Signals.
 
 ---
 
-## Sammenligning (fem tjenester)
+## 5. babyshop.no - venter på ICO-kjøring
 
-Tabell og diskusjon når alle fem ICO-gjennomganger er ferdige: hvilke grunnlag tjenestene selv oppgir, hva ICO-verktøyet peker på, og eventuelle avvik.
+**Formål:** navn, adresse, kontakt, ordre og betaling for kjøp og levering.
+
+**Kunngjøring:** ikke merket Art. 6(1)(b); policy sier at kundedata behandles ved kjøp for å oppfylle ordre. Markedsføring/profilering: consent. Annet: legitimate interests.
+
+**Forventet ICO:** contract. Worksheet: Q1 Yes, Q2 Yes, Q3 No.
+
+---
+
+## Sammenligning (Tabell 5 i rapporten)
+
+| Tjeneste | Formål | Notice | ICO | Match |
+|----------|---------|--------|-----|-------|
+| skatteetaten.no | skatt/folkeregister | legal obligation | legal obligation + public task APPROPRIATE | Ja |
+| skatteetaten.no | valgfrie cookies | consent | consent | Ja (egen kjøring) |
+| netflix.no | betalt abonnement | contract (nå eksplisitt i EEA/UK-tillegg) | pågår (Q1 vital interests = No) | venter |
+| fotball.no | publisering kampstatistikk | public interest / opt-out | venter (forventet LI) | venter |
+| document.no | Google Signals | ikke oppgitt; Google-innstillinger | venter (forventet consent) | venter |
+| babyshop.no | kjøp og levering | contract (underforstått) | venter (forventet contract) | venter |
