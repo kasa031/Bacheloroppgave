@@ -220,6 +220,7 @@ Det endrer **ikke** Contract Q1 for denne ICO-kjøringen. En egen kjøring på k
 | Legal obligation Q1: Are you processing this personal data to comply with the law? | fylt | **No** |
 | Vital interests Q1: Are you processing the personal data to save or protect someone's life? | fylt | **No** |
 | Public task Q1: Are you processing the data to carry out your official tasks or functions, or other specific tasks in the public interest? | fylt | **No** |
+| Recognised legitimate interest Q1: Do you need to process the data for any of the following purposes? | fylt | **No** |
 | ICO-konklusjon | ikke fylt | forventet: consent |
 
 **Hvorfor No på contract Q1:** Vi tester reklameanalyse, ikke Document Pluss. Det er ingen avtale om Google Signals. Signals styres av Google-innlogging og annonsetilpasning, ikke av abonnementet. ICO: svar No når formålet ikke er å utføre kontrakten. Worksheet startet med No her.
@@ -230,7 +231,9 @@ Det endrer **ikke** Contract Q1 for denne ICO-kjøringen. En egen kjøring på k
 
 **Hvorfor No på public task Q1:** Document Media AS er et privat mediehus, ikke forvaltningsorgan. Art. 6(1)(e) krever offisiell myndighet eller en konkret samfunnsoppgave med hjemmel i lov. Google Signals er reklameanalyse, ikke journalistikk som offentlig oppgave. Ikke To some extent.
 
-**ICO-steg nå:** velg No, trykk Continue. Neste er typisk recognised LI (No), deretter consent.
+**Hvorfor No på recognised legitimate interest Q1:** Listen er vern av sårbare, nødsituasjon, kriminalitet, nasjonal sikkerhet, eller utlevering til noen som ber om data til sin offentlige oppgave. Google Signals er ingen av disse.
+
+**ICO-steg nå:** velg No, trykk Continue. Neste er typisk consent. Worksheet: Yes på løpende valg (Google-innstillinger + opt-out), No på at samtykke er en forutsetning for å lese artikler.
 
 ---
 
