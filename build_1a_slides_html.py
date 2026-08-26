@@ -33,8 +33,8 @@ parts.append(slide(f"""
     <p class="assign">Group Assignment 1A</p>
     <h1>Analysis of 3rd-party Data Sharing<br>and Data Tracking and of GDPR<br>Compliance of Norwegian Web Sites</h1>
     <ul class="title-questions">
-      <li>When you open a front page, who else does it contact - and where in the world are those servers?</li>
-      <li>When a site uses personal data, does it have a lawful basis - and does that claim hold up?</li>
+      <li>When a front page loads, how many third parties does it contact, and in which countries do those servers appear to be located?</li>
+      <li>When a site processes personal data, has it named a GDPR Article 6 lawful basis, and does the ICO tool agree?</li>
     </ul>
     <p class="names">Humna Akhtar  ·  Mithun Chandra Debnath  ·  Karina Sætersdal Nilssen</p>
   </div>
@@ -42,47 +42,47 @@ parts.append(slide(f"""
 """, 1, dark=True))
 
 
-parts.append(slide(header("Our approach", "Two questions, two tools") + """
+parts.append(slide(header("The report", "Two questions and how we measured") + """
 <div class="split compact-split">
   <div class="pane cream">
     <h2>Part 1  ·  Webbkoll</h2>
     <ul class="pane-list compact">
-      <li>18 Norwegian front pages - one clean visit each</li>
-      <li>Who do they call? Cookies, requests, server country (first scan, 20 Aug)</li>
-      <li>KeyCDN shows where servers sit - a guess, not proof of lawful transfer</li>
+      <li>18 sites: cookies, requests, KeyCDN country</li>
+      <li>One clean load per site; rank on Table 2 (20 Aug)</li>
+      <li>KeyCDN = IP geolocation guess, not legal transfer proof</li>
     </ul>
     <img class="pane-shot compact webbkoll-results" src="{FIG}/fig2_webbkoll_results_klassekampen.png" alt="Webbkoll results for klassekampen.no">
   </div>
   <div class="pane navy">
     <h2>Part 2  ·  ICO</h2>
     <ul class="pane-list compact">
-      <li>Five sites - one purpose per run, because mixed questions break the test</li>
-      <li>Does the privacy notice match the ICO report? (26 Aug 2026)</li>
-      <li>Yes when notice and ICO tell the same story</li>
-      <li>Partial when consent wording fails the checklist</li>
-      <li>Tax, cookies, checkout and ads are not the same question</li>
+      <li>Five sites, one purpose per run</li>
+      <li>Notice vs ICO Word report (26 Aug 2026)</li>
+      <li>Yes if notice and ICO agree</li>
+      <li>Partial if consent is INCONCLUSIVE</li>
+      <li>Tax, cookies, checkout and marketing are different purposes</li>
     </ul>
   </div>
 </div>
 """, 2))
 
-parts.append(slide(header("Part 1", "Your browser talks to strangers") + """
+parts.append(slide(header("Part 1", "What Webbkoll shows and key findings") + """
 <div class="split">
   <div class="pane cream">
-    <h2>What Webbkoll reveals</h2>
-    <p class="pane-lead">Every front page starts a conversation - Webbkoll records who joins it.</p>
+    <h2>What Webbkoll shows</h2>
+    <p class="pane-lead">Cookies, third-party requests and server country.</p>
     <p class="lead-finding">Many requests does not mean many cookies.</p>
     <img class="pane-shot keycdn-shot" src="{FIG}/fig4_keycdn_lookup_klassekampen.png" alt="KeyCDN lookup for klassekampen server IP">
   </div>
   <div class="pane dark">
     <h2>Key findings</h2>
     <ul>
-      <li>fotball.no: 113 hosts, zero third-party cookies - loud, but not cookie-heavy.</li>
-      <li>17 of 18 sites: no third-party cookies on load. ikea.no was the exception (2).</li>
-      <li>lanekassen.no (1) and altinn.no (5): the quietest public-sector doors.</li>
-      <li>document.no: data paths touch 6 countries, excluding Norway.</li>
-      <li>News and media reach out most. Government pages reach out least.</li>
-      <li>babyshop.no doubled on repeat scan (45 to 101) - rankings stay on the first scan.</li>
+      <li>fotball.no: 113 requests, zero third-party cookies.</li>
+      <li>17 of 18 sites: zero third-party cookies. ikea.no had 2.</li>
+      <li>lanekassen.no (1) and altinn.no (5): quietest e-government pages.</li>
+      <li>document.no: widest country list (6 excluding Norway).</li>
+      <li>News/media contacted the most. Government the fewest.</li>
+      <li>babyshop.no: 101 on Table 3; ranking stays on Table 2 (45).</li>
     </ul>
   </div>
 </div>
@@ -104,15 +104,15 @@ low = [
 ]
 hi_html = "".join(f'<div class="rank cream"><strong>{a}</strong><span>{b}</span></div>' for a, b in high)
 lo_html = "".join(f'<div class="rank grey"><strong>{a}</strong><span>{b}</span></div>' for a, b in low)
-parts.append(slide(header("Part 1", "The loud and the quiet") + f"""
+parts.append(slide(header("Part 1  ·  Table 4", "Highest and lowest third-party requests") + f"""
 <div class="two-col">
   <div><h3>Highest five</h3>{hi_html}</div>
   <div><h3>Lowest five</h3>{lo_html}</div>
 </div>
-<p class="caption">Same question, different answers: fotball.no shouts (113), lanekassen.no barely whispers (1). Rankings follow the first scan.</p>
+<p class="caption">Ranked on Table 2. lanekassen.no and altinn.no are the quietest e-government fronts. babyshop.no is 101 on Table 3; we do not re-rank.</p>
 """, 4))
 
-parts.append(slide(header("Part 1  ·  Figures 2 to 4", "Where the traffic goes") + f"""
+parts.append(slide(header("Part 1  ·  Figures 2 to 4", "Third-party requests by site and sector") + f"""
 <div class="figs">
   <img src="{FIG}/fig3_requests_all18.png" alt="Bar chart of third-party requests for 18 sites">
   <div class="stack">
@@ -120,7 +120,7 @@ parts.append(slide(header("Part 1  ·  Figures 2 to 4", "Where the traffic goes"
     <img src="{FIG}/fig6_requests_per_sector.png" alt="Requests per sector">
   </div>
 </div>
-<p class="caption">News and media pull the most strings on load. Government pages keep the fewest.</p>
+<p class="caption">Table 2. News/media is the highest sector. Government is the lowest.</p>
 """, 5))
 
 table_rows = [
@@ -136,74 +136,73 @@ tr = "".join(
     for a, b, c, d, k in table_rows
 )
 
-parts.append(slide(header("Part 2", "Does the privacy notice mean what it says?") + f"""
-<p class="ico-intro">One purpose per ICO run (26 Aug 2026). We ask: does the site\'s legal story hold up? Yes when notice and ICO agree. Partial when consent is INCONCLUSIVE.</p>
+parts.append(slide(header("Part 2", "ICO: one purpose at a time") + f"""
+<p class="ico-intro">One purpose per ICO run (26 Aug 2026). Yes if notice and ICO agree; Partial if consent is INCONCLUSIVE. Tax, cookies, checkout and marketing are different purposes.</p>
 <table class="compact-table">
   <thead><tr><th>Service</th><th>Purpose</th><th>ICO</th><th>Match</th></tr></thead>
   <tbody>{tr}</tbody>
 </table>
-<p class="caption ico-cap">ICO guidance is not a court verdict - but it shows where the story breaks.</p>
+<p class="caption ico-cap">ICO labels are guidance, not a court finding.</p>
 """, 6))
 
-parts.append(slide(header("Part 2", "Four honest answers, two broken promises") + """
+parts.append(slide(header("Part 2  ·  Table 5", "Four match, two consent tests Partial") + """
 <div class="summary-box ico-summary">
-  <p class="lead">Four purposes hold up: tax by law, streaming by contract, match history by interest, checkout by contract.</p>
-  <p class="lead accent">Two consent claims fail: Skatteetaten optional cookies and document.no Google Signals.</p>
-  <p>Both notices say consent - but the ICO marks consent INCONCLUSIVE.</p>
-  <p>Skatteetaten does not say clearly enough who runs the optional cookies or how to refuse. document.no sends you to Google ad settings - not a clear, separate choice - and Pluss terms bundle the notice.</p>
+  <p class="lead">Four core purposes match the notice: tax, paid streaming, match history, checkout.</p>
+  <p class="lead accent">Two consent tests are Partial: Skatteetaten optional cookies and document.no Google Signals.</p>
+  <p>In both cases the notice claims consent, but the ICO marks consent INCONCLUSIVE.</p>
+  <p>Skatteetaten does not spell out clearly enough who processes the optional cookies and how to refuse them. document.no points users to Google ad settings; the ICO says that is not a clear, separate consent request, and Pluss terms bundle the notice.</p>
 </div>
 """, 7))
 
-parts.append(slide(header("Part 2", "skatteetaten.no: duty and choice") + bullets([
-    "Tax and registry data: the law requires it. You cannot opt out of being counted.",
+parts.append(slide(header("Part 2", "skatteetaten.no: two purposes") + bullets([
+    "Tax and registry data: the law requires it. Opt-out is generally not possible.",
     "ICO: legal obligation and public task APPROPRIATE. Consent NOT APPROPRIATE. Match: Yes.",
-    "Optional statistics cookies: the notice says you can choose - but does it explain how?",
+    "Optional statistics cookies: the notice claims consent.",
     "ICO: consent INCONCLUSIVE; no basis APPROPRIATE. Match: Partial.",
 ]), 8))
 
-parts.append(slide(header("Part 2", "netflix.no: pay to watch") + bullets([
-    "Purpose: account and payment data to deliver what you paid for.",
-    "Notice (EEA/UK): contractual necessity - not consent.",
+parts.append(slide(header("Part 2", "netflix.no: paid streaming") + bullets([
+    "Purpose: account and payment data needed to provide the paid service.",
+    "Notice (EEA/UK): contractual necessity.",
     "ICO: contract APPROPRIATE. Consent marked likely invalid for this purpose.",
-    "Ads and marketing in the same notice were left out - different purpose, different basis.",
+    "Ads and marketing in the same notice were left out.",
 ]), 9))
 
-parts.append(slide(header("Part 2", "fotball.no: a name on the team sheet") + bullets([
+parts.append(slide(header("Part 2", "fotball.no: match history") + bullets([
     "Purpose: name and club of active players aged 13+, with club opt-out.",
-    "ICO: legitimate interests APPROPRIATE - sport transparency, not blanket consent.",
+    "ICO: legitimate interests APPROPRIATE.",
     "NFF is not a public authority, so public task does not fit.",
     "FIKS membership is a different purpose and was not this run.",
 ]), 10))
 
-parts.append(slide(header("Part 2", "document.no: consent without a real choice") + """
+parts.append(slide(header("Part 2", "document.no: Google Signals") + """
 <div class="banner-accent">ICO: no basis APPROPRIATE. Consent INCONCLUSIVE. Match: Partial.</div>
 """ + bullets([
-    "Purpose: advertising analytics built from what you read and click.",
-    "The notice never names Article 6 - but it reads like consent.",
+    "Purpose: advertising analytics from site activity.",
+    "The notice does not name Article 6. It looks like consent.",
     "ICO: the request is not clear, prominent and separate from terms.",
-    "The choice lives in Google settings. Pluss terms also bundle the notice.",
+    "The choice sits in Google settings. Pluss terms also bundle the notice.",
 ]), 11))
 
-parts.append(slide(header("Part 2", "babyshop.no: pay to receive") + bullets([
+parts.append(slide(header("Part 2", "babyshop.no: checkout") + bullets([
     "Purpose: name, address, contact, order and payment to deliver goods.",
-    "The sales terms are a purchase contract - you pay, they ship.",
+    "The sales terms are a purchase contract.",
     "ICO: contract APPROPRIATE. Match: Yes for checkout.",
     "The notice does not label Article 6(1)(b). Marketing is a separate purpose.",
 ]), 12))
 
-parts.append(slide(header("Close", "What we learned") + """
+parts.append(slide(header("Close", "What the report shows") + """
 <div class="summary-box close-summary">
-  <p>Opening a Norwegian front page starts a hidden conversation - we mapped 18 of them.</p>
-  <p>Many sites reach out widely without setting a single third-party cookie.</p>
-  <p>Four of five ICO purposes match what the notice claims.</p>
-  <p class="accent">Where sites say consent, the wording must be real - in two cases, the ICO says it is not.</p>
+  <p>We measured how much 18 sites contact others on load, and we checked whether five of them have a valid GDPR basis for one specific purpose.</p>
+  <p>Many sites reach out to many others without setting cookies.</p>
+  <p>Four of five ICO purposes match the notice.</p>
+  <p class="accent">In two places where the site claims consent, the ICO is not satisfied with how consent is formulated.</p>
 </div>
 """, 13))
 
 parts.append(slide("""
   <div class="q">
-    <h1>Questions?</h1>
-    <p class="q-hook">Who else does your browser meet - and does the privacy notice tell the truth?</p>
+    <h1>Questions</h1>
     <p>ACIT4280 Privacy by Design  ·  Group Assignment 1A</p>
   </div>
 """, 14, dark=True))
@@ -296,9 +295,8 @@ td.part { color: var(--orange); font-weight: 700; background: var(--teal) !impor
 .title-date { font-size: 16px; line-height: 1; }
 .title-logo { width: 3.1in; height: auto; display: block; }
 .q { text-align: center; padding-top: 2.4in; }
-.q h1 { font-size: 48px; margin: 0 0 0.22in; }
-.q p { font-size: 18px; color: var(--teal); margin: 0 0 0.12in; }
-.q p.q-hook { font-size: 20px; max-width: 10in; margin: 0 auto 0.28in; line-height: 1.35; }
+.q h1 { font-size: 48px; margin: 0 0 0.3in; }
+.q p { font-size: 20px; color: var(--teal); }
 @page { size: 13.333in 7.5in; margin: 0; }
 @media print {
   html, body { background: #fff; }
