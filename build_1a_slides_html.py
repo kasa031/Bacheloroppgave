@@ -45,12 +45,13 @@ parts.append(slide(header("The report", "Two questions") + """
 <div class="split">
   <div class="pane cream">
     <h2>Part 1  ·  Webbkoll</h2>
-    <ul>
+    <ul class="pane-list compact">
       <li>18 sites in four sectors (Table 1)</li>
       <li>Cookies, third-party requests, KeyCDN countries</li>
       <li>Rank Table 2 requests, not cookies</li>
       <li>Figures 2 to 4: counts, share, sectors</li>
     </ul>
+    <img class="pane-shot" src="{FIG}/fig1_webbkoll_check_klassekampen.png" alt="Webbkoll check page">
   </div>
   <div class="pane navy">
     <h2>Part 2  ·  ICO</h2>
@@ -257,6 +258,8 @@ ul.bul li::before { content: "•"; position: absolute; left: 0; color: var(--da
 .pane.navy h2 { color: var(--orange); }
 .pane.dark h2 { color: var(--teal); }
 .pane ul { margin: 0; padding-left: 1.1em; }
+.pane ul.compact li { font-size: 15px; margin: 0 0 5px; }
+.pane-shot { display: block; width: 100%; max-height: 2.55in; margin-top: 0.1in; object-fit: contain; background: #fff; border: 1px solid rgba(34,66,72,.12); }
 .pane li { font-size: 16px; margin: 0 0 8px; }
 .lead-finding { margin: 0.18in 0 0; font-size: 18px; font-weight: 700; color: var(--orange); line-height: 1.3; }
 .summary-box { margin: 0.32in 0.5in 0; background: var(--teal); padding: 0.35in 0.4in; min-height: 4.85in; }

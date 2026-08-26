@@ -176,14 +176,21 @@ def main():
     header_bar(s, "The report", "Two questions")
     add_rect(s, Inches(0.5), Inches(1.55), Inches(5.9), Inches(5.0), TEAL)
     add_tb(s, Inches(0.75), Inches(1.75), Inches(5.4), Inches(0.4), "Part 1  ·  Webbkoll", size=22, bold=True, color=DARK)
-    tf = textbox(s, Inches(0.75), Inches(2.3), Inches(5.4), Inches(4.0))
+    tf = textbox(s, Inches(0.75), Inches(2.22), Inches(5.4), Inches(1.35))
     for line in [
         "18 sites in four sectors (Table 1)",
         "Cookies, third-party requests, KeyCDN countries",
         "Rank Table 2 requests, not cookies",
         "Figures 2 to 4: counts, share, sectors",
     ]:
-        p_run(tf, "•  " + line, size=18, space_after=10)
+        p_run(tf, "•  " + line, size=16, space_after=6)
+    s.shapes.add_picture(
+        str(FIG / "fig1_webbkoll_check_klassekampen.png"),
+        Inches(0.75),
+        Inches(3.62),
+        Inches(5.4),
+        Inches(2.67),
+    )
     add_rect(s, Inches(6.9), Inches(1.55), Inches(5.9), Inches(5.0), MID)
     add_tb(s, Inches(7.15), Inches(1.75), Inches(5.4), Inches(0.4), "Part 2  ·  ICO", size=22, bold=True, color=ORANGE)
     tf = textbox(s, Inches(7.15), Inches(2.3), Inches(5.4), Inches(4.0))
