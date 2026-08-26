@@ -182,13 +182,24 @@ Nødvendige cookies uten samtykke (ekomlov). Øvrige krever tillatelse; samtykke
 
 ---
 
-## 4. document.no - venter på ICO-kjøring
+## 4. document.no - I GANG
 
-**Formål:** Google Signals / reklameanalyse fra nettstedsaktivitet.
+**Formål vi tester:** Google Signals / reklameanalyse (demografi, interesser, aktivitet på tvers av enheter). Medlemskonto, kommentarer, kjøp og nødvendige cookies er egne formål.
 
-**Kunngjøring:** ikke navngitt Art. 6; kjører bare hvis innlogget Google med annonsepersonalisering; opt-out-lenker.
+**Personvernerklæring (lest 26.08.2026, https://www.document.no/personvernerklaering/):** Document Media AS. Ingen navngitt Art. 6 for Google Signals. Teksten sier at annonsefunksjoner i Google Analytics (Google Signals) gir samlet statistikk om demografi, interesser og kryssenhet-bruk. Data samles bare hvis du er logget inn på Google og har tillatt personlig tilpasning av annonser. Tredjeparter: Google, første- og tredjepartscookies / identifikatorer. Opt-out: Google Ads Settings, mobil, NAI, Google Analytics-tillegg. Behandlingsansvarlig: Document Media AS, kontakt@document.no.
 
-**Forventet ICO:** consent. Worksheet: Contract Q1 No, deretter consent-spørsmål etter at lesing av artikler ikke krever Signals.
+Ikke bland inn: kommentarer (IP, Gravatar), innlogging, kjøpshistorikk, eller innebygd innhold fra andre nettsteder.
+
+**ICO-gjennomgang (Google Signals):**
+
+| Grunnlag | Status | Svar |
+|----------|--------|------|
+| Contract Q1: Do you have (or intend to have) a contract with the individual? | fylt | **No** |
+| ICO-konklusjon | ikke fylt | forventet: consent |
+
+**Hvorfor No på contract Q1:** Vi tester reklameanalyse, ikke lesing av artikler eller et abonnement. Det er ingen avtale med leseren om Google Signals. Selv om noen har medlemskonto, er Signals ikke nødvendig for å oppfylle den. ICO: svar No når formålet ikke er å utføre kontrakten. Worksheet startet med No her.
+
+**ICO-steg nå:** velg No, trykk Continue. Neste er typisk legal obligation / vital interests / public task / recognised LI, deretter consent. For consent-sporet: Yes på løpende valg (Google-innstillinger + opt-out), No på at samtykke er en forutsetning for å lese artikler.
 
 ---
 
