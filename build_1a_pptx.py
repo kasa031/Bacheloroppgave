@@ -337,7 +337,7 @@ def main():
     data = [
         ("Service", "Purpose", "ICO", "Match"),
         ("skatteetaten.no", "Tax / folkeregister", "Legal obligation + public task", "Yes"),
-        ("skatteetaten.no", "Optional cookies", "Consent", "Yes"),
+        ("skatteetaten.no", "Optional cookies", "Consent INCONCLUSIVE; none APPROPRIATE", "Partial"),
         ("netflix.no", "Paid streaming", "Contract", "Yes"),
         ("fotball.no", "Name + club, 13+", "Legitimate interests", "Yes"),
         ("document.no", "Google Signals", "Consent INCONCLUSIVE; none APPROPRIATE", "Partial"),
@@ -363,7 +363,7 @@ def main():
             add_tb(s, x + Inches(0.08), y + Inches(0.18), w - Inches(0.12), Inches(0.45), cell, size=13, bold=bolds[j], color=colors[j])
             x += w
     footer(s, 11, total)
-    notes(s, "SPEAKER: Karina. Four of five selected purposes match. document.no is the teaching case: they aim at consent but ICO says the request is not good enough.")
+    notes(s, "SPEAKER: Karina. Four of five core purposes match. Two consent tests fail: skatteetaten cookies (Q6, banner too short) and document.no Signals (request not separate from terms).")
 
     # 12 skatteetaten
     bullet_slide(
@@ -375,9 +375,9 @@ def main():
             "Controller: the Director General of Taxation (Skattedirektøren).",
             "ICO: legal obligation APPROPRIATE, public task APPROPRIATE.",
             "Consent NOT APPROPRIATE for core tax (no genuine free choice). Contract and LI NOT APPROPRIATE.",
-            "Purpose 2: optional stats cookies (Skyra, Matomo, GA, Siteimprove). Ja/Nei. ICO: consent.",
+            "Purpose 2: optional stats cookies (Skyra, Matomo, GA, Siteimprove). Ja/Nei. ICO: consent INCONCLUSIVE (Q6). No basis APPROPRIATE.",
         ],
-        "SPEAKER: Karina. Two purposes. Do not treat the cookie banner as the basis for tax. Nei test 24 August 2026 on skatteetaten.no/person/.",
+        "SPEAKER: Karina. Two purposes, two reports. Tax: law. Cookies: they aim at consent, but ICO says name controller, purpose and types more clearly. Nei test 24 August 2026 on skatteetaten.no/person/.",
         sizes=[16]*7,
         speaker="Karina",
     )
@@ -460,8 +460,8 @@ def main():
             "Webbkoll measures contact, not lawfulness.",
             "One purpose per ICO run, or the tool mixes bases.",
             "fotball.no is loud on requests and still has zero third-party cookies.",
-            "Four of five ICO purposes match the notice.",
-            "document.no does not: Google settings are not a clear Document consent request.",
+            "Four of five core ICO purposes match the notice.",
+            "Two consent tests fail: skatteetaten cookies (Q6) and document.no Signals (Q5).",
             "Legal obligation (tax) is not the same as cookie consent (Ja/Nei).",
         ],
         "SPEAKER: Sumit. Then questions. If asked about 1B: that is the other group's access-request task.",

@@ -122,7 +122,9 @@ Kjør **to** ICO-formål. Bland dem ikke.
 
 ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en navngitt plikt, og (for public task) hvilken offentlig oppgave/myndighet som har hjemmel i lov. Spesielle kategorier krever eget Art. 9-vilkår i tillegg.
 
-### Formål 2: valgfrie statistikk-informasjonskapsler (egen ICO-kjøring)
+### Formål 2: valgfrie statistikk-informasjonskapsler (FERDIG, offisiell ICO-rapport)
+
+**Offisiell ICO-rapport:** `Skatteetaten_cookies_Lawful basis assessment report.docx`
 
 **Hub:** https://www.skatteetaten.no/om-skatteetaten/sikkerhet/ skiller tre lenker: Personvernerklæring (Formål 1), Informasjonskapsler (denne siden), og Endre samtykke for informasjonskapsler. Skjermbilde: `figures/fig_skatteetaten_sikkerhet_hub.png`.
 
@@ -156,7 +158,7 @@ ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en 
 | Consent Q5: clear, prominent, separate from terms? | fylt | **Yes** |
 | Consent Q6: controller, purpose and types named? | fylt | **To some extent** |
 | Legitimate interests: full responsibility? | fylt | **No** |
-| ICO-konklusjon | fylt | **Consent** |
+| ICO-konklusjon | fylt | **Consent INCONCLUSIVE; øvrige NOT APPROPRIATE; ingen APPROPRIATE** |
 
 **Hvorfor No på legal obligation og public task her:** Ingen lov pålegger Skatteetaten å sette Google Analytics for å fastsette skatt. Valgfrie statistikk-cookies er ikke den offentlige kjerneoppgaven. Ikke To some extent.
 
@@ -164,9 +166,9 @@ ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en 
 
 **Hvorfor No på consent Q3:** Nødvendige cookies holder innlogging og skjema i gang. Valgfrie analyseverktøy er ikke et vilkår for å betale skatt.
 
-**Hvorfor To some extent på Q6:** Denne siden navngir Skyra, Matomo, Google Analytics og Siteimprove. Selve Ja/Nei-banneret er kortere (forbedre tjenestene). Detaljene sitter på cookie-siden, ikke fullt ut i banneret.
+**Hvorfor To some extent på Q6:** Denne siden navngir Skyra, Matomo, Google Analytics og Siteimprove. Selve Ja/Nei-banneret er kortere (forbedre tjenestene). Detaljene sitter på cookie-siden, ikke fullt ut i banneret. ICO krever at samtykket dekker behandlingsansvarlig, formål og type aktivitet. Derfor INCONCLUSIVE, ikke APPROPRIATE.
 
-**Match:** Ja. Banneret er valgfritt. Kjerne-ICO-rapporten merker nå consent NOT APPROPRIATE for skatt. Denne cookie-kjøringen er et eget formål og må eksporteres som egen Word-rapport.
+**Match:** Delvis. Banneret er det rette sporet (consent, ikke lovplikt). Offisiell rapport `Skatteetaten_cookies_Lawful basis assessment report.docx`: consent INCONCLUSIVE («you need to do more to make sure you have valid consent»; controller, purpose and type). Ingen basis APPROPRIATE. Contract, legal obligation, public task, vital interests, recognised LI og LI er NOT APPROPRIATE. Det bekrefter at skatt ikke ble blandet inn.
 
 **Webbkoll/Nei-test:** Webbkoll klikker ikke banner. Egen test 24.08.2026: Nei på skatteetaten.no/person/. Figur: `figures/fig7_skatteetaten_cookie_banner.png`.
 
@@ -450,10 +452,10 @@ Teksten sier at noen formål krever samtykke som kan trekkes, og at preferanser 
 | Tjeneste | Formål | Notice | ICO | Match |
 |----------|---------|--------|-----|-------|
 | skatteetaten.no | skatt/folkeregister | legal obligation | legal obligation + public task APPROPRIATE; consent NOT APPROPRIATE | Ja |
-| skatteetaten.no | valgfrie cookies | consent | consent | Ja (egen kjøring) |
+| skatteetaten.no | valgfrie cookies | consent | Consent INCONCLUSIVE; ingen APPROPRIATE | Delvis (egen kjøring; Q6) |
 | netflix.no | betalt abonnement | contractual necessity (EEA/UK) | Contract APPROPRIATE; øvrige NOT APPROPRIATE | Ja |
 | fotball.no | publisering kampstatistikk | allmenn interesse / opt-out (LI i praksis); FIKS contract for medlemskap | Legitimate interests APPROPRIATE; øvrige NOT APPROPRIATE | Ja (dette formålet) |
 | document.no | Google Signals | ikke oppgitt; Google-innstillinger / opt-out | Consent INCONCLUSIVE; øvrige NOT APPROPRIATE; ingen APPROPRIATE | Delvis (sikter mot consent, ICO krever klarere forespørsel) |
 | babyshop.no | kjøp og levering | contract (underforstått; Art. 6 ikke merket) | Contract APPROPRIATE; øvrige NOT APPROPRIATE | Ja (dette formålet) |
 
-Alle fem kjerne-ICO-kjøringer er ferdige. Skatteetaten formål 1 er ren (consent NOT APPROPRIATE, ikke INCONCLUSIVE). Cookie-formål på Skatteetaten, babyshop og fotball er egne kjøringer og skal ikke overskrive kassen/kamphistorikk/skatt-radene. Eksporter en egen Word-rapport for Skatteetaten valgfrie cookies.
+Alle fem kjerne-ICO-kjøringer er ferdige, pluss Skatteetaten cookies. Skatteetaten formål 1 er ren (consent NOT APPROPRIATE). Cookie-rapporten er INCONCLUSIVE på Q6. Cookie-formål på babyshop og fotball er egne kjøringer og skal ikke overskrive kassen/kamphistorikk/skatt-radene.
