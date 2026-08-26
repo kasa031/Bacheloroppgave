@@ -194,7 +194,7 @@ parts.append(slide(header("Close", "What the report shows") + """
   <p>We measured how much 18 sites contact others on load, and we checked whether five of them have a valid GDPR basis for one specific purpose.</p>
   <p>Many sites reach out to many others without setting cookies.</p>
   <p>Four of five ICO purposes match the notice.</p>
-  <p class="accent">In two places where the site claims consent, the ICO is not satisfied with how consent is formulated.</p>
+  <p>In two places where the site claims consent, the ICO is not satisfied with how consent is formulated.</p>
 </div>
 """, 13))
 
@@ -249,7 +249,8 @@ ul.bul li::before { content: "•"; position: absolute; left: 0; color: var(--da
 .summary-box p:last-child { margin-bottom: 0; }
 .summary-box p.lead { font-weight: 700; font-size: 20px; }
 .summary-box p.lead.accent { color: var(--orange); }
-.summary-box p.accent { color: var(--orange); }
+.summary-box.close-summary p { color: var(--ink); font-weight: 700; }
+.summary-box.close-summary p.accent { color: var(--ink); }
 .summary-box.ico-summary p:not(.lead) { font-size: 18px; color: var(--dark); }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0.35in; margin: 0.2in 0.5in 0; }
 .two-col h3 { margin: 0 0 0.1in; font-size: 18px; }
