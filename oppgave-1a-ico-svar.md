@@ -1,33 +1,21 @@
-# ACIT4280 gruppeoppgave 1A - ICO lawful basis
+# ACIT4280 - ICO lawful basis (arbeidsnotat)
 
-**Styrefil (kuttet, det som skal innleveres):** `ACIT4280_1A_oversikt.html`
+Dette dokumentet er Q-for-Q-arbeidsarkivet. Det skal ikke leveres. Styrefil: `ACIT4280_1A_oversikt.html`. Rapport: `ACIT4280_1A_report.html`.
 
-Dette dokumentet er arbeidsarkivet (Q-for-Q). Det skal ikke limes inn i rapporten.
+**Leveranse:** rapport 1000-1500 ord pluss diagrammer, og 20 min presentasjon.
 
-Arbeidsnotat til innleveringen (ikke studieapp, ikke GitHub Pages, ikke oppgave 1B).
+**To deler:**
+1. Webbkoll på 18 tjenester (shopping, government, news/media, sport): tabell over tredjepartsdeling, grenseoverskridende eksport og sporing, pluss grafikk per sektor. Se `ACIT4280_1A_report.html`.
+2. ICO lawful basis-verktøyet på fem tjenester: skatteetaten.no, netflix.no, fotball.no, document.no, babyshop.no. Ett konkret behandlingsformål per kjøring. Sammendrag i Tabell 5.
 
-**Canvas:** Group assignment 1A, ACIT4280-1 26H. Frist 3 Sep 2026 08:00. 40 poeng. Rapport 1000-1500 ord + diagrammer. 20 min presentasjon (alle i gruppen).
+**Offisielle ICO-rapporter:**
+- `Skatteetaten_Lawful basis assessment report.docx`
+- `Skatteetaten_cookies_Lawful basis assessment report.docx`
+- `Netflix_Lawful basis assessment report.docx`
+- `Fotball_Lawful basis assessment report.docx`
+- `Document_Lawful basis assessment report.docx`
+- `Babyshop_Lawful basis assessment report.docx`
 
-**To deler i 1A:**
-1. Webbkoll på listen (shopping, government, news/media, sport): tabell over 3. parts-deling, grenseoverskridende eksport og sporing + grafikk per sektor. Dette ligger i `ACIT4280_1A_report.html`.
-2. **Gruppe 1-A (oss):** ICO lawful basis-verktøyet på **5 valgte tjenester** fra analysen. Finn personvernerklæring, kjør ICO, oppsummer i rapporten (Tabell 5). Ett konkret behandlingsformål per kjøring.
-
-**Ikke 1B:** 1-B undersøker innsynsforespørsler. Det gjør vi ikke her.
-
-**De fem tjenestene (1-A):** skatteetaten.no, netflix.no, fotball.no, document.no, babyshop.no.
-
-**Kilder gjenfunnet fra OneDrive 1A_Webbkoll:**
-- `Skatteetaten_Lawful basis assessment report.docx` (offisiell ICO-rapport, Skatteetaten skatt/folkeregister)
-- `Netflix_Lawful basis assessment report.docx` (offisiell ICO-rapport, Netflix abonnement)
-- `Fotball_Lawful basis assessment report.docx` (offisiell ICO-rapport, fotball.no kamphistorikk)
-- `Document_Lawful basis assessment report.docx` (offisiell ICO-rapport, document.no Google Signals)
-- `Babyshop_Lawful basis assessment report.docx` (offisiell ICO-rapport, babyshop.no kjøp/levering)
-- `ICO_5sites_worksheet.html` (oppdatert med ferdige ICO-utfall)
-- `ACIT4280_1A_report.html` (gruppens rapport; Tabell 5 oppdatert 26.08.2026)
-- Full personvernerklæring for document.no limt inn 26.08.2026 (ingen Art. 6-merking)
-- Kjøps- og abonnementsvilkår for Document Pluss limt inn 26.08.2026 (punkt 7 personvern)
-- Babyshop Integrity Policy lest 26.08.2026 (https://www.babyshop.com/en-us/information/integrity-policy)
-- Full norsk integritetspolicy limt inn 26.08.2026 (Art. 6 ikke merket som bokstav; kjøp vs samtykke vs interesseavveining)
 - Babyshop cookie-side limt inn 26.08.2026 (Nødvendig / Måling / Markedsføring; iubenda; sist oppdatert 6. mai 2024)
 - Babyshop vilkår og betingelser limt inn 26.08.2026 (punkt 1: kjøpsavtale)
 

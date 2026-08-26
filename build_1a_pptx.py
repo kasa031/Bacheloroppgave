@@ -8,6 +8,9 @@ from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 from pptx.oxml.ns import nsmap
 from pptx.oxml import parse_xml
 from pptx.util import Emu, Inches, Pt
+from pathlib import Path
+
+FIG = Path("/workspace/figures")
 
 NAVY = RGBColor(0x1B, 0x36, 0x5D)
 INK = RGBColor(0x1A, 0x1A, 0x1A)
@@ -80,7 +83,7 @@ def p_run(tf, text, size=18, bold=False, color=INK, space_before=0, space_after=
 def footer(slide, n, total=18):
     add_rect(slide, 0, Inches(7.28), W, Inches(0.22), NAVY)
     add_tb(slide, Inches(0.4), Inches(7.28), Inches(10), Inches(0.22),
-           "ACIT4280 Group 1-A  |  Assignment 1A  |  3 Sep 2026",
+           "ACIT4280 Privacy by Design  |  Third-party sharing and lawful basis  |  3 Sep 2026",
            size=10, color=WHITE)
     add_tb(slide, Inches(11.4), Inches(7.28), Inches(1.5), Inches(0.22),
            f"{n} / {total}", size=10, color=WHITE, align=PP_ALIGN.RIGHT)
@@ -127,7 +130,7 @@ def main():
     add_rect(s, 0, 0, W, H, NAVY)
     add_rect(s, 0, Inches(5.85), W, Inches(1.65), CREAM)
     add_tb(s, Inches(0.7), Inches(1.5), Inches(12), Inches(0.4),
-           "ACIT4280 Privacy by Design  |  Group assignment 1A",
+           "ACIT4280 Privacy by Design",
            size=16, color=CREAM, bold=True)
     add_tb(s, Inches(0.7), Inches(2.05), Inches(12), Inches(1.8),
            "Third-party data sharing, tracking\nand lawful basis on Norwegian sites",
@@ -138,7 +141,7 @@ def main():
     add_tb(s, Inches(0.7), Inches(6.1), Inches(12), Inches(1.0),
            "Oslo Metropolitan University  ·  20 minutes  ·  All members present\nDue 3 September 2026, 08:00",
            size=16, color=NAVY)
-    notes(s, "SPEAKER: Humna (open). Welcome the group. State the two parts: Webbkoll on 18 sites, then ICO on five notices. This is 1A, not 1B (no data-subject request test).")
+    notes(s, "SPEAKER: Humna (open). Welcome the audience. State the two parts: Webbkoll on 18 sites, then ICO on five privacy notices.")
 
     # 2 agenda
     s = prs.slides.add_slide(blank)
@@ -164,7 +167,7 @@ def main():
     # 3 two parts
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, PAPER)
-    header_bar(s, "Canvas task", "Assignment 1A has two parts", speaker="Humna")
+    header_bar(s, "Structure", "The report has two parts", speaker="Humna")
     add_rect(s, Inches(0.5), Inches(1.55), Inches(5.9), Inches(5.0), CREAM)
     add_tb(s, Inches(0.75), Inches(1.75), Inches(5.4), Inches(0.4), "Part 1  ·  Webbkoll", size=22, bold=True, color=NAVY)
     tf = textbox(s, Inches(0.75), Inches(2.3), Inches(5.4), Inches(4.0))
@@ -173,18 +176,18 @@ def main():
         "Shopping, government, news/media, sport",
         "Server location, cookies, 3rd-party requests, countries excl. Norway",
         "Graphics per sector",
-        "Interesting cases (loudest, most globalised, quiet e-gov)",
+        "Highest and lowest contact; most countries; restrained e-government",
     ]:
         p_run(tf, "•  " + line, size=16, space_after=8)
     add_rect(s, Inches(6.9), Inches(1.55), Inches(5.9), Inches(5.0), NAVY)
-    add_tb(s, Inches(7.15), Inches(1.75), Inches(5.4), Inches(0.4), "Part 2  ·  Group 1-A ICO", size=22, bold=True, color=CREAM)
+    add_tb(s, Inches(7.15), Inches(1.75), Inches(5.4), Inches(0.4), "Part 2  ·  ICO lawful basis", size=22, bold=True, color=CREAM)
     tf = textbox(s, Inches(7.15), Inches(2.3), Inches(5.4), Inches(4.0))
     for line in [
-        "Five notices we chose",
+        "Five privacy notices",
         "skatteetaten, Netflix, fotball.no, document.no, babyshop.no",
         "One concrete purpose per ICO run",
         "Compare notice vs official ICO report",
-        "Not 1B: we do not send access requests",
+        "Cookies, membership and checkout stay separate purposes",
     ]:
         p_run(tf, "•  " + line, size=16, color=WHITE, space_after=8)
     footer(s, 3, total)
@@ -194,13 +197,13 @@ def main():
     bullet_slide(
         prs, 4, "Part 1", "How we measured with Webbkoll",
         [
-            "English Webbkoll interface named in the brief",
+            "English Webbkoll interface",
             "One live Chromium visit: no add-ons, no Do Not Track, no consent click",
             "Scan clock on the result page is part of the measurement",
             "Server country: KeyCDN Country field for the IP (company name is not a country)",
             "Norway dropped from the shared-country list",
             "Cloudflare with no Country field: none returned, not counted",
-            "Two tables on purpose: Table 2 first clock, Table 3 later clock (Art. 5(1)(a))",
+            "Two tables on purpose: Table 2 first measurement, Table 3 repeat measurement (Art. 5(1)(a))",
         ],
         "SPEAKER: Humna. Webbkoll does not read a privacy notice and does not decide Article 6. Request volume is not cookie volume.",
         sizes=[18]*7,
@@ -214,7 +217,7 @@ def main():
             "It does not click Ja/Nei or Cookiebot.",
             "Zero third-party cookies can still mean many third-party requests.",
             "ikea.no is the only row with external cookies (2), after redirect to ikea.com.",
-            "We never average two clocks. A later visit can differ (24-hour store).",
+            "The two measurements are not averaged. A later visit can differ (24-hour store).",
             "Article 6 is not on the Webbkoll page. That is the ICO tool.",
         ],
         "SPEAKER: Humna. Hand over to Mithun for the numbers.",
@@ -252,45 +255,39 @@ def main():
         add_tb(s, Inches(7.2), y + Inches(0.42), Inches(5.4), Inches(0.35), d, size=14, color=INK)
         y += Inches(1.0)
     footer(s, 6, total)
-    notes(s, "SPEAKER: Mithun. Rank is third-party REQUESTS on Table 2, not cookies. Later clock puts babyshop.no at 101; we do not replace the first fill. skatteetaten.no also 14 requests; skiforeningen listed because fewer countries.")
+    notes(s, "SPEAKER: Mithun. Rank is third-party REQUESTS on Table 2, not cookies. The repeat measurement puts babyshop.no at 101; rankings follow the first measurement. skatteetaten.no also 14 requests; skiforeningen listed because fewer countries.")
 
-    # 7 findings
-    bullet_slide(
-        prs, 7, "Part 1", "Interesting findings",
-        [
-            "Loudest front: fotball.no (113 requests) with still zero third-party cookies.",
-            "Most globalised first fill: document.no (6 countries excl. Norway).",
-            "Quietest e-government: lanekassen.no (1 request) and altinn.no (5).",
-            "Only third-party-cookie site: ikea.no (2 cookies).",
-            "News/media is the loudest sector; government is the quietest.",
-            "Shopping sits in the middle; babyshop.no jumps to 101 requests on a later clock.",
-            "Open item: one Netflix third-party Look up (assets.nflxext.com).",
-        ],
-        "SPEAKER: Mithun. Point to Figure 2 and Figure 3 in the paper if the projector can show them.",
-        sizes=[17]*7,
-        speaker="Mithun",
-    )
+    # 7 findings + charts
+    s = prs.slides.add_slide(blank)
+    add_rect(s, 0, 0, W, H, PAPER)
+    header_bar(s, "Part 1  ·  Figures 2 and 3", "Third-party requests by site and sector", speaker="Mithun")
+    s.shapes.add_picture(str(FIG / "fig3_requests_all18.png"), Inches(0.35), Inches(1.4), Inches(6.4), Inches(5.5))
+    s.shapes.add_picture(str(FIG / "fig6_requests_per_sector.png"), Inches(6.85), Inches(1.55), Inches(6.1), Inches(3.2))
+    tf = textbox(s, Inches(6.9), Inches(4.9), Inches(6.0), Inches(2.0))
+    for line in [
+        "News and media contact the most hosts.",
+        "Government contacts the fewest.",
+        "fotball.no raises the sport total.",
+        "ikea.no is the only third-party-cookie site.",
+    ]:
+        p_run(tf, "•  " + line, size=15, space_after=6)
+    footer(s, 7, total)
+    notes(s, "SPEAKER: Mithun. Point to fotball.no at 113 and lanekassen.no at 1. Request volume is not cookie volume.")
 
     # 8 klassekampen
-    bullet_slide(
-        prs, 8, "Part 1  ·  method example", "klassekampen.no: requests without third-party cookies",
-        [
-            "Highest 5 in Table 4, and our full method walkthrough.",
-            "Scan 20 August 2026, 12:36:46 UTC.",
-            "4 first-party cookies, 0 third-party cookies, 56 requests to 13 hosts.",
-            "Hosts include Google advertising, Meta, Cookiebot.",
-            "Server KeyCDN: United States (Google). Third-party countries: IE, SE, US.",
-            "Missing HSTS, CSP, SRI, X-Content-Type-Options, X-Frame-Options.",
-            "Those gaps are Arts. 5(1)(f), 25 and 32, not Article 6.",
-        ],
-        "SPEAKER: Mithun. This proves request volume is not cookie volume. Hand over to Karina for ICO.",
-        sizes=[17]*7,
-        speaker="Mithun",
-    )
+    s = prs.slides.add_slide(blank)
+    add_rect(s, 0, 0, W, H, PAPER)
+    header_bar(s, "Part 1  ·  method example", "klassekampen.no: requests without third-party cookies", speaker="Mithun")
+    s.shapes.add_picture(str(FIG / "fig2_webbkoll_results_klassekampen.png"), Inches(0.4), Inches(1.4), Inches(6.4), Inches(4.0))
+    s.shapes.add_picture(str(FIG / "fig4_keycdn_lookup_klassekampen.png"), Inches(6.9), Inches(1.4), Inches(6.0), Inches(3.2))
+    tf = textbox(s, Inches(0.5), Inches(5.5), Inches(12.3), Inches(1.5))
+    p_run(tf, "Scan 20 August 2026, 12:36:46 UTC. 4 first-party cookies, 0 third-party cookies, 56 requests to 13 hosts (Google advertising, Meta, Cookiebot). Missing HSTS and CSP concern Arts. 5(1)(f), 25 and 32, not Article 6.", size=16, space_after=4)
+    footer(s, 8, total)
+    notes(s, "SPEAKER: Mithun. This shows that request volume is not cookie volume. Hand over to Karina for ICO.")
 
     # 9 ICO intro
     bullet_slide(
-        prs, 9, "Part 2  ·  Group 1-A", "ICO lawful basis: one purpose at a time",
+        prs, 9, "Part 2", "ICO lawful basis: one purpose at a time",
         [
             "Tool: ICO Lawful basis interactive guidance (updated 14 April 2026).",
             "Five services, one concrete processing activity per run.",
@@ -459,12 +456,12 @@ def main():
         [
             "Webbkoll measures contact, not lawfulness.",
             "One purpose per ICO run, or the tool mixes bases.",
-            "fotball.no is loud on requests and still has zero third-party cookies.",
+            "fotball.no has the highest request count and still zero third-party cookies.",
             "Four of five core ICO purposes match the notice.",
             "Two consent tests fail: skatteetaten cookies (Q6) and document.no Signals (Q5).",
             "Legal obligation (tax) is not the same as cookie consent (Ja/Nei).",
         ],
-        "SPEAKER: Sumit. Then questions. If asked about 1B: that is the other group's access-request task.",
+        "SPEAKER: Sumit. Then questions. If asked about access requests: that is outside the scope of this report.",
         sizes=[20]*6,
         speaker="Sumit",
     )
@@ -475,7 +472,7 @@ def main():
     add_tb(s, Inches(0.7), Inches(2.4), Inches(12), Inches(1.2),
            "Questions", size=48, color=WHITE, bold=True, align=PP_ALIGN.CENTER)
     add_tb(s, Inches(0.7), Inches(3.8), Inches(12), Inches(1.4),
-           "Humna  ·  Mithun  ·  Karina  ·  Sumit\nACIT4280 Group 1-A",
+           "Humna  ·  Mithun  ·  Karina  ·  Sumit\nACIT4280 Privacy by Design",
            size=20, color=CREAM, align=PP_ALIGN.CENTER)
     notes(s, "SPEAKER: Sumit, then any member. Likely questions: why not test Document Pluss as contract (would duplicate Netflix); why LI for football names (notice + opt-out + limited data).")
 

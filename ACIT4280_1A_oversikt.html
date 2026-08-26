@@ -2,7 +2,7 @@
 <html lang="nb">
 <head>
   <meta charset="utf-8">
-  <title>ACIT4280 1A - sammenslått oversikt</title>
+  <title>ACIT4280 - oversikt over innleveringen</title>
   <style>
     :root { --navy:#1B365D; --ink:#1A1A1A; --muted:#4A5568; --line:#D0D5DD; --cream:#FFF1D1; --paper:#FFFEFB; --ok:#1B6B3A; --warn:#9A5B00; }
     * { box-sizing: border-box; }
@@ -21,7 +21,6 @@
     tr:nth-child(even) td { background: #F4F6F8; }
     .yes { color: var(--ok); font-weight: 700; }
     .part { color: var(--warn); font-weight: 700; }
-    .out { text-decoration: line-through; color: var(--muted); }
     .tag { display: inline-block; background: var(--cream); color: var(--navy); font-weight: 700; font-size: 12px; padding: 1px 7px; }
     ul.tight li { margin: 0.25em 0; }
     .note { color: var(--muted); font-size: 13.5px; }
@@ -31,165 +30,160 @@
   </style>
 </head>
 <body>
-<h1>ACIT4280 gruppe 1-A: oppgave 1A, sammenslått og kuttet</h1>
-<p class="note">Styrefil for innleveringen. Frist 3. september 2026 kl. 08:00. 40 poeng. Dette er ikke oppgave 1B og ikke studieappen.</p>
+<h1>ACIT4280 Privacy by Design - gruppeinnlevering</h1>
+<p class="note">Intern oversikt for gruppen. Frist 3. september 2026 kl. 08:00. 40 poeng.</p>
 
-<p class="lead">Oppgaven har to deler. Del 1 er Webbkoll på 18 norske flater (tabell + grafikk per sektor). Del 2 er ICO lawful basis på fem valgte tjenester fra den analysen. Innleveringen er en rapport på 1000-1500 ord pluss diagrammer, og en 20 minutters presentasjon der alle fire snakker. Alt annet (Q-for-Q i ICO-verktøyet, Cookiebot, FIKS, Document Pluss, markedsføring, innsyn) er arbeidsnotat, ikke svar på 1A.</p>
+<p class="lead">Innleveringen har to deler. Del 1 er Webbkoll-analyse av 18 norske flater (tabell og grafikk per sektor). Del 2 er ICO lawful basis-vurdering av fem tjenester. Leveransen er en engelsk rapport (1000-1500 ord pluss diagrammer) og en presentasjon på 20 minutter der alle fire deltar.</p>
 
-<h2>1. Hva oppgaveteksten faktisk ber om</h2>
+<h2>1. Oppgavetekstens to deler</h2>
 <div class="grid">
   <div class="card">
     <h3>Del 1 - Webbkoll</h3>
     <ul class="tight">
       <li>18 tjenester: shopping, government, news/media, sport</li>
-      <li>Per site: serverland, interne cookies, eksterne cookies, 3. parts-forespørsler, land utenom Norge</li>
+      <li>Per nettsted: serverland, interne cookies, eksterne cookies, tredjepartsforespørsler, land utenom Norge</li>
       <li>Grafikk per sektor</li>
-      <li>Interessante funn (høyest / lavest / avvik)</li>
+      <li>Høyeste og laveste verdier, samt avvik</li>
     </ul>
   </div>
   <div class="card">
-    <h3>Del 2 - gruppe 1-A (ICO)</h3>
+    <h3>Del 2 - ICO lawful basis</h3>
     <ul class="tight">
       <li>Fem tjenester fra Webbkoll-listen</li>
       <li>Finn personvernerklæringen</li>
       <li>Kjør ICO-verktøyet på ett konkret formål</li>
-      <li>Sammenlign: hva erklæringen sier vs hva ICO merker APPROPRIATE</li>
+      <li>Sammenlign erklæring mot ICO-utfallet</li>
       <li>Oppsummer i rapporten (Tabell 5)</li>
     </ul>
   </div>
 </div>
-<p><strong>Ikke 1B:</strong> vi sender ikke innsynsforespørsler. <strong>Ikke bland formål:</strong> cookies, medlemskap, kasse og reklame er ulike behandlinger.</p>
+<p>Cookies, medlemskap, kasse og reklame behandles som ulike formål. Hver ICO-kjøring dekker ett formål.</p>
 
-<h2>2. Hva som skal inn i innleveringen, og hva som skal ligge igjen</h2>
+<h2>2. Filer i leveransen</h2>
 <table>
-  <thead><tr><th>Materiell</th><th>Rolle</th><th>I rapport / PPT?</th></tr></thead>
+  <thead><tr><th>Fil</th><th>Rolle</th></tr></thead>
   <tbody>
-    <tr><td>ACIT4280_1A_report.html + .pdf</td><td>Selve besvarelsen (engelsk). PDF er visning/Canvas-format</td><td class="yes">Ja - dette leveres</td></tr>
-    <tr><td>Figurer (Webbkoll, KeyCDN, cookie-banner)</td><td>Diagrammene oppgaven krever</td><td class="yes">Ja - ligger lokalt i OneDrive, lim inn</td></tr>
-    <tr><td>ACIT4280_1A_presentation.pptx</td><td>20 min, alle fire</td><td class="yes">Ja - framføring, ikke Canvas-ordtelling</td></tr>
-    <tr><td>Fem offisielle ICO .docx</td><td>Bevis for del 2</td><td>Vedlegg / mappe. Tabell 5 er sammendraget i rapporten</td></tr>
-    <tr><td>ICO_5sites_worksheet.html</td><td>Arbeidsark</td><td>Nei</td></tr>
-    <tr><td>oppgave-1a-ico-svar.md</td><td>Full Q-for-Q-logg</td><td>Nei</td></tr>
-    <tr><td>Cookiebot, FIKS, Document Pluss, Babyshop-profilering</td><td>Andre formål</td><td>Bare som ett skille, ikke egne ICO-rader</td></tr>
-    <tr><td class="out">Oppgave 1B innsyn</td><td>Annen gruppeoppgave</td><td>Nei</td></tr>
+    <tr><td>ACIT4280_1A_report.pdf</td><td>Rapporten som leveres (engelsk, A4)</td></tr>
+    <tr><td>ACIT4280_1A_report.html</td><td>Kilde til rapporten</td></tr>
+    <tr><td>figures/</td><td>Figur 1-7 (Webbkoll-grafikk, metodeeksempel, Skatteetaten)</td></tr>
+    <tr><td>ACIT4280_1A_presentation.pptx</td><td>20 minutter, alle fire</td></tr>
+    <tr><td>Seks ICO .docx</td><td>Offisielle ICO-rapporter som dokumentasjon til del 2</td></tr>
   </tbody>
 </table>
+<p class="note">ICO_5sites_worksheet.html og oppgave-1a-ico-svar.md er arbeidsnotater og inngår ikke i Canvas-leveransen.</p>
 
-<h2>3. Del 1 i korte punkter (Webbkoll)</h2>
-<p>Metode: engelsk Webbkoll, ett Chromium-besøk, ingen tillegg, ingen Do Not Track, ingen samtykkeklikk. Serverland = KeyCDN Country. Norge trekkes ut av landlisten. Vi overskriver aldri første klokke (Tabell 2). Tabell 3 er senere klokke.</p>
+<h2>3. Del 1 - Webbkoll</h2>
+<p>Metode: engelsk Webbkoll, ett Chromium-besøk, ingen tillegg, ingen Do Not Track, ingen samtykkeklikk. Serverland = KeyCDN Country. Norge trekkes ut av landlisten. Tabell 2 er første måling. Tabell 3 er gjentatt måling og overskriver ikke Tabell 2.</p>
 <ul class="tight">
   <li><strong>Høyest forespørsler (Tabell 2):</strong> fotball.no 113, worldofwarcraft.com 90, document.no 51, aftenposten.no 48, klassekampen.no 46.</li>
   <li><strong>Lavest:</strong> lanekassen.no 1, altinn.no 5, nrk.no 7, spotify.no 10, skiforeningen.no 14.</li>
-  <li><strong>Bare ikea.no</strong> har 3. parts-cookies (2), etter redirect til ikea.com.</li>
-  <li><strong>fotball.no</strong> er høyest på forespørsler og har likevel 0 eksterne cookies. Forespørselvolum er ikke cookie-volum.</li>
+  <li><strong>Bare ikea.no</strong> har tredjepartscookies (2), etter omdirigering til ikea.com.</li>
+  <li><strong>fotball.no</strong> har flest forespørsler og likevel 0 eksterne cookies. Forespørselvolum er ikke cookie-volum.</li>
   <li><strong>document.no</strong> har bredest første landliste (6 land utenom Norge).</li>
-  <li><strong>Sektor:</strong> news/media høyest, government lavest, shopping i midten. babyshop.no hopper til 101 på senere klokke; første fill beholdes (45).</li>
-  <li><strong>Metodeeksempel:</strong> klassekampen.no, 20.08.2026 12:36:46 UTC: 4 1P-cookies, 0 3P-cookies, 56 forespørsler.</li>
-  <li><strong>Åpent punkt:</strong> ett Netflix 3. parts Look up (assets.nflxext.com).</li>
+  <li><strong>Sektor:</strong> news/media høyest, government lavest, shopping i midten. babyshop.no går til 101 på gjentatt måling; rangeringen følger første måling (45).</li>
+  <li><strong>Metodeeksempel:</strong> klassekampen.no, 20.08.2026 12:36:46 UTC: 4 førstepartscookies, 0 tredjepartscookies, 56 forespørsler.</li>
 </ul>
-<p class="note">Del 1 er ferdig i rapporten. Webbkoll leser ikke personvernerklæring og avgjør ikke Art. 6. Det er del 2.</p>
+<p class="note">Webbkoll leser ikke personvernerklæring og avgjør ikke artikkel 6. Det er del 2.</p>
 
-<h2>4. Del 2 - oversikt over ICO-arbeidet (det vi nettopp har gjort)</h2>
-<p>Verktøy: ICO Lawful basis interactive guidance (oppdatert 14. april 2026). Ett konkret formål per kjøring. Offisielle Word-rapporter datert 26. august 2026. Recognised legitimate interest (fem snevre allmenne formål) passet <strong>ingen</strong> av våre fem formål.</p>
-<p>Regel som styrte alle svar: ikke bland cookies, medlemskap, kasse og reklame i samme kjøring. Art. 6 svarer på <em>hvorfor vi får behandle personopplysningene</em>. Cookie-banner svarer på <em>om vi får lagre/lese på enheten</em>.</p>
+<h2>4. Del 2 - ICO-resultater</h2>
+<p>Verktøy: ICO Lawful basis interactive guidance (oppdatert 14. april 2026). Ett konkret formål per kjøring. Offisielle Word-rapporter datert 26. august 2026. Recognised legitimate interest passet ingen av de fem formålene.</p>
+<p>Artikkel 6 svarer på hvorfor personopplysningene kan behandles. Cookie-regler svarer på om informasjon kan lagres eller leses på enheten.</p>
 
 <table>
   <thead>
     <tr>
       <th>Tjeneste</th>
-      <th>Ett formål (det vi testet)</th>
-      <th>Ikke blandet inn</th>
+      <th>Ett formål</th>
+      <th>Holdt utenfor kjøringen</th>
       <th>Erklæringen</th>
       <th>ICO</th>
-      <th>Match</th>
+      <th>Samsvar</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>skatteetaten.no<br><span class="tag">government</span></td>
       <td>Identitet, inntekt og skattedata for skatt og folkeregister</td>
-      <td>Valgfrie cookies (Skyra, Matomo, GA, Siteimprove)</td>
-      <td>Hjemlet i lov. Som hovedregel ikke mulig å reservere seg. Navngitte lover bl.a. skatteforvaltningsloven og folkeregisterloven.</td>
-      <td>Legal obligation APPROPRIATE. Public task APPROPRIATE. Consent NOT APPROPRIATE / likely invalid (ingen ekte løpende valg). Øvrige NOT APPROPRIATE. Ingen INCONCLUSIVE.</td>
+      <td>Valgfrie cookies</td>
+      <td>Hjemlet i lov. Som hovedregel ikke mulig å reservere seg.</td>
+      <td>Legal obligation APPROPRIATE. Public task APPROPRIATE. Consent NOT APPROPRIATE / likely invalid.</td>
       <td class="yes">Ja</td>
     </tr>
     <tr>
-      <td>skatteetaten.no<br><span class="tag">eget cookie-formål</span></td>
+      <td>skatteetaten.no<br><span class="tag">cookies</span></td>
       <td>Valgfrie statistikk-cookies etter Ja/Nei</td>
       <td>Skatt og folkeregister</td>
       <td>Samtykke. Nødvendige alltid på. Valgfrie kan avvises. Nei-test 24.08.2026 på /person/.</td>
-      <td>Consent INCONCLUSIVE (Q6: banneret navngir ikke fullt ut behandlingsansvarlig, formål og type). Ingen basis APPROPRIATE. Øvrige NOT APPROPRIATE. Rapport: Skatteetaten_cookies_Lawful basis assessment report.docx</td>
+      <td>Consent INCONCLUSIVE. Ingen basis APPROPRIATE.</td>
       <td class="part">Delvis</td>
     </tr>
     <tr>
       <td>netflix.no<br><span class="tag">news/media</span></td>
       <td>Konto og betaling for betalt strømmeabonnement</td>
       <td>Annonser, anbefalinger, markedsføring</td>
-      <td>EEA/UK: contractual necessity for å levere tjenesten til medlemmer (sist oppdatert 10. april 2026).</td>
-      <td>Contract APPROPRIATE. Alle andre NOT APPROPRIATE. Consent likely invalid (ingen ekte løpende valg).</td>
+      <td>EEA/UK: contractual necessity for å levere tjenesten til medlemmer.</td>
+      <td>Contract APPROPRIATE. Øvrige NOT APPROPRIATE.</td>
       <td class="yes">Ja</td>
     </tr>
     <tr>
       <td>fotball.no<br><span class="tag">sport</span></td>
       <td>Publisere navn og klubb for aktive spillere 13+ (kamphistorikk)</td>
-      <td>FIKS-medlemskap (kontrakt). Cookiebot (ekomlov/samtykke). CRM/billetter.</td>
-      <td>Kamphistorikk av allmenn interesse, opt-out via klubb. Stamdata sier «samtykke om publisering» (matcher ikke ICO).</td>
-      <td>Legitimate interests APPROPRIATE. Consent NOT APPROPRIATE / likely invalid. NFF er ikke forvaltningsorgan (public task No).</td>
-      <td class="yes">Ja for dette formålet</td>
+      <td>FIKS-medlemskap. Cookiebot. CRM/billetter.</td>
+      <td>Kamphistorikk av allmenn interesse, opt-out via klubb.</td>
+      <td>Legitimate interests APPROPRIATE. Consent NOT APPROPRIATE / likely invalid.</td>
+      <td class="yes">Ja</td>
     </tr>
     <tr>
       <td>document.no<br><span class="tag">news/media</span></td>
-      <td>Google Signals / reklameanalyse (demografi, interesser, kryssenhet)</td>
-      <td>Document Pluss (ville vært contract, som Netflix). Kommentarer, kundeforhold, nødvendige cookies.</td>
-      <td>Art. 6 er ikke navngitt. Signals sies å kjøres bare ved Google-innlogging med annonsetilpasning. Opt-out hos Google.</td>
-      <td>Consent INCONCLUSIVE (forespørselen er ikke klar, fremtredende og atskilt fra vilkår). Ingen basis APPROPRIATE.</td>
+      <td>Google Signals / reklameanalyse</td>
+      <td>Document Pluss, kommentarer, nødvendige cookies</td>
+      <td>Artikkel 6 er ikke navngitt. Signals sies å kjøres bare ved Google-innlogging med annonsetilpasning.</td>
+      <td>Consent INCONCLUSIVE. Ingen basis APPROPRIATE.</td>
       <td class="part">Delvis</td>
     </tr>
     <tr>
       <td>babyshop.no<br><span class="tag">shopping</span></td>
       <td>Navn, adresse, kontakt, ordre og betaling for kjøp og levering</td>
-      <td>Nyhetsbrev/profilering (samtykke). Cookie-side (Nødvendig / Måling / Markedsforing).</td>
-      <td>Vilkår punkt 1 er kjøpsavtale (18 år eller foresatt). Art. 6(1)(b) er ikke merket. «Avsnitt 5» er profilering, ikke kassen.</td>
-      <td>Contract APPROPRIATE. Øvrige NOT APPROPRIATE. Bundet cookie-«samtykke» i vilkårene er ikke gyldig Art. 6-samtykke.</td>
-      <td class="yes">Ja for kassen</td>
+      <td>Nyhetsbrev/profilering. Cookie-kategorier.</td>
+      <td>Vilkår punkt 1 er kjøpsavtale. Artikkel 6(1)(b) er ikke merket.</td>
+      <td>Contract APPROPRIATE. Øvrige NOT APPROPRIATE.</td>
+      <td class="yes">Ja</td>
     </tr>
   </tbody>
 </table>
 
-<h3>Hva del 2 viser, i tre setninger</h3>
+<h3>Hovedfunn i del 2</h3>
 <ol>
   <li>Fire av fem kjerneformål matcher erklæringen: lov for skatt, kontrakt for Netflix og Babyshop-kassen, berettiget interesse for NFF-kamphistorikk.</li>
-  <li>To samtykketester feiler: Skatteetaten-cookies (Q6, banneret er for kort) og document.no Google Signals (forespørselen er ikke atskilt fra vilkår). Ingen basis APPROPRIATE i de to rapportene.</li>
-  <li>Et cookie-klikk er ikke rettslig grunnlag for skatt, abonnement, kamphistorikk eller kasse. Derfor egen cookie-rad for Skatteetaten, som et skille, ikke som en sjette tjeneste.</li>
+  <li>To samtykketester feiler: Skatteetaten-cookies (banneret navngir ikke behandlingsansvarlig, formål og type fullt ut) og document.no Google Signals (forespørselen er ikke atskilt fra vilkår).</li>
+  <li>Et cookie-klikk er ikke rettslig grunnlag for skatt, abonnement, kamphistorikk eller kasse. Derfor egen cookie-rad for Skatteetaten.</li>
 </ol>
 
-<h3>Kilder til del 2 (ikke lim hele erklæringen inn i rapporten)</h3>
+<h3>Kilder til del 2</h3>
 <ul class="tight">
-  <li>skatteetaten.no: personvernerklæring (skatt) + cookie-side. ICO: Skatteetaten_Lawful basis assessment report.docx og Skatteetaten_cookies_Lawful basis assessment report.docx</li>
-  <li>netflix.no: Privacy Statement, EEA/UK legal bases. ICO: Netflix_Lawful basis assessment report.docx</li>
+  <li>skatteetaten.no: personvernerklæring og cookie-side. ICO: Skatteetaten_Lawful basis assessment report.docx og Skatteetaten_cookies_Lawful basis assessment report.docx</li>
+  <li>netflix.no: Privacy Statement. ICO: Netflix_Lawful basis assessment report.docx</li>
   <li>fotball.no: https://www.fotball.no/personvern. ICO: Fotball_Lawful basis assessment report.docx</li>
   <li>document.no: https://www.document.no/personvernerklaering/. ICO: Document_Lawful basis assessment report.docx</li>
-  <li>babyshop.no: Integrity policy + vilkår punkt 1. ICO: Babyshop_Lawful basis assessment report.docx</li>
+  <li>babyshop.no: Integrity policy og vilkår punkt 1. ICO: Babyshop_Lawful basis assessment report.docx</li>
 </ul>
 
-<h2>5. Hva rapporten bør inneholde (og ikke mer)</h2>
+<h2>5. Rapportens oppbygning</h2>
 <ol>
-  <li>Kort innledning: to deler, ikke 1B.</li>
-  <li>Metode Webbkoll + Tabell 2 (første klokke) + grafikk per sektor + høyest/lavest.</li>
-  <li>Ett metodeeksempel (klassekampen.no) hvis plassen rekker.</li>
-  <li>Del 2: Tabell 5 + noen avsnitt som forklarer ett formål per rad og document.no-avviket.</li>
-  <li>Konklusjon som gjentar høyest/lavest og ICO-match, ikke nye funn.</li>
+  <li>Innledning: to forskningsspørsmål.</li>
+  <li>Metode, Tabell 2-3, Figur 2-3 (rangering og sektor) og høyest/lavest.</li>
+  <li>Metodeeksempel: klassekampen.no (Figur 1, 4 og 5).</li>
+  <li>Del 2: Tabell 5, skillet artikkel 6 mot cookies (Figur 6-7), og document.no-avviket.</li>
+  <li>Konklusjon som gjentar høyest/lavest og ICO-samsvar.</li>
 </ol>
-<p><strong>Kutt ut av brødteksten hvis ordtelling sprenger 1500:</strong> lang GDPR-mapping av hver Webbkoll-blokk, dobbel gjennomgang av Tabell 3, Q-for-Q fra ICO, Cookiebot-lister, Document Pluss-vilkår, Babyshop cookie-kategorier. Tabellene og figurene teller som diagrammer, ikke som de 1000-1500 ordene.</p>
-<p class="note">Tabell 5 er fylt (ikke pending). Brødtekst i rapporten er ca. 1460 ord (innen 1000-1500). Figurer mangler i repoet og må kopieres fra OneDrive før endelig PDF. Visningsfiler: <code>ACIT4280_1A_report.pdf</code> (Canvas-rapport) og <code>ACIT4280_1A_oversikt.pdf</code> (denne styrefila). Presentasjon leveres som <code>ACIT4280_1A_presentation.pptx</code>.</p>
+<p class="note">Brødtekst i rapporten ligger innenfor 1000-1500 ord. Tabeller og figurer teller som diagrammer, ikke som ordtellingen.</p>
 
-<h2>6. Sjekkliste for innlevering</h2>
+<h2>6. Presentasjon</h2>
 <ul class="tight">
-  <li>Rapport 1000-1500 ord, engelsk, med Tabell 2-5 og figurer</li>
-  <li>Tabell 5 matcher ICO-rapportene over (ikke pending)</li>
-  <li>Presentasjon 20 min: Humna del 1 metode, Mithun Webbkoll-tall, Karina ICO + Skatteetaten + Netflix, Sumit fotball/document/babyshop</li>
-  <li>Kopier html + pptx + figurer til OneDrive: Assignments/1A_Webbkoll/</li>
-  <li>Ikke lever 1B, worksheet eller Q-for-Q-loggen</li>
+  <li>Humna Akhtar: oppgave, metode, Webbkoll-regler</li>
+  <li>Mithun Chandra Debnath: Webbkoll-tall, sektor, klassekampen.no</li>
+  <li>Karina Sætersdal Nilssen: ICO, Skatteetaten, Netflix</li>
+  <li>Sumit Prasad Sah: fotball.no, document.no, babyshop.no, avslutning</li>
 </ul>
 </body>
 </html>
