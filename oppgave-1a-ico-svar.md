@@ -224,6 +224,7 @@ Det endrer **ikke** Contract Q1 for denne ICO-kjøringen. En egen kjøring på k
 | Consent Q1: Do you want to give individuals the ongoing power to decide whether or not you process their data? | fylt | **Yes** |
 | Consent Q2: Are you in a position of power over the individual, which means they might feel they have to say yes? | fylt | **No** |
 | Consent Q3: Have you made consent to processing a precondition of your service? | fylt | **No** |
+| Consent Q4: Do you ask individuals to take a positive action to opt in? | fylt | **Yes** |
 | ICO-konklusjon | ikke fylt | forventet: consent |
 
 **Hvorfor No på contract Q1:** Vi tester reklameanalyse, ikke Document Pluss. Det er ingen avtale om Google Signals. Signals styres av Google-innlogging og annonsetilpasning, ikke av abonnementet. ICO: svar No når formålet ikke er å utføre kontrakten. Worksheet startet med No her.
@@ -242,7 +243,9 @@ Det endrer **ikke** Contract Q1 for denne ICO-kjøringen. En egen kjøring på k
 
 **Hvorfor No på consent Q3:** Lesing av artikler krever ikke Google Signals. Erklæringen sier at data bare samles hvis du er logget inn på Google med annonsetilpasning. Et Pluss-abonnement krever heller ikke Signals. Yes her ville gjort samtykket ugyldig (tvunget). Ikke To some extent.
 
-**ICO-steg nå:** velg No, trykk Continue. Worksheet videre: avslag uten tap av kjernetjenesten (Yes).
+**Hvorfor Yes på consent Q4:** Erklæringen krever at du har *tillatt* personlig tilpasning av annonser. Det er en handling (Google-innstilling), ikke stillhet eller «ved å bruke siden». Document har ikke beskrevet et eget ja-banner for Signals; det tar vi i spørsmål om klart, fremtredende samtykke. Ikke No: det ville kuttet consent-sporet. Ikke To some extent.
+
+**ICO-steg nå:** velg Yes, trykk Continue. Senere spørsmål om klart/atskilt samtykke kan bli To some extent (valget skjer hos Google, ikke i et Document-banner).
 
 ---
 
