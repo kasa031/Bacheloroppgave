@@ -114,7 +114,7 @@ ICO minner om å dokumentere hvorfor behandlingen er nødvendig for kontrakten, 
 - Stamdata: «samtykke om publisering». FIFA-connect: teksten sier bokstav b men siterer berettiget interesse (f).
 - Wifi-Ullevaal: Art. 6(1)(f) LI, pluss samtykke til CRM.
 - CRM B2C (billetter/supporterklubb): «Vi er pålagt å lagre kjøpshistorikk» (regnskap/avgift). Det er **et annet formål** enn ICO-kjøringen.
-- Cookiebot: ekomlov for nødvendige cookies, samtykke for resten. Eget formål.
+- Cookiebot (limt inn 26.08.2026): ekomlov for nødvendige cookies; samtykke for Preferences/Statistics/Marketing. Tilstand: Deny. Tredjeparter bl.a. YouTube, Google, Vimeo, Spotify, Cookiebot. Eget formål.
 
 Vi tester **ett** formål: visning av navn og klubb på fotball.no.
 
@@ -143,7 +143,11 @@ Vi tester **ett** formål: visning av navn og klubb på fotball.no.
 
 **Hvorfor No på consent Q1:** Navn og klubb publiseres som standard. Spilleren kan stoppe det via klubben, men det er ikke løpende, fritt samtykke (slik Cookiebot er). Stamdata «samtykke om publisering» er ikke det samme som Art. 6(1)(a) for denne visningen. Ikke velg To some extent.
 
-**ICO-steg nå:** velg No, Continue. Neste forventet: legitimate interests Yes.
+**ICO-steg nå:** velg No på consent Q1, Continue. Neste forventet: legitimate interests Yes.
+
+### Formål 2: Cookiebot (ikke denne ICO-kjøringen)
+
+Nødvendige cookies uten samtykke (ekomlov). Øvrige krever tillatelse; samtykke kan trekkes. Nåværende tilstand Deny (26.08.2026 11:58 GMT+2). Dette er **ikke** grunnlaget for å vise spillernavn.
 
 ---
 
