@@ -7,6 +7,7 @@ Arbeidsnotat til innleveringen (ikke studieapp, ikke GitHub Pages).
 **Kilder gjenfunnet fra OneDrive 1A_Webbkoll:**
 - `Lawful basis assessment report.docx` (offisiell ICO-rapport, Skatteetaten skatt/folkeregister)
 - `Netflix_Lawful basis assessment report.docx` (offisiell ICO-rapport, Netflix abonnement)
+- `Fotball_Lawful basis assessment report.docx` (offisiell ICO-rapport, fotball.no kamphistorikk)
 - `ICO_5sites_worksheet.html`
 - `ACIT4280_1A_report.html` (gruppens rapport, Tabell 5)
 
@@ -103,9 +104,9 @@ ICO minner om å dokumentere hvorfor behandlingen er nødvendig for kontrakten, 
 
 ---
 
-## 3. fotball.no - I GANG
+## 3. fotball.no - FERDIG
 
-**Formål vi tester (worksheet):** publisere navn og klubb for aktive spillere 13+ for å vise kamphistorikk. Kontaktinfo til trenere/klubber og Cookiebot-cookies er egne formål.
+**Formål:** publisere navn og klubb for aktive spillere 13+ for å vise kamphistorikk. Kontaktinfo til trenere/klubber og Cookiebot-cookies er egne formål.
 
 **Personvernerklæring (full tekst lest 26.08.2026, https://www.fotball.no/personvern):**
 
@@ -118,7 +119,21 @@ ICO minner om å dokumentere hvorfor behandlingen er nødvendig for kontrakten, 
 
 Vi tester **ett** formål: visning av navn og klubb på fotball.no.
 
-**ICO-gjennomgang (publisering av kamphistorikk):**
+**Offisiell ICO-rapport:** `Fotball_Lawful basis assessment report.docx`
+
+| Grunnlag | ICO-utfall |
+|----------|------------|
+| Legitimate interests | APPROPRIATE |
+| Contract | NOT APPROPRIATE |
+| Legal obligation | NOT APPROPRIATE |
+| Vital interests | NOT APPROPRIATE |
+| Public task | NOT APPROPRIATE |
+| Recognised legitimate interest | NOT APPROPRIATE |
+| Consent | NOT APPROPRIATE / likely invalid (ingen ekte, løpende valg) |
+
+Ingen grunnlag merket INCONCLUSIVE. ICO skriver at legitimate interests *is likely to be an appropriate lawful basis*.
+
+**Svar vi ga i ICO-verktøyet (dette formålet):**
 
 | Grunnlag | Status | Svar |
 |----------|--------|------|
@@ -133,7 +148,7 @@ Vi tester **ett** formål: visning av navn og klubb på fotball.no.
 | Legitimate interests Q3: Have you identified a legitimate interest? | fylt | **Yes** |
 | Legitimate interests Q4: Is there another reasonable way to achieve your purpose without processing the data? | fylt | **No** |
 | Legitimate interests Q5: Is your legitimate interest compelling enough to justify the potential impact on individuals, or any element of the processing which would be unexpected? | fylt | **Yes** |
-| ICO-konklusjon | ikke fylt | forventet: legitimate interests |
+| ICO-konklusjon | fylt | **Legitimate interests APPROPRIATE**; øvrige NOT APPROPRIATE |
 
 **Hvorfor No på contract Q1:** Vi tester visning av navn og klubb på nett, ikke medlemsadministrasjon i FIKS. FIKS kan bruke kontrakt for medlemskap, men kamphistorikk på fotball.no er ikke det samme som å oppfylle en avtale med spilleren. ICO: svar No når du behandler noen andres opplysninger enn den du har kontrakt med, eller når formålet ikke er å utføre kontrakten. Worksheet startet med No her.
 
@@ -157,7 +172,9 @@ Vi tester **ett** formål: visning av navn og klubb på fotball.no.
 
 **Hvorfor Yes på LI Q5:** Balancing-testen. Behandlingen er begrenset (navn og klubb, ikke kontaktinfo). Aktive spillere 13+ i offisielle kamper kan rimelig forvente at navn vises i kamphistorikk. Allmenn interesse og opt-out via klubb veier opp for inngrepet. Publisering på nett er ikke uventet i organisert fotball. Ikke To some extent: det gjør ICO usikker, og worksheet forventer at LI holder.
 
-**ICO-steg nå:** velg Yes, trykk Send. Last opp ICO-rapporten etterpå.
+**Match:** Ja for formålet vi testet. Undersiden (kamphistorikk av allmenn interesse + opt-out via klubb) er Art. 6(1)(f) i praksis, og ICO merker legitimate interests APPROPRIATE. Contract og public task er NOT APPROPRIATE: vi testet ikke FIKS-medlemskap, og NFF er ikke forvaltningsorgan. Consent er NOT APPROPRIATE / likely invalid: stamdata-formuleringen «samtykke om publisering» matcher ikke ICO for denne visningen (publiseres som standard). FIFA-connect-teksten som blander bokstav b og f skal ikke brukes som grunnlag for denne raden. Cookiebot er eget formål.
+
+ICO minner om å dokumentere en legitimate interests assessment (LIA), holde den oppdatert, vurdere DPIA ved vesentlig risiko, og skrive i personvernerklæringen at de bruker berettiget interesse og *hvilken* interesse det er. For 13-17 år peker ICO også til veiledningen om barns opplysninger.
 
 ### Formål 2: Cookiebot (ikke denne ICO-kjøringen)
 
@@ -192,6 +209,6 @@ Nødvendige cookies uten samtykke (ekomlov). Øvrige krever tillatelse; samtykke
 | skatteetaten.no | skatt/folkeregister | legal obligation | legal obligation + public task APPROPRIATE | Ja |
 | skatteetaten.no | valgfrie cookies | consent | consent | Ja (egen kjøring) |
 | netflix.no | betalt abonnement | contractual necessity (EEA/UK) | Contract APPROPRIATE; øvrige NOT APPROPRIATE | Ja |
-| fotball.no | publisering kampstatistikk | public interest / opt-out; FIKS contract for medlemskap | pågår (LI-ansvar Yes; venter på ICO-rapport) | venter |
+| fotball.no | publisering kampstatistikk | allmenn interesse / opt-out (LI i praksis); FIKS contract for medlemskap | Legitimate interests APPROPRIATE; øvrige NOT APPROPRIATE | Ja (dette formålet) |
 | document.no | Google Signals | ikke oppgitt; Google-innstillinger | venter (forventet consent) | venter |
 | babyshop.no | kjøp og levering | contract (underforstått) | venter (forventet contract) | venter |
