@@ -8,7 +8,7 @@ from pptx.enum.text import PP_ALIGN, MSO_AUTO_SIZE, MSO_ANCHOR
 from pptx.util import Inches, Pt
 from pathlib import Path
 
-from site_slides_data import SITE_SLIDES
+from site_slides_data import ART6_BASES, ART6_HEADING, ART6_SUB, SITE_SLIDES
 
 FIG = Path("/workspace/figures")
 LOGO = FIG / "oslomet_logo.png"
@@ -195,21 +195,28 @@ def main():
     add_tb(s, Inches(0.7), Inches(1.22), Inches(12), Inches(0.38),
            "Group Assignment 1A",
            size=24, color=TEAL, bold=True)
-    add_tb(s, Inches(0.7), Inches(1.7), Inches(12), Inches(1.85),
+    add_tb(s, Inches(0.7), Inches(1.7), Inches(12), Inches(1.55),
            "Analysis of 3rd-party Data Sharing\nand Data Tracking and of GDPR\nCompliance of Norwegian Web Sites",
-           size=28, color=WHITE, bold=True)
-    tf_q = textbox(s, Inches(0.7), Inches(3.62), Inches(12), Inches(1.55))
+           size=26, color=WHITE, bold=True)
+    tf_q = textbox(s, Inches(0.7), Inches(3.35), Inches(5.9), Inches(1.75))
     p_run(tf_q,
           "•  When a front page loads, how many third parties does it contact, "
           "and in which countries do those servers appear to be located?",
-          size=17, color=WHITE, space_after=14)
+          size=16, color=WHITE, space_after=12)
     p_run(tf_q,
           "•  When a site processes personal data, has it named a GDPR Article 6 lawful basis, "
           "and does the ICO tool agree?",
-          size=17, color=WHITE, space_after=0)
-    add_tb(s, Inches(0.7), Inches(5.05), Inches(12), Inches(0.55),
+          size=16, color=WHITE, space_after=0)
+    add_tb(s, Inches(6.85), Inches(3.35), Inches(5.8), Inches(0.3),
+           ART6_HEADING, size=14, color=TEAL, bold=True)
+    add_tb(s, Inches(6.85), Inches(3.62), Inches(5.8), Inches(0.28),
+           ART6_SUB, size=11, color=WHITE)
+    tf_a6 = textbox(s, Inches(6.85), Inches(3.92), Inches(5.8), Inches(1.25))
+    for basis in ART6_BASES:
+        p_run(tf_a6, "•  " + basis, size=12, color=WHITE, space_after=3)
+    add_tb(s, Inches(0.7), Inches(5.2), Inches(12), Inches(0.45),
            "Humna Akhtar  ·  Mithun Chandra Debnath  ·  Karina Sætersdal Nilssen",
-           size=16, color=WHITE)
+           size=15, color=WHITE)
     band_top = Inches(5.85)
     band_h = Inches(1.65)
     logo_w = Inches(3.1)

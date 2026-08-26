@@ -1,5 +1,17 @@
 """Content for the five ICO site slides (slides 8-12)."""
 
+ART6_HEADING = "Article 6(1) GDPR"
+ART6_SUB = "Six lawful bases for processing personal data:"
+
+ART6_BASES = [
+    "Consent (a)",
+    "Contractual necessity (b)",
+    "Legal obligation (c)",
+    "Vital interests (d)",
+    "Public task (e)",
+    "Legitimate interests (f)",
+]
+
 SITE_SLIDES = [
     {
         "n": 8,

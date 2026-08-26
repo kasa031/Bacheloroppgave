@@ -2,7 +2,7 @@
 """Browser-printable 16:9 slides (Office Online cannot open the PPTX)."""
 from pathlib import Path
 
-from site_slides_data import SITE_SLIDES
+from site_slides_data import ART6_BASES, ART6_HEADING, ART6_SUB, SITE_SLIDES
 
 OUT = Path("/workspace/ACIT4280_1A_presentation.html")
 FIG = "figures"
@@ -66,10 +66,17 @@ parts.append(slide(f"""
     <p class="kicker">ACIT4280 Privacy by Design</p>
     <p class="assign">Group Assignment 1A</p>
     <h1>Analysis of 3rd-party Data Sharing<br>and Data Tracking and of GDPR<br>Compliance of Norwegian Web Sites</h1>
-    <ul class="title-questions">
-      <li>When a front page loads, how many third parties does it contact, and in which countries do those servers appear to be located?</li>
-      <li>When a site processes personal data, has it named a GDPR Article 6 lawful basis, and does the ICO tool agree?</li>
-    </ul>
+    <div class="title-grid">
+      <ul class="title-questions">
+        <li>When a front page loads, how many third parties does it contact, and in which countries do those servers appear to be located?</li>
+        <li>When a site processes personal data, has it named a GDPR Article 6 lawful basis, and does the ICO tool agree?</li>
+      </ul>
+      <div class="title-art6">
+        <p class="art6-head">{ART6_HEADING}</p>
+        <p class="art6-sub">{ART6_SUB}</p>
+        <ul class="art6-bases">{"".join(f"<li>{b}</li>" for b in ART6_BASES)}</ul>
+      </div>
+    </div>
     <p class="names">Humna Akhtar  ·  Mithun Chandra Debnath  ·  Karina Sætersdal Nilssen</p>
   </div>
   <div class="title-band"><span class="title-date">3 September 2026</span><img class="title-logo" src="{FIG}/oslomet_logo.svg" alt="OsloMet logo"></div>
@@ -308,13 +315,20 @@ td.part { color: var(--orange); font-weight: 700; background: var(--teal) !impor
 .site-card .match.part { color: var(--orange); }
 .site-card .extra { margin: 0.1in 0 0; font-size: 12px; line-height: 1.3; color: #4A5568; }
 .title-inner { padding: 0.9in 0.7in 0; }
-.title-inner h1 { font-size: 28px; line-height: 1.2; margin: 0.12in 0 0.18in; }
+.title-inner h1 { font-size: 26px; line-height: 1.2; margin: 0.12in 0 0.14in; }
 .title-inner .assign { font-size: 24px; font-weight: 700; color: var(--teal); margin: 0.08in 0 0; }
-.title-questions { margin: 0 0 0.22in; max-width: 11.8in; padding: 0; list-style: none; }
-.title-questions li { font-size: 17px; line-height: 1.35; color: #fff; margin: 0 0 0.16in; padding-left: 0.28in; position: relative; }
+.title-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.35in; margin: 0 0 0.16in; max-width: 11.8in; }
+.title-questions { margin: 0; max-width: none; padding: 0; list-style: none; }
+.title-questions li { font-size: 16px; line-height: 1.35; color: #fff; margin: 0 0 0.14in; padding-left: 0.28in; position: relative; }
 .title-questions li::before { content: "•"; position: absolute; left: 0; color: #fff; }
 .title-questions li:last-child { margin-bottom: 0; }
-.title-inner .names { font-size: 16px; margin: 0; }
+.title-art6 { color: #fff; }
+.art6-head { margin: 0 0 0.06in; font-size: 14px; font-weight: 700; color: var(--teal); }
+.art6-sub { margin: 0 0 0.08in; font-size: 11px; line-height: 1.3; color: #fff; }
+.art6-bases { margin: 0; padding: 0 0 0 0.22in; list-style: none; }
+.art6-bases li { font-size: 12px; line-height: 1.3; margin: 0 0 0.04in; padding-left: 0.18in; position: relative; }
+.art6-bases li::before { content: "•"; position: absolute; left: 0; color: #fff; }
+.title-inner .names { font-size: 15px; margin: 0; }
 .title-band { position: absolute; left: 0; right: 0; bottom: 0; height: 1.65in; background: var(--orange); color: var(--dark); padding: 0 0.7in; font-size: 16px; display: flex; align-items: center; justify-content: space-between; }
 .title-date { font-size: 16px; line-height: 1; }
 .title-logo { width: 3.1in; height: auto; display: block; }
