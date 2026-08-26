@@ -130,6 +130,8 @@ Vi tester **ett** formål: visning av navn og klubb på fotball.no.
 | Recognised legitimate interest Q1: Do you need to process the data for any of the following purposes? | fylt | **No** |
 | Legitimate interests: Are you happy to take full responsibility for justifying your processing? | fylt | **Yes** |
 | Legitimate interests Q2: Are you processing the data to perform your tasks as a public authority? | fylt | **No** |
+| Legitimate interests Q3: Have you identified a legitimate interest? | fylt | **Yes** |
+| Legitimate interests Q4: Is there another reasonable way to achieve your purpose without processing the data? | fylt | **No** |
 | ICO-konklusjon | ikke fylt | forventet: legitimate interests |
 
 **Hvorfor No på contract Q1:** Vi tester visning av navn og klubb på nett, ikke medlemsadministrasjon i FIKS. FIKS kan bruke kontrakt for medlemskap, men kamphistorikk på fotball.no er ikke det samme som å oppfylle en avtale med spilleren. ICO: svar No når du behandler noen andres opplysninger enn den du har kontrakt med, eller når formålet ikke er å utføre kontrakten. Worksheet startet med No her.
@@ -148,7 +150,11 @@ Vi tester **ett** formål: visning av navn og klubb på fotball.no.
 
 **Hvorfor No på LI Q2 (public authority):** NFF er idrettsforbund, ikke forvaltningsorgan. Offentlig myndighet kan som hovedregel ikke bruke LI til offisielle oppgaver. Yes her ville stenge LI. Skatteetaten ville svart Yes på dette spørsmålet.
 
-**ICO-steg nå:** velg No, trykk Send. Last opp ICO-rapporten etterpå.
+**Hvorfor Yes på LI Q3:** Undersiden sier formålet er kamphistorikk av allmenn interesse. Det er en identifisert interesse (NFF, klubber, fans). Ikke To some extent.
+
+**Hvorfor No på LI Q4:** Spørsmålet er om formålet kan nås *uten* å behandle personopplysningene. Yes her ville bety at behandlingen ikke er nødvendig. Formålet er å vise *hvem* som spilte (navn og klubb). Resultat uten navn (bare klubb mot klubb) er et annet formål. Anonymiserte oppstillinger gir ikke kamphistorikk av allmenn interesse slik NFF beskriver det. Ikke velg To some extent.
+
+**ICO-steg nå:** velg No, trykk Send. Neste er typisk balancing/opt-out. Last opp ICO-rapporten etterpå.
 
 ### Formål 2: Cookiebot (ikke denne ICO-kjøringen)
 
