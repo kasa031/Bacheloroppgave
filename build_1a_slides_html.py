@@ -43,20 +43,20 @@ parts.append(slide(header("Structure", "The report has two parts") + """
   <div class="pane cream">
     <h2>Part 1  ·  Webbkoll</h2>
     <ul>
-      <li>18 Norwegian-facing sites</li>
-      <li>Shopping, government, news/media, sport</li>
-      <li>Server location, cookies, 3rd-party requests, countries excl. Norway</li>
-      <li>Graphics per sector</li>
-      <li>Highest and lowest contact; most countries; restrained e-government</li>
+      <li>18 course-listed sites (Table 1)</li>
+      <li>Shopping, government, news/media/entertainment, spare time/sports</li>
+      <li>Columns: server country, internal/external cookies, 3rd-party requests, countries excl. Norway</li>
+      <li>Figures 2-4: all 18 sites, share, sector totals</li>
+      <li>Rank on Table 2 requests, not cookies</li>
     </ul>
   </div>
   <div class="pane navy">
     <h2>Part 2  ·  ICO lawful basis</h2>
     <ul>
-      <li>Five privacy notices</li>
-      <li>skatteetaten, Netflix, fotball.no, document.no, babyshop.no</li>
+      <li>Five notices from Table 1a (one shopping, one government, two news, one sport)</li>
+      <li>babyshop, skatteetaten, Netflix, document.no, fotball.no</li>
       <li>One concrete purpose per ICO run</li>
-      <li>Compare notice vs official ICO report</li>
+      <li>Compare notice vs official ICO Word report (26 Aug 2026)</li>
       <li>Cookies, membership and checkout stay separate purposes</li>
     </ul>
   </div>
@@ -64,20 +64,19 @@ parts.append(slide(header("Structure", "The report has two parts") + """
 """, 2))
 
 parts.append(slide(header("Part 1", "How we measured with Webbkoll") + bullets([
-    "English Webbkoll interface",
-    "One live Chromium visit: no add-ons, no Do Not Track, no consent click",
-    "Scan clock on the result page is part of the measurement",
-    "Server country: KeyCDN Country field for the IP",
-    "Norway dropped from the shared-country list",
-    "If KeyCDN returns no country: recorded as not available",
-    "Two tables: Table 2 first measurement, Table 3 repeat measurement",
+    "English Webbkoll; one live Chromium visit: no add-ons, no Do Not Track, no consent click",
+    "Server country = KeyCDN of the site IP; country list = KeyCDN of third-party IPs",
+    "Norway dropped from the country count (the list may still print NO)",
+    "n/a = KeyCDN returned no country (dnt.no, babyshop.no, altinn.no on Table 3)",
+    "Table 2 = first scan and ranking base; Table 3 = later check, not averaged",
+    "KeyCDN countries are not a GDPR Chapter V transfer record (arts. 44-47)",
 ]), 3))
 
 parts.append(slide(header("Part 1", "What Webbkoll does not do") + bullets([
-    "It does not click Yes/No or Cookiebot.",
-    "Zero third-party cookies can still mean many third-party requests.",
+    "It does not click Yes/No or Cookiebot, so optional analytics cookies may not appear.",
+    "A high request count is not a cookie count, and it is not personal data leaving Norway.",
     "ikea.no is the only row with external cookies (2), after redirect to ikea.com.",
-    "The two measurements are not averaged. A later visit can differ (24-hour store).",
+    "babyshop.no is 101 requests on Table 3, but 45 on Table 2. Rankings stay on Table 2.",
     "Article 6 is not on the Webbkoll page. That is the ICO tool.",
 ]), 4))
 
@@ -102,6 +101,7 @@ parts.append(slide(header("Part 1  ·  Table 4", "Highest and lowest third-party
   <div><h3>Highest five</h3>{hi_html}</div>
   <div><h3>Lowest five</h3>{lo_html}</div>
 </div>
+<p class="caption">Table 2 request column. Highest 1 = worst sharer. Lowest 1 = most restrained. babyshop 101 is Table 3 only.</p>
 """, 5))
 
 parts.append(slide(header("Part 1  ·  Figures 2 to 4", "Third-party requests by site and sector") + f"""
@@ -112,22 +112,24 @@ parts.append(slide(header("Part 1  ·  Figures 2 to 4", "Third-party requests by
     <img src="{FIG}/fig6_requests_per_sector.png" alt="Requests per sector">
   </div>
 </div>
+<p class="caption">All three charts use Table 2. News/media is the largest sector total; government is the smallest; sport is high because of fotball.no.</p>
 """, 6))
 
-parts.append(slide(header("Part 1  ·  method example", "klassekampen.no: requests without third-party cookies") + f"""
+parts.append(slide(header("Part 1  ·  method example", "klassekampen.no: 46 on the ranking, 56 on the screenshot") + f"""
 <div class="klass">
   <img src="{FIG}/fig2_webbkoll_results_klassekampen.png" alt="Webbkoll results for klassekampen.no">
   <img class="keycdn" src="{FIG}/fig4_keycdn_lookup_klassekampen.png" alt="KeyCDN lookup for klassekampen server IP">
 </div>
+<p class="caption">Table 2 rank: 46 requests, 0 third-party cookies. Screenshots = later visit (Table 3: 56 requests to 13 hosts). Server KeyCDN: United States, Google. Not a Chapter V finding.</p>
 """, 7))
 
 parts.append(slide(header("Part 2", "ICO lawful basis: one purpose at a time") + bullets([
-    "Tool: ICO Lawful basis interactive guidance (updated 14 April 2026).",
-    "Five services, one concrete processing activity per run.",
-    "Find the privacy notice, run the tool, save the official Word report.",
+    "Tool: ICO Lawful basis interactive guidance. Official Word reports dated 26 August 2026.",
+    "Five services from Table 1a. One concrete processing activity per run.",
     "Compare: what the notice claims vs what ICO marks APPROPRIATE.",
+    "Match Yes = they line up for that purpose. Partial = notice aims at consent, ICO marks INCONCLUSIVE.",
     "Do not mix cookies, marketing, membership and checkout in one run.",
-    "UK tool also has recognised legitimate interest (five narrow public purposes). None of our five purposes fitted that list.",
+    "UK recognised legitimate interest did not fit any of our five purposes.",
 ]), 8))
 
 parts.append(slide(header("Part 2", "Article 6 is not a cookie click") + """
@@ -169,6 +171,7 @@ parts.append(slide(header("Part 2  ·  Table 5", "ICO result vs the notice") + f
   <thead><tr><th>Service</th><th>Purpose</th><th>ICO</th><th>Match</th></tr></thead>
   <tbody>{tr}</tbody>
 </table>
+<p class="caption">Each row is one purpose. Yes = notice and ICO line up. Partial = they aim at consent, but ICO marks consent INCONCLUSIVE and no basis APPROPRIATE.</p>
 """, 10))
 
 parts.append(slide(header("ICO  ·  government", "skatteetaten.no: law for tax, consent for cookies") + bullets([
@@ -178,7 +181,7 @@ parts.append(slide(header("ICO  ·  government", "skatteetaten.no: law for tax, 
     "Controller: the Director General of Taxation (Skattedirektøren).",
     "ICO: legal obligation APPROPRIATE, public task APPROPRIATE.",
     "Consent NOT APPROPRIATE for core tax (no genuine free choice). Contract and LI NOT APPROPRIATE.",
-    "Purpose 2: optional stats cookies (Skyra, Matomo, GA, Siteimprove). Yes/No. ICO: consent INCONCLUSIVE (Q6). No basis APPROPRIATE.",
+    "Purpose 2: optional stats cookies. Notice: Yes/No. Webbkoll: 0 external cookies (no click). ICO: consent INCONCLUSIVE (Q6). No basis APPROPRIATE.",
 ]), 11))
 
 parts.append(slide(header("ICO  ·  news / media", "netflix.no: contract for the paid service") + bullets([
@@ -222,10 +225,10 @@ parts.append(slide(header("ICO  ·  shopping", "babyshop.no: contract for checko
 ]), 15))
 
 parts.append(slide(header("Close", "What we want the room to remember") + bullets([
-    "Webbkoll measures contact, not lawfulness.",
-    "One purpose per ICO run, or the tool mixes bases.",
-    "fotball.no has the highest request count and still zero third-party cookies.",
-    "Four of five core ICO purposes match the notice.",
+    "Webbkoll measures contact, not lawfulness and not a Chapter V export.",
+    "Rankings follow Table 2. Table 3 is a check. Do not average them.",
+    "fotball.no has the highest request count (113) and still zero third-party cookies.",
+    "Four of five core ICO purposes match the notice (Table 5).",
     "Two consent tests fail: skatteetaten cookies (Q6) and document.no Signals (Q5).",
     "Legal obligation (tax) is not the same as cookie consent (Yes/No).",
 ]), 16))
@@ -273,20 +276,21 @@ ul.bul li::before { content: "•"; position: absolute; left: 0; color: var(--na
 .pane li { font-size: 16px; margin: 0 0 8px; }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0.35in; margin: 0.2in 0.5in 0; }
 .two-col h3 { margin: 0 0 0.1in; color: var(--navy); font-size: 18px; }
-.rank { padding: 0.08in 0.14in; margin-bottom: 0.08in; min-height: 0.85in; }
+.rank { padding: 0.06in 0.14in; margin-bottom: 0.06in; min-height: 0.78in; }
 .rank.cream { background: var(--cream); }
 .rank.grey { background: #F4F6F8; }
 .rank strong { display: block; font-size: 16px; color: var(--navy); }
 .rank span { font-size: 14px; }
-.figs { display: grid; grid-template-columns: 6.5in 6in; gap: 0.15in; margin: 0.18in 0.3in 0; }
+.caption { position: absolute; left: 0.4in; right: 0.4in; bottom: 0.32in; margin: 0; font-size: 13px; color: #4A5568; line-height: 1.3; }
+.figs { display: grid; grid-template-columns: 6.5in 6in; gap: 0.15in; margin: 0.12in 0.3in 0; }
 .figs img, .klass img { width: 100%; height: auto; display: block; }
 .stack { display: flex; flex-direction: column; gap: 0.1in; }
-.stack img { height: 2.65in; object-fit: contain; background: #fff; }
-.figs > img { height: 5.5in; object-fit: contain; background: #fff; }
-.klass { margin: 0.12in 0.4in 0; display: flex; flex-direction: column; align-items: center; gap: 0.08in; }
-.klass img { max-height: 2.5in; width: auto; max-width: 12.5in; }
-.klass img.keycdn { max-height: 2.95in; }
-table { width: 12.5in; margin: 0.22in 0.4in 0; border-collapse: collapse; font-size: 13px; }
+.stack img { height: 2.45in; object-fit: contain; background: #fff; }
+.figs > img { height: 5.15in; object-fit: contain; background: #fff; }
+.klass { margin: 0.08in 0.4in 0; display: flex; flex-direction: column; align-items: center; gap: 0.06in; }
+.klass img { max-height: 2.3in; width: auto; max-width: 12.5in; }
+.klass img.keycdn { max-height: 2.7in; }
+table { width: 12.5in; margin: 0.18in 0.4in 0; border-collapse: collapse; font-size: 13px; }
 th { background: var(--navy); color: #fff; text-align: left; padding: 8px; }
 td { border: 1px solid #D0D5DD; padding: 9px 8px; }
 tr:nth-child(even) td { background: #F4F6F8; }

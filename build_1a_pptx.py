@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the ACIT4280 1A group presentation (20 min, all members)."""
+"""Build the ACIT4280 1A group presentation (16:9, 17 slides)."""
 
 from pptx import Presentation
 from pptx.dml.color import RGBColor
@@ -154,54 +154,53 @@ def main():
     add_tb(s, Inches(0.75), Inches(1.75), Inches(5.4), Inches(0.4), "Part 1  ·  Webbkoll", size=22, bold=True, color=NAVY)
     tf = textbox(s, Inches(0.75), Inches(2.3), Inches(5.4), Inches(4.0))
     for line in [
-        "18 Norwegian-facing sites",
-        "Shopping, government, news/media, sport",
-        "Server location, cookies, 3rd-party requests, countries excl. Norway",
-        "Graphics per sector",
-        "Highest and lowest contact; most countries; restrained e-government",
+        "18 course-listed sites (Table 1)",
+        "Shopping, government, news/media/entertainment, spare time/sports",
+        "Columns: server country, internal/external cookies, 3rd-party requests, countries excl. Norway",
+        "Figures 2-4: all 18 sites, share, sector totals",
+        "Rank on Table 2 requests, not cookies",
     ]:
         p_run(tf, "•  " + line, size=16, space_after=8)
     add_rect(s, Inches(6.9), Inches(1.55), Inches(5.9), Inches(5.0), NAVY)
     add_tb(s, Inches(7.15), Inches(1.75), Inches(5.4), Inches(0.4), "Part 2  ·  ICO lawful basis", size=22, bold=True, color=CREAM)
     tf = textbox(s, Inches(7.15), Inches(2.3), Inches(5.4), Inches(4.0))
     for line in [
-        "Five privacy notices",
-        "skatteetaten, Netflix, fotball.no, document.no, babyshop.no",
+        "Five notices from Table 1a (one shopping, one government, two news, one sport)",
+        "babyshop, skatteetaten, Netflix, document.no, fotball.no",
         "One concrete purpose per ICO run",
-        "Compare notice vs official ICO report",
+        "Compare notice vs official ICO Word report (26 Aug 2026)",
         "Cookies, membership and checkout stay separate purposes",
     ]:
         p_run(tf, "•  " + line, size=16, color=WHITE, space_after=8)
     footer(s, 2, total)
-    notes(s, "Stress one purpose at a time. Cookie clicks are not the lawful basis for tax or checkout.")
+    notes(s, "Table 1 is the 18 Canvas names. Table 1a is why we picked the five. Stress one purpose at a time. Cookie clicks are not the lawful basis for tax or checkout.")
 
     # 4 method
     bullet_slide(
         prs, 3, "Part 1", "How we measured with Webbkoll",
         [
-            "English Webbkoll interface",
-            "One live Chromium visit: no add-ons, no Do Not Track, no consent click",
-            "Scan clock on the result page is part of the measurement",
-            "Server country: KeyCDN Country field for the IP",
-            "Norway dropped from the shared-country list",
-            "If KeyCDN returns no country: recorded as not available",
-            "Two tables: Table 2 first measurement, Table 3 repeat measurement",
+            "English Webbkoll; one live Chromium visit: no add-ons, no Do Not Track, no consent click",
+            "Server country = KeyCDN of the site IP; country list = KeyCDN of third-party IPs",
+            "Norway dropped from the country count (the list may still print NO)",
+            "n/a = KeyCDN returned no country (dnt.no, babyshop.no, altinn.no on Table 3)",
+            "Table 2 = first scan and ranking base; Table 3 = later check, not averaged",
+            "KeyCDN countries are not a GDPR Chapter V transfer record (arts. 44-47)",
         ],
-        "Webbkoll does not read a privacy notice and does not decide Article 6. Request volume is not cookie volume.",
-        sizes=[18]*7,
+        "Webbkoll does not read a privacy notice and does not decide Article 6. Request volume is not cookie volume and is not proof that personal data left Norway.",
+        sizes=[18]*6,
     )
 
     # 5 rules
     bullet_slide(
         prs, 4, "Part 1", "What Webbkoll does not do",
         [
-            "It does not click Yes/No or Cookiebot.",
-            "Zero third-party cookies can still mean many third-party requests.",
+            "It does not click Yes/No or Cookiebot, so optional analytics cookies may not appear.",
+            "A high request count is not a cookie count, and it is not personal data leaving Norway.",
             "ikea.no is the only row with external cookies (2), after redirect to ikea.com.",
-            "The two measurements are not averaged. A later visit can differ (24-hour store).",
+            "babyshop.no is 101 requests on Table 3, but 45 on Table 2. Rankings stay on Table 2.",
             "Article 6 is not on the Webbkoll page. That is the ICO tool.",
         ],
-        "Hand over to Mithun for the numbers.",
+        "skatteetaten.no shows five internal cookies and zero external cookies because we never clicked Yes. The ICO cookie row tests the notice, not that Webbkoll count.",
     )
 
     # 6 highest lowest
@@ -225,15 +224,18 @@ def main():
     ]
     add_tb(s, Inches(0.5), Inches(1.4), Inches(6), Inches(0.4), "Highest five", size=18, bold=True, color=NAVY)
     add_tb(s, Inches(7.0), Inches(1.4), Inches(6), Inches(0.4), "Lowest five", size=18, bold=True, color=NAVY)
-    y = Inches(1.85)
+    y = Inches(1.78)
     for (a, b), (c, d) in zip(high, low):
-        add_rect(s, Inches(0.5), y, Inches(5.9), Inches(0.9), CREAM)
-        add_tb(s, Inches(0.7), y + Inches(0.08), Inches(5.5), Inches(0.35), a, size=16, bold=True, color=NAVY)
-        add_tb(s, Inches(0.7), y + Inches(0.42), Inches(5.5), Inches(0.35), b, size=14, color=INK)
-        add_rect(s, Inches(7.0), y, Inches(5.8), Inches(0.9), RGBColor(0xF4, 0xF6, 0xF8))
-        add_tb(s, Inches(7.2), y + Inches(0.08), Inches(5.4), Inches(0.35), c, size=16, bold=True, color=NAVY)
-        add_tb(s, Inches(7.2), y + Inches(0.42), Inches(5.4), Inches(0.35), d, size=14, color=INK)
-        y += Inches(1.0)
+        add_rect(s, Inches(0.5), y, Inches(5.9), Inches(0.82), CREAM)
+        add_tb(s, Inches(0.7), y + Inches(0.06), Inches(5.5), Inches(0.32), a, size=16, bold=True, color=NAVY)
+        add_tb(s, Inches(0.7), y + Inches(0.38), Inches(5.5), Inches(0.32), b, size=14, color=INK)
+        add_rect(s, Inches(7.0), y, Inches(5.8), Inches(0.82), RGBColor(0xF4, 0xF6, 0xF8))
+        add_tb(s, Inches(7.2), y + Inches(0.06), Inches(5.4), Inches(0.32), c, size=16, bold=True, color=NAVY)
+        add_tb(s, Inches(7.2), y + Inches(0.38), Inches(5.4), Inches(0.32), d, size=14, color=INK)
+        y += Inches(0.9)
+    add_tb(s, Inches(0.5), Inches(6.85), Inches(12.3), Inches(0.38),
+           "Table 2 request column. Highest 1 = worst sharer. Lowest 1 = most restrained. babyshop 101 is Table 3 only.",
+           size=13, color=MUTED)
     footer(s, 5, total)
     notes(s, "Rank is third-party REQUESTS on Table 2, not cookies. The repeat measurement puts babyshop.no at 101; rankings follow the first measurement. skatteetaten.no also 14 requests; skiforeningen listed because fewer countries.")
 
@@ -241,31 +243,37 @@ def main():
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, PAPER)
     header_bar(s, "Part 1  ·  Figures 2 to 4", "Third-party requests by site and sector")
-    s.shapes.add_picture(str(FIG / "fig3_requests_all18.png"), Inches(0.3), Inches(1.38), Inches(6.5), Inches(5.55))
-    s.shapes.add_picture(str(FIG / "fig5_share_requests_pie.png"), Inches(6.95), Inches(1.38), Inches(6.0), Inches(2.7))
-    s.shapes.add_picture(str(FIG / "fig6_requests_per_sector.png"), Inches(6.95), Inches(4.15), Inches(6.0), Inches(2.75))
+    s.shapes.add_picture(str(FIG / "fig3_requests_all18.png"), Inches(0.3), Inches(1.32), Inches(6.5), Inches(5.15))
+    s.shapes.add_picture(str(FIG / "fig5_share_requests_pie.png"), Inches(6.95), Inches(1.32), Inches(6.0), Inches(2.5))
+    s.shapes.add_picture(str(FIG / "fig6_requests_per_sector.png"), Inches(6.95), Inches(3.9), Inches(6.0), Inches(2.55))
+    add_tb(s, Inches(0.4), Inches(6.85), Inches(12.5), Inches(0.38),
+           "All three charts use Table 2. News/media is the largest sector total; government is the smallest; sport is high because of fotball.no.",
+           size=13, color=MUTED)
     footer(s, 6, total)
-    notes(s, "Point to fotball.no at 113 and lanekassen.no at 1. Request volume is not cookie volume.")
+    notes(s, "Point to fotball.no at 113 and lanekassen.no at 1. Request volume is not cookie volume. Do not read the pie as cookies.")
 
     # 8 klassekampen
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, PAPER)
-    header_bar(s, "Part 1  ·  method example", "klassekampen.no: requests without third-party cookies")
-    s.shapes.add_picture(str(FIG / "fig2_webbkoll_results_klassekampen.png"), Inches(0.4), Inches(1.35), Inches(12.5), Inches(2.55))
-    s.shapes.add_picture(str(FIG / "fig4_keycdn_lookup_klassekampen.png"), Inches(2.4), Inches(4.0), Inches(8.5), Inches(3.05))
+    header_bar(s, "Part 1  ·  method example", "klassekampen.no: 46 on the ranking, 56 on the screenshot")
+    s.shapes.add_picture(str(FIG / "fig2_webbkoll_results_klassekampen.png"), Inches(0.4), Inches(1.32), Inches(12.5), Inches(2.35))
+    s.shapes.add_picture(str(FIG / "fig4_keycdn_lookup_klassekampen.png"), Inches(2.4), Inches(3.78), Inches(8.5), Inches(2.85))
+    add_tb(s, Inches(0.4), Inches(6.7), Inches(12.5), Inches(0.5),
+           "Table 2 rank: 46 requests, 0 third-party cookies. Screenshots = later visit (Table 3: 56 requests to 13 hosts). Server KeyCDN: United States, Google. Not a Chapter V finding.",
+           size=13, color=MUTED)
     footer(s, 7, total)
-    notes(s, "This shows that request volume is not cookie volume. Continue with the ICO tool.")
+    notes(s, "Say the number on the screenshot is 56 because that is the later scan. The ranking in Table 4 is 46 from Table 2. Zero third-party cookies either way.")
 
     # 9 ICO intro
     bullet_slide(
         prs, 8, "Part 2", "ICO lawful basis: one purpose at a time",
         [
-            "Tool: ICO Lawful basis interactive guidance (updated 14 April 2026).",
-            "Five services, one concrete processing activity per run.",
-            "Find the privacy notice, run the tool, save the official Word report.",
+            "Tool: ICO Lawful basis interactive guidance. Official Word reports dated 26 August 2026.",
+            "Five services from Table 1a. One concrete processing activity per run.",
             "Compare: what the notice claims vs what ICO marks APPROPRIATE.",
+            "Match Yes = they line up for that purpose. Partial = notice aims at consent, ICO marks INCONCLUSIVE.",
             "Do not mix cookies, marketing, membership and checkout in one run.",
-            "UK tool also has recognised legitimate interest (five narrow public purposes). None of our five purposes fitted that list.",
+            "UK recognised legitimate interest did not fit any of our five purposes.",
         ],
         "Hold up that we used official ICO reports dated 26 August 2026.",
         sizes=[18]*6,
@@ -311,9 +319,9 @@ def main():
         ("babyshop.no", "Checkout / delivery", "Contract", "Yes"),
     ]
     left = Inches(0.4)
-    top = Inches(1.45)
+    top = Inches(1.4)
     widths = [Inches(2.6), Inches(3.2), Inches(5.3), Inches(1.4)]
-    row_h = Inches(0.72)
+    row_h = Inches(0.68)
     x = left
     for w, htxt in zip(widths, data[0]):
         add_rect(s, x, top, w, row_h, NAVY)
@@ -329,8 +337,11 @@ def main():
             add_rect(s, x, y, w, row_h, bg)
             add_tb(s, x + Inches(0.08), y + Inches(0.18), w - Inches(0.12), Inches(0.45), cell, size=13, bold=bolds[j], color=colors[j])
             x += w
+    add_tb(s, Inches(0.4), Inches(6.72), Inches(12.5), Inches(0.5),
+           "Each row is one purpose. Yes = notice and ICO line up. Partial = they aim at consent, but ICO marks consent INCONCLUSIVE and no basis APPROPRIATE.",
+           size=13, color=MUTED)
     footer(s, 10, total)
-    notes(s, "Four of five core purposes match. Two consent tests fail: skatteetaten cookies (Q6, banner too short) and document.no Signals (request not separate from terms).")
+    notes(s, "Four of five core purposes match. Two consent tests fail: skatteetaten cookies (Q6, banner too short) and document.no Signals (request not separate from terms). Webbkoll 0 external cookies on skatteetaten is not a conflict with the cookie ICO row.")
 
     # 12 skatteetaten
     bullet_slide(
@@ -342,9 +353,9 @@ def main():
             "Controller: the Director General of Taxation (Skattedirektøren).",
             "ICO: legal obligation APPROPRIATE, public task APPROPRIATE.",
             "Consent NOT APPROPRIATE for core tax (no genuine free choice). Contract and LI NOT APPROPRIATE.",
-            "Purpose 2: optional stats cookies (Skyra, Matomo, GA, Siteimprove). Yes/No. ICO: consent INCONCLUSIVE (Q6). No basis APPROPRIATE.",
+            "Purpose 2: optional stats cookies. Notice: Yes/No. Webbkoll: 0 external cookies (no click). ICO: consent INCONCLUSIVE (Q6). No basis APPROPRIATE.",
         ],
-        "Two purposes, two reports. Tax: law. Cookies: they aim at consent, but ICO says name controller, purpose and types more clearly. No test 24 August 2026 on skatteetaten.no/person/.",
+        "Two purposes, two reports. Tax: law. Cookies: they aim at consent, but ICO says name controller, purpose and types more clearly. No test 24 August 2026 on skatteetaten.no/person/. Table 5 cookie row tests the notice, not the Webbkoll count.",
         sizes=[16]*7,
     )
 
@@ -420,10 +431,10 @@ def main():
     bullet_slide(
         prs, 16, "Close", "What we want the room to remember",
         [
-            "Webbkoll measures contact, not lawfulness.",
-            "One purpose per ICO run, or the tool mixes bases.",
-            "fotball.no has the highest request count and still zero third-party cookies.",
-            "Four of five core ICO purposes match the notice.",
+            "Webbkoll measures contact, not lawfulness and not a Chapter V export.",
+            "Rankings follow Table 2. Table 3 is a check. Do not average them.",
+            "fotball.no has the highest request count (113) and still zero third-party cookies.",
+            "Four of five core ICO purposes match the notice (Table 5).",
             "Two consent tests fail: skatteetaten cookies (Q6) and document.no Signals (Q5).",
             "Legal obligation (tax) is not the same as cookie consent (Yes/No).",
         ],
