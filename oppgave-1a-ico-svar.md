@@ -66,17 +66,19 @@ ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en 
 | Vital interests Q1: Are you processing the personal data to save or protect someone's life? | fylt | **No** |
 | Public task Q1: Are you processing the data to carry out your official tasks or functions, or other specific tasks in the public interest? | fylt | **No** |
 | Recognised legitimate interest Q1: Do you need to process the data for any of the following purposes? | fylt | **No** |
+| Consent Q1: Do you want to give individuals the ongoing power to decide whether or not you process their data? | fylt | **No** |
 | Contract | ikke fylt | Worksheet: Q1 Yes, Q2 Yes, Q3 No (kan ikke levere uten konto/betaling). Forventet utfall: contract |
 | Legal obligation | ikke fylt | |
 | Legitimate interests | ikke fylt | |
-| Consent | ikke fylt | |
 | ICO-konklusjon | ikke fylt | forventet: contract |
 
 **Hvorfor No på vital interests:** Strømmetjeneste, ikke liv og død. Netflix lister ikke vital interests.
 
 **Hvorfor No på public task:** Netflix er et privat selskap, ikke offentlig myndighet. Art. 6(1)(e) gjelder offisielle oppgaver med hjemmel i lov. EEA/UK-tillegget lister ikke public task. Skatteetaten fikk Yes her; Netflix skal ha No.
 
-**Hvorfor No på recognised legitimate interest:** ICO More information-listen er: vern av sårbare (inkl. barn), nødssituasjon, kriminalitet, nasjonal sikkerhet, eller utlevering til noen som ber om data til sin offentlige oppgave. Konto og betaling for strømmeabonnement er ingen av disse. Svindel/sikkerhet hos Netflix er et annet formål og skal ikke blandes inn i denne ICO-kjøringen. ICO-rapporten for Skatteetaten avviste også dette grunnlaget.
+**Hvorfor No på recognised legitimate interest:** ICO More information-listen er: vern av sårbare (inkl. barn), nødsituasjon, kriminalitet, nasjonal sikkerhet, eller utlevering til noen som ber om data til sin offentlige oppgave. Konto og betaling for strømmeabonnement er ingen av disse. Svindel/sikkerhet hos Netflix er et annet formål og skal ikke blandes inn i denne ICO-kjøringen. ICO-rapporten for Skatteetaten avviste også dette grunnlaget.
+
+**Hvorfor No på consent Q1:** Spørsmålet er om abonnenten løpende kan si nei til behandling av konto- og betalingsdata og likevel ha tjenesten. Det kan de ikke. Samtykke hos Netflix gjelder atferdsreklame og enkelte markedsføringsmeldinger, ikke kjerneabonnementet. Å si opp kontoen er kontrakt, ikke samtykke. Ikke velg To some extent.
 
 **ICO-steg nå:** velg No, Continue. Når contract kommer: Yes / Yes / No etter worksheet.
 
@@ -118,7 +120,7 @@ ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en 
 |----------|---------|--------|-----|-------|
 | skatteetaten.no | skatt/folkeregister | legal obligation | legal obligation + public task APPROPRIATE | Ja |
 | skatteetaten.no | valgfrie cookies | consent | consent | Ja (egen kjøring) |
-| netflix.no | betalt abonnement | contract (nå eksplisitt i EEA/UK-tillegg) | pågår (vital interests No, public task No, recognised LI No) | venter |
+| netflix.no | betalt abonnement | contract (nå eksplisitt i EEA/UK-tillegg) | pågår (vital interests No, public task No, recognised LI No, consent Q1 No) | venter |
 | fotball.no | publisering kampstatistikk | public interest / opt-out | venter (forventet LI) | venter |
 | document.no | Google Signals | ikke oppgitt; Google-innstillinger | venter (forventet consent) | venter |
 | babyshop.no | kjøp og levering | contract (underforstått) | venter (forventet contract) | venter |
