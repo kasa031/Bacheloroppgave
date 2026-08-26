@@ -65,6 +65,7 @@ ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en 
 |----------|--------|------|
 | Vital interests Q1: Are you processing the personal data to save or protect someone's life? | fylt | **No** |
 | Public task Q1: Are you processing the data to carry out your official tasks or functions, or other specific tasks in the public interest? | fylt | **No** |
+| Recognised legitimate interest Q1: Do you need to process the data for any of the following purposes? | fylt | **No** |
 | Contract | ikke fylt | Worksheet: Q1 Yes, Q2 Yes, Q3 No (kan ikke levere uten konto/betaling). Forventet utfall: contract |
 | Legal obligation | ikke fylt | |
 | Legitimate interests | ikke fylt | |
@@ -74,6 +75,8 @@ ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en 
 **Hvorfor No på vital interests:** Strømmetjeneste, ikke liv og død. Netflix lister ikke vital interests.
 
 **Hvorfor No på public task:** Netflix er et privat selskap, ikke offentlig myndighet. Art. 6(1)(e) gjelder offisielle oppgaver med hjemmel i lov. EEA/UK-tillegget lister ikke public task. Skatteetaten fikk Yes her; Netflix skal ha No.
+
+**Hvorfor No på recognised legitimate interest:** Dette er et snevert UK-grunnlag (DUAA) for fem forhåndsgodkjente allmenne formål: svare på forespørsel fra offentlig oppgave, nasjonal sikkerhet, nødssituasjon, kriminalitet, og vern av sårbare. Konto og betaling for et strømmeabonnement er ikke noe av det. ICO-rapporten for Skatteetaten avviste også dette grunnlaget.
 
 **ICO-steg nå:** velg No, Continue. Når contract kommer: Yes / Yes / No etter worksheet.
 
@@ -115,7 +118,7 @@ ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en 
 |----------|---------|--------|-----|-------|
 | skatteetaten.no | skatt/folkeregister | legal obligation | legal obligation + public task APPROPRIATE | Ja |
 | skatteetaten.no | valgfrie cookies | consent | consent | Ja (egen kjøring) |
-| netflix.no | betalt abonnement | contract (nå eksplisitt i EEA/UK-tillegg) | pågår (Q1 vital interests = No) | venter |
+| netflix.no | betalt abonnement | contract (nå eksplisitt i EEA/UK-tillegg) | pågår (vital interests No, public task No, recognised LI No) | venter |
 | fotball.no | publisering kampstatistikk | public interest / opt-out | venter (forventet LI) | venter |
 | document.no | Google Signals | ikke oppgitt; Google-innstillinger | venter (forventet consent) | venter |
 | babyshop.no | kjøp og levering | contract (underforstått) | venter (forventet contract) | venter |
