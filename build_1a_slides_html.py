@@ -31,10 +31,10 @@ parts.append(slide(f"""
     <p class="kicker">ACIT4280 Privacy by Design</p>
     <p class="assign">Group Assignment 1A</p>
     <h1>Analysis of 3rd-party Data Sharing<br>and Data Tracking and of GDPR<br>Compliance of Norwegian Web Sites</h1>
-    <div class="title-questions">
-      <p>When a front page loads, how many other companies does it contact, and in which countries do those machines appear to sit?</p>
-      <p>When a site uses personal data, has it named a GDPR Article 6 basis, and does the ICO tool agree?</p>
-    </div>
+    <ul class="title-questions">
+      <li>When a front page loads, how many other companies does it contact, and in which countries do those machines appear to sit?</li>
+      <li>When a site uses personal data, has it named a GDPR Article 6 basis, and does the ICO tool agree?</li>
+    </ul>
     <p class="names">Humna Akhtar  ·  Mithun Chandra Debnath  ·  Karina Sætersdal Nilssen</p>
   </div>
   <div class="title-band">Oslo Metropolitan University<br>3 September 2026</div>
@@ -288,8 +288,10 @@ td.part { color: var(--warn); font-weight: 700; background: var(--cream) !import
 .title-inner { padding: 0.9in 0.7in 0; }
 .title-inner h1 { font-size: 26px; line-height: 1.2; margin: 0.12in 0 0.18in; }
 .title-inner .assign { font-size: 22px; font-weight: 700; color: var(--cream); margin: 0.08in 0 0; }
-.title-questions { margin: 0 0 0.22in; max-width: 11.8in; }
-.title-questions p { font-size: 15px; line-height: 1.35; color: var(--cream); margin: 0 0 0.1in; }
+.title-questions { margin: 0 0 0.22in; max-width: 11.8in; padding: 0; list-style: none; }
+.title-questions li { font-size: 15px; line-height: 1.35; color: var(--cream); margin: 0 0 0.16in; padding-left: 0.28in; position: relative; }
+.title-questions li::before { content: "•"; position: absolute; left: 0; color: var(--cream); }
+.title-questions li:last-child { margin-bottom: 0; }
 .title-inner .names { font-size: 16px; margin: 0; }
 .title-band { position: absolute; left: 0; right: 0; bottom: 0; height: 1.65in; background: var(--cream); color: var(--navy); padding: 0.28in 0.7in; font-size: 16px; }
 .q { text-align: center; padding-top: 2.4in; }

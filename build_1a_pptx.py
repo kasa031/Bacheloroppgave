@@ -131,13 +131,13 @@ def main():
     add_tb(s, Inches(0.7), Inches(1.7), Inches(12), Inches(1.85),
            "Analysis of 3rd-party Data Sharing\nand Data Tracking and of GDPR\nCompliance of Norwegian Web Sites",
            size=26, color=WHITE, bold=True)
-    tf_q = textbox(s, Inches(0.7), Inches(3.62), Inches(12), Inches(1.35))
+    tf_q = textbox(s, Inches(0.7), Inches(3.62), Inches(12), Inches(1.45))
     p_run(tf_q,
-          "When a front page loads, how many other companies does it contact, "
+          "•  When a front page loads, how many other companies does it contact, "
           "and in which countries do those machines appear to sit?",
-          size=15, color=CREAM, space_after=8)
+          size=15, color=CREAM, space_after=14)
     p_run(tf_q,
-          "When a site uses personal data, has it named a GDPR Article 6 basis, "
+          "•  When a site uses personal data, has it named a GDPR Article 6 basis, "
           "and does the ICO tool agree?",
           size=15, color=CREAM, space_after=0)
     add_tb(s, Inches(0.7), Inches(5.05), Inches(12), Inches(0.55),
