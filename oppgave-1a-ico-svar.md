@@ -17,6 +17,7 @@ Arbeidsnotat til innleveringen (ikke studieapp, ikke GitHub Pages, ikke oppgave 
 - `Netflix_Lawful basis assessment report.docx` (offisiell ICO-rapport, Netflix abonnement)
 - `Fotball_Lawful basis assessment report.docx` (offisiell ICO-rapport, fotball.no kamphistorikk)
 - `Document_Lawful basis assessment report.docx` (offisiell ICO-rapport, document.no Google Signals)
+- `Babyshop_Lawful basis assessment report.docx` (offisiell ICO-rapport, babyshop.no kjøp/levering)
 - `ICO_5sites_worksheet.html`
 - `ACIT4280_1A_report.html` (gruppens rapport, Tabell 5)
 - Full personvernerklæring for document.no limt inn 26.08.2026 (ingen Art. 6-merking)
@@ -276,9 +277,9 @@ ICO: hvis de vil bruke consent, må forespørselen være clear, prominent and se
 
 ---
 
-## 5. babyshop.no - I GANG
+## 5. babyshop.no - FERDIG
 
-**Formål vi tester:** navn, adresse, kontakt, ordre og betaling for å gjennomføre kjøp og levering. Nyhetsbrev, profilering, cookies og Google-annonser er egne formål.
+**Formål:** navn, adresse, kontakt, ordre og betaling for å gjennomføre kjøp og levering. Nyhetsbrev, profilering, cookies og Google-annonser er egne formål.
 
 **Personvernerklæring:** Full norsk tekst limt inn 26.08.2026 (Integritetspolicy). Samme innhold som den engelske siden. Behandlingsansvarlig: Babyshop Sthlm Holding AB, CIN 556699-1542, Stockholm, support@babyshop.com. GDPR nevnes, men Art. 6 er **ikke merket** som bokstav a/b/c/f. Teksten skiller likevel tre spor:
 
@@ -287,13 +288,27 @@ ICO: hvis de vil bruke consent, må forespørselen være clear, prominent and se
 - Interesseavveining (LI): nevnt generelt; aldri særlige kategorier; innsigelsesrett. Utlevering ved lovpålegg: eget formål.
 - Cookies: henvises til egen cookie-side (Formål 2).
 
-Hullet: de skriver at formålene står i «avsnitt 5», men avsnitt 5 er bare profilering. Kjøpsgrunnlaget er underforstått, ikke navngitt som Art. 6(1)(b). ICO kan likevel merke contract APPROPRIATE, som Netflix, hvis vi holder oss til kassen.
+Hullet: de skriver at formålene står i «avsnitt 5», men avsnitt 5 er bare profilering. Kjøpsgrunnlaget er underforstått, ikke navngitt som Art. 6(1)(b).
 
 **Vilkår og betingelser (limt inn 26.08.2026):** Punkt 1 er en ekte kjøpsavtale. Kunden må godta vilkårene for å handle. Avtalen er inngått når Babyshop har bekreftet bestillingen og kunden har fått leveringsbekreftelse på e-post. Forbruker må være 18 år eller ha foresattes samtykke (samme type barnekrav som ICO minnet om for Netflix). Punkt 5: betaling (kort, Walley/Klarna-lignende checkout, ev. kredittopplysning). Fraktpartnere og betaling er nødvendig for å utføre kontrakten.
 
 Punkt 1 sier også at kunden ved å godta vilkårene «samtykker til bruk av personopplysninger og informasjonskapsler». Det er **ikke** gyldig Art. 6-samtykke for cookies (bundet inn i vilkår, som Document Pluss). Det endrer **ikke** Contract Q1 for kassen. Cookies forblir Formål 2.
 
-**ICO-gjennomgang (kjøp og levering):**
+**Offisiell ICO-rapport:** `Babyshop_Lawful basis assessment report.docx`
+
+| Grunnlag | ICO-utfall |
+|----------|------------|
+| Contract | APPROPRIATE |
+| Legal obligation | NOT APPROPRIATE |
+| Vital interests | NOT APPROPRIATE |
+| Public task | NOT APPROPRIATE |
+| Recognised legitimate interest | NOT APPROPRIATE |
+| Consent | NOT APPROPRIATE / likely invalid (ingen ekte, løpende valg) |
+| Legitimate interests | NOT APPROPRIATE |
+
+Ingen grunnlag merket INCONCLUSIVE. ICO skriver at contract *is likely to be an appropriate lawful basis*.
+
+**Svar vi ga i ICO-verktøyet (dette formålet):**
 
 | Grunnlag | Status | Svar |
 |----------|--------|------|
@@ -306,7 +321,7 @@ Punkt 1 sier også at kunden ved å godta vilkårene «samtykker til bruk av per
 | Recognised legitimate interest Q1: Do you need to process the data for any of the following purposes? | fylt | **No** |
 | Consent Q1: Do you want to give individuals the ongoing power to decide whether or not you process their data? | fylt | **No** |
 | Legitimate interests: Are you happy to take full responsibility for justifying your processing? | fylt | **No** |
-| ICO-konklusjon | ikke fylt | forventet: contract |
+| ICO-konklusjon | fylt | **Contract APPROPRIATE**; øvrige NOT APPROPRIATE |
 
 **Hvorfor Yes på contract Q1:** Vilkårene dokumenterer en kjøpsavtale. Navn, adresse, kontakt, ordre og betaling trengs for å bekrefte og levere. Netflix-sporet. Worksheet: Q1 Yes.
 
@@ -326,7 +341,7 @@ Punkt 1 sier også at kunden ved å godta vilkårene «samtykker til bruk av per
 
 **Hvorfor No på legitimate interests (full responsibility):** Motsetning til fotball.no. Kjøp og levering skal bæres av kontrakt, ikke LI. Policyens interesseavveining og samtykke gjelder andre formål. Som Netflix og document.no Signals: No her fordi et annet grunnlag passer bedre.
 
-**ICO-steg nå:** velg No, trykk Send. Last opp ICO-rapporten etterpå.
+**Match:** Ja for formålet vi testet. Vilkårene er en kjøpsavtale, og ICO merker contract APPROPRIATE. Consent og LI er NOT APPROPRIATE for kassen (riktig: de gjelder profilering/markedsføring, ikke levering). Hullet i notice: Art. 6(1)(b) er ikke navngitt, og «avsnitt 5» peker feil på profilering. ICO ber dem dokumentere hvorfor behandlingen er nødvendig for kontrakten, og skrive formål og grunnlag i personvernerklæringen. For barn under 18: sjekk at barnet er part og har kompetanse; Babyshop krever 18 år eller foresatt.
 
 ### Formål 2: cookies og trackere (ikke denne ICO-kjøringen)
 
@@ -349,4 +364,6 @@ Teksten sier at noen formål krever samtykke som kan trekkes, og at preferanser 
 | netflix.no | betalt abonnement | contractual necessity (EEA/UK) | Contract APPROPRIATE; øvrige NOT APPROPRIATE | Ja |
 | fotball.no | publisering kampstatistikk | allmenn interesse / opt-out (LI i praksis); FIKS contract for medlemskap | Legitimate interests APPROPRIATE; øvrige NOT APPROPRIATE | Ja (dette formålet) |
 | document.no | Google Signals | ikke oppgitt; Google-innstillinger / opt-out | Consent INCONCLUSIVE; øvrige NOT APPROPRIATE; ingen APPROPRIATE | Delvis (sikter mot consent, ICO krever klarere forespørsel) |
-| babyshop.no | kjøp og levering | contract (underforstått) | venter (forventet contract) | venter |
+| babyshop.no | kjøp og levering | contract (underforstått; Art. 6 ikke merket) | Contract APPROPRIATE; øvrige NOT APPROPRIATE | Ja (dette formålet) |
+
+Alle fem ICO-kjøringer er ferdige. Tabell 5 i `ACIT4280_1A_report.html` (OneDrive) må oppdateres fra pending til disse utfallene. Cookie-formål på babyshop og fotball er egne kjøringer og skal ikke overskrive kassen/kamphistorikk-radene.
