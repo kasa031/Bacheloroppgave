@@ -102,7 +102,7 @@ def fig_requests_sector():
 
     fig, axes = plt.subplots(1, 2, figsize=(10.4, 4.6), dpi=240)
     fig.patch.set_facecolor(PAPER)
-    for ax, data, ylabel in (
+    for ax, data, title in (
         (axes[0], sums, "Sum of third-party requests"),
         (axes[1], means, "Mean requests per site"),
     ):
@@ -110,13 +110,13 @@ def fig_requests_sector():
         x = np.arange(len(order))
         ax.bar(x, data, color=colors, width=0.62, zorder=2)
         ax.set_xticks(x)
-        ax.set_xticklabels(["Shopping", "Government", "News / media", "Sport"], fontsize=8)
-        ax.set_ylabel(ylabel)
+        ax.set_xticklabels(["Shopping", "Government", "News / media", "Sport"], fontsize=9)
+        ax.set_xlabel(title, fontsize=10, color=INK, labelpad=12)
         ax.grid(axis="y", color=LINE, linewidth=0.6, zorder=0)
         for xi, v in zip(x, data):
-            label = f"{v:.0f}" if ylabel.startswith("Sum") else f"{v:.1f}"
+            label = f"{v:.0f}" if title.startswith("Sum") else f"{v:.1f}"
             ax.text(xi, v + max(data) * 0.02, label, ha="center", fontsize=9, color=INK)
-    fig.tight_layout()
+    fig.tight_layout(pad=1.4)
     path = OUT / "fig6_requests_per_sector.png"
     fig.savefig(path, bbox_inches="tight", facecolor=PAPER)
     plt.close()
