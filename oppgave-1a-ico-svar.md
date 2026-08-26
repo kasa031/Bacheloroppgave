@@ -226,7 +226,8 @@ Det endrer **ikke** Contract Q1 for denne ICO-kjøringen. En egen kjøring på k
 | Consent Q3: Have you made consent to processing a precondition of your service? | fylt | **No** |
 | Consent Q4: Do you ask individuals to take a positive action to opt in? | fylt | **Yes** |
 | Consent Q5: Is your consent request clear, prominent, and separate from general terms and conditions? | fylt | **To some extent** |
-| ICO-konklusjon | ikke fylt | forventet: consent (kan bli INCONCLUSIVE pga. Q5) |
+| Legitimate interests: Are you happy to take full responsibility for justifying your processing? | fylt | **No** |
+| ICO-konklusjon | ikke fylt | forventet: consent (kan bli INCONCLUSIVE pga. Q5); LI NOT APPROPRIATE |
 
 **Hvorfor No på contract Q1:** Vi tester reklameanalyse, ikke Document Pluss. Det er ingen avtale om Google Signals. Signals styres av Google-innlogging og annonsetilpasning, ikke av abonnementet. ICO: svar No når formålet ikke er å utføre kontrakten. Worksheet startet med No her.
 
@@ -248,7 +249,9 @@ Det endrer **ikke** Contract Q1 for denne ICO-kjøringen. En egen kjøring på k
 
 **Hvorfor To some extent på consent Q5:** Valget skjer hos Google (Ads Settings / annonsetilpasning), ikke i et klart, fremtredende Document-banner. Signals er beskrevet i personvernerklæringen, ikke som en atskilt ja-forespørsel. Pluss-vilkårene sier at du ved bruk godtar vilkår og personvernerklæring; det er ikke gyldig, atskilt samtykke. Yes ville overdrevet et banner vi ikke har dokumentert. No ville kuttet consent helt. Samme type hull som Skatteetatens cookie-Q6.
 
-**ICO-steg nå:** velg To some extent, trykk Continue. ICO kan merke consent INCONCLUSIVE. Det er et funn til Tabell 5: Art. 6 er ikke merket, og forespørselen ligger hos Google.
+**Hvorfor No på legitimate interests (full responsibility):** Motsetning til fotball.no. Reklameanalyse/Signals skal ikke bæres av LI. ICO og ekomreglene peker på samtykke for ikke-nødvendige annonsecookies. Worksheet forventet consent. Som Netflix: vi sier No her fordi et annet grunnlag passer bedre. Yes ville åpnet LI-sporet.
+
+**ICO-steg nå:** velg No, trykk Send. Last opp ICO-rapporten etterpå.
 
 ---
 
