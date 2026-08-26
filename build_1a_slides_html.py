@@ -9,8 +9,8 @@ FIG = "figures"
 def slide(inner: str, n: int, dark: bool = False) -> str:
     cls = "slide dark" if dark else "slide"
     foot = "" if dark and n == 1 else f"""
-    <div class="foot"><span>ACIT4280 Privacy by Design  |  Third-party sharing and lawful basis  |  3 Sep 2026</span><span>{n} / 18</span></div>"""
-    if dark and n in (1, 18):
+    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>{n} / 17</span></div>"""
+    if dark and n in (1, 17):
         foot = ""
     return f'<section class="{cls}">{inner}{foot}</section>\n'
 
@@ -29,26 +29,15 @@ parts = []
 
 parts.append(slide(f"""
   <div class="title-inner">
-    <p class="kicker">ACIT4280 Privacy by Design</p>
-    <h1>Third-party data sharing, tracking<br>and lawful basis on Norwegian sites</h1>
+    <p class="kicker">ACIT4280 Privacy by Design  ·  Group Assignment 1A</p>
+    <h1>Analysis of 3rd-party data sharing<br>and data tracking and of GDPR<br>compliance of Norwegian web sites</h1>
     <p class="names">Humna Akhtar  ·  Mithun Chandra Debnath<br>Karina Sætersdal Nilssen  ·  Sumit Prasad Sah</p>
   </div>
-  <div class="title-band">Oslo Metropolitan University  ·  20 minutes  ·  All members present<br>Due 3 September 2026, 08:00</div>
+  <div class="title-band">Oslo Metropolitan University<br>Due 3 September 2026</div>
 """, 1, dark=True))
 
-rows = [
-    ("Humna Akhtar", "Task, method, Webbkoll rules", "~5 min"),
-    ("Mithun Chandra Debnath", "Webbkoll findings: highest/lowest, sectors, klassekampen", "~5 min"),
-    ("Karina Sætersdal Nilssen", "ICO tool, one purpose, Skatteetaten, Netflix", "~5 min"),
-    ("Sumit Prasad Sah", "fotball.no, document.no, babyshop.no, close", "~5 min"),
-]
-cards = "".join(
-    f'<div class="card"><strong>{a}</strong><span>{b}</span><em>{c}</em></div>'
-    for a, b, c in rows
-)
-parts.append(slide(header("20 minutes  ·  four speakers", "Who presents what", "Humna") + f'<div class="cards">{cards}</div>', 2))
 
-parts.append(slide(header("Structure", "The report has two parts", "Humna") + """
+parts.append(slide(header("Structure", "The report has two parts") + """
 <div class="split">
   <div class="pane cream">
     <h2>Part 1  ·  Webbkoll</h2>
@@ -71,9 +60,9 @@ parts.append(slide(header("Structure", "The report has two parts", "Humna") + ""
     </ul>
   </div>
 </div>
-""", 3))
+""", 2))
 
-parts.append(slide(header("Part 1", "How we measured with Webbkoll", "Humna") + bullets([
+parts.append(slide(header("Part 1", "How we measured with Webbkoll") + bullets([
     "English Webbkoll interface",
     "One live Chromium visit: no add-ons, no Do Not Track, no consent click",
     "Scan clock on the result page is part of the measurement",
@@ -81,15 +70,15 @@ parts.append(slide(header("Part 1", "How we measured with Webbkoll", "Humna") + 
     "Norway dropped from the shared-country list",
     "If KeyCDN returns no country: recorded as not available",
     "Two tables: Table 2 first measurement, Table 3 repeat measurement",
-]), 4))
+]), 3))
 
-parts.append(slide(header("Part 1", "What Webbkoll does not do", "Humna") + bullets([
+parts.append(slide(header("Part 1", "What Webbkoll does not do") + bullets([
     "It does not click Yes/No or Cookiebot.",
     "Zero third-party cookies can still mean many third-party requests.",
     "ikea.no is the only row with external cookies (2), after redirect to ikea.com.",
     "The two measurements are not averaged. A later visit can differ (24-hour store).",
     "Article 6 is not on the Webbkoll page. That is the ICO tool.",
-]), 5))
+]), 4))
 
 high = [
     ("1  fotball.no", "Sport  ·  113 requests  ·  5 countries"),
@@ -107,14 +96,14 @@ low = [
 ]
 hi_html = "".join(f'<div class="rank cream"><strong>{a}</strong><span>{b}</span></div>' for a, b in high)
 lo_html = "".join(f'<div class="rank grey"><strong>{a}</strong><span>{b}</span></div>' for a, b in low)
-parts.append(slide(header("Part 1  ·  Table 4", "Highest and lowest third-party requests", "Mithun") + f"""
+parts.append(slide(header("Part 1  ·  Table 4", "Highest and lowest third-party requests") + f"""
 <div class="two-col">
   <div><h3>Highest five</h3>{hi_html}</div>
   <div><h3>Lowest five</h3>{lo_html}</div>
 </div>
-""", 6))
+""", 5))
 
-parts.append(slide(header("Part 1  ·  Figures 2 to 4", "Third-party requests by site and sector", "Mithun") + f"""
+parts.append(slide(header("Part 1  ·  Figures 2 to 4", "Third-party requests by site and sector") + f"""
 <div class="figs">
   <img src="{FIG}/fig3_requests_all18.png" alt="Bar chart of third-party requests for 18 sites">
   <div class="stack">
@@ -122,25 +111,25 @@ parts.append(slide(header("Part 1  ·  Figures 2 to 4", "Third-party requests by
     <img src="{FIG}/fig6_requests_per_sector.png" alt="Requests per sector">
   </div>
 </div>
-""", 7))
+""", 6))
 
-parts.append(slide(header("Part 1  ·  method example", "klassekampen.no: requests without third-party cookies", "Mithun") + f"""
+parts.append(slide(header("Part 1  ·  method example", "klassekampen.no: requests without third-party cookies") + f"""
 <div class="klass">
   <img src="{FIG}/fig2_webbkoll_results_klassekampen.png" alt="Webbkoll results for klassekampen.no">
   <img class="keycdn" src="{FIG}/fig4_keycdn_lookup_klassekampen.png" alt="KeyCDN lookup for klassekampen server IP">
 </div>
-""", 8))
+""", 7))
 
-parts.append(slide(header("Part 2", "ICO lawful basis: one purpose at a time", "Karina") + bullets([
+parts.append(slide(header("Part 2", "ICO lawful basis: one purpose at a time") + bullets([
     "Tool: ICO Lawful basis interactive guidance (updated 14 April 2026).",
     "Five services, one concrete processing activity per run.",
     "Find the privacy notice, run the tool, save the official Word report.",
     "Compare: what the notice claims vs what ICO marks APPROPRIATE.",
     "Do not mix cookies, marketing, membership and checkout in one run.",
     "UK tool also has recognised legitimate interest (five narrow public purposes). None of our five purposes fitted that list.",
-]), 9))
+]), 8))
 
-parts.append(slide(header("Part 2", "Article 6 is not a cookie click", "Karina") + """
+parts.append(slide(header("Part 2", "Article 6 is not a cookie click") + """
 <div class="split">
   <div class="pane cream">
     <h2>Article 6 (GDPR)</h2>
@@ -160,7 +149,7 @@ parts.append(slide(header("Part 2", "Article 6 is not a cookie click", "Karina")
     </ul>
   </div>
 </div>
-""", 10))
+""", 9))
 
 table_rows = [
     ("skatteetaten.no", "Tax / folkeregister", "Legal obligation + public task", "Yes", "yes"),
@@ -174,14 +163,14 @@ tr = "".join(
     f"<tr><td><strong>{a}</strong></td><td>{b}</td><td>{c}</td><td class='{k}'>{d}</td></tr>"
     for a, b, c, d, k in table_rows
 )
-parts.append(slide(header("Part 2  ·  Table 5", "ICO result vs the notice", "Karina") + f"""
+parts.append(slide(header("Part 2  ·  Table 5", "ICO result vs the notice") + f"""
 <table>
   <thead><tr><th>Service</th><th>Purpose</th><th>ICO</th><th>Match</th></tr></thead>
   <tbody>{tr}</tbody>
 </table>
-""", 11))
+""", 10))
 
-parts.append(slide(header("ICO  ·  government", "skatteetaten.no: law for tax, consent for cookies", "Karina") + bullets([
+parts.append(slide(header("ICO  ·  government", "skatteetaten.no: law for tax, consent for cookies") + bullets([
     "Purpose 1: identity, income and tax data for tax and folkeregister.",
     "Notice: first and foremost laid down in law. Opt-out generally not possible.",
     "Named acts: skatteforvaltningsloven, folkeregisterloven, skattebetalingsloven.",
@@ -189,18 +178,18 @@ parts.append(slide(header("ICO  ·  government", "skatteetaten.no: law for tax, 
     "ICO: legal obligation APPROPRIATE, public task APPROPRIATE.",
     "Consent NOT APPROPRIATE for core tax (no genuine free choice). Contract and LI NOT APPROPRIATE.",
     "Purpose 2: optional stats cookies (Skyra, Matomo, GA, Siteimprove). Yes/No. ICO: consent INCONCLUSIVE (Q6). No basis APPROPRIATE.",
-]), 12))
+]), 11))
 
-parts.append(slide(header("ICO  ·  news / media", "netflix.no: contract for the paid service", "Karina") + bullets([
+parts.append(slide(header("ICO  ·  news / media", "netflix.no: contract for the paid service") + bullets([
     "Purpose: account and payment data to provide the subscription.",
     "EEA/UK notice: contractual necessity to provide the service to members.",
     "ICO: Contract APPROPRIATE. All other bases NOT APPROPRIATE.",
     "Consent: not appropriate / likely invalid (no real ongoing choice).",
     "LI, legal obligation and consent in the notice apply to other purposes.",
     "Keep ads, recommendations and marketing out of this run.",
-]), 13))
+]), 12))
 
-parts.append(slide(header("ICO  ·  sport", "fotball.no: legitimate interests for match history", "Sumit") + bullets([
+parts.append(slide(header("ICO  ·  sport", "fotball.no: legitimate interests for match history") + bullets([
     "Purpose: publish name and club of active players 13+ (kamphistorikk).",
     "Notice: public-interest match history, opt-out via the club.",
     "ICO: Legitimate interests APPROPRIATE after necessity + balancing.",
@@ -208,9 +197,9 @@ parts.append(slide(header("ICO  ·  sport", "fotball.no: legitimate interests fo
     "FIKS membership can use contract. That is a different purpose.",
     "Stamdata samtykke om publisering does not match ICO consent (likely invalid).",
     "Cookiebot (Deny on 26 Aug 2026) is also a different purpose.",
-]), 14))
+]), 13))
 
-parts.append(slide(header("ICO  ·  news  ·  the mismatch", "document.no: Google Signals", "Sumit") + """
+parts.append(slide(header("ICO  ·  news  ·  the mismatch", "document.no: Google Signals") + """
 <div class="banner-red">ICO marks no basis APPROPRIATE. Consent is INCONCLUSIVE.</div>
 """ + bullets([
     "Purpose: Google Signals / ad analytics (demographics, interests, cross-device).",
@@ -220,32 +209,32 @@ parts.append(slide(header("ICO  ·  news  ·  the mismatch", "document.no: Googl
     "Choice sits at Google. Pluss terms also say you accept the privacy notice by using the service.",
     "Contract and LI correctly rejected for this advertising purpose.",
     "Match: partial. They aim at consent; ICO says fix the request.",
-]), 15))
+]), 14))
 
-parts.append(slide(header("ICO  ·  shopping", "babyshop.no: contract for checkout", "Sumit") + bullets([
+parts.append(slide(header("ICO  ·  shopping", "babyshop.no: contract for checkout") + bullets([
     "Purpose: name, address, contact, order and payment to deliver goods.",
     "Terms point 1: a sales contract (18 years or guardian).",
     "ICO: Contract APPROPRIATE. Other bases NOT APPROPRIATE.",
     "Notice does not label Art. 6(1)(b). Section 5 is profiling, not purchase.",
     "Marketing/profiling: consent (separate). Cookie policy: necessary vs measurement vs marketing.",
     "Bundled consent to cookies inside the terms is not valid Art. 6 consent.",
-]), 16))
+]), 15))
 
-parts.append(slide(header("Close", "What we want the room to remember", "Sumit") + bullets([
+parts.append(slide(header("Close", "What we want the room to remember") + bullets([
     "Webbkoll measures contact, not lawfulness.",
     "One purpose per ICO run, or the tool mixes bases.",
     "fotball.no has the highest request count and still zero third-party cookies.",
     "Four of five core ICO purposes match the notice.",
     "Two consent tests fail: skatteetaten cookies (Q6) and document.no Signals (Q5).",
     "Legal obligation (tax) is not the same as cookie consent (Yes/No).",
-]), 17))
+]), 16))
 
 parts.append(slide("""
   <div class="q">
     <h1>Questions</h1>
-    <p>Humna  ·  Mithun  ·  Karina  ·  Sumit<br>ACIT4280 Privacy by Design</p>
+    <p>ACIT4280 Privacy by Design  ·  Group Assignment 1A</p>
   </div>
-""", 18, dark=True))
+""", 17, dark=True))
 
 css = """
 :root { --navy:#1B365D; --ink:#1A1A1A; --cream:#FFF1D1; --paper:#FFFEFB; --ok:#1B6B3A; --warn:#9A5B00; --red:#8B1E1E; }
