@@ -1,8 +1,16 @@
 # ACIT4280 gruppeoppgave 1A - ICO lawful basis
 
-Arbeidsnotat til innleveringen (ikke studieapp, ikke GitHub Pages).
+Arbeidsnotat til innleveringen (ikke studieapp, ikke GitHub Pages, ikke oppgave 1B).
 
-**De fem tjenestene:** skatteetaten.no, netflix.no, fotball.no, document.no, babyshop.no.
+**Canvas:** Group assignment 1A, ACIT4280-1 26H. Frist 3 Sep 2026 08:00. 40 poeng. Rapport 1000-1500 ord + diagrammer. 20 min presentasjon (alle i gruppen).
+
+**To deler i 1A:**
+1. Webbkoll på listen (shopping, government, news/media, sport): tabell over 3. parts-deling, grenseoverskridende eksport og sporing + grafikk per sektor. Dette ligger i `ACIT4280_1A_report.html`.
+2. **Gruppe 1-A (oss):** ICO lawful basis-verktøyet på **5 valgte tjenester** fra analysen. Finn personvernerklæring, kjør ICO, oppsummer i rapporten (Tabell 5). Ett konkret behandlingsformål per kjøring.
+
+**Ikke 1B:** 1-B undersøker innsynsforespørsler. Det gjør vi ikke her.
+
+**De fem tjenestene (1-A):** skatteetaten.no, netflix.no, fotball.no, document.no, babyshop.no.
 
 **Kilder gjenfunnet fra OneDrive 1A_Webbkoll:**
 - `Lawful basis assessment report.docx` (offisiell ICO-rapport, Skatteetaten skatt/folkeregister)
