@@ -6,6 +6,7 @@ Arbeidsnotat til innleveringen (ikke studieapp, ikke GitHub Pages).
 
 **Kilder gjenfunnet fra OneDrive 1A_Webbkoll:**
 - `Lawful basis assessment report.docx` (offisiell ICO-rapport, Skatteetaten skatt/folkeregister)
+- `Netflix_Lawful basis assessment report.docx` (offisiell ICO-rapport, Netflix abonnement)
 - `ICO_5sites_worksheet.html`
 - `ACIT4280_1A_report.html` (gruppens rapport, Tabell 5)
 
@@ -53,36 +54,41 @@ ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en 
 
 ---
 
-## 2. Netflix (netflix.no) - I GANG
+## 2. Netflix (netflix.no) - FERDIG
 
-**Formål vi tester (worksheet):** konto- og betalingsdata for betalt strømmeabonnement. Annonser, anbefalinger og markedsføring er egne formål.
+**Formål:** konto- og betalingsdata for betalt strømmeabonnement. Annonser, anbefalinger og markedsføring er egne formål.
 
-**Personvernerklæring 10. april 2026 (EEA/UK) oppgir faktisk Art. 6-grunnlag:** contractual necessity, legitimate interests, legal obligation, consent. Worksheet/rapport-utkastet sa tidligere at Art. 6 ikke var merket; det bør oppdateres i Tabell 5.
+**Personvernerklæring:** Privacy Statement, sist oppdatert 10. april 2026. EEA/UK-tillegget oppgir contractual necessity, legitimate interests, legal obligation og consent. For *to provide our service* til medlemmer bruker Netflix contractual necessity.
 
-### ICO-gjennomgang (betalt abonnement)
+**Offisiell ICO-rapport:** `Netflix_Lawful basis assessment report.docx`
 
-| Grunnlag | Status | Svar |
-|----------|--------|------|
-| Vital interests Q1: Are you processing the personal data to save or protect someone's life? | fylt | **No** |
-| Public task Q1: Are you processing the data to carry out your official tasks or functions, or other specific tasks in the public interest? | fylt | **No** |
-| Recognised legitimate interest Q1: Do you need to process the data for any of the following purposes? | fylt | **No** |
-| Consent Q1: Do you want to give individuals the ongoing power to decide whether or not you process their data? | fylt | **No** |
-| Legitimate interests: Are you happy to take full responsibility for justifying your processing? | fylt | **No** |
-| Contract | ikke fylt | Worksheet: Q1 Yes, Q2 Yes, Q3 No. Kan fortsatt komme, eller ICO-rapporten kommer etter Send. |
-| Legal obligation | ikke fylt | |
-| ICO-konklusjon | ikke fylt | forventet: contract |
+| Grunnlag | ICO-utfall |
+|----------|------------|
+| Contract | APPROPRIATE |
+| Legal obligation | NOT APPROPRIATE |
+| Vital interests | NOT APPROPRIATE |
+| Public task | NOT APPROPRIATE |
+| Recognised legitimate interest | NOT APPROPRIATE |
+| Consent | NOT APPROPRIATE / likely invalid (ingen ekte, løpende valg) |
+| Legitimate interests | NOT APPROPRIATE |
 
-**Hvorfor No på vital interests:** Strømmetjeneste, ikke liv og død. Netflix lister ikke vital interests.
+Ingen grunnlag merket INCONCLUSIVE.
 
-**Hvorfor No på public task:** Netflix er et privat selskap, ikke offentlig myndighet. Art. 6(1)(e) gjelder offisielle oppgaver med hjemmel i lov. EEA/UK-tillegget lister ikke public task. Skatteetaten fikk Yes her; Netflix skal ha No.
+**Svar vi ga i ICO-verktøyet (dette formålet):**
 
-**Hvorfor No på recognised legitimate interest:** ICO More information-listen er: vern av sårbare (inkl. barn), nødsituasjon, kriminalitet, nasjonal sikkerhet, eller utlevering til noen som ber om data til sin offentlige oppgave. Konto og betaling for strømmeabonnement er ingen av disse. Svindel/sikkerhet hos Netflix er et annet formål og skal ikke blandes inn i denne ICO-kjøringen. ICO-rapporten for Skatteetaten avviste også dette grunnlaget.
+| Spørsmål | Svar |
+|----------|------|
+| Vital interests Q1: save or protect someone's life? | No |
+| Public task Q1: official tasks or public interest? | No |
+| Recognised legitimate interest Q1: de fem allmenne formålene? | No |
+| Consent Q1: ongoing power to decide? | No |
+| Legitimate interests: full responsibility for justifying? | No |
 
-**Hvorfor No på consent Q1:** Spørsmålet er om abonnenten løpende kan si nei til behandling av konto- og betalingsdata og likevel ha tjenesten. Det kan de ikke. Samtykke hos Netflix gjelder atferdsreklame og enkelte markedsføringsmeldinger, ikke kjerneabonnementet. Å si opp kontoen er kontrakt, ikke samtykke. Ikke velg To some extent.
+Contract ble merket APPROPRIATE i sluttrapporten (abonnement under Terms of Use; konto og betaling er nødvendig for å levere tjenesten).
 
-**Hvorfor No på legitimate interests (full responsibility):** Dette er LI-spørsmålet om du vil ta ansvar for en balancing test. For kjerneabonnementet skal vi bruke kontrakt, ikke LI. Netflix bruker LI til andre formål (profiler, forskning, noe markedsføring), men ikke til konto og betaling for medlemmer. Yes her kan merke LI som treff og rote til ICO-rapporten. Send kan være siste steg: last opp rapporten hvis den kommer.
+**Match:** Ja. ICO peker på contract, og EEA/UK-tillegget bruker contractual necessity for å levere tjenesten til medlemmer. Worksheet/Tabell 5 sa tidligere at Art. 6 ikke var merket; det stemmer ikke lenger og bør rettes. LI, legal obligation og consent i kunngjøringen gjelder *andre* formål og skal ikke blandes inn i denne ICO-kjøringen.
 
-**ICO-steg nå:** velg No, trykk Send. Hvis contract-spørsmål kommer: Yes / Yes / No.
+ICO minner om å dokumentere hvorfor behandlingen er nødvendig for kontrakten, og at barn under 18 må være part i kontrakten med tilstrekkelig kompetanse (Netflix krever 18 år, eller foresatt).
 
 ---
 
@@ -122,7 +128,7 @@ ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en 
 |----------|---------|--------|-----|-------|
 | skatteetaten.no | skatt/folkeregister | legal obligation | legal obligation + public task APPROPRIATE | Ja |
 | skatteetaten.no | valgfrie cookies | consent | consent | Ja (egen kjøring) |
-| netflix.no | betalt abonnement | contract (nå eksplisitt i EEA/UK-tillegg) | pågår (VI No, public task No, recognised LI No, consent Q1 No, LI-ansvar No) | venter |
+| netflix.no | betalt abonnement | contractual necessity (EEA/UK) | Contract APPROPRIATE; øvrige NOT APPROPRIATE | Ja |
 | fotball.no | publisering kampstatistikk | public interest / opt-out | venter (forventet LI) | venter |
 | document.no | Google Signals | ikke oppgitt; Google-innstillinger | venter (forventet consent) | venter |
 | babyshop.no | kjøp og levering | contract (underforstått) | venter (forventet contract) | venter |
