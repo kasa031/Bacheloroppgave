@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ACIT4280 1A - ICO lawful basis worksheet</title>
+  <style>
+    :root { --red:#DF301C; --orange:#FF9100; --cream:#FFF1D1; --turquoise:#00B7CD; --ink:#17213d; }
+    * { box-sizing: border-box; }
+    body { margin:0; font:16px/1.5 system-ui, sans-serif; color:var(--ink); background:#fff; }
+    main { max-width:1100px; margin:auto; padding:24px; }
+    h1, h2 { line-height:1.15; }
+    h1 { border-bottom:5px solid var(--turquoise); padding-bottom:12px; }
+    a { color:#006f7c; font-weight:700; }
+    .alert, .site { border:2px solid var(--ink); padding:16px; margin:18px 0; }
+    .alert { background:var(--cream); border-left:10px solid var(--red); }
+    .site h2 { margin-top:0; background:var(--turquoise); padding:10px; }
+    .tag { display:inline-block; background:var(--orange); padding:3px 8px; font-weight:700; }
+    .links { display:flex; flex-wrap:wrap; gap:12px; margin:10px 0; }
+    ol li { margin:8px 0; }
+    table { width:100%; border-collapse:collapse; margin-top:12px; }
+    th, td { border:1px solid var(--ink); padding:9px; text-align:left; vertical-align:top; }
+    th { background:var(--cream); }
+    textarea, input { width:100%; min-height:42px; font:inherit; border:1px solid var(--ink); padding:8px; }
+    textarea { min-height:74px; }
+    .hypothesis { color:#7a2500; font-weight:700; }
+    .ico-guide { background:var(--cream); border-left:8px solid var(--orange); padding:12px 16px; margin:14px 0; }
+    .ico-guide h3 { margin:0 0 8px; font-size:1.05rem; }
+    .ico-guide ol { margin:8px 0; padding-left:22px; }
+    .ico-guide li { margin:7px 0; }
+    .ico-guide .ans { font-weight:700; color:#006f7c; }
+    .ico-guide .expect { color:#7a2500; font-weight:700; margin-top:10px; }
+    .ico-guide .note { font-size:14px; margin-top:8px; }
+    @media (max-width:700px) { main { padding:12px; } table { font-size:14px; } }
+  </style>
+</head>
+<body>
+<main>
+  <h1>ACIT4280 Group 1A - ICO lawful basis worksheet</h1>
+  <p><strong>Selected services:</strong> skatteetaten.no, netflix.no, fotball.no, document.no and babyshop.no.</p>
+
+  <section class="alert">
+    <h2>Law under Article 6 is not cookie consent</h2>
+    <p>Skatteetaten processes tax and registry data under law. Optional web cookies on skatteetaten.no are offered through a Ja/Nei banner. Run the ICO tool on one purpose at a time. Do not treat a cookie click as the lawful basis for every other activity.</p>
+  </section>
+
+  <section class="alert">
+    <h2>Cookie consent test (Nei)</h2>
+    <p>Webbkoll does not click banners. For skatteetaten.no open skatteetaten.no/person/ in a clean browser, choose <strong>Nei</strong>, then record cookies and third-party requests. Save the banner screenshot as <code>figures/fig7_skatteetaten_cookie_banner.png</code>.</p>
+  </section>
+  <section class="alert">
+    <h2>One purpose at a time</h2>
+    <p>A service does not have one lawful basis for everything it does. State one concrete processing activity before using the ICO tool. Record what the privacy notice claims, then check whether the ICO result supports it.</p>
+    <div class="links">
+      <a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis/lawful-basis-interactive-guidance-tool/" target="_blank" rel="noopener">Open the ICO lawful basis tool</a>
+      <a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis/a-guide-to-lawful-basis/" target="_blank" rel="noopener">ICO guide to lawful basis</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Repeat this process for each service</h2>
+    <ol>
+      <li>Open the privacy notice and find a specific processing purpose.</li>
+      <li>Write the purpose and the personal data used.</li>
+      <li>Write the lawful basis claimed by the notice, if stated.</li>
+      <li>Run the ICO tool for that purpose.</li>
+      <li>Save the ICO result and explain whether it matches the notice.</li>
+      <li>Do not treat a cookie choice as the lawful basis for every other activity.</li>
+    </ol>
+  </section>
+
+  <section class="site">
+    <h2>1. skatteetaten.no <span class="tag">Government</span></h2>
+    <div class="links"><a href="https://www.skatteetaten.no/om-skatteetaten/sikkerhet/personvern/" target="_blank" rel="noopener">Privacy notice</a></div>
+    <p><strong>Suggested activity to test:</strong> processing identity and financial data to maintain the population register and administer tax.</p>
+    <p class="hypothesis">Starting hypothesis only: legal obligation and/or public task. Let the selected activity and ICO answers decide.</p>
+    <p><strong>Separate cookie purpose:</strong> optional web statistics cookies on skatteetaten.no (Ja/Nei banner). Test with Nei on skatteetaten.no/person/ and record cookies plus third-party requests after rejection.</p>
+    <table>
+      <tr><th>Purpose and data</th><td><textarea>Processing identity, address, income and tax data to administer tax assessments and maintain the population register (folkeregisteret).</textarea></td></tr>
+      <tr><th>Basis claimed by notice</th><td><textarea>Legal obligation / processing required by law (tax acts and folkeregister rules). Core duties are generally not optional; opt-out is not possible for statutory processing.</textarea></td></tr>
+      <tr><th>ICO result</th><td><input value="Legal obligation (also Public task per ICO report)"></td></tr>
+      <tr><th>Match and reasoning</th><td><textarea>Yes - official ICO report: legal obligation and public task both APPROPRIATE for tax/registry processing. Consent INCONCLUSIVE (not valid for core statutory processing). Contract, vital interests and legitimate interests NOT APPROPRIATE. Notice law-based claim aligns with ICO.</textarea></td></tr>
+    </table>
+    <div class="ico-guide">
+      <h3>ICO tool - suggested answers (tax and registry)</h3>
+      <p>State the purpose first: processing identity, income and tax data to administer tax and maintain the population register. Start with <strong>No</strong> on contract.</p>
+      <ol>
+        <li><strong>Contract Q1:</strong> Do you have (or intend to have) a contract with the individual? <span class="ans">No</span> - statutory tax and registry duties are not a commercial contract.</li>
+        <li>Click <strong>Continue</strong>. Q2 and Q3 are skipped when Q1 is No.</li>
+        <li><strong>Consent:</strong> Can you offer a genuine choice about this processing? <span class="ans">No</span> - core tax and registry processing is required by law and cannot be refused.</li>
+        <li><strong>Consent:</strong> Is consent a precondition of the service? <span class="ans">No</span></li>
+        <li><strong>Consent:</strong> Can the individual refuse without detriment? <span class="ans">No</span></li>
+        <li>Answer <strong>No</strong> (or <strong>I don't know</strong> only if unsure) on remaining consent checks, then click <strong>Continue</strong>.</li>
+        <li><strong>Legal obligation:</strong> Are you processing to comply with a legal obligation? <span class="ans">Yes</span> - tax acts and folkeregister rules require this processing.</li>
+        <li><strong>Legal obligation:</strong> Is the processing necessary for that compliance? <span class="ans">Yes</span></li>
+        <li>If the tool still asks about <strong>public task</strong>: Are you a public authority exercising official authority? <span class="ans">Yes</span>. Is processing necessary for a public-interest task with basis in law? <span class="ans">Yes</span>.</li>
+      </ol>
+      <p class="note"><strong>Public task vs legal obligation:</strong> Choose <strong>legal obligation</strong> when a named statute requires this exact processing and the person has no real choice (for example reporting income or maintaining folkeregister entries under specific acts). Choose <strong>public task</strong> when Skatteetaten performs an official government function with clear basis in law, but you describe the broader public-interest task rather than one named duty. For tax administration both can fit. Emphasise named statutory duties if the tool points to legal obligation; emphasise official authority and public-interest functions if it points to public task.</p>
+      <p class="expect">ICO result: legal obligation (also public task per official report). Both APPROPRIATE; consent inconclusive for core tax; contract and LI rejected.</p>
+    </div>
+    <p><strong>Separate cookie activity (second ICO run):</strong></p>
+    <table>
+      <tr><th>Purpose and data</th><td><textarea>Setting optional web statistics cookies after Ja/Nei banner choice on skatteetaten.no.</textarea></td></tr>
+      <tr><th>Basis claimed by notice</th><td><textarea>Consent (Ja/Nei banner for optional cookies to improve services).</textarea></td></tr>
+      <tr><th>ICO result</th><td><input value="Consent"></td></tr>
+      <tr><th>Match and reasoning</th><td><textarea>Yes - optional Ja/Nei banner fits consent for cookie analytics. Separate ICO run recommended: main tax/registry report flagged consent INCONCLUSIVE when statutory processing is mixed in; for cookies alone Q6 was To some extent (controller/purpose not fully in banner). Power imbalance as public authority noted (Q2 No; public authority may suggest Yes).</textarea></td></tr>
+    </table>
+    <div class="ico-guide">
+      <h3>ICO tool - suggested answers (optional cookies)</h3>
+      <p>Separate ICO run. Purpose: setting optional web statistics cookies after the Ja/Nei banner on skatteetaten.no. Start with <strong>No</strong> on contract.</p>
+      <ol>
+        <li><strong>Contract Q1:</strong> Do you have a contract for this cookie processing? <span class="ans">No</span></li>
+        <li>Click <strong>Continue</strong>.</li>
+        <li><strong>Consent Q1 (ongoing power):</strong> Can you offer a genuine choice? <span class="ans">Yes</span> - the Ja/Nei banner is an optional choice.</li>
+        <li><strong>Consent Q2 (position of power):</strong> Is your organisation a public authority or in a position of power? <span class="ans">No</span> - Karina selected No; as a public authority Skatteetaten may suggest Yes for a stronger power-imbalance analysis.</li>
+        <li><strong>Consent Q3 (precondition):</strong> Is consent a precondition of the core service? <span class="ans">No</span> - tax pages work without analytics cookies.</li>
+        <li><strong>Consent Q4 (positive opt-in):</strong> Positive opt-in required? <span class="ans">Yes</span> - Ja must be selected; Nei is the default reject path.</li>
+        <li><strong>Consent Q5 (clear, prominent, separate):</strong> Clear, prominent, separate consent? <span class="ans">Yes</span> - Ja/Nei banner is visible on first visit.</li>
+        <li><strong>Consent Q6 (controller, purposes, types):</strong> Controller, purposes and types explained? <span class="ans">To some extent</span> - details partly in linked cookie pages (GA4, Matomo).</li>
+        <li><strong>Legitimate interests Q1:</strong> Using legitimate interests? <span class="ans">No</span> - not using LI for this purpose.</li>
+      </ol>
+      <p class="expect">ICO result: consent (completed).</p>
+    </div>
+  </section>
+
+  <section class="site">
+    <h2>2. netflix.no <span class="tag">News, media and entertainment</span></h2>
+    <div class="links"><a href="https://www.netflix.com/privacy" target="_blank" rel="noopener">Privacy statement</a></div>
+    <p><strong>Suggested activity to test:</strong> processing account and payment data to provide the paid streaming service.</p>
+    <p class="hypothesis">Starting hypothesis only: contract. Keep advertising, recommendations and marketing separate if the notice uses other bases.</p>
+    <table>
+      <tr><th>Purpose and data</th><td><textarea>Processing account identifiers, contact details and payment data to provide the paid Netflix streaming subscription.</textarea></td></tr>
+      <tr><th>Basis claimed by notice</th><td><textarea>EEA/UK: contractual necessity to provide the service to members (Privacy Statement, Last Updated 10 April 2026).</textarea></td></tr>
+      <tr><th>ICO result</th><td><input value="Contract APPROPRIATE; other bases NOT APPROPRIATE (consent likely invalid)"></td></tr>
+      <tr><th>Match and reasoning</th><td><textarea>Yes - official ICO report matches EEA/UK contractual necessity for the paid subscription. LI, legal obligation and consent in the notice apply to other purposes. Advertising stays out of this run.</textarea></td></tr>
+    </table>
+    <div class="ico-guide">
+      <h3>ICO tool - suggested answers (paid streaming)</h3>
+      <p>Purpose: processing account and payment data to provide the paid Netflix streaming subscription. Start with <strong>Yes</strong> on contract.</p>
+      <ol>
+        <li><strong>Contract Q1:</strong> Do you have (or intend to have) a contract with the individual? <span class="ans">Yes</span> - paid subscription under Netflix Terms of Use.</li>
+        <li><strong>Contract Q2:</strong> Are you processing to perform the contract or a pre-contractual request? <span class="ans">Yes</span> - account and payment data are needed to deliver the service.</li>
+        <li><strong>Contract Q3:</strong> Could you reasonably perform the service without this processing? <span class="ans">No</span> - you cannot stream to a paying customer without account and payment-related data.</li>
+        <li>Click <strong>Continue</strong>. The tool should confirm contract before later sections.</li>
+      </ol>
+      <p class="expect">Expected ICO result: contract. Copy the tool output into ICO result above. Keep [pending] until you run it.</p>
+    </div>
+  </section>
+
+  <section class="site">
+    <h2>3. fotball.no <span class="tag">Sport</span></h2>
+    <div class="links">
+      <a href="https://www.fotball.no/personvern" target="_blank" rel="noopener">NFF privacy notice</a>
+      <a href="https://www.fotball.no/tema/om-nff/nffs-personvernerklaring/fotball.no" target="_blank" rel="noopener">fotball.no details</a>
+    </div>
+    <p><strong>Suggested activity to test:</strong> publishing the name and club of active players aged 13 or older to show match history.</p>
+    <p class="hypothesis">Starting hypothesis only: legitimate interests may be relevant, but document the balancing need and the opt-out described by NFF.</p>
+    <table>
+      <tr><th>Purpose and data</th><td><textarea>Publishing active player name and club (age 13+) on fotball.no to show match history.</textarea></td></tr>
+      <tr><th>Basis claimed by notice</th><td><textarea>fotball.no states public-interest match history; players may opt out via their club. FIKS cites contract (Art 6(1)(b)) for membership and administration; stamdata includes publishing consent (samtykke om publisering). No explicit Art 6 label on the fotball.no page for this publication.</textarea></td></tr>
+      <tr><th>ICO result</th><td><input value="Legitimate interests APPROPRIATE; other bases NOT APPROPRIATE"></td></tr>
+      <tr><th>Match and reasoning</th><td><textarea>Yes for this purpose. Official ICO report marks legitimate interests APPROPRIATE. FIKS contract is membership, not this publication. Stamdata "samtykke om publisering" does not match ICO (consent NOT APPROPRIATE / likely invalid).</textarea></td></tr>
+    </table>
+    <div class="ico-guide">
+      <h3>ICO tool - suggested answers (player publication)</h3>
+      <p>Purpose: publishing active player name and club (age 13+) on fotball.no to show match history. Start with <strong>No</strong> on contract.</p>
+      <ol>
+        <li><strong>Contract Q1:</strong> Do you have a contract for this publication purpose? <span class="ans">No</span> - showing match history online is not the same as performing a membership contract.</li>
+        <li>Click <strong>Continue</strong>.</li>
+        <li><strong>Consent:</strong> Can you offer a genuine choice about this publication? <span class="ans">No</span> - match history is published by default; club opt-out is not the same as Article 6 consent for this purpose.</li>
+        <li>Answer <strong>No</strong> on further consent checks (precondition, refuse without detriment, and so on), then click <strong>Continue</strong>.</li>
+        <li><strong>Legal obligation:</strong> Processing to comply with a legal obligation? <span class="ans">No</span></li>
+        <li><strong>Vital interests:</strong> Processing to protect vital interests? <span class="ans">No</span></li>
+        <li><strong>Public task:</strong> Are you a public authority performing an official task? <span class="ans">No</span> - NFF is a sports federation, not a UK-style public authority.</li>
+        <li><strong>Legitimate interests:</strong> Are you processing to further legitimate interests? <span class="ans">Yes</span> - transparent match history for sport and fans.</li>
+        <li><strong>Legitimate interests:</strong> Is the processing necessary? <span class="ans">Yes</span></li>
+        <li><strong>Legitimate interests:</strong> Have you carried out a balancing test (and is opt-out available)? <span class="ans">Yes</span> - NFF describes public-interest match history and club opt-out.</li>
+      </ol>
+      <p class="expect">Expected ICO result: legitimate interests (with balancing test). Copy the tool output into ICO result above. Keep [pending] until you run it.</p>
+    </div>
+  </section>
+
+  <section class="site">
+    <h2>4. document.no <span class="tag">News and media</span></h2>
+    <div class="links"><a href="https://www.document.no/personvernerklaering/" target="_blank" rel="noopener">Privacy notice</a></div>
+    <p><strong>Suggested activity to test:</strong> Google Signals and advertising analytics based on website activity and technical data.</p>
+    <p class="hypothesis">Starting hypothesis only: consent is a likely candidate for advertising trackers. Verify the notice, cookie choice and ICO result.</p>
+    <table>
+      <tr><th>Purpose and data</th><td><textarea>Using Google Signals and advertising cookies to collect demographics, interests and cross-device site interaction for advertising analytics.</textarea></td></tr>
+      <tr><th>Basis claimed by notice</th><td><textarea>Notice does not name an Article 6 basis for Google Signals. Processing runs only if the visitor is logged into Google and has allowed ad personalization; opt-out links are provided (Google Ads Settings, NAI).</textarea></td></tr>
+      <tr><th>ICO result</th><td><input value="Consent INCONCLUSIVE; no basis APPROPRIATE"></td></tr>
+      <tr><th>Match and reasoning</th><td><textarea>Partial. Official ICO report: consent INCONCLUSIVE because the request is not clear, prominent and separate from terms (Google settings; Pluss terms bundle the privacy notice). No basis APPROPRIATE. Contract and LI correctly rejected for Signals.</textarea></td></tr>
+    </table>
+    <div class="ico-guide">
+      <h3>ICO tool - suggested answers (Google Signals / ad analytics)</h3>
+      <p>Purpose: Google Signals and advertising analytics from site activity and technical data. Start with <strong>No</strong> on contract.</p>
+      <ol>
+        <li><strong>Contract Q1:</strong> Do you have a contract for this ad analytics purpose? <span class="ans">No</span> - reading articles does not require Google Signals.</li>
+        <li>Click <strong>Continue</strong>.</li>
+        <li><strong>Consent:</strong> Can you offer a genuine choice? <span class="ans">Yes</span> - processing runs only if the visitor is logged into Google and has allowed ad personalization; opt-out links are provided.</li>
+        <li><strong>Consent:</strong> Is consent a precondition of reading articles? <span class="ans">No</span></li>
+        <li><strong>Consent:</strong> Can the individual refuse without detriment? <span class="ans">Yes</span> - core news reading still works without personalized ad analytics.</li>
+        <li><strong>Consent:</strong> Can you deal with withdrawal? <span class="ans">Yes</span> - Google Ads Settings and similar opt-outs exist.</li>
+        <li><strong>Consent:</strong> Public authority or position of power? <span class="ans">No</span></li>
+        <li><strong>Consent:</strong> Is consent recorded? <span class="ans">Yes</span> - via Google account settings and/or site cookie choices.</li>
+        <li>If asked whether a more appropriate basis exists: <span class="ans">No</span> for this advertising analytics purpose.</li>
+      </ol>
+      <p class="expect">Expected ICO result: consent. Copy the tool output into ICO result above. Keep [pending] until you run it.</p>
+    </div>
+  </section>
+
+  <section class="site">
+    <h2>5. babyshop.no <span class="tag">Shopping</span></h2>
+    <div class="links">
+      <a href="https://www.babyshop.com/en-us/information/integrity-policy" target="_blank" rel="noopener">Integrity policy</a>
+      <a href="https://www.babyshop.com/en-us/information/cookies" target="_blank" rel="noopener">Cookie policy</a>
+    </div>
+    <p><strong>Suggested activity to test:</strong> processing customer, delivery and payment-related data to complete an online purchase.</p>
+    <p class="hypothesis">Starting hypothesis only: contract. Treat marketing and third-party tracking as separate purposes.</p>
+    <table>
+      <tr><th>Purpose and data</th><td><textarea>Processing name, address, contact details, order and payment data to fulfil an online purchase and deliver goods.</textarea></td></tr>
+      <tr><th>Basis claimed by notice</th><td><textarea>Not explicitly labeled as Article 6(1)(b). Integrity policy states customer data is processed when you make a purchase to fulfil orders and delivery; marketing and profiling use consent; some other processing uses legitimate interests.</textarea></td></tr>
+      <tr><th>ICO result</th><td><input value="Contract APPROPRIATE; other bases NOT APPROPRIATE"></td></tr>
+      <tr><th>Match and reasoning</th><td><textarea>Yes for checkout. Official ICO report marks contract APPROPRIATE. Notice does not label Art 6(1)(b); section 5 is profiling. Marketing and cookies stay separate. Bundled cookie wording in the terms is not valid Art 6 consent for trackers.</textarea></td></tr>
+    </table>
+    <div class="ico-guide">
+      <h3>ICO tool - suggested answers (purchase and delivery)</h3>
+      <p>Purpose: processing name, address, contact, order and payment data to fulfil an online purchase and deliver goods. Start with <strong>Yes</strong> on contract.</p>
+      <ol>
+        <li><strong>Contract Q1:</strong> Do you have (or intend to have) a contract with the individual? <span class="ans">Yes</span> - placing an online order creates a sales contract.</li>
+        <li><strong>Contract Q2:</strong> Are you processing to perform the contract? <span class="ans">Yes</span> - checkout, payment and delivery need customer and order data.</li>
+        <li><strong>Contract Q3:</strong> Could you reasonably fulfil the order without this processing? <span class="ans">No</span> - delivery requires name, address and payment-related data.</li>
+        <li>Click <strong>Continue</strong>. The tool should confirm contract before later sections.</li>
+      </ol>
+      <p class="note">Treat marketing, profiling and third-party tracking cookies as separate ICO runs (likely consent). This guide covers checkout and delivery only.</p>
+      <p class="expect">Expected ICO result: contract. Copy the tool output into ICO result above. Keep [pending] until you run it.</p>
+    </div>
+  </section>
+
+  <section class="alert">
+    <h2>Final comparison</h2>
+    <table>
+      <thead><tr><th>Service</th><th>Processing activity</th><th>Notice basis</th><th>ICO result</th><th>Match?</th></tr></thead>
+      <tbody>
+        <tr><td>skatteetaten.no</td><td>Tax and registry administration</td><td>Legal obligation / law</td><td>Legal obligation (also Public task per ICO report)</td><td>Yes - official ICO report: legal obligation and public task APPROPRIATE; consent inconclusive for core tax; contract/LI rejected. Notice aligns.</td></tr>
+        <tr><td>skatteetaten.no</td><td>Optional web statistics cookies</td><td>Consent (Ja/Nei banner)</td><td>Consent</td><td>Yes - Ja/Nei banner; separate ICO run recommended. Main report consent inconclusive when mixed with statutory processing; Q6 To some extent (controller/purpose not fully in banner).</td></tr>
+        <tr><td>netflix.no</td><td>Paid streaming subscription</td><td>EEA/UK contractual necessity</td><td>Contract APPROPRIATE; other bases NOT APPROPRIATE</td><td>Yes for this purpose</td></tr>
+        <tr><td>fotball.no</td><td>Player name and club on match history</td><td>Public interest / opt-out (LI in practice)</td><td>Legitimate interests APPROPRIATE; other bases NOT APPROPRIATE</td><td>Yes for this purpose</td></tr>
+        <tr><td>document.no</td><td>Google Signals ad analytics</td><td>Not named; Google account + ad settings</td><td>Consent INCONCLUSIVE; no basis APPROPRIATE</td><td>Partial - ICO requires a clearer consent request</td></tr>
+        <tr><td>babyshop.no</td><td>Online purchase and delivery</td><td>Contract (implied from purchase)</td><td>Contract APPROPRIATE; other bases NOT APPROPRIATE</td><td>Yes for checkout</td></tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+</body>
+</html>

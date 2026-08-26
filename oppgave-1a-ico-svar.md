@@ -18,8 +18,8 @@ Arbeidsnotat til innleveringen (ikke studieapp, ikke GitHub Pages, ikke oppgave 
 - `Fotball_Lawful basis assessment report.docx` (offisiell ICO-rapport, fotball.no kamphistorikk)
 - `Document_Lawful basis assessment report.docx` (offisiell ICO-rapport, document.no Google Signals)
 - `Babyshop_Lawful basis assessment report.docx` (offisiell ICO-rapport, babyshop.no kjøp/levering)
-- `ICO_5sites_worksheet.html`
-- `ACIT4280_1A_report.html` (gruppens rapport, Tabell 5)
+- `ICO_5sites_worksheet.html` (oppdatert med ferdige ICO-utfall)
+- `ACIT4280_1A_report.html` (gruppens rapport; Tabell 5 oppdatert 26.08.2026)
 - Full personvernerklæring for document.no limt inn 26.08.2026 (ingen Art. 6-merking)
 - Kjøps- og abonnementsvilkår for Document Pluss limt inn 26.08.2026 (punkt 7 personvern)
 - Babyshop Integrity Policy lest 26.08.2026 (https://www.babyshop.com/en-us/information/integrity-policy)
