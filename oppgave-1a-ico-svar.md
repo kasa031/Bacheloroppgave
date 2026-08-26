@@ -303,6 +303,7 @@ Punkt 1 sier også at kunden ved å godta vilkårene «samtykker til bruk av per
 | Legal obligation Q1: Are you processing this personal data to comply with the law? | fylt | **No** |
 | Vital interests Q1: Are you processing the personal data to save or protect someone's life? | fylt | **No** |
 | Public task Q1: Are you processing the data to carry out your official tasks or functions, or other specific tasks in the public interest? | fylt | **No** |
+| Recognised legitimate interest Q1: Do you need to process the data for any of the following purposes? | fylt | **No** |
 | ICO-konklusjon | ikke fylt | forventet: contract |
 
 **Hvorfor Yes på contract Q1:** Vilkårene dokumenterer en kjøpsavtale. Navn, adresse, kontakt, ordre og betaling trengs for å bekrefte og levere. Netflix-sporet. Worksheet: Q1 Yes.
@@ -317,7 +318,9 @@ Punkt 1 sier også at kunden ved å godta vilkårene «samtykker til bruk av per
 
 **Hvorfor No på public task Q1:** Babyshop Sthlm Holding AB er et privat aksjeselskap, ikke forvaltningsorgan. Art. 6(1)(e) krever offisiell myndighet eller en konkret samfunnsoppgave med hjemmel i lov. Ikke To some extent.
 
-**ICO-steg nå:** velg No, trykk Continue. Neste er typisk recognised LI (No). For LI-ansvar senere: **No** (kontrakt passer bedre).
+**Hvorfor No på recognised legitimate interest Q1:** Listen er vern av sårbare, nødsituasjon, kriminalitet, nasjonal sikkerhet, eller utlevering til noen som ber om data til sin offentlige oppgave. Å selge barneklær er ingen av disse, selv om kundene er barn/foresatte.
+
+**ICO-steg nå:** velg No, trykk Continue. Neste er typisk consent, deretter LI-ansvar. For kassen: consent Q1 **No** (ikke løpende valg om levering), LI-ansvar **No** (kontrakt passer bedre). Last opp ICO-rapporten når den kommer.
 
 ### Formål 2: cookies og trackere (ikke denne ICO-kjøringen)
 
