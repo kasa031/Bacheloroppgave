@@ -61,6 +61,7 @@
     .tbl-num, .fig-num { font-weight: 700; margin: 1.2em 0 0; text-align: left; line-height: 1.4; }
     .tbl-title, .fig-title { font-style: italic; margin: 0 0 0.6em; text-align: left; line-height: 1.4; }
     .tbl-note, .fig-note { font-size: 11pt; color: var(--muted); margin: 0.4em 0 1.2em; text-align: left; line-height: 1.45; }
+    .tbl-note > em:first-child, .fig-note > em:first-child { font-style: italic; }
     table { border-collapse: collapse; width: 100%; font-size: 9pt; margin: 0 0 0.4em; line-height: 1.3; break-inside: avoid; page-break-inside: avoid; }
     thead { display: table-header-group; }
     tbody { display: table-row-group; }
@@ -138,7 +139,7 @@
     <tr><td>Spare time / sports</td><td>dnt.no, fotball.no, skiforeningen.no</td></tr>
   </tbody>
 </table>
-<p class="tbl-note">Note. Course list as typed. Redirects kept under the course name (ikea.no to ikea.com). document.no is included because it is on the list, not as a source of facts.</p>
+<p class="tbl-note"><em>Note.</em> Sectors and service names follow the course assignment list. Where Webbkoll followed a redirect, the original URL is retained (for example, ikea.no to ikea.com).</p>
 </div>
 
 <div class="table-block">
@@ -156,7 +157,7 @@
     <tr><td>fotball.no</td><td>Spare time / sports</td><td>Highest third-party request count in Table 2</td></tr>
   </tbody>
 </table>
-<p class="tbl-note">Note. One site per sector except two from news/media. ICO answers: Table 5.</p>
+<p class="tbl-note"><em>Note.</em> Five services selected for ICO analysis, with two from news and media. Full results appear in Table 5.</p>
 </div>
 
 <h2>Part 1: Measuring third-party contact on page load</h2>
@@ -167,7 +168,7 @@
 <p>English Webbkoll on every Table 1 name. One live visit: no add-ons, no Do Not Track.<sup><a href="#fn9" id="fnref9">9</a></sup> Two visits on 20 August 2026. Table 2 is the first visit and the ranking. Table 3 is the later visit. We do not average them.</p>
 
 <h3>KeyCDN: country lookup and country cells</h3>
-<p>KeyCDN IP Location Finder returns a likely country and provider for an IP address (KeyCDN, n.d.).<sup><a href="#fn10" id="fnref10">10</a></sup> "Location of server" uses the site IP. "List of countries" uses the third-party IPs Webbkoll listed. We count unique countries after dropping Norway. n/a means no country returned.</p>
+<p>KeyCDN IP Location Finder returns a likely country and provider for an IP address (KeyCDN, n.d.).<sup><a href="#fn10" id="fnref10">10</a></sup> Location of server uses the site IP. List of countries uses the third-party IPs Webbkoll listed. We count unique countries after dropping Norway. n/a means no country returned.</p>
 
 <h3>Webbkoll output columns</h3>
 <p>Table 2 is one homepage load. Internal cookies: set by the site. External cookies: set by others. Third-party requests: calls to other hosts. Countries excl. Norway: unique countries of those hosts after dropping NO. The list may still print NO; the count already excludes it.</p>
@@ -176,7 +177,7 @@
   <p class="fig-num">Figure 1</p>
   <p class="fig-title">Webbkoll Start Page for klassekampen.no</p>
   <img src="figures/fig1_webbkoll_check_klassekampen.png" alt="Webbkoll start page with klassekampen.no in the check field">
-  <p class="fig-note">Note. From <em>Webbkoll</em> [Screenshot], by 5th of July Foundation, n.d.-c (https://webbkoll.dataskydd.net/en). klassekampen.no is fifth-highest on third-party requests in Table 2 and is therefore used as the method example.</p>
+  <p class="fig-note"><em>Note.</em> Screenshot from <em>Webbkoll</em> (5th of July Foundation, n.d.-c; https://webbkoll.dataskydd.net/en). klassekampen.no is used as the method example because it ranks fifth on third-party requests in Table 2.</p>
 </figure>
 
 <h3>Tables 2 and 3: first and repeat measurements</h3>
@@ -216,7 +217,7 @@
     <tr><td>skiforeningen.no</td><td>Spare time / sports</td><td>SE</td><td>1</td><td>0</td><td>14</td><td>3</td><td>NL, US, SE</td></tr>
   </tbody>
 </table>
-<p class="tbl-note">Note. These are the assignment columns, plus sector so Figure 4 can be read against Table 1. "Location of server" is KeyCDN of the site's own IP. "3rd-party requests" is other hosts contacted on that load. The country list may still show NO; the count column already excludes Norway. We keep the course name even when Webbkoll followed a redirect.</p>
+<p class="tbl-note"><em>Note.</em> Location of server is the KeyCDN country for the site's own IP. Third-party requests counts other hosts contacted during one homepage load. Countries excl. Norway counts unique third-party host countries after removing Norway; the list column may still include NO. Sector is added for comparison with Table 1 and Figure 4.</p>
 </div>
 
 <div class="table-block">
@@ -250,28 +251,28 @@
     <tr><td>skiforeningen.no</td><td>Spare time / sports</td><td>US</td><td>1</td><td>0</td><td>14</td><td>3</td><td>IE, NL, US</td></tr>
   </tbody>
 </table>
-<p class="tbl-note">Note. This is a later visit, not a new ranking. babyshop.no is 101 here and 45 in Table 2. klassekampen.no is 56 here and 46 in Table 2. n/a means KeyCDN gave no country for the server IP (dnt.no, babyshop.no, altinn.no). Redirects were measured at the landing host.</p>
+<p class="tbl-note"><em>Note.</em> Repeat scan on the same day. Rankings in this report follow Table 2. n/a indicates that KeyCDN returned no country for the server IP. Measurements were taken at the landing host after any redirect.</p>
 </div>
 
 <figure>
   <p class="fig-num">Figure 2</p>
   <p class="fig-title">Third-Party Requests for 18 Sites (Table 2)</p>
   <img src="figures/fig3_requests_all18.png" alt="Horizontal bar chart of third-party requests for 18 sites">
-  <p class="fig-note">Note. Compiled by the authors from Webbkoll results. Ranked on the Table 2 request column. Highest five start at fotball.no (113). Lowest five start at lanekassen.no (1).</p>
+  <p class="fig-note"><em>Note.</em> Data from Table 2, ranked by third-party request volume.</p>
 </figure>
 
 <figure>
   <p class="fig-num">Figure 3</p>
   <p class="fig-title">Share of Third-Party Requests (Table 2)</p>
   <img src="figures/fig5_share_requests_pie.png" alt="Pie chart of each site share of third-party requests">
-  <p class="fig-note">Note. Compiled by the authors from Webbkoll results. fotball.no and worldofwarcraft.com together account for about one third of all recorded requests.</p>
+  <p class="fig-note"><em>Note.</em> Data from Table 2. fotball.no and worldofwarcraft.com together account for about one third of all recorded requests.</p>
 </figure>
 
 <figure>
   <p class="fig-num">Figure 4</p>
   <p class="fig-title">Third-Party Requests by Sector (Table 2)</p>
   <img src="figures/fig6_requests_per_sector.png" alt="Bar chart of third-party requests grouped by sector">
-  <p class="fig-note">Note. Compiled by the authors from Webbkoll results. Sector totals follow Table 2. News and media carry the most requests; government carries the fewest.</p>
+  <p class="fig-note"><em>Note.</em> Data from Table 2, grouped by sector.</p>
 </figure>
 
 <h3>Rankings: highest contact, widest country spread, and restrained e-government</h3>
@@ -299,7 +300,7 @@
     <tr><td>Lowest 1</td><td>lanekassen.no</td><td>Government</td><td>1</td><td>1</td></tr>
   </tbody>
 </table>
-<p class="tbl-note">Note. Ranked on Table 2 requests. Highest 1 means most third-party requests. Lowest 1 means fewest. skatteetaten.no also has 14 requests; skiforeningen.no is listed because it maps to fewer countries (3 vs 5). document.no has the widest first country list (6). ikea.no is still the only site with third-party cookies (2).</p>
+<p class="tbl-note"><em>Note.</em> Ranked by third-party request volume in Table 2. skatteetaten.no (14 requests) is omitted because lower government sites appear in the lowest five. document.no has the widest country spread (6 excluding Norway). ikea.no is the only site with third-party cookies (2).</p>
 </div>
 
 <h3>Case example: klassekampen.no</h3>
@@ -309,14 +310,14 @@
   <p class="fig-num">Figure 5</p>
   <p class="fig-title">Webbkoll Summary for klassekampen.no</p>
   <img src="figures/fig2_webbkoll_results_klassekampen.png" alt="Webbkoll summary results for klassekampen.no">
-  <p class="fig-note">Note. From <em>Webbkoll</em> [Screenshot], by 5th of July Foundation, n.d.-c (https://webbkoll.dataskydd.net/en). Scan time 20 August 2026, 12:36:46 Etc/UTC. Cookies: 4 first-party, 0 third-party. Third-party requests: 56 to 13 hosts.</p>
+  <p class="fig-note"><em>Note.</em> Screenshot from <em>Webbkoll</em> (5th of July Foundation, n.d.-c; https://webbkoll.dataskydd.net/en). Scan time 20 August 2026, 12:36:46 UTC. Four first-party cookies, zero third-party cookies, 56 third-party requests to 13 hosts.</p>
 </figure>
 
 <figure>
   <p class="fig-num">Figure 6</p>
   <p class="fig-title">KeyCDN Lookup of the klassekampen.no Server IP</p>
   <img src="figures/fig4_keycdn_lookup_klassekampen.png" alt="KeyCDN geo lookup of klassekampen.no server IP">
-  <p class="fig-note">Note. From <em>IP Location Finder</em> [Screenshot], by KeyCDN, n.d. (https://tools.keycdn.com/geo). Look up of 2600:1901:0:25b9::. Country: United States (US). Provider: Google LLC. The same tool on each unique third-party IP fills the country list.</p>
+  <p class="fig-note"><em>Note.</em> Screenshot from KeyCDN IP Location Finder (KeyCDN, n.d.; https://tools.keycdn.com/geo). Lookup of 2600:1901:0:25b9:: returned United States (US), provider Google LLC. The same tool was applied to each unique third-party IP in the country list.</p>
 </figure>
 
 <h2>Part 2: Lawful basis for personal data processing</h2>
@@ -331,7 +332,7 @@
   <p class="fig-num">Figure 7</p>
   <p class="fig-title">Security and Privacy Hub on skatteetaten.no</p>
   <img src="figures/fig_skatteetaten_sikkerhet_hub.png" alt="Skatteetaten security and privacy hub with separate links for the privacy notice and cookies">
-  <p class="fig-note">Note. From the Tax Administration security and privacy hub [Screenshot], by Norwegian Tax Administration, n.d.-b (https://www.skatteetaten.no/en/about-the-norwegian-tax-administration/security-and-privacy/). Personvernerklæring and Informasjonskapsler are listed as separate destinations. The two ICO rows for skatteetaten.no follow that split.</p>
+  <p class="fig-note"><em>Note.</em> Screenshot from the Norwegian Tax Administration security and privacy hub (Norwegian Tax Administration, n.d.-b; https://www.skatteetaten.no/en/about-the-norwegian-tax-administration/security-and-privacy/). The privacy notice and cookie page are separate destinations.</p>
 </figure>
 
 <h3>Netflix.no: paid streaming subscription</h3>
@@ -366,7 +367,7 @@
     <tr><td>babyshop.no</td><td>Customer, delivery and payment data to complete a purchase</td><td>Not labeled as Article 6(1)(b); purchase data processed to fulfil orders</td><td>Contract APPROPRIATE; other bases NOT APPROPRIATE</td><td>Yes for checkout</td></tr>
   </tbody>
 </table>
-<p class="tbl-note">Note. Official ICO reports dated 26 August 2026 (Information Commissioner's Office, 2026). Marketing, extra cookies and membership stay off this table unless they were the purpose of that run.</p>
+<p class="tbl-note"><em>Note.</em> ICO Word reports dated 26 August 2026 (Information Commissioner's Office, 2026). Each row covers one processing purpose only.</p>
 </div>
 
 <h2>Conclusion</h2>
