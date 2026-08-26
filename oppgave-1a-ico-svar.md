@@ -301,6 +301,7 @@ Punkt 1 sier også at kunden ved å godta vilkårene «samtykker til bruk av per
 | Contract Q2: Are you processing the data so that you can perform the contract or carry out a pre-contractual request from the individual? | fylt | **Yes** |
 | Contract Q3: Could you reasonably perform the contractual service (or take the requested first step) without this processing? | fylt | **No** |
 | Legal obligation Q1: Are you processing this personal data to comply with the law? | fylt | **No** |
+| Vital interests Q1: Are you processing the personal data to save or protect someone's life? | fylt | **No** |
 | ICO-konklusjon | ikke fylt | forventet: contract |
 
 **Hvorfor Yes på contract Q1:** Vilkårene dokumenterer en kjøpsavtale. Navn, adresse, kontakt, ordre og betaling trengs for å bekrefte og levere. Netflix-sporet. Worksheet: Q1 Yes.
@@ -311,7 +312,9 @@ Punkt 1 sier også at kunden ved å godta vilkårene «samtykker til bruk av per
 
 **Hvorfor No på legal obligation Q1:** Vi tester levering av varen, ikke bokføring. Ingen lov pålegger Babyshop å samle inn navn og adresse *for å sende en pakke*. Policyens setning om utlevering «hvis det er nødvendig for å overholde gjeldende lover» er et annet formål (regnskap/myndighet). Ikke To some extent. Som Netflix.
 
-**ICO-steg nå:** velg No, trykk Continue. Neste er typisk vital interests, public task og recognised LI (alle No), deretter consent/LI. For kassen: LI-ansvar **No** (kontrakt passer bedre).
+**Hvorfor No på vital interests Q1:** Kjøp og levering av barneklær redder ikke liv. ICO vital interests er liv og død. Ikke To some extent.
+
+**ICO-steg nå:** velg No, trykk Continue. Neste er typisk public task og recognised LI (begge No). For LI-ansvar senere: **No** (kontrakt passer bedre).
 
 ### Formål 2: cookies og trackere (ikke denne ICO-kjøringen)
 
