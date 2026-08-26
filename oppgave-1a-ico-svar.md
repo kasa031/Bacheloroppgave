@@ -22,6 +22,7 @@ Arbeidsnotat til innleveringen (ikke studieapp, ikke GitHub Pages, ikke oppgave 
 - Full personvernerklæring for document.no limt inn 26.08.2026 (ingen Art. 6-merking)
 - Kjøps- og abonnementsvilkår for Document Pluss limt inn 26.08.2026 (punkt 7 personvern)
 - Babyshop Integrity Policy lest 26.08.2026 (https://www.babyshop.com/en-us/information/integrity-policy)
+- Full norsk integritetspolicy limt inn 26.08.2026 (Art. 6 ikke merket som bokstav; kjøp vs samtykke vs interesseavveining)
 - Babyshop cookie-side limt inn 26.08.2026 (Nødvendig / Måling / Markedsføring; iubenda; sist oppdatert 6. mai 2024)
 - Babyshop vilkår og betingelser limt inn 26.08.2026 (punkt 1: kjøpsavtale)
 
@@ -279,12 +280,14 @@ ICO: hvis de vil bruke consent, må forespørselen være clear, prominent and se
 
 **Formål vi tester:** navn, adresse, kontakt, ordre og betaling for å gjennomføre kjøp og levering. Nyhetsbrev, profilering, cookies og Google-annonser er egne formål.
 
-**Personvernerklæring (lest 26.08.2026):** https://www.babyshop.com/en-us/information/integrity-policy (babyshop.no peker hit). Behandlingsansvarlig: Babyshop Sthlm Holding AB, CIN 556699-1542, Stockholm, support@babyshop.com. Art. 6 er **ikke merket** som bokstav a/b/c/f, men teksten skiller:
-- Kjøp / support / kontakt: behandling når du handler, for å levere tjenester og produkter (kjøp, service).
-- Subscriber / tilpasset markedsføring og profilering: **consent** (kan trekkes).
-- Enkelte andre behandlinger: **balance of interest** (LI).
-- Utlevering for å overholde lov: eget formål.
-- Cookies: egen cookie-policy.
+**Personvernerklæring:** Full norsk tekst limt inn 26.08.2026 (Integritetspolicy). Samme innhold som den engelske siden. Behandlingsansvarlig: Babyshop Sthlm Holding AB, CIN 556699-1542, Stockholm, support@babyshop.com. GDPR nevnes, men Art. 6 er **ikke merket** som bokstav a/b/c/f. Teksten skiller likevel tre spor:
+
+- Kunde: behandling når du kjøper, bruker support eller kontakter dem. Adresse kan oppdateres via Klarna. Partnere for å *oppfylle forpliktelser* inkluderer frakt (PostNord, UPS, Unifaun m.fl.) og betaling (Klarna, PayPal, Adyen). Det er kontraktsporet vi tester.
+- Abonnent / tilpasset markedsføring og profilering (avsnitt 5): **samtykke**, kan trekkes. Ikke denne ICO-kjøringen.
+- Interesseavveining (LI): nevnt generelt; aldri særlige kategorier; innsigelsesrett. Utlevering ved lovpålegg: eget formål.
+- Cookies: henvises til egen cookie-side (Formål 2).
+
+Hullet: de skriver at formålene står i «avsnitt 5», men avsnitt 5 er bare profilering. Kjøpsgrunnlaget er underforstått, ikke navngitt som Art. 6(1)(b). ICO kan likevel merke contract APPROPRIATE, som Netflix, hvis vi holder oss til kassen.
 
 **Vilkår og betingelser (limt inn 26.08.2026):** Punkt 1 er en ekte kjøpsavtale. Kunden må godta vilkårene for å handle. Avtalen er inngått når Babyshop har bekreftet bestillingen og kunden har fått leveringsbekreftelse på e-post. Forbruker må være 18 år eller ha foresattes samtykke (samme type barnekrav som ICO minnet om for Netflix). Punkt 5: betaling (kort, Walley/Klarna-lignende checkout, ev. kredittopplysning). Fraktpartnere og betaling er nødvendig for å utføre kontrakten.
 
