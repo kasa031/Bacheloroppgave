@@ -96,13 +96,16 @@ ICO minner om å dokumentere hvorfor behandlingen er nødvendig for kontrakten, 
 
 **Formål vi tester (worksheet):** publisere navn og klubb for aktive spillere 13+ for å vise kamphistorikk. Kontaktinfo til trenere/klubber og Cookiebot-cookies er egne formål.
 
-**Personvernerklæring:** To lag, ikke bare undersiden du limte inn.
+**Personvernerklæring (full tekst lest 26.08.2026, https://www.fotball.no/personvern):**
 
-1. Undersiden `fotball.no` (det du limte inn): publisering av kontaktinfo til roller + navn/klubb for spillere 13+ (kamphistorikk av allmenn interesse, opt-out via klubb). Ingen Art. 6-merke her.
-2. Cookiebot-erklæringen: cookies (nødvendig vs samtykke). Eget formål.
-3. Hovederklæringen https://www.fotball.no/personvern og FIKS-delen: FIKS er kilden til data på fotball.no. Behandlingsgrunnlag for FIKS er Art. 6(1)(b) (avtale: klubb-NFF og person-klubb). Stamdata inneholder «samtykke om publisering». FIFA-connect-teksten siterer bokstav b men gjengir berettiget interesse (bokstav f) - uklart i kunngjøringen.
+- FIKS: Art. 6(1)(b) avtale for medlemskap, kamper og roller. Historiske data etter utmelding vises til Personvernnemnda PVN-2005-14 og personvernloven § 8, ikke til en plikt om å publisere navn på nett.
+- fotball.no-undersiden: kamphistorikk av allmenn interesse, opt-out via klubb. Ingen Art. 6(c).
+- Stamdata: «samtykke om publisering». FIFA-connect: teksten sier bokstav b men siterer berettiget interesse (f).
+- Wifi-Ullevaal: Art. 6(1)(f) LI, pluss samtykke til CRM.
+- CRM B2C (billetter/supporterklubb): «Vi er pålagt å lagre kjøpshistorikk» (regnskap/avgift). Det er **et annet formål** enn ICO-kjøringen.
+- Cookiebot: ekomlov for nødvendige cookies, samtykke for resten. Eget formål.
 
-Vi tester likevel **ett** formål: visning av navn og klubb på fotball.no. FIKS-avtalen forklarer medlemsadministrasjon, ikke hvorfor kampstatistikk må ligge åpent på nett. Derfor contract Q1 = No.
+Vi tester **ett** formål: visning av navn og klubb på fotball.no.
 
 **ICO-gjennomgang (publisering av kamphistorikk):**
 
@@ -110,7 +113,7 @@ Vi tester likevel **ett** formål: visning av navn og klubb på fotball.no. FIKS
 |----------|--------|------|
 | Contract Q1: Do you have (or intend to have) a contract with the individual? | fylt | **No** |
 | Consent | ikke fylt | Worksheet: No (publiseres som standard; klubb-opt-out er ikke Art. 6-samtykke) |
-| Legal obligation | ikke fylt | Worksheet: No |
+| Legal obligation Q1: Are you processing this personal data to comply with the law? | fylt | **No** |
 | Vital interests | ikke fylt | Worksheet: No |
 | Public task | ikke fylt | Worksheet: No (NFF er idrettsforbund, ikke offentlig myndighet) |
 | Recognised legitimate interest | ikke fylt | |
@@ -118,6 +121,8 @@ Vi tester likevel **ett** formål: visning av navn og klubb på fotball.no. FIKS
 | ICO-konklusjon | ikke fylt | forventet: legitimate interests |
 
 **Hvorfor No på contract Q1:** Vi tester visning av navn og klubb på nett, ikke medlemsadministrasjon i FIKS. FIKS kan bruke kontrakt for medlemskap, men kamphistorikk på fotball.no er ikke det samme som å oppfylle en avtale med spilleren. ICO: svar No når du behandler noen andres opplysninger enn den du har kontrakt med, eller når formålet ikke er å utføre kontrakten. Worksheet startet med No her.
+
+**Hvorfor No på legal obligation Q1:** Ingen norsk lov pålegger NFF å legge ut spillernavn og klubb på fotball.no. FIKS-grunnlaget er avtale (b), ikke rettslig plikt (c). Setningen om pålagt lagring av kjøpshistorikk gjelder CRM/billetter, ikke denne ICO-kjøringen. Ikke velg To some extent.
 
 **ICO-steg nå:** velg No, Continue.
 
@@ -150,6 +155,6 @@ Vi tester likevel **ett** formål: visning av navn og klubb på fotball.no. FIKS
 | skatteetaten.no | skatt/folkeregister | legal obligation | legal obligation + public task APPROPRIATE | Ja |
 | skatteetaten.no | valgfrie cookies | consent | consent | Ja (egen kjøring) |
 | netflix.no | betalt abonnement | contractual necessity (EEA/UK) | Contract APPROPRIATE; øvrige NOT APPROPRIATE | Ja |
-| fotball.no | publisering kampstatistikk | public interest / opt-out | pågår (contract Q1 No) | venter |
+| fotball.no | publisering kampstatistikk | public interest / opt-out; FIKS contract for medlemskap | pågår (contract Q1 No, legal obligation Q1 No) | venter |
 | document.no | Google Signals | ikke oppgitt; Google-innstillinger | venter (forventet consent) | venter |
 | babyshop.no | kjøp og levering | contract (underforstått) | venter (forventet contract) | venter |
