@@ -277,7 +277,7 @@ def main():
     s.shapes.add_picture(str(FIG / "fig5_share_requests_pie.png"), Inches(6.95), Inches(1.32), Inches(6.0), Inches(2.5))
     s.shapes.add_picture(str(FIG / "fig6_requests_per_sector.png"), Inches(6.95), Inches(3.9), Inches(6.0), Inches(2.55))
     add_tb(s, Inches(0.4), Inches(6.85), Inches(12.5), Inches(0.38),
-           "Table 2. News/media is the highest sector. Government is the lowest. Sport is high because of fotball.no.",
+           "Table 2. News/media is the highest sector. Government is the lowest.",
            size=13, color=MUTED)
     footer(s, 5, total)
     notes(s, "fotball.no 113. lanekassen.no 1. The pie is request share, not cookies.")

@@ -120,7 +120,7 @@ parts.append(slide(header("Part 1  ·  Figures 2 to 4", "Third-party requests by
     <img src="{FIG}/fig6_requests_per_sector.png" alt="Requests per sector">
   </div>
 </div>
-<p class="caption">Table 2. News/media is the highest sector. Government is the lowest. Sport is high because of fotball.no.</p>
+<p class="caption">Table 2. News/media is the highest sector. Government is the lowest.</p>
 """, 5))
 
 parts.append(slide(header("Part 2", "ICO: one purpose at a time") + bullets([
