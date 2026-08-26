@@ -129,10 +129,13 @@ def main():
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, NAVY)
     add_rect(s, 0, Inches(5.85), W, Inches(1.65), CREAM)
-    add_tb(s, Inches(0.7), Inches(1.15), Inches(12), Inches(0.4),
-           "ACIT4280 Privacy by Design  ·  Group Assignment 1A",
+    add_tb(s, Inches(0.7), Inches(0.85), Inches(12), Inches(0.35),
+           "ACIT4280 Privacy by Design",
            size=16, color=CREAM, bold=True)
-    add_tb(s, Inches(0.7), Inches(1.65), Inches(12), Inches(2.2),
+    add_tb(s, Inches(0.7), Inches(1.22), Inches(12), Inches(0.38),
+           "Group Assignment 1A",
+           size=22, color=CREAM, bold=True)
+    add_tb(s, Inches(0.7), Inches(1.7), Inches(12), Inches(2.15),
            "Analysis of 3rd-party data sharing\nand data tracking and of GDPR\ncompliance of Norwegian web sites",
            size=28, color=WHITE, bold=True)
     add_tb(s, Inches(0.7), Inches(4.15), Inches(12), Inches(0.9),
