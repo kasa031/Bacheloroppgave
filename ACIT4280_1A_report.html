@@ -59,7 +59,16 @@
     ul { margin: 0 0 1em; }
     ul.refs { list-style: none; padding-left: 0; }
     ul.refs li { padding-left: 1.27cm; text-indent: -1.27cm; margin-bottom: 0.8em; font-size: 12pt; text-align: left; line-height: 2; }
-    @page { size: A4; margin: 18mm 16mm; }
+    @page {
+      size: A4;
+      margin: 18mm 16mm;
+      @top-left { content: none; }
+      @top-center { content: none; }
+      @top-right { content: none; }
+      @bottom-left { content: none; }
+      @bottom-center { content: none; }
+      @bottom-right { content: none; }
+    }
     @media print {
       body { margin: 0; max-width: none; padding: 0; }
       img { max-width: 100%; page-break-inside: avoid; }
