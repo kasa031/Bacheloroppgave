@@ -305,6 +305,7 @@ Punkt 1 sier også at kunden ved å godta vilkårene «samtykker til bruk av per
 | Public task Q1: Are you processing the data to carry out your official tasks or functions, or other specific tasks in the public interest? | fylt | **No** |
 | Recognised legitimate interest Q1: Do you need to process the data for any of the following purposes? | fylt | **No** |
 | Consent Q1: Do you want to give individuals the ongoing power to decide whether or not you process their data? | fylt | **No** |
+| Legitimate interests: Are you happy to take full responsibility for justifying your processing? | fylt | **No** |
 | ICO-konklusjon | ikke fylt | forventet: contract |
 
 **Hvorfor Yes på contract Q1:** Vilkårene dokumenterer en kjøpsavtale. Navn, adresse, kontakt, ordre og betaling trengs for å bekrefte og levere. Netflix-sporet. Worksheet: Q1 Yes.
@@ -323,7 +324,9 @@ Punkt 1 sier også at kunden ved å godta vilkårene «samtykker til bruk av per
 
 **Hvorfor No på consent Q1:** Motsetning til document.no Signals. Du kan ikke si nei til navn og adresse og likevel få pakken. Kassen er ikke et løpende samtykkevalg. Nyhetsbrev/profilering er eget formål (consent der). Ikke To some extent. Som Netflix.
 
-**ICO-steg nå:** velg No, trykk Continue. Neste er typisk LI-ansvar. Der: **No** (kontrakt passer bedre). Last opp ICO-rapporten når den kommer.
+**Hvorfor No på legitimate interests (full responsibility):** Motsetning til fotball.no. Kjøp og levering skal bæres av kontrakt, ikke LI. Policyens interesseavveining og samtykke gjelder andre formål. Som Netflix og document.no Signals: No her fordi et annet grunnlag passer bedre.
+
+**ICO-steg nå:** velg No, trykk Send. Last opp ICO-rapporten etterpå.
 
 ### Formål 2: cookies og trackere (ikke denne ICO-kjøringen)
 
