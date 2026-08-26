@@ -221,6 +221,7 @@ Det endrer **ikke** Contract Q1 for denne ICO-kjøringen. En egen kjøring på k
 | Vital interests Q1: Are you processing the personal data to save or protect someone's life? | fylt | **No** |
 | Public task Q1: Are you processing the data to carry out your official tasks or functions, or other specific tasks in the public interest? | fylt | **No** |
 | Recognised legitimate interest Q1: Do you need to process the data for any of the following purposes? | fylt | **No** |
+| Consent Q1: Do you want to give individuals the ongoing power to decide whether or not you process their data? | fylt | **Yes** |
 | ICO-konklusjon | ikke fylt | forventet: consent |
 
 **Hvorfor No på contract Q1:** Vi tester reklameanalyse, ikke Document Pluss. Det er ingen avtale om Google Signals. Signals styres av Google-innlogging og annonsetilpasning, ikke av abonnementet. ICO: svar No når formålet ikke er å utføre kontrakten. Worksheet startet med No her.
@@ -233,7 +234,9 @@ Det endrer **ikke** Contract Q1 for denne ICO-kjøringen. En egen kjøring på k
 
 **Hvorfor No på recognised legitimate interest Q1:** Listen er vern av sårbare, nødsituasjon, kriminalitet, nasjonal sikkerhet, eller utlevering til noen som ber om data til sin offentlige oppgave. Google Signals er ingen av disse.
 
-**ICO-steg nå:** velg No, trykk Continue. Neste er typisk consent. Worksheet: Yes på løpende valg (Google-innstillinger + opt-out), No på at samtykke er en forutsetning for å lese artikler.
+**Hvorfor Yes på consent Q1:** Motsetning til fotball.no og Netflix-abonnementet. Erklæringen sier at Signals bare samles hvis du er logget inn på Google og har tillatt personlig tilpasning av annonser, med opt-out via Ads Settings, mobil, NAI eller Analytics-tillegg. Lesing av artikler krever ikke Signals. Vi *vil* at personen skal kunne si ja eller nei løpende. Ikke To some extent: det gjør ICO usikker. At valget skjer hos Google, tas i senere consent-spørsmål.
+
+**ICO-steg nå:** velg Yes, trykk Continue. Worksheet videre: samtykke er ikke en forutsetning for å lese artikler (No); Document er ikke offentlig myndighet (No); avslag uten tap av kjernetjenesten (Yes).
 
 ---
 
