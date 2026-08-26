@@ -20,7 +20,14 @@ ICO-verktøy: https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resource
 
 Kjerne: behandling «først og fremst hjemlet i lov». Ikke mulig å reservere seg som hovedregel. Oppgaver: folkeregister, riktig skatt/avgift, andre krav (bøter, barnebidrag), veiledning og kontroll. Samfunnsoppdrag: finansielt grunnlag for offentlig virksomhet. Navngitte lover bl.a. skatteforvaltningsloven, skattebetalingsloven, folkeregisterloven, A-opplysningsloven, MVA-loven. Behandlingsansvarlig: Skattedirektøren. PVO: personvernombud@skatteetaten.no.
 
-Nettstedet: informasjonskapsler etter samtykke (Ja/Nei). Analyse: Google Analytics 4 og Matomo. Eget formål, ikke kjerne-ICO.
+Nettstedet: informasjonskapsler etter samtykke. Underside https://www.skatteetaten.no (Informasjonskapsler på skatteetaten.no), limt inn 26.08.2026:
+
+- Nødvendige cookies er alltid på (innlogging, skjema, sikkerhet). Kan ikke velges bort.
+- Valgfrie: analyse/statistikk/brukerinnsikt (Skyra, Matomo, Google Analytics, Siteimprove). Godkjenn alle, eller bare nødvendige.
+- Data brukes bare til å forbedre Skatteetatens tjenester og deles ikke utenfor etaten (ifølge denne siden).
+- Første besøk: velg. Hvis alle godkjennes, slettes valgfrie etter 90 dager og de spør på nytt. Samtykke kan endres når som helst.
+
+Eget formål, ikke kjerne-ICO. Matcher Ja/Nei-banneret og den egne cookie-ICO-kjøringen (consent).
 
 ### Formål 1: skatt og folkeregister (den offisielle ICO-rapporten)
 
@@ -52,7 +59,7 @@ ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en 
 
 **ICO-resultat (worksheet):** Consent.
 
-**Match:** Ja. Banneret er valgfritt. I hovedrapporten ble consent INCONCLUSIVE fordi kjernebehandling ble blandet inn. For cookies alene: Q6 To some extent (behandler/formål ikke fullt ut i banneret). Q2 om maktposisjon: valgt No; offentlig myndighet kan argumentere Yes.
+**Match:** Ja. Banneret er valgfritt. Cookie-siden skiller nødvendige (alltid på) og valgfrie (Skyra, Matomo, Google Analytics, Siteimprove). Hoved-ICO-rapporten ble consent INCONCLUSIVE fordi kjernebehandling ble blandet inn. For cookies alene: Q6 To some extent (behandler/formål ikke fullt ut i banneret). Q2 om maktposisjon: valgt No; offentlig myndighet kan argumentere Yes.
 
 **Webbkoll/Nei-test:** Webbkoll klikker ikke banner. Egen test 24.08.2026: Nei på skatteetaten.no/person/. Figur: `figures/fig7_skatteetaten_cookie_banner.png`.
 
