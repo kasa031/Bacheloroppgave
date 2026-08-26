@@ -96,7 +96,13 @@ ICO minner om å dokumentere hvorfor behandlingen er nødvendig for kontrakten, 
 
 **Formål vi tester (worksheet):** publisere navn og klubb for aktive spillere 13+ for å vise kamphistorikk. Kontaktinfo til trenere/klubber og Cookiebot-cookies er egne formål.
 
-**Personvernerklæring (fotball.no, lest 26.08.2026):** Aktive spillere vises begrenset til navn og klubb. Formål: kamphistorikk av allmenn interesse. Kontaktinfo/adresse på spillere deles ikke. Spillere kan stoppe publisering via klubben. Data hentes fra FIKS. Cookie-banner er Cookiebot (samtykke til statistikk/markedsføring); nåværende tilstand Deny.
+**Personvernerklæring:** To lag, ikke bare undersiden du limte inn.
+
+1. Undersiden `fotball.no` (det du limte inn): publisering av kontaktinfo til roller + navn/klubb for spillere 13+ (kamphistorikk av allmenn interesse, opt-out via klubb). Ingen Art. 6-merke her.
+2. Cookiebot-erklæringen: cookies (nødvendig vs samtykke). Eget formål.
+3. Hovederklæringen https://www.fotball.no/personvern og FIKS-delen: FIKS er kilden til data på fotball.no. Behandlingsgrunnlag for FIKS er Art. 6(1)(b) (avtale: klubb-NFF og person-klubb). Stamdata inneholder «samtykke om publisering». FIFA-connect-teksten siterer bokstav b men gjengir berettiget interesse (bokstav f) - uklart i kunngjøringen.
+
+Vi tester likevel **ett** formål: visning av navn og klubb på fotball.no. FIKS-avtalen forklarer medlemsadministrasjon, ikke hvorfor kampstatistikk må ligge åpent på nett. Derfor contract Q1 = No.
 
 **ICO-gjennomgang (publisering av kamphistorikk):**
 
