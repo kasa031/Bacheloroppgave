@@ -32,7 +32,7 @@ parts.append(slide(f"""
     <p class="kicker">ACIT4280 Privacy by Design</p>
     <p class="assign">Group Assignment 1A</p>
     <h1>Analysis of 3rd-party data sharing<br>and data tracking and of GDPR<br>compliance of Norwegian web sites</h1>
-    <p class="names">Humna Akhtar  ·  Mithun Chandra Debnath<br>Karina Sætersdal Nilssen  ·  Sumit Prasad Sah</p>
+    <p class="names">Humna Akhtar  ·  Mithun Chandra Debnath  ·  Karina Sætersdal Nilssen</p>
   </div>
   <div class="title-band">Oslo Metropolitan University<br>Due 3 September 2026</div>
 """, 1, dark=True))

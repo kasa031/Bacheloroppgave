@@ -139,7 +139,7 @@ def main():
            "Analysis of 3rd-party data sharing\nand data tracking and of GDPR\ncompliance of Norwegian web sites",
            size=28, color=WHITE, bold=True)
     add_tb(s, Inches(0.7), Inches(4.15), Inches(12), Inches(0.9),
-           "Humna Akhtar  ·  Mithun Chandra Debnath\nKarina Sætersdal Nilssen  ·  Sumit Prasad Sah",
+           "Humna Akhtar  ·  Mithun Chandra Debnath  ·  Karina Sætersdal Nilssen",
            size=18, color=WHITE)
     add_tb(s, Inches(0.7), Inches(6.1), Inches(12), Inches(1.0),
            "Oslo Metropolitan University\nDue 3 September 2026",
