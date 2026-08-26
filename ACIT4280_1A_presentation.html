@@ -69,6 +69,10 @@ ul.bul li::before { content: "•"; position: absolute; left: 0; color: var(--da
 .klass img { max-height: 2.3in; width: auto; max-width: 12.5in; }
 .klass img.keycdn { max-height: 2.7in; }
 table { width: 12.5in; margin: 0.18in 0.4in 0; border-collapse: collapse; font-size: 13px; }
+table.compact-table { margin-top: 0.08in; font-size: 12px; }
+table.compact-table th, table.compact-table td { padding: 6px 8px; }
+.ico-intro { margin: 0.12in 0.5in 0; font-size: 15px; line-height: 1.35; max-width: 12.3in; }
+.ico-cap { bottom: 0.28in; }
 th { background: var(--dark); color: #fff; text-align: left; padding: 8px; }
 td { border: 1px solid #D0D5DD; padding: 9px 8px; }
 tr:nth-child(even) td { background: var(--light); }
@@ -135,7 +139,7 @@ td.part { color: var(--orange); font-weight: 700; background: var(--teal) !impor
   </div>
 </div>
 
-    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>2 / 15</span></div></section>
+    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>2 / 14</span></div></section>
 <section class="slide"><header><div class="kicker">Part 1</div><h1>What Webbkoll shows and key findings</h1></header>
 <div class="split">
   <div class="pane cream">
@@ -157,7 +161,7 @@ td.part { color: var(--orange); font-weight: 700; background: var(--teal) !impor
   </div>
 </div>
 
-    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>3 / 15</span></div></section>
+    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>3 / 14</span></div></section>
 <section class="slide"><header><div class="kicker">Part 1  ·  Table 4</div><h1>Highest and lowest third-party requests</h1></header>
 <div class="two-col">
   <div><h3>Highest five</h3><div class="rank cream"><strong>1  fotball.no</strong><span>Sport  ·  113 requests  ·  5 countries</span></div><div class="rank cream"><strong>2  worldofwarcraft.com</strong><span>News/media  ·  90  ·  4</span></div><div class="rank cream"><strong>3  document.no</strong><span>News/media  ·  51  ·  6 (widest list)</span></div><div class="rank cream"><strong>4  aftenposten.no</strong><span>News/media  ·  48  ·  5</span></div><div class="rank cream"><strong>5  klassekampen.no</strong><span>News/media  ·  46  ·  2</span></div></div>
@@ -165,7 +169,7 @@ td.part { color: var(--orange); font-weight: 700; background: var(--teal) !impor
 </div>
 <p class="caption">Ranked on Table 2. lanekassen.no and altinn.no are the quietest e-government fronts. babyshop.no is 101 on Table 3; we do not re-rank.</p>
 
-    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>4 / 15</span></div></section>
+    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>4 / 14</span></div></section>
 <section class="slide"><header><div class="kicker">Part 1  ·  Figures 2 to 4</div><h1>Third-party requests by site and sector</h1></header>
 <div class="figs">
   <img src="figures/fig3_requests_all18.png" alt="Bar chart of third-party requests for 18 sites">
@@ -176,17 +180,16 @@ td.part { color: var(--orange); font-weight: 700; background: var(--teal) !impor
 </div>
 <p class="caption">Table 2. News/media is the highest sector. Government is the lowest.</p>
 
-    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>5 / 15</span></div></section>
-<section class="slide"><header><div class="kicker">Part 2</div><h1>ICO: one purpose at a time</h1></header><ul class="bul"><li>Official ICO Word reports dated 26 August 2026. The labels are guidance, not a court finding.</li><li>One purpose per run. Compare what the notice claims with what ICO marks.</li><li>Yes: notice and ICO line up for that purpose. Partial: the notice aims at consent; ICO marks INCONCLUSIVE.</li><li>Tax, cookies, checkout and marketing are different purposes.</li></ul>
-    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>6 / 15</span></div></section>
-<section class="slide"><header><div class="kicker">Part 2  ·  Table 5</div><h1>ICO result versus the notice</h1></header>
-<table>
+    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>5 / 14</span></div></section>
+<section class="slide"><header><div class="kicker">Part 2</div><h1>ICO: one purpose at a time</h1></header>
+<p class="ico-intro">One purpose per ICO run (26 Aug 2026). Yes if notice and ICO agree; Partial if consent is INCONCLUSIVE. Tax, cookies, checkout and marketing are different purposes.</p>
+<table class="compact-table">
   <thead><tr><th>Service</th><th>Purpose</th><th>ICO</th><th>Match</th></tr></thead>
   <tbody><tr><td><strong>skatteetaten.no</strong></td><td>Tax / folkeregister</td><td>Legal obligation + public task</td><td class='yes'>Yes</td></tr><tr><td><strong>skatteetaten.no</strong></td><td>Optional cookies</td><td>Consent INCONCLUSIVE</td><td class='part'>Partial</td></tr><tr><td><strong>netflix.no</strong></td><td>Paid streaming</td><td>Contract</td><td class='yes'>Yes</td></tr><tr><td><strong>fotball.no</strong></td><td>Name + club, 13+</td><td>Legitimate interests</td><td class='yes'>Yes</td></tr><tr><td><strong>document.no</strong></td><td>Google Signals</td><td>Consent INCONCLUSIVE</td><td class='part'>Partial</td></tr><tr><td><strong>babyshop.no</strong></td><td>Checkout</td><td>Contract</td><td class='yes'>Yes</td></tr></tbody>
 </table>
-<p class="caption">ICO labels are guidance. Partial: the notice aims at consent; ICO does not mark consent APPROPRIATE.</p>
+<p class="caption ico-cap">ICO labels are guidance, not a court finding.</p>
 
-    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>7 / 15</span></div></section>
+    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>6 / 14</span></div></section>
 <section class="slide"><header><div class="kicker">Part 2  ·  Table 5</div><h1>Four match, two consent tests Partial</h1></header>
 <div class="summary-box ico-summary">
   <p class="lead">Four core purposes match the notice: tax, paid streaming, match history, checkout.</p>
@@ -195,19 +198,19 @@ td.part { color: var(--orange); font-weight: 700; background: var(--teal) !impor
   <p>Skatteetaten does not spell out clearly enough who processes the optional cookies and how to refuse them. document.no points users to Google ad settings; the ICO says that is not a clear, separate consent request, and Pluss terms bundle the notice.</p>
 </div>
 
-    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>8 / 15</span></div></section>
+    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>7 / 14</span></div></section>
 <section class="slide"><header><div class="kicker">Part 2</div><h1>skatteetaten.no: two purposes</h1></header><ul class="bul"><li>Tax and registry data: the law requires it. Opt-out is generally not possible.</li><li>ICO: legal obligation and public task APPROPRIATE. Consent NOT APPROPRIATE. Match: Yes.</li><li>Optional statistics cookies: the notice claims consent.</li><li>ICO: consent INCONCLUSIVE; no basis APPROPRIATE. Match: Partial.</li></ul>
-    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>9 / 15</span></div></section>
+    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>8 / 14</span></div></section>
 <section class="slide"><header><div class="kicker">Part 2</div><h1>netflix.no: paid streaming</h1></header><ul class="bul"><li>Purpose: account and payment data needed to provide the paid service.</li><li>Notice (EEA/UK): contractual necessity.</li><li>ICO: contract APPROPRIATE. Consent marked likely invalid for this purpose.</li><li>Ads and marketing in the same notice were left out.</li></ul>
-    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>10 / 15</span></div></section>
+    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>9 / 14</span></div></section>
 <section class="slide"><header><div class="kicker">Part 2</div><h1>fotball.no: match history</h1></header><ul class="bul"><li>Purpose: name and club of active players aged 13+, with club opt-out.</li><li>ICO: legitimate interests APPROPRIATE.</li><li>NFF is not a public authority, so public task does not fit.</li><li>FIKS membership is a different purpose and was not this run.</li></ul>
-    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>11 / 15</span></div></section>
+    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>10 / 14</span></div></section>
 <section class="slide"><header><div class="kicker">Part 2</div><h1>document.no: Google Signals</h1></header>
 <div class="banner-accent">ICO: no basis APPROPRIATE. Consent INCONCLUSIVE. Match: Partial.</div>
 <ul class="bul"><li>Purpose: advertising analytics from site activity.</li><li>The notice does not name Article 6. It looks like consent.</li><li>ICO: the request is not clear, prominent and separate from terms.</li><li>The choice sits in Google settings. Pluss terms also bundle the notice.</li></ul>
-    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>12 / 15</span></div></section>
+    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>11 / 14</span></div></section>
 <section class="slide"><header><div class="kicker">Part 2</div><h1>babyshop.no: checkout</h1></header><ul class="bul"><li>Purpose: name, address, contact, order and payment to deliver goods.</li><li>The sales terms are a purchase contract.</li><li>ICO: contract APPROPRIATE. Match: Yes for checkout.</li><li>The notice does not label Article 6(1)(b). Marketing is a separate purpose.</li></ul>
-    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>13 / 15</span></div></section>
+    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>12 / 14</span></div></section>
 <section class="slide"><header><div class="kicker">Close</div><h1>What the report shows</h1></header>
 <div class="summary-box close-summary">
   <p>We measured how much 18 sites contact others on load, and we checked whether five of them have a valid GDPR basis for one specific purpose.</p>
@@ -216,7 +219,7 @@ td.part { color: var(--orange); font-weight: 700; background: var(--teal) !impor
   <p class="accent">In two places where the site claims consent, the ICO is not satisfied with how consent is formulated.</p>
 </div>
 
-    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>14 / 15</span></div></section>
+    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>13 / 14</span></div></section>
 <section class="slide dark">
   <div class="q">
     <h1>Questions</h1>

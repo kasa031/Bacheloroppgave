@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the ACIT4280 1A group presentation (16:9, 15 slides)."""
+"""Build the ACIT4280 1A group presentation (16:9, 14 slides)."""
 
 from pptx import Presentation
 from pptx.dml.color import RGBColor
@@ -87,7 +87,7 @@ def p_run(tf, text, size=18, bold=False, color=INK, space_before=0, space_after=
     return p
 
 
-def footer(slide, n, total=15):
+def footer(slide, n, total=14):
     add_rect(slide, 0, Inches(7.28), W, Inches(0.22), DARK)
     add_tb(slide, Inches(0.4), Inches(7.28), Inches(10), Inches(0.22),
            "ACIT4280 Group Assignment 1A  |  3 Sep 2026",
@@ -127,7 +127,7 @@ def main():
     prs.slide_width = W
     prs.slide_height = H
     blank = prs.slide_layouts[6]
-    total = 15
+    total = 14
 
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, DARK)
@@ -282,21 +282,14 @@ def main():
     footer(s, 5, total)
     notes(s, "fotball.no 113. lanekassen.no 1. The pie is request share, not cookies.")
 
-    bullet_slide(
-        prs, 6, "Part 2", "ICO: one purpose at a time",
-        [
-            "Official ICO Word reports dated 26 August 2026. The labels are guidance, not a court finding.",
-            "One purpose per run. Compare what the notice claims with what ICO marks.",
-            "Yes: notice and ICO line up for that purpose. Partial: the notice aims at consent; ICO marks INCONCLUSIVE.",
-            "Tax, cookies, checkout and marketing are different purposes.",
-        ],
-        "Each Table 5 row is one purpose from Table 1a.",
-        sizes=[20]*4,
-    )
-
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, PAPER)
-    header_bar(s, "Part 2  ·  Table 5", "ICO result versus the notice")
+    header_bar(s, "Part 2", "ICO: one purpose at a time")
+    tf = textbox(s, Inches(0.55), Inches(1.38), Inches(12.2), Inches(0.7))
+    p_run(tf,
+          "One purpose per ICO run (26 Aug 2026). Yes if notice and ICO agree; Partial if consent is INCONCLUSIVE.",
+          size=16, space_after=4)
+    p_run(tf, "Tax, cookies, checkout and marketing are different purposes.", size=16, space_after=0)
     data = [
         ("Service", "Purpose", "ICO", "Match"),
         ("skatteetaten.no", "Tax / folkeregister", "Legal obligation + public task", "Yes"),
@@ -307,13 +300,13 @@ def main():
         ("babyshop.no", "Checkout", "Contract", "Yes"),
     ]
     left = Inches(0.4)
-    top = Inches(1.4)
+    top = Inches(2.12)
     widths = [Inches(2.8), Inches(3.4), Inches(4.8), Inches(1.5)]
-    row_h = Inches(0.68)
+    row_h = Inches(0.58)
     x = left
     for w, htxt in zip(widths, data[0]):
         add_rect(s, x, top, w, row_h, DARK)
-        add_tb(s, x + Inches(0.08), top + Inches(0.18), w - Inches(0.1), Inches(0.4), htxt, size=13, bold=True, color=WHITE)
+        add_tb(s, x + Inches(0.08), top + Inches(0.14), w - Inches(0.1), Inches(0.35), htxt, size=12, bold=True, color=WHITE)
         x += w
     for i, row in enumerate(data[1:]):
         y = top + row_h * (i + 1)
@@ -323,13 +316,13 @@ def main():
         bolds = [True, False, False, True]
         for j, (w, cell) in enumerate(zip(widths, row)):
             add_rect(s, x, y, w, row_h, bg)
-            add_tb(s, x + Inches(0.08), y + Inches(0.18), w - Inches(0.12), Inches(0.45), cell, size=14, bold=bolds[j], color=colors[j])
+            add_tb(s, x + Inches(0.08), y + Inches(0.14), w - Inches(0.12), Inches(0.38), cell, size=12, bold=bolds[j], color=colors[j])
             x += w
-    add_tb(s, Inches(0.4), Inches(6.72), Inches(12.5), Inches(0.5),
-           "ICO labels are guidance. Partial: the notice aims at consent; ICO does not mark consent APPROPRIATE.",
-           size=16, color=MUTED)
-    footer(s, 7, total)
-    notes(s, "Partial means the notice aims at consent, but ICO marks consent INCONCLUSIVE and no basis APPROPRIATE.")
+    add_tb(s, Inches(0.4), Inches(6.78), Inches(12.5), Inches(0.38),
+           "ICO labels are guidance, not a court finding.",
+           size=13, color=MUTED)
+    footer(s, 6, total)
+    notes(s, "Each row is one purpose from Table 1a. Partial means consent INCONCLUSIVE.")
 
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, PAPER)
@@ -346,11 +339,11 @@ def main():
     ]):
         p_run(tf, line, size=20 if i < 2 else 18, bold=(i < 2), color=DARK if i != 1 else ORANGE,
               space_after=14 if i < 3 else 0)
-    footer(s, 8, total)
+    footer(s, 7, total)
     notes(s, "Partial is not a court finding. It means the consent wording did not pass the ICO checklist.")
 
     bullet_slide(
-        prs, 9, "Part 2", "skatteetaten.no: two purposes",
+        prs, 8, "Part 2", "skatteetaten.no: two purposes",
         [
             "Tax and registry data: the law requires it. Opt-out is generally not possible.",
             "ICO: legal obligation and public task APPROPRIATE. Consent NOT APPROPRIATE. Match: Yes.",
@@ -362,7 +355,7 @@ def main():
     )
 
     bullet_slide(
-        prs, 10, "Part 2", "netflix.no: paid streaming",
+        prs, 9, "Part 2", "netflix.no: paid streaming",
         [
             "Purpose: account and payment data needed to provide the paid service.",
             "Notice (EEA/UK): contractual necessity.",
@@ -374,7 +367,7 @@ def main():
     )
 
     bullet_slide(
-        prs, 11, "Part 2", "fotball.no: match history",
+        prs, 10, "Part 2", "fotball.no: match history",
         [
             "Purpose: name and club of active players aged 13+, with club opt-out.",
             "ICO: legitimate interests APPROPRIATE.",
@@ -400,11 +393,11 @@ def main():
         "The choice sits in Google settings. Pluss terms also bundle the notice.",
     ]:
         p_run(tf, "•  " + line, size=20, space_after=12)
-    footer(s, 12, total)
+    footer(s, 11, total)
     notes(s, "Contract and legitimate interests do not fit this advertising purpose.")
 
     bullet_slide(
-        prs, 13, "Part 2", "babyshop.no: checkout",
+        prs, 12, "Part 2", "babyshop.no: checkout",
         [
             "Purpose: name, address, contact, order and payment to deliver goods.",
             "The sales terms are a purchase contract.",
@@ -428,7 +421,7 @@ def main():
     ]
     for i, line in enumerate(summary):
         p_run(tf, line, size=22, color=DARK if i != 3 else ORANGE, space_after=16 if i < len(summary) - 1 else 0)
-    footer(s, 14, total)
+    footer(s, 13, total)
     notes(s, "Part 1 is contact. Part 2 is one purpose and one basis at a time.")
 
     s = prs.slides.add_slide(blank)

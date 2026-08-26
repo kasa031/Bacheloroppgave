@@ -4,7 +4,7 @@ from pathlib import Path
 
 OUT = Path("/workspace/ACIT4280_1A_presentation.html")
 FIG = "figures"
-TOTAL = 15
+TOTAL = 14
 
 
 def slide(inner: str, n: int, dark: bool = False) -> str:
@@ -123,13 +123,6 @@ parts.append(slide(header("Part 1  ·  Figures 2 to 4", "Third-party requests by
 <p class="caption">Table 2. News/media is the highest sector. Government is the lowest.</p>
 """, 5))
 
-parts.append(slide(header("Part 2", "ICO: one purpose at a time") + bullets([
-    "Official ICO Word reports dated 26 August 2026. The labels are guidance, not a court finding.",
-    "One purpose per run. Compare what the notice claims with what ICO marks.",
-    "Yes: notice and ICO line up for that purpose. Partial: the notice aims at consent; ICO marks INCONCLUSIVE.",
-    "Tax, cookies, checkout and marketing are different purposes.",
-]), 6))
-
 table_rows = [
     ("skatteetaten.no", "Tax / folkeregister", "Legal obligation + public task", "Yes", "yes"),
     ("skatteetaten.no", "Optional cookies", "Consent INCONCLUSIVE", "Partial", "part"),
@@ -142,13 +135,15 @@ tr = "".join(
     f"<tr><td><strong>{a}</strong></td><td>{b}</td><td>{c}</td><td class='{k}'>{d}</td></tr>"
     for a, b, c, d, k in table_rows
 )
-parts.append(slide(header("Part 2  ·  Table 5", "ICO result versus the notice") + f"""
-<table>
+
+parts.append(slide(header("Part 2", "ICO: one purpose at a time") + f"""
+<p class="ico-intro">One purpose per ICO run (26 Aug 2026). Yes if notice and ICO agree; Partial if consent is INCONCLUSIVE. Tax, cookies, checkout and marketing are different purposes.</p>
+<table class="compact-table">
   <thead><tr><th>Service</th><th>Purpose</th><th>ICO</th><th>Match</th></tr></thead>
   <tbody>{tr}</tbody>
 </table>
-<p class="caption">ICO labels are guidance. Partial: the notice aims at consent; ICO does not mark consent APPROPRIATE.</p>
-""", 7))
+<p class="caption ico-cap">ICO labels are guidance, not a court finding.</p>
+""", 6))
 
 parts.append(slide(header("Part 2  ·  Table 5", "Four match, two consent tests Partial") + """
 <div class="summary-box ico-summary">
@@ -157,28 +152,28 @@ parts.append(slide(header("Part 2  ·  Table 5", "Four match, two consent tests 
   <p>In both cases the notice claims consent, but the ICO marks consent INCONCLUSIVE.</p>
   <p>Skatteetaten does not spell out clearly enough who processes the optional cookies and how to refuse them. document.no points users to Google ad settings; the ICO says that is not a clear, separate consent request, and Pluss terms bundle the notice.</p>
 </div>
-""", 8))
+""", 7))
 
 parts.append(slide(header("Part 2", "skatteetaten.no: two purposes") + bullets([
     "Tax and registry data: the law requires it. Opt-out is generally not possible.",
     "ICO: legal obligation and public task APPROPRIATE. Consent NOT APPROPRIATE. Match: Yes.",
     "Optional statistics cookies: the notice claims consent.",
     "ICO: consent INCONCLUSIVE; no basis APPROPRIATE. Match: Partial.",
-]), 9))
+]), 8))
 
 parts.append(slide(header("Part 2", "netflix.no: paid streaming") + bullets([
     "Purpose: account and payment data needed to provide the paid service.",
     "Notice (EEA/UK): contractual necessity.",
     "ICO: contract APPROPRIATE. Consent marked likely invalid for this purpose.",
     "Ads and marketing in the same notice were left out.",
-]), 10))
+]), 9))
 
 parts.append(slide(header("Part 2", "fotball.no: match history") + bullets([
     "Purpose: name and club of active players aged 13+, with club opt-out.",
     "ICO: legitimate interests APPROPRIATE.",
     "NFF is not a public authority, so public task does not fit.",
     "FIKS membership is a different purpose and was not this run.",
-]), 11))
+]), 10))
 
 parts.append(slide(header("Part 2", "document.no: Google Signals") + """
 <div class="banner-accent">ICO: no basis APPROPRIATE. Consent INCONCLUSIVE. Match: Partial.</div>
@@ -187,14 +182,14 @@ parts.append(slide(header("Part 2", "document.no: Google Signals") + """
     "The notice does not name Article 6. It looks like consent.",
     "ICO: the request is not clear, prominent and separate from terms.",
     "The choice sits in Google settings. Pluss terms also bundle the notice.",
-]), 12))
+]), 11))
 
 parts.append(slide(header("Part 2", "babyshop.no: checkout") + bullets([
     "Purpose: name, address, contact, order and payment to deliver goods.",
     "The sales terms are a purchase contract.",
     "ICO: contract APPROPRIATE. Match: Yes for checkout.",
     "The notice does not label Article 6(1)(b). Marketing is a separate purpose.",
-]), 13))
+]), 12))
 
 parts.append(slide(header("Close", "What the report shows") + """
 <div class="summary-box close-summary">
@@ -203,14 +198,14 @@ parts.append(slide(header("Close", "What the report shows") + """
   <p>Four of five ICO purposes match the notice.</p>
   <p class="accent">In two places where the site claims consent, the ICO is not satisfied with how consent is formulated.</p>
 </div>
-""", 14))
+""", 13))
 
 parts.append(slide("""
   <div class="q">
     <h1>Questions</h1>
     <p>ACIT4280 Privacy by Design  ·  Group Assignment 1A</p>
   </div>
-""", 15, dark=True))
+""", 14, dark=True))
 
 css = """
 :root { --dark:#224248; --mid:#325E6A; --teal:#44A1A4; --orange:#FF9A00; --ink:#1A1A1A; --paper:#FFFEFB; --light:#E8F4F4; }
@@ -278,6 +273,10 @@ ul.bul li::before { content: "•"; position: absolute; left: 0; color: var(--da
 .klass img { max-height: 2.3in; width: auto; max-width: 12.5in; }
 .klass img.keycdn { max-height: 2.7in; }
 table { width: 12.5in; margin: 0.18in 0.4in 0; border-collapse: collapse; font-size: 13px; }
+table.compact-table { margin-top: 0.08in; font-size: 12px; }
+table.compact-table th, table.compact-table td { padding: 6px 8px; }
+.ico-intro { margin: 0.12in 0.5in 0; font-size: 15px; line-height: 1.35; max-width: 12.3in; }
+.ico-cap { bottom: 0.28in; }
 th { background: var(--dark); color: #fff; text-align: left; padding: 8px; }
 td { border: 1px solid #D0D5DD; padding: 9px 8px; }
 tr:nth-child(even) td { background: var(--light); }
