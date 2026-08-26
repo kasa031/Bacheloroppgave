@@ -121,7 +121,19 @@ ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en 
 
 ### Formål 2: valgfrie statistikk-informasjonskapsler (egen ICO-kjøring)
 
-**Behandling:** valgfrie webstatistikk-cookies etter Ja/Nei-banner (Skyra, Matomo, Google Analytics, Siteimprove).
+**Hub:** https://www.skatteetaten.no/om-skatteetaten/sikkerhet/ skiller tre lenker: Personvernerklæring (Formål 1), Informasjonskapsler (denne siden), og Endre samtykke for informasjonskapsler. Skjermbilde: `figures/fig_skatteetaten_sikkerhet_hub.png`.
+
+**Cookie-side limt inn 26.08.2026.** Sitater som styrer Formål 2:
+
+- Definisjon: «Informasjonskapsler er små tekstfiler som nettstedet lagrer på din datamaskin, nettbrett eller mobil.»
+- Nødvendige: «alltid på» og «kan ikke velges bort» (innlogging, skjema, sikkerhet, innstillinger). **Ikke dette ICO-formålet.**
+- Valgfrie: «analyse, statistikk og brukerinnsikt». Verktøy: Skyra, Matomo, Google Analytics og Siteimprove.
+- Valg: «Første gang du besøker nettsidene våre, kan du velge om du vil godkjenne alle informasjonskapsler eller bare de nødvendige.»
+- 90 dager: hvis alle godkjennes, slettes de valgfrie og de spør på nytt.
+- «Du kan når som helst endre samtykket du har gitt.»
+- Ifølge siden: data brukes bare til å forbedre Skatteetatens tjenester og deles ikke utenfor etaten.
+
+**Behandling vi tester:** valgfrie webstatistikk-cookies etter Ja/Nei (Skyra, Matomo, Google Analytics, Siteimprove).
 
 **Grunnlag i kunngjøringen:** samtykke. Nødvendige cookies er alltid på og er ikke dette formålet.
 
@@ -145,9 +157,11 @@ ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en 
 
 **Hvorfor No på legal obligation og public task her:** Ingen lov pålegger Skatteetaten å sette Google Analytics for å fastsette skatt. Valgfrie statistikk-cookies er ikke den offentlige kjerneoppgaven. Ikke To some extent.
 
-**Hvorfor Yes på consent Q1:** Cookie-siden gir Ja (alle) eller bare nødvendige. Samtykke kan endres. Nei-test 24.08.2026 på skatteetaten.no/person/.
+**Hvorfor Yes på consent Q1:** Cookie-siden gir valg: alle, eller bare nødvendige. Samtykke kan endres når som helst. Hub-siden har egen lenke «Endre samtykke for informasjonskapsler». Nei-test 24.08.2026 på skatteetaten.no/person/.
 
-**Hvorfor To some extent på Q6:** Banneret spør om valgfrie cookies for å forbedre tjenestene. Verktøynavn (Skyra, Matomo, GA, Siteimprove) står på cookie-siden, ikke fullt ut i selve Ja/Nei-feltet.
+**Hvorfor No på consent Q3:** Nødvendige cookies holder innlogging og skjema i gang. Valgfrie analyseverktøy er ikke et vilkår for å betale skatt.
+
+**Hvorfor To some extent på Q6:** Denne siden navngir Skyra, Matomo, Google Analytics og Siteimprove. Selve Ja/Nei-banneret er kortere (forbedre tjenestene). Detaljene sitter på cookie-siden, ikke fullt ut i banneret.
 
 **Match:** Ja. Banneret er valgfritt. Hoved-ICO-rapporten ble consent INCONCLUSIVE fordi kjernebehandling ble blandet inn.
 
