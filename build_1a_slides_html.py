@@ -76,7 +76,7 @@ parts.append(slide(f"""
 """, 1, dark=True))
 
 
-parts.append(slide(header("The report", "Two questions and how we measured") + """
+parts.append(slide(header("The report", "Two questions and how we measured") + f"""
 <div class="split compact-split">
   <div class="pane cream">
     <h2>Part 1  ·  Webbkoll</h2>
@@ -101,7 +101,7 @@ parts.append(slide(header("The report", "Two questions and how we measured") + "
 </div>
 """, 2))
 
-parts.append(slide(header("Part 1", "What Webbkoll shows and key findings") + """
+parts.append(slide(header("Part 1", "What Webbkoll shows and key findings") + f"""
 <div class="split">
   <div class="pane cream">
     <h2>What Webbkoll shows</h2>
