@@ -4,7 +4,7 @@
 from pptx import Presentation
 from pptx.dml.color import RGBColor
 from pptx.enum.shapes import MSO_SHAPE
-from pptx.enum.text import PP_ALIGN, MSO_AUTO_SIZE
+from pptx.enum.text import PP_ALIGN, MSO_AUTO_SIZE, MSO_ANCHOR
 from pptx.util import Inches, Pt
 from pathlib import Path
 
@@ -153,15 +153,19 @@ def main():
     add_tb(s, Inches(0.7), Inches(5.05), Inches(12), Inches(0.55),
            "Humna Akhtar  ·  Mithun Chandra Debnath  ·  Karina Sætersdal Nilssen",
            size=16, color=WHITE)
-    add_tb(s, Inches(0.7), Inches(6.1), Inches(8.4), Inches(1.0),
-           "Oslo Metropolitan University\n3 September 2026",
-           size=16, color=DARK)
+    band_top = Inches(5.85)
+    band_h = Inches(1.65)
     logo_w = Inches(3.1)
     logo_h = Inches(0.55)
+    band_center_y = band_top + (band_h - logo_h) / 2
+    date_box = add_tb(s, Inches(0.7), band_center_y, Inches(6), logo_h,
+           "3 September 2026",
+           size=16, color=DARK)
+    date_box.text_frame.vertical_anchor = MSO_ANCHOR.MIDDLE
     s.shapes.add_picture(
         str(LOGO),
         W - Inches(0.55) - logo_w,
-        Inches(5.85) + (Inches(1.65) - logo_h) / 2,
+        band_center_y,
         logo_w,
         logo_h,
     )
