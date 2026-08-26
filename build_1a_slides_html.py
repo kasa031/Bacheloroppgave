@@ -66,12 +66,16 @@ parts.append(slide(f"""
     <p class="kicker">ACIT4280 Privacy by Design</p>
     <p class="assign">Group Assignment 1A</p>
     <h1>Analysis of 3rd-party Data Sharing<br>and Data Tracking and of GDPR<br>Compliance of Norwegian Web Sites</h1>
+    <div class="title-rule"></div>
     <div class="title-grid">
-      <ul class="title-questions">
-        <li>When a front page loads, how many third parties does it contact, and in which countries do those servers appear to be located?</li>
-        <li>When a site processes personal data, has it named a GDPR Article 6 lawful basis, and does the ICO tool agree?</li>
-      </ul>
-      <div class="title-art6">
+      <div class="title-panel questions-panel">
+        <p class="panel-label">Our questions</p>
+        <ol class="title-questions">
+          <li>When a front page loads, how many third parties does it contact, and in which countries do those servers appear to be located?</li>
+          <li>When a site processes personal data, has it named a GDPR Article 6 lawful basis, and does the ICO tool agree?</li>
+        </ol>
+      </div>
+      <div class="title-panel art6-panel">
         <p class="art6-head">{ART6_HEADING}</p>
         <p class="art6-sub">{ART6_SUB}</p>
         <ul class="art6-bases">{"".join(f"<li>{b}</li>" for b in ART6_BASES)}</ul>
@@ -314,21 +318,26 @@ td.part { color: var(--orange); font-weight: 700; background: var(--teal) !impor
 .site-card .match.yes { color: var(--dark); }
 .site-card .match.part { color: var(--orange); }
 .site-card .extra { margin: 0.1in 0 0; font-size: 12px; line-height: 1.3; color: #4A5568; }
-.title-inner { padding: 0.9in 0.7in 0; }
-.title-inner h1 { font-size: 26px; line-height: 1.2; margin: 0.12in 0 0.14in; }
-.title-inner .assign { font-size: 24px; font-weight: 700; color: var(--teal); margin: 0.08in 0 0; }
-.title-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.35in; margin: 0 0 0.16in; max-width: 11.8in; }
-.title-questions { margin: 0; max-width: none; padding: 0; list-style: none; }
-.title-questions li { font-size: 16px; line-height: 1.35; color: #fff; margin: 0 0 0.14in; padding-left: 0.28in; position: relative; }
-.title-questions li::before { content: "•"; position: absolute; left: 0; color: #fff; }
+.title-inner { padding: 0.78in 0.7in 0; }
+.title-inner .kicker { display: block; font-size: 16px; margin: 0; }
+.title-inner h1 { font-size: 25px; line-height: 1.18; margin: 0.1in 0 0.12in; }
+.title-inner .assign { font-size: 22px; font-weight: 700; color: var(--teal); margin: 0.06in 0 0; }
+.title-rule { height: 0.06in; background: var(--orange); margin: 0 0 0.14in; max-width: 11.8in; }
+.title-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.28in; margin: 0 0 0.12in; max-width: 11.8in; }
+.title-panel { padding: 0.16in 0.2in 0.18in; min-height: 2.02in; }
+.questions-panel { background: var(--mid); color: #fff; }
+.art6-panel { background: var(--teal); color: var(--dark); }
+.panel-label { margin: 0 0 0.1in; font-size: 11px; font-weight: 700; color: var(--orange); letter-spacing: .02em; text-transform: uppercase; }
+.title-questions { margin: 0; padding-left: 1.15em; list-style: decimal; }
+.title-questions li { font-size: 14px; line-height: 1.32; color: #fff; margin: 0 0 0.12in; padding-left: 0.08in; }
+.title-questions li::before { content: none; }
 .title-questions li:last-child { margin-bottom: 0; }
-.title-art6 { color: #fff; }
-.art6-head { margin: 0 0 0.06in; font-size: 14px; font-weight: 700; color: var(--teal); }
-.art6-sub { margin: 0 0 0.08in; font-size: 11px; line-height: 1.3; color: #fff; }
-.art6-bases { margin: 0; padding: 0 0 0 0.22in; list-style: none; }
-.art6-bases li { font-size: 12px; line-height: 1.3; margin: 0 0 0.04in; padding-left: 0.18in; position: relative; }
-.art6-bases li::before { content: "•"; position: absolute; left: 0; color: #fff; }
-.title-inner .names { font-size: 15px; margin: 0; }
+.art6-head { margin: 0 0 0.05in; font-size: 12px; font-weight: 700; color: var(--dark); }
+.art6-sub { margin: 0 0 0.1in; font-size: 10px; line-height: 1.25; color: var(--dark); }
+.art6-bases { margin: 0; padding: 0 0 0 0.18in; list-style: none; columns: 2; column-gap: 0.18in; }
+.art6-bases li { font-size: 11px; line-height: 1.25; margin: 0 0 0.04in; padding-left: 0.16in; position: relative; color: var(--dark); break-inside: avoid; }
+.art6-bases li::before { content: "•"; position: absolute; left: 0; color: var(--dark); }
+.title-inner .names { font-size: 13px; margin: 0.1in 0 0; padding-top: 0.08in; border-top: 2px solid var(--mid); max-width: 11.8in; color: #fff; }
 .title-band { position: absolute; left: 0; right: 0; bottom: 0; height: 1.65in; background: var(--orange); color: var(--dark); padding: 0 0.7in; font-size: 16px; display: flex; align-items: center; justify-content: space-between; }
 .title-date { font-size: 16px; line-height: 1; }
 .title-logo { width: 3.1in; height: auto; display: block; }

@@ -189,34 +189,45 @@ def main():
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, DARK)
     add_rect(s, 0, Inches(5.85), W, Inches(1.65), ORANGE)
-    add_tb(s, Inches(0.7), Inches(0.85), Inches(12), Inches(0.35),
+    add_rect(s, 0, Inches(3.18), W, Inches(0.06), ORANGE)
+    add_tb(s, Inches(0.7), Inches(0.78), Inches(12), Inches(0.32),
            "ACIT4280 Privacy by Design",
-           size=18, color=TEAL, bold=True)
-    add_tb(s, Inches(0.7), Inches(1.22), Inches(12), Inches(0.38),
+           size=16, color=TEAL, bold=True)
+    add_tb(s, Inches(0.7), Inches(1.08), Inches(12), Inches(0.36),
            "Group Assignment 1A",
-           size=24, color=TEAL, bold=True)
-    add_tb(s, Inches(0.7), Inches(1.7), Inches(12), Inches(1.55),
+           size=22, color=TEAL, bold=True)
+    add_tb(s, Inches(0.7), Inches(1.52), Inches(12), Inches(1.45),
            "Analysis of 3rd-party Data Sharing\nand Data Tracking and of GDPR\nCompliance of Norwegian Web Sites",
-           size=26, color=WHITE, bold=True)
-    tf_q = textbox(s, Inches(0.7), Inches(3.35), Inches(5.9), Inches(1.75))
+           size=25, color=WHITE, bold=True)
+    panel_top = Inches(3.38)
+    panel_h = Inches(2.02)
+    panel_w = Inches(5.85)
+    left_x = Inches(0.55)
+    right_x = Inches(6.93)
+    add_rect(s, left_x, panel_top, panel_w, panel_h, MID)
+    add_rect(s, right_x, panel_top, panel_w, panel_h, TEAL)
+    add_tb(s, left_x + Inches(0.22), panel_top + Inches(0.14), Inches(5.4), Inches(0.24),
+           "Our questions", size=11, color=ORANGE, bold=True)
+    tf_q = textbox(s, left_x + Inches(0.22), panel_top + Inches(0.4), Inches(5.4), Inches(1.45))
     p_run(tf_q,
-          "•  When a front page loads, how many third parties does it contact, "
+          "When a front page loads, how many third parties does it contact, "
           "and in which countries do those servers appear to be located?",
-          size=16, color=WHITE, space_after=12)
+          size=14, color=WHITE, space_after=10)
     p_run(tf_q,
-          "•  When a site processes personal data, has it named a GDPR Article 6 lawful basis, "
+          "When a site processes personal data, has it named a GDPR Article 6 lawful basis, "
           "and does the ICO tool agree?",
-          size=16, color=WHITE, space_after=0)
-    add_tb(s, Inches(6.85), Inches(3.35), Inches(5.8), Inches(0.3),
-           ART6_HEADING, size=14, color=TEAL, bold=True)
-    add_tb(s, Inches(6.85), Inches(3.62), Inches(5.8), Inches(0.28),
-           ART6_SUB, size=11, color=WHITE)
-    tf_a6 = textbox(s, Inches(6.85), Inches(3.92), Inches(5.8), Inches(1.25))
+          size=14, color=WHITE, space_after=0)
+    add_tb(s, right_x + Inches(0.22), panel_top + Inches(0.14), Inches(5.4), Inches(0.24),
+           ART6_HEADING, size=12, color=DARK, bold=True)
+    add_tb(s, right_x + Inches(0.22), panel_top + Inches(0.38), Inches(5.4), Inches(0.22),
+           ART6_SUB, size=10, color=DARK)
+    tf_a6 = textbox(s, right_x + Inches(0.22), panel_top + Inches(0.62), Inches(5.4), Inches(1.25))
     for basis in ART6_BASES:
-        p_run(tf_a6, "•  " + basis, size=12, color=WHITE, space_after=3)
-    add_tb(s, Inches(0.7), Inches(5.2), Inches(12), Inches(0.45),
+        p_run(tf_a6, basis, size=11, color=DARK, space_after=2)
+    add_rect(s, Inches(0.55), Inches(5.52), Inches(12.23), Inches(0.02), MID)
+    add_tb(s, Inches(0.7), Inches(5.58), Inches(12), Inches(0.22),
            "Humna Akhtar  ·  Mithun Chandra Debnath  ·  Karina Sætersdal Nilssen",
-           size=15, color=WHITE)
+           size=13, color=WHITE)
     band_top = Inches(5.85)
     band_h = Inches(1.65)
     logo_w = Inches(3.1)
