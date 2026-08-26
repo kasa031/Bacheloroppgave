@@ -85,7 +85,7 @@ parts.append(slide(header("The report", "Two questions and how we measured") + "
       <li>One clean load per site; rank on Table 2 (20 Aug)</li>
       <li>KeyCDN = IP geolocation guess, not legal transfer proof</li>
     </ul>
-    <img class="pane-shot compact webbkoll-results" src="{FIG}/fig2_webbkoll_results_klassekampen.png" alt="Webbkoll results for klassekampen.no">
+    <img class="pane-shot compact tool-logo webbkoll-results" src="{FIG}/fig2_webbkoll_results_klassekampen.png" alt="Webbkoll results for klassekampen.no">
   </div>
   <div class="pane navy">
     <h2>Part 2  ·  ICO</h2>
@@ -96,6 +96,7 @@ parts.append(slide(header("The report", "Two questions and how we measured") + "
       <li>Partial if consent is INCONCLUSIVE</li>
       <li>Tax, cookies, checkout and marketing are different purposes</li>
     </ul>
+    <img class="pane-shot compact tool-logo ico-logo" src="{FIG}/ico_logo.png" alt="Information Commissioner's Office logo">
   </div>
 </div>
 """, 2))
@@ -227,7 +228,11 @@ ul.bul li { font-size: 20px; margin: 0 0 10px; padding-left: 0.28in; position: r
 ul.bul li::before { content: "•"; position: absolute; left: 0; color: var(--dark); }
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 0.35in; margin: 0.32in 0.5in 0; }
 .compact-split { margin-top: 0.22in; }
+.compact-split .pane { display: flex; flex-direction: column; min-height: 5in; }
 .compact-split .pane h2 { font-size: 20px; margin-bottom: 0.12in; }
+.compact-split .pane-list.compact { flex: 1 1 auto; margin-bottom: 0.08in; }
+.compact-split .pane-list.compact li { font-size: 13px; margin: 0 0 3px; }
+.compact-split .pane-shot.tool-logo { margin-top: auto; }
 .pane { min-height: 5in; padding: 0.22in 0.28in; }
 .pane.cream { background: var(--teal); }
 .pane.navy { background: var(--mid); color: #fff; }
@@ -240,6 +245,7 @@ ul.bul li::before { content: "•"; position: absolute; left: 0; color: var(--da
 .pane-shot { display: block; width: 100%; max-height: 2.55in; margin-top: 0.1in; object-fit: contain; background: #fff; border: 1px solid rgba(34,66,72,.12); }
 .pane-shot.compact { max-height: 2.05in; margin-top: 0.08in; }
 .pane-shot.webbkoll-results { max-height: 1.35in; }
+.pane-shot.ico-logo { max-height: 1.35in; background: #fff; padding: 0.05in; object-fit: contain; }
 .pane-shot.keycdn-shot { max-height: 2.25in; margin-top: 0.1in; }
 .pane-lead { margin: 0 0 0.08in; font-size: 15px; line-height: 1.3; }
 .pane li { font-size: 16px; margin: 0 0 8px; }

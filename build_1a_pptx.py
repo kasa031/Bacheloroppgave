@@ -233,23 +233,26 @@ def main():
     header_bar(s, "The report", "Two questions and how we measured")
     add_rect(s, Inches(0.5), Inches(1.55), Inches(5.9), Inches(5.0), TEAL)
     add_tb(s, Inches(0.75), Inches(1.72), Inches(5.4), Inches(0.35), "Part 1  ·  Webbkoll", size=20, bold=True, color=DARK)
-    tf = textbox(s, Inches(0.75), Inches(2.08), Inches(5.4), Inches(1.05))
+    tf = textbox(s, Inches(0.75), Inches(2.08), Inches(5.4), Inches(0.92))
     for line in [
         "18 sites: cookies, requests, KeyCDN country",
         "One clean load per site; rank on Table 2 (20 Aug)",
         "KeyCDN = IP geolocation guess, not legal transfer proof",
     ]:
         p_run(tf, "•  " + line, size=14, space_after=4)
+    shot_top = Inches(3.05)
+    shot_w = Inches(5.4)
+    shot_h = Inches(1.4)
     s.shapes.add_picture(
         str(FIG / "fig2_webbkoll_results_klassekampen.png"),
         Inches(0.75),
-        Inches(3.05),
-        Inches(5.4),
-        Inches(1.4),
+        shot_top,
+        shot_w,
+        shot_h,
     )
     add_rect(s, Inches(6.9), Inches(1.55), Inches(5.9), Inches(5.0), MID)
     add_tb(s, Inches(7.15), Inches(1.72), Inches(5.4), Inches(0.35), "Part 2  ·  ICO", size=20, bold=True, color=ORANGE)
-    tf = textbox(s, Inches(7.15), Inches(2.15), Inches(5.4), Inches(3.8))
+    tf = textbox(s, Inches(7.15), Inches(2.08), Inches(5.4), Inches(0.92))
     for line in [
         "Five sites, one purpose per run",
         "Notice vs ICO Word report (26 Aug 2026)",
@@ -257,7 +260,14 @@ def main():
         "Partial if consent is INCONCLUSIVE",
         "Tax, cookies, checkout and marketing are different purposes",
     ]:
-        p_run(tf, "•  " + line, size=16, color=WHITE, space_after=8)
+        p_run(tf, "•  " + line, size=13, color=WHITE, space_after=3)
+    s.shapes.add_picture(
+        str(FIG / "ico_logo.png"),
+        Inches(7.15),
+        shot_top,
+        shot_w,
+        shot_h,
+    )
     footer(s, 2, total)
     notes(s, "Webbkoll records one load. ICO tests one purpose at a time. Contact and lawful basis are different questions.")
 
