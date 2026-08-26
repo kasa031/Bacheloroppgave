@@ -214,7 +214,7 @@ def main():
     bullet_slide(
         prs, 5, "Part 1", "What Webbkoll does not do",
         [
-            "It does not click Ja/Nei or Cookiebot.",
+            "It does not click Yes/No or Cookiebot.",
             "Zero third-party cookies can still mean many third-party requests.",
             "ikea.no is the only row with external cookies (2), after redirect to ikea.com.",
             "The two measurements are not averaged. A later visit can differ (24-hour store).",
@@ -311,8 +311,8 @@ def main():
     for line in [
         "May we store/read info on the device?",
         "Necessary cookies: often no extra consent",
-        "Analytics and ads: consent (Ja/Nei, Cookiebot)",
-        "Nei test 24 Aug 2026 on skatteetaten.no/person/",
+        "Analytics and ads: consent (Yes/No, Cookiebot)",
+        "No test 24 Aug 2026 on skatteetaten.no/person/",
     ]:
         p_run(tf, "•  " + line, size=16, color=WHITE, space_after=10)
     footer(s, 10, total)
@@ -363,9 +363,9 @@ def main():
             "Controller: the Director General of Taxation (Skattedirektøren).",
             "ICO: legal obligation APPROPRIATE, public task APPROPRIATE.",
             "Consent NOT APPROPRIATE for core tax (no genuine free choice). Contract and LI NOT APPROPRIATE.",
-            "Purpose 2: optional stats cookies (Skyra, Matomo, GA, Siteimprove). Ja/Nei. ICO: consent INCONCLUSIVE (Q6). No basis APPROPRIATE.",
+            "Purpose 2: optional stats cookies (Skyra, Matomo, GA, Siteimprove). Yes/No. ICO: consent INCONCLUSIVE (Q6). No basis APPROPRIATE.",
         ],
-        "SPEAKER: Karina. Two purposes, two reports. Tax: law. Cookies: they aim at consent, but ICO says name controller, purpose and types more clearly. Nei test 24 August 2026 on skatteetaten.no/person/.",
+        "SPEAKER: Karina. Two purposes, two reports. Tax: law. Cookies: they aim at consent, but ICO says name controller, purpose and types more clearly. No test 24 August 2026 on skatteetaten.no/person/.",
         sizes=[16]*7,
         speaker="Karina",
     )
@@ -450,7 +450,7 @@ def main():
             "fotball.no has the highest request count and still zero third-party cookies.",
             "Four of five core ICO purposes match the notice.",
             "Two consent tests fail: skatteetaten cookies (Q6) and document.no Signals (Q5).",
-            "Legal obligation (tax) is not the same as cookie consent (Ja/Nei).",
+            "Legal obligation (tax) is not the same as cookie consent (Yes/No).",
         ],
         "SPEAKER: Sumit. Then questions. If asked about access requests: that is outside the scope of this report.",
         sizes=[20]*6,

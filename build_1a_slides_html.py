@@ -84,7 +84,7 @@ parts.append(slide(header("Part 1", "How we measured with Webbkoll", "Humna") + 
 ]), 4))
 
 parts.append(slide(header("Part 1", "What Webbkoll does not do", "Humna") + bullets([
-    "It does not click Ja/Nei or Cookiebot.",
+    "It does not click Yes/No or Cookiebot.",
     "Zero third-party cookies can still mean many third-party requests.",
     "ikea.no is the only row with external cookies (2), after redirect to ikea.com.",
     "The two measurements are not averaged. A later visit can differ (24-hour store).",
@@ -155,8 +155,8 @@ parts.append(slide(header("Part 2", "Article 6 is not a cookie click", "Karina")
     <ul>
       <li>May we store/read info on the device?</li>
       <li>Necessary cookies: often no extra consent</li>
-      <li>Analytics and ads: consent (Ja/Nei, Cookiebot)</li>
-      <li>Nei test 24 Aug 2026 on skatteetaten.no/person/</li>
+      <li>Analytics and ads: consent (Yes/No, Cookiebot)</li>
+      <li>No test 24 Aug 2026 on skatteetaten.no/person/</li>
     </ul>
   </div>
 </div>
@@ -188,7 +188,7 @@ parts.append(slide(header("ICO  ·  government", "skatteetaten.no: law for tax, 
     "Controller: the Director General of Taxation (Skattedirektøren).",
     "ICO: legal obligation APPROPRIATE, public task APPROPRIATE.",
     "Consent NOT APPROPRIATE for core tax (no genuine free choice). Contract and LI NOT APPROPRIATE.",
-    "Purpose 2: optional stats cookies (Skyra, Matomo, GA, Siteimprove). Ja/Nei. ICO: consent INCONCLUSIVE (Q6). No basis APPROPRIATE.",
+    "Purpose 2: optional stats cookies (Skyra, Matomo, GA, Siteimprove). Yes/No. ICO: consent INCONCLUSIVE (Q6). No basis APPROPRIATE.",
 ]), 12))
 
 parts.append(slide(header("ICO  ·  news / media", "netflix.no: contract for the paid service", "Karina") + bullets([
@@ -237,7 +237,7 @@ parts.append(slide(header("Close", "What we want the room to remember", "Sumit")
     "fotball.no has the highest request count and still zero third-party cookies.",
     "Four of five core ICO purposes match the notice.",
     "Two consent tests fail: skatteetaten cookies (Q6) and document.no Signals (Q5).",
-    "Legal obligation (tax) is not the same as cookie consent (Ja/Nei).",
+    "Legal obligation (tax) is not the same as cookie consent (Yes/No).",
 ]), 17))
 
 parts.append(slide("""
