@@ -209,11 +209,14 @@ Det endrer **ikke** Contract Q1 for denne ICO-kjøringen. En egen kjøring på k
 | Grunnlag | Status | Svar |
 |----------|--------|------|
 | Contract Q1: Do you have (or intend to have) a contract with the individual? | fylt | **No** |
+| Legal obligation Q1: Are you processing this personal data to comply with the law? | fylt | **No** |
 | ICO-konklusjon | ikke fylt | forventet: consent |
 
 **Hvorfor No på contract Q1:** Vi tester reklameanalyse, ikke Document Pluss. Det er ingen avtale om Google Signals. Signals styres av Google-innlogging og annonsetilpasning, ikke av abonnementet. ICO: svar No når formålet ikke er å utføre kontrakten. Worksheet startet med No her.
 
-**ICO-steg nå:** velg No, trykk Continue. Neste er typisk legal obligation / vital interests / public task / recognised LI, deretter consent. For consent-sporet: Yes på løpende valg (Google-innstillinger + opt-out), No på at samtykke er en forutsetning for å lese artikler.
+**Hvorfor No på legal obligation Q1:** Ingen norsk lov pålegger Document å slå på Google Signals. Setningen om utlevering til myndigheter «dersom vi er lovpålagt» er et annet formål. Ikke velg To some extent.
+
+**ICO-steg nå:** velg No, trykk Continue. Neste er typisk vital interests, public task og recognised LI (alle No), deretter consent.
 
 ---
 
