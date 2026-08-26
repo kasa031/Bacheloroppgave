@@ -48,7 +48,7 @@ parts.append(slide(header("The report", "Two questions and how we measured") + "
     <h2>Part 1  ·  Webbkoll</h2>
     <ul class="pane-list compact">
       <li>18 sites: cookies, requests, KeyCDN country</li>
-      <li>One clean load per site; rank on Table 2 (20 Aug)</li>
+      <li>One clean load per site; first scan ranks requests (20 Aug)</li>
       <li>KeyCDN = IP geolocation guess, not legal transfer proof</li>
     </ul>
     <img class="pane-shot compact webbkoll-results" src="{FIG}/fig2_webbkoll_results_klassekampen.png" alt="Webbkoll results for klassekampen.no">
@@ -82,7 +82,7 @@ parts.append(slide(header("Part 1", "What Webbkoll shows and key findings") + ""
       <li>lanekassen.no (1) and altinn.no (5): quietest e-government pages.</li>
       <li>document.no: widest country list (6 excluding Norway).</li>
       <li>News/media contacted the most. Government the fewest.</li>
-      <li>babyshop.no: 101 on Table 3; ranking stays on Table 2 (45).</li>
+      <li>babyshop.no: 101 on repeat scan; ranking stays on first scan (45).</li>
     </ul>
   </div>
 </div>
@@ -104,12 +104,12 @@ low = [
 ]
 hi_html = "".join(f'<div class="rank cream"><strong>{a}</strong><span>{b}</span></div>' for a, b in high)
 lo_html = "".join(f'<div class="rank grey"><strong>{a}</strong><span>{b}</span></div>' for a, b in low)
-parts.append(slide(header("Part 1  ·  Table 4", "Highest and lowest third-party requests") + f"""
+parts.append(slide(header("Part 1", "Highest and lowest third-party requests") + f"""
 <div class="two-col">
   <div><h3>Highest five</h3>{hi_html}</div>
   <div><h3>Lowest five</h3>{lo_html}</div>
 </div>
-<p class="caption">Ranked on Table 2. lanekassen.no and altinn.no are the quietest e-government fronts. babyshop.no is 101 on Table 3; we do not re-rank.</p>
+<p class="caption">Ranked on first Webbkoll scan. lanekassen.no and altinn.no are the quietest e-government fronts. babyshop.no is 101 on the repeat scan; we do not re-rank.</p>
 """, 4))
 
 parts.append(slide(header("Part 1  ·  Figures 2 to 4", "Third-party requests by site and sector") + f"""
@@ -120,7 +120,7 @@ parts.append(slide(header("Part 1  ·  Figures 2 to 4", "Third-party requests by
     <img src="{FIG}/fig6_requests_per_sector.png" alt="Requests per sector">
   </div>
 </div>
-<p class="caption">Table 2. News/media is the highest sector. Government is the lowest.</p>
+<p class="caption">News/media is the highest sector. Government is the lowest.</p>
 """, 5))
 
 table_rows = [
@@ -145,7 +145,7 @@ parts.append(slide(header("Part 2", "ICO: one purpose at a time") + f"""
 <p class="caption ico-cap">ICO labels are guidance, not a court finding.</p>
 """, 6))
 
-parts.append(slide(header("Part 2  ·  Table 5", "Four match, two consent tests Partial") + """
+parts.append(slide(header("Part 2", "Four match, two consent tests Partial") + """
 <div class="summary-box ico-summary">
   <p class="lead">Four core purposes match the notice: tax, paid streaming, match history, checkout.</p>
   <p class="lead accent">Two consent tests are Partial: Skatteetaten optional cookies and document.no Google Signals.</p>

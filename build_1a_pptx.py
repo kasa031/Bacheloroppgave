@@ -179,7 +179,7 @@ def main():
     tf = textbox(s, Inches(0.75), Inches(2.08), Inches(5.4), Inches(1.05))
     for line in [
         "18 sites: cookies, requests, KeyCDN country",
-        "One clean load per site; rank on Table 2 (20 Aug)",
+        "One clean load per site; first scan ranks requests (20 Aug)",
         "KeyCDN = IP geolocation guess, not legal transfer proof",
     ]:
         p_run(tf, "•  " + line, size=14, space_after=4)
@@ -230,7 +230,7 @@ def main():
         "lanekassen.no (1) and altinn.no (5): quietest e-government pages.",
         "document.no: widest country list (6 excluding Norway).",
         "News/media contacted the most. Government the fewest.",
-        "babyshop.no: 101 on Table 3; ranking stays on Table 2 (45).",
+        "babyshop.no: 101 on repeat scan; ranking stays on first scan (45).",
     ]:
         p_run(tf, "•  " + line, size=16, color=WHITE, space_after=8)
     footer(s, 3, total)
@@ -238,7 +238,7 @@ def main():
 
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, PAPER)
-    header_bar(s, "Part 1  ·  Table 4", "Highest and lowest third-party requests")
+    header_bar(s, "Part 1", "Highest and lowest third-party requests")
     high = [
         ("1  fotball.no", "Sport  ·  113 requests  ·  5 countries"),
         ("2  worldofwarcraft.com", "News/media  ·  90  ·  4"),
@@ -265,7 +265,7 @@ def main():
         add_tb(s, Inches(7.2), y + Inches(0.38), Inches(5.4), Inches(0.32), d, size=14, color=WHITE)
         y += Inches(0.9)
     add_tb(s, Inches(0.5), Inches(6.85), Inches(12.3), Inches(0.38),
-           "Ranked on Table 2 requests. lanekassen.no and altinn.no have the fewest government requests. babyshop.no is 101 on Table 3; rankings stay on Table 2.",
+           "Ranked on first Webbkoll scan. lanekassen.no and altinn.no have the fewest government requests. babyshop.no is 101 on the repeat scan; rankings stay on the first scan.",
            size=13, color=MUTED)
     footer(s, 4, total)
     notes(s, "fotball.no has 113 requests and zero third-party cookies. document.no has the widest country list (6).")
@@ -277,7 +277,7 @@ def main():
     s.shapes.add_picture(str(FIG / "fig5_share_requests_pie.png"), Inches(6.95), Inches(1.32), Inches(6.0), Inches(2.5))
     s.shapes.add_picture(str(FIG / "fig6_requests_per_sector.png"), Inches(6.95), Inches(3.9), Inches(6.0), Inches(2.55))
     add_tb(s, Inches(0.4), Inches(6.85), Inches(12.5), Inches(0.38),
-           "Table 2. News/media is the highest sector. Government is the lowest.",
+           "News/media is the highest sector. Government is the lowest.",
            size=13, color=MUTED)
     footer(s, 5, total)
     notes(s, "fotball.no 113. lanekassen.no 1. The pie is request share, not cookies.")
@@ -322,11 +322,11 @@ def main():
            "ICO labels are guidance, not a court finding.",
            size=13, color=MUTED)
     footer(s, 6, total)
-    notes(s, "Each row is one purpose from Table 1a. Partial means consent INCONCLUSIVE.")
+    notes(s, "Each row is one purpose from the five ICO sites. Partial means consent INCONCLUSIVE.")
 
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, PAPER)
-    header_bar(s, "Part 2  ·  Table 5", "Four match, two consent tests Partial")
+    header_bar(s, "Part 2", "Four match, two consent tests Partial")
     add_rect(s, Inches(0.5), Inches(1.55), Inches(12.3), Inches(4.85), TEAL)
     tf = textbox(s, Inches(0.75), Inches(1.85), Inches(11.8), Inches(4.35))
     for i, line in enumerate([
