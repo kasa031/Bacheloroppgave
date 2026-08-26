@@ -9,9 +9,29 @@ https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis
 
 **Rapportkrav (Canvas):** 1000-1500 ord pluss diagrammer, pluss 20 minutters gruppepresentasjon. Webbkoll/tredjepartssporing er egen del og fylles ut separat.
 
+**Merk:** Skatteetaten ble gjennomgått i en tidligere Cursor-chat. Den chatten og eventuelle lokale filer derfra er ikke med i dette miljøet, og ingenting om ICO-svarene ligger i GitHub-repoene (Bacheloroppgave / msc_cyber-syllabus). Svarene må limes inn eller kjøres på nytt.
+
 ---
 
-## 1. Netflix (netflix.com / netflix.no)
+## 1. Skatteetaten (skatteetaten.no)
+
+**Status:** Gjennomgått tidligere, men ICO-svarene er ikke gjenfunnet her.
+
+Når svarene er tilbake: lim inn ICO-utfallet (særlig legal obligation og public task, som er typiske for en offentlig etat), pluss det personvernerklæringen selv oppgir.
+
+| Grunnlag | Status | Svar / ICO-utfall |
+|----------|--------|-------------------|
+| Vital interests | mangler forrige chat | |
+| Contract | mangler forrige chat | |
+| Legal obligation | mangler forrige chat | |
+| Public task | mangler forrige chat | |
+| Legitimate interests | mangler forrige chat | |
+| Consent | mangler forrige chat | |
+| ICO-konklusjon | mangler forrige chat | |
+
+---
+
+## 2. Netflix (netflix.com / netflix.no)
 
 **Kilde:** Netflix Privacy Statement, sist oppdatert 10. april 2026.  
 Kontaktpunkt: privacy@netflix.com (DPO/Privacy Office).
@@ -52,12 +72,6 @@ Fylles ut etter hvert som vi går videre i skjemaet:
 | Legitimate interests | ikke fylt | |
 | Consent | ikke fylt | |
 | ICO-konklusjon | ikke fylt | |
-
----
-
-## 2. Tjeneste 2
-
-Navn og ICO-gjennomgang settes inn når vi starter på neste nettsted.
 
 ---
 
