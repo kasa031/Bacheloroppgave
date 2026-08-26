@@ -23,6 +23,7 @@ Arbeidsnotat til innleveringen (ikke studieapp, ikke GitHub Pages, ikke oppgave 
 - Kjøps- og abonnementsvilkår for Document Pluss limt inn 26.08.2026 (punkt 7 personvern)
 - Babyshop Integrity Policy lest 26.08.2026 (https://www.babyshop.com/en-us/information/integrity-policy)
 - Babyshop cookie-side limt inn 26.08.2026 (Nødvendig / Måling / Markedsføring; iubenda; sist oppdatert 6. mai 2024)
+- Babyshop vilkår og betingelser limt inn 26.08.2026 (punkt 1: kjøpsavtale)
 
 ICO-verktøy: https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis/lawful-basis-interactive-guidance-tool/
 
@@ -285,6 +286,10 @@ ICO: hvis de vil bruke consent, må forespørselen være clear, prominent and se
 - Utlevering for å overholde lov: eget formål.
 - Cookies: egen cookie-policy.
 
+**Vilkår og betingelser (limt inn 26.08.2026):** Punkt 1 er en ekte kjøpsavtale. Kunden må godta vilkårene for å handle. Avtalen er inngått når Babyshop har bekreftet bestillingen og kunden har fått leveringsbekreftelse på e-post. Forbruker må være 18 år eller ha foresattes samtykke (samme type barnekrav som ICO minnet om for Netflix). Punkt 5: betaling (kort, Walley/Klarna-lignende checkout, ev. kredittopplysning). Fraktpartnere og betaling er nødvendig for å utføre kontrakten.
+
+Punkt 1 sier også at kunden ved å godta vilkårene «samtykker til bruk av personopplysninger og informasjonskapsler». Det er **ikke** gyldig Art. 6-samtykke for cookies (bundet inn i vilkår, som Document Pluss). Det endrer **ikke** Contract Q1 for kassen. Cookies forblir Formål 2.
+
 **ICO-gjennomgang (kjøp og levering):**
 
 | Grunnlag | Status | Svar |
@@ -292,7 +297,7 @@ ICO: hvis de vil bruke consent, må forespørselen være clear, prominent and se
 | Contract Q1: Do you have (or intend to have) a contract with the individual? | fylt | **Yes** |
 | ICO-konklusjon | ikke fylt | forventet: contract |
 
-**Hvorfor Yes på contract Q1:** Et nettordrekjøp er en kjøpsavtale. Dette er Netflix-sporet, ikke document.no Signals. Vi tester levering av varen, ikke nyhetsbrevet og ikke cookie-siden. Worksheet: Q1 Yes.
+**Hvorfor Yes på contract Q1:** Vilkårene dokumenterer en kjøpsavtale. Navn, adresse, kontakt, ordre og betaling trengs for å bekrefte og levere. Netflix-sporet. Worksheet: Q1 Yes.
 
 **ICO-steg nå:** velg Yes, trykk Continue. Neste er typisk Q2 (behandler dere for å utføre kontrakten?) **Yes**, deretter Q3 (kan dere oppfylle uten denne behandlingen?) **No**.
 
