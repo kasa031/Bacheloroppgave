@@ -129,6 +129,7 @@ Vi tester **ett** formål: visning av navn og klubb på fotball.no.
 | Public task Q1: Are you processing the data to carry out your official tasks or functions, or other specific tasks in the public interest? | fylt | **No** |
 | Recognised legitimate interest Q1: Do you need to process the data for any of the following purposes? | fylt | **No** |
 | Legitimate interests: Are you happy to take full responsibility for justifying your processing? | fylt | **Yes** |
+| Legitimate interests Q2: Are you processing the data to perform your tasks as a public authority? | fylt | **No** |
 | ICO-konklusjon | ikke fylt | forventet: legitimate interests |
 
 **Hvorfor No på contract Q1:** Vi tester visning av navn og klubb på nett, ikke medlemsadministrasjon i FIKS. FIKS kan bruke kontrakt for medlemskap, men kamphistorikk på fotball.no er ikke det samme som å oppfylle en avtale med spilleren. ICO: svar No når du behandler noen andres opplysninger enn den du har kontrakt med, eller når formålet ikke er å utføre kontrakten. Worksheet startet med No her.
@@ -145,7 +146,9 @@ Vi tester **ett** formål: visning av navn og klubb på fotball.no.
 
 **Hvorfor Yes på legitimate interests (full responsibility):** Dette er LI-spørsmålet. For visning av navn og klubb (allmenn interesse, opt-out via klubb) er det NFF som må dokumentere balancing. Worksheet forventet LI. Dette er motsatt av Netflix-abonnementet, der vi sa No fordi kontrakt passet bedre.
 
-**ICO-steg nå:** velg Yes, trykk Send. Last opp ICO-rapporten etterpå.
+**Hvorfor No på LI Q2 (public authority):** NFF er idrettsforbund, ikke forvaltningsorgan. Offentlig myndighet kan som hovedregel ikke bruke LI til offisielle oppgaver. Yes her ville stenge LI. Skatteetaten ville svart Yes på dette spørsmålet.
+
+**ICO-steg nå:** velg No, trykk Send. Last opp ICO-rapporten etterpå.
 
 ### Formål 2: Cookiebot (ikke denne ICO-kjøringen)
 
