@@ -128,7 +128,7 @@ Vi tester **ett** formål: visning av navn og klubb på fotball.no.
 | Vital interests Q1: Are you processing the personal data to save or protect someone's life? | fylt | **No** |
 | Public task Q1: Are you processing the data to carry out your official tasks or functions, or other specific tasks in the public interest? | fylt | **No** |
 | Recognised legitimate interest Q1: Do you need to process the data for any of the following purposes? | fylt | **No** |
-| Legitimate interests | ikke fylt | Worksheet: Yes, med balancing og opt-out |
+| Legitimate interests: Are you happy to take full responsibility for justifying your processing? | fylt | **Yes** |
 | ICO-konklusjon | ikke fylt | forventet: legitimate interests |
 
 **Hvorfor No på contract Q1:** Vi tester visning av navn og klubb på nett, ikke medlemsadministrasjon i FIKS. FIKS kan bruke kontrakt for medlemskap, men kamphistorikk på fotball.no er ikke det samme som å oppfylle en avtale med spilleren. ICO: svar No når du behandler noen andres opplysninger enn den du har kontrakt med, eller når formålet ikke er å utføre kontrakten. Worksheet startet med No her.
@@ -143,7 +143,9 @@ Vi tester **ett** formål: visning av navn og klubb på fotball.no.
 
 **Hvorfor No på consent Q1:** Navn og klubb publiseres som standard. Spilleren kan stoppe det via klubben, men det er ikke løpende, fritt samtykke (slik Cookiebot er). Stamdata «samtykke om publisering» er ikke det samme som Art. 6(1)(a) for denne visningen. Ikke velg To some extent.
 
-**ICO-steg nå:** velg No på consent Q1, Continue. Neste forventet: legitimate interests Yes.
+**Hvorfor Yes på legitimate interests (full responsibility):** Dette er LI-spørsmålet. For visning av navn og klubb (allmenn interesse, opt-out via klubb) er det NFF som må dokumentere balancing. Worksheet forventet LI. Dette er motsatt av Netflix-abonnementet, der vi sa No fordi kontrakt passet bedre.
+
+**ICO-steg nå:** velg Yes, trykk Send. Last opp ICO-rapporten etterpå.
 
 ### Formål 2: Cookiebot (ikke denne ICO-kjøringen)
 
@@ -178,6 +180,6 @@ Nødvendige cookies uten samtykke (ekomlov). Øvrige krever tillatelse; samtykke
 | skatteetaten.no | skatt/folkeregister | legal obligation | legal obligation + public task APPROPRIATE | Ja |
 | skatteetaten.no | valgfrie cookies | consent | consent | Ja (egen kjøring) |
 | netflix.no | betalt abonnement | contractual necessity (EEA/UK) | Contract APPROPRIATE; øvrige NOT APPROPRIATE | Ja |
-| fotball.no | publisering kampstatistikk | public interest / opt-out; FIKS contract for medlemskap | pågår (contract No, legal obligation No, vital interests No, public task No, recognised LI No, consent Q1 No) | venter |
+| fotball.no | publisering kampstatistikk | public interest / opt-out; FIKS contract for medlemskap | pågår (LI-ansvar Yes; venter på ICO-rapport) | venter |
 | document.no | Google Signals | ikke oppgitt; Google-innstillinger | venter (forventet consent) | venter |
 | babyshop.no | kjøp og levering | contract (underforstått) | venter (forventet contract) | venter |
