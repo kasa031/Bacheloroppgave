@@ -93,22 +93,19 @@ def notes(slide, text):
     slide.notes_slide.notes_text_frame.text = text
 
 
-def header_bar(slide, kicker, title, speaker=""):
+def header_bar(slide, kicker, title):
     add_rect(slide, 0, 0, W, Inches(1.15), NAVY)
     add_rect(slide, 0, Inches(1.15), W, Inches(0.08), CREAM)
-    add_tb(slide, Inches(0.5), Inches(0.12), Inches(8.2), Inches(0.32),
+    add_tb(slide, Inches(0.5), Inches(0.12), Inches(12.3), Inches(0.32),
            kicker, size=12, color=CREAM, bold=True)
-    if speaker:
-        add_tb(slide, Inches(8.8), Inches(0.12), Inches(4.0), Inches(0.32),
-               speaker, size=12, color=CREAM, bold=True, align=PP_ALIGN.RIGHT)
     add_tb(slide, Inches(0.5), Inches(0.42), Inches(12.3), Inches(0.62),
            title, size=28, color=WHITE, bold=True)
 
 
-def bullet_slide(prs, n, kicker, title, bullets, note, sizes=None, speaker=""):
+def bullet_slide(prs, n, kicker, title, bullets, note, sizes=None):
     s = prs.slides.add_slide(prs.slide_layouts[6])
     add_rect(s, 0, 0, W, H, PAPER)
-    header_bar(s, kicker, title, speaker=speaker)
+    header_bar(s, kicker, title)
     tf = textbox(s, Inches(0.55), Inches(1.5), Inches(12.2), Inches(5.5))
     for i, b in enumerate(bullets):
         sz = (sizes[i] if sizes else 20)

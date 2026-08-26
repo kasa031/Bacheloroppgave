@@ -15,9 +15,8 @@ def slide(inner: str, n: int, dark: bool = False) -> str:
     return f'<section class="{cls}">{inner}{foot}</section>\n'
 
 
-def header(kicker: str, title: str, speaker: str = "") -> str:
-    sp = f'<div class="speaker">{speaker}</div>' if speaker else ""
-    return f'<header><div class="kicker">{kicker}</div>{sp}<h1>{title}</h1></header>'
+def header(kicker: str, title: str) -> str:
+    return f'<header><div class="kicker">{kicker}</div><h1>{title}</h1></header>'
 
 
 def bullets(items: list[str]) -> str:
@@ -255,16 +254,10 @@ header { background: var(--navy); color: #fff; height: 1.15in; padding: 0.12in 0
 header h1 { margin: 0; font-size: 28px; line-height: 1.15; }
 .kicker { font-size: 12px; font-weight: 700; color: var(--cream); letter-spacing: .02em; }
 header .kicker { display: inline-block; }
-.speaker { float: right; font-size: 12px; font-weight: 700; color: var(--cream); }
 .foot { position: absolute; left: 0; right: 0; bottom: 0; height: 0.22in; background: var(--navy); color: #fff; font-size: 10px; display: flex; justify-content: space-between; align-items: center; padding: 0 0.4in; }
 ul.bul { margin: 0.28in 0.55in 0; padding: 0; list-style: none; }
 ul.bul li { font-size: 20px; margin: 0 0 10px; padding-left: 0.28in; position: relative; line-height: 1.25; }
 ul.bul li::before { content: "•"; position: absolute; left: 0; color: var(--navy); }
-.cards { margin: 0.35in 0.5in 0; display: flex; flex-direction: column; gap: 0.12in; }
-.card { background: var(--cream); border-left: 8px solid var(--navy); padding: 0.14in 0.22in; display: grid; grid-template-columns: 4.2in 1fr 1.3in; align-items: center; min-height: 1.05in; }
-.card strong { font-size: 20px; color: var(--navy); }
-.card span { font-size: 16px; }
-.card em { font-style: normal; font-weight: 700; color: var(--navy); text-align: right; }
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 0.35in; margin: 0.32in 0.5in 0; }
 .pane { min-height: 5in; padding: 0.22in 0.28in; }
 .pane.cream { background: var(--cream); }
