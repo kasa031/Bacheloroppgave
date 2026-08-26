@@ -223,6 +223,7 @@ Det endrer **ikke** Contract Q1 for denne ICO-kjøringen. En egen kjøring på k
 | Recognised legitimate interest Q1: Do you need to process the data for any of the following purposes? | fylt | **No** |
 | Consent Q1: Do you want to give individuals the ongoing power to decide whether or not you process their data? | fylt | **Yes** |
 | Consent Q2: Are you in a position of power over the individual, which means they might feel they have to say yes? | fylt | **No** |
+| Consent Q3: Have you made consent to processing a precondition of your service? | fylt | **No** |
 | ICO-konklusjon | ikke fylt | forventet: consent |
 
 **Hvorfor No på contract Q1:** Vi tester reklameanalyse, ikke Document Pluss. Det er ingen avtale om Google Signals. Signals styres av Google-innlogging og annonsetilpasning, ikke av abonnementet. ICO: svar No når formålet ikke er å utføre kontrakten. Worksheet startet med No her.
@@ -239,7 +240,9 @@ Det endrer **ikke** Contract Q1 for denne ICO-kjøringen. En egen kjøring på k
 
 **Hvorfor No på consent Q2:** Document Media AS er et privat mediehus, ikke arbeidsgiver eller forvaltningsorgan. Lesere må ikke si ja til Signals for å unngå ulempe hos staten (slik Skatteetaten kunne argumenteres). Ikke To some extent.
 
-**ICO-steg nå:** velg No, trykk Continue. Worksheet videre: samtykke er ikke en forutsetning for å lese artikler (No).
+**Hvorfor No på consent Q3:** Lesing av artikler krever ikke Google Signals. Erklæringen sier at data bare samles hvis du er logget inn på Google med annonsetilpasning. Et Pluss-abonnement krever heller ikke Signals. Yes her ville gjort samtykket ugyldig (tvunget). Ikke To some extent.
+
+**ICO-steg nå:** velg No, trykk Continue. Worksheet videre: avslag uten tap av kjernetjenesten (Yes).
 
 ---
 
