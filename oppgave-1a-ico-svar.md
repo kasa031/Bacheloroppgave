@@ -299,13 +299,16 @@ Punkt 1 sier også at kunden ved å godta vilkårene «samtykker til bruk av per
 |----------|--------|------|
 | Contract Q1: Do you have (or intend to have) a contract with the individual? | fylt | **Yes** |
 | Contract Q2: Are you processing the data so that you can perform the contract or carry out a pre-contractual request from the individual? | fylt | **Yes** |
+| Contract Q3: Could you reasonably perform the contractual service (or take the requested first step) without this processing? | fylt | **No** |
 | ICO-konklusjon | ikke fylt | forventet: contract |
 
 **Hvorfor Yes på contract Q1:** Vilkårene dokumenterer en kjøpsavtale. Navn, adresse, kontakt, ordre og betaling trengs for å bekrefte og levere. Netflix-sporet. Worksheet: Q1 Yes.
 
 **Hvorfor Yes på contract Q2:** Behandlingen er for å utføre kontrakten: bekrefte ordre, ta betaling, sende varen (PostNord/UPS m.fl.). Ikke markedsføring, ikke cookies. Ikke To some extent.
 
-**ICO-steg nå:** velg Yes, trykk Continue. Neste er typisk Q3 (kan dere oppfylle uten denne behandlingen?) **No**.
+**Hvorfor No på contract Q3:** Spørsmålet er om tjenesten kan leveres *uten* personopplysningene. Yes her ville bety at behandlingen ikke er nødvendig for kontrakten. De kan ikke sende en pakke uten navn og adresse, eller belaste uten betalingsdata. Ikke To some extent.
+
+**ICO-steg nå:** velg No, trykk Continue. Verktøyet kan gå videre til andre grunnlag (som på Netflix) eller gi rapport. Last opp ICO-rapporten når den kommer.
 
 ### Formål 2: cookies og trackere (ikke denne ICO-kjøringen)
 
