@@ -109,7 +109,6 @@ parts.append(slide(header("Part 1  ·  Table 4", "Highest and lowest third-party
   <div><h3>Highest five</h3>{hi_html}</div>
   <div><h3>Lowest five</h3>{lo_html}</div>
 </div>
-<p class="caption">Ranked on Table 2. lanekassen.no and altinn.no are the quietest e-government fronts. babyshop.no is 101 on Table 3; we do not re-rank.</p>
 """, 4))
 
 parts.append(slide(header("Part 1  ·  Figures 2 to 4", "Third-party requests by site and sector") + f"""

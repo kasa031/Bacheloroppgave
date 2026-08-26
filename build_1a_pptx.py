@@ -264,9 +264,6 @@ def main():
         add_tb(s, Inches(7.2), y + Inches(0.06), Inches(5.4), Inches(0.32), c, size=16, bold=True, color=WHITE)
         add_tb(s, Inches(7.2), y + Inches(0.38), Inches(5.4), Inches(0.32), d, size=14, color=WHITE)
         y += Inches(0.9)
-    add_tb(s, Inches(0.5), Inches(6.85), Inches(12.3), Inches(0.38),
-           "Ranked on Table 2 requests. lanekassen.no and altinn.no have the fewest government requests. babyshop.no is 101 on Table 3; rankings stay on Table 2.",
-           size=13, color=MUTED)
     footer(s, 4, total)
     notes(s, "fotball.no has 113 requests and zero third-party cookies. document.no has the widest country list (6).")
 
