@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the ACIT4280 1A group presentation (16:9, 17 slides)."""
+"""Build the ACIT4280 1A group presentation (16:9, 16 slides)."""
 
 from pptx import Presentation
 from pptx.dml.color import RGBColor
@@ -87,7 +87,7 @@ def p_run(tf, text, size=18, bold=False, color=INK, space_before=0, space_after=
     return p
 
 
-def footer(slide, n, total=17):
+def footer(slide, n, total=16):
     add_rect(slide, 0, Inches(7.28), W, Inches(0.22), DARK)
     add_tb(slide, Inches(0.4), Inches(7.28), Inches(10), Inches(0.22),
            "ACIT4280 Group Assignment 1A  |  3 Sep 2026",
@@ -127,7 +127,7 @@ def main():
     prs.slide_width = W
     prs.slide_height = H
     blank = prs.slide_layouts[6]
-    total = 17
+    total = 16
 
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, DARK)
@@ -173,48 +173,36 @@ def main():
 
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, PAPER)
-    header_bar(s, "The report", "Two questions")
+    header_bar(s, "The report", "Two questions and how we measured")
     add_rect(s, Inches(0.5), Inches(1.55), Inches(5.9), Inches(5.0), TEAL)
-    add_tb(s, Inches(0.75), Inches(1.75), Inches(5.4), Inches(0.4), "Part 1  ·  Webbkoll", size=22, bold=True, color=DARK)
-    tf = textbox(s, Inches(0.75), Inches(2.22), Inches(5.4), Inches(1.35))
+    add_tb(s, Inches(0.75), Inches(1.72), Inches(5.4), Inches(0.35), "Part 1  ·  Webbkoll", size=20, bold=True, color=DARK)
+    tf = textbox(s, Inches(0.75), Inches(2.08), Inches(5.4), Inches(1.05))
     for line in [
-        "18 sites in four sectors (Table 1)",
-        "Cookies, third-party requests, KeyCDN countries",
-        "Rank Table 2 requests, not cookies",
-        "Figures 2 to 4: counts, share, sectors",
+        "18 sites: cookies, requests, KeyCDN country",
+        "One clean load per site; rank on Table 2 (20 Aug)",
+        "KeyCDN = IP geolocation guess, not legal transfer proof",
     ]:
-        p_run(tf, "•  " + line, size=16, space_after=6)
+        p_run(tf, "•  " + line, size=14, space_after=4)
     s.shapes.add_picture(
         str(FIG / "fig1_webbkoll_check_klassekampen.png"),
         Inches(0.75),
-        Inches(3.62),
+        Inches(3.2),
         Inches(5.4),
-        Inches(2.67),
+        Inches(2.15),
     )
     add_rect(s, Inches(6.9), Inches(1.55), Inches(5.9), Inches(5.0), MID)
-    add_tb(s, Inches(7.15), Inches(1.75), Inches(5.4), Inches(0.4), "Part 2  ·  ICO", size=22, bold=True, color=ORANGE)
-    tf = textbox(s, Inches(7.15), Inches(2.3), Inches(5.4), Inches(4.0))
+    add_tb(s, Inches(7.15), Inches(1.72), Inches(5.4), Inches(0.35), "Part 2  ·  ICO", size=20, bold=True, color=ORANGE)
+    tf = textbox(s, Inches(7.15), Inches(2.15), Inches(5.4), Inches(3.8))
     for line in [
-        "Five sites from Table 1a",
-        "One purpose per ICO run",
-        "Notice versus ICO Word report (26 Aug 2026)",
-        "Yes if notice and ICO agree; Partial if consent is INCONCLUSIVE",
+        "Five sites, one purpose per run",
+        "Notice vs ICO Word report (26 Aug 2026)",
+        "Yes if notice and ICO agree",
+        "Partial if consent is INCONCLUSIVE",
+        "Tax, cookies, checkout and marketing are different purposes",
     ]:
-        p_run(tf, "•  " + line, size=18, color=WHITE, space_after=10)
+        p_run(tf, "•  " + line, size=16, color=WHITE, space_after=8)
     footer(s, 2, total)
-    notes(s, "Contact and lawful basis are different questions. A high request count is not a finding of unlawful processing.")
-
-    bullet_slide(
-        prs, 3, "Part 1", "How we measured",
-        [
-            "Webbkoll: one clean browser load per site - no add-ons, no cookie banner click.",
-            "We recorded cookies, third-party requests and server country on 18 front pages.",
-            "Table 2 (20 Aug 2026) is the ranking. Table 3 is a repeat check, not averaged in.",
-            "KeyCDN country is a geolocation guess from the IP - not a legal transfer register.",
-        ],
-        "Webbkoll records what one load contacted. It does not read the notice or decide Article 6.",
-        sizes=[20]*4,
-    )
+    notes(s, "Webbkoll records one load. ICO tests one purpose at a time. Contact and lawful basis are different questions.")
 
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, PAPER)
@@ -243,7 +231,7 @@ def main():
         "babyshop.no: 101 on Table 3; ranking stays on Table 2 (45).",
     ]:
         p_run(tf, "•  " + line, size=16, color=WHITE, space_after=8)
-    footer(s, 4, total)
+    footer(s, 3, total)
     notes(s, "Webbkoll counts contact on one load. Cookies and requests are separate measures.")
 
     s = prs.slides.add_slide(blank)
@@ -277,7 +265,7 @@ def main():
     add_tb(s, Inches(0.5), Inches(6.85), Inches(12.3), Inches(0.38),
            "Ranked on Table 2 requests. lanekassen.no and altinn.no have the fewest government requests. babyshop.no is 101 on Table 3; rankings stay on Table 2.",
            size=13, color=MUTED)
-    footer(s, 5, total)
+    footer(s, 4, total)
     notes(s, "fotball.no has 113 requests and zero third-party cookies. document.no has the widest country list (6).")
 
     s = prs.slides.add_slide(blank)
@@ -289,7 +277,7 @@ def main():
     add_tb(s, Inches(0.4), Inches(6.85), Inches(12.5), Inches(0.38),
            "Table 2. News/media is the highest sector. Government is the lowest. Sport is high because of fotball.no.",
            size=13, color=MUTED)
-    footer(s, 6, total)
+    footer(s, 5, total)
     notes(s, "fotball.no 113. lanekassen.no 1. The pie is request share, not cookies.")
 
     s = prs.slides.add_slide(blank)
@@ -300,11 +288,11 @@ def main():
     add_tb(s, Inches(0.4), Inches(6.7), Inches(12.5), Inches(0.5),
            "Table 2: 46 requests, 0 third-party cookies. Screenshot = Table 3 (56 requests to 13 hosts). Server: United States, Google.",
            size=13, color=MUTED)
-    footer(s, 7, total)
+    footer(s, 6, total)
     notes(s, "The ranking stays on Table 2. The screenshot is the later visit.")
 
     bullet_slide(
-        prs, 8, "Part 2", "ICO: one purpose at a time",
+        prs, 7, "Part 2", "ICO: one purpose at a time",
         [
             "Official ICO Word reports dated 26 August 2026. The labels are guidance, not a court finding.",
             "One purpose per run. Compare what the notice claims with what ICO marks.",
@@ -349,7 +337,7 @@ def main():
     add_tb(s, Inches(0.4), Inches(6.72), Inches(12.5), Inches(0.5),
            "ICO labels are guidance. Partial: the notice aims at consent; ICO does not mark consent APPROPRIATE.",
            size=16, color=MUTED)
-    footer(s, 9, total)
+    footer(s, 8, total)
     notes(s, "Partial means the notice aims at consent, but ICO marks consent INCONCLUSIVE and no basis APPROPRIATE.")
 
     s = prs.slides.add_slide(blank)
@@ -367,11 +355,11 @@ def main():
     ]):
         p_run(tf, line, size=20 if i < 2 else 18, bold=(i < 2), color=DARK if i != 1 else ORANGE,
               space_after=14 if i < 3 else 0)
-    footer(s, 10, total)
+    footer(s, 9, total)
     notes(s, "Partial is not a court finding. It means the consent wording did not pass the ICO checklist.")
 
     bullet_slide(
-        prs, 11, "Part 2", "skatteetaten.no: two purposes",
+        prs, 10, "Part 2", "skatteetaten.no: two purposes",
         [
             "Tax and registry data: the law requires it. Opt-out is generally not possible.",
             "ICO: legal obligation and public task APPROPRIATE. Consent NOT APPROPRIATE. Match: Yes.",
@@ -383,7 +371,7 @@ def main():
     )
 
     bullet_slide(
-        prs, 12, "Part 2", "netflix.no: paid streaming",
+        prs, 11, "Part 2", "netflix.no: paid streaming",
         [
             "Purpose: account and payment data needed to provide the paid service.",
             "Notice (EEA/UK): contractual necessity.",
@@ -395,7 +383,7 @@ def main():
     )
 
     bullet_slide(
-        prs, 13, "Part 2", "fotball.no: match history",
+        prs, 12, "Part 2", "fotball.no: match history",
         [
             "Purpose: name and club of active players aged 13+, with club opt-out.",
             "ICO: legitimate interests APPROPRIATE.",
@@ -421,11 +409,11 @@ def main():
         "The choice sits in Google settings. Pluss terms also bundle the notice.",
     ]:
         p_run(tf, "•  " + line, size=20, space_after=12)
-    footer(s, 14, total)
+    footer(s, 13, total)
     notes(s, "Contract and legitimate interests do not fit this advertising purpose.")
 
     bullet_slide(
-        prs, 15, "Part 2", "babyshop.no: checkout",
+        prs, 14, "Part 2", "babyshop.no: checkout",
         [
             "Purpose: name, address, contact, order and payment to deliver goods.",
             "The sales terms are a purchase contract.",
@@ -449,7 +437,7 @@ def main():
     ]
     for i, line in enumerate(summary):
         p_run(tf, line, size=22, color=DARK if i != 3 else ORANGE, space_after=16 if i < len(summary) - 1 else 0)
-    footer(s, 16, total)
+    footer(s, 15, total)
     notes(s, "Part 1 is contact. Part 2 is one purpose and one basis at a time.")
 
     s = prs.slides.add_slide(blank)
