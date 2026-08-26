@@ -9,8 +9,8 @@ FIG = "figures"
 def slide(inner: str, n: int, dark: bool = False) -> str:
     cls = "slide dark" if dark else "slide"
     foot = "" if dark and n == 1 else f"""
-    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>{n} / 16</span></div>"""
-    if dark and n in (1, 16):
+    <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>{n} / 17</span></div>"""
+    if dark and n in (1, 17):
         foot = ""
     return f'<section class="{cls}">{inner}{foot}</section>\n'
 
@@ -166,26 +166,35 @@ parts.append(slide(header("Part 2  ·  Table 5", "ICO result versus the notice")
 <p class="caption">ICO labels are guidance. Partial: the notice aims at consent; ICO does not mark consent APPROPRIATE.</p>
 """, 9))
 
+parts.append(slide(header("Part 2  ·  Table 5", "Four match, two consent tests Partial") + """
+<div class="summary-box ico-summary">
+  <p class="lead">Four core purposes match the notice: tax, paid streaming, match history, checkout.</p>
+  <p class="lead">Two consent tests are Partial: Skatteetaten optional cookies and document.no Google Signals.</p>
+  <p>In both cases the notice claims consent, but the ICO marks consent INCONCLUSIVE.</p>
+  <p>Skatteetaten does not spell out clearly enough who processes the optional cookies and how to refuse them. document.no points users to Google ad settings; the ICO says that is not a clear, separate consent request, and Pluss terms bundle the notice.</p>
+</div>
+""", 10))
+
 parts.append(slide(header("Part 2", "skatteetaten.no: two purposes") + bullets([
     "Tax and registry data: the law requires it. Opt-out is generally not possible.",
     "ICO: legal obligation and public task APPROPRIATE. Consent NOT APPROPRIATE. Match: Yes.",
     "Optional statistics cookies: the notice claims consent.",
     "ICO: consent INCONCLUSIVE; no basis APPROPRIATE. Match: Partial.",
-]), 10))
+]), 11))
 
 parts.append(slide(header("Part 2", "netflix.no: paid streaming") + bullets([
     "Purpose: account and payment data needed to provide the paid service.",
     "Notice (EEA/UK): contractual necessity.",
     "ICO: contract APPROPRIATE. Consent is likely invalid.",
     "Ads and marketing in the same notice were left out.",
-]), 11))
+]), 12))
 
 parts.append(slide(header("Part 2", "fotball.no: match history") + bullets([
     "Purpose: name and club of active players aged 13+, with club opt-out.",
     "ICO: legitimate interests APPROPRIATE.",
     "NFF is not a public authority, so public task does not fit.",
     "FIKS membership is a different purpose and was not this run.",
-]), 12))
+]), 13))
 
 parts.append(slide(header("Part 2", "document.no: Google Signals") + """
 <div class="banner-red">ICO: no basis APPROPRIATE. Consent INCONCLUSIVE. Match: Partial.</div>
@@ -194,14 +203,14 @@ parts.append(slide(header("Part 2", "document.no: Google Signals") + """
     "The notice does not name Article 6. It looks like consent.",
     "ICO: the request is not clear, prominent and separate from terms.",
     "The choice sits in Google settings. Pluss terms also bundle the notice.",
-]), 13))
+]), 14))
 
 parts.append(slide(header("Part 2", "babyshop.no: checkout") + bullets([
     "Purpose: name, address, contact, order and payment to deliver goods.",
     "The sales terms are a purchase contract.",
     "ICO: contract APPROPRIATE. Match: Yes for checkout.",
     "The notice does not label Article 6(1)(b). Marketing is a separate purpose.",
-]), 14))
+]), 15))
 
 parts.append(slide(header("Close", "What the report shows") + """
 <div class="summary-box">
@@ -210,14 +219,14 @@ parts.append(slide(header("Close", "What the report shows") + """
   <p>Four of five ICO purposes match the notice.</p>
   <p>In two places where the site claims consent, the ICO is not satisfied with how consent is formulated.</p>
 </div>
-""", 15))
+""", 16))
 
 parts.append(slide("""
   <div class="q">
     <h1>Questions</h1>
     <p>ACIT4280 Privacy by Design  ·  Group Assignment 1A</p>
   </div>
-""", 16, dark=True))
+""", 17, dark=True))
 
 css = """
 :root { --navy:#1B365D; --ink:#1A1A1A; --cream:#FFF1D1; --paper:#FFFEFB; --ok:#1B6B3A; --warn:#9A5B00; --red:#8B1E1E; }
@@ -251,6 +260,8 @@ ul.bul li::before { content: "•"; position: absolute; left: 0; color: var(--na
 .summary-box { margin: 0.32in 0.5in 0; background: var(--cream); padding: 0.35in 0.4in; min-height: 4.85in; }
 .summary-box p { font-size: 22px; line-height: 1.35; color: var(--navy); margin: 0 0 0.22in; }
 .summary-box p:last-child { margin-bottom: 0; }
+.summary-box p.lead { font-weight: 700; font-size: 20px; }
+.summary-box.ico-summary p:not(.lead) { font-size: 18px; }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0.35in; margin: 0.2in 0.5in 0; }
 .two-col h3 { margin: 0 0 0.1in; color: var(--navy); font-size: 18px; }
 .rank { padding: 0.06in 0.14in; margin-bottom: 0.06in; min-height: 0.78in; }

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the ACIT4280 1A group presentation (16:9, 16 slides)."""
+"""Build the ACIT4280 1A group presentation (16:9, 17 slides)."""
 
 from pptx import Presentation
 from pptx.dml.color import RGBColor
@@ -77,7 +77,7 @@ def p_run(tf, text, size=18, bold=False, color=INK, space_before=0, space_after=
     return p
 
 
-def footer(slide, n, total=16):
+def footer(slide, n, total=17):
     add_rect(slide, 0, Inches(7.28), W, Inches(0.22), NAVY)
     add_tb(slide, Inches(0.4), Inches(7.28), Inches(10), Inches(0.22),
            "ACIT4280 Group Assignment 1A  |  3 Sep 2026",
@@ -117,7 +117,7 @@ def main():
     prs.slide_width = W
     prs.slide_height = H
     blank = prs.slide_layouts[6]
-    total = 16
+    total = 17
 
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, NAVY)
@@ -322,8 +322,26 @@ def main():
     footer(s, 9, total)
     notes(s, "Partial means the notice aims at consent, but ICO marks consent INCONCLUSIVE and no basis APPROPRIATE.")
 
+    s = prs.slides.add_slide(blank)
+    add_rect(s, 0, 0, W, H, PAPER)
+    header_bar(s, "Part 2  ·  Table 5", "Four match, two consent tests Partial")
+    add_rect(s, Inches(0.5), Inches(1.55), Inches(12.3), Inches(4.85), CREAM)
+    tf = textbox(s, Inches(0.75), Inches(1.85), Inches(11.8), Inches(4.35))
+    for i, line in enumerate([
+        "Four core purposes match the notice: tax, paid streaming, match history, checkout.",
+        "Two consent tests are Partial: Skatteetaten optional cookies and document.no Google Signals.",
+        "In both cases the notice claims consent, but the ICO marks consent INCONCLUSIVE.",
+        "Skatteetaten does not spell out clearly enough who processes the optional cookies and how to refuse them. "
+        "document.no points users to Google ad settings; the ICO says that is not a clear, separate consent request, "
+        "and Pluss terms bundle the notice.",
+    ]):
+        p_run(tf, line, size=20 if i < 2 else 18, bold=(i < 2), color=NAVY,
+              space_after=14 if i < 3 else 0)
+    footer(s, 10, total)
+    notes(s, "Partial is not a court finding. It means the consent wording did not pass the ICO checklist.")
+
     bullet_slide(
-        prs, 10, "Part 2", "skatteetaten.no: two purposes",
+        prs, 11, "Part 2", "skatteetaten.no: two purposes",
         [
             "Tax and registry data: the law requires it. Opt-out is generally not possible.",
             "ICO: legal obligation and public task APPROPRIATE. Consent NOT APPROPRIATE. Match: Yes.",
@@ -335,7 +353,7 @@ def main():
     )
 
     bullet_slide(
-        prs, 11, "Part 2", "netflix.no: paid streaming",
+        prs, 12, "Part 2", "netflix.no: paid streaming",
         [
             "Purpose: account and payment data needed to provide the paid service.",
             "Notice (EEA/UK): contractual necessity.",
@@ -347,7 +365,7 @@ def main():
     )
 
     bullet_slide(
-        prs, 12, "Part 2", "fotball.no: match history",
+        prs, 13, "Part 2", "fotball.no: match history",
         [
             "Purpose: name and club of active players aged 13+, with club opt-out.",
             "ICO: legitimate interests APPROPRIATE.",
@@ -373,11 +391,11 @@ def main():
         "The choice sits in Google settings. Pluss terms also bundle the notice.",
     ]:
         p_run(tf, "•  " + line, size=20, space_after=12)
-    footer(s, 13, total)
+    footer(s, 14, total)
     notes(s, "Contract and legitimate interests do not fit this advertising purpose.")
 
     bullet_slide(
-        prs, 14, "Part 2", "babyshop.no: checkout",
+        prs, 15, "Part 2", "babyshop.no: checkout",
         [
             "Purpose: name, address, contact, order and payment to deliver goods.",
             "The sales terms are a purchase contract.",
@@ -401,7 +419,7 @@ def main():
     ]
     for i, line in enumerate(summary):
         p_run(tf, line, size=22, color=NAVY, space_after=16 if i < len(summary) - 1 else 0)
-    footer(s, 15, total)
+    footer(s, 16, total)
     notes(s, "Part 1 is contact. Part 2 is one purpose and one basis at a time.")
 
     s = prs.slides.add_slide(blank)
