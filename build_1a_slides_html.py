@@ -4,7 +4,7 @@ from pathlib import Path
 
 OUT = Path("/workspace/ACIT4280_1A_presentation.html")
 FIG = "figures"
-TOTAL = 16
+TOTAL = 15
 
 
 def slide(inner: str, n: int, dark: bool = False) -> str:
@@ -51,7 +51,7 @@ parts.append(slide(header("The report", "Two questions and how we measured") + "
       <li>One clean load per site; rank on Table 2 (20 Aug)</li>
       <li>KeyCDN = IP geolocation guess, not legal transfer proof</li>
     </ul>
-    <img class="pane-shot compact" src="{FIG}/fig1_webbkoll_check_klassekampen.png" alt="Webbkoll check page">
+    <img class="pane-shot compact webbkoll-results" src="{FIG}/fig2_webbkoll_results_klassekampen.png" alt="Webbkoll results for klassekampen.no">
   </div>
   <div class="pane navy">
     <h2>Part 2  ·  ICO</h2>
@@ -66,16 +66,13 @@ parts.append(slide(header("The report", "Two questions and how we measured") + "
 </div>
 """, 2))
 
-parts.append(slide(header("Part 1", "What we looked at and key findings") + """
+parts.append(slide(header("Part 1", "What Webbkoll shows and key findings") + """
 <div class="split">
   <div class="pane cream">
-    <h2>What we looked at</h2>
-    <ul>
-      <li>Cookies (small files on the device)</li>
-      <li>Third-party requests (calls to other companies, such as ads and fonts)</li>
-      <li>Countries (KeyCDN geolocation guess from the IP, not a legal transfer register)</li>
-    </ul>
+    <h2>What Webbkoll shows</h2>
+    <p class="pane-lead">Cookies, third-party requests and server country.</p>
     <p class="lead-finding">Many requests does not mean many cookies.</p>
+    <img class="pane-shot keycdn-shot" src="{FIG}/fig4_keycdn_lookup_klassekampen.png" alt="KeyCDN lookup for klassekampen server IP">
   </div>
   <div class="pane dark">
     <h2>Key findings</h2>
@@ -126,20 +123,12 @@ parts.append(slide(header("Part 1  ·  Figures 2 to 4", "Third-party requests by
 <p class="caption">Table 2. News/media is the highest sector. Government is the lowest. Sport is high because of fotball.no.</p>
 """, 5))
 
-parts.append(slide(header("Part 1  ·  one example", "klassekampen.no: 46 in Table 2, 56 on the screenshot") + f"""
-<div class="klass">
-  <img src="{FIG}/fig2_webbkoll_results_klassekampen.png" alt="Webbkoll results for klassekampen.no">
-  <img class="keycdn" src="{FIG}/fig4_keycdn_lookup_klassekampen.png" alt="KeyCDN lookup for klassekampen server IP">
-</div>
-<p class="caption">Table 2: 46 requests, 0 third-party cookies. Screenshot = Table 3 (56 requests to 13 hosts). Server: United States, Google.</p>
-""", 6))
-
 parts.append(slide(header("Part 2", "ICO: one purpose at a time") + bullets([
     "Official ICO Word reports dated 26 August 2026. The labels are guidance, not a court finding.",
     "One purpose per run. Compare what the notice claims with what ICO marks.",
     "Yes: notice and ICO line up for that purpose. Partial: the notice aims at consent; ICO marks INCONCLUSIVE.",
     "Tax, cookies, checkout and marketing are different purposes.",
-]), 7))
+]), 6))
 
 table_rows = [
     ("skatteetaten.no", "Tax / folkeregister", "Legal obligation + public task", "Yes", "yes"),
@@ -159,7 +148,7 @@ parts.append(slide(header("Part 2  ·  Table 5", "ICO result versus the notice")
   <tbody>{tr}</tbody>
 </table>
 <p class="caption">ICO labels are guidance. Partial: the notice aims at consent; ICO does not mark consent APPROPRIATE.</p>
-""", 8))
+""", 7))
 
 parts.append(slide(header("Part 2  ·  Table 5", "Four match, two consent tests Partial") + """
 <div class="summary-box ico-summary">
@@ -168,28 +157,28 @@ parts.append(slide(header("Part 2  ·  Table 5", "Four match, two consent tests 
   <p>In both cases the notice claims consent, but the ICO marks consent INCONCLUSIVE.</p>
   <p>Skatteetaten does not spell out clearly enough who processes the optional cookies and how to refuse them. document.no points users to Google ad settings; the ICO says that is not a clear, separate consent request, and Pluss terms bundle the notice.</p>
 </div>
-""", 9))
+""", 8))
 
 parts.append(slide(header("Part 2", "skatteetaten.no: two purposes") + bullets([
     "Tax and registry data: the law requires it. Opt-out is generally not possible.",
     "ICO: legal obligation and public task APPROPRIATE. Consent NOT APPROPRIATE. Match: Yes.",
     "Optional statistics cookies: the notice claims consent.",
     "ICO: consent INCONCLUSIVE; no basis APPROPRIATE. Match: Partial.",
-]), 10))
+]), 9))
 
 parts.append(slide(header("Part 2", "netflix.no: paid streaming") + bullets([
     "Purpose: account and payment data needed to provide the paid service.",
     "Notice (EEA/UK): contractual necessity.",
     "ICO: contract APPROPRIATE. Consent marked likely invalid for this purpose.",
     "Ads and marketing in the same notice were left out.",
-]), 11))
+]), 10))
 
 parts.append(slide(header("Part 2", "fotball.no: match history") + bullets([
     "Purpose: name and club of active players aged 13+, with club opt-out.",
     "ICO: legitimate interests APPROPRIATE.",
     "NFF is not a public authority, so public task does not fit.",
     "FIKS membership is a different purpose and was not this run.",
-]), 12))
+]), 11))
 
 parts.append(slide(header("Part 2", "document.no: Google Signals") + """
 <div class="banner-accent">ICO: no basis APPROPRIATE. Consent INCONCLUSIVE. Match: Partial.</div>
@@ -198,14 +187,14 @@ parts.append(slide(header("Part 2", "document.no: Google Signals") + """
     "The notice does not name Article 6. It looks like consent.",
     "ICO: the request is not clear, prominent and separate from terms.",
     "The choice sits in Google settings. Pluss terms also bundle the notice.",
-]), 13))
+]), 12))
 
 parts.append(slide(header("Part 2", "babyshop.no: checkout") + bullets([
     "Purpose: name, address, contact, order and payment to deliver goods.",
     "The sales terms are a purchase contract.",
     "ICO: contract APPROPRIATE. Match: Yes for checkout.",
     "The notice does not label Article 6(1)(b). Marketing is a separate purpose.",
-]), 14))
+]), 13))
 
 parts.append(slide(header("Close", "What the report shows") + """
 <div class="summary-box close-summary">
@@ -214,14 +203,14 @@ parts.append(slide(header("Close", "What the report shows") + """
   <p>Four of five ICO purposes match the notice.</p>
   <p class="accent">In two places where the site claims consent, the ICO is not satisfied with how consent is formulated.</p>
 </div>
-""", 15))
+""", 14))
 
 parts.append(slide("""
   <div class="q">
     <h1>Questions</h1>
     <p>ACIT4280 Privacy by Design  ·  Group Assignment 1A</p>
   </div>
-""", 16, dark=True))
+""", 15, dark=True))
 
 css = """
 :root { --dark:#224248; --mid:#325E6A; --teal:#44A1A4; --orange:#FF9A00; --ink:#1A1A1A; --paper:#FFFEFB; --light:#E8F4F4; }
@@ -257,6 +246,9 @@ ul.bul li::before { content: "•"; position: absolute; left: 0; color: var(--da
 .pane ul.compact li { font-size: 14px; margin: 0 0 4px; }
 .pane-shot { display: block; width: 100%; max-height: 2.55in; margin-top: 0.1in; object-fit: contain; background: #fff; border: 1px solid rgba(34,66,72,.12); }
 .pane-shot.compact { max-height: 2.05in; margin-top: 0.08in; }
+.pane-shot.webbkoll-results { max-height: 1.35in; }
+.pane-shot.keycdn-shot { max-height: 2.25in; margin-top: 0.1in; }
+.pane-lead { margin: 0 0 0.08in; font-size: 15px; line-height: 1.3; }
 .pane li { font-size: 16px; margin: 0 0 8px; }
 .lead-finding { margin: 0.18in 0 0; font-size: 18px; font-weight: 700; color: var(--orange); line-height: 1.3; }
 .summary-box { margin: 0.32in 0.5in 0; background: var(--teal); padding: 0.35in 0.4in; min-height: 4.85in; }

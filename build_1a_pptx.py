@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the ACIT4280 1A group presentation (16:9, 16 slides)."""
+"""Build the ACIT4280 1A group presentation (16:9, 15 slides)."""
 
 from pptx import Presentation
 from pptx.dml.color import RGBColor
@@ -87,7 +87,7 @@ def p_run(tf, text, size=18, bold=False, color=INK, space_before=0, space_after=
     return p
 
 
-def footer(slide, n, total=16):
+def footer(slide, n, total=15):
     add_rect(slide, 0, Inches(7.28), W, Inches(0.22), DARK)
     add_tb(slide, Inches(0.4), Inches(7.28), Inches(10), Inches(0.22),
            "ACIT4280 Group Assignment 1A  |  3 Sep 2026",
@@ -127,7 +127,7 @@ def main():
     prs.slide_width = W
     prs.slide_height = H
     blank = prs.slide_layouts[6]
-    total = 16
+    total = 15
 
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, DARK)
@@ -184,11 +184,11 @@ def main():
     ]:
         p_run(tf, "•  " + line, size=14, space_after=4)
     s.shapes.add_picture(
-        str(FIG / "fig1_webbkoll_check_klassekampen.png"),
+        str(FIG / "fig2_webbkoll_results_klassekampen.png"),
         Inches(0.75),
-        Inches(3.2),
+        Inches(3.05),
         Inches(5.4),
-        Inches(2.15),
+        Inches(1.4),
     )
     add_rect(s, Inches(6.9), Inches(1.55), Inches(5.9), Inches(5.0), MID)
     add_tb(s, Inches(7.15), Inches(1.72), Inches(5.4), Inches(0.35), "Part 2  ·  ICO", size=20, bold=True, color=ORANGE)
@@ -206,18 +206,20 @@ def main():
 
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, PAPER)
-    header_bar(s, "Part 1", "What we looked at and key findings")
+    header_bar(s, "Part 1", "What Webbkoll shows and key findings")
     add_rect(s, Inches(0.5), Inches(1.55), Inches(5.9), Inches(5.0), TEAL)
     add_tb(s, Inches(0.75), Inches(1.75), Inches(5.4), Inches(0.4),
-           "What we looked at", size=22, bold=True, color=DARK)
-    tf = textbox(s, Inches(0.75), Inches(2.3), Inches(5.4), Inches(4.0))
-    for line in [
-        "Cookies (small files on the device)",
-        "Third-party requests (calls to other companies, such as ads and fonts)",
-        "Countries (KeyCDN geolocation guess from the IP, not a legal transfer register)",
-    ]:
-        p_run(tf, "•  " + line, size=17, space_after=10)
-    p_run(tf, "Many requests does not mean many cookies.", size=18, bold=True, color=ORANGE, space_before=8)
+           "What Webbkoll shows", size=22, bold=True, color=DARK)
+    tf = textbox(s, Inches(0.75), Inches(2.2), Inches(5.4), Inches(0.75))
+    p_run(tf, "Cookies, third-party requests and server country.", size=16, space_after=6)
+    p_run(tf, "Many requests does not mean many cookies.", size=16, bold=True, color=ORANGE, space_after=0)
+    s.shapes.add_picture(
+        str(FIG / "fig4_keycdn_lookup_klassekampen.png"),
+        Inches(0.75),
+        Inches(3.05),
+        Inches(5.4),
+        Inches(2.35),
+    )
     add_rect(s, Inches(6.9), Inches(1.55), Inches(5.9), Inches(5.0), DARK)
     add_tb(s, Inches(7.15), Inches(1.75), Inches(5.4), Inches(0.4),
            "Key findings", size=22, bold=True, color=TEAL)
@@ -280,19 +282,8 @@ def main():
     footer(s, 5, total)
     notes(s, "fotball.no 113. lanekassen.no 1. The pie is request share, not cookies.")
 
-    s = prs.slides.add_slide(blank)
-    add_rect(s, 0, 0, W, H, PAPER)
-    header_bar(s, "Part 1  ·  one example", "klassekampen.no: 46 in Table 2, 56 on the screenshot")
-    s.shapes.add_picture(str(FIG / "fig2_webbkoll_results_klassekampen.png"), Inches(0.4), Inches(1.32), Inches(12.5), Inches(2.35))
-    s.shapes.add_picture(str(FIG / "fig4_keycdn_lookup_klassekampen.png"), Inches(2.4), Inches(3.78), Inches(8.5), Inches(2.85))
-    add_tb(s, Inches(0.4), Inches(6.7), Inches(12.5), Inches(0.5),
-           "Table 2: 46 requests, 0 third-party cookies. Screenshot = Table 3 (56 requests to 13 hosts). Server: United States, Google.",
-           size=13, color=MUTED)
-    footer(s, 6, total)
-    notes(s, "The ranking stays on Table 2. The screenshot is the later visit.")
-
     bullet_slide(
-        prs, 7, "Part 2", "ICO: one purpose at a time",
+        prs, 6, "Part 2", "ICO: one purpose at a time",
         [
             "Official ICO Word reports dated 26 August 2026. The labels are guidance, not a court finding.",
             "One purpose per run. Compare what the notice claims with what ICO marks.",
@@ -337,7 +328,7 @@ def main():
     add_tb(s, Inches(0.4), Inches(6.72), Inches(12.5), Inches(0.5),
            "ICO labels are guidance. Partial: the notice aims at consent; ICO does not mark consent APPROPRIATE.",
            size=16, color=MUTED)
-    footer(s, 8, total)
+    footer(s, 7, total)
     notes(s, "Partial means the notice aims at consent, but ICO marks consent INCONCLUSIVE and no basis APPROPRIATE.")
 
     s = prs.slides.add_slide(blank)
@@ -355,11 +346,11 @@ def main():
     ]):
         p_run(tf, line, size=20 if i < 2 else 18, bold=(i < 2), color=DARK if i != 1 else ORANGE,
               space_after=14 if i < 3 else 0)
-    footer(s, 9, total)
+    footer(s, 8, total)
     notes(s, "Partial is not a court finding. It means the consent wording did not pass the ICO checklist.")
 
     bullet_slide(
-        prs, 10, "Part 2", "skatteetaten.no: two purposes",
+        prs, 9, "Part 2", "skatteetaten.no: two purposes",
         [
             "Tax and registry data: the law requires it. Opt-out is generally not possible.",
             "ICO: legal obligation and public task APPROPRIATE. Consent NOT APPROPRIATE. Match: Yes.",
@@ -371,7 +362,7 @@ def main():
     )
 
     bullet_slide(
-        prs, 11, "Part 2", "netflix.no: paid streaming",
+        prs, 10, "Part 2", "netflix.no: paid streaming",
         [
             "Purpose: account and payment data needed to provide the paid service.",
             "Notice (EEA/UK): contractual necessity.",
@@ -383,7 +374,7 @@ def main():
     )
 
     bullet_slide(
-        prs, 12, "Part 2", "fotball.no: match history",
+        prs, 11, "Part 2", "fotball.no: match history",
         [
             "Purpose: name and club of active players aged 13+, with club opt-out.",
             "ICO: legitimate interests APPROPRIATE.",
@@ -409,11 +400,11 @@ def main():
         "The choice sits in Google settings. Pluss terms also bundle the notice.",
     ]:
         p_run(tf, "•  " + line, size=20, space_after=12)
-    footer(s, 13, total)
+    footer(s, 12, total)
     notes(s, "Contract and legitimate interests do not fit this advertising purpose.")
 
     bullet_slide(
-        prs, 14, "Part 2", "babyshop.no: checkout",
+        prs, 13, "Part 2", "babyshop.no: checkout",
         [
             "Purpose: name, address, contact, order and payment to deliver goods.",
             "The sales terms are a purchase contract.",
@@ -437,7 +428,7 @@ def main():
     ]
     for i, line in enumerate(summary):
         p_run(tf, line, size=22, color=DARK if i != 3 else ORANGE, space_after=16 if i < len(summary) - 1 else 0)
-    footer(s, 15, total)
+    footer(s, 14, total)
     notes(s, "Part 1 is contact. Part 2 is one purpose and one basis at a time.")
 
     s = prs.slides.add_slide(blank)
