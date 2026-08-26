@@ -11,6 +11,7 @@ Arbeidsnotat til innleveringen (ikke studieapp, ikke GitHub Pages).
 - `ICO_5sites_worksheet.html`
 - `ACIT4280_1A_report.html` (gruppens rapport, Tabell 5)
 - Full personvernerklæring for document.no limt inn 26.08.2026 (ingen Art. 6-merking)
+- Kjøps- og abonnementsvilkår for Document Pluss limt inn 26.08.2026 (punkt 7 personvern)
 
 ICO-verktøy: https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis/lawful-basis-interactive-guidance-tool/
 
@@ -199,6 +200,10 @@ Avsnittet «Google Analytics og annonsefunksjoner (Google Signals)»:
 
 Ikke bland inn: kommentarer (IP, Gravatar), innlogging/«Husk meg», kjøpshistorikk, kundeforhold i 36 måneder, eller innebygd innhold fra andre nettsteder.
 
+**Kjøps- og abonnementsvilkår (Document Pluss, limt inn 26.08.2026):** Det finnes en avtale for *betalt abonnement* (Ordinært, Premium, VIP, Bedrift). Punkt 7: de lagrer det som kreves for å levere tjenesten du har kjøpt, og for å sende tilbud «i den utstrekning vi har lov til det». Henviser til personvernerklæringen. Å «godta» vilkårene ved bruk er ikke Art. 6-samtykke. Donasjoner gir ikke tilgang og er ikke underlagt vilkårene.
+
+Det endrer **ikke** Contract Q1 for denne ICO-kjøringen. En egen kjøring på konto og betaling for Document Pluss ville vært som Netflix (forventet contract). Google Signals er ikke nødvendig for å levere Pluss.
+
 **ICO-gjennomgang (Google Signals):**
 
 | Grunnlag | Status | Svar |
@@ -206,7 +211,7 @@ Ikke bland inn: kommentarer (IP, Gravatar), innlogging/«Husk meg», kjøpshisto
 | Contract Q1: Do you have (or intend to have) a contract with the individual? | fylt | **No** |
 | ICO-konklusjon | ikke fylt | forventet: consent |
 
-**Hvorfor No på contract Q1:** Vi tester reklameanalyse, ikke lesing av artikler eller et abonnement. Det er ingen avtale med leseren om Google Signals. Selv om noen har medlemskonto, er Signals ikke nødvendig for å oppfylle den. ICO: svar No når formålet ikke er å utføre kontrakten. Worksheet startet med No her.
+**Hvorfor No på contract Q1:** Vi tester reklameanalyse, ikke Document Pluss. Det er ingen avtale om Google Signals. Signals styres av Google-innlogging og annonsetilpasning, ikke av abonnementet. ICO: svar No når formålet ikke er å utføre kontrakten. Worksheet startet med No her.
 
 **ICO-steg nå:** velg No, trykk Continue. Neste er typisk legal obligation / vital interests / public task / recognised LI, deretter consent. For consent-sporet: Yes på løpende valg (Google-innstillinger + opt-out), No på at samtykke er en forutsetning for å lese artikler.
 
