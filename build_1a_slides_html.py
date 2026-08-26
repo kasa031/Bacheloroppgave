@@ -66,10 +66,10 @@ parts.append(slide(header("The report", "Two questions") + """
 """, 2))
 
 parts.append(slide(header("Part 1", "How we measured") + bullets([
-    "English Webbkoll. One load per visit. No add-ons. Do Not Track off.",
-    "Table 2 (20 Aug 2026) is the ranking. Table 3 is a later check, not averaged.",
-    "KeyCDN country is a geolocation guess from the IP, not a legal transfer register.",
-    "Requests are not cookies. 17 of 18 sites had zero external cookies. ikea.no had 2.",
+    "Webbkoll: one clean browser load per site - no add-ons, no cookie banner click.",
+    "We recorded cookies, third-party requests and server country on 18 front pages.",
+    "Table 2 (20 Aug 2026) is the ranking. Table 3 is a repeat check, not averaged in.",
+    "KeyCDN country is a geolocation guess from the IP - not a legal transfer register.",
 ]), 3))
 
 parts.append(slide(header("Part 1", "What we looked at and key findings") + """

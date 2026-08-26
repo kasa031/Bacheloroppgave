@@ -207,10 +207,10 @@ def main():
     bullet_slide(
         prs, 3, "Part 1", "How we measured",
         [
-            "English Webbkoll. One load per visit. No add-ons. Do Not Track off.",
-            "Table 2 (20 Aug 2026) is the ranking. Table 3 is a later check, not averaged.",
-            "KeyCDN country is a geolocation guess from the IP, not a legal transfer register.",
-            "Requests are not cookies. 17 of 18 sites had zero external cookies. ikea.no had 2.",
+            "Webbkoll: one clean browser load per site - no add-ons, no cookie banner click.",
+            "We recorded cookies, third-party requests and server country on 18 front pages.",
+            "Table 2 (20 Aug 2026) is the ranking. Table 3 is a repeat check, not averaged in.",
+            "KeyCDN country is a geolocation guess from the IP - not a legal transfer register.",
         ],
         "Webbkoll records what one load contacted. It does not read the notice or decide Article 6.",
         sizes=[20]*4,
