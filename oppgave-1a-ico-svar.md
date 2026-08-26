@@ -16,6 +16,7 @@ Arbeidsnotat til innleveringen (ikke studieapp, ikke GitHub Pages, ikke oppgave 
 - `Lawful basis assessment report.docx` (offisiell ICO-rapport, Skatteetaten skatt/folkeregister)
 - `Netflix_Lawful basis assessment report.docx` (offisiell ICO-rapport, Netflix abonnement)
 - `Fotball_Lawful basis assessment report.docx` (offisiell ICO-rapport, fotball.no kamphistorikk)
+- `Document_Lawful basis assessment report.docx` (offisiell ICO-rapport, document.no Google Signals)
 - `ICO_5sites_worksheet.html`
 - `ACIT4280_1A_report.html` (gruppens rapport, Tabell 5)
 - Full personvernerklæring for document.no limt inn 26.08.2026 (ingen Art. 6-merking)
@@ -192,9 +193,9 @@ Nødvendige cookies uten samtykke (ekomlov). Øvrige krever tillatelse; samtykke
 
 ---
 
-## 4. document.no - I GANG
+## 4. document.no - FERDIG
 
-**Formål vi tester:** Google Signals / reklameanalyse (demografi, interesser, aktivitet på tvers av enheter). Medlemskonto, kommentarer, kjøp og nødvendige cookies er egne formål.
+**Formål:** Google Signals / reklameanalyse (demografi, interesser, aktivitet på tvers av enheter). Medlemskonto, kommentarer, kjøp og nødvendige cookies er egne formål.
 
 **Personvernerklæring:** Full tekst limt inn i chatten 26.08.2026. Samme som https://www.document.no/personvernerklaering/. Document Media AS, kontakt@document.no. Org.nr. 893 068 392.
 
@@ -212,7 +213,21 @@ Ikke bland inn: kommentarer (IP, Gravatar), innlogging/«Husk meg», kjøpshisto
 
 Det endrer **ikke** Contract Q1 for denne ICO-kjøringen. En egen kjøring på konto og betaling for Document Pluss ville vært som Netflix (forventet contract). Google Signals er ikke nødvendig for å levere Pluss.
 
-**ICO-gjennomgang (Google Signals):**
+**Offisiell ICO-rapport:** `Document_Lawful basis assessment report.docx`
+
+| Grunnlag | ICO-utfall |
+|----------|------------|
+| Consent | INCONCLUSIVE (må gjøre mer for gyldig samtykke: klar, fremtredende, atskilt forespørsel) |
+| Contract | NOT APPROPRIATE |
+| Legal obligation | NOT APPROPRIATE |
+| Vital interests | NOT APPROPRIATE |
+| Public task | NOT APPROPRIATE |
+| Recognised legitimate interest | NOT APPROPRIATE |
+| Legitimate interests | NOT APPROPRIATE |
+
+Ingen grunnlag merket APPROPRIATE.
+
+**Svar vi ga i ICO-verktøyet (dette formålet):**
 
 | Grunnlag | Status | Svar |
 |----------|--------|------|
@@ -227,7 +242,7 @@ Det endrer **ikke** Contract Q1 for denne ICO-kjøringen. En egen kjøring på k
 | Consent Q4: Do you ask individuals to take a positive action to opt in? | fylt | **Yes** |
 | Consent Q5: Is your consent request clear, prominent, and separate from general terms and conditions? | fylt | **To some extent** |
 | Legitimate interests: Are you happy to take full responsibility for justifying your processing? | fylt | **No** |
-| ICO-konklusjon | ikke fylt | forventet: consent (kan bli INCONCLUSIVE pga. Q5); LI NOT APPROPRIATE |
+| ICO-konklusjon | fylt | **Consent INCONCLUSIVE**; øvrige NOT APPROPRIATE; ingen APPROPRIATE |
 
 **Hvorfor No på contract Q1:** Vi tester reklameanalyse, ikke Document Pluss. Det er ingen avtale om Google Signals. Signals styres av Google-innlogging og annonsetilpasning, ikke av abonnementet. ICO: svar No når formålet ikke er å utføre kontrakten. Worksheet startet med No her.
 
@@ -251,7 +266,9 @@ Det endrer **ikke** Contract Q1 for denne ICO-kjøringen. En egen kjøring på k
 
 **Hvorfor No på legitimate interests (full responsibility):** Motsetning til fotball.no. Reklameanalyse/Signals skal ikke bæres av LI. ICO og ekomreglene peker på samtykke for ikke-nødvendige annonsecookies. Worksheet forventet consent. Som Netflix: vi sier No her fordi et annet grunnlag passer bedre. Yes ville åpnet LI-sporet.
 
-**ICO-steg nå:** velg No, trykk Send. Last opp ICO-rapporten etterpå.
+**Match:** Delvis. Worksheet forventet consent. Erklæringen peker på Google-innlogging, annonsetilpasning og opt-out (consent-lignende), men navngir ikke Art. 6. ICO merker **ingen** grunnlag APPROPRIATE. Consent er INCONCLUSIVE fordi forespørselen ikke er klar, fremtredende og atskilt fra vilkår (Q5). Det matcher hullet: valget ligger hos Google, og Pluss-vilkårene blander «godta ved bruk». Contract og LI er korrekt NOT APPROPRIATE for Signals. Funnet til Tabell 5: de *sikter* mot samtykke, men ICO sier de må rette selve forespørselen.
+
+ICO: hvis de vil bruke consent, må forespørselen være clear, prominent and separate from other terms and conditions.
 
 ---
 
@@ -273,5 +290,5 @@ Det endrer **ikke** Contract Q1 for denne ICO-kjøringen. En egen kjøring på k
 | skatteetaten.no | valgfrie cookies | consent | consent | Ja (egen kjøring) |
 | netflix.no | betalt abonnement | contractual necessity (EEA/UK) | Contract APPROPRIATE; øvrige NOT APPROPRIATE | Ja |
 | fotball.no | publisering kampstatistikk | allmenn interesse / opt-out (LI i praksis); FIKS contract for medlemskap | Legitimate interests APPROPRIATE; øvrige NOT APPROPRIATE | Ja (dette formålet) |
-| document.no | Google Signals | ikke oppgitt; Google-innstillinger | venter (forventet consent) | venter |
+| document.no | Google Signals | ikke oppgitt; Google-innstillinger / opt-out | Consent INCONCLUSIVE; øvrige NOT APPROPRIATE; ingen APPROPRIATE | Delvis (sikter mot consent, ICO krever klarere forespørsel) |
 | babyshop.no | kjøp og levering | contract (underforstått) | venter (forventet contract) | venter |
