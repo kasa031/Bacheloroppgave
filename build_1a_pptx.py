@@ -143,12 +143,12 @@ def main():
            size=28, color=WHITE, bold=True)
     tf_q = textbox(s, Inches(0.7), Inches(3.62), Inches(12), Inches(1.55))
     p_run(tf_q,
-          "•  When a front page loads, how many third parties does it contact, "
-          "and in which countries do those servers appear to be located?",
+          "•  When you open a front page, who else does it contact - "
+          "and where in the world are those servers?",
           size=17, color=WHITE, space_after=14)
     p_run(tf_q,
-          "•  When a site processes personal data, has it named a GDPR Article 6 lawful basis, "
-          "and does the ICO tool agree?",
+          "•  When a site uses personal data, does it have a lawful basis - "
+          "and does that claim hold up?",
           size=17, color=WHITE, space_after=0)
     add_tb(s, Inches(0.7), Inches(5.05), Inches(12), Inches(0.55),
            "Humna Akhtar  ·  Mithun Chandra Debnath  ·  Karina Sætersdal Nilssen",

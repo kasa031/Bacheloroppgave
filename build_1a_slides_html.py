@@ -33,8 +33,8 @@ parts.append(slide(f"""
     <p class="assign">Group Assignment 1A</p>
     <h1>Analysis of 3rd-party Data Sharing<br>and Data Tracking and of GDPR<br>Compliance of Norwegian Web Sites</h1>
     <ul class="title-questions">
-      <li>When a front page loads, how many third parties does it contact, and in which countries do those servers appear to be located?</li>
-      <li>When a site processes personal data, has it named a GDPR Article 6 lawful basis, and does the ICO tool agree?</li>
+      <li>When you open a front page, who else does it contact - and where in the world are those servers?</li>
+      <li>When a site uses personal data, does it have a lawful basis - and does that claim hold up?</li>
     </ul>
     <p class="names">Humna Akhtar  ·  Mithun Chandra Debnath  ·  Karina Sætersdal Nilssen</p>
   </div>
