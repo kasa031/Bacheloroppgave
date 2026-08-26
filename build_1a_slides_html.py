@@ -82,7 +82,7 @@ parts.append(slide(header("Part 1", "What Webbkoll shows and key findings") + ""
       <li>lanekassen.no (1) and altinn.no (5): quietest e-government pages.</li>
       <li>document.no: widest country list (6 excluding Norway).</li>
       <li>News/media contacted the most. Government the fewest.</li>
-      <li>babyshop.no: 101 on Table 3; ranking stays on Table 2 (45).</li>
+      <li>babyshop.no: 45 on first scan, 101 on repeat scan.</li>
     </ul>
   </div>
 </div>

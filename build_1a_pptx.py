@@ -230,7 +230,7 @@ def main():
         "lanekassen.no (1) and altinn.no (5): quietest e-government pages.",
         "document.no: widest country list (6 excluding Norway).",
         "News/media contacted the most. Government the fewest.",
-        "babyshop.no: 101 on Table 3; ranking stays on Table 2 (45).",
+        "babyshop.no: 45 on first scan, 101 on repeat scan.",
     ]:
         p_run(tf, "•  " + line, size=16, color=WHITE, space_after=8)
     footer(s, 3, total)
