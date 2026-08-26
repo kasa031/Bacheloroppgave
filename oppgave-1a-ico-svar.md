@@ -21,6 +21,7 @@ Arbeidsnotat til innleveringen (ikke studieapp, ikke GitHub Pages, ikke oppgave 
 - `ACIT4280_1A_report.html` (gruppens rapport, Tabell 5)
 - Full personvernerklæring for document.no limt inn 26.08.2026 (ingen Art. 6-merking)
 - Kjøps- og abonnementsvilkår for Document Pluss limt inn 26.08.2026 (punkt 7 personvern)
+- Babyshop Integrity Policy lest 26.08.2026 (https://www.babyshop.com/en-us/information/integrity-policy)
 
 ICO-verktøy: https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis/lawful-basis-interactive-guidance-tool/
 
@@ -272,13 +273,27 @@ ICO: hvis de vil bruke consent, må forespørselen være clear, prominent and se
 
 ---
 
-## 5. babyshop.no - venter på ICO-kjøring
+## 5. babyshop.no - I GANG
 
-**Formål:** navn, adresse, kontakt, ordre og betaling for kjøp og levering.
+**Formål vi tester:** navn, adresse, kontakt, ordre og betaling for å gjennomføre kjøp og levering. Nyhetsbrev, profilering, cookies og Google-annonser er egne formål.
 
-**Kunngjøring:** ikke merket Art. 6(1)(b); policy sier at kundedata behandles ved kjøp for å oppfylle ordre. Markedsføring/profilering: consent. Annet: legitimate interests.
+**Personvernerklæring (lest 26.08.2026):** https://www.babyshop.com/en-us/information/integrity-policy (babyshop.no peker hit). Behandlingsansvarlig: Babyshop Sthlm Holding AB, CIN 556699-1542, Stockholm, support@babyshop.com. Art. 6 er **ikke merket** som bokstav a/b/c/f, men teksten skiller:
+- Kjøp / support / kontakt: behandling når du handler, for å levere tjenester og produkter (kjøp, service).
+- Subscriber / tilpasset markedsføring og profilering: **consent** (kan trekkes).
+- Enkelte andre behandlinger: **balance of interest** (LI).
+- Utlevering for å overholde lov: eget formål.
+- Cookies: egen cookie-policy.
 
-**Forventet ICO:** contract. Worksheet: Q1 Yes, Q2 Yes, Q3 No.
+**ICO-gjennomgang (kjøp og levering):**
+
+| Grunnlag | Status | Svar |
+|----------|--------|------|
+| Contract Q1: Do you have (or intend to have) a contract with the individual? | fylt | **Yes** |
+| ICO-konklusjon | ikke fylt | forventet: contract |
+
+**Hvorfor Yes på contract Q1:** Et nettordrekjøp er en kjøpsavtale. Dette er Netflix-sporet, ikke document.no Signals. Vi tester levering av varen, ikke nyhetsbrevet. Worksheet: Q1 Yes.
+
+**ICO-steg nå:** velg Yes, trykk Continue. Neste er typisk Q2 (behandler dere for å utføre kontrakten?) **Yes**, deretter Q3 (kan dere oppfylle uten denne behandlingen?) **No**.
 
 ---
 
