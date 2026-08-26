@@ -328,7 +328,7 @@ def main():
     ]:
         p_run(tf, "•  " + line, size=16, color=WHITE, space_after=10)
     footer(s, 10, total)
-    notes(s, "SPEAKER: Karina. Mixing tax processing into a cookie run made consent INCONCLUSIVE. That is why we ran cookies separately.")
+    notes(s, "SPEAKER: Karina. A clean ICO run with Consent Q1 = No marks consent NOT APPROPRIATE for tax. Cookies are a separate purpose and a separate run.")
 
     # 11 table 5
     s = prs.slides.add_slide(blank)
@@ -374,7 +374,7 @@ def main():
             "Named acts: skatteforvaltningsloven, folkeregisterloven, skattebetalingsloven.",
             "Controller: the Director General of Taxation (Skattedirektøren).",
             "ICO: legal obligation APPROPRIATE, public task APPROPRIATE.",
-            "Consent INCONCLUSIVE for core tax. Contract and LI NOT APPROPRIATE.",
+            "Consent NOT APPROPRIATE for core tax (no genuine free choice). Contract and LI NOT APPROPRIATE.",
             "Purpose 2: optional stats cookies (Skyra, Matomo, GA, Siteimprove). Ja/Nei. ICO: consent.",
         ],
         "SPEAKER: Karina. Two purposes. Do not treat the cookie banner as the basis for tax. Nei test 24 August 2026 on skatteetaten.no/person/.",

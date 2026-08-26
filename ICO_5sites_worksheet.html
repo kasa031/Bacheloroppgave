@@ -72,15 +72,16 @@
   <section class="site">
     <h2>1. skatteetaten.no <span class="tag">Government</span></h2>
     <div class="links"><a href="https://www.skatteetaten.no/om-skatteetaten/sikkerhet/personvern/" target="_blank" rel="noopener">Privacy notice</a>
-    <a href="https://www.skatteetaten.no/om-skatteetaten/sikkerhet/" target="_blank" rel="noopener">Security and privacy hub</a></div>
+    <a href="https://www.skatteetaten.no/om-skatteetaten/sikkerhet/" target="_blank" rel="noopener">Security and privacy hub</a>
+    <a href="https://www.skatteetaten.no/om-skatteetaten/sikkerhet/informasjonskapsler/" target="_blank" rel="noopener">Cookie page</a></div>
     <p><strong>Suggested activity to test:</strong> processing identity and financial data to maintain the population register and administer tax.</p>
     <p class="hypothesis">Starting hypothesis only: legal obligation and/or public task. Let the selected activity and ICO answers decide.</p>
     <p><strong>Separate cookie purpose:</strong> optional web statistics cookies on skatteetaten.no (Ja/Nei banner). Test with Nei on skatteetaten.no/person/ and record cookies plus third-party requests after rejection.</p>
     <table>
       <tr><th>Purpose and data</th><td><textarea>Processing identity, address, income and tax data to administer tax assessments and maintain the population register (folkeregisteret).</textarea></td></tr>
       <tr><th>Basis claimed by notice</th><td><textarea>Legal obligation / processing required by law (tax acts and folkeregister rules). Core duties are generally not optional; opt-out is not possible for statutory processing.</textarea></td></tr>
-      <tr><th>ICO result</th><td><input value="Legal obligation (also Public task per ICO report)"></td></tr>
-      <tr><th>Match and reasoning</th><td><textarea>Yes - official ICO report: legal obligation and public task both APPROPRIATE for tax/registry processing. Consent INCONCLUSIVE (not valid for core statutory processing). Contract, vital interests and legitimate interests NOT APPROPRIATE. Notice law-based claim aligns with ICO.</textarea></td></tr>
+      <tr><th>ICO result</th><td><input value="Legal obligation and public task APPROPRIATE; consent NOT APPROPRIATE (likely invalid)"></td></tr>
+      <tr><th>Match and reasoning</th><td><textarea>Yes - official ICO report (clean run 26 Aug 2026): legal obligation and public task both APPROPRIATE for tax/registry processing. Consent NOT APPROPRIATE / likely invalid (cannot offer a genuine free and ongoing choice). Contract, vital interests and legitimate interests NOT APPROPRIATE. Inconclusive section empty. Notice law-based claim aligns with ICO.</textarea></td></tr>
     </table>
     <div class="ico-guide">
       <h3>ICO tool - suggested answers (tax and registry)</h3>
@@ -94,17 +95,19 @@
         <li>Answer <strong>No</strong> (or <strong>I don't know</strong> only if unsure) on remaining consent checks, then click <strong>Continue</strong>.</li>
         <li><strong>Legal obligation:</strong> Are you processing to comply with a legal obligation? <span class="ans">Yes</span> - tax acts and folkeregister rules require this processing.</li>
         <li><strong>Legal obligation:</strong> Is the processing necessary for that compliance? <span class="ans">Yes</span></li>
-        <li>If the tool still asks about <strong>public task</strong>: Are you a public authority exercising official authority? <span class="ans">Yes</span>. Is processing necessary for a public-interest task with basis in law? <span class="ans">Yes</span>.</li>
+        <li><strong>Legal obligation:</strong> Do you have discretion about how you comply? <span class="ans">No</span></li>
+        <li><strong>Legal obligation:</strong> Could you reasonably comply without this data? <span class="ans">No</span></li>
+        <li><strong>Public task:</strong> official tasks or functions in the public interest? <span class="ans">Yes</span>. Basis in law? <span class="ans">Yes</span>. Could you reasonably perform the task without this data? <span class="ans">No</span>.</li>
       </ol>
       <p class="note"><strong>Public task vs legal obligation:</strong> Choose <strong>legal obligation</strong> when a named statute requires this exact processing and the person has no real choice (for example reporting income or maintaining folkeregister entries under specific acts). Choose <strong>public task</strong> when Skatteetaten performs an official government function with clear basis in law, but you describe the broader public-interest task rather than one named duty. For tax administration both can fit. Emphasise named statutory duties if the tool points to legal obligation; emphasise official authority and public-interest functions if it points to public task.</p>
-      <p class="expect">ICO result: legal obligation (also public task per official report). Both APPROPRIATE; consent inconclusive for core tax; contract and LI rejected.</p>
+      <p class="expect">ICO result: legal obligation and public task APPROPRIATE. Consent NOT APPROPRIATE / likely invalid. Contract and LI rejected. Inconclusive section empty.</p>
     </div>
     <p><strong>Separate cookie activity (second ICO run):</strong></p>
     <table>
       <tr><th>Purpose and data</th><td><textarea>Setting optional web statistics cookies after Ja/Nei banner choice on skatteetaten.no.</textarea></td></tr>
       <tr><th>Basis claimed by notice</th><td><textarea>Consent (Ja/Nei banner for optional cookies to improve services).</textarea></td></tr>
       <tr><th>ICO result</th><td><input value="Consent"></td></tr>
-      <tr><th>Match and reasoning</th><td><textarea>Yes - optional Ja/Nei banner fits consent for cookie analytics. Separate ICO run recommended: main tax/registry report flagged consent INCONCLUSIVE when statutory processing is mixed in; for cookies alone Q6 was To some extent (controller/purpose not fully in banner). Power imbalance as public authority noted (Q2 No; public authority may suggest Yes).</textarea></td></tr>
+      <tr><th>Match and reasoning</th><td><textarea>Yes - optional Ja/Nei banner fits consent for cookie analytics. Separate ICO run required (core tax report now marks consent NOT APPROPRIATE). For cookies Q6 was To some extent (controller/purpose not fully in banner). Power imbalance as public authority noted (Q2 No; public authority may suggest Yes). Export a dedicated Word report for this purpose.</textarea></td></tr>
     </table>
     <div class="ico-guide">
       <h3>ICO tool - suggested answers (optional cookies)</h3>
@@ -243,8 +246,8 @@
     <table>
       <thead><tr><th>Service</th><th>Processing activity</th><th>Notice basis</th><th>ICO result</th><th>Match?</th></tr></thead>
       <tbody>
-        <tr><td>skatteetaten.no</td><td>Tax and registry administration</td><td>Legal obligation / law</td><td>Legal obligation (also Public task per ICO report)</td><td>Yes - official ICO report: legal obligation and public task APPROPRIATE; consent inconclusive for core tax; contract/LI rejected. Notice aligns.</td></tr>
-        <tr><td>skatteetaten.no</td><td>Optional web statistics cookies</td><td>Consent (Ja/Nei banner)</td><td>Consent</td><td>Yes - Ja/Nei banner; separate ICO run recommended. Main report consent inconclusive when mixed with statutory processing; Q6 To some extent (controller/purpose not fully in banner).</td></tr>
+        <tr><td>skatteetaten.no</td><td>Tax and registry administration</td><td>Legal obligation / law</td><td>Legal obligation and public task APPROPRIATE; consent NOT APPROPRIATE (likely invalid)</td><td>Yes - official ICO report: legal obligation and public task APPROPRIATE; consent NOT APPROPRIATE / likely invalid; contract/LI rejected. Notice aligns.</td></tr>
+        <tr><td>skatteetaten.no</td><td>Optional web statistics cookies</td><td>Consent (Ja/Nei banner)</td><td>Consent</td><td>Yes - Ja/Nei banner; separate ICO run required. Core tax report now marks consent NOT APPROPRIATE. Q6 To some extent (controller/purpose not fully in banner).</td></tr>
         <tr><td>netflix.no</td><td>Paid streaming subscription</td><td>EEA/UK contractual necessity</td><td>Contract APPROPRIATE; other bases NOT APPROPRIATE</td><td>Yes for this purpose</td></tr>
         <tr><td>fotball.no</td><td>Player name and club on match history</td><td>Public interest / opt-out (LI in practice)</td><td>Legitimate interests APPROPRIATE; other bases NOT APPROPRIATE</td><td>Yes for this purpose</td></tr>
         <tr><td>document.no</td><td>Google Signals ad analytics</td><td>Not named; Google account + ad settings</td><td>Consent INCONCLUSIVE; no basis APPROPRIATE</td><td>Partial - ICO requires a clearer consent request</td></tr>

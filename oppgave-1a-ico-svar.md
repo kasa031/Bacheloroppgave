@@ -80,14 +80,17 @@ Kjør **to** ICO-formål. Bland dem ikke.
 |----------|--------|------|
 | Contract Q1: Do you have (or intend to have) a contract with the individual? | fylt | **No** |
 | Legal obligation Q1: Are you processing this personal data to comply with the law? | fylt | **Yes** |
-| Legal obligation: is the processing necessary for that compliance? | fylt | **Yes** |
+| Legal obligation: is the processing necessary for that compliance? | fylt | **Yes** (statute) |
+| Legal obligation: discretion about how you comply? | fylt | **No** |
+| Legal obligation: could you reasonably comply without this data? | fylt | **No** |
 | Vital interests Q1: save or protect someone's life? | fylt | **No** |
 | Public task Q1: official tasks or functions, or tasks in the public interest? | fylt | **Yes** |
 | Public task: necessary for that task / official authority, with basis in law? | fylt | **Yes** |
+| Public task: could you reasonably perform the task without this data? | fylt | **No** |
 | Recognised legitimate interest Q1: de fem allmenne formålene? | fylt | **No** |
 | Consent Q1: ongoing power to decide? | fylt | **No** (kjernebehandling kan ikke velges bort) |
 | Legitimate interests: full responsibility for justifying? | fylt | **No** |
-| ICO-konklusjon | fylt | **Legal obligation APPROPRIATE; public task APPROPRIATE; consent INCONCLUSIVE; øvrige NOT APPROPRIATE** |
+| ICO-konklusjon | fylt | **Legal obligation APPROPRIATE; public task APPROPRIATE; consent NOT APPROPRIATE / likely invalid; øvrige NOT APPROPRIATE; ingen INCONCLUSIVE** |
 
 **Hvorfor No på contract Q1:** Skatt og folkeregister er ikke en avtale personen inngår. Det er lovpålagte oppgaver. ICO: svar No når formålet ikke er å utføre en kontrakt.
 
@@ -99,7 +102,7 @@ Kjør **to** ICO-formål. Bland dem ikke.
 
 **Hvorfor No på recognised legitimate interest:** Listen er vern av sårbare, nød, kriminalitet, nasjonal sikkerhet, eller utlevering til noens offentlige oppgave. Ordinær skattefastsetting er ikke disse fem.
 
-**Hvorfor No på consent Q1 for kjerneformålet:** Erklæringen sier at det som hovedregel ikke er mulig å reservere seg. Det er ikke et løpende Ja/Nei for skatt. Cookie-banneret er et annet formål. Den lagrede rapporten merker likevel consent INCONCLUSIVE (ikke NOT APPROPRIATE), fordi samtykkesporet ble delvis åpnet da kjernebehandling og cookies ble blandet. En helt ren kjøring med Consent Q1 = No kan merke consent NOT APPROPRIATE. Behold den lagrede Word-rapporten som vedlegg.
+**Hvorfor No på consent Q1 for kjerneformålet:** Erklæringen sier at det som hovedregel ikke er mulig å reservere seg. Det er ikke et løpende Ja/Nei for skatt. Cookie-banneret er et annet formål. Ren ICO-kjøring 26.08.2026 (Consent Q1 = No) merker consent NOT APPROPRIATE / likely invalid: «If you can't offer a genuine free and ongoing choice, you should look for another lawful basis.» Inconclusive-seksjonen er tom. Behold `Skatteetaten_Lawful basis assessment report.docx` som vedlegg.
 
 **Hvorfor No på legitimate interests:** Offentlig myndighet skal som hovedregel ikke bære kjerneoppgaver på LI. Legal obligation og public task passer. Yes her ville åpnet LI-sporet.
 
@@ -109,7 +112,7 @@ Kjør **to** ICO-formål. Bland dem ikke.
 |----------|------------|
 | Legal obligation | APPROPRIATE |
 | Public task | APPROPRIATE |
-| Consent | INCONCLUSIVE (ikke gyldig samtykke for kjernebehandling) |
+| Consent | NOT APPROPRIATE / likely invalid (ingen ekte løpende valg) |
 | Contract | NOT APPROPRIATE |
 | Vital interests | NOT APPROPRIATE |
 | Recognised legitimate interest | NOT APPROPRIATE |
@@ -163,7 +166,7 @@ ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en 
 
 **Hvorfor To some extent på Q6:** Denne siden navngir Skyra, Matomo, Google Analytics og Siteimprove. Selve Ja/Nei-banneret er kortere (forbedre tjenestene). Detaljene sitter på cookie-siden, ikke fullt ut i banneret.
 
-**Match:** Ja. Banneret er valgfritt. Hoved-ICO-rapporten ble consent INCONCLUSIVE fordi kjernebehandling ble blandet inn.
+**Match:** Ja. Banneret er valgfritt. Kjerne-ICO-rapporten merker nå consent NOT APPROPRIATE for skatt. Denne cookie-kjøringen er et eget formål og må eksporteres som egen Word-rapport.
 
 **Webbkoll/Nei-test:** Webbkoll klikker ikke banner. Egen test 24.08.2026: Nei på skatteetaten.no/person/. Figur: `figures/fig7_skatteetaten_cookie_banner.png`.
 
@@ -446,11 +449,11 @@ Teksten sier at noen formål krever samtykke som kan trekkes, og at preferanser 
 
 | Tjeneste | Formål | Notice | ICO | Match |
 |----------|---------|--------|-----|-------|
-| skatteetaten.no | skatt/folkeregister | legal obligation | legal obligation + public task APPROPRIATE | Ja |
+| skatteetaten.no | skatt/folkeregister | legal obligation | legal obligation + public task APPROPRIATE; consent NOT APPROPRIATE | Ja |
 | skatteetaten.no | valgfrie cookies | consent | consent | Ja (egen kjøring) |
 | netflix.no | betalt abonnement | contractual necessity (EEA/UK) | Contract APPROPRIATE; øvrige NOT APPROPRIATE | Ja |
 | fotball.no | publisering kampstatistikk | allmenn interesse / opt-out (LI i praksis); FIKS contract for medlemskap | Legitimate interests APPROPRIATE; øvrige NOT APPROPRIATE | Ja (dette formålet) |
 | document.no | Google Signals | ikke oppgitt; Google-innstillinger / opt-out | Consent INCONCLUSIVE; øvrige NOT APPROPRIATE; ingen APPROPRIATE | Delvis (sikter mot consent, ICO krever klarere forespørsel) |
 | babyshop.no | kjøp og levering | contract (underforstått; Art. 6 ikke merket) | Contract APPROPRIATE; øvrige NOT APPROPRIATE | Ja (dette formålet) |
 
-Alle fem ICO-kjøringer er ferdige. Tabell 5 i `ACIT4280_1A_report.html` (OneDrive) må oppdateres fra pending til disse utfallene. Cookie-formål på babyshop og fotball er egne kjøringer og skal ikke overskrive kassen/kamphistorikk-radene.
+Alle fem kjerne-ICO-kjøringer er ferdige. Skatteetaten formål 1 er ren (consent NOT APPROPRIATE, ikke INCONCLUSIVE). Cookie-formål på Skatteetaten, babyshop og fotball er egne kjøringer og skal ikke overskrive kassen/kamphistorikk/skatt-radene. Eksporter en egen Word-rapport for Skatteetaten valgfrie cookies.
