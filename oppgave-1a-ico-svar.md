@@ -43,7 +43,22 @@ ICO-verktøy: https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resource
 
 **Cookie-side:** Informasjonskapsler på skatteetaten.no (full tekst limt inn 26.08.2026).
 
-Kjerne i erklæringen: behandling «først og fremst hjemlet i lov». Som hovedregel ikke mulig å reservere seg. Oppgaver: folkeregister, riktig skatt/avgift, andre krav (bøter, barnebidrag), veiledning og kontroll. Samfunnsoppdrag: finansielt grunnlag for offentlig virksomhet. Navngitte lover: skatteforvaltningsloven, skattebetalingsloven, folkeregisterloven, A-opplysningsloven, MVA-loven, særavgiftsloven, SI-loven, aksjeloven/allmennaksjeloven. Behandlingsansvarlig: Skatteetaten ved Skattedirektøren. PVO: personvernombud@skatteetaten.no.
+**Sitater fra erklæringen (limt inn 26.08.2026) som styrer Formål 1:**
+
+- Formål: «nødvendige i forbindelse med gjennomføringen av lovpålagte oppgaver, blant annet for å kunne sikre et oppdatert folkeregister og at skatter og avgifter blir fastsatt og innbetalt på riktig måte.»
+- Samfunnsoppdrag: «sikre et finansielt hovedgrunnlag for offentlig virksomhet.»
+- Rettslig grunnlag: «først og fremst hjemlet i lov. Det er som hovedregel ikke mulig å reservere seg mot slik behandling.»
+- Navngitte lover: skatteforvaltningsloven, skattebetalingsloven, folkeregisterloven, A-opplysningsloven, MVA-loven, særavgiftsloven, SI-loven, aksjeloven og allmennaksjeloven.
+- Data: identitet, adresse/kontakt, relasjoner, økonomiske forhold (inntekt, formue, gjeld, eiendom, aksjer).
+- Behandlingsansvarlig: «Skatteetaten ved Skattedirektøren.»
+
+**Ikke Formål 1 (ikke bland inn i denne ICO-kjøringen):**
+
+- Lenkene nederst «Bruk av informasjonskapsler/cookies» og «Analyseverktøy for webstatistikk» er egne undersider. Det er Formål 2.
+- Ja/Nei nederst på denne siden («Fant du det du lette etter?») er tilbakemelding på innhold, ikke cookie-samtykke.
+- Chat-robot, KI-trenere, egenstatistikk/analyserapporter, utlevering til tredjeparter og automatisert saksbehandling er andre behandlinger. ICO-kjøringen er skatt og folkeregister.
+
+Kjerne i erklæringen: behandling «først og fremst hjemlet i lov». Som hovedregel ikke mulig å reservere seg. Oppgaver: folkeregister, riktig skatt/avgift, andre krav (bøter, barnebidrag), veiledning og kontroll. Behandlingsansvarlig: Skatteetaten ved Skattedirektøren. PVO: personvernombud@skatteetaten.no.
 
 Cookie-siden (eget formål):
 - Nødvendige cookies er alltid på (innlogging, skjema, sikkerhet). Kan ikke velges bort.
