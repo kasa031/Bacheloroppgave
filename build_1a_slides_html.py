@@ -228,7 +228,8 @@ ul.bul li { font-size: 20px; margin: 0 0 10px; padding-left: 0.28in; position: r
 ul.bul li::before { content: "•"; position: absolute; left: 0; color: var(--dark); }
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 0.35in; margin: 0.32in 0.5in 0; }
 .compact-split { margin-top: 0.22in; }
-.compact-split .pane { display: flex; flex-direction: column; min-height: 5in; }
+.compact-split .pane.cream { padding-top: 0.34in; }
+.compact-split .pane.navy { padding-top: 0.12in; }
 .compact-split .pane h2 { font-size: 20px; margin-bottom: 0.12in; }
 .compact-split .pane-list.compact { flex: 1 1 auto; margin-bottom: 0.08in; }
 .compact-split .pane-list.compact li { font-size: 13px; margin: 0 0 3px; }

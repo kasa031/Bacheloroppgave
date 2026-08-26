@@ -232,8 +232,8 @@ def main():
     add_rect(s, 0, 0, W, H, PAPER)
     header_bar(s, "The report", "Two questions and how we measured")
     add_rect(s, Inches(0.5), Inches(1.55), Inches(5.9), Inches(5.0), TEAL)
-    add_tb(s, Inches(0.75), Inches(1.72), Inches(5.4), Inches(0.35), "Part 1  ·  Webbkoll", size=20, bold=True, color=DARK)
-    tf = textbox(s, Inches(0.75), Inches(2.08), Inches(5.4), Inches(0.92))
+    add_tb(s, Inches(0.75), Inches(1.95), Inches(5.4), Inches(0.35), "Part 1  ·  Webbkoll", size=20, bold=True, color=DARK)
+    tf = textbox(s, Inches(0.75), Inches(2.32), Inches(5.4), Inches(0.68))
     for line in [
         "18 sites: cookies, requests, KeyCDN country",
         "One clean load per site; rank on Table 2 (20 Aug)",
