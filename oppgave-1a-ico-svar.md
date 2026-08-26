@@ -67,9 +67,9 @@ ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en 
 | Public task Q1: Are you processing the data to carry out your official tasks or functions, or other specific tasks in the public interest? | fylt | **No** |
 | Recognised legitimate interest Q1: Do you need to process the data for any of the following purposes? | fylt | **No** |
 | Consent Q1: Do you want to give individuals the ongoing power to decide whether or not you process their data? | fylt | **No** |
-| Contract | ikke fylt | Worksheet: Q1 Yes, Q2 Yes, Q3 No (kan ikke levere uten konto/betaling). Forventet utfall: contract |
+| Legitimate interests: Are you happy to take full responsibility for justifying your processing? | fylt | **No** |
+| Contract | ikke fylt | Worksheet: Q1 Yes, Q2 Yes, Q3 No. Kan fortsatt komme, eller ICO-rapporten kommer etter Send. |
 | Legal obligation | ikke fylt | |
-| Legitimate interests | ikke fylt | |
 | ICO-konklusjon | ikke fylt | forventet: contract |
 
 **Hvorfor No på vital interests:** Strømmetjeneste, ikke liv og død. Netflix lister ikke vital interests.
@@ -80,7 +80,9 @@ ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en 
 
 **Hvorfor No på consent Q1:** Spørsmålet er om abonnenten løpende kan si nei til behandling av konto- og betalingsdata og likevel ha tjenesten. Det kan de ikke. Samtykke hos Netflix gjelder atferdsreklame og enkelte markedsføringsmeldinger, ikke kjerneabonnementet. Å si opp kontoen er kontrakt, ikke samtykke. Ikke velg To some extent.
 
-**ICO-steg nå:** velg No, Continue. Når contract kommer: Yes / Yes / No etter worksheet.
+**Hvorfor No på legitimate interests (full responsibility):** Dette er LI-spørsmålet om du vil ta ansvar for en balancing test. For kjerneabonnementet skal vi bruke kontrakt, ikke LI. Netflix bruker LI til andre formål (profiler, forskning, noe markedsføring), men ikke til konto og betaling for medlemmer. Yes her kan merke LI som treff og rote til ICO-rapporten. Send kan være siste steg: last opp rapporten hvis den kommer.
+
+**ICO-steg nå:** velg No, trykk Send. Hvis contract-spørsmål kommer: Yes / Yes / No.
 
 ---
 
@@ -120,7 +122,7 @@ ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en 
 |----------|---------|--------|-----|-------|
 | skatteetaten.no | skatt/folkeregister | legal obligation | legal obligation + public task APPROPRIATE | Ja |
 | skatteetaten.no | valgfrie cookies | consent | consent | Ja (egen kjøring) |
-| netflix.no | betalt abonnement | contract (nå eksplisitt i EEA/UK-tillegg) | pågår (vital interests No, public task No, recognised LI No, consent Q1 No) | venter |
+| netflix.no | betalt abonnement | contract (nå eksplisitt i EEA/UK-tillegg) | pågår (VI No, public task No, recognised LI No, consent Q1 No, LI-ansvar No) | venter |
 | fotball.no | publisering kampstatistikk | public interest / opt-out | venter (forventet LI) | venter |
 | document.no | Google Signals | ikke oppgitt; Google-innstillinger | venter (forventet consent) | venter |
 | babyshop.no | kjøp og levering | contract (underforstått) | venter (forventet contract) | venter |
