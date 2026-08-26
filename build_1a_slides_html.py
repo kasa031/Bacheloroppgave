@@ -64,17 +64,17 @@ parts.append(slide(header("Structure", "The report has two parts") + """
 """, 2))
 
 parts.append(slide(header("Part 1", "How we measured with Webbkoll") + bullets([
-    "English Webbkoll; one live Chromium visit: no add-ons, no Do Not Track, no consent click",
+    "English Webbkoll; one live Chromium visit: no add-ons, no Do Not Track",
     "Server country = KeyCDN of the site IP; country list = KeyCDN of third-party IPs",
     "Norway dropped from the country count (the list may still print NO)",
     "n/a = KeyCDN returned no country (dnt.no, babyshop.no, altinn.no on Table 3)",
     "Table 2 = first scan and ranking base; Table 3 = later check, not averaged",
-    "KeyCDN countries are not a GDPR Chapter V transfer record (arts. 44-47)",
+    "Request count is not the same as cookie count",
 ]), 3))
 
 parts.append(slide(header("Part 1", "What Webbkoll does not do") + bullets([
-    "It does not click Yes/No or Cookiebot, so optional analytics cookies may not appear.",
-    "A high request count is not a cookie count, and it is not personal data leaving Norway.",
+    "It does not decide Article 6. That is the ICO tool.",
+    "A high request count is not a cookie count.",
     "ikea.no is the only row with external cookies (2), after redirect to ikea.com.",
     "babyshop.no is 101 requests on Table 3, but 45 on Table 2. Rankings stay on Table 2.",
     "Article 6 is not on the Webbkoll page. That is the ICO tool.",
@@ -120,7 +120,7 @@ parts.append(slide(header("Part 1  ·  method example", "klassekampen.no: 46 on 
   <img src="{FIG}/fig2_webbkoll_results_klassekampen.png" alt="Webbkoll results for klassekampen.no">
   <img class="keycdn" src="{FIG}/fig4_keycdn_lookup_klassekampen.png" alt="KeyCDN lookup for klassekampen server IP">
 </div>
-<p class="caption">Table 2 rank: 46 requests, 0 third-party cookies. Screenshots = later visit (Table 3: 56 requests to 13 hosts). Server KeyCDN: United States, Google. Not a Chapter V finding.</p>
+<p class="caption">Table 2 rank: 46 requests, 0 third-party cookies. Screenshots = later visit (Table 3: 56 requests to 13 hosts). Server KeyCDN: United States, Google.</p>
 """, 7))
 
 parts.append(slide(header("Part 2", "ICO lawful basis: one purpose at a time") + bullets([
@@ -132,23 +132,23 @@ parts.append(slide(header("Part 2", "ICO lawful basis: one purpose at a time") +
     "UK recognised legitimate interest did not fit any of our five purposes.",
 ]), 8))
 
-parts.append(slide(header("Part 2", "Article 6 is not a cookie click") + """
+parts.append(slide(header("Part 2", "One purpose per ICO run") + """
 <div class="split">
   <div class="pane cream">
     <h2>Article 6 (GDPR)</h2>
     <ul>
       <li>Why may we process this personal data?</li>
-      <li>Contract, legal obligation, public task, consent, legitimate interests, vital interests</li>
+      <li>Contract, legal obligation, public task, consent, legitimate interests</li>
       <li>Example: tax and folkeregister under named acts</li>
     </ul>
   </div>
   <div class="pane navy">
-    <h2>ePrivacy / cookies</h2>
+    <h2>Keep purposes apart</h2>
     <ul>
-      <li>May we store/read info on the device?</li>
-      <li>Necessary cookies: often no extra consent</li>
-      <li>Analytics and ads: consent (Yes/No, Cookiebot)</li>
-      <li>No test 24 Aug 2026 on skatteetaten.no/person/</li>
+      <li>Tax data is not optional statistics cookies</li>
+      <li>Checkout is not marketing</li>
+      <li>Match lists are not FIKS membership</li>
+      <li>Mix them in one ICO run and the tool mixes the bases</li>
     </ul>
   </div>
 </div>
@@ -181,7 +181,7 @@ parts.append(slide(header("ICO  ·  government", "skatteetaten.no: law for tax, 
     "Controller: the Director General of Taxation (Skattedirektøren).",
     "ICO: legal obligation APPROPRIATE, public task APPROPRIATE.",
     "Consent NOT APPROPRIATE for core tax (no genuine free choice). Contract and LI NOT APPROPRIATE.",
-    "Purpose 2: optional stats cookies. Notice: Yes/No. Webbkoll: 0 external cookies (no click). ICO: consent INCONCLUSIVE (Q6). No basis APPROPRIATE.",
+    "Purpose 2: optional stats cookies in the notice. ICO: consent INCONCLUSIVE (Q6). No basis APPROPRIATE.",
 ]), 11))
 
 parts.append(slide(header("ICO  ·  news / media", "netflix.no: contract for the paid service") + bullets([
@@ -198,9 +198,8 @@ parts.append(slide(header("ICO  ·  sport", "fotball.no: legitimate interests fo
     "Notice: public-interest match history, opt-out via the club.",
     "ICO: Legitimate interests APPROPRIATE after necessity + balancing.",
     "NFF is a sports federation, not a public authority (public task No).",
-    "FIKS membership can use contract. That is a different purpose.",
-    "Stamdata samtykke om publisering does not match ICO consent (likely invalid).",
-    "Cookiebot (Deny on 26 Aug 2026) is also a different purpose.",
+    "FIKS membership can use contract. That is a different purpose and was not this run.",
+    "This ICO run is match-history publication only.",
 ]), 13))
 
 parts.append(slide(header("ICO  ·  news  ·  the mismatch", "document.no: Google Signals") + """
@@ -225,12 +224,12 @@ parts.append(slide(header("ICO  ·  shopping", "babyshop.no: contract for checko
 ]), 15))
 
 parts.append(slide(header("Close", "What we want the room to remember") + bullets([
-    "Webbkoll measures contact, not lawfulness and not a Chapter V export.",
+    "Webbkoll measures contact, not lawfulness.",
     "Rankings follow Table 2. Table 3 is a check. Do not average them.",
     "fotball.no has the highest request count (113) and still zero third-party cookies.",
     "Four of five core ICO purposes match the notice (Table 5).",
     "Two consent tests fail: skatteetaten cookies (Q6) and document.no Signals (Q5).",
-    "Legal obligation (tax) is not the same as cookie consent (Yes/No).",
+    "Legal obligation (tax) is not the same ICO purpose as optional cookies.",
 ]), 16))
 
 parts.append(slide("""

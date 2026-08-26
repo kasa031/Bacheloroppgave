@@ -112,9 +112,9 @@ td.part { color: var(--warn); font-weight: 700; background: var(--cream) !import
 </div>
 
     <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>2 / 17</span></div></section>
-<section class="slide"><header><div class="kicker">Part 1</div><h1>How we measured with Webbkoll</h1></header><ul class="bul"><li>English Webbkoll; one live Chromium visit: no add-ons, no Do Not Track, no consent click</li><li>Server country = KeyCDN of the site IP; country list = KeyCDN of third-party IPs</li><li>Norway dropped from the country count (the list may still print NO)</li><li>n/a = KeyCDN returned no country (dnt.no, babyshop.no, altinn.no on Table 3)</li><li>Table 2 = first scan and ranking base; Table 3 = later check, not averaged</li><li>KeyCDN countries are not a GDPR Chapter V transfer record (arts. 44-47)</li></ul>
+<section class="slide"><header><div class="kicker">Part 1</div><h1>How we measured with Webbkoll</h1></header><ul class="bul"><li>English Webbkoll; one live Chromium visit: no add-ons, no Do Not Track</li><li>Server country = KeyCDN of the site IP; country list = KeyCDN of third-party IPs</li><li>Norway dropped from the country count (the list may still print NO)</li><li>n/a = KeyCDN returned no country (dnt.no, babyshop.no, altinn.no on Table 3)</li><li>Table 2 = first scan and ranking base; Table 3 = later check, not averaged</li><li>Request count is not the same as cookie count</li></ul>
     <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>3 / 17</span></div></section>
-<section class="slide"><header><div class="kicker">Part 1</div><h1>What Webbkoll does not do</h1></header><ul class="bul"><li>It does not click Yes/No or Cookiebot, so optional analytics cookies may not appear.</li><li>A high request count is not a cookie count, and it is not personal data leaving Norway.</li><li>ikea.no is the only row with external cookies (2), after redirect to ikea.com.</li><li>babyshop.no is 101 requests on Table 3, but 45 on Table 2. Rankings stay on Table 2.</li><li>Article 6 is not on the Webbkoll page. That is the ICO tool.</li></ul>
+<section class="slide"><header><div class="kicker">Part 1</div><h1>What Webbkoll does not do</h1></header><ul class="bul"><li>It does not decide Article 6. That is the ICO tool.</li><li>A high request count is not a cookie count.</li><li>ikea.no is the only row with external cookies (2), after redirect to ikea.com.</li><li>babyshop.no is 101 requests on Table 3, but 45 on Table 2. Rankings stay on Table 2.</li><li>Article 6 is not on the Webbkoll page. That is the ICO tool.</li></ul>
     <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>4 / 17</span></div></section>
 <section class="slide"><header><div class="kicker">Part 1  ·  Table 4</div><h1>Highest and lowest third-party requests</h1></header>
 <div class="two-col">
@@ -140,28 +140,28 @@ td.part { color: var(--warn); font-weight: 700; background: var(--cream) !import
   <img src="figures/fig2_webbkoll_results_klassekampen.png" alt="Webbkoll results for klassekampen.no">
   <img class="keycdn" src="figures/fig4_keycdn_lookup_klassekampen.png" alt="KeyCDN lookup for klassekampen server IP">
 </div>
-<p class="caption">Table 2 rank: 46 requests, 0 third-party cookies. Screenshots = later visit (Table 3: 56 requests to 13 hosts). Server KeyCDN: United States, Google. Not a Chapter V finding.</p>
+<p class="caption">Table 2 rank: 46 requests, 0 third-party cookies. Screenshots = later visit (Table 3: 56 requests to 13 hosts). Server KeyCDN: United States, Google.</p>
 
     <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>7 / 17</span></div></section>
 <section class="slide"><header><div class="kicker">Part 2</div><h1>ICO lawful basis: one purpose at a time</h1></header><ul class="bul"><li>Tool: ICO Lawful basis interactive guidance. Official Word reports dated 26 August 2026.</li><li>Five services from Table 1a. One concrete processing activity per run.</li><li>Compare: what the notice claims vs what ICO marks APPROPRIATE.</li><li>Match Yes = they line up for that purpose. Partial = notice aims at consent, ICO marks INCONCLUSIVE.</li><li>Do not mix cookies, marketing, membership and checkout in one run.</li><li>UK recognised legitimate interest did not fit any of our five purposes.</li></ul>
     <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>8 / 17</span></div></section>
-<section class="slide"><header><div class="kicker">Part 2</div><h1>Article 6 is not a cookie click</h1></header>
+<section class="slide"><header><div class="kicker">Part 2</div><h1>One purpose per ICO run</h1></header>
 <div class="split">
   <div class="pane cream">
     <h2>Article 6 (GDPR)</h2>
     <ul>
       <li>Why may we process this personal data?</li>
-      <li>Contract, legal obligation, public task, consent, legitimate interests, vital interests</li>
+      <li>Contract, legal obligation, public task, consent, legitimate interests</li>
       <li>Example: tax and folkeregister under named acts</li>
     </ul>
   </div>
   <div class="pane navy">
-    <h2>ePrivacy / cookies</h2>
+    <h2>Keep purposes apart</h2>
     <ul>
-      <li>May we store/read info on the device?</li>
-      <li>Necessary cookies: often no extra consent</li>
-      <li>Analytics and ads: consent (Yes/No, Cookiebot)</li>
-      <li>No test 24 Aug 2026 on skatteetaten.no/person/</li>
+      <li>Tax data is not optional statistics cookies</li>
+      <li>Checkout is not marketing</li>
+      <li>Match lists are not FIKS membership</li>
+      <li>Mix them in one ICO run and the tool mixes the bases</li>
     </ul>
   </div>
 </div>
@@ -175,11 +175,11 @@ td.part { color: var(--warn); font-weight: 700; background: var(--cream) !import
 <p class="caption">Each row is one purpose. Yes = notice and ICO line up. Partial = they aim at consent, but ICO marks consent INCONCLUSIVE and no basis APPROPRIATE.</p>
 
     <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>10 / 17</span></div></section>
-<section class="slide"><header><div class="kicker">ICO  ·  government</div><h1>skatteetaten.no: law for tax, consent for cookies</h1></header><ul class="bul"><li>Purpose 1: identity, income and tax data for tax and folkeregister.</li><li>Notice: first and foremost laid down in law. Opt-out generally not possible.</li><li>Named acts: skatteforvaltningsloven, folkeregisterloven, skattebetalingsloven.</li><li>Controller: the Director General of Taxation (Skattedirektøren).</li><li>ICO: legal obligation APPROPRIATE, public task APPROPRIATE.</li><li>Consent NOT APPROPRIATE for core tax (no genuine free choice). Contract and LI NOT APPROPRIATE.</li><li>Purpose 2: optional stats cookies. Notice: Yes/No. Webbkoll: 0 external cookies (no click). ICO: consent INCONCLUSIVE (Q6). No basis APPROPRIATE.</li></ul>
+<section class="slide"><header><div class="kicker">ICO  ·  government</div><h1>skatteetaten.no: law for tax, consent for cookies</h1></header><ul class="bul"><li>Purpose 1: identity, income and tax data for tax and folkeregister.</li><li>Notice: first and foremost laid down in law. Opt-out generally not possible.</li><li>Named acts: skatteforvaltningsloven, folkeregisterloven, skattebetalingsloven.</li><li>Controller: the Director General of Taxation (Skattedirektøren).</li><li>ICO: legal obligation APPROPRIATE, public task APPROPRIATE.</li><li>Consent NOT APPROPRIATE for core tax (no genuine free choice). Contract and LI NOT APPROPRIATE.</li><li>Purpose 2: optional stats cookies in the notice. ICO: consent INCONCLUSIVE (Q6). No basis APPROPRIATE.</li></ul>
     <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>11 / 17</span></div></section>
 <section class="slide"><header><div class="kicker">ICO  ·  news / media</div><h1>netflix.no: contract for the paid service</h1></header><ul class="bul"><li>Purpose: account and payment data to provide the subscription.</li><li>EEA/UK notice: contractual necessity to provide the service to members.</li><li>ICO: Contract APPROPRIATE. All other bases NOT APPROPRIATE.</li><li>Consent: not appropriate / likely invalid (no real ongoing choice).</li><li>LI, legal obligation and consent in the notice apply to other purposes.</li><li>Keep ads, recommendations and marketing out of this run.</li></ul>
     <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>12 / 17</span></div></section>
-<section class="slide"><header><div class="kicker">ICO  ·  sport</div><h1>fotball.no: legitimate interests for match history</h1></header><ul class="bul"><li>Purpose: publish name and club of active players 13+ (kamphistorikk).</li><li>Notice: public-interest match history, opt-out via the club.</li><li>ICO: Legitimate interests APPROPRIATE after necessity + balancing.</li><li>NFF is a sports federation, not a public authority (public task No).</li><li>FIKS membership can use contract. That is a different purpose.</li><li>Stamdata samtykke om publisering does not match ICO consent (likely invalid).</li><li>Cookiebot (Deny on 26 Aug 2026) is also a different purpose.</li></ul>
+<section class="slide"><header><div class="kicker">ICO  ·  sport</div><h1>fotball.no: legitimate interests for match history</h1></header><ul class="bul"><li>Purpose: publish name and club of active players 13+ (kamphistorikk).</li><li>Notice: public-interest match history, opt-out via the club.</li><li>ICO: Legitimate interests APPROPRIATE after necessity + balancing.</li><li>NFF is a sports federation, not a public authority (public task No).</li><li>FIKS membership can use contract. That is a different purpose and was not this run.</li><li>This ICO run is match-history publication only.</li></ul>
     <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>13 / 17</span></div></section>
 <section class="slide"><header><div class="kicker">ICO  ·  news  ·  the mismatch</div><h1>document.no: Google Signals</h1></header>
 <div class="banner-red">ICO marks no basis APPROPRIATE. Consent is INCONCLUSIVE.</div>
@@ -187,7 +187,7 @@ td.part { color: var(--warn); font-weight: 700; background: var(--cream) !import
     <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>14 / 17</span></div></section>
 <section class="slide"><header><div class="kicker">ICO  ·  shopping</div><h1>babyshop.no: contract for checkout</h1></header><ul class="bul"><li>Purpose: name, address, contact, order and payment to deliver goods.</li><li>Terms point 1: a sales contract (18 years or guardian).</li><li>ICO: Contract APPROPRIATE. Other bases NOT APPROPRIATE.</li><li>Notice does not label Art. 6(1)(b). Section 5 is profiling, not purchase.</li><li>Marketing/profiling: consent (separate). Cookie policy: necessary vs measurement vs marketing.</li><li>Bundled consent to cookies inside the terms is not valid Art. 6 consent.</li></ul>
     <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>15 / 17</span></div></section>
-<section class="slide"><header><div class="kicker">Close</div><h1>What we want the room to remember</h1></header><ul class="bul"><li>Webbkoll measures contact, not lawfulness and not a Chapter V export.</li><li>Rankings follow Table 2. Table 3 is a check. Do not average them.</li><li>fotball.no has the highest request count (113) and still zero third-party cookies.</li><li>Four of five core ICO purposes match the notice (Table 5).</li><li>Two consent tests fail: skatteetaten cookies (Q6) and document.no Signals (Q5).</li><li>Legal obligation (tax) is not the same as cookie consent (Yes/No).</li></ul>
+<section class="slide"><header><div class="kicker">Close</div><h1>What we want the room to remember</h1></header><ul class="bul"><li>Webbkoll measures contact, not lawfulness.</li><li>Rankings follow Table 2. Table 3 is a check. Do not average them.</li><li>fotball.no has the highest request count (113) and still zero third-party cookies.</li><li>Four of five core ICO purposes match the notice (Table 5).</li><li>Two consent tests fail: skatteetaten cookies (Q6) and document.no Signals (Q5).</li><li>Legal obligation (tax) is not the same ICO purpose as optional cookies.</li></ul>
     <div class="foot"><span>ACIT4280 Group Assignment 1A  |  3 Sep 2026</span><span>16 / 17</span></div></section>
 <section class="slide dark">
   <div class="q">

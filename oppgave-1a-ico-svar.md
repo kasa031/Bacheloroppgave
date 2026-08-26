@@ -90,7 +90,7 @@ Kjør **to** ICO-formål. Bland dem ikke.
 
 **Hvorfor No på recognised legitimate interest:** Listen er vern av sårbare, nød, kriminalitet, nasjonal sikkerhet, eller utlevering til noens offentlige oppgave. Ordinær skattefastsetting er ikke disse fem.
 
-**Hvorfor No på consent Q1 for kjerneformålet:** Erklæringen sier at det som hovedregel ikke er mulig å reservere seg. Det er ikke et løpende Ja/Nei for skatt. Cookie-banneret er et annet formål. Ren ICO-kjøring 26.08.2026 (Consent Q1 = No) merker consent NOT APPROPRIATE / likely invalid: «If you can't offer a genuine free and ongoing choice, you should look for another lawful basis.» Inconclusive-seksjonen er tom. Behold `Skatteetaten_Lawful basis assessment report.docx` som vedlegg.
+**Hvorfor No på consent Q1 for kjerneformålet:** Erklæringen sier at det som hovedregel ikke er mulig å reservere seg. Det er ikke et løpende valg for skatt. Valgfrie statistikk-cookies er et annet formål. Ren ICO-kjøring 26.08.2026 (Consent Q1 = No) merker consent NOT APPROPRIATE / likely invalid: «If you can't offer a genuine free and ongoing choice, you should look for another lawful basis.» Inconclusive-seksjonen er tom. Behold `Skatteetaten_Lawful basis assessment report.docx` som vedlegg.
 
 **Hvorfor No på legitimate interests:** Offentlig myndighet skal som hovedregel ikke bære kjerneoppgaver på LI. Legal obligation og public task passer. Yes her ville åpnet LI-sporet.
 
@@ -126,7 +126,7 @@ ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en 
 - «Du kan når som helst endre samtykket du har gitt.»
 - Ifølge siden: data brukes bare til å forbedre Skatteetatens tjenester og deles ikke utenfor etaten.
 
-**Behandling vi tester:** valgfrie webstatistikk-cookies etter Ja/Nei (Skyra, Matomo, Google Analytics, Siteimprove).
+**Behandling vi tester:** valgfrie webstatistikk-cookies i cookie-erklæringen (Skyra, Matomo, Google Analytics, Siteimprove).
 
 **Grunnlag i kunngjøringen:** samtykke. Nødvendige cookies er alltid på og er ikke dette formålet.
 
@@ -150,15 +150,15 @@ ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en 
 
 **Hvorfor No på legal obligation og public task her:** Ingen lov pålegger Skatteetaten å sette Google Analytics for å fastsette skatt. Valgfrie statistikk-cookies er ikke den offentlige kjerneoppgaven. Ikke To some extent.
 
-**Hvorfor Yes på consent Q1:** Cookie-siden gir valg: alle, eller bare nødvendige. Samtykke kan endres når som helst. Hub-siden har egen lenke «Endre samtykke for informasjonskapsler». Nei-test 24.08.2026 på skatteetaten.no/person/.
+**Hvorfor Yes på consent Q1:** Cookie-siden gir valg: alle, eller bare nødvendige. Samtykke kan endres når som helst. Hub-siden har egen lenke «Endre samtykke for informasjonskapsler».
 
 **Hvorfor No på consent Q3:** Nødvendige cookies holder innlogging og skjema i gang. Valgfrie analyseverktøy er ikke et vilkår for å betale skatt.
 
-**Hvorfor To some extent på Q6:** Denne siden navngir Skyra, Matomo, Google Analytics og Siteimprove. Selve Ja/Nei-banneret er kortere (forbedre tjenestene). Detaljene sitter på cookie-siden, ikke fullt ut i banneret. ICO krever at samtykket dekker behandlingsansvarlig, formål og type aktivitet. Derfor INCONCLUSIVE, ikke APPROPRIATE.
+**Hvorfor To some extent på Q6:** Cookie-siden navngir Skyra, Matomo, Google Analytics og Siteimprove. Selve samtykkeforespørselen er kortere (forbedre tjenestene). Detaljene sitter på cookie-siden, ikke fullt ut i den korte forespørselen. ICO krever at samtykket dekker behandlingsansvarlig, formål og type aktivitet. Derfor INCONCLUSIVE, ikke APPROPRIATE.
 
-**Match:** Delvis. Banneret er det rette sporet (consent, ikke lovplikt). Offisiell rapport `Skatteetaten_cookies_Lawful basis assessment report.docx`: consent INCONCLUSIVE («you need to do more to make sure you have valid consent»; controller, purpose and type). Ingen basis APPROPRIATE. Contract, legal obligation, public task, vital interests, recognised LI og LI er NOT APPROPRIATE. Det bekrefter at skatt ikke ble blandet inn.
+**Match:** Delvis. Cookie-formålet er det rette sporet (consent, ikke lovplikt). Offisiell rapport `Skatteetaten_cookies_Lawful basis assessment report.docx`: consent INCONCLUSIVE («you need to do more to make sure you have valid consent»; controller, purpose and type). Ingen basis APPROPRIATE. Contract, legal obligation, public task, vital interests, recognised LI og LI er NOT APPROPRIATE. Det bekrefter at skatt ikke ble blandet inn.
 
-**Webbkoll/Nei-test:** Webbkoll klikker ikke banner. Egen test 24.08.2026: Nei på skatteetaten.no/person/. Hub-skjermbilde: `figures/fig_skatteetaten_sikkerhet_hub.png`.
+Hub-skjermbilde (to destinasjoner i erklæringen): `figures/fig_skatteetaten_sikkerhet_hub.png`.
 
 ---
 
@@ -202,7 +202,7 @@ ICO minner om å dokumentere hvorfor behandlingen er nødvendig for kontrakten, 
 
 ## 3. fotball.no - FERDIG
 
-**Formål:** publisere navn og klubb for aktive spillere 13+ for å vise kamphistorikk. Kontaktinfo til trenere/klubber og Cookiebot-cookies er egne formål.
+**Formål:** publisere navn og klubb for aktive spillere 13+ for å vise kamphistorikk. FIKS-medlemskap er et eget formål.
 
 **Personvernerklæring (full tekst lest 26.08.2026, https://www.fotball.no/personvern):**
 
@@ -211,7 +211,6 @@ ICO minner om å dokumentere hvorfor behandlingen er nødvendig for kontrakten, 
 - Stamdata: «samtykke om publisering». FIFA-connect: teksten sier bokstav b men siterer berettiget interesse (f).
 - Wifi-Ullevaal: Art. 6(1)(f) LI, pluss samtykke til CRM.
 - CRM B2C (billetter/supporterklubb): «Vi er pålagt å lagre kjøpshistorikk» (regnskap/avgift). Det er **et annet formål** enn ICO-kjøringen.
-- Cookiebot (limt inn 26.08.2026): ekomlov for nødvendige cookies; samtykke for Preferences/Statistics/Marketing. Tilstand: Deny. Tredjeparter bl.a. YouTube, Google, Vimeo, Spotify, Cookiebot. Eget formål.
 
 Vi tester **ett** formål: visning av navn og klubb på fotball.no.
 
@@ -256,7 +255,7 @@ Ingen grunnlag merket INCONCLUSIVE. ICO skriver at legitimate interests *is like
 
 **Hvorfor No på recognised legitimate interest Q1:** Listen er vern av sårbare, nødsituasjon, kriminalitet, nasjonal sikkerhet, eller utlevering til noen som ber om data til sin offentlige oppgave. Publisering av navn og klubb for kamphistorikk er ingen av disse.
 
-**Hvorfor No på consent Q1:** Navn og klubb publiseres som standard. Spilleren kan stoppe det via klubben, men det er ikke løpende, fritt samtykke (slik Cookiebot er). Stamdata «samtykke om publisering» er ikke det samme som Art. 6(1)(a) for denne visningen. Ikke velg To some extent.
+**Hvorfor No på consent Q1:** Navn og klubb publiseres som standard. Spilleren kan stoppe det via klubben, men det er ikke løpende, fritt samtykke. Stamdata «samtykke om publisering» er ikke det samme som Art. 6(1)(a) for denne visningen. Ikke velg To some extent.
 
 **Hvorfor Yes på legitimate interests (full responsibility):** Dette er LI-spørsmålet. For visning av navn og klubb (allmenn interesse, opt-out via klubb) er det NFF som må dokumentere balancing. Worksheet forventet LI. Dette er motsatt av Netflix-abonnementet, der vi sa No fordi kontrakt passet bedre.
 
@@ -268,13 +267,9 @@ Ingen grunnlag merket INCONCLUSIVE. ICO skriver at legitimate interests *is like
 
 **Hvorfor Yes på LI Q5:** Balancing-testen. Behandlingen er begrenset (navn og klubb, ikke kontaktinfo). Aktive spillere 13+ i offisielle kamper kan rimelig forvente at navn vises i kamphistorikk. Allmenn interesse og opt-out via klubb veier opp for inngrepet. Publisering på nett er ikke uventet i organisert fotball. Ikke To some extent: det gjør ICO usikker, og worksheet forventer at LI holder.
 
-**Match:** Ja for formålet vi testet. Undersiden (kamphistorikk av allmenn interesse + opt-out via klubb) er Art. 6(1)(f) i praksis, og ICO merker legitimate interests APPROPRIATE. Contract og public task er NOT APPROPRIATE: vi testet ikke FIKS-medlemskap, og NFF er ikke forvaltningsorgan. Consent er NOT APPROPRIATE / likely invalid: stamdata-formuleringen «samtykke om publisering» matcher ikke ICO for denne visningen (publiseres som standard). FIFA-connect-teksten som blander bokstav b og f skal ikke brukes som grunnlag for denne raden. Cookiebot er eget formål.
+**Match:** Ja for formålet vi testet. Undersiden (kamphistorikk av allmenn interesse + opt-out via klubb) er Art. 6(1)(f) i praksis, og ICO merker legitimate interests APPROPRIATE. Contract og public task er NOT APPROPRIATE: vi testet ikke FIKS-medlemskap, og NFF er ikke forvaltningsorgan. Consent er NOT APPROPRIATE / likely invalid: stamdata-formuleringen «samtykke om publisering» matcher ikke ICO for denne visningen (publiseres som standard). FIFA-connect-teksten som blander bokstav b og f skal ikke brukes som grunnlag for denne raden.
 
 ICO minner om å dokumentere en legitimate interests assessment (LIA), holde den oppdatert, vurdere DPIA ved vesentlig risiko, og skrive i personvernerklæringen at de bruker berettiget interesse og *hvilken* interesse det er. For 13-17 år peker ICO også til veiledningen om barns opplysninger.
-
-### Formål 2: Cookiebot (ikke denne ICO-kjøringen)
-
-Nødvendige cookies uten samtykke (ekomlov). Øvrige krever tillatelse; samtykke kan trekkes. Nåværende tilstand Deny (26.08.2026 11:58 GMT+2). Dette er **ikke** grunnlaget for å vise spillernavn.
 
 ---
 
@@ -431,7 +426,7 @@ Full cookie-tekst limt inn 26.08.2026 (norsk side, iubenda, sist oppdatert 6. ma
 - **Måling:** trafikk og atferd (Crazy Egg, Google Analytics / GA4, annonserapportering, demografi, Sitegainer, Loggly, Yandex Metrica). Krever samtykke.
 - **Markedsføring:** tilpassede annonser (Meta-piksel, Facebook Audience/Lookalike/Custom Audience, Google Ad Manager/Ads/AdSense/Remarketing, Awin, Emarsys, m.fl.). Krever samtykke.
 
-Teksten sier at noen formål krever samtykke som kan trekkes, og at preferanser kan styres i et panel på nettstedet. Dette er **ikke** grunnlaget for å levere en ordre. En egen cookie-ICO ville ventet consent (som Skatteetaten valgfrie cookies / fotball Cookiebot), ikke contract.
+Teksten sier at noen formål krever samtykke som kan trekkes, og at preferanser kan styres i et panel på nettstedet. Dette er **ikke** grunnlaget for å levere en ordre. En egen cookie-ICO ville ventet consent (som Skatteetaten valgfrie cookies), ikke contract.
 
 ---
 

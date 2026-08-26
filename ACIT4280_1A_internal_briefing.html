@@ -31,7 +31,7 @@
 <p>This briefing records the measurements and lawful-basis results I produced for the group assignment. Part A is Webbkoll. Part B is the ICO tool. The two parts answer different questions and are not mixed.</p>
 
 <h2>A. Webbkoll findings</h2>
-<p>Tool: English Webbkoll. One live Chromium visit, no add-ons, Do Not Track off, cookie banner not clicked. Server country is the KeyCDN Country field. Norway is excluded from the country count. Table 2 is the first measurement on 20 August 2026. Table 3 is the repeat measurement.</p>
+<p>Tool: English Webbkoll. One live Chromium visit, no add-ons, Do Not Track off. Server country is the KeyCDN Country field. Norway is excluded from the country count. Table 2 is the first measurement on 20 August 2026. Table 3 is the repeat measurement.</p>
 <p>Webbkoll reports HTTPS, cookies, third-party requests and the server IP. It does not read a privacy notice and it does not decide Article 6.</p>
 
 <h3>A1. Sites I measured: skatteetaten.no and netflix.no</h3>
@@ -95,7 +95,7 @@
 
 <h2>B. ICO findings</h2>
 <p>Tool: ICO Lawful basis interactive guidance (updated 14 April 2026). Official Word reports dated 26 August 2026. One concrete purpose per run. Recognised legitimate interest fitted none of these purposes.</p>
-<p>Article 6 answers why personal data may be processed. Cookie rules answer whether information may be stored on a device. Mixing the two in one ICO run returns the wrong basis.</p>
+<p>Each ICO run covers one purpose. Mixing tax data and optional statistics cookies in one run returns the wrong basis.</p>
 
 <h3>B1. skatteetaten.no: tax and the National Population Register</h3>
 <ul class="tight">
@@ -109,14 +109,14 @@
 
 <h3>B2. skatteetaten.no: optional statistics cookies</h3>
 <ul class="tight">
-  <li><strong>Purpose:</strong> optional statistics cookies after the Yes/No choice.</li>
+  <li><strong>Purpose:</strong> optional statistics cookies named in the notice (Skyra, Matomo, Google Analytics, Siteimprove).</li>
   <li><strong>Not included:</strong> tax and registry processing.</li>
-  <li><strong>Notice / banner:</strong> necessary cookies stay on. Optional cookies can be refused. No was selected on 24 August 2026 on skatteetaten.no/person/.</li>
-  <li><strong>ICO result:</strong> consent INCONCLUSIVE. The banner does not fully name controller, purpose and types. No basis APPROPRIATE.</li>
+  <li><strong>Notice:</strong> the cookie page claims consent for optional statistics tools.</li>
+  <li><strong>ICO result:</strong> consent INCONCLUSIVE. The request does not fully name controller, purpose and types. No basis APPROPRIATE.</li>
   <li><strong>Match:</strong> <span class="part">Partial</span>. The notice aims at consent. The ICO report says the request is too thin.</li>
   <li><strong>Report:</strong> Skatteetaten_cookies_Lawful basis assessment report.docx</li>
 </ul>
-<p>A Yes/No banner does not decide whether the Tax Administration may process income data. Tax and cookies are two purposes and two ICO reports.</p>
+<p>Tax data and optional statistics cookies are two purposes and two ICO reports.</p>
 
 <h3>B3. netflix.no: paid streaming</h3>
 <ul class="tight">
@@ -145,7 +145,7 @@
 <ul class="tight">
   <li>Four of five core purposes match the notice: law for tax, contract for Netflix and Babyshop checkout, legitimate interests for NFF match history.</li>
   <li>Two consent tests fail: optional cookies on skatteetaten.no, and Google Signals on document.no.</li>
-  <li>Cookie consent is not the lawful basis for tax, a paid subscription, match history or checkout.</li>
+  <li>Optional cookies, a paid subscription, match history and checkout are separate ICO purposes.</li>
 </ul>
 
 <p class="note">Sources: Webbkoll (5th of July Foundation); KeyCDN IP Location Finder; ICO lawful basis tool; Tax Administration privacy policy; Netflix Privacy Statement.</p>

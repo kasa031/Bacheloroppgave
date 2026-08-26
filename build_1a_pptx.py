@@ -173,20 +173,20 @@ def main():
     ]:
         p_run(tf, "•  " + line, size=16, color=WHITE, space_after=8)
     footer(s, 2, total)
-    notes(s, "Table 1 is the 18 Canvas names. Table 1a is why we picked the five. Stress one purpose at a time. Cookie clicks are not the lawful basis for tax or checkout.")
+    notes(s, "Table 1 is the 18 Canvas names. Table 1a is why we picked the five. Stress one purpose at a time.")
 
     # 4 method
     bullet_slide(
         prs, 3, "Part 1", "How we measured with Webbkoll",
         [
-            "English Webbkoll; one live Chromium visit: no add-ons, no Do Not Track, no consent click",
+            "English Webbkoll; one live Chromium visit: no add-ons, no Do Not Track",
             "Server country = KeyCDN of the site IP; country list = KeyCDN of third-party IPs",
             "Norway dropped from the country count (the list may still print NO)",
             "n/a = KeyCDN returned no country (dnt.no, babyshop.no, altinn.no on Table 3)",
             "Table 2 = first scan and ranking base; Table 3 = later check, not averaged",
-            "KeyCDN countries are not a GDPR Chapter V transfer record (arts. 44-47)",
+            "Request count is not the same as cookie count",
         ],
-        "Webbkoll does not read a privacy notice and does not decide Article 6. Request volume is not cookie volume and is not proof that personal data left Norway.",
+        "Webbkoll does not read a privacy notice and does not decide Article 6. Request volume is not cookie volume.",
         sizes=[18]*6,
     )
 
@@ -194,13 +194,13 @@ def main():
     bullet_slide(
         prs, 4, "Part 1", "What Webbkoll does not do",
         [
-            "It does not click Yes/No or Cookiebot, so optional analytics cookies may not appear.",
-            "A high request count is not a cookie count, and it is not personal data leaving Norway.",
+            "It does not decide Article 6. That is the ICO tool.",
+            "A high request count is not a cookie count.",
             "ikea.no is the only row with external cookies (2), after redirect to ikea.com.",
             "babyshop.no is 101 requests on Table 3, but 45 on Table 2. Rankings stay on Table 2.",
             "Article 6 is not on the Webbkoll page. That is the ICO tool.",
         ],
-        "skatteetaten.no shows five internal cookies and zero external cookies because we never clicked Yes. The ICO cookie row tests the notice, not that Webbkoll count.",
+        "skatteetaten.no: 5 internal cookies, 0 external cookies on Table 2. The ICO cookie row tests the notice, not that Webbkoll count.",
     )
 
     # 6 highest lowest
@@ -259,7 +259,7 @@ def main():
     s.shapes.add_picture(str(FIG / "fig2_webbkoll_results_klassekampen.png"), Inches(0.4), Inches(1.32), Inches(12.5), Inches(2.35))
     s.shapes.add_picture(str(FIG / "fig4_keycdn_lookup_klassekampen.png"), Inches(2.4), Inches(3.78), Inches(8.5), Inches(2.85))
     add_tb(s, Inches(0.4), Inches(6.7), Inches(12.5), Inches(0.5),
-           "Table 2 rank: 46 requests, 0 third-party cookies. Screenshots = later visit (Table 3: 56 requests to 13 hosts). Server KeyCDN: United States, Google. Not a Chapter V finding.",
+           "Table 2 rank: 46 requests, 0 third-party cookies. Screenshots = later visit (Table 3: 56 requests to 13 hosts). Server KeyCDN: United States, Google.",
            size=13, color=MUTED)
     footer(s, 7, total)
     notes(s, "Say the number on the screenshot is 56 because that is the later scan. The ranking in Table 4 is 46 from Table 2. Zero third-party cookies either way.")
@@ -282,28 +282,28 @@ def main():
     # 10 art 6 vs cookies
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, PAPER)
-    header_bar(s, "Part 2", "Article 6 is not a cookie click")
+    header_bar(s, "Part 2", "One purpose per ICO run")
     add_rect(s, Inches(0.5), Inches(1.55), Inches(5.9), Inches(5.0), CREAM)
     add_tb(s, Inches(0.75), Inches(1.8), Inches(5.4), Inches(0.5), "Article 6 (GDPR)", size=22, bold=True, color=NAVY)
     tf = textbox(s, Inches(0.75), Inches(2.45), Inches(5.4), Inches(3.8))
     for line in [
         "Why may we process this personal data?",
-        "Contract, legal obligation, public task, consent, legitimate interests, vital interests",
+        "Contract, legal obligation, public task, consent, legitimate interests",
         "Example: tax and folkeregister under named acts",
     ]:
         p_run(tf, "•  " + line, size=16, space_after=10)
     add_rect(s, Inches(6.9), Inches(1.55), Inches(5.9), Inches(5.0), NAVY)
-    add_tb(s, Inches(7.15), Inches(1.8), Inches(5.4), Inches(0.5), "ePrivacy / cookies", size=22, bold=True, color=CREAM)
+    add_tb(s, Inches(7.15), Inches(1.8), Inches(5.4), Inches(0.5), "Keep purposes apart", size=22, bold=True, color=CREAM)
     tf = textbox(s, Inches(7.15), Inches(2.45), Inches(5.4), Inches(3.8))
     for line in [
-        "May we store/read info on the device?",
-        "Necessary cookies: often no extra consent",
-        "Analytics and ads: consent (Yes/No, Cookiebot)",
-        "No test 24 Aug 2026 on skatteetaten.no/person/",
+        "Tax data is not optional statistics cookies",
+        "Checkout is not marketing",
+        "Match lists are not FIKS membership",
+        "Mix them in one ICO run and the tool mixes the bases",
     ]:
         p_run(tf, "•  " + line, size=16, color=WHITE, space_after=10)
     footer(s, 9, total)
-    notes(s, "A clean ICO run with Consent Q1 = No marks consent NOT APPROPRIATE for tax. Cookies are a separate purpose and a separate run.")
+    notes(s, "skatteetaten has two ICO rows because the notice has two purposes. The 18-site Webbkoll table is Part 1 only.")
 
     # 11 table 5
     s = prs.slides.add_slide(blank)
@@ -341,7 +341,7 @@ def main():
            "Each row is one purpose. Yes = notice and ICO line up. Partial = they aim at consent, but ICO marks consent INCONCLUSIVE and no basis APPROPRIATE.",
            size=13, color=MUTED)
     footer(s, 10, total)
-    notes(s, "Four of five core purposes match. Two consent tests fail: skatteetaten cookies (Q6, banner too short) and document.no Signals (request not separate from terms). Webbkoll 0 external cookies on skatteetaten is not a conflict with the cookie ICO row.")
+    notes(s, "Four of five core purposes match. Two consent tests fail: skatteetaten cookies (Q6) and document.no Signals (request not separate from terms).")
 
     # 12 skatteetaten
     bullet_slide(
@@ -353,9 +353,9 @@ def main():
             "Controller: the Director General of Taxation (Skattedirektøren).",
             "ICO: legal obligation APPROPRIATE, public task APPROPRIATE.",
             "Consent NOT APPROPRIATE for core tax (no genuine free choice). Contract and LI NOT APPROPRIATE.",
-            "Purpose 2: optional stats cookies. Notice: Yes/No. Webbkoll: 0 external cookies (no click). ICO: consent INCONCLUSIVE (Q6). No basis APPROPRIATE.",
+            "Purpose 2: optional stats cookies in the notice. ICO: consent INCONCLUSIVE (Q6). No basis APPROPRIATE.",
         ],
-        "Two purposes, two reports. Tax: law. Cookies: they aim at consent, but ICO says name controller, purpose and types more clearly. No test 24 August 2026 on skatteetaten.no/person/. Table 5 cookie row tests the notice, not the Webbkoll count.",
+        "Two purposes, two reports. Table 5 cookie row tests the notice.",
         sizes=[16]*7,
     )
 
@@ -382,12 +382,11 @@ def main():
             "Notice: public-interest match history, opt-out via the club.",
             "ICO: Legitimate interests APPROPRIATE after necessity + balancing.",
             "NFF is a sports federation, not a public authority (public task No).",
-            "FIKS membership can use contract. That is a different purpose.",
-            "Stamdata 'samtykke om publisering' does not match ICO consent (likely invalid).",
-            "Cookiebot (Deny on 26 Aug 2026) is also a different purpose.",
+            "FIKS membership can use contract. That is a different purpose and was not this run.",
+            "This ICO run is match-history publication only.",
         ],
         "ICO also points to an LIA and children's-data guidance for 13-17.",
-        sizes=[17]*7,
+        sizes=[17]*6,
     )
 
     # 15 document
@@ -420,23 +419,22 @@ def main():
             "Terms point 1: a sales contract (18 years or guardian).",
             "ICO: Contract APPROPRIATE. Other bases NOT APPROPRIATE.",
             "Notice does not label Art. 6(1)(b). Section 5 is profiling, not purchase.",
-            "Marketing/profiling: consent (separate). Cookie policy: necessary vs measurement vs marketing.",
-            "Bundled 'consent' to cookies inside the terms is not valid Art. 6 consent.",
+            "Marketing/profiling: consent (separate purpose). Cookie categories in the notice stay off this ICO run.",
         ],
         "Same pattern as Netflix: contract for the core service, consent for ads.",
-        sizes=[18]*6,
+        sizes=[18]*5,
     )
 
     # 17 takeaways
     bullet_slide(
         prs, 16, "Close", "What we want the room to remember",
         [
-            "Webbkoll measures contact, not lawfulness and not a Chapter V export.",
+            "Webbkoll measures contact, not lawfulness.",
             "Rankings follow Table 2. Table 3 is a check. Do not average them.",
             "fotball.no has the highest request count (113) and still zero third-party cookies.",
             "Four of five core ICO purposes match the notice (Table 5).",
             "Two consent tests fail: skatteetaten cookies (Q6) and document.no Signals (Q5).",
-            "Legal obligation (tax) is not the same as cookie consent (Yes/No).",
+            "Legal obligation (tax) is not the same ICO purpose as optional cookies.",
         ],
         "Then questions. If asked about access requests: that is outside the scope of this report.",
         sizes=[20]*6,
