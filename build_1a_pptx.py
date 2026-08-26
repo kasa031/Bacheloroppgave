@@ -8,6 +8,8 @@ from pptx.enum.text import PP_ALIGN, MSO_AUTO_SIZE, MSO_ANCHOR
 from pptx.util import Inches, Pt
 from pathlib import Path
 
+from site_slides_data import SITE_SLIDES
+
 FIG = Path("/workspace/figures")
 LOGO = FIG / "oslomet_logo.png"
 
@@ -119,6 +121,61 @@ def bullet_slide(prs, n, kicker, title, bullets, note, sizes=None):
         p_run(tf, b, size=sz, space_after=12)
     footer(s, n)
     notes(s, note)
+    return s
+
+
+def site_ico_slide(prs, slide_data):
+    n = slide_data["n"]
+    s = prs.slides.add_slide(prs.slide_layouts[6])
+    add_rect(s, 0, 0, W, H, PAPER)
+    header_bar(s, slide_data["kicker"], slide_data["title"])
+
+    add_rect(s, Inches(0.5), Inches(1.42), Inches(2.35), Inches(5.72), LIGHT)
+    logo_path = FIG / slide_data["logo"]
+    if logo_path.exists():
+        s.shapes.add_picture(str(logo_path), Inches(0.82), Inches(1.85), Inches(1.7), Inches(1.7))
+    add_tb(
+        s, Inches(0.55), Inches(3.75), Inches(2.25), Inches(0.35),
+        slide_data["sector"], size=13, bold=True, color=MID, align=PP_ALIGN.CENTER,
+    )
+
+    blocks = slide_data["blocks"]
+    card_left = Inches(3.05)
+    card_w = Inches(9.78)
+    top_start = Inches(1.42)
+    dual = len(blocks) == 2
+    card_h = Inches(2.72) if dual else Inches(5.72)
+    gap = Inches(0.28) if dual else Inches(0)
+
+    y = top_start
+    for block in blocks:
+        is_partial = block["match"] == "Partial"
+        bg = LIGHT if is_partial else TEAL
+        add_rect(s, card_left, y, card_w, card_h, bg)
+        if is_partial:
+            add_rect(s, card_left, y, Inches(0.12), card_h, ORANGE)
+
+        inner_left = card_left + Inches(0.28)
+        inner_w = card_w - Inches(0.5)
+        tf = textbox(s, inner_left, y + Inches(0.16), inner_w, card_h - Inches(0.28))
+
+        purpose_size = 16 if dual else 18
+        body_size = 14 if dual else 15
+        p_run(tf, "Purpose", size=10, bold=True, color=MID, space_after=2)
+        p_run(tf, block["purpose"], size=purpose_size, bold=True, color=DARK, space_after=8 if dual else 10)
+        p_run(tf, "Notice", size=10, bold=True, color=MID, space_after=2)
+        p_run(tf, block["notice"], size=body_size, color=INK, space_after=8 if dual else 10)
+        p_run(tf, "ICO result", size=10, bold=True, color=MID, space_after=2)
+        p_run(tf, block["ico"], size=body_size, color=INK, space_after=8 if dual else 10)
+        match_color = ORANGE if is_partial else DARK
+        p_run(tf, f"Match: {block['match']}", size=15, bold=True, color=match_color, space_after=4)
+        if block.get("extra"):
+            p_run(tf, block["extra"], size=12, color=MUTED, space_after=0)
+
+        y += card_h + gap
+
+    footer(s, n)
+    notes(s, slide_data["note"])
     return s
 
 
@@ -336,71 +393,8 @@ def main():
     footer(s, 7, total)
     notes(s, "Partial is not a court finding. It means the consent wording did not pass the ICO checklist.")
 
-    bullet_slide(
-        prs, 8, "Part 2", "skatteetaten.no: two purposes",
-        [
-            "Tax and registry data: the law requires it. Opt-out is generally not possible.",
-            "ICO: legal obligation and public task APPROPRIATE. Consent NOT APPROPRIATE. Match: Yes.",
-            "Optional statistics cookies: the notice claims consent.",
-            "ICO: consent INCONCLUSIVE; no basis APPROPRIATE. Match: Partial.",
-        ],
-        "Two purposes in the notice, two ICO runs. Figure 7 in the report is the hub that splits those pages.",
-        sizes=[20]*4,
-    )
-
-    bullet_slide(
-        prs, 9, "Part 2", "netflix.no: paid streaming",
-        [
-            "Purpose: account and payment data needed to provide the paid service.",
-            "Notice (EEA/UK): contractual necessity.",
-            "ICO: contract APPROPRIATE. Consent marked likely invalid for this purpose.",
-            "Ads and marketing in the same notice were left out.",
-        ],
-        "Same split as elsewhere: one purpose, one basis.",
-        sizes=[20]*4,
-    )
-
-    bullet_slide(
-        prs, 10, "Part 2", "fotball.no: match history",
-        [
-            "Purpose: name and club of active players aged 13+, with club opt-out.",
-            "ICO: legitimate interests APPROPRIATE.",
-            "NFF is not a public authority, so public task does not fit.",
-            "FIKS membership is a different purpose and was not this run.",
-        ],
-        "fotball.no also has the highest Webbkoll request count. That does not decide Article 6.",
-        sizes=[20]*4,
-    )
-
-    s = prs.slides.add_slide(blank)
-    add_rect(s, 0, 0, W, H, PAPER)
-    header_bar(s, "Part 2", "document.no: Google Signals")
-    add_rect(s, Inches(0.5), Inches(1.5), Inches(12.3), Inches(1.15), ORANGE)
-    add_tb(s, Inches(0.7), Inches(1.7), Inches(12), Inches(0.8),
-           "ICO: no basis APPROPRIATE. Consent INCONCLUSIVE. Match: Partial.",
-           size=22, bold=True, color=DARK)
-    tf = textbox(s, Inches(0.55), Inches(2.9), Inches(12.2), Inches(3.8))
-    for line in [
-        "Purpose: advertising analytics from site activity.",
-        "The notice does not name Article 6. It looks like consent.",
-        "ICO: the request is not clear, prominent and separate from terms.",
-        "The choice sits in Google settings. Pluss terms also bundle the notice.",
-    ]:
-        p_run(tf, "•  " + line, size=20, space_after=12)
-    footer(s, 11, total)
-    notes(s, "Contract and legitimate interests do not fit this advertising purpose.")
-
-    bullet_slide(
-        prs, 12, "Part 2", "babyshop.no: checkout",
-        [
-            "Purpose: name, address, contact, order and payment to deliver goods.",
-            "The sales terms are a purchase contract.",
-            "ICO: contract APPROPRIATE. Match: Yes for checkout.",
-            "The notice does not label Article 6(1)(b). Marketing is a separate purpose.",
-        ],
-        "Same pattern as Netflix: contract for the core service.",
-        sizes=[20]*4,
-    )
+    for slide_data in SITE_SLIDES:
+        site_ico_slide(prs, slide_data)
 
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, PAPER)

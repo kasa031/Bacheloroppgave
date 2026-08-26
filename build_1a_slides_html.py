@@ -2,6 +2,8 @@
 """Browser-printable 16:9 slides (Office Online cannot open the PPTX)."""
 from pathlib import Path
 
+from site_slides_data import SITE_SLIDES
+
 OUT = Path("/workspace/ACIT4280_1A_presentation.html")
 FIG = "figures"
 TOTAL = 14
@@ -23,6 +25,38 @@ def header(kicker: str, title: str) -> str:
 def bullets(items: list[str]) -> str:
     lis = "".join(f"<li>{i}</li>" for i in items)
     return f'<ul class="bul">{lis}</ul>'
+
+
+def site_card(block: dict, dual: bool) -> str:
+    partial = block["match"] == "Partial"
+    cls = "site-card partial" if partial else "site-card"
+    match_cls = "part" if partial else "yes"
+    extra = f'<p class="extra">{block["extra"]}</p>' if block.get("extra") else ""
+    return f"""
+    <article class="{cls}">
+      <p class="label">Purpose</p>
+      <h3>{block["purpose"]}</h3>
+      <p class="label">Notice</p>
+      <p class="body">{block["notice"]}</p>
+      <p class="label">ICO result</p>
+      <p class="body">{block["ico"]}</p>
+      <p class="match {match_cls}">Match: {block["match"]}</p>
+      {extra}
+    </article>"""
+
+
+def site_slide_html(slide_data: dict) -> str:
+    dual = len(slide_data["blocks"]) == 2
+    cards = "".join(site_card(block, dual) for block in slide_data["blocks"])
+    layout_cls = "site-layout dual" if dual else "site-layout"
+    return f"""
+<div class="{layout_cls}">
+  <div class="site-logo-pane">
+    <img src="{FIG}/{slide_data["logo"]}" alt="{slide_data["title"]} logo">
+    <p class="site-sector">{slide_data["sector"]}</p>
+  </div>
+  <div class="site-cards">{cards}</div>
+</div>"""
 
 
 parts = []
@@ -152,42 +186,8 @@ parts.append(slide(header("Part 2  ·  Table 5", "Four match, two consent tests 
 </div>
 """, 7))
 
-parts.append(slide(header("Part 2", "skatteetaten.no: two purposes") + bullets([
-    "Tax and registry data: the law requires it. Opt-out is generally not possible.",
-    "ICO: legal obligation and public task APPROPRIATE. Consent NOT APPROPRIATE. Match: Yes.",
-    "Optional statistics cookies: the notice claims consent.",
-    "ICO: consent INCONCLUSIVE; no basis APPROPRIATE. Match: Partial.",
-]), 8))
-
-parts.append(slide(header("Part 2", "netflix.no: paid streaming") + bullets([
-    "Purpose: account and payment data needed to provide the paid service.",
-    "Notice (EEA/UK): contractual necessity.",
-    "ICO: contract APPROPRIATE. Consent marked likely invalid for this purpose.",
-    "Ads and marketing in the same notice were left out.",
-]), 9))
-
-parts.append(slide(header("Part 2", "fotball.no: match history") + bullets([
-    "Purpose: name and club of active players aged 13+, with club opt-out.",
-    "ICO: legitimate interests APPROPRIATE.",
-    "NFF is not a public authority, so public task does not fit.",
-    "FIKS membership is a different purpose and was not this run.",
-]), 10))
-
-parts.append(slide(header("Part 2", "document.no: Google Signals") + """
-<div class="banner-accent">ICO: no basis APPROPRIATE. Consent INCONCLUSIVE. Match: Partial.</div>
-""" + bullets([
-    "Purpose: advertising analytics from site activity.",
-    "The notice does not name Article 6. It looks like consent.",
-    "ICO: the request is not clear, prominent and separate from terms.",
-    "The choice sits in Google settings. Pluss terms also bundle the notice.",
-]), 11))
-
-parts.append(slide(header("Part 2", "babyshop.no: checkout") + bullets([
-    "Purpose: name, address, contact, order and payment to deliver goods.",
-    "The sales terms are a purchase contract.",
-    "ICO: contract APPROPRIATE. Match: Yes for checkout.",
-    "The notice does not label Article 6(1)(b). Marketing is a separate purpose.",
-]), 12))
+for site in SITE_SLIDES:
+    parts.append(slide(header(site["kicker"], site["title"]) + site_slide_html(site), site["n"]))
 
 parts.append(slide(header("Close", "What the report shows") + """
 <div class="summary-box close-summary">
@@ -281,6 +281,24 @@ tr:nth-child(even) td { background: var(--light); }
 td.yes { color: var(--dark); font-weight: 700; }
 td.part { color: var(--orange); font-weight: 700; background: var(--teal) !important; }
 .banner-accent { margin: 0.22in 0.5in 0.1in; background: var(--orange); color: var(--dark); font-size: 22px; font-weight: 700; padding: 0.18in 0.22in; }
+.site-layout { display: grid; grid-template-columns: 2.35in 1fr; gap: 0.2in; margin: 0.2in 0.5in 0; min-height: 5.72in; }
+.site-logo-pane { background: var(--light); display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 0.45in 0.25in; }
+.site-logo-pane img { width: 1.7in; height: 1.7in; object-fit: contain; background: #fff; border-radius: 0.08in; padding: 0.12in; }
+.site-sector { margin: 0.28in 0 0; font-size: 13px; font-weight: 700; color: var(--mid); text-align: center; }
+.site-cards { display: flex; flex-direction: column; gap: 0.22in; }
+.site-layout:not(.dual) .site-cards { height: 100%; }
+.site-layout:not(.dual) .site-card { flex: 1; }
+.site-card { background: var(--teal); padding: 0.22in 0.28in 0.24in 0.34in; border-left: 0.12in solid transparent; }
+.site-card.partial { background: var(--light); border-left-color: var(--orange); }
+.site-card .label { margin: 0 0 0.04in; font-size: 10px; font-weight: 700; color: var(--mid); text-transform: uppercase; letter-spacing: .03em; }
+.site-card h3 { margin: 0 0 0.12in; font-size: 17px; line-height: 1.25; color: var(--dark); }
+.site-layout.dual .site-card h3 { font-size: 16px; }
+.site-card .body { margin: 0 0 0.12in; font-size: 15px; line-height: 1.3; color: var(--ink); }
+.site-layout.dual .site-card .body { font-size: 14px; }
+.site-card .match { margin: 0; font-size: 15px; font-weight: 700; }
+.site-card .match.yes { color: var(--dark); }
+.site-card .match.part { color: var(--orange); }
+.site-card .extra { margin: 0.1in 0 0; font-size: 12px; line-height: 1.3; color: #4A5568; }
 .title-inner { padding: 0.9in 0.7in 0; }
 .title-inner h1 { font-size: 28px; line-height: 1.2; margin: 0.12in 0 0.18in; }
 .title-inner .assign { font-size: 24px; font-weight: 700; color: var(--teal); margin: 0.08in 0 0; }
