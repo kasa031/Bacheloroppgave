@@ -16,7 +16,11 @@ ICO-verktøy: https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resource
 
 ## 1. Skatteetaten (skatteetaten.no) - FERDIG, trenger ikke ny ICO-kjøring for kjerneformålet
 
-**Personvernerklæring:** https://www.skatteetaten.no/om-skatteetaten/sikkerhet/personvern/
+**Personvernerklæring:** Ikke limt inn i chatten tidligere. Hentet 26.08.2026 fra https://www.skatteetaten.no/om-skatteetaten/sikkerhet/personvern/
+
+Kjerne: behandling «først og fremst hjemlet i lov». Ikke mulig å reservere seg som hovedregel. Oppgaver: folkeregister, riktig skatt/avgift, andre krav (bøter, barnebidrag), veiledning og kontroll. Samfunnsoppdrag: finansielt grunnlag for offentlig virksomhet. Navngitte lover bl.a. skatteforvaltningsloven, skattebetalingsloven, folkeregisterloven, A-opplysningsloven, MVA-loven. Behandlingsansvarlig: Skattedirektøren. PVO: personvernombud@skatteetaten.no.
+
+Nettstedet: informasjonskapsler etter samtykke (Ja/Nei). Analyse: Google Analytics 4 og Matomo. Eget formål, ikke kjerne-ICO.
 
 ### Formål 1: skatt og folkeregister (den offisielle ICO-rapporten)
 
