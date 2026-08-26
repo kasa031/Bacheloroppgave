@@ -115,7 +115,7 @@ Vi tester **ett** formål: visning av navn og klubb på fotball.no.
 | Consent | ikke fylt | Worksheet: No (publiseres som standard; klubb-opt-out er ikke Art. 6-samtykke) |
 | Legal obligation Q1: Are you processing this personal data to comply with the law? | fylt | **No** |
 | Vital interests Q1: Are you processing the personal data to save or protect someone's life? | fylt | **No** |
-| Public task | ikke fylt | Worksheet: No (NFF er idrettsforbund, ikke offentlig myndighet) |
+| Public task Q1: Are you processing the data to carry out your official tasks or functions, or other specific tasks in the public interest? | fylt | **No** |
 | Recognised legitimate interest | ikke fylt | |
 | Legitimate interests | ikke fylt | Worksheet: Yes, med balancing og opt-out |
 | ICO-konklusjon | ikke fylt | forventet: legitimate interests |
@@ -125,6 +125,8 @@ Vi tester **ett** formål: visning av navn og klubb på fotball.no.
 **Hvorfor No på legal obligation Q1:** Ingen norsk lov pålegger NFF å legge ut spillernavn og klubb på fotball.no. FIKS-grunnlaget er avtale (b), ikke rettslig plikt (c). Setningen om pålagt lagring av kjøpshistorikk gjelder CRM/billetter, ikke denne ICO-kjøringen. Ikke velg To some extent.
 
 **Hvorfor No på vital interests Q1:** Kamphistorikk (navn og klubb) redder ikke liv. ICO vital interests er liv og død. Skadetelefon i bunnen av nff.no er ikke dette formålet.
+
+**Hvorfor No på public task Q1:** NFF er en medlemsorganisasjon, ikke forvaltningsorgan. Art. 6(1)(e) krever offisiell myndighet eller en konkret samfunnsoppgave med hjemmel i lov. «Kamphistorikk av allmenn interesse» er argument for LI-balancing, ikke public task. Ikke velg To some extent.
 
 **ICO-steg nå:** velg No, Continue.
 
@@ -157,6 +159,6 @@ Vi tester **ett** formål: visning av navn og klubb på fotball.no.
 | skatteetaten.no | skatt/folkeregister | legal obligation | legal obligation + public task APPROPRIATE | Ja |
 | skatteetaten.no | valgfrie cookies | consent | consent | Ja (egen kjøring) |
 | netflix.no | betalt abonnement | contractual necessity (EEA/UK) | Contract APPROPRIATE; øvrige NOT APPROPRIATE | Ja |
-| fotball.no | publisering kampstatistikk | public interest / opt-out; FIKS contract for medlemskap | pågår (contract No, legal obligation No, vital interests No) | venter |
+| fotball.no | publisering kampstatistikk | public interest / opt-out; FIKS contract for medlemskap | pågår (contract No, legal obligation No, vital interests No, public task No) | venter |
 | document.no | Google Signals | ikke oppgitt; Google-innstillinger | venter (forventet consent) | venter |
 | babyshop.no | kjøp og levering | contract (underforstått) | venter (forventet contract) | venter |
