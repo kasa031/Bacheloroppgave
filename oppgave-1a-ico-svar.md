@@ -76,7 +76,7 @@ ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en 
 
 **Hvorfor No på public task:** Netflix er et privat selskap, ikke offentlig myndighet. Art. 6(1)(e) gjelder offisielle oppgaver med hjemmel i lov. EEA/UK-tillegget lister ikke public task. Skatteetaten fikk Yes her; Netflix skal ha No.
 
-**Hvorfor No på recognised legitimate interest:** Dette er et snevert UK-grunnlag (DUAA) for fem forhåndsgodkjente allmenne formål: svare på forespørsel fra offentlig oppgave, nasjonal sikkerhet, nødssituasjon, kriminalitet, og vern av sårbare. Konto og betaling for et strømmeabonnement er ikke noe av det. ICO-rapporten for Skatteetaten avviste også dette grunnlaget.
+**Hvorfor No på recognised legitimate interest:** ICO More information-listen er: vern av sårbare (inkl. barn), nødssituasjon, kriminalitet, nasjonal sikkerhet, eller utlevering til noen som ber om data til sin offentlige oppgave. Konto og betaling for strømmeabonnement er ingen av disse. Svindel/sikkerhet hos Netflix er et annet formål og skal ikke blandes inn i denne ICO-kjøringen. ICO-rapporten for Skatteetaten avviste også dette grunnlaget.
 
 **ICO-steg nå:** velg No, Continue. Når contract kommer: Yes / Yes / No etter worksheet.
 
