@@ -388,18 +388,21 @@ def main():
         sizes=[20]*4,
     )
 
-    bullet_slide(
-        prs, 15, "Close", "What the report shows",
-        [
-            "fotball.no has the most requests (113) and zero third-party cookies.",
-            "document.no maps to the most countries. lanekassen.no and altinn.no have the fewest government requests.",
-            "News and media is the highest sector total. Government is the lowest.",
-            "Four core ICO purposes match the notice. Two consent claims are INCONCLUSIVE in the ICO reports.",
-            "One purpose needs one basis. Contact and lawfulness are different questions.",
-        ],
-        "Together the two parts show how the page loads, and why the controller may use the data.",
-        sizes=[20]*5,
-    )
+    s = prs.slides.add_slide(blank)
+    add_rect(s, 0, 0, W, H, PAPER)
+    header_bar(s, "Close", "What the report shows")
+    add_rect(s, Inches(0.5), Inches(1.55), Inches(12.3), Inches(4.85), CREAM)
+    tf = textbox(s, Inches(0.75), Inches(1.85), Inches(11.8), Inches(4.35))
+    summary = [
+        "We measured how much 18 Norwegian sites contact others when they load, and we checked whether five of them have a valid GDPR basis for one specific purpose.",
+        "Many sites reach out to many others without setting cookies.",
+        "Four of five ICO purposes match the notice.",
+        "In two places where the site claims consent, the ICO is not satisfied with how consent is formulated.",
+    ]
+    for i, line in enumerate(summary):
+        p_run(tf, line, size=22, color=NAVY, space_after=16 if i < len(summary) - 1 else 0)
+    footer(s, 15, total)
+    notes(s, "Part 1 is contact. Part 2 is one purpose and one basis at a time.")
 
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, NAVY)

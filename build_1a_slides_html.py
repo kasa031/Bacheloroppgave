@@ -203,13 +203,14 @@ parts.append(slide(header("Part 2", "babyshop.no: checkout") + bullets([
     "The notice does not label Article 6(1)(b). Marketing is a separate purpose.",
 ]), 14))
 
-parts.append(slide(header("Close", "What the report shows") + bullets([
-    "fotball.no: most requests (113) and zero third-party cookies.",
-    "document.no: most countries. lanekassen.no and altinn.no: quietest e-government.",
-    "News/media is the highest sector. Government is the lowest.",
-    "Four core ICO purposes match. Two consent tests fail.",
-    "One purpose needs one basis. Contact and lawfulness are different questions.",
-]), 15))
+parts.append(slide(header("Close", "What the report shows") + """
+<div class="summary-box">
+  <p>We measured how much 18 Norwegian sites contact others when they load, and we checked whether five of them have a valid GDPR basis for one specific purpose.</p>
+  <p>Many sites reach out to many others without setting cookies.</p>
+  <p>Four of five ICO purposes match the notice.</p>
+  <p>In two places where the site claims consent, the ICO is not satisfied with how consent is formulated.</p>
+</div>
+""", 15))
 
 parts.append(slide("""
   <div class="q">
@@ -247,6 +248,9 @@ ul.bul li::before { content: "•"; position: absolute; left: 0; color: var(--na
 .pane ul { margin: 0; padding-left: 1.1em; }
 .pane li { font-size: 16px; margin: 0 0 8px; }
 .lead-finding { margin: 0.18in 0 0; font-size: 18px; font-weight: 700; color: var(--navy); line-height: 1.3; }
+.summary-box { margin: 0.32in 0.5in 0; background: var(--cream); padding: 0.35in 0.4in; min-height: 4.85in; }
+.summary-box p { font-size: 22px; line-height: 1.35; color: var(--navy); margin: 0 0 0.22in; }
+.summary-box p:last-child { margin-bottom: 0; }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0.35in; margin: 0.2in 0.5in 0; }
 .two-col h3 { margin: 0 0 0.1in; color: var(--navy); font-size: 18px; }
 .rank { padding: 0.06in 0.14in; margin-bottom: 0.06in; min-height: 0.78in; }
