@@ -65,7 +65,7 @@ def fig_requests_all18():
     vals = [r[2] for r in ranked]
     colors = [SECTOR_COLOR[r[1]] for r in ranked]
 
-    fig, ax = plt.subplots(figsize=(10.2, 7.2), dpi=160)
+    fig, ax = plt.subplots(figsize=(10.2, 7.2), dpi=240)
     fig.patch.set_facecolor(PAPER)
     style_axes(ax)
     y = np.arange(len(names))
@@ -100,7 +100,7 @@ def fig_requests_sector():
     sums = [totals[k] for k in order]
     colors = [SECTOR_COLOR[k] for k in order]
 
-    fig, axes = plt.subplots(1, 2, figsize=(10.4, 4.6), dpi=160)
+    fig, axes = plt.subplots(1, 2, figsize=(10.4, 4.6), dpi=240)
     fig.patch.set_facecolor(PAPER)
     for ax, data, ylabel in (
         (axes[0], sums, "Sum of third-party requests"),
@@ -125,7 +125,7 @@ def fig_requests_sector():
 
 def fig_webbkoll_start():
     """Schematic of the Webbkoll check interface used in the method."""
-    fig, ax = plt.subplots(figsize=(9.2, 5.2), dpi=160)
+    fig, ax = plt.subplots(figsize=(9.2, 5.2), dpi=240)
     fig.patch.set_facecolor(PAPER)
     ax.set_xlim(0, 10)
     ax.set_ylim(0, 6)
@@ -164,7 +164,7 @@ def fig_webbkoll_start():
 
 
 def fig_webbkoll_results():
-    fig, ax = plt.subplots(figsize=(9.2, 5.6), dpi=160)
+    fig, ax = plt.subplots(figsize=(9.2, 5.6), dpi=240)
     fig.patch.set_facecolor(PAPER)
     ax.set_xlim(0, 10)
     ax.set_ylim(0, 7)
@@ -206,7 +206,7 @@ def fig_webbkoll_results():
 
 
 def fig_keycdn():
-    fig, ax = plt.subplots(figsize=(9.0, 4.8), dpi=160)
+    fig, ax = plt.subplots(figsize=(9.0, 4.8), dpi=240)
     fig.patch.set_facecolor(PAPER)
     ax.set_xlim(0, 10)
     ax.set_ylim(0, 5.4)

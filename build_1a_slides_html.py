@@ -293,10 +293,10 @@ td.yes { color: var(--dark); font-weight: 700; }
 td.part { color: var(--orange); font-weight: 700; background: var(--teal) !important; }
 .banner-accent { margin: 0.22in 0.5in 0.1in; background: var(--orange); color: var(--dark); font-size: 22px; font-weight: 700; padding: 0.18in 0.22in; }
 .title-inner { padding: 0.9in 0.7in 0; }
-.title-inner h1 { font-size: 26px; line-height: 1.2; margin: 0.12in 0 0.18in; }
-.title-inner .assign { font-size: 22px; font-weight: 700; color: var(--teal); margin: 0.08in 0 0; }
+.title-inner h1 { font-size: 28px; line-height: 1.2; margin: 0.12in 0 0.18in; }
+.title-inner .assign { font-size: 24px; font-weight: 700; color: var(--teal); margin: 0.08in 0 0; }
 .title-questions { margin: 0 0 0.22in; max-width: 11.8in; padding: 0; list-style: none; }
-.title-questions li { font-size: 15px; line-height: 1.35; color: #fff; margin: 0 0 0.16in; padding-left: 0.28in; position: relative; }
+.title-questions li { font-size: 17px; line-height: 1.35; color: #fff; margin: 0 0 0.16in; padding-left: 0.28in; position: relative; }
 .title-questions li::before { content: "•"; position: absolute; left: 0; color: #fff; }
 .title-questions li:last-child { margin-bottom: 0; }
 .title-inner .names { font-size: 16px; margin: 0; }

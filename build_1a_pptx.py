@@ -4,7 +4,7 @@
 from pptx import Presentation
 from pptx.dml.color import RGBColor
 from pptx.enum.shapes import MSO_SHAPE
-from pptx.enum.text import PP_ALIGN
+from pptx.enum.text import PP_ALIGN, MSO_AUTO_SIZE
 from pptx.util import Inches, Pt
 from pathlib import Path
 
@@ -41,10 +41,19 @@ def add_rect(slide, l, t, w, h, fill):
     return sh
 
 
+def _prep_tf(tf):
+    tf.word_wrap = True
+    tf.auto_size = MSO_AUTO_SIZE.NONE
+    tf.margin_left = Pt(0)
+    tf.margin_right = Pt(0)
+    tf.margin_top = Pt(0)
+    tf.margin_bottom = Pt(0)
+
+
 def add_tb(slide, l, t, w, h, text, size=18, bold=False, color=INK, align=PP_ALIGN.LEFT, font="Calibri"):
     box = slide.shapes.add_textbox(l, t, w, h)
     tf = box.text_frame
-    tf.word_wrap = True
+    _prep_tf(tf)
     p = tf.paragraphs[0]
     p.alignment = align
     set_run(_first_run(p), text, size, bold, color, font)
@@ -60,7 +69,7 @@ def _first_run(p):
 def textbox(slide, l, t, w, h):
     box = slide.shapes.add_textbox(l, t, w, h)
     tf = box.text_frame
-    tf.word_wrap = True
+    _prep_tf(tf)
     return tf
 
 
@@ -81,9 +90,9 @@ def footer(slide, n, total=17):
     add_rect(slide, 0, Inches(7.28), W, Inches(0.22), DARK)
     add_tb(slide, Inches(0.4), Inches(7.28), Inches(10), Inches(0.22),
            "ACIT4280 Group Assignment 1A  |  3 Sep 2026",
-           size=10, color=WHITE)
+           size=11, color=WHITE)
     add_tb(slide, Inches(11.4), Inches(7.28), Inches(1.5), Inches(0.22),
-           f"{n} / {total}", size=10, color=WHITE, align=PP_ALIGN.RIGHT)
+           f"{n} / {total}", size=11, color=WHITE, align=PP_ALIGN.RIGHT)
 
 
 def notes(slide, text):
@@ -124,22 +133,22 @@ def main():
     add_rect(s, 0, Inches(5.85), W, Inches(1.65), ORANGE)
     add_tb(s, Inches(0.7), Inches(0.85), Inches(12), Inches(0.35),
            "ACIT4280 Privacy by Design",
-           size=16, color=TEAL, bold=True)
+           size=18, color=TEAL, bold=True)
     add_tb(s, Inches(0.7), Inches(1.22), Inches(12), Inches(0.38),
            "Group Assignment 1A",
-           size=22, color=TEAL, bold=True)
+           size=24, color=TEAL, bold=True)
     add_tb(s, Inches(0.7), Inches(1.7), Inches(12), Inches(1.85),
            "Analysis of 3rd-party Data Sharing\nand Data Tracking and of GDPR\nCompliance of Norwegian Web Sites",
-           size=26, color=WHITE, bold=True)
-    tf_q = textbox(s, Inches(0.7), Inches(3.62), Inches(12), Inches(1.45))
+           size=28, color=WHITE, bold=True)
+    tf_q = textbox(s, Inches(0.7), Inches(3.62), Inches(12), Inches(1.55))
     p_run(tf_q,
           "•  When a front page loads, how many third parties does it contact, "
           "and in which countries do those servers appear to be located?",
-          size=15, color=WHITE, space_after=14)
+          size=17, color=WHITE, space_after=14)
     p_run(tf_q,
           "•  When a site processes personal data, has it named a GDPR Article 6 lawful basis, "
           "and does the ICO tool agree?",
-          size=15, color=WHITE, space_after=0)
+          size=17, color=WHITE, space_after=0)
     add_tb(s, Inches(0.7), Inches(5.05), Inches(12), Inches(0.55),
            "Humna Akhtar  ·  Mithun Chandra Debnath  ·  Karina Sætersdal Nilssen",
            size=16, color=WHITE)
