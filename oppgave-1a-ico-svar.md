@@ -22,6 +22,7 @@ Arbeidsnotat til innleveringen (ikke studieapp, ikke GitHub Pages, ikke oppgave 
 - Full personvernerklæring for document.no limt inn 26.08.2026 (ingen Art. 6-merking)
 - Kjøps- og abonnementsvilkår for Document Pluss limt inn 26.08.2026 (punkt 7 personvern)
 - Babyshop Integrity Policy lest 26.08.2026 (https://www.babyshop.com/en-us/information/integrity-policy)
+- Babyshop cookie-side limt inn 26.08.2026 (Nødvendig / Måling / Markedsføring; iubenda; sist oppdatert 6. mai 2024)
 
 ICO-verktøy: https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis/lawful-basis-interactive-guidance-tool/
 
@@ -291,9 +292,19 @@ ICO: hvis de vil bruke consent, må forespørselen være clear, prominent and se
 | Contract Q1: Do you have (or intend to have) a contract with the individual? | fylt | **Yes** |
 | ICO-konklusjon | ikke fylt | forventet: contract |
 
-**Hvorfor Yes på contract Q1:** Et nettordrekjøp er en kjøpsavtale. Dette er Netflix-sporet, ikke document.no Signals. Vi tester levering av varen, ikke nyhetsbrevet. Worksheet: Q1 Yes.
+**Hvorfor Yes på contract Q1:** Et nettordrekjøp er en kjøpsavtale. Dette er Netflix-sporet, ikke document.no Signals. Vi tester levering av varen, ikke nyhetsbrevet og ikke cookie-siden. Worksheet: Q1 Yes.
 
 **ICO-steg nå:** velg Yes, trykk Continue. Neste er typisk Q2 (behandler dere for å utføre kontrakten?) **Yes**, deretter Q3 (kan dere oppfylle uten denne behandlingen?) **No**.
+
+### Formål 2: cookies og trackere (ikke denne ICO-kjøringen)
+
+Full cookie-tekst limt inn 26.08.2026 (norsk side, iubenda, sist oppdatert 6. mai 2024). Eier: Babyshop Sthlm Holding AB. Tre kategorier:
+
+- **Nødvendig:** tekniske cookies for drift/levering av tjenesten (bl.a. registrering, Cloudflare). Kan ligge nær kontrakt / ekomlov, som Skatteetatens nødvendige cookies.
+- **Måling:** trafikk og atferd (Crazy Egg, Google Analytics / GA4, annonserapportering, demografi, Sitegainer, Loggly, Yandex Metrica). Krever samtykke.
+- **Markedsføring:** tilpassede annonser (Meta-piksel, Facebook Audience/Lookalike/Custom Audience, Google Ad Manager/Ads/AdSense/Remarketing, Awin, Emarsys, m.fl.). Krever samtykke.
+
+Teksten sier at noen formål krever samtykke som kan trekkes, og at preferanser kan styres i et panel på nettstedet. Dette er **ikke** grunnlaget for å levere en ordre. En egen cookie-ICO ville ventet consent (som Skatteetaten valgfrie cookies / fotball Cookiebot), ikke contract.
 
 ---
 
