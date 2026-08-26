@@ -180,7 +180,7 @@ ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en 
 
 **Personvernerklæring:** Full Privacy Statement fra første gjennomgang (Section A-F, Games-tillegg, EEA/UK Legal bases, Last Updated 10 April 2026). Ikke limt inn: egen cookie-typeliste («click here») og undersiden om internasjonale overføringer. EEA/UK oppgir contractual necessity, legitimate interests, legal obligation og consent. For *to provide our service* til medlemmer bruker Netflix contractual necessity.
 
-**Offisiell ICO-rapport:** `Netflix_Lawful basis assessment report.docx`
+**Offisiell ICO-rapport:** `Netflix_Lawful basis assessment report.docx` (lastet inn 26.08.2026). Bekreftet: Contract APPROPRIATE. Consent NOT APPROPRIATE / likely invalid. Øvrige NOT APPROPRIATE. Inconclusive-seksjonen tom. Match Ja.
 
 | Grunnlag | ICO-utfall |
 |----------|------------|
