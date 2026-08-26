@@ -1,5 +1,9 @@
 # ACIT4280 gruppeoppgave 1A - ICO lawful basis
 
+**Styrefil (kuttet, det som skal innleveres):** `ACIT4280_1A_oversikt.html`
+
+Dette dokumentet er arbeidsarkivet (Q-for-Q). Det skal ikke limes inn i rapporten.
+
 Arbeidsnotat til innleveringen (ikke studieapp, ikke GitHub Pages, ikke oppgave 1B).
 
 **Canvas:** Group assignment 1A, ACIT4280-1 26H. Frist 3 Sep 2026 08:00. 40 poeng. Rapport 1000-1500 ord + diagrammer. 20 min presentasjon (alle i gruppen).
