@@ -58,7 +58,7 @@ parts.append(slide(header("The report", "Two questions") + """
       <li>Five sites from Table 1a</li>
       <li>One purpose per ICO run</li>
       <li>Notice versus ICO Word report (26 Aug 2026)</li>
-      <li>Table 5: Yes or Partial</li>
+      <li>Yes if notice and ICO agree; Partial if consent is INCONCLUSIVE</li>
     </ul>
   </div>
 </div>

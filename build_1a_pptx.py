@@ -168,7 +168,7 @@ def main():
         "Five sites from Table 1a",
         "One purpose per ICO run",
         "Notice versus ICO Word report (26 Aug 2026)",
-        "Table 5: Yes or Partial",
+        "Yes if notice and ICO agree; Partial if consent is INCONCLUSIVE",
     ]:
         p_run(tf, "•  " + line, size=18, color=WHITE, space_after=10)
     footer(s, 2, total)
