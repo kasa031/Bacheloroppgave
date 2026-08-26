@@ -369,15 +369,16 @@ def main():
     bullet_slide(
         prs, 12, "ICO  ·  government", "skatteetaten.no: law for tax, consent for cookies",
         [
-            "Purpose 1: identity, income, tax data for tax and folkeregister.",
-            "Notice: processing required by law; opt-out generally not possible.",
+            "Purpose 1: identity, income and tax data for tax and folkeregister.",
+            "Notice: first and foremost laid down in law. Opt-out generally not possible.",
+            "Named acts: skatteforvaltningsloven, folkeregisterloven, skattebetalingsloven.",
+            "Controller: the Director General of Taxation (Skattedirektøren).",
             "ICO: legal obligation APPROPRIATE, public task APPROPRIATE.",
             "Consent INCONCLUSIVE for core tax. Contract and LI NOT APPROPRIATE.",
-            "Purpose 2: optional stats cookies (Skyra, Matomo, GA, Siteimprove).",
-            "Ja/Nei banner. Dedicated ICO run: consent. Match: yes.",
+            "Purpose 2: optional stats cookies (Skyra, Matomo, GA, Siteimprove). Ja/Nei. ICO: consent.",
         ],
-        "SPEAKER: Karina. Named acts include skatteforvaltningsloven and folkeregisterloven. Nei test on 24 August 2026.",
-        sizes=[18]*6,
+        "SPEAKER: Karina. Two purposes. Do not treat the cookie banner as the basis for tax. Nei test 24 August 2026 on skatteetaten.no/person/.",
+        sizes=[16]*7,
         speaker="Karina",
     )
 

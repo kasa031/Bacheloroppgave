@@ -17,7 +17,7 @@ Arbeidsnotat til innleveringen (ikke studieapp, ikke GitHub Pages, ikke oppgave 
 **De fem tjenestene (1-A):** skatteetaten.no, netflix.no, fotball.no, document.no, babyshop.no.
 
 **Kilder gjenfunnet fra OneDrive 1A_Webbkoll:**
-- `Lawful basis assessment report.docx` (offisiell ICO-rapport, Skatteetaten skatt/folkeregister)
+- `Skatteetaten_Lawful basis assessment report.docx` (offisiell ICO-rapport, Skatteetaten skatt/folkeregister)
 - `Netflix_Lawful basis assessment report.docx` (offisiell ICO-rapport, Netflix abonnement)
 - `Fotball_Lawful basis assessment report.docx` (offisiell ICO-rapport, fotball.no kamphistorikk)
 - `Document_Lawful basis assessment report.docx` (offisiell ICO-rapport, document.no Google Signals)
@@ -35,28 +35,60 @@ ICO-verktøy: https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resource
 
 ---
 
-## 1. Skatteetaten (skatteetaten.no) - FERDIG, trenger ikke ny ICO-kjøring for kjerneformålet
+## 1. Skatteetaten (skatteetaten.no) - FERDIG (offisiell ICO-rapport i mappa)
 
-**Personvernerklæring:** Limt inn i chatten 26.08.2026 (hovedsiden). Samme tekst som https://www.skatteetaten.no/om-skatteetaten/sikkerhet/personvern/. Cookie- og analyseavsnittene nederst i utdraget er bare overskrifter; full cookie-tekst (samtykke, GA4, Matomo) ligger under «Bruk av informasjonskapsler» / «Analyseverktøy for webstatistikk» og ble hentet fra live-siden.
+**Offisiell ICO-rapport:** `Skatteetaten_Lawful basis assessment report.docx` (tidligere bare i opplasting som `Lawful basis assessment report.docx`).
 
-Kjerne: behandling «først og fremst hjemlet i lov». Ikke mulig å reservere seg som hovedregel. Oppgaver: folkeregister, riktig skatt/avgift, andre krav (bøter, barnebidrag), veiledning og kontroll. Samfunnsoppdrag: finansielt grunnlag for offentlig virksomhet. Navngitte lover bl.a. skatteforvaltningsloven, skattebetalingsloven, folkeregisterloven, A-opplysningsloven, MVA-loven. Behandlingsansvarlig: Skattedirektøren. PVO: personvernombud@skatteetaten.no.
+**Personvernerklæring:** https://www.skatteetaten.no/om-skatteetaten/sikkerhet/personvern/ (full tekst limt inn 26.08.2026).
 
-Nettstedet: informasjonskapsler etter samtykke. Underside https://www.skatteetaten.no (Informasjonskapsler på skatteetaten.no), limt inn 26.08.2026:
+**Cookie-side:** Informasjonskapsler på skatteetaten.no (full tekst limt inn 26.08.2026).
 
+Kjerne i erklæringen: behandling «først og fremst hjemlet i lov». Som hovedregel ikke mulig å reservere seg. Oppgaver: folkeregister, riktig skatt/avgift, andre krav (bøter, barnebidrag), veiledning og kontroll. Samfunnsoppdrag: finansielt grunnlag for offentlig virksomhet. Navngitte lover: skatteforvaltningsloven, skattebetalingsloven, folkeregisterloven, A-opplysningsloven, MVA-loven, særavgiftsloven, SI-loven, aksjeloven/allmennaksjeloven. Behandlingsansvarlig: Skatteetaten ved Skattedirektøren. PVO: personvernombud@skatteetaten.no.
+
+Cookie-siden (eget formål):
 - Nødvendige cookies er alltid på (innlogging, skjema, sikkerhet). Kan ikke velges bort.
 - Valgfrie: analyse/statistikk/brukerinnsikt (Skyra, Matomo, Google Analytics, Siteimprove). Godkjenn alle, eller bare nødvendige.
-- Data brukes bare til å forbedre Skatteetatens tjenester og deles ikke utenfor etaten (ifølge denne siden).
+- Data brukes ifølge siden bare til å forbedre Skatteetatens tjenester og deles ikke utenfor etaten.
 - Første besøk: velg. Hvis alle godkjennes, slettes valgfrie etter 90 dager og de spør på nytt. Samtykke kan endres når som helst.
 
-Eget formål, ikke kjerne-ICO. Matcher Ja/Nei-banneret og den egne cookie-ICO-kjøringen (consent).
+Kjør **to** ICO-formål. Bland dem ikke.
 
 ### Formål 1: skatt og folkeregister (den offisielle ICO-rapporten)
 
 **Behandling:** identitet, adresse, inntekt og skattedata for skattefastsetting og folkeregisteret.
 
-**Grunnlag i kunngjøringen:** rettslig plikt / påkrevd i lov (skatte- og folkeregisterregler). Kjerneoppgavene er ikke valgfrie.
+**Grunnlag i kunngjøringen:** rettslig plikt / påkrevd i lov. Kjerneoppgavene er ikke valgfrie.
 
-**Offisiell ICO-rapport (Lawful basis assessment report.docx):**
+**Svar vi ga / skal gi i ICO-verktøyet (dette formålet):**
+
+| Grunnlag | Status | Svar |
+|----------|--------|------|
+| Contract Q1: Do you have (or intend to have) a contract with the individual? | fylt | **No** |
+| Legal obligation Q1: Are you processing this personal data to comply with the law? | fylt | **Yes** |
+| Legal obligation: is the processing necessary for that compliance? | fylt | **Yes** |
+| Vital interests Q1: save or protect someone's life? | fylt | **No** |
+| Public task Q1: official tasks or functions, or tasks in the public interest? | fylt | **Yes** |
+| Public task: necessary for that task / official authority, with basis in law? | fylt | **Yes** |
+| Recognised legitimate interest Q1: de fem allmenne formålene? | fylt | **No** |
+| Consent Q1: ongoing power to decide? | fylt | **No** (kjernebehandling kan ikke velges bort) |
+| Legitimate interests: full responsibility for justifying? | fylt | **No** |
+| ICO-konklusjon | fylt | **Legal obligation APPROPRIATE; public task APPROPRIATE; consent INCONCLUSIVE; øvrige NOT APPROPRIATE** |
+
+**Hvorfor No på contract Q1:** Skatt og folkeregister er ikke en avtale personen inngår. Det er lovpålagte oppgaver. ICO: svar No når formålet ikke er å utføre en kontrakt.
+
+**Hvorfor Yes på legal obligation:** Erklæringen sier at behandlingen først og fremst er hjemlet i lov, og lister blant annet skatteforvaltningsloven og folkeregisterloven. Personen kan som hovedregel ikke reservere seg. Ikke To some extent.
+
+**Hvorfor No på vital interests:** Fastsetting av skatt redder ikke liv. ICO vital interests er liv og død. Ikke To some extent.
+
+**Hvorfor Yes på public task:** Skatteetaten er forvaltningsorgan. Samfunnsoppdraget (finansielt grunnlag for offentlig virksomhet, oppdatert folkeregister) er en offentlig oppgave med hjemmel i lov. ICO-rapporten merker public task APPROPRIATE i tillegg til legal obligation.
+
+**Hvorfor No på recognised legitimate interest:** Listen er vern av sårbare, nød, kriminalitet, nasjonal sikkerhet, eller utlevering til noens offentlige oppgave. Ordinær skattefastsetting er ikke disse fem.
+
+**Hvorfor No på consent Q1 for kjerneformålet:** Erklæringen sier at det som hovedregel ikke er mulig å reservere seg. Det er ikke et løpende Ja/Nei for skatt. Cookie-banneret er et annet formål. Den lagrede rapporten merker likevel consent INCONCLUSIVE (ikke NOT APPROPRIATE), fordi samtykkesporet ble delvis åpnet da kjernebehandling og cookies ble blandet. En helt ren kjøring med Consent Q1 = No kan merke consent NOT APPROPRIATE. Behold den lagrede Word-rapporten som vedlegg.
+
+**Hvorfor No på legitimate interests:** Offentlig myndighet skal som hovedregel ikke bære kjerneoppgaver på LI. Legal obligation og public task passer. Yes her ville åpnet LI-sporet.
+
+**Offisiell ICO-rapport (`Skatteetaten_Lawful basis assessment report.docx`):**
 
 | Grunnlag | ICO-utfall |
 |----------|------------|
@@ -74,13 +106,35 @@ ICO ba om å dokumentere hvorfor behandlingen er nødvendig for å overholde en 
 
 ### Formål 2: valgfrie statistikk-informasjonskapsler (egen ICO-kjøring)
 
-**Behandling:** valgfrie webstatistikk-cookies etter Ja/Nei-banner.
+**Behandling:** valgfrie webstatistikk-cookies etter Ja/Nei-banner (Skyra, Matomo, Google Analytics, Siteimprove).
 
-**Grunnlag i kunngjøringen:** samtykke.
+**Grunnlag i kunngjøringen:** samtykke. Nødvendige cookies er alltid på og er ikke dette formålet.
 
-**ICO-resultat (worksheet):** Consent.
+**Svar i ICO-verktøyet (dette formålet):**
 
-**Match:** Ja. Banneret er valgfritt. Cookie-siden skiller nødvendige (alltid på) og valgfrie (Skyra, Matomo, Google Analytics, Siteimprove). Hoved-ICO-rapporten ble consent INCONCLUSIVE fordi kjernebehandling ble blandet inn. For cookies alene: Q6 To some extent (behandler/formål ikke fullt ut i banneret). Q2 om maktposisjon: valgt No; offentlig myndighet kan argumentere Yes.
+| Grunnlag | Status | Svar |
+|----------|--------|------|
+| Contract Q1 | fylt | **No** |
+| Legal obligation Q1 | fylt | **No** |
+| Vital interests Q1 | fylt | **No** |
+| Public task Q1 | fylt | **No** |
+| Recognised legitimate interest Q1 | fylt | **No** |
+| Consent Q1: ongoing power to decide? | fylt | **Yes** |
+| Consent Q2: position of power? | fylt | **No** (Karina; offentlig myndighet kan argumentere Yes) |
+| Consent Q3: precondition of the service? | fylt | **No** |
+| Consent Q4: positive action to opt in? | fylt | **Yes** |
+| Consent Q5: clear, prominent, separate from terms? | fylt | **Yes** |
+| Consent Q6: controller, purpose and types named? | fylt | **To some extent** |
+| Legitimate interests: full responsibility? | fylt | **No** |
+| ICO-konklusjon | fylt | **Consent** |
+
+**Hvorfor No på legal obligation og public task her:** Ingen lov pålegger Skatteetaten å sette Google Analytics for å fastsette skatt. Valgfrie statistikk-cookies er ikke den offentlige kjerneoppgaven. Ikke To some extent.
+
+**Hvorfor Yes på consent Q1:** Cookie-siden gir Ja (alle) eller bare nødvendige. Samtykke kan endres. Nei-test 24.08.2026 på skatteetaten.no/person/.
+
+**Hvorfor To some extent på Q6:** Banneret spør om valgfrie cookies for å forbedre tjenestene. Verktøynavn (Skyra, Matomo, GA, Siteimprove) står på cookie-siden, ikke fullt ut i selve Ja/Nei-feltet.
+
+**Match:** Ja. Banneret er valgfritt. Hoved-ICO-rapporten ble consent INCONCLUSIVE fordi kjernebehandling ble blandet inn.
 
 **Webbkoll/Nei-test:** Webbkoll klikker ikke banner. Egen test 24.08.2026: Nei på skatteetaten.no/person/. Figur: `figures/fig7_skatteetaten_cookie_banner.png`.
 
