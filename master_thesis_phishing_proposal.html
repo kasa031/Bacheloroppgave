@@ -169,9 +169,34 @@
     @media (max-width: 760px) {
       .grid-2 { grid-template-columns: 1fr; }
     }
+    @page {
+      size: A4;
+      margin: 18mm 16mm 20mm;
+    }
     @media print {
-      body { background: #fff; }
-      section { break-inside: avoid; box-shadow: none; }
+      body { background: #fff; font-size: 11pt; }
+      .hero {
+        background: var(--dark) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        padding: 1.2rem 0 1rem;
+        margin-bottom: 0.4rem;
+      }
+      .wrap { padding: 0; max-width: none; }
+      section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid rgba(34,66,72,.12);
+        margin-bottom: 0.55rem;
+        padding: 0.85rem 0.95rem;
+      }
+      .grid-2 { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+      .card { break-inside: avoid; page-break-inside: avoid; }
+      table { font-size: 9.5pt; }
+      .footer { padding: 0.5rem 0 0; margin: 0; }
+      h2 { font-size: 13pt; }
+      h3 { font-size: 11pt; }
     }
   </style>
 </head>
