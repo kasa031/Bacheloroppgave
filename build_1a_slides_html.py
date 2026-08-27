@@ -96,7 +96,7 @@ parts.append(slide(header("The report", "Two questions and how we measured") + f
       <li>One clean load per site; rank on Table 2 (20 Aug)</li>
       <li>KeyCDN = IP geolocation guess, not legal transfer proof</li>
     </ul>
-    <img class="pane-shot compact tool-logo webbkoll-results" src="{FIG}/fig2_webbkoll_results_klassekampen.png" alt="Webbkoll results for klassekampen.no">
+    <div class="pane-media"><img src="{FIG}/fig2_webbkoll_results_klassekampen.png" alt="Webbkoll results for klassekampen.no"></div>
   </div>
   <div class="pane navy">
     <h2>Part 2  ·  ICO</h2>
@@ -107,7 +107,7 @@ parts.append(slide(header("The report", "Two questions and how we measured") + f
       <li>Partial if consent is INCONCLUSIVE</li>
       <li>Tax, cookies, checkout and marketing are different purposes</li>
     </ul>
-    <img class="pane-shot compact tool-logo ico-logo" src="{FIG}/ico_logo.png" alt="Information Commissioner's Office logo">
+    <div class="pane-media"><img src="{FIG}/ico_logo.png" alt="Information Commissioner's Office logo"></div>
   </div>
 </div>
 """, 2))
@@ -239,12 +239,12 @@ ul.bul li { font-size: 20px; margin: 0 0 10px; padding-left: 0.28in; position: r
 ul.bul li::before { content: "•"; position: absolute; left: 0; color: var(--dark); }
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 0.35in; margin: 0.32in 0.5in 0; }
 .compact-split { margin-top: 0.22in; }
-.compact-split .pane.cream { padding-top: 0.34in; }
-.compact-split .pane.navy { padding-top: 0.12in; }
-.compact-split .pane h2 { font-size: 20px; margin-bottom: 0.12in; }
-.compact-split .pane-list.compact { flex: 1 1 auto; margin-bottom: 0.08in; }
-.compact-split .pane-list.compact li { font-size: 13px; margin: 0 0 3px; }
-.compact-split .pane-shot.tool-logo { margin-top: auto; }
+.compact-split .pane { display: flex; flex-direction: column; padding: 0.28in 0.28in 0.22in; }
+.compact-split .pane h2 { font-size: 20px; margin: 0 0 0.12in; }
+.compact-split .pane-list.compact { margin: 0 0 0.12in; flex: 0 0 auto; }
+.compact-split .pane-list.compact li { font-size: 13px; margin: 0 0 3px; line-height: 1.28; }
+.compact-split .pane-media { margin-top: auto; height: 1.4in; background: #fff; border: 1px solid rgba(34,66,72,.12); display: flex; align-items: center; justify-content: center; padding: 0.05in; flex: 0 0 1.4in; }
+.compact-split .pane-media img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
 .pane { min-height: 5in; padding: 0.22in 0.28in; }
 .pane.cream { background: var(--teal); }
 .pane.navy { background: var(--mid); color: #fff; }

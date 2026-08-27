@@ -249,28 +249,34 @@ def main():
     s = prs.slides.add_slide(blank)
     add_rect(s, 0, 0, W, H, PAPER)
     header_bar(s, "The report", "Two questions and how we measured")
-    add_rect(s, Inches(0.5), Inches(1.55), Inches(5.9), Inches(5.0), TEAL)
-    add_tb(s, Inches(0.75), Inches(1.95), Inches(5.4), Inches(0.35), "Part 1  ·  Webbkoll", size=20, bold=True, color=DARK)
-    tf = textbox(s, Inches(0.75), Inches(2.32), Inches(5.4), Inches(0.68))
+    split_top = Inches(1.55)
+    split_h = Inches(5.0)
+    split_w = Inches(5.9)
+    left_x = Inches(0.5)
+    right_x = Inches(6.9)
+    inner_pad_x = Inches(0.25)
+    inner_w = Inches(5.4)
+    title_y = Inches(1.78)
+    bullet_y = Inches(2.18)
+    media_top = Inches(5.0)
+    media_h = Inches(1.4)
+    left_inner_x = left_x + inner_pad_x
+    right_inner_x = right_x + inner_pad_x
+
+    add_rect(s, left_x, split_top, split_w, split_h, TEAL)
+    add_rect(s, right_x, split_top, split_w, split_h, MID)
+    add_tb(s, left_inner_x, title_y, inner_w, Inches(0.35),
+           "Part 1  ·  Webbkoll", size=20, bold=True, color=DARK)
+    add_tb(s, right_inner_x, title_y, inner_w, Inches(0.35),
+           "Part 2  ·  ICO", size=20, bold=True, color=ORANGE)
+    tf = textbox(s, left_inner_x, bullet_y, inner_w, Inches(2.55))
     for line in [
         "18 sites: cookies, requests, KeyCDN country",
         "One clean load per site; rank on Table 2 (20 Aug)",
         "KeyCDN = IP geolocation guess, not legal transfer proof",
     ]:
-        p_run(tf, "•  " + line, size=14, space_after=4)
-    shot_top = Inches(3.05)
-    shot_w = Inches(5.4)
-    shot_h = Inches(1.4)
-    s.shapes.add_picture(
-        str(FIG / "fig2_webbkoll_results_klassekampen.png"),
-        Inches(0.75),
-        shot_top,
-        shot_w,
-        shot_h,
-    )
-    add_rect(s, Inches(6.9), Inches(1.55), Inches(5.9), Inches(5.0), MID)
-    add_tb(s, Inches(7.15), Inches(1.72), Inches(5.4), Inches(0.35), "Part 2  ·  ICO", size=20, bold=True, color=ORANGE)
-    tf = textbox(s, Inches(7.15), Inches(2.08), Inches(5.4), Inches(0.92))
+        p_run(tf, "•  " + line, size=13, space_after=3)
+    tf = textbox(s, right_inner_x, bullet_y, inner_w, Inches(2.55))
     for line in [
         "Five sites, one purpose per run",
         "Notice vs ICO Word report (26 Aug 2026)",
@@ -279,13 +285,12 @@ def main():
         "Tax, cookies, checkout and marketing are different purposes",
     ]:
         p_run(tf, "•  " + line, size=13, color=WHITE, space_after=3)
-    s.shapes.add_picture(
-        str(FIG / "ico_logo.png"),
-        Inches(7.15),
-        shot_top,
-        shot_w,
-        shot_h,
-    )
+    for inner_x, image_path in (
+        (left_inner_x, FIG / "fig2_webbkoll_results_klassekampen.png"),
+        (right_inner_x, FIG / "ico_logo.png"),
+    ):
+        add_rect(s, inner_x, media_top, inner_w, media_h, WHITE)
+        s.shapes.add_picture(str(image_path), inner_x, media_top, inner_w, media_h)
     footer(s, 2, total)
     notes(s, "Webbkoll records one load. ICO tests one purpose at a time. Contact and lawful basis are different questions.")
 
