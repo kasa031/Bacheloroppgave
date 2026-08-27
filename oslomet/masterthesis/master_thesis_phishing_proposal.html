@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master's Thesis Proposal: Phishing and Human Vulnerability</title>
+  <style>
+    :root {
+      --dark: #224248;
+      --mid: #325E6A;
+      --teal: #44A1A4;
+      --orange: #FF9A00;
+      --ink: #1A1A1A;
+      --paper: #FFFEFB;
+      --light: #E8F4F4;
+      --muted: #4A5568;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Calibri, "Segoe UI", sans-serif;
+      background: #eef3f4;
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    .hero {
+      background: var(--dark);
+      color: #fff;
+      padding: 2.2rem 1.5rem 1.8rem;
+      border-bottom: 0.35rem solid var(--orange);
+    }
+    .hero-inner, .wrap { max-width: 920px; margin: 0 auto; }
+    .kicker {
+      color: var(--teal);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin: 0 0 0.4rem;
+    }
+    h1 {
+      margin: 0 0 0.6rem;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      line-height: 1.2;
+    }
+    .subtitle {
+      margin: 0;
+      font-size: 1.05rem;
+      color: #d7ecec;
+      max-width: 52rem;
+    }
+    .meta {
+      margin-top: 1rem;
+      font-size: 0.92rem;
+      color: #b8d4d6;
+    }
+    .wrap { padding: 1.5rem; }
+    section {
+      background: var(--paper);
+      border: 1px solid rgba(34,66,72,.12);
+      border-radius: 0.5rem;
+      padding: 1.2rem 1.25rem;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1.25rem;
+      color: var(--dark);
+      border-left: 0.28rem solid var(--orange);
+      padding-left: 0.65rem;
+    }
+    h3 {
+      margin: 1rem 0 0.45rem;
+      font-size: 1rem;
+      color: var(--mid);
+    }
+    p, li { font-size: 1rem; }
+    ul, ol { margin: 0.4rem 0 0.8rem; padding-left: 1.25rem; }
+    li { margin: 0.35rem 0; }
+    .lead {
+      font-size: 1.06rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin: 0.75rem 0 0.2rem;
+    }
+    .pill {
+      background: var(--light);
+      color: var(--dark);
+      border: 1px solid rgba(68,161,164,.35);
+      border-radius: 999px;
+      padding: 0.25rem 0.7rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+    }
+    .card {
+      background: var(--light);
+      border-radius: 0.45rem;
+      padding: 0.85rem 0.95rem;
+      border: 1px solid rgba(34,66,72,.08);
+    }
+    .card h3 { margin-top: 0; }
+    .card.old {
+      opacity: 0.92;
+      background: #f7f9fa;
+    }
+    .card.chosen {
+      border: 2px solid var(--teal);
+      background: #f2fbfc;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #fff;
+      background: var(--teal);
+      border-radius: 0.25rem;
+      padding: 0.12rem 0.45rem;
+      margin-bottom: 0.45rem;
+    }
+    .tag.orange { background: var(--orange); color: var(--dark); }
+    .quote {
+      margin: 0.8rem 0;
+      padding: 0.85rem 1rem;
+      background: var(--light);
+      border-left: 0.28rem solid var(--teal);
+      font-style: italic;
+    }
+    .quote.core {
+      background: #fff8ef;
+      border-left-color: var(--orange);
+      font-size: 1.05rem;
+      font-weight: 600;
+      font-style: normal;
+      color: var(--dark);
+    }
+    .core-thesis {
+      border: 2px solid var(--orange);
+      background: linear-gradient(180deg, #fff 0%, #fffaf3 100%);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.94rem;
+      margin-top: 0.5rem;
+    }
+    th, td {
+      border: 1px solid rgba(34,66,72,.15);
+      padding: 0.55rem 0.6rem;
+      vertical-align: top;
+      text-align: left;
+    }
+    th {
+      background: var(--dark);
+      color: #fff;
+      font-weight: 700;
+    }
+    tr:nth-child(even) td { background: #fafcfd; }
+    .next {
+      background: linear-gradient(180deg, #fff 0%, #f7fcfc 100%);
+      border: 2px solid var(--teal);
+    }
+    .footer {
+      max-width: 920px;
+      margin: 0 auto 2rem;
+      padding: 0 1.5rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    @media (max-width: 760px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    @page {
+      size: A4;
+      margin: 18mm 16mm 20mm;
+    }
+    @media print {
+      body { background: #fff; font-size: 11pt; }
+      .hero {
+        background: var(--dark) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        padding: 1.2rem 0 1rem;
+        margin-bottom: 0.4rem;
+      }
+      .wrap { padding: 0; max-width: none; }
+      section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid rgba(34,66,72,.12);
+        margin-bottom: 0.55rem;
+        padding: 0.85rem 0.95rem;
+      }
+      .grid-2 { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+      .card { break-inside: avoid; page-break-inside: avoid; }
+      table { font-size: 9.5pt; }
+      .footer { padding: 0.5rem 0 0; margin: 0; }
+      h2 { font-size: 13pt; }
+      h3 { font-size: 11pt; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="kicker">Master's Thesis · Working Proposal</p>
+      <h1>Phishing and Human Vulnerability:<br>Why Technology Fails When Humans Become the Entry Point</h1>
+      <p class="subtitle">
+        A development proposal for an MSc in cybersecurity, focused on the vulnerability surface between
+        social engineering and human decision-making - not just technical controls.
+      </p>
+      <p class="meta">Karina Sætersdal Nilssen · draft updated 27 August 2026 · version 3 (English) · status: direction chosen</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>Why this direction</h2>
+      <p class="lead">The thesis direction points toward phishing - and it connects to work you have already explored.</p>
+      <p>
+        Across conversations, labs, and coursework, the same pattern appears: many serious incidents do not start
+        with "movie-style hacking", but with a person who clicks, trusts, rushes, or misunderstands.
+        Technical controls exist, but attackers still often succeed via <strong>trust, urgency, and cognitive overload</strong>.
+      </p>
+      <p>
+        The focus is the <strong>vulnerability surface between phishing and the human</strong>:
+        not only what phishing is, but <em>why</em> it still works, <em>who</em> is most vulnerable,
+        and <em>what</em> actually reduces risk in practice.
+      </p>
+      <div class="pill-row">
+        <span class="pill">Human factors</span>
+        <span class="pill">Social engineering</span>
+        <span class="pill">Phishing</span>
+        <span class="pill">Decision under pressure</span>
+        <span class="pill">Awareness vs. behaviour</span>
+        <span class="pill">AI-enhanced fraud</span>
+      </div>
+    </section>
+
+    <section class="core-thesis">
+      <h2>Core hypothesis: loneliness, skepticism, and hidden vulnerability</h2>
+      <div class="quote core">
+        In a time of both rising loneliness and rising general skepticism, phishing becomes dangerous precisely because
+        it does not look like an attack from a stranger. It imitates what people still long for or fear losing:
+        belonging, safety, order, status, help, and control.
+      </div>
+      <p>
+        This is the thesis's central theoretical tension. Many assume that rising digital skepticism automatically
+        makes us safer. But phishing rarely exploits what we are most skeptical of - <strong>complete strangers</strong>.
+        It exploits what we remain receptive to: what feels <strong>familiar, important, helpful, or urgent</strong>.
+      </p>
+
+      <h3>The paradox the thesis will investigate</h3>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Rising loneliness and digital dependence</h3>
+          <ul>
+            <li>Greater need for belonging and validation</li>
+            <li>More people seek contact, help, and response online</li>
+            <li>Emotional lures can feel more meaningful than technical ones</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Rising general skepticism</h3>
+          <ul>
+            <li>More people have heard about fraud, phishing, and hacking</li>
+            <li>More "be wary of strangers" rhetoric</li>
+            <li>Greater awareness of digital threats than before</li>
+          </ul>
+        </article>
+      </div>
+      <p>
+        The conflict arises when these two trends meet: people can be <strong>generally skeptical</strong>, yet
+        still vulnerable to attacks that imitate what they emotionally or socially need. The thesis should therefore
+        not ask "why do people trust strangers?", but rather:
+      </p>
+      <p class="lead">
+        Why does manipulation that appears relevant, safe, or socially meaningful still work - even in a time
+        when we are more skeptical than ever?
+      </p>
+    </section>
+
+    <section>
+      <h2>Working title</h2>
+      <p><strong>English (recommended):</strong> Phishing Between Loneliness and Skepticism: How Social Engineering Exploits the Human Need for Belonging, Safety, and Control</p>
+      <p><strong>Previous working title:</strong> Phishing and Human Vulnerability: A Study of Why Users Still Fall for Social Engineering</p>
+      <p>The final title can be refined once methodology and data sources are confirmed with the supervisor.</p>
+    </section>
+
+    <section>
+      <h2>Research problem</h2>
+      <p class="lead">
+        Organisations invest in security technology, training, and policy - yet phishing remains one of the most
+        common and effective entry points to larger attacks.
+      </p>
+      <p>
+        This suggests the problem is not only technical, but lies in the <strong>meeting point between attack and
+        human behaviour</strong>: how we assess senders, handle authority and urgency, and respond under uncertainty.
+        Especially relevant is the tension between <strong>loneliness</strong> and <strong>skepticism</strong>:
+        people may be more cautious toward the unknown, yet still vulnerable when an attack imitates what they
+        long for or fear losing.
+      </p>
+      <div class="quote">
+        Core idea: Phishing is not just an "IT problem". It is an attack on how people think, feel, and act under
+        pressure - and on needs such as belonging, safety, order, status, help, and control.
+      </div>
+      <p><strong>Main research question (draft):</strong></p>
+      <p>
+        How can phishing remain effective in a time characterised by both rising loneliness and rising general
+        skepticism, and which human and contextual factors make individuals especially vulnerable to this form of
+        social engineering?
+      </p>
+    </section>
+
+    <section>
+      <h2>Previous directions considered</h2>
+      <p>Several topics were evaluated. The phishing direction connects several of them without becoming too broad.</p>
+      <div class="grid-2">
+        <article class="card chosen">
+          <span class="tag">Chosen main direction</span>
+          <h3>Phishing and human vulnerability</h3>
+          <p>Focus on why users click, trust, and act unsafely - and what actually helps.</p>
+        </article>
+        <article class="card old">
+          <span class="tag orange">Supporting perspective</span>
+          <h3>Attack chain after phishing</h3>
+          <p>Session hijacking, account takeover, data theft, and ransomware as a possible consequence chapter.</p>
+        </article>
+        <article class="card old">
+          <span class="tag orange">Supporting perspective</span>
+          <h3>Privacy / cookies / third parties</h3>
+          <p>Relevant as background on trust, tracking, and user understanding - not main focus.</p>
+        </article>
+        <article class="card old">
+          <span class="tag orange">Rejected as main focus</span>
+          <h3>Ransomware alone</h3>
+          <p>Important, but often "late in the chain". Phishing is a better starting point for human-factor analysis.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Research questions (revised draft)</h2>
+      <ol>
+        <li>
+          <strong>Why</strong> does phishing still work in a time of rising digital skepticism and fraud awareness?
+        </li>
+        <li>
+          <strong>How do emotional and social needs</strong> - such as loneliness, need for belonging, fear of loss,
+          and desire for control - affect vulnerability to phishing and social engineering?
+        </li>
+        <li>
+          <strong>Which situational factors</strong> (urgency, authority, stress, shame, information overload)
+          lead users to click or disclose information even when they "know better"?
+        </li>
+        <li>
+          <strong>Which measures</strong> (training, procedures, technical controls, reporting culture)
+          are experienced as most effective for reducing risk in practice?
+        </li>
+      </ol>
+      <p>
+        These can be narrowed to 2-3 main questions. Questions 1 and 2 are now the core of the theoretical direction.
+      </p>
+    </section>
+
+    <section>
+      <h2>What phishing imitates - and why it works</h2>
+      <p>The thesis should analyse phishing as <strong>imitation of legitimate human and institutional needs</strong>, not merely as technical fraud.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Need / fear</th>
+            <th>Phishing example</th>
+            <th>Why it may work</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Belonging</td>
+            <td>"Someone tried to contact you", colleague impersonation, romance scams</td>
+            <td>Creates a sense of social relevance and closeness</td>
+          </tr>
+          <tr>
+            <td>Safety</td>
+            <td>"Your account is compromised - verify now"</td>
+            <td>Exploits fear and the desire to protect oneself</td>
+          </tr>
+          <tr>
+            <td>Order / control</td>
+            <td>Tax authority, bank, supplier, "unpaid invoice"</td>
+            <td>Appeals to the wish to fix things quickly</td>
+          </tr>
+          <tr>
+            <td>Status / identity</td>
+            <td>Job offer, exclusive access, "you have been selected"</td>
+            <td>Appeals to self-image and recognition</td>
+          </tr>
+          <tr>
+            <td>Help</td>
+            <td>IT support, "click here and we will fix it"</td>
+            <td>Exploits helpfulness and technical uncertainty</td>
+          </tr>
+          <tr>
+            <td>Control over consequences</td>
+            <td>Urgency, threats, deadlines</td>
+            <td>Reduces time for critical evaluation</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Vulnerability markers - not "character flaws"</h2>
+      <p>
+        The thesis should avoid framing this as certain people being "stupid" or having poor traits.
+        A better term: <strong>vulnerability markers</strong> - conditions that increase the likelihood of poor
+        decisions under manipulation.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Examples</th>
+            <th>Important nuance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Emotional factors</td>
+            <td>Loneliness, stress, fear, shame, FOMO</td>
+            <td>Increases receptivity to lures that feel meaningful</td>
+          </tr>
+          <tr>
+            <td>Cognitive factors</td>
+            <td>Multitasking, urgency, information overload</td>
+            <td>Reduces ability to pause in the moment</td>
+          </tr>
+          <tr>
+            <td>Social factors</td>
+            <td>Authority orientation, helpfulness, conflict avoidance</td>
+            <td>Often positive traits in everyday life, exploited in attacks</td>
+          </tr>
+          <tr>
+            <td>System factors</td>
+            <td>Poor routines, high tempo, difficult verification</td>
+            <td>Makes the safe action hard even for aware users</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="lead">
+        Loneliness is a central but not sole risk factor. The thesis should examine it alongside stress, trust,
+        authority, and digital competence.
+      </p>
+    </section>
+
+    <section>
+      <h2>Theoretical framework (proposal)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Theory / perspective</th>
+            <th>Why it is relevant</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Human factors / human-computer interaction</td>
+            <td>Explains how design, cognitive load, and user behaviour create vulnerability.</td>
+          </tr>
+          <tr>
+            <td>Protection Motivation Theory</td>
+            <td>Examines threat appraisal, perceived severity, and self-efficacy - why people still act riskily.</td>
+          </tr>
+          <tr>
+            <td>Social engineering / persuasion</td>
+            <td>Authority, urgency, fear, reciprocity, and similarity - classic psychological levers in phishing.</td>
+          </tr>
+          <tr>
+            <td>Security culture and organisational learning</td>
+            <td>Whether people dare to ask, report, and pause without feeling foolish.</td>
+          </tr>
+          <tr>
+            <td>Human-as-the-weakest-link (critical)</td>
+            <td>Used as a starting point, but should be challenged: perhaps systems are designed to fail humans.</td>
+          </tr>
+          <tr>
+            <td>Loneliness / social connection</td>
+            <td>Explains why manipulation that appears close, helpful, or socially relevant can bypass general skepticism.</td>
+          </tr>
+          <tr>
+            <td>Trust paradox / skepticism gap</td>
+            <td>People may be skeptical of strangers yet vulnerable to authority, urgency, and emotionally plausible contact.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Possible methodology</h2>
+      <p class="lead">Methodology need not be locked now, but these three paths are realistic for a master's thesis:</p>
+
+      <h3>Option A: Qualitative (strong for "why")</h3>
+      <ul>
+        <li>Interviews with employees/students/IT staff</li>
+        <li>Topics: close encounters with phishing, what they saw, thought, and did</li>
+        <li>Good for human decision-making, shame, and trust</li>
+      </ul>
+
+      <h3>Option B: Mixed methods (often best for master's)</h3>
+      <ul>
+        <li>Short survey on experience, trust, and security behaviour</li>
+        <li>Followed by in-depth interviews with selected respondents</li>
+        <li>Optionally simulated phishing in a controlled setting (requires ethics approval)</li>
+      </ul>
+
+      <h3>Option C: Case study</h3>
+      <ul>
+        <li>One organisation or domain (e.g. higher education / public sector)</li>
+        <li>Analysis of policy, awareness programmes, incidents, and user experience</li>
+      </ul>
+
+      <p>
+        <strong>Current recommendation:</strong> start with <em>Option B</em> as the working hypothesis. It offers both
+        breadth and depth, and allows discussion of human vulnerability and what actually helps.
+      </p>
+    </section>
+
+    <section>
+      <h2>What the thesis can claim (substance without exaggeration)</h2>
+      <ul>
+        <li>Phishing remains one of the most important entry points to larger attacks.</li>
+        <li>The problem is often a <strong>human-system problem</strong>, not merely user error.</li>
+        <li>AI makes lures more credible but does not change basic psychology - it amplifies it.</li>
+        <li>Awareness alone is rarely enough; culture, design, and process must support it.</li>
+        <li>Phishing often exploits positive human traits - not only individual "deficits".</li>
+        <li>There is a difference between "knowing about phishing" and "being able to stop oneself in the moment".</li>
+        <li>Rising loneliness and rising skepticism can coexist - and create a new type of vulnerability.</li>
+        <li>Phishing is dangerous because it imitates belonging, safety, order, status, help, and control.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Scope</h2>
+      <ul>
+        <li><strong>Include:</strong> email, SMS/smishing, vishing, emotional manipulation, and loneliness as a risk factor where methodologically defensible.</li>
+        <li><strong>May mention but not dominate:</strong> ransomware, session hijacking, GDPR/cookies.</li>
+        <li><strong>Exclude as main focus:</strong> deep technical malware analysis, pentesting, cryptography.</li>
+        <li><strong>Geography:</strong> Norway / Nordic context, with international literature as framework.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Proposed chapter structure</h2>
+      <ol>
+        <li>Introduction and research problem</li>
+        <li>Background: phishing as an entry point in the modern threat landscape</li>
+        <li>Theoretical framework: loneliness, skepticism, and human vulnerability</li>
+        <li>Phishing as imitation of belonging, safety, order, status, help, and control</li>
+        <li>Methodology</li>
+        <li>Findings</li>
+        <li>Discussion: why humans remain vulnerable in a more skeptical age</li>
+        <li>Conclusion and recommendations for practice</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Starter literature</h2>
+      <ul>
+        <li>Cacioppo &amp; Patrick - loneliness and social connection as background for emotional vulnerability</li>
+        <li>NSM - alerts and guidance on phishing and social engineering</li>
+        <li>ENISA Threat Landscape (social engineering and human risk)</li>
+        <li>CISA - phishing and reporting guidance</li>
+        <li>Hadnagy, C. - <em>Social Engineering: The Science of Human Hacking</em></li>
+        <li>Conteh &amp; Schmick - Protection Motivation Theory in cybersecurity</li>
+        <li>Recent reports on AI-assisted phishing (Halcyon, Trend Micro, Microsoft Digital Defense)</li>
+      </ul>
+    </section>
+
+    <section class="next">
+      <h2>Next steps</h2>
+      <ol>
+        <li>Book supervision and bring this document as a starting point.</li>
+        <li>Confirm interviews, survey, or case study - ideally within 2-3 weeks.</li>
+        <li>Refine the one-page problem statement for the supervisor - use the core hypothesis as the opening.</li>
+        <li>Build a starter reference list with 10-15 sources.</li>
+        <li>Decide population: students, employees, public sector, or general population.</li>
+        <li>Clarify ethics: NSD approval and secure handling if sensitive experiences/interviews are collected.</li>
+      </ol>
+    </section>
+  </main>
+
+  <p class="footer">
+    Internal working document for master's thesis planning. Can be developed into a formal prospectus after supervisor meeting.
+  </p>
+</body>
+</html>
