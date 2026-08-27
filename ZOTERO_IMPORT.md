@@ -2,6 +2,8 @@
 
 Jeg har ikke direkte tilgang til Zotero-biblioteket ditt, men filen `master_thesis_zotero.bib` inneholder alle foreslåtte kilder klare for import.
 
+**Viktig:** Masteroppgaven skrives på **engelsk**, men **norsk litteratur er inkludert** der den er relevant (SSB, NSM, Helsedirektoratet, norske studier osv.). I thesis-teksten siterer du dem på engelsk (oversatte titler); i Zotero kan du beholde norske titler i `note`-feltet.
+
 ## Slik importerer du (2 minutter)
 
 1. Åpne **Zotero**
@@ -11,27 +13,49 @@ Jeg har ikke direkte tilgang til Zotero-biblioteket ditt, men filen `master_thes
 5. Gi samlingen navnet: `Master Thesis - Phishing and Loneliness`
 6. Klikk **Import**
 
+## Filtrer norsk litteratur i Zotero
+
+Alle norske kilder er tagget `norwegian-literature`. I Zotero:
+
+1. Klikk på samlingen
+2. Søk i biblioteket: `tag:norwegian-literature`
+
+## Slik siterer du norsk litteratur på engelsk (APA 7)
+
+Eksempel i thesis-teksten:
+
+> Statistics Norway (2025) found that 14.5% of adults report being quite or very troubled by loneliness...
+
+I referanselisten (engelsk):
+
+> Statistics Norway. (2025). *How many people feel lonely in Norway?* Livskvalitetsundersøkelsen 2025. https://www.ssb.no/...
+
+Regler:
+- **Institusjonsnavn på engelsk** (Statistics Norway, Norwegian Directorate of Health)
+- **Tittel oversatt til engelsk**; original norsk tittel kan stå i parentes første gang
+- **URL og årstall** som normalt
+
 ## Etter import (anbefalt)
 
-1. **Høyreklikk** på samlingen → **Rename Collection** om du vil ha norsk navn
+1. **Høyreklikk** på samlingen → **Rename Collection** om du vil
 2. For kilder med DOI: marker dem → **Right click → Find Available PDF**
-3. Sjekk at sitestil er **APA 7th edition** (Edit → Settings → Export → Default Format)
-4. Rett eventuelle forfatterfelter Zotero ikke fylte perfekt (f.eks. `Chen, Y. and others`)
+3. Sjekk at sitestil er **APA 7th edition**
+4. Vurder under-samling: `Norwegian context` (tag `norwegian-literature`)
 
-## Hva som ligger i filen (33 kilder)
+## Hva som ligger i filen (ca. 48 kilder)
 
 | Tema | Eksempler |
 |------|-----------|
-| Loneliness & fraud | Wen 2022/2024, Alves & Wilson 2008, Cacioppo & Patrick 2008 |
-| Phishing & human factors | Parker & Flowerday 2020, Hadnagy 2018, Klütsch et al. 2024 |
-| FOMO & young adults | Przybylski et al. 2013, Frauenstein & Flowerday 2020 |
-| PMT & security behaviour | Rogers 1975, Floyd et al. 2000, Bayl-Smith et al. 2024 |
-| Norway context | SSB 2025, NSM 2026, Khrono/NSO 2024, SHoT 2022 |
-| Methodology | Braun & Clarke 2006 |
-| Awareness & training | Chen et al. 2024, Finans Norge, CISA, Nkom |
+| **Norsk kontekst** | SSB 2025, Barstad 2021, FHI, Helsedirektoratet, SHoT, Khrono/NSO |
+| **Norsk cybersikkerhet** | NSM 2026, Nettvett, Politiet, NSR Mørketall, Finans Norge, Nkom |
+| **Norsk forskning phishing** | Tjostheim & Waterworth 2020/2022 (nasjonale utvalg i Norge) |
+| **Studenter & ensomhet** | SiO, Samskipnaden, OsloMet Lunsjvenn |
+| **Internasjonal kjerne** | Wen, Cacioppo, Hadnagy, Klütsch et al., Parker & Flowerday |
+| **Metode** | Braun & Clarke 2006 |
 
 ## Merk
 
-- `Klütsch et al. 2024` er lagt inn med korrekt forfatter (ikke Popovac & Flowerday) for artikkelen "Friend or phisher"
-- Alle poster har taggen `master-thesis` for enkel filtrering
+- `Klütsch et al. 2024` = korrekt forfatter for "Friend or phisher"
+- Alle poster har taggen `master-thesis`
+- Norske kilder har i tillegg `norwegian-literature`
 - PDF-lenke: https://raw.githubusercontent.com/kasa031/Bacheloroppgave/cursor/master-phishing-forslag-d899/master_thesis_zotero.bib
