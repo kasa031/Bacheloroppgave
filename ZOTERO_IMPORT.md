@@ -8,6 +8,18 @@ oslomet/masterthesis/master_thesis_zotero.bib
 
 **Viktig:** Masteroppgaven skrives på **engelsk**, men **norsk litteratur er inkludert** der den er relevant (SSB, NSM, Helsedirektoratet, norske studier osv.). I thesis-teksten siterer du dem på engelsk (oversatte titler); i Zotero kan du beholde norske titler i `note`-feltet.
 
+## APA 7 (Kildekompasset)
+
+Referanselisten i thesis er formatert etter **APA 7** i tråd med [Kildekompasset](https://www.kildekompasset.no/regler/hvordan-skal-litteraturlista-se-ut-2/):
+
+- Alfabetisk sortering etter forfatter
+- Hengende innrykk i litteraturlista
+- DOI som `https://doi.org/...` der tilgjengelig
+- Nettsider: `Retrieved [dato] from [URL]`
+- Norske kilder: titler oversatt til engelsk i thesis-tekst; institution navn beholdt
+
+Importer `.bib` til Zotero og bruk **APA 7th edition** som stil. Verifiser at Zotero-output matcher Kildekompasset før endelig innlevering.
+
 ## Slik importerer du (2 minutter)
 
 1. Åpne **Zotero**

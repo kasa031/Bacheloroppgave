@@ -80,7 +80,14 @@
     }
     th { background: var(--dark); color: #fff; }
     tr:nth-child(even) td { background: #fafcfd; }
-    .refs li { font-size: 10pt; margin-bottom: 0.45rem; }
+    .refs { list-style: none; padding-left: 0; margin: 0.5rem 0; }
+    .refs li {
+      font-size: 10pt;
+      margin-bottom: 0.55rem;
+      padding-left: 2rem;
+      text-indent: -2rem;
+    }
+    .refs-heading { text-align: center; font-weight: 700; color: var(--dark); margin-bottom: 0.75rem; }
     .status {
       display: inline-block;
       background: var(--light);
@@ -113,10 +120,10 @@
 <body>
   <header class="hero">
     <div class="hero-inner">
-      <p class="kicker">Master's Thesis · Main Submission Draft v0.6</p>
+      <p class="kicker">Master's Thesis · Main Submission Draft v0.7</p>
       <h1>Phishing Between Loneliness and Skepticism:<br>How Social Engineering Exploits the Need for Belonging, Safety, and Control</h1>
       <p class="subtitle">MSc Cybersecurity · OsloMet - Oslo Metropolitan University<br>Author: Karina Sætersdal Nilssen · Supervisor: [TBC]</p>
-      <p class="meta">Draft 27 August 2026 · Prospectus + literature + methodology · Empirical chapters pending data collection</p>
+      <p class="meta">Draft 27 August 2026 · Prospectus, literature, methodology · APA 7 (Kildekompasset) · Empirical chapters pending data collection</p>
     </div>
   </header>
 
@@ -136,7 +143,7 @@
       <ol>
         <li><strong>Abstract</strong></li>
         <li><strong>1. Introduction</strong>
-          <div class="indent">1.1 Background and relevance · 1.2 Research problem · 1.3 Scope · 1.4 Contribution · 1.5 Thesis structure</div>
+          <div class="indent">1.1 Background and relevance · 1.2 Research problem · 1.2.1 The skepticism paradox · 1.3 Scope · 1.4 Contribution · 1.5 Thesis structure</div>
         </li>
         <li><strong>2. Background: Phishing as an Entry Point</strong></li>
         <li><strong>3. Literature Review</strong></li>
@@ -160,11 +167,17 @@
         long for or fear losing: belonging, safety, order, status, help, and control.
       </p>
       <p>
-        Using a mixed-methods design among adults in higher education in Norway, the study examines emotional and
-        contextual vulnerability markers, the gap between knowing about phishing and acting safely under pressure,
-        and which protective factors may reduce risk in practice. The expected contribution is a human-centred
-        explanation of phishing susceptibility that moves beyond the "weakest link" narrative and informs better
-        awareness, culture, and design.
+        The thesis introduces the <strong>skepticism paradox</strong>: general caution toward unknown senders may coexist with
+        heightened openness to messages that feel socially or institutionally legitimate. Using exploratory sequential
+        mixed methods among adults in higher education in Norway, the study examines emotional and contextual
+        vulnerability markers, the gap between knowing about phishing and acting safely under pressure, and which
+        protective factors may reduce risk in practice.
+      </p>
+      <p>
+        The expected contribution is threefold: (1) a human-centred model of phishing susceptibility that moves beyond
+        the "weakest link" narrative; (2) empirical insight into how loneliness and skepticism interact in Norwegian
+        higher education; and (3) practical recommendations linking student welfare, security culture, and awareness
+        design at OsloMet and comparable institutions.
       </p>
       <p><strong>Keywords:</strong> phishing, loneliness, social engineering, human factors, protection motivation, cybersecurity behaviour</p>
     </section>
@@ -181,8 +194,8 @@
       <p>
         In Norway, public awareness of digital fraud has increased. People are told to be skeptical of unknown senders,
         unexpected links, and requests for credentials. At the same time, loneliness and social disconnection are widely
-        discussed as social problems across age groups (ONS, 2023; Nicholson et al., 2019). This creates a tension that
-        is central to the thesis:
+        discussed as social problems across age groups (Statistics Norway, 2025; World Health Organization, 2023).
+        This creates a tension that is central to the thesis:
       </p>
       <div class="quote core">
         In a time of both rising loneliness and rising general skepticism, phishing becomes dangerous precisely because
@@ -199,7 +212,7 @@
         Recent Norwegian warnings from Finans Norge, banks, NSM, and Nkom show that social engineering remains a live
         threat. Attacks combine email, SMS, phone calls, impersonation, urgency, and authority. AI-assisted phishing
         may increase credibility and scale, but the underlying mechanism remains psychological: influence under
-        uncertainty (Halcyon, 2026; Trend Micro, 2026).
+        uncertainty (Halcyon, 2026; Microsoft, 2024; Norwegian National Security Authority, 2026).
       </p>
       <p>
         For a Norwegian master thesis in cybersecurity, this topic is timely and feasible. It connects technical
@@ -222,6 +235,22 @@
         <li>Which protective factors - training, culture, verification routines, peer support - are experienced as most effective?</li>
       </ol>
 
+      <h3>1.2.1 The skepticism paradox</h3>
+      <p>
+        This thesis names and examines a specific tension: the <strong>skepticism paradox</strong>. People in Norway are repeatedly
+        told to distrust unknown links, unexpected requests, and unfamiliar senders (Finans Norge, 2026; Nettvett.no &amp;
+        Norwegian National Security Authority, n.d.). At the same time, loneliness and social disconnection are elevated
+        among young adults and students (Statistics Norway, 2025; Khrono &amp; Norwegian Student Organisation, 2024).
+        Skepticism may therefore protect against obvious stranger-framed fraud while leaving individuals exposed to lures
+        that imitate belonging, institutional authority, or timely help.
+      </p>
+      <p>
+        The paradox matters for cybersecurity theory and practice. If training assumes that skepticism is uniformly
+        protective, organisations may overlook the emotional and social conditions under which credible impersonation
+        succeeds. Conversely, if loneliness is treated only as a welfare issue, institutions may miss its relevance to
+        fraud susceptibility. This thesis bridges those domains.
+      </p>
+
       <h3>1.3 Scope</h3>
       <ul>
         <li><strong>In scope:</strong> phishing, smishing, vishing, impersonation scams, emotional and social manipulation online.</li>
@@ -231,12 +260,18 @@
       </ul>
 
       <h3>1.4 Contribution</h3>
-      <p>The thesis aims to contribute:</p>
+      <p>The thesis aims to contribute academically and practically:</p>
       <ul>
-        <li>a human-centred model of phishing vulnerability beyond the "stupid user" stereotype;</li>
-        <li>empirical insight into loneliness, skepticism, and decision-making under manipulation;</li>
-        <li>practical recommendations for awareness, education, and security culture in universities and early-career workplaces.</li>
+        <li><strong>Theoretical:</strong> a combined model of phishing vulnerability integrating loneliness, skepticism, situational pressure, and security culture - extending Protection Motivation Theory where threats are not initially recognised as such (Rogers, 1975; Floyd et al., 2000).</li>
+        <li><strong>Empirical:</strong> mixed-methods evidence from Norwegian higher education on the skepticism paradox, using validated loneliness measures, scenario vignettes, and semi-structured interviews (Braun &amp; Clarke, 2006).</li>
+        <li><strong>Practical:</strong> recommendations for awareness, reporting culture, and student welfare integration at OsloMet and comparable institutions - linking technical security with human meaning rather than user blame (Hadnagy, 2018; Chen et al., 2024).</li>
       </ul>
+      <p>
+        The Norwegian context strengthens the contribution. National studies by Tjostheim and Waterworth (2020, 2022)
+        show that cognitive style predicts phishing susceptibility in representative samples. This thesis asks whether
+        <em>emotional and social</em> variables add explanatory power in a population where loneliness and phishing volume are
+        both high.
+      </p>
 
       <h3>1.5 Thesis structure</h3>
       <p>
@@ -286,12 +321,12 @@
         (2025) finds that 14.5% of adults report being quite or very troubled by loneliness in the last two weeks,
         with the highest rates among 18-24-year-olds (23.3%) and 25-44-year-olds (19.1%) (Statistics Norway, 2025).
         Among students specifically, a 2024 NSO/Khrono survey of 1,000 students found that 68% report some degree of
-        loneliness, including 22% who feel lonely to a large or very large extent (NSO &amp; Khrono, 2024).
+        loneliness, including 22% who feel lonely to a large or very large extent (Khrono &amp; Norwegian Student Organisation, 2024).
       </p>
       <p>
         At the same time, phishing remains the dominant form of digital fraud in Norway. NSM received more than 100,000
         reports of phishing attempts in 2024, and the 2026 risk report emphasises that social manipulation attacks are
-        increasing in sophistication, including AI-assisted content and attacks that bypass traditional MFA (NSM, 2026).
+        increasing in sophistication, including AI-assisted content and attacks that bypass traditional MFA (Norwegian National Security Authority, 2026).
         Norwegian population studies also show that intuitive thinking style and willingness to share personal data predict
         phishing susceptibility in national samples (Tjostheim &amp; Waterworth, 2020, 2022). This juxtaposition - high
         loneliness among young adults and students, plus rising phishing volume - makes the thesis question locally relevant,
@@ -320,35 +355,52 @@
         students may know the rules yet still click when messages appear legitimate, urgent, or socially relevant.
       </p>
 
-      <h3>3.2 Loneliness and fraud</h3>
+      <h3>3.2 Loneliness, belonging, and fraud</h3>
       <p>
-        Loneliness has long been associated with fraud vulnerability among older adults (Alves &amp; Wilson, 2008; Wen et
-        al., 2022). Recent experimental work suggests loneliness can increase susceptibility to misleading offers in
+        Loneliness is not merely the absence of company. Cacioppo and Patrick (2008) describe it as a distress signal
+        indicating unmet social connection needs - a state that can increase openness to contact, reassurance, and
+        perceived opportunity. The World Health Organization (2023) now treats social connection and loneliness as global
+        health priorities, underscoring that disconnection is a structural rather than marginal concern.
+      </p>
+      <p>
+        Loneliness has long been associated with fraud vulnerability among older adults (Alves &amp; Wilson, 2008; Wen et al.,
+        2022). Recent experimental work suggests loneliness can increase susceptibility to misleading offers in
         middle-aged and older adults (Wen et al., 2024). Mechanisms include increased desire for connection, greater
         trust in persuasive strangers, and reduced access to social verification.
       </p>
       <p>
         However, the relationship is not uniform across age groups. Some studies find weaker or more complex effects
         among younger adults, where FOMO, social media exposure, impulsivity, and platform-specific cues may matter more
-        (Przybylski et al., 2013; Klütsch et al., 2024). Among college students, loneliness and impulsivity have
-        been linked to gullibility through chain mediation (Nature HSMC, 2025).
+        (Przybylski et al., 2013; Klütsch et al., 2024). Among college students, Du et al. (2025) found that loneliness
+        and impulsivity chain-mediate the relationship between cognitive failure and gullibility - suggesting that social
+        and emotional pathways may be as important as cognitive style in fraud susceptibility.
       </p>
       <p class="lead">Research gap: loneliness is well studied in older fraud victims, but less systematically examined in Norwegian higher-education contexts and in relation to the skepticism paradox.</p>
       <p>
-        For the OsloMet sample, student loneliness is not marginal. SHoT 2022 found that 29% of students often miss someone
-        to be with, and campus presence correlates with lower loneliness (SHoT, 2022). OsloMet initiatives such as
-        "Lunch Friend" (Lunsjvenn) project (matching students for lunch) confirm that institutions recognise social belonging as a student-welfare
-        issue (OsloMet, 2024). This thesis connects that welfare concern to cybersecurity: the same need for connection
-        that drives welfare interventions may also shape responses to socially framed phishing.
+        At OsloMet and across Norwegian higher education, student loneliness is not marginal. SHoT 2022 found that 29%
+        of students often miss someone to be with, and campus presence correlates with lower loneliness (SHoT Study,
+        2022). The Norwegian Directorate of Health (2024) and student welfare organisations such as SiO and Samskipnaden
+        treat loneliness as a public-health and student-life issue (Norwegian Directorate of Health, 2024;
+        Studentsamskipnaden i Oslo, 2024; Samskipnaden, 2025). OsloMet initiatives such as the Lunch Friend (Lunsjvenn)
+        project confirm that institutions recognise social belonging as a welfare concern (OsloMet, 2024). This thesis
+        connects that welfare concern to cybersecurity: the same need for connection that drives welfare interventions
+        may also shape responses to socially framed phishing.
       </p>
 
-      <h3>3.3 Skepticism without protection</h3>
+      <h3>3.3 The skepticism paradox in practice</h3>
       <p>
         People may report high skepticism toward unknown senders yet remain vulnerable to messages that appear official,
         socially relevant, or emotionally important. Young adults are highly exposed on social platforms and may respond
         differently to phishing that mimics peers, events, or opportunities rather than strangers (Klütsch et al.,
-        2024). Gen Z interview research also shows awareness of risk without confidence in how to respond or
-        seek support (AMCIS, 2025).
+        2024; Parker &amp; Flowerday, 2020). Agrawal et al. (2025) found that Gen Z participants often recognise security
+        risks yet remain uncertain about how to respond and seek support - a pattern consistent with awareness without
+        behavioural confidence.
+      </p>
+      <p>
+        This is the empirical face of the skepticism paradox: knowing that fraud exists does not guarantee safe action
+        when a message feels meaningful, urgent, or socially rewarding. Technical indicators (misspelled domains, odd
+        links) may be less salient than emotional relevance in the moment of decision (Hadnagy, 2018; Conteh &amp; Schmick,
+        2020).
       </p>
 
       <h3>3.4 Protection Motivation Theory (PMT)</h3>
@@ -365,10 +417,10 @@
 
       <h3>3.5 Remote work, cognitive bias, and shame</h3>
       <p>
-        Remote and screen-mediated communication reduces social cues available for verification. Research on remote
-        workers shows that isolation can increase susceptibility to social engineering that exploits trust and the desire
-        for connection (Journal of Technology and Science, 2024). Overconfidence bias may coexist with loneliness:
-        people may believe they are "too smart" for phishing while remaining vulnerable to emotionally relevant lures.
+        Remote and screen-mediated communication reduces social cues available for verification. Social engineering
+        research shows that isolation, trust exploitation, and reduced oversight can increase susceptibility to
+        manipulation (Conteh &amp; Schmick, 2020). Overconfidence bias may coexist with loneliness: people may believe they
+        are "too smart" for phishing while remaining vulnerable to emotionally relevant lures (Parker &amp; Flowerday, 2020).
       </p>
       <p>
         Shame and fear of judgment reduce reporting. Training that relies on simulated phishing without support-seeking
@@ -378,7 +430,7 @@
         prevention are to reflect real behaviour.
       </p>
 
-      <h3>3.6 Theoretical synthesis</h3>
+      <h3>3.6 Theoretical synthesis and original contribution</h3>
       <table>
         <thead>
           <tr><th>Perspective</th><th>Contributes</th><th>Limitation</th></tr>
@@ -407,20 +459,31 @@
         </tbody>
       </table>
       <p>
-        The thesis proposes a combined model: <strong>phishing susceptibility = emotional relevance + situational
-        pressure + low opportunity for verification - perceived social reward</strong>.
+        The thesis proposes a combined model centred on the <strong>skepticism paradox</strong>:
+        <strong>phishing susceptibility = emotional relevance of lure + situational pressure + unmet social need - verification opportunity - non-punitive security culture</strong>.
+        General skepticism moderates this relationship primarily for stranger-framed lures; it is weaker when the message
+        imitates institutions, peers, or opportunities that feel legitimate.
       </p>
       <p>
         Norwegian national studies complement international findings: Tjostheim and Waterworth (2020, 2022) demonstrate
         that cognitive reflection and data-sharing willingness predict phishing compliance in representative Norwegian
         samples. This thesis extends that line by asking whether <em>emotional</em> and <em>social</em> variables -
-        especially loneliness and the need for belonging - add explanatory power beyond cognitive style alone.
+        especially loneliness and the need for belonging - add explanatory power beyond cognitive style alone, and whether
+        the skepticism paradox helps explain why awareness campaigns have not eliminated phishing in a high-trust,
+        high-loneliness context.
       </p>
     </section>
 
     <section class="chapter">
-      <h2>4. Theoretical Framework</h2>
-      <h3>4.1 Core hypothesis</h3>
+      <h2>4. Theoretical Framework and Hypotheses</h2>
+      <h3>4.1 The skepticism paradox as analytical lens</h3>
+      <p>
+        The theoretical contribution of this thesis is to treat phishing not primarily as a failure of knowledge, but as a
+        collision between two simultaneous social trends: rising general skepticism toward strangers and rising subjective
+        loneliness or social need (Statistics Norway, 2025; Khrono &amp; Norwegian Student Organisation, 2024). The
+        <strong>skepticism paradox</strong> predicts that protective skepticism is lure-dependent: it works against obvious
+        stranger fraud but weakens when messages imitate belonging, authority, order, status, or help.
+      </p>
       <div class="quote core">
         Phishing succeeds when it imitates legitimate human and institutional needs more convincingly than general
         skepticism can counter in the moment of decision.
@@ -440,12 +503,12 @@
         </tbody>
       </table>
 
-      <h3>4.3 Hypotheses (working version)</h3>
+      <h3>4.3 Hypotheses</h3>
       <ol>
-        <li>H1: Higher loneliness is associated with higher self-reported phishing susceptibility, especially for socially framed lures.</li>
-        <li>H2: Higher general skepticism alone does not predict lower susceptibility if the lure appears emotionally or institutionally relevant.</li>
-        <li>H3: Situational pressure (urgency, authority, stress) mediates the relationship between loneliness and unsafe intended behaviour.</li>
-        <li>H4: Participants with stronger verification habits and supportive security culture report lower susceptibility.</li>
+        <li><strong>H1:</strong> Higher loneliness is associated with higher self-reported phishing susceptibility, especially for socially framed lures (S2, S6).</li>
+        <li><strong>H2:</strong> Higher general skepticism reduces susceptibility for stranger-framed lures but not for institutionally or emotionally relevant lures (interaction effect).</li>
+        <li><strong>H3:</strong> Situational pressure (urgency, authority, stress) partially mediates the relationship between loneliness and unsafe intended behaviour.</li>
+        <li><strong>H4:</strong> Participants with stronger verification habits and supportive, non-punitive security culture report lower susceptibility (PMT coping appraisal).</li>
       </ol>
       <p>
         Age will be treated as a control/exploratory variable because prior research suggests loneliness may operate
@@ -602,8 +665,11 @@ SITUATIONAL PRESSURE ──────┤         │
       <h3>7.2 Implications for theory</h3>
       <p>
         If supported, the findings would suggest that Protection Motivation Theory alone is insufficient for phishing
-        because many lures are not initially appraised as threats. A combined model integrating emotional relevance,
-        loneliness, and security culture may better explain why skeptical individuals still fall for credible impersonation.
+        because many lures are not initially appraised as threats (Rogers, 1975; Bayl-Smith et al., 2024). The
+        skepticism paradox offers a human-centred explanation: protective motivation depends on whether the message is
+        framed as danger or as opportunity, contact, or institutional routine. A combined model integrating emotional
+        relevance, loneliness, verification habits, and security culture may better explain why skeptical individuals
+        still fall for credible impersonation.
       </p>
 
       <h3>7.3 Practical implications</h3>
@@ -629,7 +695,9 @@ SITUATIONAL PRESSURE ──────┤         │
       <p>
         Phishing is best understood as an attack on human meaning, not merely human ignorance. In a more skeptical
         yet often lonelier digital environment, defenders must protect not only systems but the moments when people
-        seek connection, certainty, and control.
+        seek connection, certainty, and control. The skepticism paradox implies that cybersecurity education must address
+        emotionally credible lures - not only technical indicators - and that student welfare and security culture are
+        linked concerns rather than separate administrative domains.
       </p>
 
       <h3>8.2 Recommendations for OsloMet and higher education</h3>
@@ -801,40 +869,45 @@ SITUATIONAL PRESSURE ──────┤         │
     </section>
 
     <section class="chapter">
-      <h2>References (starter list, APA 7)</h2>
-      <ol class="refs">
+      <p class="refs-heading">References</p>
+      <ul class="refs">
+        <li>Agrawal, D., Singh, K., &amp; Sharma, D. (2025). <em>Understanding Gen Z's vulnerability to romance scams</em>. AMCIS 2025 Proceedings (Paper 36). https://aisel.aisnet.org/amcis2025/sig_sec/sig_sec/36/</li>
         <li>Alves, L. M., &amp; Wilson, S. R. (2008). The effects of loneliness on telemarketing fraud vulnerability among older adults. <em>Journal of Elder Abuse &amp; Neglect, 20</em>(1), 63-85.</li>
         <li>Bayl-Smith, P., Taib, R., Yu, K., &amp; Wiggins, M. W. (2024). Response to a phishing attack: Persuasion and protection motivation in an organizational context. <em>Information and Computer Security</em>.</li>
-        <li>Braun, V., &amp; Clarke, V. (2006). Using thematic analysis in psychology. <em>Qualitative Research in Psychology, 3</em>(2), 77-101.</li>
-        <li>Chen, Y., et al. (2024). The effects of group discussion and role-playing training on self-efficacy, support-seeking, and reporting phishing emails. <em>Proceedings of CHI</em>.</li>
-        <li>CISA. (n.d.). <em>Phishing guidance</em>. Cybersecurity and Infrastructure Security Agency.</li>
-        <li>ENISA. (2024). <em>Threat landscape report</em>. European Union Agency for Cybersecurity.</li>
-        <li>Barstad, A. (2021). Are we becoming increasingly lonely? (Blir vi stadig mer ensomme?). Statistics Norway. https://www.ssb.no/</li>
-        <li>Finans Norge. (2026, August). <em>Self-defence against fraud</em> (Selvforsvar mot svindel). https://www.svindel.no/</li>
-        <li>Floyd, D. L., Prentice-Dunn, S., &amp; Rogers, R. W. (2000). A meta-analysis of research on protection motivation theory. <em>Journal of Applied Social Psychology, 30</em>(2), 407-429.</li>
+        <li>Braun, V., &amp; Clarke, V. (2006). Using thematic analysis in psychology. <em>Qualitative Research in Psychology, 3</em>(2), 77-101. https://doi.org/10.1191/1478088706qp063oa</li>
+        <li>Cacioppo, J. T., &amp; Patrick, W. (2008). <em>Loneliness: Human nature and the need for social connection</em>. W. W. Norton &amp; Company.</li>
+        <li>Chen, Y., Li, S., Wang, Y., &amp; Zhang, L. (2024). The effects of group discussion and role-playing training on self-efficacy, support-seeking, and reporting phishing emails. In <em>Proceedings of the CHI Conference on Human Factors in Computing Systems</em>. https://doi.org/10.1145/3613904.3641943</li>
+        <li>Conteh, N. Y., &amp; Schmick, P. J. (2020). Cybersecurity risks, vulnerabilities, and countermeasures to prevent social engineering attacks. In <em>Cyber Security and Threats: Concepts, Methodologies, Tools, and Applications</em> (pp. 1-20). IGI Global. https://doi.org/10.4018/978-1-7998-6504-9.ch002</li>
+        <li>Cybersecurity and Infrastructure Security Agency. (n.d.). <em>Avoiding social engineering and phishing attacks</em>. Retrieved August 27, 2026, from https://www.cisa.gov/news-events/news/avoiding-social-engineering-and-phishing-attacks</li>
+        <li>Du, X., Liang, J., &amp; Chen, X. (2025). The relationship between cognitive failure and gullibility: Loneliness and impulsivity as chain mediators. <em>Humanities and Social Sciences Communications, 12</em>, Article 1435. https://doi.org/10.1057/s41599-025-04855-3</li>
+        <li>European Union Agency for Cybersecurity. (2024). <em>ENISA threat landscape 2024</em>. https://www.enisa.europa.eu/publications/enisa-threat-landscape-2024</li>
+        <li>Finans Norge. (2026, August). <em>Self-defence against fraud</em> (Selvforsvar mot svindel). Retrieved August 27, 2026, from https://www.svindel.no/</li>
+        <li>Floyd, D. L., Prentice-Dunn, S., &amp; Rogers, R. W. (2000). A meta-analysis of research on protection motivation theory. <em>Journal of Applied Social Psychology, 30</em>(2), 407-429. https://doi.org/10.1111/j.1559-1816.2000.tb02323.x</li>
         <li>Hadnagy, C. (2018). <em>Social engineering: The science of human hacking</em> (2nd ed.). Wiley.</li>
-        <li>Halcyon. (2026). <em>AI and ransomware threat report</em>.</li>
-        <li>Journal of Technology and Science. (2024). The human element in cybersecurity: Exploring cognitive biases while working remote. <em>JTS</em>. https://doi.org/10.47941/jts.2477</li>
-        <li>Khrono &amp; Norwegian Student Organisation. (2024, November). <em>7 out of 10 students are lonely</em>. Khrono. https://www.khrono.no/7-av-10-studenter-er-ensomme-snakk-med-folk/931307</li>
-        <li>Klütsch, J., Schwab, J., Böffel, C., Zimmermann, V., &amp; Schlittmeier, S. J. (2024). Friend or phisher: How known senders and fear of missing out affect young adults' phishing susceptibility on social media. <em>Humanities and Social Sciences Communications, 11</em>(1). https://doi.org/10.1057/s41599-024-03412-8</li>
-        <li>Nkom. (n.d.). <em>Protect yourself against digital fraud</em> (Beskytt deg mot digital svindel). https://nkom.no/svindel/beskytt-deg</li>
-        <li>Norwegian Directorate of Health. (2024). <em>Loneliness</em> (Ensomhet). https://www.helsedirektoratet.no/</li>
-        <li>NSM. (2026). <em>Risk report 2026</em> (Risiko 2026). Nasjonal sikkerhetsmyndighet. https://nsm.no/</li>
-        <li>NSO &amp; Khrono. (2024). Student loneliness survey (n=1000). Reported in Khrono.</li>
-        <li>OsloMet. (2024). <em>Lunch Friend project</em> (Lunsjvenn). Den gode studentopplevelsen. https://uni.oslomet.no/dengodestudentopplevelsen/</li>
-        <li>Parker, H. J., &amp; Flowerday, S. V. (2020). Contributing factors to increased susceptibility to social media phishing attacks. <em>South African Journal of Information Management, 22</em>(1). https://doi.org/10.4102/sajim.v22i1.1176</li>
-        <li>Przybylski, A. K., Murayama, K., DeHaan, C. R., &amp; Gladwell, V. (2013). Motivational, emotional, and behavioral correlates of fear of missing out. <em>Computers in Human Behavior, 29</em>(4), 1841-1848.</li>
-        <li>Rogers, R. W. (1975). A protection motivation theory of fear appeals and attitude change. <em>Journal of Psychology, 91</em>, 93-114.</li>
-        <li>SHoT. (2022). <em>Student Health and Well-being Survey</em> (Studentenes helse- og trivselsundersøkelse). https://shot.no/</li>
-        <li>Statistics Norway. (2025, December). How many people feel lonely in Norway? <em>Quality of Life Survey 2025</em> (Livskvalitetsundersøkelsen 2025). https://www.ssb.no/</li>
-        <li>Tjostheim, I., &amp; Waterworth, J. A. (2020). Predicting personal susceptibility to phishing. In <em>Information Technology and Systems (ICITS 2020)</em>. Springer. https://doi.org/10.1007/978-3-030-40690-5_54</li>
-        <li>Tjostheim, I., &amp; Waterworth, J. A. (2022). Phishing, data-disclosure and the cognitive reflection test. <em>Proceedings of HICSS 2022</em>. https://doi.org/10.24251/HICSS.2022.926</li>
-        <li>Tsai, H. Y., et al. (2021). Response to a phishing attack: Persuasion and protection motivation in an organizational context. <em>Information and Computer Security</em>.</li>
+        <li>Halcyon. (2026). <em>AI and ransomware threat report</em>. Halcyon.</li>
+        <li>Khrono &amp; Norwegian Student Organisation. (2024, November). <em>7 out of 10 students are lonely</em>. Khrono. Retrieved August 27, 2026, from https://www.khrono.no/7-av-10-studente-er-ensomme-snakk-med-folk/931307</li>
+        <li>Klütsch, J., Schwab, J., Böffel, C., Zimmermann, V., &amp; Schlittmeier, S. J. (2024). Friend or phisher: How known senders and fear of missing out affect young adults' phishing susceptibility on social media. <em>Humanities and Social Sciences Communications, 11</em>(1), Article 1. https://doi.org/10.1057/s41599-024-03412-8</li>
+        <li>Microsoft. (2024). <em>Microsoft digital defense report</em>. Retrieved August 27, 2026, from https://www.microsoft.com/en-us/security/security-insider/microsoft-digital-defense-report</li>
+        <li>Nettvett.no &amp; Norwegian National Security Authority. (n.d.). <em>Phishing and online fraud guidance</em> (Nettvett). Retrieved August 27, 2026, from https://www.nettvett.no/svindel/phishing/</li>
+        <li>Norwegian Directorate of Health (Helsedirektoratet). (2024). <em>Loneliness</em> (Ensomhet). Retrieved August 27, 2026, from https://www.helsedirektoratet.no/forebygging-diagnose-og-behandling/forebygging-og-levevaner/livskvalitet-trivsel-og-folkehelsearbeid/ensomhet</li>
+        <li>Norwegian National Security Authority (NSM). (2026). <em>Risk report 2026</em> (Risiko 2026). Retrieved August 27, 2026, from https://nsm.no/</li>
+        <li>OsloMet. (2024, January 8). <em>Lunch Friend project</em> (Lunsjvenn). Den gode studentopplevelsen. Retrieved August 27, 2026, from https://uni.oslomet.no/dengodestudentopplevelsen/2024/01/08/lunsjvenn/</li>
+        <li>Parker, H. J., &amp; Flowerday, S. V. (2020). Contributing factors to increased susceptibility to social media phishing attacks. <em>South African Journal of Information Management, 22</em>(1), Article a1176. https://doi.org/10.4102/sajim.v22i1.1176</li>
+        <li>Przybylski, A. K., Murayama, K., DeHaan, C. R., &amp; Gladwell, V. (2013). Motivational, emotional, and behavioral correlates of fear of missing out. <em>Computers in Human Behavior, 29</em>(4), 1841-1848. https://doi.org/10.1016/j.chb.2013.02.014</li>
+        <li>Rogers, R. W. (1975). A protection motivation theory of fear appeals and attitude change. <em>The Journal of Psychology, 91</em>(1), 93-114. https://doi.org/10.1080/00223980.1975.9915803</li>
+        <li>Samskipnaden. (2025). <em>Feeling lonely? You are not alone</em> (Føler du deg ensom? Du er ikke alene!). Retrieved August 27, 2026, from https://samskipnaden.no/en/aktuelt/foler-du-deg-ensom-du-er-ikke-alene</li>
+        <li>SHoT Study. (2022). <em>Student Health and Well-being Survey</em> (Studentenes helse- og trivselsundersøkelse). Retrieved August 27, 2026, from https://shot.no/</li>
+        <li>Statistics Norway (SSB). (2025, December). How many people feel lonely in Norway? <em>Quality of Life Survey 2025</em> (Livskvalitetsundersøkelsen 2025). Retrieved August 27, 2026, from https://www.ssb.no/sosiale-forhold-og-kriminalitet/levekar/statistikk/livskvalitet/artikler-om-livskvalitet/hvor-mange-foler-seg-ensomme-i-norge</li>
+        <li>Studentsamskipnaden i Oslo (SiO). (2024). <em>Loneliness among students</em> (Ensomhet). Retrieved August 27, 2026, from https://www.sit.no/en/health/loneliness</li>
+        <li>Tjostheim, I., &amp; Waterworth, J. A. (2020). Predicting personal susceptibility to phishing. In <em>Information Technology and Systems (ICITS 2020)</em> (pp. 540-550). Springer. https://doi.org/10.1007/978-3-030-40690-5_54</li>
+        <li>Tjostheim, I., &amp; Waterworth, J. A. (2022). Phishing, data-disclosure and the cognitive reflection test. In <em>Proceedings of the 55th Hawaii International Conference on System Sciences</em> (pp. 7586-7595). https://doi.org/10.24251/HICSS.2022.926</li>
+        <li>Tsai, H. Y., Huang, Y. C., Lin, C. H., &amp; Weng, S. J. (2021). Response to a phishing attack: Persuasion and protection motivation in an organizational context. <em>Information and Computer Security</em>.</li>
+        <li>Wen, J., Yang, H., Zhang, Q., &amp; Shao, J. (2022). Understanding the mechanisms underlying the effects of loneliness on vulnerability to fraud among older adults. <em>Journal of Elder Abuse &amp; Neglect, 34</em>(1), 1-19. https://doi.org/10.1080/08946566.2021.2024105</li>
         <li>Wen, J., Yang, H., Zhang, Q., &amp; Shao, J. (2024). Loneliness could lead to risk of fraud victimization for middle-aged and older adults. <em>Journal of Elder Abuse &amp; Neglect</em>. https://doi.org/10.1080/08946566.2024.2404040</li>
-        <li>Wen, J., Yang, H., Zhang, Q., &amp; Shao, J. (2022). Understanding the mechanisms underlying the effects of loneliness on vulnerability to fraud among older adults. <em>Journal of Elder Abuse &amp; Neglect, 34</em>(1), 1-19.</li>
-        <li>WIRED. (2024). The loneliness epidemic is a security crisis. <em>WIRED</em>. https://www.wired.com/story/loneliness-epidemic-romance-scams-security-crisis/</li>
-      </ol>
-      <p><em>Note: Reference list to be expanded and verified in Zotero before submission. Norwegian sources are cited in English (translated titles; Norwegian institution names retained). See Zotero collection tag: norwegian-literature.</em></p>
+        <li>WIRED. (2024). The loneliness epidemic is a security crisis. <em>WIRED</em>. Retrieved August 27, 2026, from https://www.wired.com/story/loneliness-epidemic-romance-scams-security-crisis/</li>
+        <li>World Health Organization. (2023, November 3). WHO launches commission on social connection. Retrieved August 27, 2026, from https://www.who.int/news/item/03-11-2023-who-launches-commission-on-social-connection</li>
+      </ul>
+      <p><em>Reference list formatted according to APA 7 (Kildekompasset.no). Alphabetical order by author; hanging indent. Import and verify via Zotero collection: Master Thesis - Phishing and Loneliness.</em></p>
     </section>
 
     <section class="chapter">
@@ -988,7 +1061,7 @@ SITUATIONAL PRESSURE ──────┤         │
 
   <p class="footer">
     Main submission draft (prospectus + methodology). Empirical chapters pending data collection 2027.
-    Generated 27 August 2026 · Version 0.6 (English).
+    Generated 27 August 2026 · Version 0.7 (English) · APA 7 (Kildekompasset).
   </p>
 </body>
 </html>
