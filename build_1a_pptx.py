@@ -344,7 +344,7 @@ def main():
         ("5  skiforeningen.no", "Sport  ·  14"),
     ]
     add_tb(s, Inches(0.5), Inches(1.4), Inches(6), Inches(0.4), "Highest five", size=18, bold=True, color=DARK)
-    add_tb(s, Inches(7.0), Inches(1.4), Inches(6), Inches(0.4), "Lowest five", size=18, bold=True, color=MID)
+    add_tb(s, Inches(7.0), Inches(1.4), Inches(6), Inches(0.4), "Lowest five", size=18, bold=True, color=RGBColor(0, 0, 0))
     y = Inches(1.78)
     for (a, b), (c, d) in zip(high, low):
         add_rect(s, Inches(0.5), y, Inches(5.9), Inches(0.82), TEAL)
