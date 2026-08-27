@@ -1,31 +1,43 @@
 #!/usr/bin/env python3
-"""Build PDF from master thesis proposal HTML."""
+"""Build PDF versions of master thesis documents."""
 
 import subprocess
+import sys
 from pathlib import Path
 
 ROOT = Path("/workspace")
-HTML = ROOT / "master_thesis_phishing_proposal.html"
-PDF = ROOT / "master_thesis_phishing_proposal.pdf"
 CHROME = "/usr/bin/google-chrome"
+PROFILE = "/tmp/chrome-master-pdf"
 
 
-def main():
-    if not HTML.exists():
-        raise SystemExit(f"Missing {HTML}")
+def build_pdf(html: Path, pdf: Path) -> None:
     cmd = [
         CHROME,
         "--headless",
         "--disable-gpu",
         "--no-sandbox",
-        f"--user-data-dir=/tmp/chrome-master-pdf",
+        f"--user-data-dir={PROFILE}",
         "--force-device-scale-factor=1",
         "--no-pdf-header-footer",
-        f"--print-to-pdf={PDF}",
-        f"file://{HTML}",
+        f"--print-to-pdf={pdf}",
+        f"file://{html}",
     ]
-    subprocess.run(cmd, check=True, timeout=60)
-    print("Wrote", PDF, "bytes", PDF.stat().st_size)
+    subprocess.run(cmd, check=True, timeout=90)
+
+
+def main():
+    targets = [
+        (ROOT / "master_thesis_phishing_proposal.html", ROOT / "master_thesis_phishing_proposal.pdf"),
+        (ROOT / "master_thesis_draft.html", ROOT / "master_thesis_draft.pdf"),
+    ]
+    if len(sys.argv) > 1:
+        name = sys.argv[1]
+        targets = [(ROOT / f"{name}.html", ROOT / f"{name}.pdf")]
+    for html, pdf in targets:
+        if not html.exists():
+            raise SystemExit(f"Missing {html}")
+        build_pdf(html, pdf)
+        print("Wrote", pdf, "bytes", pdf.stat().st_size)
 
 
 if __name__ == "__main__":
