@@ -137,6 +137,18 @@
       border-left: 0.28rem solid var(--teal);
       font-style: italic;
     }
+    .quote.core {
+      background: #fff8ef;
+      border-left-color: var(--orange);
+      font-size: 1.05rem;
+      font-weight: 600;
+      font-style: normal;
+      color: var(--dark);
+    }
+    .core-thesis {
+      border: 2px solid var(--orange);
+      background: linear-gradient(180deg, #fff 0%, #fffaf3 100%);
+    }
     table {
       width: 100%;
       border-collapse: collapse;
@@ -209,7 +221,7 @@
         Et utviklingsforslag for mastergrad i cybersikkerhet, med hovedfokus på sårbarhetsflaten mellom
         social engineering og menneskelig beslutningstaking - ikke bare tekniske kontroller.
       </p>
-      <p class="meta">Karina Sætersdal Nilssen · utkast oppdatert 27. august 2026 · status: retning valgt</p>
+      <p class="meta">Karina Sætersdal Nilssen · utkast oppdatert 27. august 2026 · versjon 2 · status: retning valgt</p>
     </div>
   </header>
 
@@ -237,10 +249,54 @@
       </div>
     </section>
 
+    <section class="core-thesis">
+      <h2>Kjernehypotese: ensomhet, skepsis og den skjulte sårbarheten</h2>
+      <div class="quote core">
+        I en tid med både økt ensomhet og økt generell skepsis, blir phishing farlig nettopp fordi den ikke ser ut
+        som et fremmed-angrep. Den imiterer det vi fortsatt lengter etter eller frykter å miste: tilhørighet,
+        trygghet, orden, status, hjelp og kontroll.
+      </div>
+      <p>
+        Dette er masteroppgavens sentrale teoretiske spenning. Mange tror at økt digital skepsis automatisk gjør oss
+        tryggere. Men phishing utnytter sjelden det vi er mest skeptiske til - <strong>helt fremmede</strong>.
+        Den utnytter det vi fortsatt er mottakelige for: det som føles <strong>kjent, viktig, hjelpsomt eller presserende</strong>.
+      </p>
+
+      <h3>Paradokset masteroppgaven skal undersøke</h3>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Økt ensomhet og digital avhengighet</h3>
+          <ul>
+            <li>Større behov for tilhørighet og bekreftelse</li>
+            <li>Flere søker kontakt, hjelp og respons digitalt</li>
+            <li>Emosjonelle lurer kan føles mer meningsfulle enn tekniske</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Økt generell skepsis</h3>
+          <ul>
+            <li>Flere har hørt om svindel, phishing og hacking</li>
+            <li>Mer «vær obs på fremmede»-retorikk</li>
+            <li>Mer bevissthet om digitale trusler enn før</li>
+          </ul>
+        </article>
+      </div>
+      <p>
+        Konflikten oppstår når disse to trendene møtes: folk kan være <strong>skeptiske generelt</strong>, men
+        fortsatt sårbare for angrep som imiterer det de emosjonelt eller sosialt trenger. Masteroppgaven bør derfor
+        ikke spørre «hvorfor stoler folk på fremmede?», men heller:
+      </p>
+      <p class="lead">
+        Hvorfor fungerer manipulasjon som fremstår som relevant, trygg eller sosialt meningsfull - selv i en tid
+        der vi er mer skeptiske enn noen gang?
+      </p>
+    </section>
+
     <section>
       <h2>Arbeidstittel</h2>
-      <p><strong>Norsk:</strong> Phishing og menneskelig sårbarhet: en studie av hvorfor brukere fortsatt faller for social engineering</p>
-      <p><strong>Engelsk:</strong> Phishing and Human Vulnerability: Understanding Why Users Remain the Weakest Link in the Attack Chain</p>
+      <p><strong>Norsk (revidert):</strong> Phishing i spenningen mellom ensomhet og skepsis: hvordan social engineering utnytter behovet for tilhørighet, trygghet og kontroll</p>
+      <p><strong>Engelsk (revidert):</strong> Phishing Between Loneliness and Skepticism: How Social Engineering Exploits the Human Need for Belonging, Safety, and Control</p>
+      <p><strong>Tidligere arbeidstittel:</strong> Phishing og menneskelig sårbarhet: en studie av hvorfor brukere fortsatt faller for social engineering</p>
       <p>Endelig tittel kan strammes inn når metode og datagrunnlag er avklart med veileder.</p>
     </section>
 
@@ -253,12 +309,20 @@
       <p>
         Dette tyder på at problemet ikke bare er teknisk, men ligger i <strong>møtet mellom angrep og menneskelig
         adferd</strong>: hvordan vi vurderer avsendere, håndterer autoritet og hastverk, og reagerer under
-        usikkerhet. Masteroppgaven bør derfor undersøke denne sårbarhetsflaten systematisk.
+        usikkerhet. Spesielt relevant er spenningen mellom <strong>ensomhet</strong> og <strong>skepsis</strong>:
+        mennesker kan være mer forsiktige overfor det ukjente, men fortsatt sårbare når et angrep imiterer det de
+        lengter etter eller frykter å miste.
       </p>
       <div class="quote">
         Kjerneidé: Phishing er ikke bare et «IT-problem». Det er et angrep rettet mot hvordan mennesker tenker,
-        føler og handler under press.
+        føler og handler under press - og mot behov som tilhørighet, trygghet, orden, status, hjelp og kontroll.
       </div>
+      <p><strong>Hovedproblemstilling (utkast):</strong></p>
+      <p>
+        Hvordan kan phishing fortsatt være effektivt i en tid preget av både økt ensomhet og økt generell skepsis,
+        og hvilke menneskelige og kontekstuelle faktorer gjør enkeltpersoner særlig sårbare for denne typen
+        social engineering?
+      </p>
     </section>
 
     <section>
@@ -289,26 +353,116 @@
     </section>
 
     <section>
-      <h2>Forskningsspørsmål (utkast)</h2>
+      <h2>Forskningsspørsmål (revidert utkast)</h2>
       <ol>
         <li>
-          <strong>Hvorfor</strong> fungerer phishing fortsatt, til tross for bevisstgjøring og tekniske tiltak?
+          <strong>Hvorfor</strong> fungerer phishing fortsatt i en tid med økt digital skepsis og økt bevissthet om svindel?
         </li>
         <li>
-          <strong>Hvilke menneskelige og kontekstuelle faktorer</strong> (hastverk, autoritet, stress, digital kompetanse,
-          arbeidsbelastning) øker sannsynligheten for at brukere klikker eller oppgir informasjon?
+          <strong>Hvordan påvirker emosjonelle og sosiale behov</strong> - som ensomhet, behov for tilhørighet,
+          frykt for tap og ønske om kontroll - sårbarheten for phishing og social engineering?
         </li>
         <li>
-          <strong>Hvilke tiltak</strong> (opplæring, prosedyrer, tekniske kontroller, rapporteringskultur) oppleves som
-          mest effektive for å redusere risiko i praksis?
+          <strong>Hvilke situasjonsfaktorer</strong> (hastverk, autoritet, stress, skam, informasjonsoverload)
+          gjør at brukere klikker eller oppgir informasjon selv når de «vet bedre»?
         </li>
         <li>
-          <strong>Hvordan endrer AI-forsterket phishing</strong> (mer personlige lurer, bedre språk, impersonering)
-          den menneskelige sårbarhetsflaten?
+          <strong>Hvilke tiltak</strong> (opplæring, prosedyrer, tekniske kontroller, rapporteringskultur)
+          oppleves som mest effektive for å redusere risiko i praksis?
         </li>
       </ol>
       <p>
-        Disse kan strammes til 2-3 hovedspørsmål avhengig av om du velger kvalitativ, kvantitativ eller mixed methods.
+        Disse kan strammes til 2-3 hovedspørsmål. Spørsmål 1 og 2 er nå kjernen i den teoretiske retningen.
+      </p>
+    </section>
+
+    <section>
+      <h2>Hva phishing imiterer - og hvorfor det treffer</h2>
+      <p>Masteroppgaven bør analysere phishing som <strong>imitasjon av legitime menneskelige og institusjonelle behov</strong>, ikke bare som teknisk svindel.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Behov / frykt</th>
+            <th>Eksempel i phishing</th>
+            <th>Hvorfor det kan fungere</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tilhørighet</td>
+            <td>«Noen har prøvd å kontakte deg», kollega-impersonering, romance scams</td>
+            <td>Skaper følelse av sosial relevans og nærhet</td>
+          </tr>
+          <tr>
+            <td>Trygghet</td>
+            <td>«Din konto er kompromittert - verifiser nå»</td>
+            <td>Utnytter frykt og ønske om å beskytte seg</td>
+          </tr>
+          <tr>
+            <td>Orden / kontroll</td>
+            <td>Skatteetaten, bank, leverandør, «ubetalt faktura»</td>
+            <td>Appellerer til ønske om å ordne opp raskt</td>
+          </tr>
+          <tr>
+            <td>Status / identitet</td>
+            <td>Jobbtilbud, eksklusiv tilgang, «du er valgt ut»</td>
+            <td>Appellerer til selvbilde og anerkjennelse</td>
+          </tr>
+          <tr>
+            <td>Hjelp</td>
+            <td>IT-support, «klikk her så fikser vi det»</td>
+            <td>Utnytter hjelpsomhet og teknisk usikkerhet</td>
+          </tr>
+          <tr>
+            <td>Kontroll over konsekvens</td>
+            <td>Hastverk, trusler, tidsfrister</td>
+            <td>Reduserer tid til kritisk vurdering</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Sårbarhetsmarkører - ikke «svakhetstrekk»</h2>
+      <p>
+        Masteroppgaven bør unngå å frame dette som at enkelte mennesker er «dumme» eller har dårlige egenskaper.
+        Bedre begrep: <strong>sårbarhetsmarkører</strong> - forhold som øker sannsynligheten for feilbeslutning
+        under manipulasjon.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Eksempler</th>
+            <th>Viktig nyansering</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Emosjonelle faktorer</td>
+            <td>Ensomhet, stress, frykt, skam, FOMO</td>
+            <td>Øker mottakelighet for lurer som føles meningsfulle</td>
+          </tr>
+          <tr>
+            <td>Kognitive faktorer</td>
+            <td>Multitasking, hastverk, informasjonsoverload</td>
+            <td>Reduserer evnen til å stoppe seg i øyeblikket</td>
+          </tr>
+          <tr>
+            <td>Sosiale faktorer</td>
+            <td>Autoritetsorientering, hjelpsomhet, konfliktskyhet</td>
+            <td>Ofte positive egenskaper i vanlig liv, utnyttet i angrep</td>
+          </tr>
+          <tr>
+            <td>Systemfaktorer</td>
+            <td>Dårlige rutiner, høyt tempo, vanskelig verifisering</td>
+            <td>Gjør riktig handling vanskelig selv for bevisste brukere</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="lead">
+        Ensomhet er en sentral, men ikke eneste risikofaktor. Masteroppgaven bør undersøke den i sammenheng med
+        stress, tillit, autoritet og digital kompetanse.
       </p>
     </section>
 
@@ -341,6 +495,14 @@
           <tr>
             <td>Human-as-the-weakest-link (kritisk)</td>
             <td>Brukes som utgangspunkt, men bør utfordres: kanskje systemene er designet for å feile menneskelig.</td>
+          </tr>
+          <tr>
+            <td>Ensomhet / sosial tilknytning</td>
+            <td>Forklarer hvorfor manipulasjon som fremstår som nær, hjelpsom eller sosialt relevant kan omgå generell skepsis.</td>
+          </tr>
+          <tr>
+            <td>Trust paradox / skepticism gap</td>
+            <td>Folk kan være skeptiske til fremmede, men sårbare for autoritet, hastverk og emosjonelt plausibel kontakt.</td>
           </tr>
         </tbody>
       </table>
@@ -383,14 +545,17 @@
         <li>Problemet er ofte et <strong>menneske-system-problem</strong>, ikke bare brukerfeil.</li>
         <li>AI gjør lurer mer troverdige, men endrer ikke grunnleggende psykologi - den forsterker den.</li>
         <li>Awareness alene er sjelden nok; kultur, design og prosess må støtte opp.</li>
+        <li>Phishing utnytter ofte gode menneskelige trekk - ikke bare «mangler» hos individet.</li>
         <li>Det er forskjell på «vite om phishing» og «klare å stoppe seg selv i øyeblikket».</li>
+        <li>Økt ensomhet og økt skepsis kan sameksistere - og skape en ny type sårbarhet.</li>
+        <li>Phishing er farlig fordi den imiterer tilhørighet, trygghet, orden, status, hjelp og kontroll.</li>
       </ul>
     </section>
 
     <section>
       <h2>Avgrensing</h2>
       <ul>
-        <li><strong>Inkludere:</strong> e-post, SMS/smishing, vishing i den grad det henger sammen med phishing-logikk.</li>
+        <li><strong>Inkludere:</strong> e-post, SMS/smishing, vishing, emosjonell manipulasjon og ensomhet som risikofaktor der det er metodisk forsvarlig.</li>
         <li><strong>Kan nevnes, men ikke dominere:</strong> ransomware, session hijacking, GDPR/cookies.</li>
         <li><strong>Ekskludere som hovedfokus:</strong> dyp teknisk malware-analyse, pentesting, kryptografi.</li>
         <li><strong>Geografi:</strong> Norge / nordisk kontekst, med internasjonal litteratur som rammeverk.</li>
@@ -402,10 +567,11 @@
       <ol>
         <li>Innledning og problemstilling</li>
         <li>Bakgrunn: phishing som inngangsport i moderne trusselbilde</li>
-        <li>Teoretisk rammeverk: menneskelig sårbarhet og social engineering</li>
+        <li>Teoretisk rammeverk: ensomhet, skepsis og menneskelig sårbarhet</li>
+        <li>Phishing som imitasjon av tilhørighet, trygghet, orden, status, hjelp og kontroll</li>
         <li>Metode</li>
         <li>Funn</li>
-        <li>Diskusjon: hvorfor mennesket fortsatt er sårbart</li>
+        <li>Diskusjon: hvorfor mennesket fortsatt er sårbart i en mer skeptisk tid</li>
         <li>Konklusjon og anbefalinger for praksis</li>
       </ol>
     </section>
@@ -413,6 +579,7 @@
     <section>
       <h2>Startlitteratur</h2>
       <ul>
+        <li>Cacioppo &amp; Patrick - ensomhet og sosial tilknytning som bakgrunn for emosjonell sårbarhet</li>
         <li>NSM - varsler og veiledning om phishing og social engineering</li>
         <li>ENISA Threat Landscape (sosial engineering og menneskelig risiko)</li>
         <li>CISA - phishing og rapporteringsråd</li>
@@ -427,7 +594,7 @@
       <ol>
         <li>Book veiledning og ta med dette dokumentet som utgangspunkt.</li>
         <li>Velg om du vil gå for intervjuer, survey eller case - helst innen 2-3 uker.</li>
-        <li>Skriv 1 side «problem statement» på engelsk til veileder.</li>
+        <li>Skriv 1 side «problem statement» på engelsk til veileder - bruk kjernehypotesen som åpning.</li>
         <li>Lag en enkel litteraturliste med 10-15 kilder.</li>
         <li>Bestem population: studenter, ansatte, offentlig sektor eller generell befolkning.</li>
         <li>Avklar etikk: behov for NSD/sikker behandling hvis sensitive erfaringer/intervjuer.</li>
