@@ -59,3 +59,5 @@ Regler:
 - Alle poster har taggen `master-thesis`
 - Norske kilder har i tillegg `norwegian-literature`
 - PDF-lenke: https://raw.githubusercontent.com/kasa031/Bacheloroppgave/cursor/master-phishing-forslag-d899/master_thesis_zotero.bib
+- Alternativ (commit): https://raw.githubusercontent.com/kasa031/Bacheloroppgave/1ca76f2/master_thesis_zotero.bib
+- GitHub visning: https://github.com/kasa031/Bacheloroppgave/blob/cursor/master-phishing-forslag-d899/master_thesis_zotero.bib
