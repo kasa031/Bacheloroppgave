@@ -201,12 +201,14 @@ parts.append(slide(header("Part 2  ·  Table 5", "Four match, two consent tests 
 for site in SITE_SLIDES:
     parts.append(slide(header(site["kicker"], site["title"]) + site_slide_html(site), site["n"]))
 
-parts.append(slide(header("Close", "What the report shows") + """
+parts.append(slide(header("Close", "What the report shows") + f"""
 <div class="summary-box close-summary">
-  <p>We measured how much 18 sites contact others on load, and we checked whether five of them have a valid GDPR basis for one specific purpose.</p>
-  <p>Many sites reach out to many others without setting cookies.</p>
-  <p>Four of five ICO purposes match the notice.</p>
-  <p>In two places where the site claims consent, the ICO is not satisfied with how consent is formulated.</p>
+{bullets([
+    "We measured how much 18 sites contact others on load, and we checked whether five of them have a valid GDPR basis for one specific purpose.",
+    "Many sites reach out to many others without setting cookies.",
+    "Four of five ICO purposes match the notice.",
+    "In two places where the site claims consent, the ICO is not satisfied with how consent is formulated.",
+])}
 </div>
 """, 13))
 
@@ -267,8 +269,10 @@ ul.bul li::before { content: "•"; position: absolute; left: 0; color: var(--da
 .summary-box p:last-child { margin-bottom: 0; }
 .summary-box p.lead { font-weight: 700; font-size: 20px; }
 .summary-box p.lead.accent { color: var(--orange); }
-.summary-box.close-summary p { color: var(--ink); font-weight: 700; }
-.summary-box.close-summary p.accent { color: var(--ink); }
+.summary-box.close-summary ul.bul { margin: 0; }
+.summary-box.close-summary ul.bul li { font-size: 22px; font-weight: 700; color: var(--ink); line-height: 1.35; margin: 0 0 0.22in; padding-left: 0.32in; }
+.summary-box.close-summary ul.bul li::before { color: var(--dark); font-weight: 700; }
+.summary-box.close-summary ul.bul li:last-child { margin-bottom: 0; }
 .summary-box.ico-summary p:not(.lead) { font-size: 18px; color: var(--dark); }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0.35in; margin: 0.2in 0.5in 0; }
 .two-col h3 { margin: 0 0 0.1in; font-size: 18px; }

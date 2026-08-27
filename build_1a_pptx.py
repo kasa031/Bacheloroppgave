@@ -441,7 +441,7 @@ def main():
         "In two places where the site claims consent, the ICO is not satisfied with how consent is formulated.",
     ]
     for line in summary:
-        p_run(tf, line, size=22, bold=True, color=INK, space_after=16 if line != summary[-1] else 0)
+        p_run(tf, "•  " + line, size=22, bold=True, color=INK, space_after=16 if line != summary[-1] else 0)
     footer(s, 13, total)
     notes(s, "Part 1 is contact. Part 2 is one purpose and one basis at a time.")
 
