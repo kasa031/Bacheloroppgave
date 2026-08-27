@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masteroppgave-forslag: Phishing og menneskelig sårbarhet</title>
+  <style>
+    :root {
+      --dark: #224248;
+      --mid: #325E6A;
+      --teal: #44A1A4;
+      --orange: #FF9A00;
+      --ink: #1A1A1A;
+      --paper: #FFFEFB;
+      --light: #E8F4F4;
+      --muted: #4A5568;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Calibri, "Segoe UI", sans-serif;
+      background: #eef3f4;
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    .hero {
+      background: var(--dark);
+      color: #fff;
+      padding: 2.2rem 1.5rem 1.8rem;
+      border-bottom: 0.35rem solid var(--orange);
+    }
+    .hero-inner, .wrap { max-width: 920px; margin: 0 auto; }
+    .kicker {
+      color: var(--teal);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin: 0 0 0.4rem;
+    }
+    h1 {
+      margin: 0 0 0.6rem;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      line-height: 1.2;
+    }
+    .subtitle {
+      margin: 0;
+      font-size: 1.05rem;
+      color: #d7ecec;
+      max-width: 52rem;
+    }
+    .meta {
+      margin-top: 1rem;
+      font-size: 0.92rem;
+      color: #b8d4d6;
+    }
+    .wrap { padding: 1.5rem; }
+    section {
+      background: var(--paper);
+      border: 1px solid rgba(34,66,72,.12);
+      border-radius: 0.5rem;
+      padding: 1.2rem 1.25rem;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1.25rem;
+      color: var(--dark);
+      border-left: 0.28rem solid var(--orange);
+      padding-left: 0.65rem;
+    }
+    h3 {
+      margin: 1rem 0 0.45rem;
+      font-size: 1rem;
+      color: var(--mid);
+    }
+    p, li { font-size: 1rem; }
+    ul, ol { margin: 0.4rem 0 0.8rem; padding-left: 1.25rem; }
+    li { margin: 0.35rem 0; }
+    .lead {
+      font-size: 1.06rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin: 0.75rem 0 0.2rem;
+    }
+    .pill {
+      background: var(--light);
+      color: var(--dark);
+      border: 1px solid rgba(68,161,164,.35);
+      border-radius: 999px;
+      padding: 0.25rem 0.7rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+    }
+    .card {
+      background: var(--light);
+      border-radius: 0.45rem;
+      padding: 0.85rem 0.95rem;
+      border: 1px solid rgba(34,66,72,.08);
+    }
+    .card h3 { margin-top: 0; }
+    .card.old {
+      opacity: 0.92;
+      background: #f7f9fa;
+    }
+    .card.chosen {
+      border: 2px solid var(--teal);
+      background: #f2fbfc;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #fff;
+      background: var(--teal);
+      border-radius: 0.25rem;
+      padding: 0.12rem 0.45rem;
+      margin-bottom: 0.45rem;
+    }
+    .tag.orange { background: var(--orange); color: var(--dark); }
+    .quote {
+      margin: 0.8rem 0;
+      padding: 0.85rem 1rem;
+      background: var(--light);
+      border-left: 0.28rem solid var(--teal);
+      font-style: italic;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.94rem;
+      margin-top: 0.5rem;
+    }
+    th, td {
+      border: 1px solid rgba(34,66,72,.15);
+      padding: 0.55rem 0.6rem;
+      vertical-align: top;
+      text-align: left;
+    }
+    th {
+      background: var(--dark);
+      color: #fff;
+      font-weight: 700;
+    }
+    tr:nth-child(even) td { background: #fafcfd; }
+    .next {
+      background: linear-gradient(180deg, #fff 0%, #f7fcfc 100%);
+      border: 2px solid var(--teal);
+    }
+    .footer {
+      max-width: 920px;
+      margin: 0 auto 2rem;
+      padding: 0 1.5rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    @media (max-width: 760px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    @media print {
+      body { background: #fff; }
+      section { break-inside: avoid; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="kicker">Masteroppgave · arbeidsforslag</p>
+      <h1>Phishing og menneskelig sårbarhet:<br>hvorfor teknikken feiler når mennesket blir inngangsporten</h1>
+      <p class="subtitle">
+        Et utviklingsforslag for mastergrad i cybersikkerhet, med hovedfokus på sårbarhetsflaten mellom
+        social engineering og menneskelig beslutningstaking - ikke bare tekniske kontroller.
+      </p>
+      <p class="meta">Karina Sætersdal Nilssen · utkast oppdatert 27. august 2026 · status: retning valgt</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>Hvorfor denne retningen</h2>
+      <p class="lead">Magefølelsen peker mot phishing - og det henger sammen med det du allerede har gravd i.</p>
+      <p>
+        I samtaler, labber og oppgavearbeid har du sett det samme mønsteret: mange alvorlige hendelser starter
+        ikke med «film-hacking», men med et menneske som klikker, stoler, skynder seg eller misforstår.
+        Tekniske tiltak finnes, men angripere går fortsatt ofte via <strong>tillit, hastverk og kognitiv overload</strong>.
+      </p>
+      <p>
+        Det er nettopp <strong>sårbarhetsaspektet mellom phishing og mennesket</strong> du vil fordype deg i:
+        ikke bare hva phishing er, men <em>hvorfor</em> det fortsatt fungerer, <em>hvem</em> som er mest sårbare,
+        og <em>hva</em> som faktisk reduserer risiko i praksis.
+      </p>
+      <div class="pill-row">
+        <span class="pill">Human factors</span>
+        <span class="pill">Social engineering</span>
+        <span class="pill">Phishing</span>
+        <span class="pill">Beslutning under press</span>
+        <span class="pill">Awareness vs. atferd</span>
+        <span class="pill">AI-forsterket svindel</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Arbeidstittel</h2>
+      <p><strong>Norsk:</strong> Phishing og menneskelig sårbarhet: en studie av hvorfor brukere fortsatt faller for social engineering</p>
+      <p><strong>Engelsk:</strong> Phishing and Human Vulnerability: Understanding Why Users Remain the Weakest Link in the Attack Chain</p>
+      <p>Endelig tittel kan strammes inn når metode og datagrunnlag er avklart med veileder.</p>
+    </section>
+
+    <section>
+      <h2>Problemstilling</h2>
+      <p class="lead">
+        Organisasjoner investerer i sikkerhetsteknologi, opplæring og policy - likevel er phishing fortsatt en av
+        de vanligste og mest effektive inngangsportene til større angrep.
+      </p>
+      <p>
+        Dette tyder på at problemet ikke bare er teknisk, men ligger i <strong>møtet mellom angrep og menneskelig
+        adferd</strong>: hvordan vi vurderer avsendere, håndterer autoritet og hastverk, og reagerer under
+        usikkerhet. Masteroppgaven bør derfor undersøke denne sårbarhetsflaten systematisk.
+      </p>
+      <div class="quote">
+        Kjerneidé: Phishing er ikke bare et «IT-problem». Det er et angrep rettet mot hvordan mennesker tenker,
+        føler og handler under press.
+      </div>
+    </section>
+
+    <section>
+      <h2>Tidligere retninger vi har luftet</h2>
+      <p>Du har vurdert flere temaer. Phishing-retningen binder flere av dem sammen uten å bli for bred.</p>
+      <div class="grid-2">
+        <article class="card chosen">
+          <span class="tag">Valgt hovedretning</span>
+          <h3>Phishing og menneskelig sårbarhet</h3>
+          <p>Fokus på hvorfor brukere klikker, stoler og handler feil - og hva som faktisk hjelper.</p>
+        </article>
+        <article class="card old">
+          <span class="tag orange">Støtteperspektiv</span>
+          <h3>Angrepskjede etter phishing</h3>
+          <p>Session hijacking, kontoovertakelse, datatyveri og ransomware som mulig konsekvenskapittel.</p>
+        </article>
+        <article class="card old">
+          <span class="tag orange">Støtteperspektiv</span>
+          <h3>Privacy / cookies / tredjeparter</h3>
+          <p>Relevant som bakgrunn for tillit, sporingsmekanismer og brukerforståelse - ikke hovedfokus.</p>
+        </article>
+        <article class="card old">
+          <span class="tag orange">Avvist som hovedfokus</span>
+          <h3>Ransomware alene</h3>
+          <p>Viktig, men for ofte «sent i kjeden». Phishing gir et bedre utgangspunkt for human-factor-analyse.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Forskningsspørsmål (utkast)</h2>
+      <ol>
+        <li>
+          <strong>Hvorfor</strong> fungerer phishing fortsatt, til tross for bevisstgjøring og tekniske tiltak?
+        </li>
+        <li>
+          <strong>Hvilke menneskelige og kontekstuelle faktorer</strong> (hastverk, autoritet, stress, digital kompetanse,
+          arbeidsbelastning) øker sannsynligheten for at brukere klikker eller oppgir informasjon?
+        </li>
+        <li>
+          <strong>Hvilke tiltak</strong> (opplæring, prosedyrer, tekniske kontroller, rapporteringskultur) oppleves som
+          mest effektive for å redusere risiko i praksis?
+        </li>
+        <li>
+          <strong>Hvordan endrer AI-forsterket phishing</strong> (mer personlige lurer, bedre språk, impersonering)
+          den menneskelige sårbarhetsflaten?
+        </li>
+      </ol>
+      <p>
+        Disse kan strammes til 2-3 hovedspørsmål avhengig av om du velger kvalitativ, kvantitativ eller mixed methods.
+      </p>
+    </section>
+
+    <section>
+      <h2>Teoretisk ramme (forslag)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Teori / perspektiv</th>
+            <th>Hvorfor det er relevant</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Human factors / human-computer interaction</td>
+            <td>Forklarer hvordan design, kognitiv belastning og brukeratferd skaper sårbarhet.</td>
+          </tr>
+          <tr>
+            <td>Protection Motivation Theory</td>
+            <td>Ser på trusselvurdering, opplevd alvor og opplevd egen effekt - hvorfor folk likevel handler risikabelt.</td>
+          </tr>
+          <tr>
+            <td>Social engineering / persuasion</td>
+            <td>Autoritet, hastverk, frykt, gjengjeldelse og likhet - klassiske psykologiske pressmidler i phishing.</td>
+          </tr>
+          <tr>
+            <td>Security culture og organisatorisk læring</td>
+            <td>Om folk tør å spørre, rapportere og stoppe opp uten å føle seg dumme.</td>
+          </tr>
+          <tr>
+            <td>Human-as-the-weakest-link (kritisk)</td>
+            <td>Brukes som utgangspunkt, men bør utfordres: kanskje systemene er designet for å feile menneskelig.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Mulig metode</h2>
+      <p class="lead">Du trenger ikke låse metode nå, men disse tre stiene er realistiske for master:</p>
+
+      <h3>Alternativ A: Kvalitativ (sterk for «hvorfor»)</h3>
+      <ul>
+        <li>Intervjuer med ansatte/studenter/IT-ansvarlige</li>
+        <li>Tema: nære møter med phishing, hva de så, hva de tenkte, hva de gjorde</li>
+        <li>Godt for magefølelses-sporet ditt: menneskelig beslutning og skam/tillit</li>
+      </ul>
+
+      <h3>Alternativ B: Mixed methods (ofte best for master)</h3>
+      <ul>
+        <li>Kort spørreundersøkelse om erfaring, tillit og sikkerhetsatferd</li>
+        <li>Deretter dybdeintervjuer med utvalgte respondenter</li>
+        <li>Eventuelt simulert phishing-test i kontrollert miljø (krever etikk/godkjenning)</li>
+      </ul>
+
+      <h3>Alternativ C: Case-studie</h3>
+      <ul>
+        <li>Én organisasjon eller ett domene (f.eks. høyere utdanning / offentlig sektor)</li>
+        <li>Analyse av policy, awareness-program, hendelser og brukeropplevelse</li>
+      </ul>
+
+      <p>
+        <strong>Anbefaling nå:</strong> start med <em>Alternativ B</em> som arbeidshypotese. Den gir både bredde og dybde,
+        og lar deg snakke om både menneskelig svakhet og hva som faktisk hjelper.
+      </p>
+    </section>
+
+    <section>
+      <h2>Hva du kan hevde i oppgaven (tyngde uten overdrivelse)</h2>
+      <ul>
+        <li>Phishing er fortsatt en av de viktigste inngangsportene til større angrep.</li>
+        <li>Problemet er ofte et <strong>menneske-system-problem</strong>, ikke bare brukerfeil.</li>
+        <li>AI gjør lurer mer troverdige, men endrer ikke grunnleggende psykologi - den forsterker den.</li>
+        <li>Awareness alene er sjelden nok; kultur, design og prosess må støtte opp.</li>
+        <li>Det er forskjell på «vite om phishing» og «klare å stoppe seg selv i øyeblikket».</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Avgrensing</h2>
+      <ul>
+        <li><strong>Inkludere:</strong> e-post, SMS/smishing, vishing i den grad det henger sammen med phishing-logikk.</li>
+        <li><strong>Kan nevnes, men ikke dominere:</strong> ransomware, session hijacking, GDPR/cookies.</li>
+        <li><strong>Ekskludere som hovedfokus:</strong> dyp teknisk malware-analyse, pentesting, kryptografi.</li>
+        <li><strong>Geografi:</strong> Norge / nordisk kontekst, med internasjonal litteratur som rammeverk.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Foreslått kapittelstruktur</h2>
+      <ol>
+        <li>Innledning og problemstilling</li>
+        <li>Bakgrunn: phishing som inngangsport i moderne trusselbilde</li>
+        <li>Teoretisk rammeverk: menneskelig sårbarhet og social engineering</li>
+        <li>Metode</li>
+        <li>Funn</li>
+        <li>Diskusjon: hvorfor mennesket fortsatt er sårbart</li>
+        <li>Konklusjon og anbefalinger for praksis</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Startlitteratur</h2>
+      <ul>
+        <li>NSM - varsler og veiledning om phishing og social engineering</li>
+        <li>ENISA Threat Landscape (sosial engineering og menneskelig risiko)</li>
+        <li>CISA - phishing og rapporteringsråd</li>
+        <li>Hadnagy, C. - <em>Social Engineering: The Science of Human Hacking</em></li>
+        <li>Conteh &amp; Schmick - Protection Motivation Theory i cybersikkerhet</li>
+        <li>Recent rapporter om AI-assistert phishing (Halcyon, Trend Micro, Microsoft Digital Defense)</li>
+      </ul>
+    </section>
+
+    <section class="next">
+      <h2>Neste steg for deg</h2>
+      <ol>
+        <li>Book veiledning og ta med dette dokumentet som utgangspunkt.</li>
+        <li>Velg om du vil gå for intervjuer, survey eller case - helst innen 2-3 uker.</li>
+        <li>Skriv 1 side «problem statement» på engelsk til veileder.</li>
+        <li>Lag en enkel litteraturliste med 10-15 kilder.</li>
+        <li>Bestem population: studenter, ansatte, offentlig sektor eller generell befolkning.</li>
+        <li>Avklar etikk: behov for NSD/sikker behandling hvis sensitive erfaringer/intervjuer.</li>
+      </ol>
+    </section>
+  </main>
+
+  <p class="footer">
+    Internt arbeidsdokument for masterplanlegging. Kan videreutvikles til formelt prospekt etter veiledermøte.
+  </p>
+</body>
+</html>
