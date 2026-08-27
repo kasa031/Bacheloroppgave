@@ -92,7 +92,14 @@
       color: var(--mid);
       margin-bottom: 0.45rem;
     }
-    .footer { padding: 0 1.5rem 1.5rem; color: var(--muted); font-size: 0.88rem; }
+    .toc ol { list-style: none; padding-left: 0; }
+    .toc li { padding: 0.2rem 0; border-bottom: 1px dotted rgba(34,66,72,.15); }
+    .toc .indent { padding-left: 1.2rem; font-size: 10pt; }
+    .title-page { text-align: center; padding: 2rem 1rem; }
+    .title-page h1 { border: none; padding: 0; font-size: 1.5rem; color: var(--dark); }
+    .title-page .program { margin-top: 1.5rem; color: var(--mid); }
+    .placeholder { background: #fffdf5; border: 1px dashed var(--orange); padding: 0.75rem; font-size: 10pt; color: var(--muted); }
+    pre.diagram { background: #f8fafa; border: 1px solid rgba(34,66,72,.12); padding: 0.75rem; font-size: 9pt; overflow-x: auto; white-space: pre-wrap; }
     @page { size: A4; margin: 18mm 16mm 20mm; }
     @media print {
       body { background: #fff; }
@@ -106,14 +113,43 @@
 <body>
   <header class="hero">
     <div class="hero-inner">
-      <p class="kicker">Master's Thesis · Working Draft v0.5</p>
+      <p class="kicker">Master's Thesis · Main Submission Draft v0.6</p>
       <h1>Phishing Between Loneliness and Skepticism:<br>How Social Engineering Exploits the Need for Belonging, Safety, and Control</h1>
-      <p class="subtitle">Working thesis draft for MSc Cybersecurity. Author: Karina Sætersdal Nilssen. Institution: OsloMet.</p>
-      <p class="meta">Draft 27 August 2026 · Chapters 1-6 + methodology + appendices A-E · Not final submission</p>
+      <p class="subtitle">MSc Cybersecurity · OsloMet - Oslo Metropolitan University<br>Author: Karina Sætersdal Nilssen · Supervisor: [TBC]</p>
+      <p class="meta">Draft 27 August 2026 · Prospectus + literature + methodology · Empirical chapters pending data collection</p>
     </div>
   </header>
 
   <main class="wrap">
+    <section class="chapter title-page">
+      <p class="program">OsloMet - Oslo Metropolitan University<br>Faculty of Technology, Art and Design<br>Master's Programme in Cybersecurity</p>
+      <h1>Phishing Between Loneliness and Skepticism:<br>How Social Engineering Exploits the Need for Belonging, Safety, and Control</h1>
+      <p><strong>Author:</strong> Karina Sætersdal Nilssen<br>
+      <strong>Supervisor:</strong> [To be confirmed]<br>
+      <strong>Submission type:</strong> Thesis prospectus and methodology (pre-empirical)<br>
+      <strong>Date:</strong> August 2026</p>
+      <p class="placeholder">Final empirical results (Chapters 7-8) will be completed after NSD approval and data collection (2027).</p>
+    </section>
+
+    <section class="chapter toc">
+      <h2>Table of Contents</h2>
+      <ol>
+        <li><strong>Abstract</strong></li>
+        <li><strong>1. Introduction</strong>
+          <div class="indent">1.1 Background and relevance · 1.2 Research problem · 1.3 Scope · 1.4 Contribution · 1.5 Thesis structure</div>
+        </li>
+        <li><strong>2. Background: Phishing as an Entry Point</strong></li>
+        <li><strong>3. Literature Review</strong></li>
+        <li><strong>4. Theoretical Framework and Hypotheses</strong></li>
+        <li><strong>5. Methodology</strong></li>
+        <li><strong>6. Anticipated Results and Analysis Plan</strong> <em>(placeholder)</em></li>
+        <li><strong>7. Expected Discussion</strong></li>
+        <li><strong>8. Conclusion and Recommendations</strong></li>
+        <li><strong>References</strong></li>
+        <li><strong>Appendices A-G</strong></li>
+      </ol>
+    </section>
+
     <section class="chapter">
       <span class="status">Abstract (draft)</span>
       <p>
@@ -201,6 +237,16 @@
         <li>empirical insight into loneliness, skepticism, and decision-making under manipulation;</li>
         <li>practical recommendations for awareness, education, and security culture in universities and early-career workplaces.</li>
       </ul>
+
+      <h3>1.5 Thesis structure</h3>
+      <p>
+        Chapters 2-3 establish the threat landscape and synthesise prior research on phishing, loneliness, and
+        skepticism. Chapter 4 presents the theoretical framework and testable hypotheses. Chapter 5 details the
+        mixed-methods design, instruments, ethics, and analysis plan. Chapters 6-8 will be completed after empirical
+        work: anticipated results (6), discussion (7), and conclusion with recommendations for OsloMet and higher
+        education (8). Appendices contain the interview guide, survey draft, scenario vignettes, ethics application
+        outline, timeline, and consent materials.
+      </p>
     </section>
 
     <section class="chapter">
@@ -364,6 +410,12 @@
         The thesis proposes a combined model: <strong>phishing susceptibility = emotional relevance + situational
         pressure + low opportunity for verification - perceived social reward</strong>.
       </p>
+      <p>
+        Norwegian national studies complement international findings: Tjostheim and Waterworth (2020, 2022) demonstrate
+        that cognitive reflection and data-sharing willingness predict phishing compliance in representative Norwegian
+        samples. This thesis extends that line by asking whether <em>emotional</em> and <em>social</em> variables -
+        especially loneliness and the need for belonging - add explanatory power beyond cognitive style alone.
+      </p>
     </section>
 
     <section class="chapter">
@@ -398,6 +450,22 @@
       <p>
         Age will be treated as a control/exploratory variable because prior research suggests loneliness may operate
         differently across cohorts (Wen et al., 2024).
+      </p>
+
+      <h3>4.4 Conceptual model</h3>
+      <pre class="diagram">LONELINESS / SOCIAL NEED ──┐
+GENERAL SKEPTICISM ────────┼──► EMOTIONAL RELEVANCE OF LURE
+SITUATIONAL PRESSURE ──────┤         │
+(urgency, stress, authority)│         ▼
+                           └──► PHISHING SUSCEPTIBILITY ◄── VERIFICATION HABITS
+                                         │                    SECURITY CULTURE
+                                         ▼                    (protective)
+                              INTENDED UNSAFE BEHAVIOUR
+                              (click, reply, disclose)</pre>
+      <p>
+        The model predicts that skepticism reduces susceptibility primarily for stranger-framed lures, while loneliness
+        and situational pressure increase susceptibility for belonging- and authority-framed lures. Protective factors
+        operate both directly and by increasing opportunity for verification before action.
       </p>
     </section>
 
@@ -486,8 +554,43 @@
     </section>
 
     <section class="chapter">
-      <h2>6. Expected Discussion and Conclusion</h2>
-      <h3>6.1 Expected findings</h3>
+      <h2>6. Anticipated Results and Analysis Plan</h2>
+      <p class="placeholder">This chapter will be completed after data collection (2027). Below is the planned structure and analysis approach.</p>
+
+      <h3>6.1 Descriptive findings (planned)</h3>
+      <ul>
+        <li>Sample profile: age, role, study field, digital confidence, loneliness distribution.</li>
+        <li>Self-reported phishing exposure: frequency, channels (email, SMS, social media, phone).</li>
+        <li>Mean susceptibility scores by scenario type (S1-S6).</li>
+        <li>Reported awareness vs. reported safe behaviour gap.</li>
+      </ul>
+
+      <h3>6.2 Hypothesis testing (planned)</h3>
+      <table>
+        <thead>
+          <tr><th>Hypothesis</th><th>Analysis</th><th>Expected direction</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>H1: Loneliness → susceptibility</td><td>Correlation / regression; compare S2 vs S1</td><td>Positive for social lures</td></tr>
+          <tr><td>H2: Skepticism alone insufficient</td><td>Interaction: skepticism × lure type</td><td>Skepticism weaker for institutional lures</td></tr>
+          <tr><td>H3: Situational pressure mediates</td><td>Mediation analysis (loneliness → stress → susceptibility)</td><td>Partial mediation</td></tr>
+          <tr><td>H4: Protective factors reduce risk</td><td>Regression with verification habits, reporting culture</td><td>Negative association</td></tr>
+        </tbody>
+      </table>
+
+      <h3>6.3 Qualitative themes (planned)</h3>
+      <p>Interview analysis will use reflexive thematic analysis (Braun &amp; Clarke, 2006) to identify themes such as:</p>
+      <ul>
+        <li><strong>Knowing but not stopping</strong> - awareness without behavioural control under pressure.</li>
+        <li><strong>Social credibility</strong> - when messages feel like connection rather than threat.</li>
+        <li><strong>Shame and silence</strong> - barriers to reporting near misses.</li>
+        <li><strong>What would help</strong> - verification routines, peer support, non-punitive culture.</li>
+      </ul>
+    </section>
+
+    <section class="chapter">
+      <h2>7. Expected Discussion</h2>
+      <h3>7.1 Expected findings</h3>
       <p>The thesis may find that:</p>
       <ul>
         <li>participants report high awareness but uneven safe behaviour;</li>
@@ -496,7 +599,14 @@
         <li>verification culture and non-shaming reporting matter as much as training content.</li>
       </ul>
 
-      <h3>6.2 Practical implications</h3>
+      <h3>7.2 Implications for theory</h3>
+      <p>
+        If supported, the findings would suggest that Protection Motivation Theory alone is insufficient for phishing
+        because many lures are not initially appraised as threats. A combined model integrating emotional relevance,
+        loneliness, and security culture may better explain why skeptical individuals still fall for credible impersonation.
+      </p>
+
+      <h3>7.3 Practical implications</h3>
       <ul>
         <li>Awareness campaigns should address emotional manipulation, not only fake links.</li>
         <li>Universities should normalise "pause and verify" without shame.</li>
@@ -504,12 +614,39 @@
         <li>Design and process should make the safe action easier than the risky one.</li>
       </ul>
 
-      <h3>6.3 Conclusion direction</h3>
+      <h3>7.4 Limitations</h3>
+      <ul>
+        <li>Scenario-based susceptibility measures intended behaviour, not actual clicks.</li>
+        <li>Convenience sample may limit generalisation beyond Norwegian HE.</li>
+        <li>Cross-sectional design limits causal claims.</li>
+        <li>Self-report of loneliness and victimisation subject to social desirability.</li>
+      </ul>
+    </section>
+
+    <section class="chapter">
+      <h2>8. Conclusion and Recommendations</h2>
+      <h3>8.1 Conclusion direction</h3>
       <p>
         Phishing is best understood as an attack on human meaning, not merely human ignorance. In a more skeptical
         yet often lonelier digital environment, defenders must protect not only systems but the moments when people
         seek connection, certainty, and control.
       </p>
+
+      <h3>8.2 Recommendations for OsloMet and higher education</h3>
+      <ol>
+        <li><strong>Integrate emotional manipulation</strong> into security awareness - not only technical indicators.</li>
+        <li><strong>Normalise near-miss reporting</strong> without academic or disciplinary penalty.</li>
+        <li><strong>Link student welfare and security</strong> - loneliness programmes (e.g. Lunch Friend) and IT security are related.</li>
+        <li><strong>Scenario-based training</strong> using HE-relevant vignettes (OsloMet IT, exam deadlines, peer messages).</li>
+        <li><strong>Verify-by-default routines</strong> - separate channel verification for unexpected requests.</li>
+      </ol>
+
+      <h3>8.3 Future research</h3>
+      <ul>
+        <li>Longitudinal study of loneliness and phishing incidents over an academic year.</li>
+        <li>Intervention study: emotional-aware training vs. standard awareness.</li>
+        <li>Comparison across Nordic HE institutions.</li>
+      </ul>
     </section>
 
     <section class="chapter">
@@ -701,22 +838,157 @@
     </section>
 
     <section class="chapter">
-      <h2>Next Steps (work plan)</h2>
+      <h2>Appendix F: Informed Consent Form (draft)</h2>
+      <p><strong>Project title:</strong> Phishing Between Loneliness and Skepticism: Human Vulnerability to Social Engineering in Norwegian Higher Education</p>
+      <p><strong>Researcher:</strong> Karina Sætersdal Nilssen, MSc Cybersecurity, OsloMet<br>
+      <strong>Supervisor:</strong> [Name, faculty/department]<br>
+      <strong>Contact:</strong> [student email] · [supervisor email]</p>
+
+      <h3>Purpose of the study</h3>
+      <p>
+        You are invited to take part in research on phishing and social engineering. The study examines how loneliness,
+        skepticism, and situational factors may relate to responses to suspicious messages. Findings will inform
+        cybersecurity awareness and culture in higher education.
+      </p>
+
+      <h3>What participation involves</h3>
+      <ul>
+        <li><strong>Survey (optional):</strong> An anonymous online questionnaire (approx. 10-12 minutes) with background questions, validated loneliness items, skepticism items, and six fictional phishing scenarios. You may skip any question.</li>
+        <li><strong>Interview (optional, separate consent):</strong> If you volunteer and are selected, a 45-60 minute audio-recorded interview about experiences with suspicious messages. You will receive the interview information sheet separately.</li>
+      </ul>
+      <p>No live phishing attacks will be used. Scenario texts are clearly fictional and contain no real links or credential requests.</p>
+
+      <h3>Voluntary participation and withdrawal</h3>
+      <p>
+        Participation is voluntary. You may withdraw at any time without giving a reason and without negative
+        consequences. For the anonymous survey, withdrawal means stopping before submission. For interviews, you may
+        request deletion of your recording and transcript before analysis is locked (deadline to be stated at
+        interview booking).
+      </p>
+
+      <h3>Risks and discomfort</h3>
+      <p>
+        Questions about loneliness, fraud experiences, or shame may cause mild discomfort. You may choose "prefer not
+        to say" where offered. If you need support, contact details are provided in the information sheet (Appendix G).
+      </p>
+
+      <h3>Benefits</h3>
+      <p>
+        There is no direct personal benefit. Results may contribute to better security education and support for
+        students and staff in Norwegian higher education.
+      </p>
+
+      <h3>Confidentiality and data storage</h3>
+      <ul>
+        <li>Survey responses are anonymous unless you choose to leave contact details for interview follow-up (stored separately).</li>
+        <li>Interview recordings will be pseudonymised; names, programmes, and identifying details removed from transcripts.</li>
+        <li>Data stored on OsloMet-approved encrypted storage; access limited to researcher and supervisor.</li>
+        <li>Data retained per NSD approval, then deleted or anonymised for long-term archive as required.</li>
+      </ul>
+
+      <h3>Publication</h3>
+      <p>
+        Results may be published in the master's thesis and, with further anonymisation, in academic or professional
+        outlets. You will not be identifiable in any publication.
+      </p>
+
+      <h3>Legal basis</h3>
+      <p>
+        Processing is based on your consent (GDPR Art. 6(1)(a) and, where applicable, Art. 9(2)(a) for sensitive
+        topics). The project is registered with NSD / REK before data collection begins.
+      </p>
+
+      <h3>Consent statement</h3>
+      <p>By ticking the box below (or signing below for paper use), I confirm that:</p>
+      <ul>
+        <li>I am 18 years or older.</li>
+        <li>I have read and understood this consent form and the information sheet (Appendix G).</li>
+        <li>I agree to participate in the <strong>survey</strong> described above.</li>
+        <li>I understand I may withdraw at any time.</li>
+      </ul>
+      <p>
+        ☐ I consent to participate in the survey.<br>
+        ☐ I do <strong>not</strong> wish to participate.<br><br>
+        [Optional for interview recruitment] ☐ I am willing to be contacted about a follow-up interview (contact details collected on a separate form).
+      </p>
+      <p><em>Digital implementation: consent captured via survey platform checkbox with timestamp. Paper copy available on request.</em></p>
+    </section>
+
+    <section class="chapter">
+      <h2>Appendix G: Participant Information Sheet (draft)</h2>
+      <p><strong>Welcome</strong> - thank you for considering participation in this master's thesis research at OsloMet.</p>
+
+      <h3>What is this study about?</h3>
+      <p>
+        Phishing attacks often succeed not because people lack knowledge, but because messages imitate things people
+        need or fear losing: belonging, safety, order, or help. This study explores how loneliness, general skepticism,
+        and situational pressure may relate to responses to suspicious digital messages among adults in higher education
+        in Norway.
+      </p>
+
+      <h3>Who can participate?</h3>
+      <p>Adults aged 18+ who study or work in Norwegian higher education and use digital communication regularly.</p>
+
+      <h3>What will I be asked to do?</h3>
       <ol>
-        <li>Book supervisor meeting with this draft and core hypothesis.</li>
-        <li>Confirm population: OsloMet students/staff only or national HE sample.</li>
-        <li>Import references into Zotero and verify APA formatting.</li>
-        <li>Validate loneliness (UCLA-3) and draft skepticism scale for Norwegian context.</li>
-        <li>Submit NSD ethics application (see Appendix D).</li>
-        <li>Pilot survey with 10-15 respondents (Feb 2027 per timeline).</li>
-        <li>Revise hypotheses after pilot; pre-register analysis plan if required.</li>
-        <li>Begin main data collection spring 2027.</li>
+        <li><strong>Online survey:</strong> Answer questions about background, loneliness (standard short scale), online skepticism, six short fictional phishing scenarios, and security habits. Estimated time: 10-12 minutes.</li>
+        <li><strong>Optional interview:</strong> Some survey respondents may be invited to a confidential interview (45-60 min, video or in person). Separate consent applies.</li>
       </ol>
+
+      <h3>Important safeguards</h3>
+      <ul>
+        <li>No real phishing links or password collection.</li>
+        <li>Survey is anonymous unless you separately volunteer contact details for interviews.</li>
+        <li>You may skip questions or stop at any time.</li>
+        <li>Interview quotes will be anonymised before use in the thesis.</li>
+      </ul>
+
+      <h3>Possible discomfort</h3>
+      <p>
+        Some questions ask about loneliness or whether you have received scam messages. You may find this mildly
+        uncomfortable. You do not have to share details of any financial loss. "Prefer not to say" is always an option.
+      </p>
+
+      <h3>Support resources</h3>
+      <table>
+        <thead>
+          <tr><th>Service</th><th>Contact</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>OsloMet student welfare (SiO)</td><td>https://sio.no/en</td></tr>
+          <tr><td>Mental Health helpline (Mental Helse)</td><td>116 123 (24/7, Norway)</td></tr>
+          <tr><td>Report digital fraud / phishing</td><td>NSM: https://nsm.no · Finans Norge: https://www.svindel.no</td></tr>
+          <tr><td>OsloMet IT security</td><td>[OsloMet IT helpdesk URL / email]</td></tr>
+        </tbody>
+      </table>
+
+      <h3>What happens to my data?</h3>
+      <p>
+        Data are processed by Karina Sætersdal Nilssen under supervisor oversight. Survey data stored on an approved
+        platform; interview recordings on encrypted OsloMet storage. Only the research team has access. Data are kept
+        only as long as NSD approval requires, then deleted or permanently anonymised.
+      </p>
+
+      <h3>Your rights</h3>
+      <p>
+        You have the right to access, correct, or request deletion of personal data (where not already anonymous),
+        restrict processing, and lodge a complaint with Datatilsynet (Norwegian Data Protection Authority). Contact the
+        researcher or supervisor for questions about your rights.
+      </p>
+
+      <h3>Questions?</h3>
+      <p>
+        <strong>Researcher:</strong> Karina Sætersdal Nilssen · [email]<br>
+        <strong>Supervisor:</strong> [name] · [email]<br>
+        <strong>OsloMet data protection:</strong> [privacy contact if applicable]
+      </p>
+      <p><em>Version 1.0 · August 2026 · To be updated after NSD approval</em></p>
     </section>
   </main>
 
   <p class="footer">
-    Working document for thesis development. Not for submission. Generated 27 August 2026. Version 0.5 (English).
+    Main submission draft (prospectus + methodology). Empirical chapters pending data collection 2027.
+    Generated 27 August 2026 · Version 0.6 (English).
   </p>
 </body>
 </html>

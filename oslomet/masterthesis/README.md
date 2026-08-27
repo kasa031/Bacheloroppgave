@@ -7,7 +7,8 @@ Folder for MSc Cybersecurity thesis work (OsloMet).
 | File | Description |
 |------|-------------|
 | `master_thesis_zotero.bib` | Import into Zotero (File → Import) |
-| `master_thesis_draft.html/pdf` | Working thesis draft v0.5 (English) |
+| `master_thesis_draft.html/pdf` | Main submission draft v0.6 (English) |
+| `master_thesis_problem_statement.html/pdf` | One-page problem statement for supervisor |
 | `master_thesis_phishing_proposal.html/pdf` | Shorter proposal |
 | `ZOTERO_IMPORT.md` | Zotero import instructions (Norwegian) |
 | `build_master_proposal_pdf.py` | Rebuild PDFs from HTML |

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Problem Statement - Master's Thesis</title>
+  <style>
+    :root {
+      --dark: #224248;
+      --mid: #325E6A;
+      --teal: #44A1A4;
+      --orange: #FF9A00;
+      --ink: #1A1A1A;
+      --paper: #FFFEFB;
+      --light: #E8F4F4;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Calibri, "Segoe UI", sans-serif;
+      background: #eef3f4;
+      color: var(--ink);
+      line-height: 1.45;
+      font-size: 11pt;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 1.5rem; }
+    .page {
+      background: var(--paper);
+      border: 1px solid rgba(34,66,72,.12);
+      border-radius: 0.45rem;
+      padding: 1.4rem 1.5rem;
+    }
+    .kicker {
+      color: var(--teal);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin: 0 0 0.4rem;
+    }
+    h1 {
+      margin: 0 0 0.35rem;
+      font-size: 1.25rem;
+      color: var(--dark);
+      line-height: 1.25;
+      border-left: 0.28rem solid var(--orange);
+      padding-left: 0.55rem;
+    }
+    h2 {
+      margin: 0.85rem 0 0.3rem;
+      font-size: 0.95rem;
+      color: var(--mid);
+    }
+    p, li { margin: 0.3rem 0; font-size: 11pt; }
+    ul { margin: 0.25rem 0 0.5rem; padding-left: 1.15rem; }
+    .meta { font-size: 10pt; color: var(--mid); margin-bottom: 0.75rem; }
+    .core {
+      margin: 0.5rem 0;
+      padding: 0.6rem 0.75rem;
+      background: var(--light);
+      border-left: 0.28rem solid var(--teal);
+      font-weight: 600;
+      font-size: 10.5pt;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10pt;
+      margin: 0.35rem 0;
+    }
+    th, td {
+      border: 1px solid rgba(34,66,72,.15);
+      padding: 0.35rem 0.45rem;
+      vertical-align: top;
+      text-align: left;
+    }
+    th { background: var(--dark); color: #fff; }
+    @page { size: A4; margin: 18mm 16mm; }
+    @media print {
+      body { background: #fff; }
+      .wrap { padding: 0; max-width: none; }
+      .page { border: none; border-radius: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <article class="page">
+      <p class="kicker">OsloMet · MSc Cybersecurity · Problem Statement</p>
+      <h1>Phishing Between Loneliness and Skepticism: How Social Engineering Exploits the Need for Belonging, Safety, and Control</h1>
+      <p class="meta">
+        <strong>Author:</strong> Karina Sætersdal Nilssen · <strong>Supervisor:</strong> [TBC] · <strong>Date:</strong> August 2026
+      </p>
+
+      <h2>Problem</h2>
+      <p>
+        Phishing remains the dominant entry point to serious cyber incidents, yet technical controls and awareness
+        campaigns have not eliminated it. In Norway, public skepticism toward unknown senders has increased, while
+        loneliness is elevated among young adults and students (SSB, 2025; NSO/Khrono, 2024). The tension is central:
+        phishing often does not resemble a stranger attack. It imitates belonging, safety, order, status, help, and control.
+      </p>
+      <div class="core">
+        Research problem: Why does phishing remain effective when people are both more lonely and more skeptical - and
+        which emotional and contextual factors make individuals in higher education especially vulnerable?
+      </div>
+
+      <h2>Research question</h2>
+      <p>
+        <strong>Main RQ:</strong> How can phishing remain effective in a context of increased loneliness and increased
+        general skepticism, and which emotional, cognitive, and contextual factors make individuals especially vulnerable
+        to social engineering?
+      </p>
+      <p><strong>Hypotheses (summary):</strong> H1 loneliness correlates with susceptibility to belonging-framed lures;
+        H2 skepticism reduces stranger-framed susceptibility; H3 situational pressure mediates; H4 verification habits
+        and security culture are protective (PMT-informed).</p>
+
+      <h2>Method (planned)</h2>
+      <table>
+        <thead>
+          <tr><th>Element</th><th>Plan</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Design</td><td>Exploratory sequential mixed methods</td></tr>
+          <tr><td>Sample</td><td>120-180 survey + 12-18 interviews; HE in Norway, 18+</td></tr>
+          <tr><td>Instruments</td><td>UCLA loneliness (short form), skepticism scale, scenarios S1-S6, semi-structured interviews</td></tr>
+          <tr><td>Analysis</td><td>Regression/mediation (quant); reflexive thematic analysis (qual); integrated joint display</td></tr>
+          <tr><td>Ethics</td><td>NSD/REK before collection; no deceptive live phishing; Appendices F-G</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Contribution and relevance</h2>
+      <ul>
+        <li>Human-centred model linking loneliness, skepticism, and lure type (beyond "weakest link").</li>
+        <li>Empirical insight for Norwegian higher education security culture and OsloMet recommendations.</li>
+        <li>Feasible MSc scope: behavioural study without classified infrastructure access.</li>
+      </ul>
+
+      <h2>Timeline (outline)</h2>
+      <p>
+        Ethics and instrument finalisation (Jan 2027) · Pilot (Feb) · Main survey and interviews (Mar-May 2027) ·
+        Analysis and writing (Jun-Nov 2027) · Submission (Dec 2027). Full timeline in thesis Appendix E.
+      </p>
+
+      <p><em>One-page summary for supervisor alignment. Full draft: master_thesis_draft.html v0.6.</em></p>
+    </article>
+  </div>
+</body>
+</html>

@@ -1,6 +1,10 @@
 # Importer masteroppgave-litteratur til Zotero
 
-Jeg har ikke direkte tilgang til Zotero-biblioteket ditt, men filen `master_thesis_zotero.bib` inneholder alle foreslåtte kilder klare for import.
+Jeg har ikke direkte tilgang til Zotero-biblioteket ditt, men filen ligger i:
+
+```
+oslomet/masterthesis/master_thesis_zotero.bib
+```
 
 **Viktig:** Masteroppgaven skrives på **engelsk**, men **norsk litteratur er inkludert** der den er relevant (SSB, NSM, Helsedirektoratet, norske studier osv.). I thesis-teksten siterer du dem på engelsk (oversatte titler); i Zotero kan du beholde norske titler i `note`-feltet.
 

@@ -29,6 +29,7 @@ def main():
     targets = [
         (ROOT / "master_thesis_phishing_proposal.html", ROOT / "master_thesis_phishing_proposal.pdf"),
         (ROOT / "master_thesis_draft.html", ROOT / "master_thesis_draft.pdf"),
+        (ROOT / "master_thesis_problem_statement.html", ROOT / "master_thesis_problem_statement.pdf"),
     ]
     if len(sys.argv) > 1:
         name = sys.argv[1]
