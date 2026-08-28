@@ -1,0 +1,406 @@
+\documentclass[UKenglish,12pt]{master-style}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc,url}
+\usepackage{csquotes}
+\usepackage{setspace}
+\urlstyle{rm}
+\usepackage[british]{babel}
+\usepackage{varioref,graphicx,duomasterforside}
+\usepackage[backend=biber,style=apa,sortcites=true]{biblatex}
+\DeclareLanguageMapping{british}{english-apa}
+
+\usepackage[document]{ragged2e}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black,
+    pdftitle={Beyond the Weakest Link: The Skepticism Paradox},
+    pdfpagemode=FullScreen,
+}
+
+\onehalfspacing % Times New Roman 12 pt, 1.5 line spacing (Phase I layout)
+
+\title{Beyond the Weakest Link: The Skepticism Paradox\\Why Phishing Works Despite Rising Skepticism}
+\subtitle{A Mixed-Methods Study of Loneliness, Social Engineering, and Digital Trust in Norway}
+\author{Karina Sætersdal Nilssen} % TODO: add student number on cover
+
+\addbibresource{mybib.bib}
+
+\begin{document}
+\duoforside[%
+    dept={Department of Computer Science},
+    program={Applied Computer and Information Technology (ACIT)},
+    option={Cybersecurity},
+    long
+]
+
+\frontmatter
+
+\chapter*{Preface}
+\addcontentsline{toc}{chapter}{Preface}
+
+% TODO: Personal note on topic choice, experience, acknowledgements.
+% Handbook 3.1: end with place, date, name and signature.
+This thesis combines three ideas. First, phishing is not explained by the ``weakest link'' narrative. Second, general skepticism toward strangers is rising---yet phishing still works. That is the \emph{skepticism paradox}: caution and vulnerability can coexist. Third, socially credible lures may exploit unmet needs for belonging and trust, not ignorance alone.
+
+I thank [supervisor name] for supervision, and OsloMet for academic support during ACIT5910 Phase I.
+
+\vfill
+\noindent Oslo, \today
+
+\noindent Karina Sætersdal Nilssen
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+\textbf{Purpose and research question.} This thesis moves \emph{beyond the weakest link} by explaining why phishing works \emph{despite rising skepticism}. The \emph{skepticism paradox} captures this tension: general caution toward strangers may coexist with vulnerability to socially or institutionally credible lures. The main research question asks which emotional, cognitive, and contextual factors explain this pattern in Norway.
+
+\textbf{Scope.} The study focuses on adults in Norway (with primary data collection among higher-education students and staff), covering phishing, smishing, vishing, and impersonation scams. Malware reverse engineering and deep technical forensics are out of scope.
+
+\textbf{Methodology.} An exploratory sequential mixed-methods design is planned: Phase I establishes theory and instruments; Phase II collects survey data (120--180 respondents); Phase III conducts 12--18 semi-structured interviews and integrates findings through thematic analysis \parencite{braun2006thematic}.
+
+\textbf{Expected results.} The thesis expects to test four hypotheses on loneliness, lure-specific skepticism, situational pressure, and security culture. Preliminary literature suggests that skepticism protects against stranger-framed scams but fails against lures that imitate belonging, authority, or institutional trust.
+
+\textbf{Conclusions and suggestions.} Phase I concludes that phishing training must move beyond blaming users, address lure-specific impersonation, and connect security awareness with social and emotional context.
+
+\noindent\textbf{Keywords:} phishing, loneliness, social engineering, human factors, protection motivation, cybersecurity behaviour
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\mainmatter
+
+\chapter{Introduction}
+
+\section{Beyond the weakest link}
+\label{sec:weakest-link}
+
+Cybersecurity discourse often treats humans as the weakest link: the predictable failure point in an otherwise robust technical system. Security awareness campaigns, incident reports, and media coverage frequently imply that phishing persists because users lack knowledge, attention, or discipline. This framing is simple and memorable, but it is incomplete.
+
+The weakest-link model assumes that more skepticism uniformly reduces risk. It also tends to locate responsibility at the individual while underplaying how attackers craft messages that exploit trust, urgency, belonging, and institutional legitimacy \parencite{hadnagy2018social,conteh2016cybersecurity}. When a person clicks, the story becomes ``user error.'' When a filter fails, the story becomes ``system failure.'' That asymmetry matters ethically and analytically.
+
+This thesis proposes a different starting point. Phishing is a human \emph{decision} problem disguised as an email. People may know the rules yet still respond unsafely when a message feels meaningful, urgent, or socially rewarding \parencite{parker2020contributing,tsai2021phishing}. The problem is not only ignorance. It is the interaction between emotional need, situational pressure, message framing, and organisational culture.
+
+The central contribution is the \emph{skepticism paradox} (Section~\ref{sec:skepticism-paradox}): phishing works despite rising skepticism because it often does not look like an attack from a stranger. It imitates what people still long for or fear losing---belonging, safety, order, status, help, and control.
+
+\section{Background and relevance}
+
+Every year, organisations invest in filters, training, policies, and incident response. Yet phishing and related social engineering attacks remain among the most effective ways to gain initial access to systems, accounts, and sensitive information \parencite{enisa2024threat,cisaPhishing}. The problem persists not only because attackers improve their tools, but because they improve their understanding of human motivation \parencite{hadnagy2018social}.
+
+In Norway, public awareness of digital fraud has increased. People are told to be skeptical of unknown senders, unexpected links, and requests for credentials---skepticism is rising. At the same time, loneliness and social disconnection are widely discussed as social problems across age groups \parencite{ssb2025loneliness,helsedirektoratet2024ensomhet}. Yet phishing and social engineering remain among the most reported forms of digital fraud \parencite{nsm2026risk,nkomSvindel,finansnorge2026svindel}. This gap between rising caution and persistent harm motivates the skepticism paradox.
+
+In a time of both rising loneliness and rising general skepticism, phishing becomes dangerous precisely because it does not look like an attack from a stranger. It imitates what people still long for or fear losing: belonging, safety, order, status, help, and control. The thesis therefore asks not only why people click, but why emotionally and socially meaningful lures can bypass skepticism that would otherwise protect them from obvious fraud.
+
+For a Norwegian master thesis in cybersecurity, this topic is timely and feasible. It connects technical security with human behaviour, privacy, trust, and social context without requiring access to classified infrastructure data. It also responds directly to public warnings from Finans Norge, NSM, and Nkom that social engineering remains a live and evolving threat \parencite{finansnorge2026svindel,nsm2026risk,nkomSvindel}.
+
+\section{Research problem}
+
+\subsection{Main research question}
+
+How can phishing remain effective \emph{despite rising skepticism}, and which emotional, cognitive, and contextual factors make individuals especially vulnerable---beyond the explanation that users are simply the weakest link?
+
+\subsection{Sub-questions}
+
+\begin{enumerate}
+    \item How do loneliness, social connection needs, and general online skepticism relate to phishing susceptibility?
+    \item Which emotional and situational factors (urgency, authority, fear, shame, stress) most strongly influence unsafe responses?
+    \item What is the gap between knowing about phishing and acting safely in the moment of decision?
+    \item Which protective factors---training, culture, verification routines, peer support---are experienced as most effective?
+\end{enumerate}
+
+\subsection{The skepticism paradox}
+\label{sec:skepticism-paradox}
+
+This thesis names and examines a specific tension: the \emph{skepticism paradox}. People in Norway are repeatedly told to distrust unknown links, unexpected requests, and unfamiliar senders \parencite{finansnorge2026svindel,nettvettPhishing}. At the same time, loneliness signals unmet social connection needs that can increase openness to contact, reassurance, and perceived opportunity \parencite{cacioppo2008loneliness,nicholson2021loneliness}.
+
+People may report high skepticism toward unknown senders yet remain vulnerable to messages that appear official, socially relevant, or emotionally important \parencite{kluetsch2024friend,parker2020contributing}. If training assumes that skepticism is uniformly protective, organisations may overlook the emotional and social conditions under which credible impersonation succeeds. If loneliness is treated only as a welfare issue, institutions may miss its relevance to fraud susceptibility.
+
+\section{Scope}
+
+\begin{itemize}
+    \item \textbf{In scope:} phishing, smishing, vishing, impersonation scams, emotional and social manipulation online.
+    \item \textbf{Population:} adults in Norway; primary recruitment among students and staff in higher education (18--35 years emphasis).
+    \item \textbf{Out of scope as main focus:} malware reverse engineering, DDoS, ransomware operations, deep technical forensics.
+    \item \textbf{Geographic frame:} Norway, with international literature as theoretical backdrop.
+\end{itemize}
+
+\section{Contribution}
+
+The thesis aims to contribute academically and practically:
+
+\begin{itemize}
+    \item \textbf{Theoretical:} a model of phishing vulnerability that moves beyond the weakest-link narrative, integrating loneliness, lure-specific skepticism, situational pressure, and security culture \parencite{rogers1975pmt,floyd2000pmt}.
+    \item \textbf{Empirical:} mixed-methods evidence on the skepticism paradox, using validated loneliness measures, scenario vignettes, and semi-structured interviews \parencite{braun2006thematic}.
+    \item \textbf{Practical:} recommendations for lure-specific training, non-punitive reporting culture, and integration of student welfare with security awareness \parencite{chen2024roleplaying,oslomet2024lunsjvenn}.
+\end{itemize}
+
+Norwegian studies by \textcite{tjostheim2020phishing,tjostheim2022crt} show that cognitive style predicts phishing susceptibility in representative samples. This thesis examines whether emotional and social variables add explanatory power beyond cognitive style alone.
+
+\section{Thesis structure}
+
+This Phase I submission (ACIT5910) comprises the introduction, background, literature review, theoretical framework, methodology, and research plan. Chapters~\ref{ch:planned-analysis}--\ref{ch:planned-discussion} outline the planned analysis and discussion for Phase II (ACIT5920) and Phase III (ACIT5930). Chapter~\ref{ch:conclusion} presents preliminary conclusions and recommendations.
+
+\chapter{Background: Phishing as an Entry Point}
+
+\section{What is phishing?}
+
+Phishing is a social engineering attack in which the victim is manipulated into clicking a malicious link, opening an attachment, revealing credentials, approving an action, or transferring money. The attack succeeds when the message appears credible, relevant, or emotionally meaningful \parencite{hadnagy2018social,conteh2016cybersecurity}.
+
+\section{Phishing as the starting point in attack chains}
+
+Many serious incidents begin with a human action: a click, a reply, a login, or an approval. From there, attackers may pursue account takeover, data theft, business email compromise, or further exploitation. This makes phishing analytically important even when the final harm is ransomware or data exfiltration \parencite{enisa2024threat,microsoft2024digitaldefense}.
+
+\section{Norway and digital trust}
+
+Norway is highly digitalised. Citizens rely on BankID, ID-porten, Altinn, digital mailboxes, and online banking. High trust in institutions can be a societal strength, but it may also create fertile ground for impersonation attacks when combined with urgency and fear \parencite{politiet2024nettsvindel,nsm2026risk}.
+
+\section{AI and the new scale}
+
+AI can improve grammar, personalisation, translation, and impersonation \parencite{halcyon2026ai,trendmicro2026phishing}. That lowers the cost of credible phishing, but it does not replace the need for emotional leverage. AI makes the lure easier to produce; human needs determine whether it works.
+
+\section{Norwegian context: loneliness, students, and phishing}
+
+Norway combines high digital trust with measurable social disconnection in key groups. Statistics Norway's quality-of-life survey finds elevated loneliness among young adults \parencite{ssb2025loneliness,fhi2024livskvalitet}. At the same time, phishing remains the dominant form of digital fraud in Norway \parencite{nsm2026risk,nkomSvindel}.
+
+At OsloMet and across Norwegian higher education, student loneliness is not marginal. SHoT 2022 found that 29\% of students often miss someone to be with, and campus presence correlates with lower loneliness \parencite{shot2022,khrono2024students}. Student welfare organisations such as SiO treat loneliness as a public-health and student-life issue \parencite{helsedirektoratet2024ensomhet}. This thesis connects that welfare context with cybersecurity behaviour.
+
+\chapter{Literature Review}
+
+\section{The weakest-link narrative and its limits}
+
+The weakest-link metaphor has shaped cybersecurity training for decades. It implies that security equals the minimum level of human compliance across a system. Organisations respond with mandatory courses, simulated phishing, and policy reminders. Yet phishing and social engineering remain leading initial-access vectors \parencite{enisa2024threat,microsoft2024digitaldefense,trendmicro2026phishing}.
+
+Critics of the metaphor argue that it individualises a structural problem. Attackers do not target ``weak users'' at random; they craft lures matched to context, role, and emotion \parencite{hadnagy2018social}. Technical systems also create conditions---high email volume, time pressure, fragmented attention---under which verification is costly \parencite{jts2024remote,parker2020contributing}. When shame and blame follow mistakes, reporting falls and organisational learning suffers \parencite{chen2024roleplaying,baylsmith2024phishing}.
+
+This thesis therefore treats the weakest-link frame as a hypothesis to be examined, not as an conclusion. If general skepticism were uniformly protective, phishing rates should fall as awareness rises. They have not \parencite{nsm2026risk,nkomSvindel}. The skepticism paradox offers an alternative explanation: protective caution may be real, but lure-specific.
+
+\section{Phishing and human factors}
+
+Research consistently shows that phishing success depends on persuasion strategies, context, workload, and decision pressure rather than intelligence alone \parencite{parker2020contributing,tsai2021phishing,baylsmith2024phishing}. Employees and students may know the rules yet still click when messages appear legitimate, urgent, or socially relevant.
+
+\textcite{frauenstein2020phishing} demonstrate that personality and information-processing style shape susceptibility on social network sites. Their model suggests that individuals who process social cues quickly and trust familiar platform patterns may overlook subtle fraud indicators. \textcite{parker2020contributing} extend this finding by showing that contributing factors in organisational contexts include workload, time pressure, and perceived sender legitimacy---variables that standard technical training often ignores.
+
+\textcite{tjostheim2020phishing,tjostheim2022crt} provide Norwegian evidence that cognitive reflection predicts resistance to phishing in representative samples. Participants with stronger analytical thinking styles were less likely to comply with deceptive requests even when messages appeared plausible. These findings suggest that cognitive factors matter, but they do not fully explain why emotionally framed lures succeed against people who consider themselves cautious and who perform well on abstract reasoning tasks.
+
+International threat reports confirm that social engineering remains the dominant initial access vector \parencite{enisa2024threat,trendmicro2026phishing,microsoft2024digitaldefense}. Attackers invest in understanding human motivation because technical defences have improved faster than human decision environments have adapted \parencite{hadnagy2018social,conteh2016cybersecurity}. The literature therefore supports a shift from blame-oriented models toward contextual models of vulnerability.
+
+\section{Loneliness, belonging, and fraud}
+
+Loneliness is not merely the absence of company. \textcite{cacioppo2008loneliness} describe it as a distress signal indicating unmet social connection needs---a state that can increase openness to contact, reassurance, and perceived opportunity. The World Health Organization \parencite{ons2023loneliness} now treats social connection and loneliness as global health priorities.
+
+Loneliness has long been associated with fraud vulnerability among older adults \parencite{alves2008loneliness,wen2022mechanisms}. Recent experimental work suggests loneliness can increase susceptibility to misleading offers in middle-aged and older adults \parencite{wen2024loneliness}. Mechanisms include increased desire for connection, greater trust in persuasive strangers, and reduced access to social verification.
+
+However, the relationship is not uniform across age groups. Among younger adults, FOMO, social media exposure, impulsivity, and platform-specific cues may matter more \parencite{przybylski2013fomo,kluetsch2024friend}. \textcite{popovac2020online} and related work on online deception suggest that platform familiarity and perceived sender identity interact with emotional state. Research gap: loneliness is well studied in older fraud victims, but less systematically examined in Norwegian higher-education contexts and in relation to the skepticism paradox.
+
+\section{The skepticism paradox in practice}
+
+People may report high skepticism toward unknown senders yet remain vulnerable to messages that appear official, socially relevant, or emotionally important. Young adults are highly exposed on social platforms and may respond differently to phishing that mimics peers, events, or opportunities rather than strangers \parencite{kluetsch2024friend,parker2020contributing}.
+
+Public campaigns emphasise distrust of strangers while phishing increasingly impersonates institutions, employers, classmates, and services people depend on daily \parencite{finansnorge2026svindel,nettvettPhishing}. This creates the paradox named in Section~\ref{sec:skepticism-paradox}: general caution and specific vulnerability can coexist.
+
+This is the empirical face of the skepticism paradox: knowing that fraud exists does not guarantee safe action when a message feels meaningful, urgent, or socially rewarding. Technical indicators (mismatched domains, suspicious headers) may be ignored when the narrative fits an existing need \parencite{tsai2021phishing,parker2020contributing}. Training that treats all phishing as equally obvious therefore risks a false sense of security among people who would never click a crude stranger scam yet remain exposed to sophisticated institutional impersonation \parencite{tjostheim2022crt}.
+
+\section{Protection Motivation Theory}
+
+Protection Motivation Theory (PMT) explains protective behaviour through threat appraisal (severity and vulnerability) and coping appraisal (response efficacy and self-efficacy) \parencite{rogers1975pmt,floyd2000pmt}. In cybersecurity, PMT has been applied to explain compliance with security policies and responses to organisational phishing warnings \parencite{baylsmith2024phishing}.
+
+For this thesis, PMT is useful but incomplete. It explains motivation to protect oneself, yet phishing often succeeds when the message does not initially look like a threat. Emotional needs may reframe the message as an opportunity rather than a risk. The thesis therefore uses PMT primarily to analyse verification habits, reporting behaviour, and perceived organisational support---coping appraisal factors---rather than to assume that fear-based training alone will prevent clicks \parencite{chen2024roleplaying}.
+
+\section{Remote work, cognitive bias, and shame}
+
+Remote and hybrid study/work environments may reduce informal verification (``Did you really send this?'') and increase reliance on digital cues alone \parencite{jts2024remote}. When peers and supervisors are not physically present, impersonation becomes harder to detect through quick social confirmation. Students may receive fraudulent messages about exams, fees, or housing at times when administrative communication is already high-volume and stressful.
+
+Shame and fear of blame after clicking can suppress reporting \parencite{chen2024roleplaying}. Training that relies on simulated phishing without support-seeking components may increase awareness but not safe behaviour under stress. Organisations that punish employees or students who report mistakes create incentives to hide near misses, reducing organisational learning \parencite{baylsmith2024phishing}. A non-punitive security culture is therefore treated as a protective factor alongside technical controls.
+
+Cognitive biases relevant to phishing include authority bias (trusting apparent officials), scarcity/urgency effects (acting before verifying), and optimism bias (believing that fraud happens to others). These biases interact with emotional states: loneliness may increase the salience of socially rewarding messages, while stress may reduce the cognitive resources available for verification \parencite{cacioppo2008loneliness,tsai2021phishing}.
+
+\section{Theoretical synthesis and original contribution}
+
+The literature supports a combined view: phishing susceptibility emerges from the interaction of emotional need, situational pressure, message framing, and organisational culture---not from individual ignorance alone. The thesis proposes a combined model centred on the skepticism paradox:
+
+\begin{quote}
+Phishing susceptibility = emotional relevance of lure + situational pressure + unmet social need $-$ verification opportunity $-$ non-punitive security culture.
+\end{quote}
+
+Norwegian national studies complement international findings: \textcite{tjostheim2020phishing,tjostheim2022crt} demonstrate that cognitive reflection and data-sharing willingness predict phishing compliance in representative samples. This thesis asks whether loneliness and lure-specific skepticism add explanatory power beyond cognitive style, especially among higher-education adults who are digitally literate yet socially pressured \parencite{kluetsch2024friend,shot2022}.
+
+\chapter{Theoretical Framework and Hypotheses}
+
+\section{The skepticism paradox as analytical lens}
+
+The theoretical contribution of this thesis is to treat phishing not primarily as a failure of knowledge, but as a collision between two simultaneous social trends: rising general skepticism toward strangers and rising subjective loneliness or social need \parencite{ssb2025loneliness,khrono2024students,wired2024loneliness}. This collision produces the skepticism paradox---the central concept named in the title.
+
+Formally, the paradox can be stated as follows:
+
+\begin{quote}
+\textbf{Skepticism paradox.} Individuals may exhibit high general skepticism toward unknown or unsolicited digital contact while simultaneously remaining vulnerable to phishing that imitates social belonging, institutional authority, or emotionally meaningful opportunity.
+\end{quote}
+
+The paradox explains why the weakest-link narrative fails empirically and ethically. Empirically, it predicts lure-specific protection: stranger-framed scams should correlate with skepticism; institutional and social lures should not. Ethically, it shifts attention from blaming users to understanding how credible impersonation exploits legitimate human needs \parencite{cacioppo2008loneliness,kluetsch2024friend}.
+
+The skepticism paradox also reframes loneliness. Loneliness is not introduced as a medical diagnosis in this thesis, but as a signal of unmet social connection that may increase the salience of belonging-framed lures (S2, S6). Age will be treated as a control and exploratory variable because prior research suggests loneliness may operate differently across cohorts \parencite{wen2024loneliness,barstad2021ensomme}.
+
+\section{Hypotheses}
+
+\begin{description}
+    \item[H1] Higher loneliness is associated with higher self-reported phishing susceptibility, especially for socially framed lures (S2, S6).
+    \item[H2] Higher general skepticism reduces susceptibility for stranger-framed lures but not for institutionally or emotionally relevant lures (interaction effect).
+    \item[H3] Situational pressure (urgency, authority, stress) partially mediates the relationship between loneliness and unsafe intended behaviour.
+    \item[H4] Participants with stronger verification habits and supportive, non-punitive security culture report lower susceptibility (PMT coping appraisal).
+\end{description}
+
+\chapter{Methodology}
+
+\section{Design}
+
+Recommended design: exploratory sequential mixed methods \parencite{braun2006thematic}. Phase I (this document) establishes theory and instruments. Phase II collects survey data. Phase III conducts interviews and integrates findings.
+
+\begin{enumerate}
+    \item \textbf{Phase 1 (ACIT5910):} literature review, theory, instruments, ethics plan.
+    \item \textbf{Phase 2 (ACIT5920):} online survey (quantitative + short open text).
+    \item \textbf{Phase 3 (ACIT5930):} semi-structured interviews; thematic analysis integrated with survey findings.
+\end{enumerate}
+
+\section{Population and sample}
+
+\begin{itemize}
+    \item \textbf{Population:} students and staff in higher education in Norway.
+    \item \textbf{Target sample:} 120--180 survey responses; 12--18 interviews.
+    \item \textbf{Inclusion:} adults 18+ with regular digital communication for study/work.
+    \item \textbf{Recruitment:} OsloMet programmes, student networks, LinkedIn, privacy-preserving invitation text.
+\end{itemize}
+
+Before main data collection, a pilot with 10--15 OsloMet students/staff will test completion time (target under 12 minutes), clarity of scenario vignettes, floor/ceiling effects on loneliness items, and whether skepticism items discriminate.
+
+\section{Instruments}
+
+The survey will combine validated and adapted instruments:
+
+\begin{itemize}
+    \item \textbf{Loneliness:} short-form items adapted from established scales measuring subjective social disconnection (3--6 items), aligned with Norwegian population research \parencite{ssb2025loneliness,nicholson2021loneliness}.
+    \item \textbf{General online skepticism:} items measuring distrust of unknown senders, links, and unsolicited requests.
+    \item \textbf{Scenario vignettes (S1--S6):} see Section~\ref{sec:vignettes}.
+    \item \textbf{Situational pressure:} perceived urgency, authority, stress, and time pressure at time of response.
+    \item \textbf{Verification habits:} frequency of checking sender identity, using separate channels, and consulting peers.
+    \item \textbf{Security culture:} perceived blame, support for reporting, and quality of institutional communication \parencite{baylsmith2024phishing,chen2024roleplaying}.
+    \item \textbf{Demographics and controls:} age, study level, digital literacy self-rating, prior phishing training exposure.
+\end{itemize}
+
+Open-text items will capture qualitative nuance: descriptions of near misses, reasons for hesitation, and perceived gaps between policy and practice.
+
+Interviews will explore:
+\begin{itemize}
+    \item what the message looked like and why it felt credible;
+    \item emotional state at the time (lonely, stressed, busy, afraid);
+    \item whether they knew the advice but still hesitated or clicked;
+    \item experiences of training, shame, and reporting culture.
+\end{itemize}
+
+\subsection{Scenario vignettes (S1--S6)}
+\label{sec:vignettes}
+
+Six short vignettes will manipulate lure framing:
+\begin{enumerate}
+    \item \textbf{S1 Stranger:} generic prize or account verification from unknown sender.
+    \item \textbf{S2 Social:} message mimicking a peer, study group, or campus event.
+    \item \textbf{S3 Institutional:} BankID, Altinn, or university IT support impersonation.
+    \item \textbf{S4 Authority:} urgent request from apparent manager or exam office.
+    \item \textbf{S5 Opportunity:} internship, job, or exclusive offer with time pressure.
+    \item \textbf{S6 Belonging:} invitation to community, support, or social connection.
+\end{enumerate}
+
+Respondents indicate intended behaviour (click, verify, ignore, report) on a fixed scale. H1 and H2 specifically compare socially and institutionally framed lures against stranger-framed baselines.
+
+\section{Ethics}
+
+The study will require NSD approval and informed consent before data collection. Data will be pseudonymised; no live deceptive phishing against participants will be conducted without explicit ethical approval. Participants may withdraw without consequence. Special care applies when asking about fraud victimisation or shame, as these topics may trigger distress \parencite{alves2008loneliness}.
+
+Data handling will follow GDPR principles: survey hosted on an institution-approved platform; data stored encrypted on OsloMet-approved storage; access limited to researcher and supervisor; retention aligned with NSD approval; deletion after the thesis archive period. Interview audio will be transcribed and direct identifiers removed before analysis.
+
+\section{Limitations}
+
+\begin{itemize}
+    \item Self-report bias and social desirability may understate unsafe intentions.
+    \item Convenience sampling may overrepresent cybersecurity-aware students.
+    \item Loneliness scales measure subjective experience, not objective isolation.
+    \item Cross-sectional survey data cannot establish full causality.
+    \item \textcite{wen2024loneliness} found weaker loneliness--fraud effects in younger adults; H1 may require subgroup analysis.
+\end{itemize}
+
+\section{Analysis plan}
+
+Survey data: descriptive statistics, correlation, regression, and planned moderation/mediation tests for H1--H4. Interview data: reflexive thematic analysis \parencite{braun2006thematic}. Integration: joint display of quantitative patterns and qualitative mechanisms in Phase III.
+
+\chapter{Planned Results}
+\label{ch:planned-results}
+
+% Handbook 3.9: Results chapter. For ACIT5910 Phase I, present planned outputs only.
+This chapter will be completed in ACIT5920 and ACIT5930. Planned deliverables include:
+\begin{itemize}
+    \item descriptive statistics on loneliness, skepticism, and intended behaviour across vignettes S1--S6;
+    \item regression and moderation/mediation tests for H1--H4;
+    \item thematic codes from interviews on credibility, shame, and reporting culture;
+    \item integrated joint displays linking quantitative patterns with qualitative quotes.
+\end{itemize}
+
+\chapter{Research Plan and Timeline}
+\label{ch:planned-analysis}
+
+\section{Phase II deliverables (ACIT5920)}
+
+\begin{itemize}
+    \item Finalise survey instrument after pilot.
+    \item Obtain NSD approval.
+    \item Collect and clean survey dataset.
+    \item Preliminary quantitative analysis and draft results chapter.
+\end{itemize}
+
+\section{Phase III deliverables (ACIT5930)}
+
+\begin{itemize}
+    \item Conduct and transcribe interviews.
+    \item Thematic analysis and integration with survey findings.
+    \item Final discussion, recommendations, and complete thesis submission.
+\end{itemize}
+
+\section{Proposed timeline}
+
+\begin{itemize}
+    \item \textbf{Autumn 2026:} Phase I submission; ethics application; pilot survey.
+    \item \textbf{Spring 2027:} Main survey collection; preliminary analysis.
+    \item \textbf{Autumn 2027:} Interviews; integrated analysis; thesis writing.
+    \item \textbf{Spring 2028:} Final submission and defence preparation.
+\end{itemize}
+
+\chapter{Summary and Preliminary Conclusions}
+\label{ch:conclusion}
+
+Phishing persists because it targets human meaning, not merely human ignorance. The weakest-link narrative cannot explain why cautious, digitally literate people still respond to credible impersonation. The skepticism paradox offers a sharper lens: people can distrust strangers yet still trust what feels socially or institutionally legitimate.
+
+This Phase I document establishes the research problem, critiques the weakest-link frame, reviews relevant literature, proposes testable hypotheses, and outlines a feasible mixed-methods design. Phase II and III will determine whether loneliness and lure-specific skepticism jointly predict intended unsafe behaviour, and which organisational practices support safer responses.
+
+Practical implications already suggested by the literature include:
+\begin{itemize}
+    \item \textbf{Lure-specific training} beyond ``do not click unknown links'', addressing institutional and social impersonation explicitly \parencite{finansnorge2026svindel,nettvettPhishing}.
+    \item \textbf{Integration of student welfare and security awareness} at OsloMet and comparable institutions \parencite{oslomet2024lunsjvenn,shot2022}.
+    \item \textbf{Non-punitive reporting channels} so near misses become learning data rather than shame events \parencite{chen2024roleplaying}.
+    \item \textbf{Verify-by-default routines}, including separate-channel verification for unexpected requests \parencite{nsm2026risk}.
+\end{itemize}
+
+Future research may include longitudinal study of loneliness and phishing incidents over an academic year, intervention studies comparing emotional-aware training with standard awareness modules, and cross-institutional comparison across Nordic higher education.
+
+\chapter{Planned Discussion}
+\label{ch:planned-discussion}
+
+Phase III will interpret findings through the skepticism paradox lens and explicitly revisit the weakest-link narrative. If H1 and H2 are supported, organisations should stop treating skepticism as a single trait and redesign awareness materials for lure-specific impersonation. If H3 is supported, situational pressure (deadlines, exam periods, financial stress) should be treated as predictable risk periods. If H4 is supported, culture and verification habits may matter as much as individual traits.
+
+The discussion will argue that framing users as the weakest link obscures organisational duties: safer defaults, reporting support, and recognition that phishing exploits normal human needs rather than exceptional foolishness \parencite{hadnagy2018social,chen2024roleplaying}.
+
+\backmatter
+\printbibliography
+
+\end{document}

@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master's Thesis Draft: Phishing, Loneliness, and Human Vulnerability</title>
+  <style>
+    :root {
+      --black: #000000;
+      --ink: #1a1a1a;
+      --dark: #333333;
+      --mid: #666666;
+      --line: #cccccc;
+      --light: #f0f0f0;
+      --paper: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Times New Roman", Times, serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.5;
+      font-size: 12pt;
+    }
+    .wrap { max-width: 170mm; margin: 0 auto; padding: 0; }
+    .cover-page, .title-page, .chapter {
+      background: var(--paper);
+      padding: 0;
+      margin: 0 0 1.5rem;
+      page-break-after: always;
+    }
+    .cover-page {
+      min-height: 250mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding: 25mm 20mm;
+    }
+    .cover-logo { width: 180px; height: auto; margin: 0 auto 2rem; display: block; }
+    .cover-title {
+      font-size: 24pt;
+      font-weight: 700;
+      line-height: 1.25;
+      margin: 0 0 2rem;
+      color: var(--black);
+    }
+    .cover-author { font-size: 16pt; font-weight: 700; margin: 0 0 0.35rem; }
+    .cover-meta { font-size: 12pt; margin: 0.25rem 0; color: var(--dark); }
+    .title-page {
+      min-height: 240mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding: 25mm 20mm;
+    }
+    .title-page h1 { font-size: 24pt; font-weight: 700; border: none; padding: 0; margin: 0 0 2rem; }
+    .title-page .program { font-size: 12pt; margin-top: 2rem; color: var(--dark); }
+    h2 {
+      margin: 1.25rem 0 0.65rem;
+      font-size: 14pt;
+      font-weight: 700;
+      color: var(--black);
+      border: none;
+      padding: 0;
+    }
+    h3 { margin: 1rem 0 0.35rem; font-size: 12pt; font-weight: 700; color: var(--black); }
+    p, li { font-size: 12pt; margin: 0 0 0.65rem; }
+    ul, ol { margin: 0.35rem 0 0.65rem; padding-left: 1.2rem; }
+    li { margin: 0.25rem 0; }
+    .lead { font-weight: 700; }
+    .quote {
+      margin: 0.65rem 0;
+      padding: 0.75rem 0.9rem;
+      background: var(--light);
+      border-left: 3px solid var(--dark);
+    }
+    .quote.core { font-weight: 700; background: #e8e8e8; border-left-color: var(--black); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11pt;
+      margin: 0.5rem 0 0.25rem;
+    }
+    th, td { border: 1px solid var(--black); padding: 0.4rem 0.5rem; vertical-align: top; text-align: left; }
+    th { background: var(--dark); color: #fff; font-weight: 700; }
+    tr:nth-child(even) td { background: var(--light); }
+    .table-caption { font-size: 11pt; margin: 0.25rem 0 0.85rem; caption-side: top; text-align: left; }
+    .table-source { color: var(--mid); font-style: italic; }
+    .figure { margin: 1rem 0; padding: 0.5rem 0; text-align: center; page-break-inside: avoid; }
+    .figure svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+    figcaption { font-size: 11pt; text-align: left; margin-top: 0.5rem; line-height: 1.45; }
+    figcaption strong { font-weight: 700; }
+    .fig-source { display: block; margin-top: 0.25rem; color: var(--mid); font-style: italic; font-size: 10pt; }
+    .refs { list-style: none; padding-left: 0; margin: 0.5rem 0; }
+    .refs li { font-size: 11pt; margin-bottom: 0.55rem; padding-left: 2rem; text-indent: -2rem; }
+    .refs-heading { text-align: center; font-weight: 700; font-size: 14pt; margin: 1.5rem 0 1rem; }
+    .toc ol { list-style: none; padding-left: 0; }
+    .toc li { padding: 0.2rem 0; border-bottom: 1px dotted var(--line); font-size: 12pt; }
+    .toc .indent { padding-left: 1.2rem; font-size: 11pt; }
+    .page-break { page-break-before: always; }
+    pre.diagram { display: none; }
+    .hero, .footer, .status, .placeholder, .kicker, .subtitle, .meta { display: none !important; }
+    @page { size: A4; margin: 25mm 20mm 25mm 25mm; }
+    @media print {
+      body { background: #fff; }
+      .wrap { max-width: none; }
+      .cover-page, .title-page { page-break-after: always; }
+      h2 { page-break-after: avoid; }
+      .figure { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="cover-page">
+      <img src="assets/oslomet-logo-black.svg" alt="OsloMet" class="cover-logo">
+      <h1 class="cover-title">Phishing Between Loneliness and Skepticism:<br>How Social Engineering Exploits the Need for Belonging, Safety, and Control</h1>
+      <p class="cover-author">Karina S&aelig;tersdal Nilssen</p>
+      <p class="cover-meta">Student number: [fill in]</p>
+      <p class="cover-meta">Master's Thesis, Phase 1 (ACIT5910)</p>
+      <p class="cover-meta">Long master's thesis (60 ECTS)</p>
+      <p class="cover-meta">OsloMet - Oslo Metropolitan University</p>
+      <p class="cover-meta">Faculty of Technology, Art and Design</p>
+      <p class="cover-meta">Master's Programme in Applied Computer and Information Technology</p>
+    </section>
+
+    <section class="title-page">
+      <img src="assets/oslomet-logo-black.svg" alt="OsloMet" class="cover-logo">
+      <h1>Phishing Between Loneliness and Skepticism:<br>How Social Engineering Exploits the Need for Belonging, Safety, and Control</h1>
+      <p class="cover-author">Karina S&aelig;tersdal Nilssen</p>
+      <p class="cover-meta">Student number: [fill in]</p>
+      <p class="cover-meta">Master's Thesis, Phase 1 (ACIT5910)</p>
+      <p class="cover-meta">OsloMet - Oslo Metropolitan University</p>
+      <p class="cover-meta">Faculty of Technology, Art and Design</p>
+      <p class="cover-meta">Master's Programme in Applied Computer and Information Technology</p>
+      <p class="cover-meta">2026</p>
+      <p class="cover-meta">Supervisor: [Last name, First name]</p>
+    </section>
+
+    <section class="chapter toc page-break">
+      <h2>Table of Contents</h2>
+      <ol>
+        <li><strong>Abstract</strong></li>
+        <li><strong>1. Introduction</strong>
+          <div class="indent">1.1 Background and relevance · 1.2 Research problem · 1.2.1 The skepticism paradox · 1.3 Scope · 1.4 Contribution · 1.5 Thesis structure</div>
+        </li>
+        <li><strong>2. Background: Phishing as an Entry Point</strong></li>
+        <li><strong>3. Literature Review</strong></li>
+        <li><strong>4. Theoretical Framework and Hypotheses</strong></li>
+        <li><strong>5. Methodology</strong></li>
+        <li><strong>6. Planned Analysis (Phase 2-3)</strong></li>
+        <li><strong>7. Planned Discussion (Phase 2-3)</strong></li>
+        <li><strong>8. Conclusion and Recommendations</strong></li>
+        <li><strong>List of Figures</strong></li>
+        <li><strong>List of Tables</strong></li>
+        <li><strong>References</strong></li>
+        <li><strong>Appendices A-G</strong></li>
+      </ol>
+    </section>
+
+    <section class="chapter">
+      <h2>List of Figures</h2>
+      <ol>
+        <li>Figure 1. Phishing as the human entry point in a typical cyber attack chain</li>
+        <li>Figure 2. The skepticism paradox: two simultaneous social trends</li>
+        <li>Figure 3. Protection Motivation Theory process model</li>
+        <li>Figure 4. Chain mediation from cognitive failure to gullibility (Du et al., 2025)</li>
+        <li>Figure 5. Known senders and FOMO effects on phishing susceptibility (Klütsch et al., 2024)</li>
+        <li>Figure 6. Combined conceptual model for this thesis</li>
+        <li>Figure 7. Exploratory sequential mixed methods design</li>
+        <li>Figure 8. Overview of scenario vignettes S1-S6</li>
+      </ol>
+      <h2>List of Tables</h2>
+      <ol>
+        <li>Table 1. Norwegian context indicators: loneliness and phishing</li>
+        <li>Table 2. Theoretical perspectives and limitations</li>
+        <li>Table 3. What phishing imitates: needs, lures, and skepticism bypass</li>
+        <li>Table 4. Survey instruments and constructs</li>
+        <li>Table 5. Hypothesis testing plan (planned)</li>
+        <li>Table 6. Phishing scenario vignettes (Appendix C)</li>
+        <li>Table 7. Proposed research timeline</li>
+      </ol>
+    </section>
+
+    <section class="chapter page-break">
+      <h2>Abstract</h2>
+      <p>
+        Phishing remains one of the most common entry points to serious cyber incidents, despite rising public
+        awareness and technical controls. This thesis investigates why phishing continues to work in a context
+        characterised by both increased loneliness and increased general skepticism toward strangers online. The core
+        argument is that phishing often does not resemble a stranger attack. Instead, it imitates what people still
+        long for or fear losing: belonging, safety, order, status, help, and control.
+      </p>
+      <p>
+        The thesis introduces the <strong>skepticism paradox</strong>: general caution toward unknown senders may coexist with
+        heightened openness to messages that feel socially or institutionally legitimate. Using exploratory sequential
+        mixed methods among adults in higher education in Norway, the study examines emotional and contextual
+        vulnerability markers, the gap between knowing about phishing and acting safely under pressure, and which
+        protective factors may reduce risk in practice.
+      </p>
+      <p>
+        The expected contribution is threefold: (1) a human-centred model of phishing susceptibility that moves beyond
+        the "weakest link" narrative; (2) empirical insight into how loneliness and skepticism interact in Norwegian
+        higher education; and (3) practical recommendations linking student welfare, security culture, and awareness
+        design at OsloMet and comparable institutions.
+      </p>
+      <p><strong>Keywords:</strong> phishing, loneliness, social engineering, human factors, protection motivation, cybersecurity behaviour</p>
+    </section>
+
+    <section class="chapter">
+      <h2>1. Introduction</h2>
+      <p class="lead">Cybersecurity is often presented as a technical problem with a human weak point. This thesis starts from a different premise: phishing is a human decision problem disguised as an email.</p>
+      <p>
+        Every year, organisations invest in filters, training, policies, and incident response. Yet phishing and
+        related social engineering attacks remain among the most effective ways to gain initial access to systems,
+        accounts, and sensitive information (ENISA, 2024; CISA, n.d.). The problem persists not only because attackers
+        improve their tools, but because they improve their understanding of human motivation.
+      </p>
+      <p>
+        In Norway, public awareness of digital fraud has increased. People are told to be skeptical of unknown senders,
+        unexpected links, and requests for credentials. At the same time, loneliness and social disconnection are widely
+        discussed as social problems across age groups (Statistics Norway, 2025; World Health Organization, 2023).
+        This creates a tension that is central to the thesis:
+      </p>
+      <div class="quote core">
+        In a time of both rising loneliness and rising general skepticism, phishing becomes dangerous precisely because
+        it does not look like an attack from a stranger. It imitates what people still long for or fear losing:
+        belonging, safety, order, status, help, and control.
+      </div>
+      <p>
+        The thesis therefore asks not only why people click, but why emotionally and socially meaningful lures can
+        bypass skepticism that would otherwise protect them from obvious fraud.
+      </p>
+
+      <h3>1.1 Background and relevance</h3>
+      <p>
+        Recent Norwegian warnings from Finans Norge, banks, NSM, and Nkom show that social engineering remains a live
+        threat. Attacks combine email, SMS, phone calls, impersonation, urgency, and authority. AI-assisted phishing
+        may increase credibility and scale, but the underlying mechanism remains psychological: influence under
+        uncertainty (Halcyon, 2026; Microsoft, 2024; Norwegian National Security Authority, 2026).
+      </p>
+      <p>
+        For a Norwegian master thesis in cybersecurity, this topic is timely and feasible. It connects technical
+        security with human behaviour, privacy, trust, and social context - without requiring access to classified
+        infrastructure data.
+      </p>
+
+      <h3>1.2 Research problem</h3>
+      <p><strong>Main research question:</strong></p>
+      <p>
+        How can phishing remain effective in a context of increased loneliness and increased general skepticism, and
+        which emotional, cognitive, and contextual factors make individuals especially vulnerable to this form of
+        social engineering?
+      </p>
+      <p><strong>Sub-questions:</strong></p>
+      <ol>
+        <li>How do loneliness, social connection needs, and general online skepticism relate to phishing susceptibility?</li>
+        <li>Which emotional and situational factors (urgency, authority, fear, shame, stress) most strongly influence unsafe responses?</li>
+        <li>What is the gap between knowing about phishing and acting safely in the moment of decision?</li>
+        <li>Which protective factors - training, culture, verification routines, peer support - are experienced as most effective?</li>
+      </ol>
+
+      <h3>1.2.1 The skepticism paradox</h3>
+      <p>
+        This thesis names and examines a specific tension: the <strong>skepticism paradox</strong>. People in Norway are repeatedly
+        told to distrust unknown links, unexpected requests, and unfamiliar senders (Finans Norge, 2026; Nettvett.no &amp;
+        Norwegian National Security Authority, n.d.). At the same time, loneliness and social disconnection are elevated
+        among young adults and students (Statistics Norway, 2025; Khrono &amp; Norwegian Student Organisation, 2024).
+        Skepticism may therefore protect against obvious stranger-framed fraud while leaving individuals exposed to lures
+        that imitate belonging, institutional authority, or timely help.
+      </p>
+      <p>
+        If training assumes that skepticism is uniformly protective, organisations may overlook the emotional and social
+        conditions under which credible impersonation succeeds. If loneliness is treated only as a welfare issue,
+        institutions may miss its relevance to fraud susceptibility.
+      </p>
+
+      <figure class="figure" id="fig2">
+        <svg viewBox="0 0 620 200" role="img" aria-label="The skepticism paradox">
+          <rect x="20" y="30" width="240" height="70" fill="#f5f5f5" stroke="#000" stroke-width="1.5"/>
+          <text x="140" y="55" text-anchor="middle" font-size="12" font-weight="bold" fill="#000">Rising skepticism</text>
+          <text x="140" y="75" text-anchor="middle" font-size="10" fill="#333">Protects against obvious</text>
+          <text x="140" y="90" text-anchor="middle" font-size="10" fill="#333">stranger-framed fraud</text>
+          <rect x="360" y="30" width="240" height="70" fill="#f5f5f5" stroke="#000" stroke-width="1.5"/>
+          <text x="480" y="55" text-anchor="middle" font-size="12" font-weight="bold" fill="#000">Rising loneliness</text>
+          <text x="480" y="75" text-anchor="middle" font-size="10" fill="#333">Increases openness to</text>
+          <text x="480" y="90" text-anchor="middle" font-size="10" fill="#333">connection and reassurance</text>
+          <line x1="260" y1="65" x2="360" y2="65" stroke="#666" stroke-width="1" stroke-dasharray="4"/>
+          <text x="310" y="58" text-anchor="middle" font-size="9" fill="#666">both trends coexist</text>
+          <polygon points="310,115 290,145 330,145" fill="#ccc" stroke="#000" stroke-width="1.5"/>
+          <rect x="160" y="150" width="300" height="40" fill="#fff" stroke="#000" stroke-width="2"/>
+          <text x="310" y="168" text-anchor="middle" font-size="11" font-weight="bold" fill="#000">Phishing lure imitates belonging,</text>
+          <text x="310" y="182" text-anchor="middle" font-size="11" font-weight="bold" fill="#000">authority, safety, or help</text>
+          <text x="310" y="198" text-anchor="middle" font-size="9" fill="#666">Bypasses general skepticism in the moment of decision</text>
+        </svg>
+        <figcaption><strong>Figure 2.</strong> The skepticism paradox: two simultaneous social trends create a vulnerability window. <span class="fig-source">Source: Original model for this thesis.</span></figcaption>
+      </figure>
+
+      <h3>1.3 Scope</h3>
+      <ul>
+        <li><strong>In scope:</strong> phishing, smishing, vishing, impersonation scams, emotional and social manipulation online.</li>
+        <li><strong>Population:</strong> adults in higher education in Norway, primarily 18-35 years.</li>
+        <li><strong>Out of scope as main focus:</strong> malware reverse engineering, DDoS, ransomware operations, deep technical forensics.</li>
+        <li><strong>Geographic frame:</strong> Norway, with international literature as theoretical backdrop.</li>
+      </ul>
+
+      <h3>1.4 Contribution</h3>
+      <p>The thesis aims to contribute academically and practically:</p>
+      <ul>
+        <li><strong>Theoretical:</strong> a combined model of phishing vulnerability integrating loneliness, skepticism, situational pressure, and security culture - extending Protection Motivation Theory where threats are not initially recognised as such (Rogers, 1975; Floyd et al., 2000).</li>
+        <li><strong>Empirical:</strong> mixed-methods evidence from Norwegian higher education on the skepticism paradox, using validated loneliness measures, scenario vignettes, and semi-structured interviews (Braun &amp; Clarke, 2006).</li>
+        <li><strong>Practical:</strong> recommendations for awareness, reporting culture, and student welfare integration at OsloMet and comparable institutions - linking technical security with human meaning rather than user blame (Hadnagy, 2018; Chen et al., 2024).</li>
+      </ul>
+      <p>
+        Norwegian studies by Tjostheim and Waterworth (2020, 2022) show that cognitive style predicts phishing susceptibility
+        in representative samples. This thesis examines whether <em>emotional and social</em> variables add explanatory power
+        beyond cognitive style alone.
+      </p>
+
+      <h3>1.5 Thesis structure</h3>
+      <p>
+        This Phase 1 submission (ACIT5910) comprises the introduction, background, literature review, theoretical
+        framework, and methodology. Chapters 6-7 outline the planned analysis and discussion for Phase 2 (ACIT5920)
+        and Phase 3 (ACIT5930). Chapter 8 presents preliminary conclusions and recommendations. Appendices contain the
+        interview guide, survey instrument, scenario vignettes, ethics application, timeline, and consent materials.
+      </p>
+    </section>
+
+    <section class="chapter">
+      <h2>2. Background: Phishing as an Entry Point</h2>
+      <h3>2.1 What is phishing?</h3>
+      <p>
+        Phishing is a social engineering attack in which the victim is manipulated into clicking a malicious link,
+        opening an attachment, revealing credentials, approving an action, or transferring money. The attack succeeds
+        when the message appears credible, relevant, or emotionally meaningful (Hadnagy, 2018; CISA, n.d.).
+      </p>
+
+      <h3>2.2 Phishing as the starting point in attack chains</h3>
+      <p>
+        Many serious incidents begin with a human action: a click, a reply, a login, or an approval. From there,
+        attackers may pursue account takeover, data theft, business email compromise, or further exploitation. This
+        makes phishing analytically important even when the final harm is ransomware or fraud.
+      </p>
+
+<figure class="figure" id="fig1">
+  <svg viewBox="0 0 620 120" role="img" aria-label="Phishing attack chain">
+    <rect x="10" y="45" width="90" height="36" fill="#fff" stroke="#000" stroke-width="1.5"/>
+    <text x="55" y="67" text-anchor="middle" font-size="11" fill="#000">Phishing</text>
+    <polygon points="100,63 112,63 112,57 122,67 112,77 112,71 100,71" fill="#666"/>
+    <rect x="122" y="45" width="90" height="36" fill="#f0f0f0" stroke="#000" stroke-width="1.5"/>
+    <text x="167" y="67" text-anchor="middle" font-size="10" fill="#000">Credential / click</text>
+    <polygon points="212,63 224,63 224,57 234,67 224,77 224,71 212,71" fill="#666"/>
+    <rect x="234" y="45" width="90" height="36" fill="#f0f0f0" stroke="#000" stroke-width="1.5"/>
+    <text x="279" y="67" text-anchor="middle" font-size="10" fill="#000">Account access</text>
+    <polygon points="324,63 336,63 336,57 346,67 336,77 336,71 324,71" fill="#666"/>
+    <rect x="346" y="45" width="90" height="36" fill="#f0f0f0" stroke="#000" stroke-width="1.5"/>
+    <text x="391" y="67" text-anchor="middle" font-size="10" fill="#000">Lateral move</text>
+    <polygon points="436,63 448,63 448,57 458,67 448,77 448,71 436,71" fill="#666"/>
+    <rect x="458" y="45" width="100" height="36" fill="#ddd" stroke="#000" stroke-width="1.5"/>
+    <text x="508" y="62" text-anchor="middle" font-size="10" fill="#000">Fraud / ransomware</text>
+    <text x="508" y="75" text-anchor="middle" font-size="9" fill="#444">/ data theft</text>
+    <text x="55" y="30" text-anchor="middle" font-size="9" fill="#666">Human action</text>
+    <text x="310" y="105" text-anchor="middle" font-size="9" fill="#666">Typical attack progression (simplified)</text>
+  </svg>
+  <figcaption><strong>Figure 1.</strong> Phishing as the human entry point in a typical cyber attack chain. <span class="fig-source">Source: Adapted from ENISA (2024) and CISA (n.d.).</span></figcaption>
+</figure>
+
+      <h3>2.3 Norway and digital trust</h3>
+      <p>
+        Norway is highly digitalised. Citizens rely on BankID, ID-porten, Altinn, digital mailboxes, and online banking.
+        High trust in institutions can be a societal strength, but it may also create fertile ground for impersonation
+        attacks when combined with urgency and fear. Public campaigns such as Finans Norge's "self-defence against fraud"
+        (selvforsvar mot svindel) show that awareness exists - yet incidents continue.
+      </p>
+
+      <h3>2.4 AI and the new scale</h3>
+      <p>
+        AI can improve grammar, personalisation, translation, and impersonation. That lowers the cost of credible
+        phishing, but it does not replace the need for emotional leverage. AI makes the lure easier to produce; human
+        needs determine whether it works.
+      </p>
+
+      <h3>2.5 Norwegian context: loneliness, students, and phishing</h3>
+      <p>
+        Norway combines high digital trust with measurable social disconnection in key groups. SSB's Livskvalitetsundersøkelse
+        (2025) finds that 14.5% of adults report being quite or very troubled by loneliness in the last two weeks,
+        with the highest rates among 18-24-year-olds (23.3%) and 25-44-year-olds (19.1%) (Statistics Norway, 2025).
+        Among students specifically, a 2024 NSO/Khrono survey of 1,000 students found that 68% report some degree of
+        loneliness, including 22% who feel lonely to a large or very large extent (Khrono &amp; Norwegian Student Organisation, 2024).
+      </p>
+      <p>
+        At the same time, phishing remains the dominant form of digital fraud in Norway. NSM received more than 100,000
+        reports of phishing attempts in 2024, and the 2026 risk report emphasises that social manipulation attacks are
+        increasing in sophistication, including AI-assisted content and attacks that bypass traditional MFA (Norwegian National Security Authority, 2026).
+        Norwegian population studies also show that intuitive thinking style and willingness to share personal data predict
+        phishing susceptibility in national samples (Tjostheim &amp; Waterworth, 2020, 2022). This juxtaposition - high
+        loneliness among young adults and students, plus rising phishing volume - makes the thesis question locally relevant,
+        not only theoretically interesting.
+      </p>
+      <table>
+        <caption class="table-caption"><strong>Table 1.</strong> Norwegian context indicators: loneliness and phishing threat. <span class="table-source">Sources: Statistics Norway (2025); Khrono &amp; Norwegian Student Organisation (2024); Norwegian National Security Authority (2026).</span></caption>
+        <thead>
+          <tr><th>Indicator</th><th>Source</th><th>Relevance to thesis</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>14.5% adults quite/very lonely (2025)</td><td>SSB Livskvalitet</td><td>Baseline population context</td></tr>
+          <tr><td>23.3% of 18-24 report strong loneliness</td><td>SSB</td><td>Core age group in HE sample</td></tr>
+          <tr><td>68% students report some loneliness</td><td>NSO/Khrono 2024</td><td>OsloMet/HE recruitment frame</td></tr>
+          <tr><td>100,000+ phishing reports (2024)</td><td>NSM</td><td>Threat is live and measurable</td></tr>
+          <tr><td>AI-assisted phishing rising</td><td>NSM Risiko 2026</td><td>Human factors remain decisive</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="chapter">
+      <h2>3. Literature Review</h2>
+      <h3>3.1 Phishing and human factors</h3>
+      <p>
+        Research consistently shows that phishing success depends on persuasion strategies, context, workload, and
+        decision pressure rather than intelligence alone (Parker &amp; Flowerday, 2020; Tsai et al., 2021). Employees and
+        students may know the rules yet still click when messages appear legitimate, urgent, or socially relevant.
+      </p>
+
+      <h3>3.2 Loneliness, belonging, and fraud</h3>
+      <p>
+        Loneliness is not merely the absence of company. Cacioppo and Patrick (2008) describe it as a distress signal
+        indicating unmet social connection needs - a state that can increase openness to contact, reassurance, and
+        perceived opportunity. The World Health Organization (2023) now treats social connection and loneliness as global
+        health priorities, underscoring that disconnection is a structural rather than marginal concern.
+      </p>
+      <p>
+        Loneliness has long been associated with fraud vulnerability among older adults (Alves &amp; Wilson, 2008; Wen et al.,
+        2022). Recent experimental work suggests loneliness can increase susceptibility to misleading offers in
+        middle-aged and older adults (Wen et al., 2024). Mechanisms include increased desire for connection, greater
+        trust in persuasive strangers, and reduced access to social verification.
+      </p>
+      <p>
+        However, the relationship is not uniform across age groups. Some studies find weaker or more complex effects
+        among younger adults, where FOMO, social media exposure, impulsivity, and platform-specific cues may matter more
+        (Przybylski et al., 2013; Klütsch et al., 2024). Among college students, Du et al. (2025) found that loneliness
+        and impulsivity chain-mediate the relationship between cognitive failure and gullibility - suggesting that social
+        and emotional pathways may be as important as cognitive style in fraud susceptibility.
+      </p>
+
+<figure class="figure" id="fig4">
+  <svg viewBox="0 0 620 100" role="img" aria-label="Chain mediation model">
+    <rect x="10" y="35" width="110" height="40" fill="#fff" stroke="#000" stroke-width="1.5"/>
+    <text x="65" y="52" text-anchor="middle" font-size="9" fill="#000">Cognitive</text>
+    <text x="65" y="65" text-anchor="middle" font-size="9" fill="#000">failure</text>
+    <line x1="120" y1="55" x2="145" y2="55" stroke="#000" stroke-width="1.5" marker-end="url(#arr)"/>
+    <rect x="145" y="35" width="100" height="40" fill="#f0f0f0" stroke="#000" stroke-width="1.5"/>
+    <text x="195" y="60" text-anchor="middle" font-size="10" fill="#000">Loneliness</text>
+    <line x1="245" y1="55" x2="270" y2="55" stroke="#000" stroke-width="1.5"/>
+    <rect x="270" y="35" width="100" height="40" fill="#f0f0f0" stroke="#000" stroke-width="1.5"/>
+    <text x="320" y="60" text-anchor="middle" font-size="10" fill="#000">Impulsivity</text>
+    <line x1="370" y1="55" x2="395" y2="55" stroke="#000" stroke-width="1.5"/>
+    <rect x="395" y="35" width="100" height="40" fill="#ddd" stroke="#000" stroke-width="1.5"/>
+    <text x="445" y="52" text-anchor="middle" font-size="9" fill="#000">Gullibility /</text>
+    <text x="445" y="65" text-anchor="middle" font-size="9" fill="#000">fraud risk</text>
+    <line x1="65" y1="75" x2="445" y2="75" stroke="#999" stroke-width="1" stroke-dasharray="5"/>
+    <text x="255" y="92" text-anchor="middle" font-size="9" fill="#666">Direct + indirect paths (43% mediated)</text>
+    <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0,0 8,4 0,8" fill="#000"/></marker></defs>
+  </svg>
+  <figcaption><strong>Figure 4.</strong> Chain mediation from cognitive failure to gullibility via loneliness and impulsivity (college students). <span class="fig-source">Source: Adapted from Du et al. (2025, Figure 1).</span></figcaption>
+</figure>
+      <p class="lead">Research gap: loneliness is well studied in older fraud victims, but less systematically examined in Norwegian higher-education contexts and in relation to the skepticism paradox.</p>
+      <p>
+        At OsloMet and across Norwegian higher education, student loneliness is not marginal. SHoT 2022 found that 29%
+        of students often miss someone to be with, and campus presence correlates with lower loneliness (SHoT Study,
+        2022). The Norwegian Directorate of Health (2024) and student welfare organisations such as SiO and Samskipnaden
+        treat loneliness as a public-health and student-life issue (Norwegian Directorate of Health, 2024;
+        Studentsamskipnaden i Oslo, 2024; Samskipnaden, 2025). OsloMet initiatives such as the Lunch Friend (Lunsjvenn)
+        project confirm that institutions recognise social belonging as a welfare concern (OsloMet, 2024). This thesis
+        connects that welfare concern to cybersecurity: the same need for connection that drives welfare interventions
+        may also shape responses to socially framed phishing.
+      </p>
+
+      <h3>3.3 The skepticism paradox in practice</h3>
+      <p>
+        People may report high skepticism toward unknown senders yet remain vulnerable to messages that appear official,
+        socially relevant, or emotionally important. Young adults are highly exposed on social platforms and may respond
+        differently to phishing that mimics peers, events, or opportunities rather than strangers (Klütsch et al.,
+        2024; Parker &amp; Flowerday, 2020). Agrawal et al. (2025) found that Gen Z participants often recognise security
+        risks yet remain uncertain about how to respond and seek support - a pattern consistent with awareness without
+        behavioural confidence.
+      </p>
+      <p>
+        This is the empirical face of the skepticism paradox: knowing that fraud exists does not guarantee safe action
+        when a message feels meaningful, urgent, or socially rewarding. Technical indicators (misspelled domains, odd
+        links) may be less salient than emotional relevance in the moment of decision (Hadnagy, 2018; Conteh &amp; Schmick,
+        2020).
+      </p>
+
+<figure class="figure" id="fig5">
+  <svg viewBox="0 0 620 160" role="img" aria-label="Known sender and FOMO effects">
+    <text x="160" y="22" text-anchor="middle" font-size="11" font-weight="bold" fill="#000">Low FOMO</text>
+    <text x="460" y="22" text-anchor="middle" font-size="11" font-weight="bold" fill="#000">High FOMO</text>
+    <rect x="40" y="35" width="240" height="50" fill="#fff" stroke="#000" stroke-width="1.5"/>
+    <text x="160" y="58" text-anchor="middle" font-size="10" fill="#000">Stranger sender</text>
+    <text x="160" y="74" text-anchor="middle" font-size="9" fill="#666">Lower susceptibility</text>
+    <rect x="340" y="35" width="240" height="50" fill="#fff" stroke="#000" stroke-width="1.5"/>
+    <text x="460" y="58" text-anchor="middle" font-size="10" fill="#000">Stranger sender</text>
+    <text x="460" y="74" text-anchor="middle" font-size="9" fill="#666">Higher susceptibility</text>
+    <rect x="40" y="100" width="240" height="50" fill="#ddd" stroke="#000" stroke-width="1.5"/>
+    <text x="160" y="123" text-anchor="middle" font-size="10" fill="#000">Known / peer sender</text>
+    <text x="160" y="139" text-anchor="middle" font-size="9" fill="#333">Elevated susceptibility regardless of FOMO</text>
+    <rect x="340" y="100" width="240" height="50" fill="#ddd" stroke="#000" stroke-width="1.5"/>
+    <text x="460" y="123" text-anchor="middle" font-size="10" fill="#000">Known / peer sender</text>
+    <text x="460" y="139" text-anchor="middle" font-size="9" fill="#333">Highest susceptibility</text>
+  </svg>
+  <figcaption><strong>Figure 5.</strong> Known senders and fear of missing out (FOMO) increase phishing susceptibility on social media. <span class="fig-source">Source: Adapted from Klütsch et al. (2024).</span></figcaption>
+</figure>
+
+      <h3>3.4 Protection Motivation Theory (PMT)</h3>
+      <p>
+        PMT explains protective behaviour through threat appraisal (severity and vulnerability) and coping appraisal
+        (response efficacy and self-efficacy) (Rogers, 1975; Floyd et al., 2000). In cybersecurity, PMT has been used
+        to explain reporting behaviour and resistance to phishing (Tsai et al., 2021; Bayl-Smith et al., 2024).
+      </p>
+      <p>
+        For this thesis, PMT is useful but incomplete. It explains motivation to protect oneself, yet phishing often
+        succeeds when the message does not initially look like a threat. Emotional needs may reframe the lure as an
+        opportunity, warning, or social contact rather than danger.
+      </p>
+
+<figure class="figure" id="fig3">
+  <svg viewBox="0 0 620 220" role="img" aria-label="Protection Motivation Theory">
+    <rect x="20" y="20" width="260" height="80" fill="#f5f5f5" stroke="#000" stroke-width="1.5"/>
+    <text x="150" y="42" text-anchor="middle" font-size="12" font-weight="bold" fill="#000">Threat appraisal</text>
+    <text x="80" y="62" text-anchor="middle" font-size="10" fill="#333">Severity</text>
+    <text x="220" y="62" text-anchor="middle" font-size="10" fill="#333">Vulnerability</text>
+    <rect x="340" y="20" width="260" height="80" fill="#f5f5f5" stroke="#000" stroke-width="1.5"/>
+    <text x="470" y="42" text-anchor="middle" font-size="12" font-weight="bold" fill="#000">Coping appraisal</text>
+    <text x="400" y="62" text-anchor="middle" font-size="10" fill="#333">Response efficacy</text>
+    <text x="540" y="62" text-anchor="middle" font-size="10" fill="#333">Self-efficacy</text>
+    <line x1="150" y1="100" x2="150" y2="120" stroke="#000" stroke-width="1.5"/>
+    <line x1="470" y1="100" x2="470" y2="120" stroke="#000" stroke-width="1.5"/>
+    <line x1="150" y1="120" x2="470" y2="120" stroke="#000" stroke-width="1.5"/>
+    <line x1="310" y1="120" x2="310" y2="140" stroke="#000" stroke-width="1.5"/>
+    <rect x="210" y="140" width="200" height="36" fill="#ddd" stroke="#000" stroke-width="1.5"/>
+    <text x="310" y="163" text-anchor="middle" font-size="11" font-weight="bold" fill="#000">Protection motivation</text>
+    <polygon points="310,176 300,190 320,190" fill="#666"/>
+    <rect x="210" y="192" width="200" height="28" fill="#fff" stroke="#000" stroke-width="1.5"/>
+    <text x="310" y="210" text-anchor="middle" font-size="10" fill="#000">Adaptive response (verify, report, refuse)</text>
+  </svg>
+  <figcaption><strong>Figure 3.</strong> Protection Motivation Theory: threat and coping appraisals combine to produce protective behaviour. <span class="fig-source">Source: Adapted from Rogers (1975) and Floyd et al. (2000).</span></figcaption>
+</figure>
+
+      <h3>3.5 Remote work, cognitive bias, and shame</h3>
+      <p>
+        Remote and screen-mediated communication reduces social cues available for verification. Social engineering
+        research shows that isolation, trust exploitation, and reduced oversight can increase susceptibility to
+        manipulation (Conteh &amp; Schmick, 2020). Overconfidence bias may coexist with loneliness: people may believe they
+        are "too smart" for phishing while remaining vulnerable to emotionally relevant lures (Parker &amp; Flowerday, 2020).
+      </p>
+      <p>
+        Shame and fear of judgment reduce reporting. Training that relies on simulated phishing without support-seeking
+        components may increase awareness but not safe behaviour under stress (Chen et al., 2024). For lonely individuals,
+        romance and confidence scams show that victims may return to contact with scammers because the relationship itself
+        feels meaningful (WIRED, 2024). Universities need non-punitive reporting cultures if data collection and
+        prevention are to reflect real behaviour.
+      </p>
+
+      <h3>3.6 Theoretical synthesis and original contribution</h3>
+      <table>
+        <caption class="table-caption"><strong>Table 2.</strong> Theoretical perspectives synthesised in the literature review.</caption>
+        <thead>
+          <tr><th>Perspective</th><th>Contributes</th><th>Limitation</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Social engineering / persuasion</td>
+            <td>Authority, urgency, fear, liking, scarcity</td>
+            <td>Can underplay emotional loneliness</td>
+          </tr>
+          <tr>
+            <td>Loneliness research</td>
+            <td>Connection needs, social void, trust in strangers</td>
+            <td>Often focused on older adults</td>
+          </tr>
+          <tr>
+            <td>PMT</td>
+            <td>Threat and coping appraisals</td>
+            <td>Assumes threat is recognised as such</td>
+          </tr>
+          <tr>
+            <td>Security culture</td>
+            <td>Reporting, verification, non-punitive learning</td>
+            <td>Needs organisational context</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        The thesis proposes a combined model centred on the <strong>skepticism paradox</strong>:
+        <strong>phishing susceptibility = emotional relevance of lure + situational pressure + unmet social need - verification opportunity - non-punitive security culture</strong>.
+        General skepticism moderates this relationship primarily for stranger-framed lures; it is weaker when the message
+        imitates institutions, peers, or opportunities that feel legitimate.
+      </p>
+      <p>
+        Norwegian national studies complement international findings: Tjostheim and Waterworth (2020, 2022) demonstrate
+        that cognitive reflection and data-sharing willingness predict phishing compliance in representative Norwegian
+        samples. This thesis extends that line by asking whether <em>emotional</em> and <em>social</em> variables -
+        especially loneliness and the need for belonging - add explanatory power beyond cognitive style alone, and whether
+        the skepticism paradox helps explain why awareness campaigns have not eliminated phishing in a high-trust,
+        high-loneliness context.
+      </p>
+    </section>
+
+    <section class="chapter">
+      <h2>4. Theoretical Framework and Hypotheses</h2>
+      <h3>4.1 The skepticism paradox as analytical lens</h3>
+      <p>
+        The theoretical contribution of this thesis is to treat phishing not primarily as a failure of knowledge, but as a
+        collision between two simultaneous social trends: rising general skepticism toward strangers and rising subjective
+        loneliness or social need (Statistics Norway, 2025; Khrono &amp; Norwegian Student Organisation, 2024). The
+        <strong>skepticism paradox</strong> predicts that protective skepticism is lure-dependent: it works against obvious
+        stranger fraud but weakens when messages imitate belonging, authority, order, status, or help.
+      </p>
+      <div class="quote core">
+        Phishing succeeds when it imitates legitimate human and institutional needs more convincingly than general
+        skepticism can counter in the moment of decision.
+      </div>
+
+      <h3>4.2 What phishing imitates</h3>
+      <table>
+        <caption class="table-caption"><strong>Table 3.</strong> Human needs that phishing imitates and why general skepticism may fail. <span class="table-source">Adapted from Hadnagy (2018) and thesis model.</span></caption>
+        <thead>
+          <tr><th>Need / fear</th><th>Example lure</th><th>Why it may bypass skepticism</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Belonging</td><td>Message from "colleague", romance scam, event invite</td><td>Feels socially relevant, not random</td></tr>
+          <tr><td>Safety</td><td>"Your account is compromised"</td><td>Triggers protective action</td></tr>
+          <tr><td>Order / control</td><td>Tax, invoice, admin deadline</td><td>Promises to fix a problem quickly</td></tr>
+          <tr><td>Status</td><td>Job offer, exclusive opportunity</td><td>Appeals to identity and ambition</td></tr>
+          <tr><td>Help</td><td>IT support, "we can fix this for you"</td><td>Uses helpfulness and compliance</td></tr>
+        </tbody>
+      </table>
+
+      <h3>4.3 Hypotheses</h3>
+      <ol>
+        <li><strong>H1:</strong> Higher loneliness is associated with higher self-reported phishing susceptibility, especially for socially framed lures (S2, S6).</li>
+        <li><strong>H2:</strong> Higher general skepticism reduces susceptibility for stranger-framed lures but not for institutionally or emotionally relevant lures (interaction effect).</li>
+        <li><strong>H3:</strong> Situational pressure (urgency, authority, stress) partially mediates the relationship between loneliness and unsafe intended behaviour.</li>
+        <li><strong>H4:</strong> Participants with stronger verification habits and supportive, non-punitive security culture report lower susceptibility (PMT coping appraisal).</li>
+      </ol>
+      <p>
+        Age will be treated as a control/exploratory variable because prior research suggests loneliness may operate
+        differently across cohorts (Wen et al., 2024).
+      </p>
+
+      <h3>4.4 Conceptual model</h3>
+
+<figure class="figure" id="fig6">
+  <svg viewBox="0 0 620 280" role="img" aria-label="Thesis conceptual model">
+    <rect x="20" y="20" width="130" height="36" fill="#f0f0f0" stroke="#000" stroke-width="1.5"/>
+    <text x="85" y="42" text-anchor="middle" font-size="9" fill="#000">Loneliness /</text>
+    <rect x="20" y="58" width="130" height="28" fill="#fff" stroke="#000" stroke-width="1.5"/>
+    <text x="85" y="76" text-anchor="middle" font-size="9" fill="#000">social need</text>
+    <rect x="20" y="100" width="130" height="36" fill="#f0f0f0" stroke="#000" stroke-width="1.5"/>
+    <text x="85" y="122" text-anchor="middle" font-size="9" fill="#000">General</text>
+    <text x="85" y="134" text-anchor="middle" font-size="9" fill="#000">skepticism</text>
+    <rect x="20" y="150" width="130" height="36" fill="#f0f0f0" stroke="#000" stroke-width="1.5"/>
+    <text x="85" y="172" text-anchor="middle" font-size="9" fill="#000">Situational</text>
+    <text x="85" y="184" text-anchor="middle" font-size="9" fill="#000">pressure</text>
+    <line x1="150" y1="38" x2="220" y2="120" stroke="#000" stroke-width="1.2"/>
+    <line x1="150" y1="118" x2="220" y2="125" stroke="#000" stroke-width="1.2"/>
+    <line x1="150" y1="168" x2="220" y2="130" stroke="#000" stroke-width="1.2"/>
+    <rect x="220" y="95" width="160" height="50" fill="#ddd" stroke="#000" stroke-width="2"/>
+    <text x="300" y="116" text-anchor="middle" font-size="10" font-weight="bold" fill="#000">Emotional relevance</text>
+    <text x="300" y="132" text-anchor="middle" font-size="10" font-weight="bold" fill="#000">of lure</text>
+    <polygon points="380,120 395,120 395,112 410,125 395,138 395,130 380,130" fill="#666"/>
+    <rect x="410" y="95" width="160" height="50" fill="#bbb" stroke="#000" stroke-width="2"/>
+    <text x="490" y="116" text-anchor="middle" font-size="10" font-weight="bold" fill="#000">Phishing</text>
+    <text x="490" y="132" text-anchor="middle" font-size="10" font-weight="bold" fill="#000">susceptibility</text>
+    <polygon points="490,145 480,160 500,160" fill="#666"/>
+    <rect x="410" y="165" width="160" height="40" fill="#fff" stroke="#000" stroke-width="1.5"/>
+    <text x="490" y="183" text-anchor="middle" font-size="9" fill="#000">Intended unsafe behaviour</text>
+    <text x="490" y="196" text-anchor="middle" font-size="9" fill="#000">(click, reply, disclose)</text>
+    <rect x="470" y="30" width="130" height="36" fill="#fff" stroke="#000" stroke-width="1.5"/>
+    <text x="535" y="52" text-anchor="middle" font-size="9" fill="#000">Verification habits</text>
+    <rect x="470" y="220" width="130" height="36" fill="#fff" stroke="#000" stroke-width="1.5"/>
+    <text x="535" y="236" text-anchor="middle" font-size="9" fill="#000">Security culture</text>
+    <text x="535" y="250" text-anchor="middle" font-size="8" fill="#666">(non-punitive)</text>
+    <line x1="535" y1="66" x2="535" y2="95" stroke="#000" stroke-width="1.2"/>
+    <line x1="535" y1="220" x2="535" y2="145" stroke="#000" stroke-width="1.2"/>
+    <text x="535" y="88" text-anchor="middle" font-size="8" fill="#666">protective</text>
+    <text x="300" y="265" text-anchor="middle" font-size="9" fill="#666">H2: skepticism moderates stranger-framed lures only</text>
+  </svg>
+  <figcaption><strong>Figure 6.</strong> Combined conceptual model: the skepticism paradox and protective factors. <span class="fig-source">Source: Original model for this thesis, integrating PMT (Rogers, 1975) and loneliness research (Cacioppo &amp; Patrick, 2008; Du et al., 2025).</span></figcaption>
+</figure>
+      <pre class="diagram">LONELINESS / SOCIAL NEED ──┐
+GENERAL SKEPTICISM ────────┼──► EMOTIONAL RELEVANCE OF LURE
+SITUATIONAL PRESSURE ──────┤         │
+(urgency, stress, authority)│         ▼
+                           └──► PHISHING SUSCEPTIBILITY ◄── VERIFICATION HABITS
+                                         │                    SECURITY CULTURE
+                                         ▼                    (protective)
+                              INTENDED UNSAFE BEHAVIOUR
+                              (click, reply, disclose)</pre>
+      <p>
+        The model predicts that skepticism reduces susceptibility primarily for stranger-framed lures, while loneliness
+        and situational pressure increase susceptibility for belonging- and authority-framed lures. Protective factors
+        operate both directly and by increasing opportunity for verification before action.
+      </p>
+    </section>
+
+    <section class="chapter">
+      <h2>5. Methodology</h2>
+      <h3>5.1 Design</h3>
+      <p><strong>Recommended design: exploratory sequential mixed methods.</strong></p>
+      <ol>
+        <li>Phase 1: Online survey (quantitative + short open text)</li>
+        <li>Phase 2: Semi-structured interviews with selected respondents</li>
+        <li>Phase 3: Thematic analysis integrated with survey findings</li>
+      </ol>
+
+<figure class="figure" id="fig7">
+  <svg viewBox="0 0 620 130" role="img" aria-label="Mixed methods design">
+    <rect x="20" y="40" width="150" height="50" fill="#f5f5f5" stroke="#000" stroke-width="1.5"/>
+    <text x="95" y="62" text-anchor="middle" font-size="11" font-weight="bold" fill="#000">Phase 1</text>
+    <text x="95" y="78" text-anchor="middle" font-size="9" fill="#333">Online survey (n=120-180)</text>
+    <polygon points="170,65 185,65 185,57 200,70 185,83 185,75 170,75" fill="#666"/>
+    <rect x="200" y="40" width="150" height="50" fill="#f5f5f5" stroke="#000" stroke-width="1.5"/>
+    <text x="275" y="62" text-anchor="middle" font-size="11" font-weight="bold" fill="#000">Phase 2</text>
+    <text x="275" y="78" text-anchor="middle" font-size="9" fill="#333">Interviews (n=12-18)</text>
+    <polygon points="350,65 365,65 365,57 380,70 365,83 365,75 350,75" fill="#666"/>
+    <rect x="380" y="40" width="150" height="50" fill="#ddd" stroke="#000" stroke-width="1.5"/>
+    <text x="455" y="62" text-anchor="middle" font-size="11" font-weight="bold" fill="#000">Phase 3</text>
+    <text x="455" y="78" text-anchor="middle" font-size="9" fill="#333">Integrated analysis</text>
+    <text x="310" y="115" text-anchor="middle" font-size="9" fill="#666">Exploratory sequential mixed methods (Creswell-style)</text>
+  </svg>
+  <figcaption><strong>Figure 7.</strong> Three-phase exploratory sequential mixed methods design. <span class="fig-source">Source: Original design for this thesis; qualitative integration follows Braun and Clarke (2006).</span></figcaption>
+</figure>
+
+      <h3>5.2 Population and sample</h3>
+      <ul>
+        <li><strong>Population:</strong> students and staff in higher education in Norway.</li>
+        <li><strong>Target sample:</strong> 120-180 survey responses; 12-18 interviews.</li>
+        <li><strong>Inclusion:</strong> adults 18+ with regular digital communication for study/work.</li>
+        <li><strong>Recruitment:</strong> OsloMet programmes, student networks, LinkedIn, privacy-preserving invitation text.</li>
+      </ul>
+
+      <h3>5.3 Survey instruments</h3>
+
+<figure class="figure" id="fig8">
+  <svg viewBox="0 0 620 180" role="img" aria-label="Scenario lure matrix">
+    <text x="310" y="18" text-anchor="middle" font-size="11" font-weight="bold" fill="#000">Phishing scenario vignettes (S1-S6)</text>
+    <rect x="30" y="30" width="85" height="55" fill="#fff" stroke="#000" stroke-width="1.5"/>
+    <text x="72" y="52" text-anchor="middle" font-size="10" fill="#000">S1 Authority</text>
+    <text x="72" y="68" text-anchor="middle" font-size="8" fill="#666">OsloMet IT</text>
+    <rect x="125" y="30" width="85" height="55" fill="#ddd" stroke="#000" stroke-width="1.5"/>
+    <text x="167" y="52" text-anchor="middle" font-size="10" fill="#000">S2 Belonging</text>
+    <text x="167" y="68" text-anchor="middle" font-size="8" fill="#666">Social invite</text>
+    <rect x="220" y="30" width="85" height="55" fill="#fff" stroke="#000" stroke-width="1.5"/>
+    <text x="262" y="52" text-anchor="middle" font-size="10" fill="#000">S3 Control</text>
+    <text x="262" y="68" text-anchor="middle" font-size="8" fill="#666">Package SMS</text>
+    <rect x="315" y="30" width="85" height="55" fill="#fff" stroke="#000" stroke-width="1.5"/>
+    <text x="357" y="52" text-anchor="middle" font-size="10" fill="#000">S4 Status</text>
+    <text x="357" y="68" text-anchor="middle" font-size="8" fill="#666">Job offer</text>
+    <rect x="410" y="30" width="85" height="55" fill="#fff" stroke="#000" stroke-width="1.5"/>
+    <text x="452" y="52" text-anchor="middle" font-size="10" fill="#000">S5 Safety</text>
+    <text x="452" y="68" text-anchor="middle" font-size="8" fill="#666">Bank call</text>
+    <rect x="505" y="30" width="85" height="55" fill="#ddd" stroke="#000" stroke-width="1.5"/>
+    <text x="547" y="52" text-anchor="middle" font-size="10" fill="#000">S6 Peer</text>
+    <text x="547" y="68" text-anchor="middle" font-size="8" fill="#666">Classmate</text>
+    <rect x="30" y="100" width="560" height="30" fill="#f5f5f5" stroke="#000" stroke-width="1"/>
+    <text x="310" y="120" text-anchor="middle" font-size="9" fill="#333">Shaded = social/belonging hypotheses (H1, H2) · Unshaded = authority/control (H3)</text>
+    <text x="310" y="155" text-anchor="middle" font-size="9" fill="#666">Full vignette text in Appendix C · Based on Hadnagy (2018) lure taxonomy</text>
+  </svg>
+  <figcaption><strong>Figure 8.</strong> Overview of six scenario vignettes mapped to lure types and hypotheses. <span class="fig-source">Source: Original instrument for this thesis; lure categories adapted from Hadnagy (2018).</span></figcaption>
+</figure>
+      <table>
+        <caption class="table-caption"><strong>Table 4.</strong> Survey constructs, instruments, and validation notes.</caption>
+        <thead>
+          <tr><th>Construct</th><th>Instrument / measure</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Loneliness</td><td>UCLA Loneliness Scale (short form) or comparable validated scale</td><td>Must be licensed/validated for Norwegian use</td></tr>
+          <tr><td>General skepticism</td><td>Adapted items on trust in unknown senders / online caution</td><td>New scale, pilot first</td></tr>
+          <tr><td>Phishing susceptibility</td><td>Scenario-based items + self-reported past experience</td><td>No real credential capture</td></tr>
+          <tr><td>Situational factors</td><td>Stress, workload, urgency sensitivity</td><td>Likert items</td></tr>
+          <tr><td>Protective behaviour</td><td>Verification habits, reporting, training recall</td><td>PMT-informed</td></tr>
+          <tr><td>Demographics</td><td>Age, study field, digital confidence</td><td>Controls</td></tr>
+        </tbody>
+      </table>
+
+      <h3>5.4 Interview guide (summary)</h3>
+      <p>Interviews will explore:</p>
+      <ul>
+        <li>near misses or actual encounters with phishing;</li>
+        <li>what the message looked like and why it felt credible;</li>
+        <li>emotional state at the time (lonely, stressed, busy, afraid);</li>
+        <li>whether they knew the advice but still hesitated or clicked;</li>
+        <li>what would have helped them stop.</li>
+      </ul>
+      <p>Full guide in Appendix A.</p>
+
+      <h3>5.5 Analysis plan</h3>
+      <ul>
+        <li><strong>Quantitative:</strong> descriptive statistics, correlation, regression, mediation tests where assumptions hold.</li>
+        <li><strong>Qualitative:</strong> reflexive thematic analysis (Braun &amp; Clarke, 2006).</li>
+        <li><strong>Integration:</strong> joint display of statistical patterns and lived experience quotes.</li>
+      </ul>
+
+      <h3>5.6 Ethics</h3>
+      <ul>
+        <li>Application to NSD / institution ethics board before data collection.</li>
+        <li>Informed consent, right to withdraw, anonymisation.</li>
+        <li>Special care when asking about fraud victimisation or shame.</li>
+        <li>No deceptive live phishing against participants without explicit ethical approval.</li>
+      </ul>
+
+      <h3>5.7 Limitations (anticipated)</h3>
+      <ul>
+        <li>Self-report bias and social desirability.</li>
+        <li>Convenience sample may overrepresent cybersecurity-aware students.</li>
+        <li>Loneliness scales measure subjective experience, not objective isolation.</li>
+        <li>Causality cannot be fully established in cross-sectional survey data.</li>
+        <li>Wen et al. (2024) found weaker loneliness-fraud effects in younger adults; H1 may need nuance or subgroup analysis.</li>
+      </ul>
+
+      <h3>5.8 Pilot study plan</h3>
+      <p>
+        Before main data collection, a pilot with 10-15 OsloMet students/staff will test: (a) completion time (target
+        under 12 minutes), (b) clarity of scenario vignettes, (c) floor/ceiling effects on loneliness items, and
+        (d) whether skepticism items discriminate. Pilot feedback will refine wording and interview prompts.
+      </p>
+
+      <h3>5.9 Data management</h3>
+      <ul>
+        <li>Survey hosted on institution-approved platform (e.g. Nettskjema / Qualtrics).</li>
+        <li>Data stored encrypted on OsloMet-approved storage; access limited to researcher and supervisor.</li>
+        <li>Retention aligned with NSD approval; deletion after thesis archive period.</li>
+        <li>Interview audio transcribed; direct identifiers removed before analysis.</li>
+      </ul>
+    </section>
+
+    <section class="chapter">
+      <h2>6. Planned Analysis (Phase 2 and 3)</h2>
+
+      <h3>6.1 Descriptive findings (planned)</h3>
+      <ul>
+        <li>Sample profile: age, role, study field, digital confidence, loneliness distribution.</li>
+        <li>Self-reported phishing exposure: frequency, channels (email, SMS, social media, phone).</li>
+        <li>Mean susceptibility scores by scenario type (S1-S6).</li>
+        <li>Reported awareness vs. reported safe behaviour gap.</li>
+      </ul>
+
+      <h3>6.2 Hypothesis testing (planned)</h3>
+      <table>
+        <caption class="table-caption"><strong>Table 5.</strong> Planned hypothesis tests and expected directions (to be completed after data collection).</caption>
+        <thead>
+          <tr><th>Hypothesis</th><th>Analysis</th><th>Expected direction</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>H1: Loneliness → susceptibility</td><td>Correlation / regression; compare S2 vs S1</td><td>Positive for social lures</td></tr>
+          <tr><td>H2: Skepticism alone insufficient</td><td>Interaction: skepticism × lure type</td><td>Skepticism weaker for institutional lures</td></tr>
+          <tr><td>H3: Situational pressure mediates</td><td>Mediation analysis (loneliness → stress → susceptibility)</td><td>Partial mediation</td></tr>
+          <tr><td>H4: Protective factors reduce risk</td><td>Regression with verification habits, reporting culture</td><td>Negative association</td></tr>
+        </tbody>
+      </table>
+
+      <h3>6.3 Qualitative themes (planned)</h3>
+      <p>Interview analysis will use reflexive thematic analysis (Braun &amp; Clarke, 2006) to identify themes such as:</p>
+      <ul>
+        <li><strong>Knowing but not stopping</strong> - awareness without behavioural control under pressure.</li>
+        <li><strong>Social credibility</strong> - when messages feel like connection rather than threat.</li>
+        <li><strong>Shame and silence</strong> - barriers to reporting near misses.</li>
+        <li><strong>What would help</strong> - verification routines, peer support, non-punitive culture.</li>
+      </ul>
+    </section>
+
+    <section class="chapter">
+      <h2>7. Planned Discussion (Phase 2 and 3)</h2>
+      <h3>7.1 Expected findings</h3>
+      <p>The thesis may find that:</p>
+      <ul>
+        <li>participants report high awareness but uneven safe behaviour;</li>
+        <li>loneliness and stress increase openness to socially meaningful lures;</li>
+        <li>skepticism toward strangers does not protect against authority or belonging cues;</li>
+        <li>verification culture and non-shaming reporting matter as much as training content.</li>
+      </ul>
+
+      <h3>7.2 Implications for theory</h3>
+      <p>
+        If supported, the findings would suggest that Protection Motivation Theory alone is insufficient for phishing
+        because many lures are not initially appraised as threats (Rogers, 1975; Bayl-Smith et al., 2024). The
+        skepticism paradox offers a human-centred explanation: protective motivation depends on whether the message is
+        framed as danger or as opportunity, contact, or institutional routine. A combined model integrating emotional
+        relevance, loneliness, verification habits, and security culture may better explain why skeptical individuals
+        still fall for credible impersonation.
+      </p>
+
+      <h3>7.3 Practical implications</h3>
+      <ul>
+        <li>Awareness campaigns should address emotional manipulation, not only fake links.</li>
+        <li>Universities should normalise "pause and verify" without shame.</li>
+        <li>Security training should include stress, loneliness, and social pressure scenarios.</li>
+        <li>Design and process should make the safe action easier than the risky one.</li>
+      </ul>
+
+      <h3>7.4 Limitations</h3>
+      <ul>
+        <li>Scenario-based susceptibility measures intended behaviour, not actual clicks.</li>
+        <li>Convenience sample may limit generalisation beyond Norwegian HE.</li>
+        <li>Cross-sectional design limits causal claims.</li>
+        <li>Self-report of loneliness and victimisation subject to social desirability.</li>
+      </ul>
+    </section>
+
+    <section class="chapter">
+      <h2>8. Conclusion and Recommendations</h2>
+      <h3>8.1 Conclusion direction</h3>
+      <p>
+        Phishing is best understood as an attack on human meaning, not merely human ignorance. In a more skeptical
+        yet often lonelier digital environment, defenders must protect not only systems but the moments when people
+        seek connection, certainty, and control. The skepticism paradox implies that cybersecurity education must address
+        emotionally credible lures - not only technical indicators - and that student welfare and security culture are
+        linked concerns rather than separate administrative domains.
+      </p>
+
+      <h3>8.2 Recommendations for OsloMet and higher education</h3>
+      <ol>
+        <li><strong>Integrate emotional manipulation</strong> into security awareness - not only technical indicators.</li>
+        <li><strong>Normalise near-miss reporting</strong> without academic or disciplinary penalty.</li>
+        <li><strong>Link student welfare and security</strong> - loneliness programmes (e.g. Lunch Friend) and IT security are related.</li>
+        <li><strong>Scenario-based training</strong> using HE-relevant vignettes (OsloMet IT, exam deadlines, peer messages).</li>
+        <li><strong>Verify-by-default routines</strong> - separate channel verification for unexpected requests.</li>
+      </ol>
+
+      <h3>8.3 Future research</h3>
+      <ul>
+        <li>Longitudinal study of loneliness and phishing incidents over an academic year.</li>
+        <li>Intervention study: emotional-aware training vs. standard awareness.</li>
+        <li>Comparison across Nordic HE institutions.</li>
+      </ul>
+    </section>
+
+    <section class="chapter">
+      <h2>Appendix A: Interview Guide</h2>
+      <ol>
+        <li>Can you tell me about a time you received a suspicious message online - whether you clicked or not?</li>
+        <li>What made it seem believable or urgent?</li>
+        <li>How were you feeling that day (busy, stressed, lonely, distracted)?</li>
+        <li>Did the message feel like it came from a stranger, an institution, or someone you knew?</li>
+        <li>Did you know the security advice in that moment? If yes, why was it hard to follow?</li>
+        <li>Did you tell anyone? Why or why not?</li>
+        <li>What would help you stop faster next time?</li>
+        <li>Do you think loneliness or social pressure online affects how people respond to such messages?</li>
+      </ol>
+    </section>
+
+    <section class="chapter">
+      <h2>Appendix B: Survey Questions</h2>
+      <h3>Section 1 - Background</h3>
+      <ul>
+        <li>Age group</li>
+        <li>Role (student / employee / other)</li>
+        <li>Hours per day online for study/work</li>
+        <li>Self-rated digital confidence (1-7)</li>
+      </ul>
+      <h3>Section 2 - Loneliness and social context</h3>
+      <ul>
+        <li>UCLA-3 or equivalent validated items</li>
+        <li>"I often feel that I lack companionship" (Likert)</li>
+        <li>"I feel in tune with the people around me" (reverse)</li>
+      </ul>
+      <h3>Section 3 - Skepticism and awareness</h3>
+      <ul>
+        <li>"I am generally skeptical of messages from unknown senders."</li>
+        <li>"I feel confident that I can recognise phishing."</li>
+        <li>"I have received cybersecurity training in the last 12 months."</li>
+      </ul>
+      <h3>Section 4 - Scenario susceptibility</h3>
+      <p>Present 6 short vignettes. For each: "How likely would you be to click, reply, or follow instructions?" (1-7 Likert). See Appendix C for full vignette text.</p>
+      <h3>Section 5 - Protective behaviour</h3>
+      <ul>
+        <li>"I verify unexpected requests through a separate channel."</li>
+        <li>"I would report a suspicious message even if I almost fell for it."</li>
+        <li>"I worry about being judged if I report a near miss."</li>
+      </ul>
+    </section>
+
+    <section class="chapter">
+      <h2>Appendix C: Phishing Scenarios</h2>
+      <p>Each vignette is followed by a 1-7 likelihood scale and optional open comment. Scenarios are fictional and contain no live links.</p>
+      <table>
+        <caption class="table-caption"><strong>Table 6.</strong> Full scenario vignettes for survey instrument.</caption>
+        <thead>
+          <tr><th>#</th><th>Lure type</th><th>Scenario text</th><th>Construct tested</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>S1</td>
+            <td>Authority / safety</td>
+            <td>You receive an email from "OsloMet IT Security" saying your student account will be locked in 2 hours unless you verify your password via a link. You are preparing for an exam submission deadline today.</td>
+            <td>Urgency + institutional trust</td>
+          </tr>
+          <tr>
+            <td>S2</td>
+            <td>Belonging / social</td>
+            <td>A person you met briefly at a student event messages you on Instagram: "Hey, we should grab coffee - here's a link to my calendar." You have few friends on campus and have felt lonely lately.</td>
+            <td>Social relevance + loneliness</td>
+          </tr>
+          <tr>
+            <td>S3</td>
+            <td>Order / control</td>
+            <td>An SMS says a package is waiting and you must pay a 39 NOK customs fee via a link to avoid return. You recently ordered something online but are not sure which store.</td>
+            <td>Uncertainty + small cost</td>
+          </tr>
+          <tr>
+            <td>S4</td>
+            <td>Status / opportunity</td>
+            <td>LinkedIn message: "We saw your profile and want to invite you to a paid research assistant role. Complete this short form today - limited spots." You are job hunting.</td>
+            <td>Ambition + scarcity</td>
+          </tr>
+          <tr>
+            <td>S5</td>
+            <td>Help / compliance</td>
+            <td>Phone call from someone claiming to be bank support: "We detected suspicious activity. Stay on the line and approve the notification on your phone so we can secure your account."</td>
+            <td>Authority + fear</td>
+          </tr>
+          <tr>
+            <td>S6</td>
+            <td>Peer impersonation</td>
+            <td>Email from a classmate's address: "Can you quickly buy these gift cards for our group project? I'll pay you back tonight." The tone matches how they usually write.</td>
+            <td>Known sender + helpfulness</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>Analysis note:</strong> S2 and S6 test social/belonging hypotheses; S1, S3, S5 test authority and control; S4 tests status. Compare responses by loneliness quartile and skepticism score.</p>
+    </section>
+
+    <section class="chapter">
+      <h2>Appendix D: Ethics and NSD Application</h2>
+      <h3>Project title</h3>
+      <p>Phishing Between Loneliness and Skepticism: Human Vulnerability to Social Engineering in Norwegian Higher Education</p>
+      <h3>Data collected</h3>
+      <ul>
+        <li>Anonymous survey responses (quantitative + optional open text)</li>
+        <li>Semi-structured interviews (audio recorded with consent, pseudonymised)</li>
+        <li>No collection of real credentials, bank details, or live phishing deployment</li>
+      </ul>
+      <h3>Legal basis and consent</h3>
+      <p>
+        Participation is voluntary. Informed consent form explains purpose, data use, storage period, right to withdraw
+        (including deletion of interview data before analysis lock), and contact details. Participants must be 18+.
+      </p>
+      <h3>Sensitive topics</h3>
+      <p>
+        Questions about loneliness, fraud victimisation, and shame may cause discomfort. Information sheet will include
+        links to student welfare (SiO/Samskipnaden), Mental Helses hjelpetelefon, and NSM reporting channels. No question
+        requires disclosure of financial loss; "prefer not to say" options included.
+      </p>
+      <h3>Risk assessment</h3>
+      <ul>
+        <li><strong>Participant risk:</strong> Low. No deceptive live attacks. Scenario vignettes are clearly fictional.</li>
+        <li><strong>Privacy risk:</strong> Medium-low. Interview quotes require careful anonymisation (remove programme, names, dates).</li>
+        <li><strong>Benefit:</strong> Improved understanding of student phishing vulnerability; recommendations for HE security culture.</li>
+      </ul>
+      <h3>NSD checklist (pre-submission)</h3>
+      <ol>
+        <li>Finalise survey instrument and consent forms</li>
+        <li>Register project in NSD/REK portal</li>
+        <li>Obtain OsloMet faculty ethics approval if required</li>
+        <li>Document data processor agreements for survey platform</li>
+      </ol>
+    </section>
+
+    <section class="chapter">
+      <h2>Appendix E: Timeline (proposed)</h2>
+      <table>
+        <caption class="table-caption"><strong>Table 7.</strong> Proposed research timeline aligned with ACIT long thesis programme.</caption>
+        <thead>
+          <tr><th>Phase</th><th>Period</th><th>Activities</th><th>Deliverable</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1. Alignment</td><td>Sep-Oct 2026</td><td>Supervisor meetings, refine RQ and hypotheses, literature in Zotero</td><td>Approved problem statement</td></tr>
+          <tr><td>2. Instrument design</td><td>Nov-Dec 2026</td><td>Validate scales, translate/adapt items, build survey</td><td>Survey v1.0 + interview guide</td></tr>
+          <tr><td>3. Ethics</td><td>Jan 2027</td><td>NSD application, consent forms, pilot ethics check</td><td>NSD approval</td></tr>
+          <tr><td>4. Pilot</td><td>Feb 2027</td><td>10-15 respondents, revise instruments</td><td>Survey v1.1</td></tr>
+          <tr><td>5. Main survey</td><td>Mar-Apr 2027</td><td>Recruit 120-180 via OsloMet channels</td><td>Quantitative dataset</td></tr>
+          <tr><td>6. Interviews</td><td>Apr-May 2027</td><td>12-18 interviews, transcription</td><td>Qualitative corpus</td></tr>
+          <tr><td>7. Analysis</td><td>Jun-Jul 2027</td><td>Stats + thematic analysis, integration</td><td>Results chapter</td></tr>
+          <tr><td>8. Writing</td><td>Aug-Nov 2027</td><td>Full thesis, supervisor feedback</td><td>Final thesis</td></tr>
+          <tr><td>9. Submission</td><td>Dec 2027</td><td>Final edit, formatting, submission</td><td>Master thesis</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="chapter">
+      <p class="refs-heading">References</p>
+      <ul class="refs">
+        <li>Agrawal, D., Singh, K., &amp; Sharma, D. (2025). <em>Understanding Gen Z's vulnerability to romance scams</em>. AMCIS 2025 Proceedings (Paper 36). https://aisel.aisnet.org/amcis2025/sig_sec/sig_sec/36/</li>
+        <li>Alves, L. M., &amp; Wilson, S. R. (2008). The effects of loneliness on telemarketing fraud vulnerability among older adults. <em>Journal of Elder Abuse &amp; Neglect, 20</em>(1), 63-85.</li>
+        <li>Bayl-Smith, P., Taib, R., Yu, K., &amp; Wiggins, M. W. (2024). Response to a phishing attack: Persuasion and protection motivation in an organizational context. <em>Information and Computer Security</em>.</li>
+        <li>Braun, V., &amp; Clarke, V. (2006). Using thematic analysis in psychology. <em>Qualitative Research in Psychology, 3</em>(2), 77-101. https://doi.org/10.1191/1478088706qp063oa</li>
+        <li>Cacioppo, J. T., &amp; Patrick, W. (2008). <em>Loneliness: Human nature and the need for social connection</em>. W. W. Norton &amp; Company.</li>
+        <li>Chen, Y., Li, S., Wang, Y., &amp; Zhang, L. (2024). The effects of group discussion and role-playing training on self-efficacy, support-seeking, and reporting phishing emails. In <em>Proceedings of the CHI Conference on Human Factors in Computing Systems</em>. https://doi.org/10.1145/3613904.3641943</li>
+        <li>Conteh, N. Y., &amp; Schmick, P. J. (2020). Cybersecurity risks, vulnerabilities, and countermeasures to prevent social engineering attacks. In <em>Cyber Security and Threats: Concepts, Methodologies, Tools, and Applications</em> (pp. 1-20). IGI Global. https://doi.org/10.4018/978-1-7998-6504-9.ch002</li>
+        <li>Cybersecurity and Infrastructure Security Agency. (n.d.). <em>Avoiding social engineering and phishing attacks</em>. Retrieved August 27, 2026, from https://www.cisa.gov/news-events/news/avoiding-social-engineering-and-phishing-attacks</li>
+        <li>Du, X., Liang, J., &amp; Chen, X. (2025). The relationship between cognitive failure and gullibility: Loneliness and impulsivity as chain mediators. <em>Humanities and Social Sciences Communications, 12</em>, Article 1435. https://doi.org/10.1057/s41599-025-04855-3</li>
+        <li>European Union Agency for Cybersecurity. (2024). <em>ENISA threat landscape 2024</em>. https://www.enisa.europa.eu/publications/enisa-threat-landscape-2024</li>
+        <li>Finans Norge. (2026, August). <em>Self-defence against fraud</em> (Selvforsvar mot svindel). Retrieved August 27, 2026, from https://www.svindel.no/</li>
+        <li>Floyd, D. L., Prentice-Dunn, S., &amp; Rogers, R. W. (2000). A meta-analysis of research on protection motivation theory. <em>Journal of Applied Social Psychology, 30</em>(2), 407-429. https://doi.org/10.1111/j.1559-1816.2000.tb02323.x</li>
+        <li>Hadnagy, C. (2018). <em>Social engineering: The science of human hacking</em> (2nd ed.). Wiley.</li>
+        <li>Halcyon. (2026). <em>AI and ransomware threat report</em>. Halcyon.</li>
+        <li>Khrono &amp; Norwegian Student Organisation. (2024, November). <em>7 out of 10 students are lonely</em>. Khrono. Retrieved August 27, 2026, from https://www.khrono.no/7-av-10-studente-er-ensomme-snakk-med-folk/931307</li>
+        <li>Klütsch, J., Schwab, J., Böffel, C., Zimmermann, V., &amp; Schlittmeier, S. J. (2024). Friend or phisher: How known senders and fear of missing out affect young adults' phishing susceptibility on social media. <em>Humanities and Social Sciences Communications, 11</em>(1), Article 1. https://doi.org/10.1057/s41599-024-03412-8</li>
+        <li>Microsoft. (2024). <em>Microsoft digital defense report</em>. Retrieved August 27, 2026, from https://www.microsoft.com/en-us/security/security-insider/microsoft-digital-defense-report</li>
+        <li>Nettvett.no &amp; Norwegian National Security Authority. (n.d.). <em>Phishing and online fraud guidance</em> (Nettvett). Retrieved August 27, 2026, from https://www.nettvett.no/svindel/phishing/</li>
+        <li>Norwegian Directorate of Health (Helsedirektoratet). (2024). <em>Loneliness</em> (Ensomhet). Retrieved August 27, 2026, from https://www.helsedirektoratet.no/forebygging-diagnose-og-behandling/forebygging-og-levevaner/livskvalitet-trivsel-og-folkehelsearbeid/ensomhet</li>
+        <li>Norwegian National Security Authority (NSM). (2026). <em>Risk report 2026</em> (Risiko 2026). Retrieved August 27, 2026, from https://nsm.no/</li>
+        <li>OsloMet. (2024, January 8). <em>Lunch Friend project</em> (Lunsjvenn). Den gode studentopplevelsen. Retrieved August 27, 2026, from https://uni.oslomet.no/dengodestudentopplevelsen/2024/01/08/lunsjvenn/</li>
+        <li>Parker, H. J., &amp; Flowerday, S. V. (2020). Contributing factors to increased susceptibility to social media phishing attacks. <em>South African Journal of Information Management, 22</em>(1), Article a1176. https://doi.org/10.4102/sajim.v22i1.1176</li>
+        <li>Przybylski, A. K., Murayama, K., DeHaan, C. R., &amp; Gladwell, V. (2013). Motivational, emotional, and behavioral correlates of fear of missing out. <em>Computers in Human Behavior, 29</em>(4), 1841-1848. https://doi.org/10.1016/j.chb.2013.02.014</li>
+        <li>Rogers, R. W. (1975). A protection motivation theory of fear appeals and attitude change. <em>The Journal of Psychology, 91</em>(1), 93-114. https://doi.org/10.1080/00223980.1975.9915803</li>
+        <li>Samskipnaden. (2025). <em>Feeling lonely? You are not alone</em> (Føler du deg ensom? Du er ikke alene!). Retrieved August 27, 2026, from https://samskipnaden.no/en/aktuelt/foler-du-deg-ensom-du-er-ikke-alene</li>
+        <li>SHoT Study. (2022). <em>Student Health and Well-being Survey</em> (Studentenes helse- og trivselsundersøkelse). Retrieved August 27, 2026, from https://shot.no/</li>
+        <li>Statistics Norway (SSB). (2025, December). How many people feel lonely in Norway? <em>Quality of Life Survey 2025</em> (Livskvalitetsundersøkelsen 2025). Retrieved August 27, 2026, from https://www.ssb.no/sosiale-forhold-og-kriminalitet/levekar/statistikk/livskvalitet/artikler-om-livskvalitet/hvor-mange-foler-seg-ensomme-i-norge</li>
+        <li>Studentsamskipnaden i Oslo (SiO). (2024). <em>Loneliness among students</em> (Ensomhet). Retrieved August 27, 2026, from https://www.sit.no/en/health/loneliness</li>
+        <li>Tjostheim, I., &amp; Waterworth, J. A. (2020). Predicting personal susceptibility to phishing. In <em>Information Technology and Systems (ICITS 2020)</em> (pp. 540-550). Springer. https://doi.org/10.1007/978-3-030-40690-5_54</li>
+        <li>Tjostheim, I., &amp; Waterworth, J. A. (2022). Phishing, data-disclosure and the cognitive reflection test. In <em>Proceedings of the 55th Hawaii International Conference on System Sciences</em> (pp. 7586-7595). https://doi.org/10.24251/HICSS.2022.926</li>
+        <li>Tsai, H. Y., Huang, Y. C., Lin, C. H., &amp; Weng, S. J. (2021). Response to a phishing attack: Persuasion and protection motivation in an organizational context. <em>Information and Computer Security</em>.</li>
+        <li>Wen, J., Yang, H., Zhang, Q., &amp; Shao, J. (2022). Understanding the mechanisms underlying the effects of loneliness on vulnerability to fraud among older adults. <em>Journal of Elder Abuse &amp; Neglect, 34</em>(1), 1-19. https://doi.org/10.1080/08946566.2021.2024105</li>
+        <li>Wen, J., Yang, H., Zhang, Q., &amp; Shao, J. (2024). Loneliness could lead to risk of fraud victimization for middle-aged and older adults. <em>Journal of Elder Abuse &amp; Neglect</em>. https://doi.org/10.1080/08946566.2024.2404040</li>
+        <li>WIRED. (2024). The loneliness epidemic is a security crisis. <em>WIRED</em>. Retrieved August 27, 2026, from https://www.wired.com/story/loneliness-epidemic-romance-scams-security-crisis/</li>
+        <li>World Health Organization. (2023, November 3). WHO launches commission on social connection. Retrieved August 27, 2026, from https://www.who.int/news/item/03-11-2023-who-launches-commission-on-social-connection</li>
+      </ul>
+    </section>
+
+    <section class="chapter">
+      <h2>Appendix F: Informed Consent Form</h2>
+      <p><strong>Project title:</strong> Phishing Between Loneliness and Skepticism: Human Vulnerability to Social Engineering in Norwegian Higher Education</p>
+      <p><strong>Researcher:</strong> Karina Sætersdal Nilssen, Master's Programme in Applied Computer and Information Technology, OsloMet<br>
+      <strong>Supervisor:</strong> [Name, faculty/department]<br>
+      <strong>Contact:</strong> [student email] · [supervisor email]</p>
+
+      <h3>Purpose of the study</h3>
+      <p>
+        You are invited to take part in research on phishing and social engineering. The study examines how loneliness,
+        skepticism, and situational factors may relate to responses to suspicious messages. Findings will inform
+        cybersecurity awareness and culture in higher education.
+      </p>
+
+      <h3>What participation involves</h3>
+      <ul>
+        <li><strong>Survey (optional):</strong> An anonymous online questionnaire (approx. 10-12 minutes) with background questions, validated loneliness items, skepticism items, and six fictional phishing scenarios. You may skip any question.</li>
+        <li><strong>Interview (optional, separate consent):</strong> If you volunteer and are selected, a 45-60 minute audio-recorded interview about experiences with suspicious messages. You will receive the interview information sheet separately.</li>
+      </ul>
+      <p>No live phishing attacks will be used. Scenario texts are clearly fictional and contain no real links or credential requests.</p>
+
+      <h3>Voluntary participation and withdrawal</h3>
+      <p>
+        Participation is voluntary. You may withdraw at any time without giving a reason and without negative
+        consequences. For the anonymous survey, withdrawal means stopping before submission. For interviews, you may
+        request deletion of your recording and transcript before analysis is locked (deadline to be stated at
+        interview booking).
+      </p>
+
+      <h3>Risks and discomfort</h3>
+      <p>
+        Questions about loneliness, fraud experiences, or shame may cause mild discomfort. You may choose "prefer not
+        to say" where offered. If you need support, contact details are provided in the information sheet (Appendix G).
+      </p>
+
+      <h3>Benefits</h3>
+      <p>
+        There is no direct personal benefit. Results may contribute to better security education and support for
+        students and staff in Norwegian higher education.
+      </p>
+
+      <h3>Confidentiality and data storage</h3>
+      <ul>
+        <li>Survey responses are anonymous unless you choose to leave contact details for interview follow-up (stored separately).</li>
+        <li>Interview recordings will be pseudonymised; names, programmes, and identifying details removed from transcripts.</li>
+        <li>Data stored on OsloMet-approved encrypted storage; access limited to researcher and supervisor.</li>
+        <li>Data retained per NSD approval, then deleted or anonymised for long-term archive as required.</li>
+      </ul>
+
+      <h3>Publication</h3>
+      <p>
+        Results may be published in the master's thesis and, with further anonymisation, in academic or professional
+        outlets. You will not be identifiable in any publication.
+      </p>
+
+      <h3>Legal basis</h3>
+      <p>
+        Processing is based on your consent (GDPR Art. 6(1)(a) and, where applicable, Art. 9(2)(a) for sensitive
+        topics). The project is registered with NSD / REK before data collection begins.
+      </p>
+
+      <h3>Consent statement</h3>
+      <p>By ticking the box below (or signing below for paper use), I confirm that:</p>
+      <ul>
+        <li>I am 18 years or older.</li>
+        <li>I have read and understood this consent form and the information sheet (Appendix G).</li>
+        <li>I agree to participate in the <strong>survey</strong> described above.</li>
+        <li>I understand I may withdraw at any time.</li>
+      </ul>
+      <p>
+        ☐ I consent to participate in the survey.<br>
+        ☐ I do <strong>not</strong> wish to participate.<br><br>
+        [Optional for interview recruitment] ☐ I am willing to be contacted about a follow-up interview (contact details collected on a separate form).
+      </p>
+      <p><em>Digital implementation: consent captured via survey platform checkbox with timestamp. Paper copy available on request.</em></p>
+    </section>
+
+    <section class="chapter">
+      <h2>Appendix G: Participant Information Sheet</h2>
+      <p><strong>Welcome</strong> - thank you for considering participation in this master's thesis research at OsloMet.</p>
+
+      <h3>What is this study about?</h3>
+      <p>
+        Phishing attacks often succeed not because people lack knowledge, but because messages imitate things people
+        need or fear losing: belonging, safety, order, or help. This study explores how loneliness, general skepticism,
+        and situational pressure may relate to responses to suspicious digital messages among adults in higher education
+        in Norway.
+      </p>
+
+      <h3>Who can participate?</h3>
+      <p>Adults aged 18+ who study or work in Norwegian higher education and use digital communication regularly.</p>
+
+      <h3>What will I be asked to do?</h3>
+      <ol>
+        <li><strong>Online survey:</strong> Answer questions about background, loneliness (standard short scale), online skepticism, six short fictional phishing scenarios, and security habits. Estimated time: 10-12 minutes.</li>
+        <li><strong>Optional interview:</strong> Some survey respondents may be invited to a confidential interview (45-60 min, video or in person). Separate consent applies.</li>
+      </ol>
+
+      <h3>Important safeguards</h3>
+      <ul>
+        <li>No real phishing links or password collection.</li>
+        <li>Survey is anonymous unless you separately volunteer contact details for interviews.</li>
+        <li>You may skip questions or stop at any time.</li>
+        <li>Interview quotes will be anonymised before use in the thesis.</li>
+      </ul>
+
+      <h3>Possible discomfort</h3>
+      <p>
+        Some questions ask about loneliness or whether you have received scam messages. You may find this mildly
+        uncomfortable. You do not have to share details of any financial loss. "Prefer not to say" is always an option.
+      </p>
+
+      <h3>Support resources</h3>
+      <table>
+        <thead>
+          <tr><th>Service</th><th>Contact</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>OsloMet student welfare (SiO)</td><td>https://sio.no/en</td></tr>
+          <tr><td>Mental Health helpline (Mental Helse)</td><td>116 123 (24/7, Norway)</td></tr>
+          <tr><td>Report digital fraud / phishing</td><td>NSM: https://nsm.no · Finans Norge: https://www.svindel.no</td></tr>
+          <tr><td>OsloMet IT security</td><td>[OsloMet IT helpdesk URL / email]</td></tr>
+        </tbody>
+      </table>
+
+      <h3>What happens to my data?</h3>
+      <p>
+        Data are processed by Karina Sætersdal Nilssen under supervisor oversight. Survey data stored on an approved
+        platform; interview recordings on encrypted OsloMet storage. Only the research team has access. Data are kept
+        only as long as NSD approval requires, then deleted or permanently anonymised.
+      </p>
+
+      <h3>Your rights</h3>
+      <p>
+        You have the right to access, correct, or request deletion of personal data (where not already anonymous),
+        restrict processing, and lodge a complaint with Datatilsynet (Norwegian Data Protection Authority). Contact the
+        researcher or supervisor for questions about your rights.
+      </p>
+
+      <h3>Questions?</h3>
+      <p>
+        <strong>Researcher:</strong> Karina Sætersdal Nilssen · [email]<br>
+        <strong>Supervisor:</strong> [name] · [email]<br>
+        <strong>OsloMet data protection:</strong> [privacy contact if applicable]
+      </p>
+      <p><em>Version 1.0 · August 2026 · To be updated after NSD approval</em></p>
+    </section>
+  </main>
+
+</body>
+</html>
