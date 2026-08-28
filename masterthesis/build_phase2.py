@@ -4,7 +4,7 @@ from pathlib import Path
 
 TITLE = "Beyond the Weakest Link: The Skepticism Paradox"
 SUBTITLE = "Why Phishing Works Despite Rising Skepticism"
-AUTHOR = "Karina [Surname]"
+AUTHOR = "Karina Sætersdal Nilssen"
 COURSE = "ACIT5920 Master's Thesis, Phase 2 (draft)"
 
 SECTIONS = []
