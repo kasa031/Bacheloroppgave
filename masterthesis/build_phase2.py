@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Build ACIT5920 Phase 2 draft HTML."""
 from pathlib import Path
+from apa_style import APA_BANNER, APA_CSS, REFERENCES, abstract_html, cover_html
 
 TITLE = "Beyond the Weakest Link: The Skepticism Paradox"
 SUBTITLE = "Why Phishing Works Despite Rising Skepticism"
-AUTHOR = "Karina Sætersdal Nilssen"
 COURSE = "ACIT5920 Master's Thesis, Phase 2 (draft)"
 
 SECTIONS = []
@@ -256,50 +256,6 @@ add("Appendix E: Phase 2 checklist for WISEflow submission", 2, [
     "1. Replace all [INSERT] placeholders with final data. 2. Confirm SIKT approval number on consent page. 3. Run plagiarism check (Ouriginal). 4. Filename: Etternavn_Fornavn_studentnummer_ACIT5920. 5. Append survey PDF export as ACIT5920_Appx if required. 6. Verify figure alt-text. 7. Supervisor sign-off obtained.",
 ])
 
-REFERENCES = """
-<p class="refs"><strong>References</strong></p>
-<p class="refs hanging">Bayl-Smith, P., Taib, R., Yu, K., &amp; Wiggins, M. W. (2024). Response to a phishing attack. <em>Information and Computer Security</em>.</p>
-<p class="refs hanging">Braun, V., &amp; Clarke, V. (2006). Using thematic analysis in psychology. <em>Qualitative Research in Psychology, 3</em>(2), 77-101.</p>
-<p class="refs hanging">Cacioppo, J. T., &amp; Patrick, W. (2008). <em>Loneliness: Human nature and the need for social connection</em>. Norton.</p>
-<p class="refs hanging">Chen, Y., et al. (2024). Group discussion and role-playing training on phishing reporting. <em>CHI Proceedings</em>.</p>
-<p class="refs hanging">Finans Norge. (2026). <em>Selvforsvar mot svindel</em>. https://www.svindel.no/</p>
-<p class="refs hanging">Klütsch, J., et al. (2024). Friend or phisher. <em>Humanities and Social Sciences Communications, 11</em>(1).</p>
-<p class="refs hanging">Norwegian National Security Authority. (2026). <em>National cyber security risk assessment</em>.</p>
-<p class="refs hanging">Parker, H. J., &amp; Flowerday, S. V. (2020). Social media phishing susceptibility. <em>SA Journal of Information Management, 22</em>(1).</p>
-<p class="refs hanging">Rogers, R. W. (1975). Protection motivation theory. <em>Journal of Psychology, 91</em>(1), 93-114.</p>
-<p class="refs hanging">SHoT Study. (2022). Student health and wellbeing survey.</p>
-<p class="refs hanging">Statistics Norway. (2025). Quality of life survey: Loneliness indicators.</p>
-<p class="refs hanging">Tjostheim, I., &amp; Waterworth, J. A. (2020). Phishing susceptibility in a Norwegian sample.</p>
-<p class="refs hanging">Wen, Y., et al. (2024). Loneliness and fraud susceptibility. <em>Journal of Consumer Affairs</em>.</p>
-"""
-
-CSS = """
-:root { --black:#000; --ink:#1a1a1a; --dark:#333; --mid:#666; --line:#ccc; --light:#f0f0f0; --paper:#fff; }
-* { box-sizing:border-box; }
-body { margin:0; font-family:"Times New Roman", Times, serif; font-size:12pt; line-height:1.5; color:var(--ink); background:#e8e8e8; }
-.toolbar { position:sticky; top:0; background:#111; color:#fff; padding:10px 16px; font-family:Calibri,sans-serif; font-size:14px; z-index:9; }
-.toolbar a { color:#7fd; margin-right:1rem; }
-.page { max-width:210mm; margin:1rem auto; background:var(--paper); padding:25mm; box-shadow:0 2px 12px rgba(0,0,0,.15); }
-.cover { text-align:center; min-height:180mm; display:flex; flex-direction:column; justify-content:center; page-break-after:always; }
-.cover h1 { font-size:22pt; font-weight:700; line-height:1.3; color:var(--black); margin:0 0 .5rem; }
-.cover .sub { font-size:14pt; margin:.5rem 0; color:var(--dark); }
-.cover .author { font-size:16pt; font-weight:700; margin-top:2rem; }
-.cover .meta { font-size:12pt; color:var(--mid); margin-top:1rem; }
-.draft-banner { background:#fff3cd; border:1px solid #856404; color:#533f03; padding:.75rem; margin:1rem 0; font-size:11pt; }
-.abstract { margin:1.5rem 0; padding:1rem; background:var(--light); border-left:3px solid var(--dark); page-break-after:always; }
-h1.ch { font-size:16pt; border-bottom:2px solid var(--black); padding-bottom:.3rem; margin:2rem 0 1rem; page-break-before:always; }
-h1.ch:first-of-type { page-break-before:auto; }
-h2 { font-size:14pt; margin:1.2rem 0 .6rem; color:var(--black); }
-p { font-size:12pt; margin:0 0 .65rem; text-align:left; }
-.criteria { font-size:11pt; color:var(--mid); margin:1rem 0; padding:.75rem; border:1px solid var(--line); }
-table.data { width:100%; border-collapse:collapse; margin:1rem 0; font-size:11pt; }
-table.data th, table.data td { border:1px solid var(--line); padding:6px 8px; text-align:left; }
-table.data caption { caption-side:top; text-align:left; font-weight:700; margin-bottom:.5rem; }
-.refs { font-size:12pt; margin:0 0 .4rem; }
-.hanging { padding-left:2em; text-indent:-2em; }
-@media print { body{background:#fff;} .toolbar{display:none;} .page{box-shadow:none;margin:0;} }
-"""
-
 body_html = []
 word_count = 0
 for level, title, paragraphs in SECTIONS:
@@ -314,14 +270,13 @@ for level, title, paragraphs in SECTIONS:
         body_html.append(f'<p>{p}</p>')
         word_count += len(p.split())
 
-abstract = """
-<p><strong>Abstract.</strong> This Phase 2 draft (ACIT5920) documents the quantitative strand of a mixed-methods study on the scepticism paradox: why phishing remains effective despite rising general scepticism toward strangers in Norway. Building on Phase 1, the draft presents finalised survey methodology, scenario vignettes (S1-S6), SIKT ethics procedures, data cleaning rules, and statistical analysis plans for hypotheses H1-H4. The Results chapter provides structured tables and figures for sample descriptives, vignette response patterns, and hypothesis tests, with [INSERT] placeholders for main survey data. Preliminary discussion interprets expected patterns through lure-specific vulnerability, loneliness, situational pressure, and security culture. Appendices include draft survey items, full vignette texts, and consent/debrief outlines. Phase 3 will add interviews and integrated analysis.</p>
-<p><strong>Keywords:</strong> phishing, scepticism paradox, methodology, survey, vignettes, loneliness, ACIT5920</p>
-"""
+abstract = abstract_html(
+    "This Phase 2 draft (ACIT5920) documents the quantitative strand of a mixed-methods study on the scepticism paradox: why phishing remains effective despite rising general scepticism toward strangers in Norway. Building on Phase 1, the draft presents finalised survey methodology, scenario vignettes (S1-S6), SIKT ethics procedures, data cleaning rules, and statistical analysis plans for hypotheses H1-H4. The Results chapter provides structured tables and figures with [INSERT] placeholders for main survey data. Phase 3 will add interviews and integrated analysis.",
+    "phishing, scepticism paradox, methodology, survey, vignettes, loneliness, ACIT5920",
+)
 
-criteria = """
-<div class="criteria"><strong>ACIT5920 Phase 2 draft mapped:</strong> Methodology (detailed, reproducible) · Results (data tables - fill when collected) · Preliminary discussion · Ethics/SIKT · Appendices (survey, vignettes, consent) · APA references · Times New Roman 12 pt · 1.5 line spacing</div>
-<div class="draft-banner"><strong>Draft status:</strong> Methodology and structure are ready for supervisor review. Replace all [INSERT] fields after pilot and main survey collection. Do not submit fabricated statistics.</div>
+draft_banner = """
+<div class="draft-banner"><strong>Draft status:</strong> Replace all [INSERT] fields after pilot and main survey collection. Do not submit fabricated statistics.</div>
 """
 
 html = f"""<!DOCTYPE html>
@@ -330,25 +285,19 @@ html = f"""<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{TITLE} - ACIT5920 Phase 2 Draft</title>
-<style>{CSS}</style>
+<style>{APA_CSS}</style>
 </head>
 <body>
 <div class="toolbar">
-  <strong>ACIT5920 Phase 2 Draft</strong> (~{word_count} words body)
-  · <a href="ACIT5910_phase1_essay.html">Phase 1 essay</a>
-  · <a href="index.html">Full thesis Phase I</a>
+  <strong>ACIT5920 Phase 2 · APA 7 (Kildekompasset)</strong> (~{word_count} words)
+  · <a href="ACIT5910_phase1_essay.html">Phase 1</a>
   · <a href="ACIT5920_phase2_draft.pdf">PDF</a>
 </div>
 <div class="page">
-<div class="cover">
-  <p class="meta">{COURSE}</p>
-  <h1>{TITLE}<br>{SUBTITLE}</h1>
-  <p class="sub">A Mixed-Methods Study of Loneliness, Social Engineering, and Digital Trust in Norway</p>
-  <p class="author">{AUTHOR}</p>
-  <p class="meta">OsloMet · Department of Computer Science · Cybersecurity</p>
-</div>
-{criteria}
-<div class="abstract">{abstract}</div>
+{cover_html(TITLE, SUBTITLE, COURSE)}
+{APA_BANNER}
+{draft_banner}
+{abstract}
 {"".join(body_html)}
 {REFERENCES}
 </div>

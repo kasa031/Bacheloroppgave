@@ -2,6 +2,10 @@
 
 Private viewing copies for Karina. Not part of the GitHub Pages app on `main`.
 
+## Reference style
+
+All HTML drafts use **APA 7th edition (Kildekompasset)**: double line spacing (2.0), hanging indent in reference lists, author–year citations. LaTeX source (`source/main.tex`) uses `biblatex` with `style=apa` and `\doublespacing`.
+
 ## Read in browser
 
 - **ACIT5910 Phase 1 essay (HTML):** [ACIT5910_phase1_essay.html](./ACIT5910_phase1_essay.html)

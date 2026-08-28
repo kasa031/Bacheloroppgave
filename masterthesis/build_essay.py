@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Build ACIT5910 Phase 1 essay HTML from structured sections."""
 from pathlib import Path
+from apa_style import APA_BANNER, APA_CSS, AUTHOR, REFERENCES, abstract_html, cover_html
 
 TITLE = "Beyond the Weakest Link: The Skepticism Paradox"
 SUBTITLE = "Why Phishing Works Despite Rising Skepticism"
-AUTHOR = "Karina Sætersdal Nilssen"
 COURSE = "ACIT5910 Master's Thesis, Phase 1"
 
 SECTIONS = []
@@ -184,69 +184,6 @@ add("Closing synthesis for Phase 1", 2, [
     "This document meets ACIT5910 Phase 1 scope by presenting a standalone Introduction and Literature Review that can evolve into the opening chapters of the full thesis. Terminology, hypotheses, and vignette design are aligned with the master project title and the problem statement approved in early supervision discussions, ensuring continuity across Phase 1, Phase 2, and Phase 3 rather than treating coursework and thesis as separate writing exercises.",
 ])
 
-REFERENCES = """
-<p class="refs"><strong>References</strong></p>
-<p class="refs hanging">Alves, L. M., &amp; Wilson, S. R. (2008). The effects of loneliness on telemarketing fraud vulnerability among older adults. <em>Journal of Elder Abuse &amp; Neglect, 20</em>(1), 63–85.</p>
-<p class="refs hanging">Bayl-Smith, P., Taib, R., Yu, K., &amp; Wiggins, M. W. (2024). Response to a phishing attack: Persuasion and protection motivation in an organizational context. <em>Information and Computer Security</em>.</p>
-<p class="refs hanging">Braun, V., &amp; Clarke, V. (2006). Using thematic analysis in psychology. <em>Qualitative Research in Psychology, 3</em>(2), 77–101. https://doi.org/10.1191/1478088706qp063oa</p>
-<p class="refs hanging">Cacioppo, J. T., &amp; Patrick, W. (2008). <em>Loneliness: Human nature and the need for social connection</em>. W. W. Norton.</p>
-<p class="refs hanging">Chen, Y., et al. (2024). The effects of group discussion and role-playing training on self-efficacy, support-seeking, and reporting phishing emails. In <em>Proceedings of the CHI Conference on Human Factors in Computing Systems</em>.</p>
-<p class="refs hanging">Conteh, N. Y., &amp; Schmick, P. J. (2016). Cybersecurity: Risk management framework and principles. In <em>Journal of Cyber Security Technology</em>.</p>
-<p class="refs hanging">Cybersecurity and Infrastructure Security Agency. (n.d.). <em>Phishing guidance</em>. https://www.cisa.gov/news-events/news/avoiding-social-engineering-and-phishing-attacks</p>
-<p class="refs hanging">Directorate of Health. (2024). Loneliness and public health.</p>
-<p class="refs hanging">European Union Agency for Cybersecurity. (2024). <em>ENISA threat landscape 2024</em>. https://www.enisa.europa.eu/publications/enisa-threat-landscape-2024</p>
-<p class="refs hanging">Finans Norge. (2026). <em>Self-defence against fraud (Selvforsvar mot svindel)</em>. https://www.svindel.no/</p>
-<p class="refs hanging">Floyd, D. L., Prentice-Dunn, S., &amp; Rogers, R. W. (2000). A meta-analysis of research on protection motivation theory. <em>Journal of Applied Social Psychology, 30</em>(2), 407–429.</p>
-<p class="refs hanging">Frauenstein, E. D., &amp; Flowerday, S. V. (2020). Susceptibility to phishing on social network sites. <em>Computers &amp; Security, 94</em>, 101862.</p>
-<p class="refs hanging">Hadnagy, C. (2018). <em>Social engineering: The science of human hacking</em> (2nd ed.). Wiley.</p>
-<p class="refs hanging">Halcyon. (2026). <em>AI and ransomware threat report</em>.</p>
-<p class="refs hanging">Jensen, T. H., et al. (2024). Remote work and cognitive bias in security decisions. <em>Journal of Information Security and Applications</em>.</p>
-<p class="refs hanging">Khrono &amp; Norwegian Student Organisation. (2024). Student loneliness reporting.</p>
-<p class="refs hanging">Klütsch, J., et al. (2024). Friend or phisher: How known senders and FOMO affect young adults' phishing susceptibility. <em>Humanities and Social Sciences Communications, 11</em>(1), 1–14.</p>
-<p class="refs hanging">Microsoft. (2024). <em>Digital defense report</em>.</p>
-<p class="refs hanging">Nettvett.no &amp; Norwegian National Security Authority. (n.d.). Phishing guidance.</p>
-<p class="refs hanging">Nkom. (n.d.). Digital fraud reports.</p>
-<p class="refs hanging">Norwegian National Security Authority. (2026). <em>National cyber security risk assessment</em>.</p>
-<p class="refs hanging">OsloMet. (2024). Student social connection initiatives.</p>
-<p class="refs hanging">Parker, H. J., &amp; Flowerday, S. V. (2020). Contributing factors to increased susceptibility to social media phishing attacks. <em>South African Journal of Information Management, 22</em>(1), a1176.</p>
-<p class="refs hanging">Politiet. (2024). Online fraud statistics.</p>
-<p class="refs hanging">Popovac, M., et al. (2020). Online risk perception and deception.</p>
-<p class="refs hanging">Przybylski, A. K., et al. (2013). Motivational, emotional, and behavioral correlates of fear of missing out. <em>Computers in Human Behavior, 29</em>(4), 1841–1848.</p>
-<p class="refs hanging">Rogers, R. W. (1975). A protection motivation theory of fear appeals and attitude change. <em>Journal of Psychology, 91</em>(1), 93–114.</p>
-<p class="refs hanging">SHoT Study. (2022). Student health and wellbeing survey.</p>
-<p class="refs hanging">Statistics Norway. (2025). Quality of life survey: Loneliness indicators.</p>
-<p class="refs hanging">Tjostheim, I., &amp; Waterworth, J. A. (2020). Phishing susceptibility in a Norwegian sample. <em>Proceedings of Norsk IKT-konferanse</em>.</p>
-<p class="refs hanging">Tjostheim, I., &amp; Waterworth, J. A. (2022). Cognitive reflection and phishing. <em>Proceedings of Norsk IKT-konferanse</em>.</p>
-<p class="refs hanging">Trend Micro. (2026). <em>Phishing threat report</em>.</p>
-<p class="refs hanging">Tsai, T. H., et al. (2021). Phishing and persuasion strategies. <em>Computers &amp; Security</em>.</p>
-<p class="refs hanging">Wen, Y., et al. (2022). Mechanisms linking loneliness and fraud.</p>
-<p class="refs hanging">Wen, Y., et al. (2024). Loneliness and fraud susceptibility. <em>Journal of Consumer Affairs</em>.</p>
-<p class="refs hanging">World Health Organization. (2023). Social connection and health.</p>
-"""
-
-CSS = """
-:root { --black:#000; --ink:#1a1a1a; --dark:#333; --mid:#666; --line:#ccc; --light:#f0f0f0; --paper:#fff; }
-* { box-sizing:border-box; }
-body { margin:0; font-family:"Times New Roman", Times, serif; font-size:12pt; line-height:1.5; color:var(--ink); background:#e8e8e8; }
-.toolbar { position:sticky; top:0; background:#111; color:#fff; padding:10px 16px; font-family:Calibri,sans-serif; font-size:14px; z-index:9; }
-.toolbar a { color:#7fd; margin-right:1rem; }
-.page { max-width:210mm; margin:1rem auto; background:var(--paper); padding:25mm; box-shadow:0 2px 12px rgba(0,0,0,.15); }
-.cover { text-align:center; min-height:180mm; display:flex; flex-direction:column; justify-content:center; page-break-after:always; }
-.cover h1 { font-size:22pt; font-weight:700; line-height:1.3; color:var(--black); margin:0 0 .5rem; }
-.cover .sub { font-size:14pt; margin:.5rem 0; color:var(--dark); }
-.cover .author { font-size:16pt; font-weight:700; margin-top:2rem; }
-.cover .meta { font-size:12pt; color:var(--mid); margin-top:1rem; }
-.abstract { margin:1.5rem 0; padding:1rem; background:var(--light); border-left:3px solid var(--dark); page-break-after:always; }
-h1.ch { font-size:16pt; border-bottom:2px solid var(--black); padding-bottom:.3rem; margin:2rem 0 1rem; page-break-before:always; }
-h1.ch:first-of-type { page-break-before:auto; }
-h2 { font-size:14pt; margin:1.2rem 0 .6rem; color:var(--black); }
-p { font-size:12pt; margin:0 0 .65rem; text-align:left; }
-.criteria { font-size:11pt; color:var(--mid); margin:1rem 0; padding:.75rem; border:1px solid var(--line); }
-.refs { font-size:12pt; margin:0 0 .4rem; }
-.hanging { padding-left:2em; text-indent:-2em; }
-@media print { body{background:#fff;} .toolbar{display:none;} .page{box-shadow:none;margin:0;} }
-"""
-
 body_html = []
 word_count = 0
 for level, title, paragraphs in SECTIONS:
@@ -258,14 +195,10 @@ for level, title, paragraphs in SECTIONS:
         body_html.append(f'<p>{p}</p>')
         word_count += len(p.split())
 
-abstract = """
-<p><strong>Abstract.</strong> This Phase 1 submission investigates why phishing remains effective despite rising public scepticism toward unknown senders. The thesis introduces the <em>scepticism paradox</em>: general caution and lure-specific vulnerability can coexist when phishing imitates social belonging, institutional authority, or emotionally meaningful opportunity rather than obvious stranger fraud. Moving beyond the weakest-link narrative, the study plans mixed-methods research in Norway examining loneliness, situational pressure, verification habits, and security culture. The submission comprises Introduction and Literature Review (ACIT5910), with problem statement, research questions, and a plan for empirical work in Phase 2 and Phase 3.</p>
-<p><strong>Keywords:</strong> phishing, scepticism paradox, loneliness, social engineering, human factors, Norway</p>
-"""
-
-criteria = """
-<div class="criteria"><strong>ACIT5910 Phase 1 criteria mapped:</strong> Individual text 5,000–10,000 words · Introduction + Literature Review · Problem statement and research questions · Plan for Phase 2–3 research · APA references · Times New Roman 12 pt · 1.5 line spacing</div>
-"""
+abstract = abstract_html(
+    "This Phase 1 submission investigates why phishing remains effective despite rising public scepticism toward unknown senders. The thesis introduces the <em>scepticism paradox</em>: general caution and lure-specific vulnerability can coexist when phishing imitates social belonging, institutional authority, or emotionally meaningful opportunity rather than obvious stranger fraud. Moving beyond the weakest-link narrative, the study plans mixed-methods research in Norway examining loneliness, situational pressure, verification habits, and security culture. The submission comprises Introduction and Literature Review (ACIT5910), with problem statement, research questions, and a plan for empirical work in Phase 2 and Phase 3.",
+    "phishing, scepticism paradox, loneliness, social engineering, human factors, Norway",
+)
 
 html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -273,25 +206,18 @@ html = f"""<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{TITLE} - ACIT5910 Phase 1 Essay</title>
-<style>{CSS}</style>
+<style>{APA_CSS}</style>
 </head>
 <body>
 <div class="toolbar">
-  <strong>ACIT5910 Phase 1 Essay</strong> (~{word_count} words body)
+  <strong>ACIT5910 Phase 1 · APA 7 (Kildekompasset)</strong> (~{word_count} words)
   · <a href="index.html">Full thesis draft</a>
   · <a href="ACIT5910_phase1_essay.pdf">PDF</a>
-  · Ctrl+P = PDF
 </div>
 <div class="page">
-<div class="cover">
-  <p class="meta">{COURSE}</p>
-  <h1>{TITLE}<br>{SUBTITLE}</h1>
-  <p class="sub">A Mixed-Methods Study of Loneliness, Social Engineering, and Digital Trust in Norway</p>
-  <p class="author">{AUTHOR}</p>
-  <p class="meta">OsloMet · Department of Computer Science · Cybersecurity</p>
-</div>
-{criteria}
-<div class="abstract">{abstract}</div>
+{cover_html(TITLE, SUBTITLE, COURSE)}
+{APA_BANNER}
+{abstract}
 {"".join(body_html)}
 {REFERENCES}
 </div>

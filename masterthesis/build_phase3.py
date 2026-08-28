@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Build ACIT5930 Phase 3 draft HTML - final thesis strand."""
 from pathlib import Path
+from apa_style import APA_BANNER, APA_CSS, REFERENCES, abstract_html, cover_html
 
 TITLE = "Beyond the Weakest Link: The Skepticism Paradox"
 SUBTITLE = "Why Phishing Works Despite Rising Skepticism"
-AUTHOR = "Karina Sætersdal Nilssen"
 COURSE = "ACIT5930 Master's Thesis, Phase 3 (final draft)"
 
 SECTIONS = []
@@ -225,52 +225,6 @@ add("Appendix E: WISEflow submission checklist", 2, [
     "Filename Etternavn_Fornavn_studentnummer_ACIT5930; Ouriginal check; all [INSERT] removed; SIKT docs in Appx; figure alt-text; page numbers; 19 May deadline.",
 ])
 
-REFERENCES = """
-<p class="refs"><strong>References</strong></p>
-<p class="refs hanging">Bayl-Smith, P., Taib, R., Yu, K., &amp; Wiggins, M. W. (2024). Response to a phishing attack. <em>Information and Computer Security</em>.</p>
-<p class="refs hanging">Braun, V., &amp; Clarke, V. (2006). Using thematic analysis in psychology. <em>Qualitative Research in Psychology, 3</em>(2), 77-101.</p>
-<p class="refs hanging">Braun, V., &amp; Clarke, V. (2021). One size fits all? What counts as quality practice in (reflexive) thematic analysis? <em>Qualitative Research in Psychology, 18</em>(3), 328-352.</p>
-<p class="refs hanging">Cacioppo, J. T., &amp; Patrick, W. (2008). <em>Loneliness: Human nature and the need for social connection</em>. Norton.</p>
-<p class="refs hanging">Chen, Y., et al. (2024). Group discussion and role-playing training on phishing reporting. <em>CHI Proceedings</em>.</p>
-<p class="refs hanging">Fetters, M. D., Curry, L. A., &amp; Creswell, J. W. (2013). Achieving integration in mixed methods designs. <em>Journal of Mixed Methods Research, 7</em>(6), 443-453.</p>
-<p class="refs hanging">Finans Norge. (2026). <em>Selvforsvar mot svindel</em>. https://www.svindel.no/</p>
-<p class="refs hanging">Hadnagy, C. (2018). <em>Social engineering: The science of human hacking</em> (2nd ed.). Wiley.</p>
-<p class="refs hanging">Klütsch, J., et al. (2024). Friend or phisher. <em>Humanities and Social Sciences Communications, 11</em>(1).</p>
-<p class="refs hanging">Norwegian National Security Authority. (2026). <em>National cyber security risk assessment</em>.</p>
-<p class="refs hanging">OsloMet. (2024). Student social connection initiatives.</p>
-<p class="refs hanging">Rogers, R. W. (1975). Protection motivation theory. <em>Journal of Psychology, 91</em>(1), 93-114.</p>
-<p class="refs hanging">SHoT Study. (2022). Student health and wellbeing survey.</p>
-<p class="refs hanging">Tjostheim, I., &amp; Waterworth, J. A. (2020). Phishing susceptibility in a Norwegian sample.</p>
-<p class="refs hanging">Tjostheim, I., &amp; Waterworth, J. A. (2022). Cognitive reflection and phishing.</p>
-"""
-
-CSS = """
-:root { --black:#000; --ink:#1a1a1a; --dark:#333; --mid:#666; --line:#ccc; --light:#f0f0f0; --paper:#fff; }
-* { box-sizing:border-box; }
-body { margin:0; font-family:"Times New Roman", Times, serif; font-size:12pt; line-height:1.5; color:var(--ink); background:#e8e8e8; }
-.toolbar { position:sticky; top:0; background:#111; color:#fff; padding:10px 16px; font-family:Calibri,sans-serif; font-size:14px; z-index:9; }
-.toolbar a { color:#7fd; margin-right:1rem; }
-.page { max-width:210mm; margin:1rem auto; background:var(--paper); padding:25mm; box-shadow:0 2px 12px rgba(0,0,0,.15); }
-.cover { text-align:center; min-height:180mm; display:flex; flex-direction:column; justify-content:center; page-break-after:always; }
-.cover h1 { font-size:22pt; font-weight:700; line-height:1.3; color:var(--black); margin:0 0 .5rem; }
-.cover .sub { font-size:14pt; margin:.5rem 0; color:var(--dark); }
-.cover .author { font-size:16pt; font-weight:700; margin-top:2rem; }
-.cover .meta { font-size:12pt; color:var(--mid); margin-top:1rem; }
-.draft-banner { background:#fff3cd; border:1px solid #856404; color:#533f03; padding:.75rem; margin:1rem 0; font-size:11pt; }
-.abstract { margin:1.5rem 0; padding:1rem; background:var(--light); border-left:3px solid var(--dark); page-break-after:always; }
-h1.ch { font-size:16pt; border-bottom:2px solid var(--black); padding-bottom:.3rem; margin:2rem 0 1rem; page-break-before:always; }
-h1.ch:first-of-type { page-break-before:auto; }
-h2 { font-size:14pt; margin:1.2rem 0 .6rem; color:var(--black); }
-p { font-size:12pt; margin:0 0 .65rem; text-align:left; }
-.criteria { font-size:11pt; color:var(--mid); margin:1rem 0; padding:.75rem; border:1px solid var(--line); }
-table.data { width:100%; border-collapse:collapse; margin:1rem 0; font-size:11pt; }
-table.data th, table.data td { border:1px solid var(--line); padding:6px 8px; text-align:left; }
-table.data caption { caption-side:top; text-align:left; font-weight:700; margin-bottom:.5rem; }
-.refs { font-size:12pt; margin:0 0 .4rem; }
-.hanging { padding-left:2em; text-indent:-2em; }
-@media print { body{background:#fff;} .toolbar{display:none;} .page{box-shadow:none;margin:0;} }
-"""
-
 body_html = []
 word_count = 0
 for level, title, paragraphs in SECTIONS:
@@ -285,13 +239,13 @@ for level, title, paragraphs in SECTIONS:
         body_html.append(f'<p>{p}</p>')
         word_count += len(p.split())
 
-abstract = """
-<p><strong>Abstract.</strong> This Phase 3 draft (ACIT5930) completes the mixed-methods master thesis on the scepticism paradox in Norwegian higher education. Building on Phase 1 theory and Phase 2 survey analysis, Phase 3 presents semi-structured interview methodology (N = 12-18 planned), reflexive thematic analysis, integration with quantitative findings via joint displays, and final discussion, conclusions, and recommendations. Five thematic areas are anticipated: lure-specific credibility, emotional context and loneliness, knowledge-behaviour gaps, shame and reporting culture, and training limitations. The discussion revisits the weakest-link narrative, extends Protection Motivation Theory toward coping appraisal, and proposes lure-specific training, non-punitive reporting, and student welfare integration for OsloMet and comparable institutions. [INSERT: Final abstract results sentence after data collection.] Keywords: phishing, scepticism paradox, thematic analysis, mixed methods, loneliness, Norway.</p>
-"""
+abstract = abstract_html(
+    "This Phase 3 draft (ACIT5930) completes the mixed-methods master thesis on the scepticism paradox in Norwegian higher education. Building on Phase 1 theory and Phase 2 survey analysis, Phase 3 presents semi-structured interview methodology (N = 12–18 planned), reflexive thematic analysis, integration with quantitative findings via joint displays, and final discussion, conclusions, and recommendations. Five thematic areas are anticipated: lure-specific credibility, emotional context and loneliness, knowledge-behaviour gaps, shame and reporting culture, and training limitations. The discussion revisits the weakest-link narrative, extends Protection Motivation Theory toward coping appraisal, and proposes lure-specific training, non-punitive reporting, and student welfare integration for OsloMet and comparable institutions. [INSERT: Final abstract results sentence after data collection.]",
+    "phishing, scepticism paradox, thematic analysis, mixed methods, loneliness, Norway",
+)
 
-criteria = """
-<div class="criteria"><strong>ACIT5930 Phase 3 draft mapped:</strong> Interview methodology · Qualitative results (themes) · Integration with Phase 2 · Discussion · Conclusion · Recommendations · Oral defence notes · Appendices · Sluttinnlevering 19 May · Times New Roman 12 pt</div>
-<div class="draft-banner"><strong>Final phase draft:</strong> Replace all [INSERT] fields after interviews and integration. Merge with Phase 1-2 into single WISEflow document for ACIT5930. No fabricated quotes.</div>
+draft_banner = """
+<div class="draft-banner"><strong>Final phase draft:</strong> Replace all [INSERT] fields after interviews and integration. Merge with Phase 1–2 into single WISEflow document for ACIT5930. No fabricated quotes.</div>
 """
 
 html = f"""<!DOCTYPE html>
@@ -300,26 +254,21 @@ html = f"""<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{TITLE} - ACIT5930 Phase 3 Draft</title>
-<style>{CSS}</style>
+<style>{APA_CSS}</style>
 </head>
 <body>
 <div class="toolbar">
-  <strong>ACIT5930 Phase 3 Draft</strong> (~{word_count} words body)
+  <strong>ACIT5930 Phase 3 · APA 7 (Kildekompasset)</strong> (~{word_count} words)
   · <a href="ACIT5920_phase2_draft.html">Phase 2</a>
   · <a href="ACIT5910_phase1_essay.html">Phase 1</a>
-  · <a href="index.html">Phase I PDF view</a>
+  · <a href="index.html">Phase I view</a>
   · <a href="ACIT5930_phase3_draft.pdf">PDF</a>
 </div>
 <div class="page">
-<div class="cover">
-  <p class="meta">{COURSE}</p>
-  <h1>{TITLE}<br>{SUBTITLE}</h1>
-  <p class="sub">A Mixed-Methods Study of Loneliness, Social Engineering, and Digital Trust in Norway</p>
-  <p class="author">{AUTHOR}</p>
-  <p class="meta">OsloMet · Department of Computer Science · Cybersecurity · Final submission draft</p>
-</div>
-{criteria}
-<div class="abstract">{abstract}</div>
+{cover_html(TITLE, SUBTITLE, COURSE)}
+{APA_BANNER}
+{draft_banner}
+{abstract}
 {"".join(body_html)}
 {REFERENCES}
 </div>
