@@ -256,30 +256,32 @@ add("Appendix E: Phase 2 checklist for WISEflow submission", 2, [
     "1. Replace all [INSERT] placeholders with final data. 2. Confirm SIKT approval number on consent page. 3. Run plagiarism check (Ouriginal). 4. Filename: Etternavn_Fornavn_studentnummer_ACIT5920. 5. Append survey PDF export as ACIT5920_Appx if required. 6. Verify figure alt-text. 7. Supervisor sign-off obtained.",
 ])
 
-body_html = []
-word_count = 0
-for level, title, paragraphs in SECTIONS:
-    if level == 1:
-        body_html.append(f'<h1 class="ch">{title}</h1>')
-    elif level == 2:
-        body_html.append(f'<h2>{title}</h2>')
-    elif level == "table":
-        body_html.append(paragraphs[0])
-        continue
-    for p in paragraphs:
-        body_html.append(f'<p>{p}</p>')
-        word_count += len(p.split())
 
-abstract = abstract_html(
-    "This Phase 2 draft (ACIT5920) documents the quantitative strand of a mixed-methods study on the scepticism paradox: why phishing remains effective despite rising general scepticism toward strangers in Norway. Building on Phase 1, the draft presents finalised survey methodology, scenario vignettes (S1-S6), SIKT ethics procedures, data cleaning rules, and statistical analysis plans for hypotheses H1-H4. The Results chapter provides structured tables and figures with [INSERT] placeholders for main survey data. Phase 3 will add interviews and integrated analysis.",
-    "phishing, scepticism paradox, methodology, survey, vignettes, loneliness, ACIT5920",
-)
+if __name__ == "__main__":
+    body_html = []
+    word_count = 0
+    for level, title, paragraphs in SECTIONS:
+        if level == 1:
+            body_html.append(f'<h1 class="ch">{title}</h1>')
+        elif level == 2:
+            body_html.append(f'<h2>{title}</h2>')
+        elif level == "table":
+            body_html.append(paragraphs[0])
+            continue
+        for p in paragraphs:
+            body_html.append(f'<p>{p}</p>')
+            word_count += len(p.split())
 
-draft_banner = """
+    abstract = abstract_html(
+        "This Phase 2 draft (ACIT5920) documents the quantitative strand of a mixed-methods study on the scepticism paradox: why phishing remains effective despite rising general scepticism toward strangers in Norway. Building on Phase 1, the draft presents finalised survey methodology, scenario vignettes (S1-S6), SIKT ethics procedures, data cleaning rules, and statistical analysis plans for hypotheses H1-H4. The Results chapter provides structured tables and figures with [INSERT] placeholders for main survey data. Phase 3 will add interviews and integrated analysis.",
+        "phishing, scepticism paradox, methodology, survey, vignettes, loneliness, ACIT5920",
+    )
+
+    draft_banner = """
 <div class="draft-banner"><strong>Draft status:</strong> Replace all [INSERT] fields after pilot and main survey collection. Do not submit fabricated statistics.</div>
 """
 
-html = f"""<!DOCTYPE html>
+    html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -304,7 +306,7 @@ html = f"""<!DOCTYPE html>
 </body>
 </html>"""
 
-out = Path("/workspace/masterthesis/ACIT5920_phase2_draft.html")
-out.write_text(html)
-print(f"Body words: {word_count}")
-print(f"Wrote {out}")
+    out = Path("/workspace/masterthesis/ACIT5920_phase2_draft.html")
+    out.write_text(html)
+    print(f"Body words: {word_count}")
+    print(f"Wrote {out}")

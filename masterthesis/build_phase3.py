@@ -225,30 +225,31 @@ add("Appendix E: WISEflow submission checklist", 2, [
     "Filename Etternavn_Fornavn_studentnummer_ACIT5930; Ouriginal check; all [INSERT] removed; SIKT docs in Appx; figure alt-text; page numbers; 19 May deadline.",
 ])
 
-body_html = []
-word_count = 0
-for level, title, paragraphs in SECTIONS:
-    if level == 1:
-        body_html.append(f'<h1 class="ch">{title}</h1>')
-    elif level == 2:
-        body_html.append(f'<h2>{title}</h2>')
-    elif level == "table":
-        body_html.append(paragraphs[0])
-        continue
-    for p in paragraphs:
-        body_html.append(f'<p>{p}</p>')
-        word_count += len(p.split())
+if __name__ == "__main__":
+    body_html = []
+    word_count = 0
+    for level, title, paragraphs in SECTIONS:
+        if level == 1:
+            body_html.append(f'<h1 class="ch">{title}</h1>')
+        elif level == 2:
+            body_html.append(f'<h2>{title}</h2>')
+        elif level == "table":
+            body_html.append(paragraphs[0])
+            continue
+        for p in paragraphs:
+            body_html.append(f'<p>{p}</p>')
+            word_count += len(p.split())
 
-abstract = abstract_html(
-    "This Phase 3 draft (ACIT5930) completes the mixed-methods master thesis on the scepticism paradox in Norwegian higher education. Building on Phase 1 theory and Phase 2 survey analysis, Phase 3 presents semi-structured interview methodology (N = 12–18 planned), reflexive thematic analysis, integration with quantitative findings via joint displays, and final discussion, conclusions, and recommendations. Five thematic areas are anticipated: lure-specific credibility, emotional context and loneliness, knowledge-behaviour gaps, shame and reporting culture, and training limitations. The discussion revisits the weakest-link narrative, extends Protection Motivation Theory toward coping appraisal, and proposes lure-specific training, non-punitive reporting, and student welfare integration for OsloMet and comparable institutions. [INSERT: Final abstract results sentence after data collection.]",
-    "phishing, scepticism paradox, thematic analysis, mixed methods, loneliness, Norway",
-)
+    abstract = abstract_html(
+        "This Phase 3 draft (ACIT5930) completes the mixed-methods master thesis on the scepticism paradox in Norwegian higher education. Building on Phase 1 theory and Phase 2 survey analysis, Phase 3 presents semi-structured interview methodology (N = 12–18 planned), reflexive thematic analysis, integration with quantitative findings via joint displays, and final discussion, conclusions, and recommendations. Five thematic areas are anticipated: lure-specific credibility, emotional context and loneliness, knowledge-behaviour gaps, shame and reporting culture, and training limitations. The discussion revisits the weakest-link narrative, extends Protection Motivation Theory toward coping appraisal, and proposes lure-specific training, non-punitive reporting, and student welfare integration for OsloMet and comparable institutions. [INSERT: Final abstract results sentence after data collection.]",
+        "phishing, scepticism paradox, thematic analysis, mixed methods, loneliness, Norway",
+    )
 
-draft_banner = """
+    draft_banner = """
 <div class="draft-banner"><strong>Final phase draft:</strong> Replace all [INSERT] fields after interviews and integration. Merge with Phase 1–2 into single WISEflow document for ACIT5930. No fabricated quotes.</div>
 """
 
-html = f"""<!DOCTYPE html>
+    html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -261,7 +262,7 @@ html = f"""<!DOCTYPE html>
   <strong>ACIT5930 Phase 3 draft</strong> (~{word_count} words)
   · <a href="ACIT5920_phase2_draft.html">Phase 2</a>
   · <a href="ACIT5910_phase1_essay.html">Phase 1</a>
-  · <a href="index.html">Phase I view</a>
+  · <a href="master_thesis_full.html">Full thesis</a>
   · <a href="ACIT5930_phase3_draft.pdf">PDF</a>
 </div>
 <div class="page">
@@ -275,7 +276,7 @@ html = f"""<!DOCTYPE html>
 </body>
 </html>"""
 
-out = Path("/workspace/masterthesis/ACIT5930_phase3_draft.html")
-out.write_text(html)
-print(f"Body words: {word_count}")
-print(f"Wrote {out}")
+    out = Path("/workspace/masterthesis/ACIT5930_phase3_draft.html")
+    out.write_text(html)
+    print(f"Body words: {word_count}")
+    print(f"Wrote {out}")

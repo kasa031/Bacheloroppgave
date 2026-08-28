@@ -1,7 +1,7 @@
 """Shared styling for master thesis HTML builds.
 
-Visual layout matches master_thesis_phase1 (Times New Roman 12 pt, 1.5 spacing,
-16 pt chapter headings). Reference list follows APA 7 (Kildekompasset).
+APA 7 (Kildekompasset) reference list. Full-thesis template uses double spacing;
+phase drafts keep the readable Phase I chapter scale (16 pt headings).
 """
 
 AUTHOR = "Karina Sætersdal Nilssen"
@@ -84,6 +84,100 @@ table.data caption { caption-side:top; text-align:left; font-weight:700; margin-
 dt { font-weight:700; margin-top:.5rem; }
 dd { margin:0 0 .5rem 1rem; }
 @media print { body{background:#fff;} .toolbar{display:none;} .page{box-shadow:none;margin:0;max-width:none;} }
+"""
+
+# APA 7 full thesis: Kildekompasset double spacing + original chapter typography.
+APA_FULL_CSS = """
+:root { --black:#000; --ink:#1a1a1a; --dark:#333; --mid:#666; --line:#ccc; --light:#f0f0f0; --paper:#fff; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:"Times New Roman", Times, serif; font-size:12pt; line-height:2; color:var(--ink); background:#e8e8e8; }
+.toolbar { position:sticky; top:0; background:#111; color:#fff; padding:10px 16px; font-family:Calibri,sans-serif; font-size:14px; z-index:9; line-height:1.4; }
+.toolbar a { color:#7fd; margin-right:1rem; }
+.page { max-width:210mm; margin:1rem auto; background:var(--paper); padding:25mm; box-shadow:0 2px 12px rgba(0,0,0,.15); }
+.cover-page { min-height:200mm; display:flex; flex-direction:column; justify-content:center; text-align:center; page-break-after:always; line-height:2; }
+.cover-title { font-size:22pt; font-weight:700; line-height:1.3; color:var(--black); margin:0; }
+.cover-sub { font-size:14pt; margin-top:1rem; color:var(--dark); font-style:italic; }
+.cover-author { font-size:12pt; font-weight:400; margin-top:2rem; }
+.cover-affil { font-size:12pt; color:var(--dark); margin:.15rem 0; }
+.cover-meta { font-size:12pt; color:var(--mid); margin-top:1rem; }
+h1.ch, .chapter h1 { font-size:16pt; font-weight:700; border-bottom:2px solid var(--black); padding-bottom:.3rem; margin:2rem 0 1rem; page-break-before:always; text-align:left; }
+h1.ch:first-of-type, .chapter:first-of-type h1 { page-break-before:auto; }
+h1.refs-heading { page-break-before:always; border-bottom:none; text-align:center; }
+h2 { font-size:14pt; font-weight:700; margin:1.2rem 0 .6rem; color:var(--black); }
+h3 { font-size:12pt; font-weight:700; margin:1rem 0 .4rem; }
+p, li { font-size:12pt; margin:0 0 .65rem; text-align:left; text-indent:0.5in; }
+h1 + p, h2 + p, h3 + p, .chapter h1 + p, .cover-page p, blockquote p, li, dt, dd, table.data, .draft-banner, .refs, .note { text-indent:0; }
+ul, ol, dl { margin:.4rem 0 .8rem; padding-left:1.4rem; }
+blockquote.quote { margin:.8rem 0; padding:.8rem 1rem; background:var(--light); border-left:3px solid var(--dark); text-indent:0; }
+.cite { color:var(--mid); font-size:11pt; }
+.draft-banner { background:#fff3cd; border:1px solid #856404; color:#533f03; padding:.75rem; margin:1rem 0; font-size:11pt; line-height:1.5; }
+table.data { width:100%; border-collapse:collapse; margin:1rem 0; font-size:11pt; line-height:1.4; }
+table.data th, table.data td { border:1px solid var(--line); padding:6px 8px; text-align:left; }
+table.data caption { caption-side:top; text-align:left; font-weight:700; margin-bottom:.5rem; }
+.refs { font-size:12pt; margin:0 0 .5rem; }
+.hanging { padding-left:0.5in; text-indent:-0.5in; margin-left:0; }
+.refs.note { font-size:10pt; color:var(--mid); margin-top:1rem; font-style:italic; }
+dt { font-weight:700; margin-top:.5rem; }
+dd { margin:0 0 .5rem 1rem; }
+@media print { body{background:#fff;} .toolbar{display:none;} .page{box-shadow:none;margin:0;max-width:none;} }
+"""
+
+
+def render_chapter(sections, chapter_title, demote_h1=False):
+    """Render one level-1 chapter block (excludes the chapter h1 heading)."""
+    parts = []
+    in_chapter = False
+    for level, title, paragraphs in sections:
+        if level == 1:
+            if title == chapter_title:
+                in_chapter = True
+                continue
+            if in_chapter:
+                break
+        if not in_chapter:
+            continue
+        if level == 2:
+            parts.append(f"<h2>{title}</h2>")
+        elif level == "table":
+            parts.append(paragraphs[0])
+            continue
+        for p in paragraphs:
+            parts.append(f"<p>{p}</p>")
+    return "".join(parts)
+
+
+def render_sections(sections, skip_h1=None, demote_h1=False):
+    """Render structured sections to HTML."""
+    skip = skip_h1 or set()
+    parts = []
+    for level, title, paragraphs in sections:
+        if level == 1 and title in skip:
+            continue
+        if level == 1:
+            tag = "h2" if demote_h1 else "h1"
+            cls = ' class="ch"' if tag == "h1" else ""
+            parts.append(f"<{tag}{cls}>{title}</{tag}>")
+        elif level == 2:
+            parts.append(f"<h2>{title}</h2>")
+        elif level == "table":
+            parts.append(paragraphs[0])
+            continue
+        for p in paragraphs:
+            parts.append(f"<p>{p}</p>")
+    return "".join(parts)
+
+
+def full_thesis_cover():
+    return f"""
+<div class="cover-page">
+  <h1 class="cover-title">Beyond the Weakest Link: The Skepticism Paradox<br>Why Phishing Works Despite Rising Skepticism</h1>
+  <p class="cover-sub">A Mixed-Methods Study of Loneliness, Social Engineering, and Digital Trust in Norway</p>
+  <p class="cover-author">{AUTHOR}</p>
+  <p class="cover-affil">{INSTITUTION}</p>
+  <p class="cover-affil">{DEPARTMENT}</p>
+  <p class="cover-meta">{PROGRAM}</p>
+  <p class="cover-meta">Master's Thesis · ACIT5910–5930 · APA 7 (Kildekompasset)</p>
+</div>
 """
 
 

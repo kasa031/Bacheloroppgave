@@ -1,6 +1,6 @@
 # ACIT4100 Essay 2026
 
-Research-field essay (not master thesis submission).
+Research-field essay (not master thesis submission). **APA 7 (Kildekompasset)** formatting.
 
 ## Topic
 

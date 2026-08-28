@@ -4,18 +4,24 @@ Private viewing copies for Karina. Not part of the GitHub Pages app on `main`.
 
 ## Reference style
 
-Body text uses the same layout as `master_thesis_phase1.pdf` (Times New Roman 12 pt, 1.5 line spacing, 16 pt chapter headings). Reference lists follow APA 7 (Kildekompasset) with hanging indent. LaTeX source uses `biblatex` with `style=apa`.
+Full working draft (`master_thesis_full.html`) uses **APA 7 (Kildekompasset)** template with **original Phase I text** from `master_thesis_original_phase1.html`, plus Phase 2 and Phase 3 chapters merged into one document. LaTeX source uses `biblatex` with `style=apa`.
 
 ## Build
 
 ```bash
-python3 build_essay.py      # ACIT5910 Phase 1 HTML
-python3 build_phase2.py     # ACIT5920 Phase 2 HTML
-python3 build_phase3.py     # ACIT5930 Phase 3 HTML
-python3 build_pdf.py        # Export phase HTML to PDF (Headless Chrome)
+python3 build_full_thesis.py   # One long HTML from original + all phases
+python3 build_essay.py        # ACIT5910 Phase 1 HTML (separate coursework export)
+python3 build_phase2.py       # ACIT5920 Phase 2 HTML
+python3 build_phase3.py       # ACIT5930 Phase 3 HTML
+python3 build_pdf.py          # Export HTML to PDF (Headless Chrome)
 ```
 
 ## Read in browser
+
+- **Full thesis (all phases, working copy):** [master_thesis_full.html](./master_thesis_full.html)
+- **Full thesis PDF:** [master_thesis_full.pdf](./master_thesis_full.pdf)
+- **Original Phase I (archived copy, unchanged):** [master_thesis_original_phase1.html](./master_thesis_original_phase1.html)
+- **Original Phase I PDF:** [master_thesis_phase1.pdf](./master_thesis_phase1.pdf)
 
 - **ACIT5910 Phase 1 essay (HTML):** [ACIT5910_phase1_essay.html](./ACIT5910_phase1_essay.html)
 - **ACIT5910 Phase 1 essay (PDF):** [ACIT5910_phase1_essay.pdf](./ACIT5910_phase1_essay.pdf)
@@ -36,6 +42,9 @@ Files in `source/` (main.tex, mybib.bib, etc.)
 
 Replace `BRANCH` with `cursor/masterthesis-view-d899`:
 
+- Full thesis HTML: `https://cdn.jsdelivr.net/gh/kasa031/Bacheloroppgave@BRANCH/masterthesis/master_thesis_full.html`
+- Full thesis PDF: `https://raw.githubusercontent.com/kasa031/Bacheloroppgave/BRANCH/masterthesis/master_thesis_full.pdf`
+- Original Phase I copy: `https://cdn.jsdelivr.net/gh/kasa031/Bacheloroppgave@BRANCH/masterthesis/master_thesis_original_phase1.html`
 - ACIT5910 essay HTML: `https://cdn.jsdelivr.net/gh/kasa031/Bacheloroppgave@BRANCH/masterthesis/ACIT5910_phase1_essay.html`
 - ACIT5910 essay PDF: `https://cdn.jsdelivr.net/gh/kasa031/Bacheloroppgave@BRANCH/masterthesis/ACIT5910_phase1_essay.pdf`
 - ACIT5920 Phase 2 HTML: `https://cdn.jsdelivr.net/gh/kasa031/Bacheloroppgave@BRANCH/masterthesis/ACIT5920_phase2_draft.html`

@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parent
 CHROME = shutil.which("google-chrome") or shutil.which("chromium") or shutil.which("chromium-browser")
 
 PDF_TARGETS = [
+    "master_thesis_full.html",
     "ACIT5910_phase1_essay.html",
     "ACIT5920_phase2_draft.html",
     "ACIT5930_phase3_draft.html",
