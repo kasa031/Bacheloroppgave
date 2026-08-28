@@ -23,5 +23,7 @@ Replace `BRANCH` with `cursor/masterthesis-view-d899`:
 
 - ACIT5910 essay HTML: `https://cdn.jsdelivr.net/gh/kasa031/Bacheloroppgave@BRANCH/masterthesis/ACIT5910_phase1_essay.html`
 - ACIT5910 essay PDF: `https://cdn.jsdelivr.net/gh/kasa031/Bacheloroppgave@BRANCH/masterthesis/ACIT5910_phase1_essay.pdf`
+- ACIT5920 Phase 2 HTML: `https://cdn.jsdelivr.net/gh/kasa031/Bacheloroppgave@BRANCH/masterthesis/ACIT5920_phase2_draft.html`
+- ACIT5920 Phase 2 PDF: `https://cdn.jsdelivr.net/gh/kasa031/Bacheloroppgave@BRANCH/masterthesis/ACIT5920_phase2_draft.pdf`
 - jsDelivr HTML: `https://cdn.jsdelivr.net/gh/kasa031/Bacheloroppgave@BRANCH/masterthesis/index.html`
 - GitHub raw PDF: `https://raw.githubusercontent.com/kasa031/Bacheloroppgave/BRANCH/masterthesis/master_thesis_phase1.pdf`
