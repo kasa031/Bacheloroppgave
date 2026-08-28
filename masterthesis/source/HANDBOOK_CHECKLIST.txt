@@ -1,0 +1,72 @@
+ACIT Master Thesis Handbook 2025-2026 - sjekkliste for Karina
+=============================================================
+
+Kilde: ACIT Master's thesis handbook 2025-2026 (OsloMet)
+
+LONG THESIS - tre faser
+-----------------------
+ACIT5910 Phase I  - 10 ECTS - var (Spring)
+ACIT5920 Phase II - 20 ECTS - host (Autumn)
+ACIT5930 Phase III- 30 ECTS - var (Spring)
+Sluttinnlevering: 19. mai (WISEflow)
+
+VIKTIGE FRISTER (Long thesis)
+-----------------------------
+- Prosjektkontrakt signert: 1. november
+- Bestatt 20 ECTS semester 1: 15. januar
+- Bestatt ACIT5910 for a starte Phase II: 15. juli
+- Phase I/II innleveringsfrister: folg Canvas ACIT5910 / ACIT5920
+
+INNLEVERINGSNAVN (WISEflow)
+---------------------------
+Phase 1: Etternavn_Fornavn_studentnummer_ACIT5910
+Phase 2: Etternavn_Fornavn_studentnummer_ACIT5920
+Phase 3: Etternavn_Fornavn_studentnummer_ACIT5930
+Vedlegg zip: ..._ACIT5910_Appx (osv.)
+
+KAPITTELOPPBYGGING (handbok kap. 3)
+-----------------------------------
+1. Preface (personlig, takk, sted/dato/signatur)
+2. Abstract (max 2 sider; formal, scope, metode, resultater, konklusjon)
+3. Table of contents (interaktiv)
+4. List of figures (interaktiv)
+5. List of tables (interaktiv)
+6. Introduction (bakgrunn, mal, hypoteser/sporsmal, rapportoversikt)
+7. Literature review (kritisk, ingen personlige meninger, APA-referanser)
+8. Methodology (detaljert, reproducerbar, begrunn valg)
+9. Results (Phase II/III - data)
+10. Discussion (analyse mot teori)
+11. Conclusion (svar pa sporsmal, anbefalinger, videre forskning)
+12. Reference list (APA foretrukket)
+13. Appendices (intervjuguide, sporreskjema, radata, osv.)
+
+FORMAT (handbok 4.1)
+--------------------
+- Word/EPUB foretrukket, PDF akseptert
+- Venstremarg 2,5 cm
+- Font: Arial eller Calibri 12 pt
+- Linjeavstand 1,5
+- Venstrestilt tekst
+- Sidetall nederst midtstilt (ikke pa forsiden)
+- Nye hovedkapittel pa ny side
+- Figurer/tabeller: dobbel nummerering (kapittel.figur, f.eks. 2.4)
+- Alt-tekst pa alle figurer (WCAG AA)
+- APA referansestil (IEEE ogsa OK)
+
+ETIKK OG DATA
+-------------
+- SIKT/NSD: avklar tidlig (handbok 4.2)
+- Ouriginal plagiatkontroll ved innlevering
+- Supervisor ansvarlig for personvern, student har eget ansvar
+
+MUNTLIG EKSAMEN (slutt)
+-----------------------
+- Ca. 30 min presentasjon + 30 min diskusjon
+- Karakter kan justeres ett hakk opp/ned etter muntlig
+
+LaTeX vs handbok
+----------------
+Malen bruker LaTeX (PDF). Handbok sier Word foretrukket - sjekk med veileder om PDF fra LaTeX er OK.
+LaTeX er satt til Helvetica/Arial-lignende, 12 pt, 1,5 linjeavstand, 25 mm venstremarg.
+
+Ikke push til GitHub.
