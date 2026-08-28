@@ -7,40 +7,38 @@
 <style>
 :root { --black:#000; --ink:#1a1a1a; --dark:#333; --mid:#666; --line:#ccc; --light:#f0f0f0; --paper:#fff; }
 * { box-sizing:border-box; }
-body { margin:0; font-family:"Times New Roman", Times, serif; font-size:12pt; line-height:2; color:var(--ink); background:#e8e8e8; }
+body { margin:0; font-family:"Times New Roman", Times, serif; font-size:12pt; line-height:1.5; color:var(--ink); background:#e8e8e8; }
 .toolbar { position:sticky; top:0; background:#111; color:#fff; padding:10px 16px; font-family:Calibri,sans-serif; font-size:14px; z-index:9; line-height:1.4; }
 .toolbar a { color:#7fd; margin-right:1rem; }
 .page { max-width:210mm; margin:1rem auto; background:var(--paper); padding:25mm; box-shadow:0 2px 12px rgba(0,0,0,.15); }
-.cover { text-align:center; min-height:180mm; display:flex; flex-direction:column; justify-content:center; page-break-after:always; line-height:2; }
-.cover h1 { font-size:22pt; font-weight:700; line-height:1.3; color:var(--black); margin:0 0 .5rem; }
-.cover .sub { font-size:14pt; margin:.5rem 0; color:var(--dark); font-style:italic; }
-.cover .author { font-size:12pt; font-weight:400; margin-top:2rem; }
-.cover .affil { font-size:12pt; color:var(--dark); margin:.2rem 0; }
-.cover .meta { font-size:12pt; color:var(--mid); margin-top:1rem; }
-.draft-banner { background:#fff3cd; border:1px solid #856404; color:#533f03; padding:.75rem; margin:1rem 0; font-size:11pt; line-height:1.5; }
-.criteria { font-size:11pt; color:var(--mid); margin:1rem 0; padding:.75rem; border:1px solid var(--line); line-height:1.5; }
-.abstract { margin:1.5rem 0; padding:0; page-break-after:always; }
-.abstract h2 { font-size:12pt; font-weight:700; text-align:center; margin:0 0 .5rem; }
-.abstract p { text-indent:0.5in; margin:0 0 .65rem; }
-.keywords { text-indent:0; font-style:italic; margin-top:.5rem; }
-h1.ch { font-size:12pt; font-weight:700; text-align:left; margin:2rem 0 1rem; page-break-before:always; border-bottom:2px solid var(--black); padding-bottom:.3rem; }
+.cover-page { min-height:200mm; display:flex; flex-direction:column; justify-content:center; text-align:center; page-break-after:always; }
+.cover-title { font-size:22pt; font-weight:700; line-height:1.3; color:var(--black); margin:0; }
+.cover-sub { font-size:14pt; margin-top:1rem; color:var(--dark); }
+.cover-author { font-size:16pt; font-weight:700; margin-top:2rem; }
+.cover-meta { font-size:12pt; color:var(--mid); margin-top:1rem; }
+h1.ch, .chapter h1 { font-size:16pt; font-weight:700; border-bottom:2px solid var(--black); padding-bottom:.3rem; margin:2rem 0 1rem; page-break-before:always; }
 h1.ch:first-of-type { page-break-before:auto; }
-h1.refs-heading { text-align:center; border-bottom:none; page-break-before:always; }
-h2 { font-size:12pt; font-weight:700; margin:1.2rem 0 .6rem; color:var(--black); }
-p { font-size:12pt; margin:0 0 .65rem; text-align:left; text-indent:0.5in; }
-h1 + p, h2 + p, .abstract p:first-of-type, .criteria, .draft-banner, .refs, .note, table.data { text-indent:0; }
+h1.refs-heading { page-break-before:always; }
+h2 { font-size:14pt; font-weight:700; margin:1.2rem 0 .6rem; color:var(--black); }
+h3 { font-size:12pt; font-weight:700; margin:1rem 0 .4rem; }
+p, li { font-size:12pt; margin:0 0 .65rem; text-align:left; }
+ul, ol, dl { margin:.4rem 0 .8rem; padding-left:1.4rem; }
+blockquote.quote { margin:.8rem 0; padding:.8rem 1rem; background:var(--light); border-left:3px solid var(--dark); }
+.draft-banner { background:#fff3cd; border:1px solid #856404; color:#533f03; padding:.75rem; margin:1rem 0; font-size:11pt; line-height:1.5; }
 table.data { width:100%; border-collapse:collapse; margin:1rem 0; font-size:11pt; line-height:1.4; }
 table.data th, table.data td { border:1px solid var(--line); padding:6px 8px; text-align:left; }
 table.data caption { caption-side:top; text-align:left; font-weight:700; margin-bottom:.5rem; }
 .refs { font-size:12pt; margin:0 0 .5rem; }
 .hanging { padding-left:0.5in; text-indent:-0.5in; margin-left:0; }
 .refs.note { font-size:10pt; color:var(--mid); margin-top:1rem; font-style:italic; }
-@media print { body{background:#fff;} .toolbar{display:none;} .page{box-shadow:none;margin:0;} }
+dt { font-weight:700; margin-top:.5rem; }
+dd { margin:0 0 .5rem 1rem; }
+@media print { body{background:#fff;} .toolbar{display:none;} .page{box-shadow:none;margin:0;max-width:none;} }
 </style>
 </head>
 <body>
 <div class="toolbar">
-  <strong>ACIT5930 Phase 3 · APA 7 (Kildekompasset)</strong> (~1908 words)
+  <strong>ACIT5930 Phase 3 draft</strong> (~1908 words)
   · <a href="ACIT5920_phase2_draft.html">Phase 2</a>
   · <a href="ACIT5910_phase1_essay.html">Phase 1</a>
   · <a href="index.html">Phase I view</a>
@@ -48,28 +46,22 @@ table.data caption { caption-side:top; text-align:left; font-weight:700; margin-
 </div>
 <div class="page">
 
-<div class="cover">
-  <p class="meta">ACIT5930 Master's Thesis, Phase 3 (final draft)</p>
-  <h1>Beyond the Weakest Link: The Skepticism Paradox<br>Why Phishing Works Despite Rising Skepticism</h1>
-  <p class="sub">A Mixed-Methods Study of Loneliness, Social Engineering, and Digital Trust in Norway</p>
-  <p class="author">Karina Sætersdal Nilssen</p>
-  <p class="affil">Oslo Metropolitan University</p>
-  <p class="affil">Department of Computer Science</p>
-  <p class="meta">Applied Computer and Information Technology (ACIT) · Cybersecurity</p>
+<div class="cover-page">
+  <h1 class="cover-title">Beyond the Weakest Link: The Skepticism Paradox<br>Why Phishing Works Despite Rising Skepticism</h1>
+  <p class="cover-sub">A Mixed-Methods Study of Loneliness, Social Engineering, and Digital Trust in Norway</p>
+  <p class="cover-author">Karina Sætersdal Nilssen</p>
+  <p class="cover-meta">ACIT5930 Master's Thesis, Phase 3 (final draft) · OsloMet · Cybersecurity</p>
 </div>
 
-
-<div class="criteria"><strong>Referansestil:</strong> APA 7th edition (Kildekompasset). Dobbelt linjeavstand (2.0). Hengende innrykk i referanseliste (1,27 cm). Henvisninger: forfatter–år. Organisasjonsforkortelser definert ved første bruk (NSM, ENISA, CISA).</div>
 
 
 <div class="draft-banner"><strong>Final phase draft:</strong> Replace all [INSERT] fields after interviews and integration. Merge with Phase 1–2 into single WISEflow document for ACIT5930. No fabricated quotes.</div>
 
 
-<div class="abstract">
-<h2>Abstract</h2>
+<section class="chapter"><h1>Abstract</h1>
 <p>This Phase 3 draft (ACIT5930) completes the mixed-methods master thesis on the scepticism paradox in Norwegian higher education. Building on Phase 1 theory and Phase 2 survey analysis, Phase 3 presents semi-structured interview methodology (N = 12–18 planned), reflexive thematic analysis, integration with quantitative findings via joint displays, and final discussion, conclusions, and recommendations. Five thematic areas are anticipated: lure-specific credibility, emotional context and loneliness, knowledge-behaviour gaps, shame and reporting culture, and training limitations. The discussion revisits the weakest-link narrative, extends Protection Motivation Theory toward coping appraisal, and proposes lure-specific training, non-punitive reporting, and student welfare integration for OsloMet and comparable institutions. [INSERT: Final abstract results sentence after data collection.]</p>
-<p class="keywords"><em>Keywords:</em> phishing, scepticism paradox, thematic analysis, mixed methods, loneliness, Norway</p>
-</div>
+<p><strong>Keywords:</strong> phishing, scepticism paradox, thematic analysis, mixed methods, loneliness, Norway</p>
+</section>
 
 <h1 class="ch">Introduction and thesis arc</h1><p>This document is a draft for ACIT5930 (Phase 3), the final phase of the master thesis Beyond the Weakest Link: The Skepticism Paradox. Phase 1 (ACIT5910) established theory and literature; Phase 2 (ACIT5920) collected and analysed survey data. Phase 3 completes the mixed-methods design through semi-structured interviews, reflexive thematic analysis, integration with quantitative findings, and final discussion, conclusions, and recommendations.</p><p>The main research question remains: How can phishing remain effective despite rising scepticism, and which emotional, cognitive, and contextual factors make individuals especially vulnerable beyond the weakest-link explanation? Phase 3 answers the "how" and "why" behind statistical patterns by examining lived experience: what makes messages feel credible, when knowledge fails to produce safe action, and how reporting culture shapes disclosure of near misses.</p><p>Final submission follows WISEflow naming: Etternavn_Fornavn_studentnummer_ACIT5930, with appendices as ACIT5930_Appx. Sluttinnlevering deadline per handbook: 19 May. Oral defence: approximately 30 minutes presentation plus 30 minutes discussion.</p><p>This draft focuses on Phase 3 deliverables. The complete thesis merges condensed Phase 1 chapters (Introduction, Literature Review, Theoretical Framework) with Phase 2 Methodology and Survey Results, plus the new content below. Placeholders marked [INSERT] must be replaced with real interview and integration data before submission.</p><h2>Recap of quantitative findings (from Phase 2)</h2><p>[INSERT: Brief summary of Phase 2 N, key vignette patterns, H1-H4 outcomes. Example structure: "Survey N = [ ]. Unsafe intention highest for S[ ] and S[ ]; general scepticism predicted S1 responses but not S3/S6 (H2 [supported/partial/not supported])."]</p><p>Quantitative results provide the structural skeleton for integration. Interviews explain mechanisms: why institutional lures bypass scepticism, how loneliness surfaces in credibility judgements, and whether shame prevents reporting despite awareness.</p><h1 class="ch">Interview methodology</h1><h2>Design and sampling</h2><p>Phase 3 implements the qualitative strand of the exploratory sequential mixed-methods design (Braun & Clarke, 2006). Interviews follow survey completion so that sampling can target variation identified in Phase 2.</p><p>Target sample: 12-18 semi-structured interviews. Purposive sampling from survey opt-in pool, stratified by: (1) loneliness score tertile (high/medium/low); (2) vignette profile (high susceptibility on S3 or S6 vs low); (3) role (student vs staff). Aim for diversity in gender and age where possible without compromising anonymity.</p><p>Inclusion: completed Phase 2 survey; consented to follow-up contact; aged 18+; comfortable interviewing in Norwegian or English.</p><p>Exclusion: insufficient language proficiency; inability to consent; duplicate participation.</p><p>[INSERT: Final interview N, recruitment period, opt-in rate from survey]</p><h2>Interview guide and procedure</h2><p>Interviews use a semi-structured guide (Appendix A) with core topics: experiences with suspicious messages; credibility cues; emotional context (loneliness, stress, exam periods); knowledge-behaviour gaps; training and reporting culture; reactions to vignettes S3 and S6 if not discussed spontaneously.</p><p>Format: video or audio call (Teams/Zoom) or in-person at OsloMet, 45-60 minutes. Recorded with consent; transcribed verbatim (or intelligent verbatim) by researcher; pseudonyms assigned (P1-P18).</p><p>Opening: reconfirm consent, explain confidentiality, emphasise no wrong answers. Warm-up: general digital communication habits. Core blocks: (1) near-miss narratives; (2) institutional vs stranger messages; (3) loneliness and social connection (sensitive - allow skip); (4) organisational support and shame; (5) debrief and member-check offer.</p><p>Member checking: summary sent to willing participants for factual correction (not veto over interpretation).</p><h2>Qualitative analysis approach</h2><p>Analysis follows reflexive thematic analysis (Braun & Clarke, 2006; Braun & Clarke, 2021). Six phases: familiarisation with transcripts; initial coding; theme search; theme review; theme definition and naming; report writing.</p><p>Coding software: NVivo, Taguette, or manual coding in Word/Excel. Initial codes generated inductively from data and deductively from the scepticism paradox framework (lure-specific credibility, knowledge-behaviour gap, shame/reporting, institutional trust).</p><p>Reflexivity journal maintained: researcher assumptions about weakest-link narrative, loneliness stigma, and cybersecurity culture documented to reduce unexamined bias.</p><p>Trustworthiness: thick description of quotes; audit trail of codebook revisions; negative case analysis (interviews contradicting H1/H2); peer debrief with supervisor.</p><h2>Integration with survey data</h2><p>Mixed-methods integration uses a joint display approach (Fetters et al., 2013): rows represent themes; columns link to survey statistics (e.g. S6 click rate among high-loneliness tertile). Integration questions: Do interviews explain quantitative interaction effects? Do qualitative cases illustrate outliers?</p><p>Triangulation protocol: convergence (qual + quant agree), expansion (qual adds mechanism), discordance (qual challenges quant - reported transparently).</p><p>[INSERT: Reference to integration table in Results chapter]</p><h2>Ethics (interview strand)</h2><p>Interview strand covered under SIKT approval from Phase 2 [INSERT: reference]. Separate interview consent form. Transcripts stored encrypted; identifiers removed; audio deleted after verified transcription per retention schedule.</p><p>Sensitive topics: fraud victimisation, loneliness, shame. Participants may skip questions, pause, or withdraw. Contact information for SiO/student welfare provided before and after interview.</p><h1 class="ch">Qualitative results</h1><h2>Overview of sample</h2><p>[INSERT: Table of pseudonyms, role, loneliness tertile, vignette profile, interview duration. No identifying details.]</p><h2>Theme 1: Lure-specific credibility</h2><p>Expected theme: participants distinguish stranger scams from institutional or social messages. Stranger lures described as "obvious" or "ridiculous"; institutional lures (BankID, IT, exam office) described as "could be real" even by sceptical participants.</p><p>[INSERT: 2-4 anonymised quotes supporting Theme 1]</p><p>Relation to H2: if supported, quotes should show general scepticism coexisting with institutional trust - the scepticism paradox in participants' own words.</p><h2>Theme 2: Emotional context and loneliness</h2><p>Expected theme: belonging and social lures gain credibility during lonely or stressful periods (exam season, relocation, remote study). Not all high-loneliness scorers endorse this; negative cases noted.</p><p>[INSERT: 2-4 quotes. Handle with care - avoid implying loneliness causes gullibility.]</p><p>Relation to H1: qualitative depth on when S2/S6 feel tempting despite awareness training.</p><h2>Theme 3: Knowledge-behaviour gap</h2><p>Expected theme: participants articulate correct advice ("check sender," "use separate channel") yet describe moments of almost clicking due to urgency, multitasking, or emotional pull.</p><p>[INSERT: quotes on gap between knowing and doing]</p><p>Relation to sub-question 3 from Phase 1 and situational pressure mediation (H3).</p><h2>Theme 4: Shame, blame, and reporting culture</h2><p>Expected theme: near misses hidden when culture feels punitive; supportive reporting linked to willingness to ask for help. Aligns with PMT coping appraisal (H4) and Chen et al. (2024).</p><p>[INSERT: quotes on reporting comfort or fear of blame]</p><h2>Theme 5: Training gaps</h2><p>Expected theme: awareness materials focus on stranger scams; participants request examples of social and institutional impersonation relevant to student life.</p><p>[INSERT: quotes on training relevance]</p><p>Practical implication for OsloMet and comparable institutions.</p>
 <table class="data">

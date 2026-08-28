@@ -4,7 +4,16 @@ Private viewing copies for Karina. Not part of the GitHub Pages app on `main`.
 
 ## Reference style
 
-All HTML drafts use **APA 7th edition (Kildekompasset)**: double line spacing (2.0), hanging indent in reference lists, author–year citations. LaTeX source (`source/main.tex`) uses `biblatex` with `style=apa` and `\doublespacing`.
+Body text uses the same layout as `master_thesis_phase1.pdf` (Times New Roman 12 pt, 1.5 line spacing, 16 pt chapter headings). Reference lists follow APA 7 (Kildekompasset) with hanging indent. LaTeX source uses `biblatex` with `style=apa`.
+
+## Build
+
+```bash
+python3 build_essay.py      # ACIT5910 Phase 1 HTML
+python3 build_phase2.py     # ACIT5920 Phase 2 HTML
+python3 build_phase3.py     # ACIT5930 Phase 3 HTML
+python3 build_pdf.py        # Export phase HTML to PDF (Headless Chrome)
+```
 
 ## Read in browser
 

@@ -210,7 +210,7 @@ html = f"""<!DOCTYPE html>
 </head>
 <body>
 <div class="toolbar">
-  <strong>ACIT5910 Phase 1 · APA 7 (Kildekompasset)</strong> (~{word_count} words)
+  <strong>ACIT5910 Phase 1</strong> (~{word_count} words)
   · <a href="index.html">Full thesis draft</a>
   · <a href="ACIT5910_phase1_essay.pdf">PDF</a>
 </div>

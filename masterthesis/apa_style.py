@@ -1,13 +1,16 @@
-"""Shared APA 7 / Kildekompasset styling for master thesis HTML builds."""
+"""Shared styling for master thesis HTML builds.
+
+Visual layout matches master_thesis_phase1 (Times New Roman 12 pt, 1.5 spacing,
+16 pt chapter headings). Reference list follows APA 7 (Kildekompasset).
+"""
 
 AUTHOR = "Karina Sætersdal Nilssen"
 INSTITUTION = "Oslo Metropolitan University"
 DEPARTMENT = "Department of Computer Science"
 PROGRAM = "Applied Computer and Information Technology (ACIT) · Cybersecurity"
 
-APA_BANNER = """
-<div class="criteria"><strong>Referansestil:</strong> APA 7th edition (Kildekompasset). Dobbelt linjeavstand (2.0). Hengende innrykk i referanseliste (1,27 cm). Henvisninger: forfatter–år. Organisasjonsforkortelser definert ved første bruk (NSM, ENISA, CISA).</div>
-"""
+# No visible banner - keeps the clean Phase I look in browser and PDF.
+APA_BANNER = ""
 
 REFERENCES = """
 <h1 class="ch refs-heading">References</h1>
@@ -54,57 +57,51 @@ REFERENCES = """
 APA_CSS = """
 :root { --black:#000; --ink:#1a1a1a; --dark:#333; --mid:#666; --line:#ccc; --light:#f0f0f0; --paper:#fff; }
 * { box-sizing:border-box; }
-body { margin:0; font-family:"Times New Roman", Times, serif; font-size:12pt; line-height:2; color:var(--ink); background:#e8e8e8; }
+body { margin:0; font-family:"Times New Roman", Times, serif; font-size:12pt; line-height:1.5; color:var(--ink); background:#e8e8e8; }
 .toolbar { position:sticky; top:0; background:#111; color:#fff; padding:10px 16px; font-family:Calibri,sans-serif; font-size:14px; z-index:9; line-height:1.4; }
 .toolbar a { color:#7fd; margin-right:1rem; }
 .page { max-width:210mm; margin:1rem auto; background:var(--paper); padding:25mm; box-shadow:0 2px 12px rgba(0,0,0,.15); }
-.cover { text-align:center; min-height:180mm; display:flex; flex-direction:column; justify-content:center; page-break-after:always; line-height:2; }
-.cover h1 { font-size:22pt; font-weight:700; line-height:1.3; color:var(--black); margin:0 0 .5rem; }
-.cover .sub { font-size:14pt; margin:.5rem 0; color:var(--dark); font-style:italic; }
-.cover .author { font-size:12pt; font-weight:400; margin-top:2rem; }
-.cover .affil { font-size:12pt; color:var(--dark); margin:.2rem 0; }
-.cover .meta { font-size:12pt; color:var(--mid); margin-top:1rem; }
-.draft-banner { background:#fff3cd; border:1px solid #856404; color:#533f03; padding:.75rem; margin:1rem 0; font-size:11pt; line-height:1.5; }
-.criteria { font-size:11pt; color:var(--mid); margin:1rem 0; padding:.75rem; border:1px solid var(--line); line-height:1.5; }
-.abstract { margin:1.5rem 0; padding:0; page-break-after:always; }
-.abstract h2 { font-size:12pt; font-weight:700; text-align:center; margin:0 0 .5rem; }
-.abstract p { text-indent:0.5in; margin:0 0 .65rem; }
-.keywords { text-indent:0; font-style:italic; margin-top:.5rem; }
-h1.ch { font-size:12pt; font-weight:700; text-align:left; margin:2rem 0 1rem; page-break-before:always; border-bottom:2px solid var(--black); padding-bottom:.3rem; }
+.cover-page { min-height:200mm; display:flex; flex-direction:column; justify-content:center; text-align:center; page-break-after:always; }
+.cover-title { font-size:22pt; font-weight:700; line-height:1.3; color:var(--black); margin:0; }
+.cover-sub { font-size:14pt; margin-top:1rem; color:var(--dark); }
+.cover-author { font-size:16pt; font-weight:700; margin-top:2rem; }
+.cover-meta { font-size:12pt; color:var(--mid); margin-top:1rem; }
+h1.ch, .chapter h1 { font-size:16pt; font-weight:700; border-bottom:2px solid var(--black); padding-bottom:.3rem; margin:2rem 0 1rem; page-break-before:always; }
 h1.ch:first-of-type { page-break-before:auto; }
-h1.refs-heading { text-align:center; border-bottom:none; page-break-before:always; }
-h2 { font-size:12pt; font-weight:700; margin:1.2rem 0 .6rem; color:var(--black); }
-p { font-size:12pt; margin:0 0 .65rem; text-align:left; text-indent:0.5in; }
-h1 + p, h2 + p, .abstract p:first-of-type, .criteria, .draft-banner, .refs, .note, table.data { text-indent:0; }
+h1.refs-heading { page-break-before:always; }
+h2 { font-size:14pt; font-weight:700; margin:1.2rem 0 .6rem; color:var(--black); }
+h3 { font-size:12pt; font-weight:700; margin:1rem 0 .4rem; }
+p, li { font-size:12pt; margin:0 0 .65rem; text-align:left; }
+ul, ol, dl { margin:.4rem 0 .8rem; padding-left:1.4rem; }
+blockquote.quote { margin:.8rem 0; padding:.8rem 1rem; background:var(--light); border-left:3px solid var(--dark); }
+.draft-banner { background:#fff3cd; border:1px solid #856404; color:#533f03; padding:.75rem; margin:1rem 0; font-size:11pt; line-height:1.5; }
 table.data { width:100%; border-collapse:collapse; margin:1rem 0; font-size:11pt; line-height:1.4; }
 table.data th, table.data td { border:1px solid var(--line); padding:6px 8px; text-align:left; }
 table.data caption { caption-side:top; text-align:left; font-weight:700; margin-bottom:.5rem; }
 .refs { font-size:12pt; margin:0 0 .5rem; }
 .hanging { padding-left:0.5in; text-indent:-0.5in; margin-left:0; }
 .refs.note { font-size:10pt; color:var(--mid); margin-top:1rem; font-style:italic; }
-@media print { body{background:#fff;} .toolbar{display:none;} .page{box-shadow:none;margin:0;} }
+dt { font-weight:700; margin-top:.5rem; }
+dd { margin:0 0 .5rem 1rem; }
+@media print { body{background:#fff;} .toolbar{display:none;} .page{box-shadow:none;margin:0;max-width:none;} }
 """
 
 
 def cover_html(title, subtitle, course_meta):
     return f"""
-<div class="cover">
-  <p class="meta">{course_meta}</p>
-  <h1>{title}<br>{subtitle}</h1>
-  <p class="sub">A Mixed-Methods Study of Loneliness, Social Engineering, and Digital Trust in Norway</p>
-  <p class="author">{AUTHOR}</p>
-  <p class="affil">{INSTITUTION}</p>
-  <p class="affil">{DEPARTMENT}</p>
-  <p class="meta">{PROGRAM}</p>
+<div class="cover-page">
+  <h1 class="cover-title">{title}<br>{subtitle}</h1>
+  <p class="cover-sub">A Mixed-Methods Study of Loneliness, Social Engineering, and Digital Trust in Norway</p>
+  <p class="cover-author">{AUTHOR}</p>
+  <p class="cover-meta">{course_meta} · OsloMet · Cybersecurity</p>
 </div>
 """
 
 
 def abstract_html(text, keywords):
     return f"""
-<div class="abstract">
-<h2>Abstract</h2>
+<section class="chapter"><h1>Abstract</h1>
 <p>{text}</p>
-<p class="keywords"><em>Keywords:</em> {keywords}</p>
-</div>
+<p><strong>Keywords:</strong> {keywords}</p>
+</section>
 """

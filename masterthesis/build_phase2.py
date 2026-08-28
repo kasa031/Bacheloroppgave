@@ -289,7 +289,7 @@ html = f"""<!DOCTYPE html>
 </head>
 <body>
 <div class="toolbar">
-  <strong>ACIT5920 Phase 2 · APA 7 (Kildekompasset)</strong> (~{word_count} words)
+  <strong>ACIT5920 Phase 2 draft</strong> (~{word_count} words)
   · <a href="ACIT5910_phase1_essay.html">Phase 1</a>
   · <a href="ACIT5920_phase2_draft.pdf">PDF</a>
 </div>
